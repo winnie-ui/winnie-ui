@@ -1,0 +1,34 @@
+{
+  "name": "@muma/eslint-config-muma",
+  "version": "0.0.1",
+  "description": "Shared eslint configs for muma",
+  "author": "Adam Aho",
+  "exports": {
+    ".": "./base.js",
+    "./react": "./react.js"
+  },
+  "files": [
+    "base.js"
+  ],
+  "scripts": {
+    "clean": "rimraf node_modules"
+  },
+  "peerDependencies": {
+    "eslint": "8.57.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "7.7.0",
+    "@typescript-eslint/parser": "7.7.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-import-resolver-typescript": "3.6.1",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-no-only-tests": "3.1.0",
+    "eslint-plugin-prettier": "5.1.3",
+    "eslint-plugin-react": "7.34.1",
+    "eslint-plugin-react-hooks": "4.6.0"
+  },
+  "devDependencies": {
+    "eslint": "8.57.0",
+    "rimraf": "5.0.5"
+  }
+}

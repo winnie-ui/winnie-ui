@@ -1,0 +1,25 @@
+{
+  "name": "@muma/stylelint-config-muma",
+  "version": "0.0.1",
+  "description": "Shared stylelint configs for muma",
+  "author": "Adam Aho",
+  "exports": {
+    ".": "./base.js"
+  },
+  "files": [
+    "base.js"
+  ],
+  "scripts": {
+    "clean": "rimraf node_modules"
+  },
+  "peerDependencies": {
+    "stylelint": "16.3.1"
+  },
+  "dependencies": {
+    "stylelint-config-recommended": "14.0.0"
+  },
+  "devDependencies": {
+    "rimraf": "5.0.5",
+    "stylelint": "16.3.1"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "@muma/ts-config-muma",
+  "version": "0.0.1",
+  "description": "Shared tsconfigs for muma",
+  "author": "Adam Aho",
+  "exports": {
+    ".": "./base.json",
+    "./react": "./react.json"
+  },
+  "files": [
+    "base.json",
+    "react.json"
+  ],
+  "scripts": {
+    "clean": "rimraf node_modules"
+  },
+  "devDependencies": {
+    "rimraf": "5.0.5"
+  }
+}

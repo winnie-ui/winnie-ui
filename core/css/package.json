@@ -1,0 +1,27 @@
+{
+  "name": "@muma/core-css",
+  "version": "0.0.1",
+  "description": "css tokens and styles for building web applications",
+  "author": "Adam Aho",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.css",
+    "./layer": "./src/layer.css",
+    "./reset": "./src/reset.css",
+    "./base": "./src/base/index.css",
+    "./components": "./src/components/index.css"
+  },
+  "files": [
+    "src",
+    "package.json"
+  ],
+  "scripts": {
+    "clean": "rimraf node_modules",
+    "stylelint": "stylelint \"src/**/*.css\""
+  },
+  "devDependencies": {
+    "@muma/stylelint-config-muma": "workspace:*",
+    "rimraf": "5.0.5",
+    "stylelint": "16.3.1"
+  }
+}

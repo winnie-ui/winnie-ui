@@ -1,0 +1,17 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "build": {
+      "inputs": ["src/**", "locales/**"],
+      "outputs": ["dist/**"],
+      "dependsOn": ["topo"]
+    },
+    "clean": {},
+    "lint": {},
+    "stylelint": {},
+    "topo": {
+      "dependsOn": ["^topo"]
+    },
+    "tsc": {}
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "demo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && vite build",
+    "clean": "rimraf node_modules dist",
+    "dev": "vite",
+    "lint": "eslint \"src/**/*.{ts,tsx}\" --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "stylelint": "stylelint \"src/**/*.css\"",
+    "tsc": "tsc"
+  },
+  "dependencies": {
+    "@muma/core-css": "workspace:*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@muma/eslint-config-muma": "workspace:*",
+    "@muma/stylelint-config-muma": "workspace:*",
+    "@muma/ts-config-muma": "workspace:*",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react-swc": "3.5.0",
+    "eslint": "8.57.0",
+    "rimraf": "5.0.5",
+    "stylelint": "16.3.1",
+    "typescript": "5.2.2",
+    "vite": "5.2.0"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "muma",
+  "version": "0.0.1",
+  "description": "A collection of tools for writing React applications",
+  "author": "Adam Aho",
+  "license": "ISC",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "clean": "turbo run clean && rimraf node_modules",
+    "lint": "turbo run lint",
+    "stylelint": "turbo run stylelint",
+    "tsc": "turbo run tsc",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "4.3.0",
+    "husky": "9.0.11",
+    "lint-staged": "15.2.2",
+    "prettier": "3.2.5",
+    "rimraf": "5.0.5",
+    "turbo": "1.13.2"
+  },
+  "engines": {
+    "node": ">=21.7.3",
+    "pnpm": ">=9.0.4"
+  },
+  "packageManager": "pnpm@9.0.4"
+}
