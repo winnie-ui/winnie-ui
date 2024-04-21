@@ -1,0 +1,14 @@
+@layer base {
+  .muma {
+    --m-space-1: calc(2px * var(--m-scaling));
+    --m-space-2: calc(4px * var(--m-scaling));
+    --m-space-3: calc(8px * var(--m-scaling));
+    --m-space-4: calc(12px * var(--m-scaling));
+    --m-space-5: calc(16px * var(--m-scaling));
+    --m-space-6: calc(24px * var(--m-scaling));
+    --m-space-7: calc(32px * var(--m-scaling));
+    --m-space-8: calc(40px * var(--m-scaling));
+    --m-space-9: calc(48px * var(--m-scaling));
+    --m-space-10: calc(64px * var(--m-scaling));
+  }
+}

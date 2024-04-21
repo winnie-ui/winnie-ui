@@ -1,0 +1,18 @@
+@layer base {
+  :root {
+    --m-color-black: #000;
+
+    --m-color-black-a1: rgba(0, 0, 0, 0.05);
+    --m-color-black-a2: rgba(0, 0, 0, 0.1);
+    --m-color-black-a3: rgba(0, 0, 0, 0.15);
+    --m-color-black-a4: rgba(0, 0, 0, 0.2);
+    --m-color-black-a5: rgba(0, 0, 0, 0.3);
+    --m-color-black-a6: rgba(0, 0, 0, 0.4);
+    --m-color-black-a7: rgba(0, 0, 0, 0.5);
+    --m-color-black-a8: rgba(0, 0, 0, 0.6);
+    --m-color-black-a9: rgba(0, 0, 0, 0.7);
+    --m-color-black-a10: rgba(0, 0, 0, 0.8);
+    --m-color-black-a11: rgba(0, 0, 0, 0.9);
+    --m-color-black-a12: rgba(0, 0, 0, 0.95);
+  }
+}

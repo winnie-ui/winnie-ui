@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc && vite build",
     "clean": "rimraf node_modules dist",
-    "dev": "vite",
+    "dev": "vite --port 3000",
     "lint": "eslint \"src/**/*.{ts,tsx}\" --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "stylelint": "stylelint \"src/**/*.css\"",

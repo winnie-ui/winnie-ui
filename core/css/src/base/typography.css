@@ -1,0 +1,34 @@
+@layer base {
+  :root {
+    --m-font-family-sans: "Inter", sans-serif;
+    --m-font-family-serif: "Playfair Display", serif;
+    --m-font-family-mono: "IBM Plex Mono", monospace;
+
+    --m-font-weight-normal: 400;
+    --m-font-weight-medium: 500;
+    --m-font-weight-bold: 700;
+    --m-font-weight-extra-bold: 900;
+  }
+
+  .muma {
+    --m-font-size-1: calc(12px * var(--m-scaling));
+    --m-font-size-2: calc(14px * var(--m-scaling));
+    --m-font-size-3: calc(16px * var(--m-scaling));
+    --m-font-size-4: calc(18px * var(--m-scaling));
+    --m-font-size-5: calc(20px * var(--m-scaling));
+    --m-font-size-6: calc(24px * var(--m-scaling));
+    --m-font-size-7: calc(28px * var(--m-scaling));
+    --m-font-size-8: calc(35px * var(--m-scaling));
+    --m-font-size-9: calc(60px * var(--m-scaling));
+
+    --m-lint-height-1: calc(16px * var(--m-scaling));
+    --m-lint-height-2: calc(20px * var(--m-scaling));
+    --m-lint-height-3: calc(24px * var(--m-scaling));
+    --m-lint-height-4: calc(26px * var(--m-scaling));
+    --m-lint-height-5: calc(28px * var(--m-scaling));
+    --m-lint-height-6: calc(30px * var(--m-scaling));
+    --m-lint-height-7: calc(36px * var(--m-scaling));
+    --m-lint-height-8: calc(40px * var(--m-scaling));
+    --m-lint-height-9: calc(60px * var(--m-scaling));
+  }
+}
