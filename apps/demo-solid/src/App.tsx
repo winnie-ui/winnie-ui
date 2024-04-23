@@ -1,35 +1,22 @@
-import solidLogo from "./assets/solid.svg";
-import viteLogo from "/vite.svg";
-import { createSignal } from "solid-js";
+import { type ParentComponent } from "solid-js";
 
-import "./App.css";
+const List: ParentComponent = (props) => {
+  return <ul>{props.children}</ul>;
+};
+
+const ListItem: ParentComponent = (props) => {
+  return <li>{props.children}</li>;
+};
 
 function App() {
-  const [count, setCount] = createSignal(0);
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://solidjs.com" target="_blank">
-          <img src={solidLogo} class="logo solid" alt="Solid logo" />
-        </a>
-      </div>
-      <h1>Vite + Solid</h1>
-      <div class="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count()}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p class="read-the-docs">
-        Click on the Vite and Solid logos to learn more
-      </p>
-    </>
+    <List>
+      <ListItem>Item 1</ListItem>
+      <ListItem>Item 2</ListItem>
+      <ListItem>Item 3</ListItem>
+      <ListItem>Item 4</ListItem>
+      <ListItem>Item 5</ListItem>
+    </List>
   );
 }
 
