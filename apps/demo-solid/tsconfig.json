@@ -1,5 +1,5 @@
 {
-  "extends": "@muma/ts-config-muma/solid",
+  "extends": "@alku/ts-config-muma/solid",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {

@@ -1,5 +1,5 @@
 {
-  "name": "@muma/eslint-config-muma",
+  "name": "@alku/eslint-config-muma",
   "version": "0.0.1",
   "description": "Shared eslint configs for muma",
   "author": "Adam Aho",

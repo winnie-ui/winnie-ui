@@ -1,5 +1,5 @@
 {
-  "name": "@muma/stylelint-config-muma",
+  "name": "@alku/stylelint-config-muma",
   "version": "0.0.1",
   "description": "Shared stylelint configs for muma",
   "author": "Adam Aho",

@@ -1,5 +1,5 @@
 {
-  "extends": "@muma/ts-config-muma/react",
+  "extends": "@alku/ts-config-muma/react",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {

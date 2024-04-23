@@ -1,5 +1,5 @@
 {
-  "name": "@muma/ts-config-muma",
+  "name": "@alku/ts-config-muma",
   "version": "0.0.1",
   "description": "Shared tsconfigs for muma",
   "author": "Adam Aho",

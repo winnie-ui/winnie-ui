@@ -13,14 +13,14 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "@muma/core-css": "workspace:*",
+    "@alku/core-css": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@muma/eslint-config-muma": "workspace:*",
-    "@muma/stylelint-config-muma": "workspace:*",
-    "@muma/ts-config-muma": "workspace:*",
+    "@alku/eslint-config-muma": "workspace:*",
+    "@alku/stylelint-config-muma": "workspace:*",
+    "@alku/ts-config-muma": "workspace:*",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react-swc": "3.5.0",
