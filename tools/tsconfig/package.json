@@ -5,11 +5,13 @@
   "author": "Adam Aho",
   "exports": {
     ".": "./base.json",
-    "./react": "./react.json"
+    "./react": "./react.json",
+    "./solid": "./solid.json"
   },
   "files": [
     "base.json",
-    "react.json"
+    "react.json",
+    "solid.json"
   ],
   "scripts": {
     "clean": "rimraf node_modules"
