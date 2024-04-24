@@ -1,5 +1,5 @@
 @layer base {
-  .muma {
+  .alku {
     &:where(.m-scaling-90) {
       --m-scaling: 0.9;
     }

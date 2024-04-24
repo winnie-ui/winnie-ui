@@ -6,7 +6,7 @@
     --m-border-width-4: 3px;
   }
 
-  .muma {
+  .alku {
     --m-border-radius-1: calc(3px * var(--m-scaling));
     --m-border-radius-2: calc(4px * var(--m-scaling));
     --m-border-radius-3: calc(6px * var(--m-scaling));

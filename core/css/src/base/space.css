@@ -1,5 +1,5 @@
 @layer base {
-  .muma {
+  .alku {
     --m-space-1: calc(2px * var(--m-scaling));
     --m-space-2: calc(4px * var(--m-scaling));
     --m-space-3: calc(8px * var(--m-scaling));

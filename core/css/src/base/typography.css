@@ -10,7 +10,7 @@
     --m-font-weight-extra-bold: 900;
   }
 
-  .muma {
+  .alku {
     --m-font-size-1: calc(12px * var(--m-scaling));
     --m-font-size-2: calc(14px * var(--m-scaling));
     --m-font-size-3: calc(16px * var(--m-scaling));

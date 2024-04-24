@@ -1,7 +1,7 @@
 {
-  "name": "@alku/ts-config-muma",
+  "name": "@alku/ts-config-alku",
   "version": "0.0.1",
-  "description": "Shared tsconfigs for muma",
+  "description": "Shared tsconfigs for alku",
   "author": "Adam Aho",
   "exports": {
     ".": "./base.json",

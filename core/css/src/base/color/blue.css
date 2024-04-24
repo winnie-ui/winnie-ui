@@ -1,7 +1,8 @@
 @layer base {
   :root,
   .light,
-  .light-theme {
+  .light-theme,
+  [data-theme="light"] {
     --m-color-blue-1: #fcfdff;
     --m-color-blue-2: #f5f9ff;
     --m-color-blue-3: #eaf2ff;
@@ -35,7 +36,8 @@
     @media (color-gamut: p3) {
       :root,
       .light,
-      .light-theme {
+      .light-theme,
+      [data-theme="light"] {
         --m-color-blue-1: oklch(99.3% 0.003 259.8);
         --m-color-blue-2: oklch(98.2% 0.01 259.8);
         --m-color-blue-3: oklch(96% 0.02 259.8);
@@ -68,7 +70,8 @@
   }
 
   .dark,
-  .dark-theme {
+  .dark-theme,
+  [data-theme="dark"] {
     --m-color-blue-1: #0b111c;
     --m-color-blue-2: #101825;
     --m-color-blue-3: #122647;
@@ -101,7 +104,8 @@
   @supports (color: color(display-p3 1 1 1)) {
     @media (color-gamut: p3) {
       .dark,
-      .dark-theme {
+      .dark-theme,
+      [data-theme="dark"] {
         --m-color-blue-1: oklch(17.8% 0.025 259.8);
         --m-color-blue-2: oklch(20.9% 0.029 259.8);
         --m-color-blue-3: oklch(27.2% 0.066 259.8);

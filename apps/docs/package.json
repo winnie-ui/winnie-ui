@@ -1,0 +1,21 @@
+{
+  "name": "docs",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "astro check && astro build",
+    "clean": "rimraf node_modules",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@alku/core-css": "workspace:*",
+    "@astrojs/check": "0.5.10",
+    "@astrojs/starlight": "0.21.5",
+    "astro": "4.3.5",
+    "sharp": "0.33.3",
+    "typescript": "5.4.5"
+  }
+}

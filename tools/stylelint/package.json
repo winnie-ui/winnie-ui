@@ -1,7 +1,7 @@
 {
-  "name": "@alku/stylelint-config-muma",
+  "name": "@alku/stylelint-config-alku",
   "version": "0.0.1",
-  "description": "Shared stylelint configs for muma",
+  "description": "Shared stylelint configs for alku",
   "author": "Adam Aho",
   "exports": {
     ".": "./base.js"
@@ -20,6 +20,6 @@
   },
   "devDependencies": {
     "rimraf": "5.0.5",
-    "stylelint": "16.3.1"
+    "stylelint": "16.4.0"
   }
 }

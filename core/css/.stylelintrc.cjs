@@ -1,4 +1,4 @@
 /** @type {import("stylelint").Config} */
 module.exports = {
-  extends: "@alku/stylelint-config-muma",
+  extends: "@alku/stylelint-config-alku",
 };
