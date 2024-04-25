@@ -25,3 +25,22 @@ h6 {
   font-weight: var(--ak-font-weight-medium);
   letter-spacing: var(--ak-letter-spacing-1);
 }
+
+/* table of contents */
+.right-sidebar {
+  h2 {
+    color: var(--ak-color-grey-10);
+  }
+
+  ul {
+    li {
+      a {
+        color: var(--ak-color-grey-10);
+
+        &[aria-current="true"] {
+          color: var(--ak-color-grey-12);
+        }
+      }
+    }
+  }
+}
