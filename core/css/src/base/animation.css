@@ -1,10 +1,10 @@
 @layer base {
   :root {
-    --m-duration-1: 100ms;
-    --m-duration-2: 200ms;
-    --m-duration-3: 300ms;
-    --m-duration-4: 500ms;
-    --m-bezier-1: cubic-bezier(0.16, 1, 0.3, 1);
+    --ak-duration-1: 100ms;
+    --ak-duration-2: 200ms;
+    --ak-duration-3: 300ms;
+    --ak-duration-4: 500ms;
+    --ak-bezier-1: cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   @keyframes m-fade-in {
@@ -69,10 +69,10 @@
 
   @media (prefers-reduced-motion: no-preference) {
     .m-popper {
-      animation-timing-function: var(--m-transition-function-1);
+      animation-timing-function: var(--ak-transition-function-1);
 
       &:where([data-state="delayed-open"], [data-state="open"]) {
-        animation-duration: var(--m-duration-3);
+        animation-duration: var(--ak-duration-3);
 
         &:where([data-side="top"]) {
           animation-name: m-slide-up, m-fade-in;

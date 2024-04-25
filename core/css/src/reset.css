@@ -1,6 +1,6 @@
 @layer reset {
   body {
-    font-family: var(--m-font-family-sans);
+    font-family: var(--ak-font-family-sans);
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;

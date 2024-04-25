@@ -1,134 +1,138 @@
 @layer base {
   :root,
   .light,
-  .light-theme {
-    --m-color-yellow-1: #fefdf9;
-    --m-color-yellow-2: #fffae7;
-    --m-color-yellow-3: #fff4d7;
-    --m-color-yellow-4: #ffebb9;
-    --m-color-yellow-5: #ffe093;
-    --m-color-yellow-6: #ffd051;
-    --m-color-yellow-7: #f1c04c;
-    --m-color-yellow-8: #dfa800;
-    --m-color-yellow-9: #eab308;
-    --m-color-yellow-10: #dfa800;
-    --m-color-yellow-11: #977100;
-    --m-color-yellow-12: #483a18;
+  .light-theme,
+  [data-theme="light"] {
+    --ak-color-yellow-1: #fefdf9;
+    --ak-color-yellow-2: #fffae7;
+    --ak-color-yellow-3: #fff4d7;
+    --ak-color-yellow-4: #ffebb9;
+    --ak-color-yellow-5: #ffe093;
+    --ak-color-yellow-6: #ffd051;
+    --ak-color-yellow-7: #f1c04c;
+    --ak-color-yellow-8: #dfa800;
+    --ak-color-yellow-9: #eab308;
+    --ak-color-yellow-10: #dfa800;
+    --ak-color-yellow-11: #977100;
+    --ak-color-yellow-12: #483a18;
 
-    --m-color-yellow-a1: #d5aa0006;
-    --m-color-yellow-a2: #ffca0018;
-    --m-color-yellow-a3: #ffb90028;
-    --m-color-yellow-a4: #ffb70046;
-    --m-color-yellow-a5: #ffb6006c;
-    --m-color-yellow-a6: #ffba00ae;
-    --m-color-yellow-a7: #eba500b3;
-    --m-color-yellow-a8: #dfa800;
-    --m-color-yellow-a9: #e9b100f7;
-    --m-color-yellow-a10: #dfa800;
-    --m-color-yellow-a11: #977100;
-    --m-color-yellow-a12: #352600e7;
+    --ak-color-yellow-a1: #d5aa0006;
+    --ak-color-yellow-a2: #ffca0018;
+    --ak-color-yellow-a3: #ffb90028;
+    --ak-color-yellow-a4: #ffb70046;
+    --ak-color-yellow-a5: #ffb6006c;
+    --ak-color-yellow-a6: #ffba00ae;
+    --ak-color-yellow-a7: #eba500b3;
+    --ak-color-yellow-a8: #dfa800;
+    --ak-color-yellow-a9: #e9b100f7;
+    --ak-color-yellow-a10: #dfa800;
+    --ak-color-yellow-a11: #977100;
+    --ak-color-yellow-a12: #352600e7;
 
-    --m-color-yellow-contrast: #2a2009;
+    --ak-color-yellow-contrast: #2a2009;
   }
 
   @supports (color: color(display-p3 1 1 1)) {
     @media (color-gamut: p3) {
       :root,
       .light,
-      .light-theme {
-        --m-color-yellow-1: oklch(99.3% 0.005 86.05);
-        --m-color-yellow-2: oklch(98.7% 0.029 86.05);
-        --m-color-yellow-3: oklch(97.2% 0.09 86.05);
-        --m-color-yellow-4: oklch(94.9% 0.13 86.05);
-        --m-color-yellow-5: oklch(92.2% 0.161 86.05);
-        --m-color-yellow-6: oklch(88.1% 0.151 86.05);
-        --m-color-yellow-7: oklch(83.1% 0.142 86.05);
-        --m-color-yellow-8: oklch(76.2% 0.162 86.05);
-        --m-color-yellow-9: oklch(79.5% 0.162 86.05);
-        --m-color-yellow-10: oklch(76.2% 0.162 86.05);
-        --m-color-yellow-11: oklch(57.2% 0.162 86.05);
-        --m-color-yellow-12: oklch(35.5% 0.053 86.05);
+      .light-theme,
+      [data-theme="light"] {
+        --ak-color-yellow-1: oklch(99.3% 0.005 86.05);
+        --ak-color-yellow-2: oklch(98.7% 0.029 86.05);
+        --ak-color-yellow-3: oklch(97.2% 0.09 86.05);
+        --ak-color-yellow-4: oklch(94.9% 0.13 86.05);
+        --ak-color-yellow-5: oklch(92.2% 0.161 86.05);
+        --ak-color-yellow-6: oklch(88.1% 0.151 86.05);
+        --ak-color-yellow-7: oklch(83.1% 0.142 86.05);
+        --ak-color-yellow-8: oklch(76.2% 0.162 86.05);
+        --ak-color-yellow-9: oklch(79.5% 0.162 86.05);
+        --ak-color-yellow-10: oklch(76.2% 0.162 86.05);
+        --ak-color-yellow-11: oklch(57.2% 0.162 86.05);
+        --ak-color-yellow-12: oklch(35.5% 0.053 86.05);
 
-        --m-color-yellow-a1: color(display-p3 0.839 0.675 0.024 / 0.024);
-        --m-color-yellow-a2: color(display-p3 0.957 0.776 0.012 / 0.087);
-        --m-color-yellow-a3: color(display-p3 0.949 0.706 0.008 / 0.146);
-        --m-color-yellow-a4: color(display-p3 0.957 0.706 0.004 / 0.251);
-        --m-color-yellow-a5: color(display-p3 0.949 0.694 0.004 / 0.385);
-        --m-color-yellow-a6: color(display-p3 0.953 0.702 0 / 0.593);
-        --m-color-yellow-a7: color(display-p3 0.863 0.616 0 / 0.62);
-        --m-color-yellow-a8: color(display-p3 0.796 0.573 0 / 0.777);
-        --m-color-yellow-a9: color(display-p3 0.851 0.616 0 / 0.757);
-        --m-color-yellow-a10: color(display-p3 0.796 0.573 0 / 0.777);
-        --m-color-yellow-a11: color(display-p3 0.498 0.361 0 / 0.859);
-        --m-color-yellow-a12: color(display-p3 0.18 0.133 0 / 0.887);
+        --ak-color-yellow-a1: color(display-p3 0.839 0.675 0.024 / 0.024);
+        --ak-color-yellow-a2: color(display-p3 0.957 0.776 0.012 / 0.087);
+        --ak-color-yellow-a3: color(display-p3 0.949 0.706 0.008 / 0.146);
+        --ak-color-yellow-a4: color(display-p3 0.957 0.706 0.004 / 0.251);
+        --ak-color-yellow-a5: color(display-p3 0.949 0.694 0.004 / 0.385);
+        --ak-color-yellow-a6: color(display-p3 0.953 0.702 0 / 0.593);
+        --ak-color-yellow-a7: color(display-p3 0.863 0.616 0 / 0.62);
+        --ak-color-yellow-a8: color(display-p3 0.796 0.573 0 / 0.777);
+        --ak-color-yellow-a9: color(display-p3 0.851 0.616 0 / 0.757);
+        --ak-color-yellow-a10: color(display-p3 0.796 0.573 0 / 0.777);
+        --ak-color-yellow-a11: color(display-p3 0.498 0.361 0 / 0.859);
+        --ak-color-yellow-a12: color(display-p3 0.18 0.133 0 / 0.887);
 
-        --m-color-yellow-contrast: #2a2009;
+        --ak-color-yellow-contrast: #2a2009;
       }
     }
   }
 
   .dark,
-  .dark-theme {
-    --m-color-yellow-1: #13110b;
-    --m-color-yellow-2: #1c180f;
-    --m-color-yellow-3: #2c220a;
-    --m-color-yellow-4: #3b2900;
-    --m-color-yellow-5: #483300;
-    --m-color-yellow-6: #56410a;
-    --m-color-yellow-7: #69531c;
-    --m-color-yellow-8: #856a26;
-    --m-color-yellow-9: #eab308;
-    --m-color-yellow-10: #dfa800;
-    --m-color-yellow-11: #fec83f;
-    --m-color-yellow-12: #fce7ba;
+  .dark-theme,
+  [data-theme="dark"] {
+    --ak-color-yellow-1: #13110b;
+    --ak-color-yellow-2: #1c180f;
+    --ak-color-yellow-3: #2c220a;
+    --ak-color-yellow-4: #3b2900;
+    --ak-color-yellow-5: #483300;
+    --ak-color-yellow-6: #56410a;
+    --ak-color-yellow-7: #69531c;
+    --ak-color-yellow-8: #856a26;
+    --ak-color-yellow-9: #eab308;
+    --ak-color-yellow-10: #dfa800;
+    --ak-color-yellow-11: #fec83f;
+    --ak-color-yellow-12: #fce7ba;
 
-    --m-color-yellow-a1: #bb110003;
-    --m-color-yellow-a2: #fba6000c;
-    --m-color-yellow-a3: #ffa7001d;
-    --m-color-yellow-a4: #ff99002d;
-    --m-color-yellow-a5: #ffa4003b;
-    --m-color-yellow-a6: #ffb7004a;
-    --m-color-yellow-a7: #fdc22e5f;
-    --m-color-yellow-a8: #fdc63c7d;
-    --m-color-yellow-a9: #ffc308e9;
-    --m-color-yellow-a10: #ffc000dd;
-    --m-color-yellow-a11: #ffc93ffe;
-    --m-color-yellow-a12: #ffeabcfc;
+    --ak-color-yellow-a1: #bb110003;
+    --ak-color-yellow-a2: #fba6000c;
+    --ak-color-yellow-a3: #ffa7001d;
+    --ak-color-yellow-a4: #ff99002d;
+    --ak-color-yellow-a5: #ffa4003b;
+    --ak-color-yellow-a6: #ffb7004a;
+    --ak-color-yellow-a7: #fdc22e5f;
+    --ak-color-yellow-a8: #fdc63c7d;
+    --ak-color-yellow-a9: #ffc308e9;
+    --ak-color-yellow-a10: #ffc000dd;
+    --ak-color-yellow-a11: #ffc93ffe;
+    --ak-color-yellow-a12: #ffeabcfc;
 
-    --m-color-yellow-contrast: #2a2009;
+    --ak-color-yellow-contrast: #2a2009;
   }
 
   @supports (color: color(display-p3 1 1 1)) {
     @media (color-gamut: p3) {
       .dark,
-      .dark-theme {
-        --m-color-yellow-1: oklch(17.8% 0.011 86.05);
-        --m-color-yellow-2: oklch(21% 0.017 86.05);
-        --m-color-yellow-3: oklch(25.7% 0.041 86.05);
-        --m-color-yellow-4: oklch(29.5% 0.067 86.05);
-        --m-color-yellow-5: oklch(33.6% 0.076 86.05);
-        --m-color-yellow-6: oklch(38.7% 0.073 86.05);
-        --m-color-yellow-7: oklch(45.3% 0.077 86.05);
-        --m-color-yellow-8: oklch(53.7% 0.091 86.05);
-        --m-color-yellow-9: oklch(79.5% 0.162 86.05);
-        --m-color-yellow-10: oklch(76.2% 0.162 86.05);
-        --m-color-yellow-11: oklch(85.8% 0.157 86.05);
-        --m-color-yellow-12: oklch(93.3% 0.063 86.05);
+      .dark-theme,
+      [data-theme="dark"] {
+        --ak-color-yellow-1: oklch(17.8% 0.011 86.05);
+        --ak-color-yellow-2: oklch(21% 0.017 86.05);
+        --ak-color-yellow-3: oklch(25.7% 0.041 86.05);
+        --ak-color-yellow-4: oklch(29.5% 0.067 86.05);
+        --ak-color-yellow-5: oklch(33.6% 0.076 86.05);
+        --ak-color-yellow-6: oklch(38.7% 0.073 86.05);
+        --ak-color-yellow-7: oklch(45.3% 0.077 86.05);
+        --ak-color-yellow-8: oklch(53.7% 0.091 86.05);
+        --ak-color-yellow-9: oklch(79.5% 0.162 86.05);
+        --ak-color-yellow-10: oklch(76.2% 0.162 86.05);
+        --ak-color-yellow-11: oklch(85.8% 0.157 86.05);
+        --ak-color-yellow-12: oklch(93.3% 0.063 86.05);
 
-        --m-color-yellow-a1: color(display-p3 0.941 0.067 0 / 0.009);
-        --m-color-yellow-a2: color(display-p3 0.98 0.706 0 / 0.043);
-        --m-color-yellow-a3: color(display-p3 0.992 0.698 0 / 0.106);
-        --m-color-yellow-a4: color(display-p3 1 0.667 0 / 0.164);
-        --m-color-yellow-a5: color(display-p3 1 0.694 0 / 0.219);
-        --m-color-yellow-a6: color(display-p3 1 0.761 0.137 / 0.278);
-        --m-color-yellow-a7: color(display-p3 1 0.804 0.298 / 0.358);
-        --m-color-yellow-a8: color(display-p3 1 0.82 0.345 / 0.471);
-        --m-color-yellow-a9: color(display-p3 1 0.8 0.267 / 0.879);
-        --m-color-yellow-a10: color(display-p3 1 0.788 0.255 / 0.832);
-        --m-color-yellow-a11: color(display-p3 0.996 0.82 0.365 / 0.963);
-        --m-color-yellow-a12: color(display-p3 1 0.937 0.773 / 0.971);
+        --ak-color-yellow-a1: color(display-p3 0.941 0.067 0 / 0.009);
+        --ak-color-yellow-a2: color(display-p3 0.98 0.706 0 / 0.043);
+        --ak-color-yellow-a3: color(display-p3 0.992 0.698 0 / 0.106);
+        --ak-color-yellow-a4: color(display-p3 1 0.667 0 / 0.164);
+        --ak-color-yellow-a5: color(display-p3 1 0.694 0 / 0.219);
+        --ak-color-yellow-a6: color(display-p3 1 0.761 0.137 / 0.278);
+        --ak-color-yellow-a7: color(display-p3 1 0.804 0.298 / 0.358);
+        --ak-color-yellow-a8: color(display-p3 1 0.82 0.345 / 0.471);
+        --ak-color-yellow-a9: color(display-p3 1 0.8 0.267 / 0.879);
+        --ak-color-yellow-a10: color(display-p3 1 0.788 0.255 / 0.832);
+        --ak-color-yellow-a11: color(display-p3 0.996 0.82 0.365 / 0.963);
+        --ak-color-yellow-a12: color(display-p3 1 0.937 0.773 / 0.971);
 
-        --m-color-yellow-contrast: #2a2009;
+        --ak-color-yellow-contrast: #2a2009;
       }
     }
   }

@@ -1,23 +1,23 @@
 @layer base {
   .alku {
     &:where(.m-scaling-90) {
-      --m-scaling: 0.9;
+      --ak-scaling: 0.9;
     }
 
     &:where(.m-scaling-95) {
-      --m-scaling: 0.95;
+      --ak-scaling: 0.95;
     }
 
     &:where(.m-scaling-100) {
-      --m-scaling: 1;
+      --ak-scaling: 1;
     }
 
     &:where(.m-scaling-105) {
-      --m-scaling: 1.05;
+      --ak-scaling: 1.05;
     }
 
     &:where(.m-scaling-110) {
-      --m-scaling: 1.1;
+      --ak-scaling: 1.1;
     }
   }
 }

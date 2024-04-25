@@ -3,33 +3,33 @@
   .light,
   .light-theme,
   [data-theme="light"] {
-    --m-color-blue-1: #fcfdff;
-    --m-color-blue-2: #f5f9ff;
-    --m-color-blue-3: #eaf2ff;
-    --m-color-blue-4: #dcebff;
-    --m-color-blue-5: #cbe1ff;
-    --m-color-blue-6: #b8d4ff;
-    --m-color-blue-7: #9fc2fb;
-    --m-color-blue-8: #7baaf6;
-    --m-color-blue-9: #3b82f6;
-    --m-color-blue-10: #2c74e9;
-    --m-color-blue-11: #256cde;
-    --m-color-blue-12: #123164;
+    --ak-color-blue-1: #fcfdff;
+    --ak-color-blue-2: #f5f9ff;
+    --ak-color-blue-3: #eaf2ff;
+    --ak-color-blue-4: #dcebff;
+    --ak-color-blue-5: #cbe1ff;
+    --ak-color-blue-6: #b8d4ff;
+    --ak-color-blue-7: #9fc2fb;
+    --ak-color-blue-8: #7baaf6;
+    --ak-color-blue-9: #3b82f6;
+    --ak-color-blue-10: #2c74e9;
+    --ak-color-blue-11: #256cde;
+    --ak-color-blue-12: #123164;
 
-    --m-color-blue-a1: #0055ff03;
-    --m-color-blue-a2: #0066ff0a;
-    --m-color-blue-a3: #0062ff15;
-    --m-color-blue-a4: #006eff23;
-    --m-color-blue-a5: #006cff34;
-    --m-color-blue-a6: #0065ff47;
-    --m-color-blue-a7: #005df560;
-    --m-color-blue-a8: #005bee84;
-    --m-color-blue-a9: #005df3c4;
-    --m-color-blue-a10: #0057e5d3;
-    --m-color-blue-a11: #0053d8da;
-    --m-color-blue-a12: #002158ed;
+    --ak-color-blue-a1: #0055ff03;
+    --ak-color-blue-a2: #0066ff0a;
+    --ak-color-blue-a3: #0062ff15;
+    --ak-color-blue-a4: #006eff23;
+    --ak-color-blue-a5: #006cff34;
+    --ak-color-blue-a6: #0065ff47;
+    --ak-color-blue-a7: #005df560;
+    --ak-color-blue-a8: #005bee84;
+    --ak-color-blue-a9: #005df3c4;
+    --ak-color-blue-a10: #0057e5d3;
+    --ak-color-blue-a11: #0053d8da;
+    --ak-color-blue-a12: #002158ed;
 
-    --m-color-blue-contrast: #fff;
+    --ak-color-blue-contrast: #fff;
   }
 
   @supports (color: color(display-p3 1 1 1)) {
@@ -38,33 +38,33 @@
       .light,
       .light-theme,
       [data-theme="light"] {
-        --m-color-blue-1: oklch(99.3% 0.003 259.8);
-        --m-color-blue-2: oklch(98.2% 0.01 259.8);
-        --m-color-blue-3: oklch(96% 0.02 259.8);
-        --m-color-blue-4: oklch(93.7% 0.037 259.8);
-        --m-color-blue-5: oklch(90.6% 0.054 259.8);
-        --m-color-blue-6: oklch(86.4% 0.07 259.8);
-        --m-color-blue-7: oklch(80.9% 0.089 259.8);
-        --m-color-blue-8: oklch(73.4% 0.122 259.8);
-        --m-color-blue-9: oklch(62.3% 0.188 259.8);
-        --m-color-blue-10: oklch(58.2% 0.191 259.8);
-        --m-color-blue-11: oklch(55.4% 0.188 259.8);
-        --m-color-blue-12: oklch(32.3% 0.098 259.8);
+        --ak-color-blue-1: oklch(99.3% 0.003 259.8);
+        --ak-color-blue-2: oklch(98.2% 0.01 259.8);
+        --ak-color-blue-3: oklch(96% 0.02 259.8);
+        --ak-color-blue-4: oklch(93.7% 0.037 259.8);
+        --ak-color-blue-5: oklch(90.6% 0.054 259.8);
+        --ak-color-blue-6: oklch(86.4% 0.07 259.8);
+        --ak-color-blue-7: oklch(80.9% 0.089 259.8);
+        --ak-color-blue-8: oklch(73.4% 0.122 259.8);
+        --ak-color-blue-9: oklch(62.3% 0.188 259.8);
+        --ak-color-blue-10: oklch(58.2% 0.191 259.8);
+        --ak-color-blue-11: oklch(55.4% 0.188 259.8);
+        --ak-color-blue-12: oklch(32.3% 0.098 259.8);
 
-        --m-color-blue-a1: color(display-p3 0.024 0.349 1 / 0.012);
-        --m-color-blue-a2: color(display-p3 0.024 0.349 0.894 / 0.036);
-        --m-color-blue-a3: color(display-p3 0.008 0.357 0.953 / 0.079);
-        --m-color-blue-a4: color(display-p3 0.008 0.38 0.941 / 0.126);
-        --m-color-blue-a5: color(display-p3 0.008 0.357 0.941 / 0.189);
-        --m-color-blue-a6: color(display-p3 0.004 0.337 0.941 / 0.259);
-        --m-color-blue-a7: color(display-p3 0.004 0.306 0.898 / 0.35);
-        --m-color-blue-a8: color(display-p3 0.004 0.298 0.878 / 0.479);
-        --m-color-blue-a9: color(display-p3 0 0.282 0.902 / 0.695);
-        --m-color-blue-a10: color(display-p3 0 0.263 0.843 / 0.75);
-        --m-color-blue-a11: color(display-p3 0 0.251 0.796 / 0.773);
-        --m-color-blue-a12: color(display-p3 0 0.098 0.31 / 0.899);
+        --ak-color-blue-a1: color(display-p3 0.024 0.349 1 / 0.012);
+        --ak-color-blue-a2: color(display-p3 0.024 0.349 0.894 / 0.036);
+        --ak-color-blue-a3: color(display-p3 0.008 0.357 0.953 / 0.079);
+        --ak-color-blue-a4: color(display-p3 0.008 0.38 0.941 / 0.126);
+        --ak-color-blue-a5: color(display-p3 0.008 0.357 0.941 / 0.189);
+        --ak-color-blue-a6: color(display-p3 0.004 0.337 0.941 / 0.259);
+        --ak-color-blue-a7: color(display-p3 0.004 0.306 0.898 / 0.35);
+        --ak-color-blue-a8: color(display-p3 0.004 0.298 0.878 / 0.479);
+        --ak-color-blue-a9: color(display-p3 0 0.282 0.902 / 0.695);
+        --ak-color-blue-a10: color(display-p3 0 0.263 0.843 / 0.75);
+        --ak-color-blue-a11: color(display-p3 0 0.251 0.796 / 0.773);
+        --ak-color-blue-a12: color(display-p3 0 0.098 0.31 / 0.899);
 
-        --m-color-blue-contrast: #fff;
+        --ak-color-blue-contrast: #fff;
       }
     }
   }
@@ -72,33 +72,33 @@
   .dark,
   .dark-theme,
   [data-theme="dark"] {
-    --m-color-blue-1: #0b111c;
-    --m-color-blue-2: #101825;
-    --m-color-blue-3: #122647;
-    --m-color-blue-4: #123061;
-    --m-color-blue-5: #1a3c74;
-    --m-color-blue-6: #244985;
-    --m-color-blue-7: #2f589a;
-    --m-color-blue-8: #3868b8;
-    --m-color-blue-9: #3b82f6;
-    --m-color-blue-10: #2e75e8;
-    --m-color-blue-11: #85b5ff;
-    --m-color-blue-12: #d0e2ff;
+    --ak-color-blue-1: #0b111c;
+    --ak-color-blue-2: #101825;
+    --ak-color-blue-3: #122647;
+    --ak-color-blue-4: #123061;
+    --ak-color-blue-5: #1a3c74;
+    --ak-color-blue-6: #244985;
+    --ak-color-blue-7: #2f589a;
+    --ak-color-blue-8: #3868b8;
+    --ak-color-blue-9: #3b82f6;
+    --ak-color-blue-10: #2e75e8;
+    --ak-color-blue-11: #85b5ff;
+    --ak-color-blue-12: #d0e2ff;
 
-    --m-color-blue-a1: #0012fb0c;
-    --m-color-blue-a2: #0662f916;
-    --m-color-blue-a3: #166eff3a;
-    --m-color-blue-a4: #146dff56;
-    --m-color-blue-a5: #2778fd6b;
-    --m-color-blue-a6: #3883fd7d;
-    --m-color-blue-a7: #468dff93;
-    --m-color-blue-a8: #498dffb3;
-    --m-color-blue-a9: #3c86fef6;
-    --m-color-blue-a10: #317ffee7;
-    --m-color-blue-a11: #85b5ff;
-    --m-color-blue-a12: #d0e2ff;
+    --ak-color-blue-a1: #0012fb0c;
+    --ak-color-blue-a2: #0662f916;
+    --ak-color-blue-a3: #166eff3a;
+    --ak-color-blue-a4: #146dff56;
+    --ak-color-blue-a5: #2778fd6b;
+    --ak-color-blue-a6: #3883fd7d;
+    --ak-color-blue-a7: #468dff93;
+    --ak-color-blue-a8: #498dffb3;
+    --ak-color-blue-a9: #3c86fef6;
+    --ak-color-blue-a10: #317ffee7;
+    --ak-color-blue-a11: #85b5ff;
+    --ak-color-blue-a12: #d0e2ff;
 
-    --m-color-blue-contrast: #fff;
+    --ak-color-blue-contrast: #fff;
   }
 
   @supports (color: color(display-p3 1 1 1)) {
@@ -106,33 +106,33 @@
       .dark,
       .dark-theme,
       [data-theme="dark"] {
-        --m-color-blue-1: oklch(17.8% 0.025 259.8);
-        --m-color-blue-2: oklch(20.9% 0.029 259.8);
-        --m-color-blue-3: oklch(27.2% 0.066 259.8);
-        --m-color-blue-4: oklch(31.7% 0.095 259.8);
-        --m-color-blue-5: oklch(36.3% 0.104 259.8);
-        --m-color-blue-6: oklch(41.1% 0.109 259.8);
-        --m-color-blue-7: oklch(46.5% 0.118 259.8);
-        --m-color-blue-8: oklch(52.6% 0.136 259.8);
-        --m-color-blue-9: oklch(62.3% 0.188 259.8);
-        --m-color-blue-10: oklch(58.2% 0.188 259.8);
-        --m-color-blue-11: oklch(77.2% 0.126 259.8);
-        --m-color-blue-12: oklch(90.9% 0.045 259.8);
+        --ak-color-blue-1: oklch(17.8% 0.025 259.8);
+        --ak-color-blue-2: oklch(20.9% 0.029 259.8);
+        --ak-color-blue-3: oklch(27.2% 0.066 259.8);
+        --ak-color-blue-4: oklch(31.7% 0.095 259.8);
+        --ak-color-blue-5: oklch(36.3% 0.104 259.8);
+        --ak-color-blue-6: oklch(41.1% 0.109 259.8);
+        --ak-color-blue-7: oklch(46.5% 0.118 259.8);
+        --ak-color-blue-8: oklch(52.6% 0.136 259.8);
+        --ak-color-blue-9: oklch(62.3% 0.188 259.8);
+        --ak-color-blue-10: oklch(58.2% 0.188 259.8);
+        --ak-color-blue-11: oklch(77.2% 0.126 259.8);
+        --ak-color-blue-12: oklch(90.9% 0.045 259.8);
 
-        --m-color-blue-a1: color(display-p3 0 0.071 0.98 / 0.043);
-        --m-color-blue-a2: color(display-p3 0.118 0.412 1 / 0.08);
-        --m-color-blue-a3: color(display-p3 0.176 0.443 1 / 0.219);
-        --m-color-blue-a4: color(display-p3 0.176 0.431 1 / 0.324);
-        --m-color-blue-a5: color(display-p3 0.243 0.478 1 / 0.4);
-        --m-color-blue-a6: color(display-p3 0.302 0.525 1 / 0.471);
-        --m-color-blue-a7: color(display-p3 0.349 0.561 0.996 / 0.555);
-        --m-color-blue-a8: color(display-p3 0.365 0.569 1 / 0.677);
-        --m-color-blue-a9: color(display-p3 0.325 0.537 1 / 0.929);
-        --m-color-blue-a10: color(display-p3 0.29 0.51 1 / 0.87);
-        --m-color-blue-a11: color(display-p3 0.576 0.725 1 / 0.975);
-        --m-color-blue-a12: color(display-p3 0.839 0.894 1 / 0.988);
+        --ak-color-blue-a1: color(display-p3 0 0.071 0.98 / 0.043);
+        --ak-color-blue-a2: color(display-p3 0.118 0.412 1 / 0.08);
+        --ak-color-blue-a3: color(display-p3 0.176 0.443 1 / 0.219);
+        --ak-color-blue-a4: color(display-p3 0.176 0.431 1 / 0.324);
+        --ak-color-blue-a5: color(display-p3 0.243 0.478 1 / 0.4);
+        --ak-color-blue-a6: color(display-p3 0.302 0.525 1 / 0.471);
+        --ak-color-blue-a7: color(display-p3 0.349 0.561 0.996 / 0.555);
+        --ak-color-blue-a8: color(display-p3 0.365 0.569 1 / 0.677);
+        --ak-color-blue-a9: color(display-p3 0.325 0.537 1 / 0.929);
+        --ak-color-blue-a10: color(display-p3 0.29 0.51 1 / 0.87);
+        --ak-color-blue-a11: color(display-p3 0.576 0.725 1 / 0.975);
+        --ak-color-blue-a12: color(display-p3 0.839 0.894 1 / 0.988);
 
-        --m-color-blue-contrast: #fff;
+        --ak-color-blue-contrast: #fff;
       }
     }
   }

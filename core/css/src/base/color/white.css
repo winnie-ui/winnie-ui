@@ -1,18 +1,18 @@
 @layer base {
   :root {
-    --m-color-white: #fff;
+    --ak-color-white: #fff;
 
-    --m-color-white-a1: rgba(255, 255, 255, 0.05);
-    --m-color-white-a2: rgba(255, 255, 255, 0.1);
-    --m-color-white-a3: rgba(255, 255, 255, 0.15);
-    --m-color-white-a4: rgba(255, 255, 255, 0.2);
-    --m-color-white-a5: rgba(255, 255, 255, 0.3);
-    --m-color-white-a6: rgba(255, 255, 255, 0.4);
-    --m-color-white-a7: rgba(255, 255, 255, 0.5);
-    --m-color-white-a8: rgba(255, 255, 255, 0.6);
-    --m-color-white-a9: rgba(255, 255, 255, 0.7);
-    --m-color-white-a10: rgba(255, 255, 255, 0.8);
-    --m-color-white-a11: rgba(255, 255, 255, 0.9);
-    --m-color-white-a12: rgba(255, 255, 255, 0.95);
+    --ak-color-white-a1: rgba(255, 255, 255, 0.05);
+    --ak-color-white-a2: rgba(255, 255, 255, 0.1);
+    --ak-color-white-a3: rgba(255, 255, 255, 0.15);
+    --ak-color-white-a4: rgba(255, 255, 255, 0.2);
+    --ak-color-white-a5: rgba(255, 255, 255, 0.3);
+    --ak-color-white-a6: rgba(255, 255, 255, 0.4);
+    --ak-color-white-a7: rgba(255, 255, 255, 0.5);
+    --ak-color-white-a8: rgba(255, 255, 255, 0.6);
+    --ak-color-white-a9: rgba(255, 255, 255, 0.7);
+    --ak-color-white-a10: rgba(255, 255, 255, 0.8);
+    --ak-color-white-a11: rgba(255, 255, 255, 0.9);
+    --ak-color-white-a12: rgba(255, 255, 255, 0.95);
   }
 }
