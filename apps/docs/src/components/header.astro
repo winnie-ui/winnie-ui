@@ -1,27 +1,27 @@
 ---
-import type { Props } from '@astrojs/starlight/props';
-import Search from '@astrojs/starlight/components/Search.astro';
-import SocialIcons from '@astrojs/starlight/components/SocialIcons.astro';
+import type { Props } from "@astrojs/starlight/props";
+import Search from "@astrojs/starlight/components/Search.astro";
+import SocialIcons from "@astrojs/starlight/components/SocialIcons.astro";
 ---
 
 <header>
-    <SocialIcons {...Astro.props} />
-    <Search {...Astro.props}><slot /></Search>
+  <SocialIcons {...Astro.props} />
+  <Search {...Astro.props}><slot /></Search>
 </header>
 
 <script>
- const body = document.body;
+  const body = document.body;
 
- body.setAttribute("data-accent-color", "pink");
- body.setAttribute("data-scaling", "100%");
- body.classList.add("alku");
+  body.setAttribute("data-accent-color", "pink");
+  body.setAttribute("data-scaling", "100%");
+  body.classList.add("alku");
 </script>
 
 <style>
-    header {
-        align-items: center;
-        display: flex;
-        gap: var(--ak-space-4);
-        justify-content: flex-end;
-    }
+  header {
+    align-items: center;
+    display: flex;
+    gap: var(--ak-space-4);
+    justify-content: flex-end;
+  }
 </style>
