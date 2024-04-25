@@ -1,1 +1,27 @@
 @import "@alku/core-css";
+
+.alku {
+  --sl-color-bg: var(--ak-color-grey-background);
+  --sl-color-bg-nav: var(--ak-color-grey-background);
+  --sl-color-bg-sidebar: var(--ak-color-grey-background);
+  --sl-color-white: var(--ak-color-grey-12);
+  --sl-color-text-accent: var(--ak-accent-color-11);
+  --sl-font: var(--ak-font-family-sans);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--ak-font-weight-medium);
+  font-family: var(--ak-font-family-serif);
+  letter-spacing: var(--ak-letter-spacing-1);
+}
+
+/* overrides heading styles in markdown content */
+.sl-markdown-content :is(h1, h2, h3, h4, h5, h6):not(:where(.not-content *)) {
+  font-weight: var(--ak-font-weight-medium);
+  letter-spacing: var(--ak-letter-spacing-1);
+}

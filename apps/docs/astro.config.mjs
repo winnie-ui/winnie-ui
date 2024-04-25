@@ -6,7 +6,20 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "Alku",
-      customCss: ["./src/global.css"],
+      customCss: [
+        "./src/global.css",
+        "@fontsource/playfair-display/500.css",
+        "@fontsource/playfair-display/700.css",
+        "@fontsource/playfair-display/900.css",
+        "@fontsource/inter/400.css",
+        "@fontsource/inter/500.css",
+        "@fontsource/inter/700.css",
+        "@fontsource/inter/900.css",
+        "@fontsource/ibm-plex-mono/500.css",
+      ],
+      components: {
+        Header: "./src/components/header.astro",
+      },
       social: {
         github: "https://github.com/withastro/starlight",
       },

@@ -7,7 +7,7 @@
     --ak-bezier-1: cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  @keyframes m-fade-in {
+  @keyframes ak-fade-in {
     from {
       opacity: 0;
     }
@@ -17,7 +17,7 @@
     }
   }
 
-  @keyframes m-fade-out {
+  @keyframes ak-fade-out {
     from {
       opacity: 1;
     }
@@ -27,7 +27,7 @@
     }
   }
 
-  @keyframes m-slide-up {
+  @keyframes ak-slide-up {
     from {
       transform: translateY(6px) scale(0.97);
     }
@@ -37,7 +37,7 @@
     }
   }
 
-  @keyframes m-slide-down {
+  @keyframes ak-slide-down {
     from {
       transform: translateY(-6px) scale(0.97);
     }
@@ -47,7 +47,7 @@
     }
   }
 
-  @keyframes m-slide-left {
+  @keyframes ak-slide-left {
     from {
       transform: translateX(6px) scale(0.97);
     }
@@ -57,7 +57,7 @@
     }
   }
 
-  @keyframes m-slide-right {
+  @keyframes ak-slide-right {
     from {
       transform: translateX(-6px) scale(0.97);
     }
@@ -68,26 +68,26 @@
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    .m-popper {
+    .ak-popper {
       animation-timing-function: var(--ak-transition-function-1);
 
       &:where([data-state="delayed-open"], [data-state="open"]) {
         animation-duration: var(--ak-duration-3);
 
         &:where([data-side="top"]) {
-          animation-name: m-slide-up, m-fade-in;
+          animation-name: ak-slide-up, ak-fade-in;
         }
 
         &:where([data-side="bottom"]) {
-          animation-name: m-slide-down, m-fade-in;
+          animation-name: ak-slide-down, ak-fade-in;
         }
 
         &:where([data-side="left"]) {
-          animation-name: m-slide-left, m-fade-in;
+          animation-name: ak-slide-left, ak-fade-in;
         }
 
         &:where([data-side="right"]) {
-          animation-name: m-slide-right, m-fade-in;
+          animation-name: ak-slide-right, ak-fade-in;
         }
       }
 
@@ -101,7 +101,7 @@
             [data-side="left"],
             [data-side="right"]
           ) {
-          animation-name: m-slide-up, m-fade-out;
+          animation-name: ak-slide-up, ak-fade-out;
         }
       }
     }

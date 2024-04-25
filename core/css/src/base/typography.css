@@ -8,6 +8,15 @@
     --ak-font-weight-medium: 500;
     --ak-font-weight-bold: 700;
     --ak-font-weight-extra-bold: 900;
+
+    --ak-letter-spacing-1: 0.0025em;
+    --ak-letter-spacing-2: 0em;
+    --ak-letter-spacing-3: -0.0025em;
+    --ak-letter-spacing-4: -0.005em;
+    --ak-letter-spacing-5: -0.00625em;
+    --ak-letter-spacing-6: -0.0075em;
+    --ak-letter-spacing-7: -0.01em;
+    --ak-letter-spacing-8: -0.025em;
   }
 
   .alku {
