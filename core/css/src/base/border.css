@@ -1,3 +1,10 @@
+/*
+ * Portions of this file are based on code from radix-ui themes.
+ * MIT Licensed, Copyright (c) 2023 WorkOS.
+ *
+ * Credits to the WorkOS team:
+ * https://github.com/radix-ui/themes/blob/main/packages/radix-ui-themes/src/styles/tokens/radius.css
+ */
 @layer base {
   :root {
     --ak-border-width-1: 0.5px;

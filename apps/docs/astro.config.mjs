@@ -8,14 +8,11 @@ export default defineConfig({
       title: "Alku",
       customCss: [
         "./src/global.css",
-        "@fontsource/playfair-display/500.css",
-        "@fontsource/playfair-display/700.css",
-        "@fontsource/playfair-display/900.css",
-        "@fontsource/inter/400.css",
-        "@fontsource/inter/500.css",
-        "@fontsource/inter/700.css",
-        "@fontsource/inter/900.css",
-        "@fontsource/ibm-plex-mono/500.css",
+        "@fontsource/geist-sans/400.css",
+        "@fontsource/geist-sans/500.css",
+        "@fontsource/geist-sans/700.css",
+        "@fontsource/geist-sans/900.css",
+        "@fontsource/geist-mono/500.css",
       ],
       components: {
         Header: "./src/components/header.astro",
@@ -27,16 +24,12 @@ export default defineConfig({
       },
       sidebar: [
         {
-          label: "What is Alku",
-          link: "/what-is-alku",
-        },
-        {
           label: "Overview",
           autogenerate: { directory: "overview" },
         },
         {
-          label: "Reference",
-          autogenerate: { directory: "reference" },
+          label: "Concepts",
+          autogenerate: { directory: "concepts" },
         },
       ],
     }),

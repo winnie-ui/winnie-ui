@@ -1,4 +1,4 @@
-@import "@alku/core-css";
+@import "@alku/css";
 
 .alku {
   --sl-color-black: var(--ak-color-grey-background);
@@ -13,6 +13,9 @@
   --sl-color-text: var(--ak-color-grey-12);
   --sl-color-text-accent: var(--ak-accent-color-11);
   --sl-font: var(--ak-font-family-sans);
+  --sl-text-h2: var(--ak-font-size-7);
+  --sl-text-h3: var(--ak-font-size-5);
+  --sl-text-h4: var(--ak-font-size-4);
 }
 
 h1,
@@ -25,9 +28,24 @@ h6 {
   font-family: var(--ak-font-family-serif);
 }
 
+/* anchor hover */
+.sl-markdown-content a:hover:not(:where(.not-content *)) {
+  color: var(--sl-color-text-accent);
+  text-decoration: underline;
+}
+
 /* content panel */
 .content-panel + .content-panel {
   border-top: none;
+}
+
+/* code blocks */
+.alku .expressive-code .frame {
+  --code-background: var(--ak-color-grey-2);
+  --ec-brdRad: var(--ak-border-radius-3);
+  --ec-tm-insBg: var(--ak-color-green-a2);
+  --ec-tm-insBrdCol: var(--ak-color-green-5);
+  --header-border-radius: var(--ak-border-radius-3);
 }
 
 /* table of contents */

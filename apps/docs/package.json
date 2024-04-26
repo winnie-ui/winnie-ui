@@ -11,12 +11,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@alku/core-css": "workspace:*",
+    "@alku/css": "workspace:*",
     "@astrojs/check": "0.5.10",
     "@astrojs/starlight": "0.21.5",
-    "@fontsource/ibm-plex-mono": "5.0.13",
-    "@fontsource/inter": "5.0.18",
-    "@fontsource/playfair-display": "5.0.24",
+    "@fontsource/geist-mono": "5.0.3",
+    "@fontsource/geist-sans": "5.0.3",
     "astro": "4.3.5",
     "sharp": "0.33.3",
     "typescript": "5.4.5"

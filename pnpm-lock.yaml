@@ -32,7 +32,7 @@ importers:
 
   apps/docs:
     dependencies:
-      '@alku/core-css':
+      '@alku/css':
         specifier: workspace:*
         version: link:../../core/css
       '@astrojs/check':
@@ -41,15 +41,15 @@ importers:
       '@astrojs/starlight':
         specifier: 0.21.5
         version: 0.21.5(astro@4.3.5(@types/node@20.12.7)(typescript@5.4.5))
+      '@fontsource/geist-mono':
+        specifier: 5.0.3
+        version: 5.0.3
+      '@fontsource/geist-sans':
+        specifier: 5.0.3
+        version: 5.0.3
       '@fontsource/ibm-plex-mono':
         specifier: 5.0.13
         version: 5.0.13
-      '@fontsource/inter':
-        specifier: 5.0.18
-        version: 5.0.18
-      '@fontsource/playfair-display':
-        specifier: 5.0.24
-        version: 5.0.24
       astro:
         specifier: 4.3.5
         version: 4.3.5(@types/node@20.12.7)(typescript@5.4.5)
@@ -663,14 +663,14 @@ packages:
   '@expressive-code/plugin-text-markers@0.33.5':
     resolution: {integrity: sha512-JxSHL1MGrJAPNaUMjFXex3K+9NJDbfew9H6PmX8LQ+fm9VNQdtBYTAz/x7nqOk7bkTrtAZK5RfDqUfb8U5M+2A==}
 
+  '@fontsource/geist-mono@5.0.3':
+    resolution: {integrity: sha512-ekY5FNiK7aMxan/c6lgVQa/rIwQ/AMEJZJWY7768jBrLVdkrCxfEfCe1ePpe7C3JnySy7c9R6HC4Xh4ksfjTaw==}
+
+  '@fontsource/geist-sans@5.0.3':
+    resolution: {integrity: sha512-oGwoSIqNPMvjtCwj1lZaEr47MeiG27XPhypwkF643u1TQduvwbm3V3hYB01JekeaT34SAGP4I1h+WCdRpJkcwA==}
+
   '@fontsource/ibm-plex-mono@5.0.13':
     resolution: {integrity: sha512-gtlMmvk//2AgDEZDFsoL5z9mgW3ZZg/9SC7pIfDwNKp5DtZpApgqd1Fua3HhPwYRIHrT76IQ1tMTzQKLEGtJGQ==}
-
-  '@fontsource/inter@5.0.18':
-    resolution: {integrity: sha512-YCsoYPTcs713sI7tLtxaPrIhXAXvEetGg5Ry02ivA8qUOb3fQHojbK/X9HLD5OOKvFUNR2Ynkwb1kR1hVKQHpw==}
-
-  '@fontsource/playfair-display@5.0.24':
-    resolution: {integrity: sha512-r+h+PWl8R4dIQ5FikbwUGBF/DPsozH7YcfCxEcUm9SthLCcdKT53KH7iNGhF8RTCV325dyu/JjrA3G3JPUl5hQ==}
 
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
@@ -4476,11 +4476,11 @@ snapshots:
       hastscript: 7.2.0
       unist-util-visit-parents: 5.1.3
 
+  '@fontsource/geist-mono@5.0.3': {}
+
+  '@fontsource/geist-sans@5.0.3': {}
+
   '@fontsource/ibm-plex-mono@5.0.13': {}
-
-  '@fontsource/inter@5.0.18': {}
-
-  '@fontsource/playfair-display@5.0.24': {}
 
   '@humanwhocodes/config-array@0.11.14':
     dependencies:

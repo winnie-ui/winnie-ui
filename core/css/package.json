@@ -1,5 +1,5 @@
 {
-  "name": "@alku/core-css",
+  "name": "@alku/css",
   "version": "0.0.1",
   "description": "css tokens and styles for building web applications",
   "author": "Adam Aho",

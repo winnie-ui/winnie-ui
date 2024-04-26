@@ -1,8 +1,15 @@
+/*
+ * Portions of this file are based on code from radix-ui themes.
+ * MIT Licensed, Copyright (c) 2023 WorkOS.
+ *
+ * Credits to the WorkOS team:
+ * https://github.com/radix-ui/themes/blob/main/packages/radix-ui-themes/src/styles/tokens/typography.css
+ */
 @layer base {
   :root {
-    --ak-font-family-sans: "Inter", sans-serif;
-    --ak-font-family-serif: "Playfair Display", serif;
-    --ak-font-family-mono: "IBM Plex Mono", monospace;
+    --ak-font-family-sans: "Geist Sans", sans-serif;
+    --ak-font-family-serif: "Geist Sans", serif;
+    --ak-font-family-mono: "Geist Mono", monospace;
 
     --ak-font-weight-normal: 400;
     --ak-font-weight-medium: 500;
