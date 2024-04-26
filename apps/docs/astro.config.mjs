@@ -27,6 +27,10 @@ export default defineConfig({
       },
       sidebar: [
         {
+          label: "What is Alku",
+          link: "/what-is-alku",
+        },
+        {
           label: "Overview",
           autogenerate: { directory: "overview" },
         },

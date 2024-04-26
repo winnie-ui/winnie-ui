@@ -7,7 +7,10 @@
   --sl-color-bg-sidebar: var(--ak-color-grey-background);
   --sl-color-gray-2: var(--ak-color-grey-9);
   --sl-color-gray-5: var(--ak-color-grey-5);
-  --sl-color-white: var(--ak-color-grey-12);
+  --sl-color-hairline-shade: var(--ak-color-grey-4);
+  --sl-color-hairline-shade: var(--ak-color-grey-4);
+  --sl-color-white: var(--ak-color-white);
+  --sl-color-text: var(--ak-color-grey-12);
   --sl-color-text-accent: var(--ak-accent-color-11);
   --sl-font: var(--ak-font-family-sans);
 }
@@ -19,11 +22,18 @@ h4,
 h5,
 h6 {
   font-weight: var(--ak-font-weight-bold);
-  font-family: var(--ak-font-family-sans);
+  font-family: var(--ak-font-family-serif);
+}
+
+/* content panel */
+.content-panel + .content-panel {
+  border-top: none;
 }
 
 /* table of contents */
 .right-sidebar {
+  border-left: none;
+
   h2 {
     color: var(--ak-color-grey-12);
     font-size: var(--ak-font-size-3);
