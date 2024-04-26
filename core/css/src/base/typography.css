@@ -30,14 +30,14 @@
     --ak-font-size-8: calc(35px * var(--ak-scaling));
     --ak-font-size-9: calc(60px * var(--ak-scaling));
 
-    --ak-lint-height-1: calc(16px * var(--ak-scaling));
-    --ak-lint-height-2: calc(20px * var(--ak-scaling));
-    --ak-lint-height-3: calc(24px * var(--ak-scaling));
-    --ak-lint-height-4: calc(26px * var(--ak-scaling));
-    --ak-lint-height-5: calc(28px * var(--ak-scaling));
-    --ak-lint-height-6: calc(30px * var(--ak-scaling));
-    --ak-lint-height-7: calc(36px * var(--ak-scaling));
-    --ak-lint-height-8: calc(40px * var(--ak-scaling));
-    --ak-lint-height-9: calc(60px * var(--ak-scaling));
+    --ak-line-height-1: calc(16px * var(--ak-scaling));
+    --ak-line-height-2: calc(20px * var(--ak-scaling));
+    --ak-line-height-3: calc(24px * var(--ak-scaling));
+    --ak-line-height-4: calc(26px * var(--ak-scaling));
+    --ak-line-height-5: calc(28px * var(--ak-scaling));
+    --ak-line-height-6: calc(30px * var(--ak-scaling));
+    --ak-line-height-7: calc(36px * var(--ak-scaling));
+    --ak-line-height-8: calc(40px * var(--ak-scaling));
+    --ak-line-height-9: calc(60px * var(--ak-scaling));
   }
 }

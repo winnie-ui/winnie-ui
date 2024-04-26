@@ -19,17 +19,16 @@ export default defineConfig({
       ],
       components: {
         Header: "./src/components/header.astro",
+        PageTitle: "./src/components/page-title.astro",
       },
+      pagination: false,
       social: {
         github: "https://github.com/withastro/starlight",
       },
       sidebar: [
         {
-          label: "Guides",
-          items: [
-            // Each item here is one entry in the navigation menu.
-            { label: "Example Guide", link: "/guides/example/" },
-          ],
+          label: "Overview",
+          autogenerate: { directory: "overview" },
         },
         {
           label: "Reference",

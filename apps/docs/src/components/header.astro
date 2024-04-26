@@ -6,13 +6,13 @@ import SocialIcons from "@astrojs/starlight/components/SocialIcons.astro";
 
 <header>
   <SocialIcons {...Astro.props} />
-  <Search {...Astro.props}><slot /></Search>
+  <Search {...Astro.props} class="site-search"><slot /></Search>
 </header>
 
 <script>
   const body = document.body;
 
-  body.setAttribute("data-accent-color", "pink");
+  body.setAttribute("data-accent-color", "orange");
   body.setAttribute("data-scaling", "100%");
   body.classList.add("alku");
 </script>
