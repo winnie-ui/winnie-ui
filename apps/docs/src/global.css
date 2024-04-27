@@ -43,9 +43,32 @@ h6 {
 .alku .expressive-code .frame {
   --code-background: var(--ak-color-grey-2);
   --ec-brdRad: var(--ak-border-radius-3);
-  --ec-tm-insBg: var(--ak-color-green-a2);
-  --ec-tm-insBrdCol: var(--ak-color-green-5);
+  --ec-brdCol: var(--ak-color-grey-6);
+  --ec-frm-edTabBarBrdCol: var(--ak-color-grey-6);
+  --ec-frm-edActTabIndBtmCol: var(--ak-color-grey-6);
+  --ec-frm-edActTabBrdCol: var(--ak-color-grey-6);
+  --ec-frm-edTabBarBrdBtmCol: var(--ak-color-grey-6);
+  --ec-tm-insBg: var(--ak-color-grey-a3);
+  --ec-tm-insBrdCol: var(--ak-color-grey-6);
   --header-border-radius: var(--ak-border-radius-3);
+}
+
+/* sidebar nav */
+nav.sidebar {
+  .sidebar-pane {
+    border-color: var(--sl-color-hairline);
+
+    ul {
+      li {
+        a {
+          &[aria-current="page"] {
+            background: transparent;
+            color: var(--ak-accent-color-11);
+          }
+        }
+      }
+    }
+  }
 }
 
 /* table of contents */

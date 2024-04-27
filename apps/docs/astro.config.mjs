@@ -1,5 +1,13 @@
 import starlight from "@astrojs/starlight";
+import { ExpressiveCodeTheme } from "@astrojs/starlight/expressive-code";
 import { defineConfig } from "astro/config";
+import fs from "node:fs";
+
+const jsoncString = fs.readFileSync(
+  new URL(`./vesper.jsonc`, import.meta.url),
+  "utf-8",
+);
+const vesper = ExpressiveCodeTheme.fromJSONString(jsoncString);
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,6 +22,9 @@ export default defineConfig({
         "@fontsource/geist-sans/900.css",
         "@fontsource/geist-mono/500.css",
       ],
+      expressiveCode: {
+        themes: [vesper],
+      },
       components: {
         Header: "./src/components/header.astro",
         PageTitle: "./src/components/page-title.astro",
