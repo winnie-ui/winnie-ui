@@ -1,4 +1,83 @@
 ---
 title: Layers
-description: Install Alku CSS and start building your next application in minutes.
+description: Control the cascade of Alku CSS with layers
 ---
+
+All tokens and styles in Alku CSS make use of a concept in CSS called [Layers](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) which allow Alku CSS to define styles in a specific order of precedence.
+
+Alku CSS defines tokens an styles in the following order from least to most precedence:
+
+```css title="layer.css"
+@layer reset, base, component;
+```
+
+Any styles defined outside of the layer will take precedence. This means that in your apps, if there are styles that you don't quite like, you can easily override them with no additional specificity.
+
+## Reset
+
+The reset layer is used to remove any default browser styles that get in the way. This means, elements like buttons and inputs will not have any styles by default. This is similar to how tailwind [preflight](https://unpkg.com/tailwindcss@3.4.3/src/css/preflight.css) styles are configured.
+
+### Default margins are removed
+
+The reset layer removes margins from all of the heading and paragraph elements. Often times these user-agent margins conflict with the spacing scale provided by Alku. So we remove these margins to make styling these elements more predictable.
+
+```css title="reset.css"
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+```
+
+### Box Sizing
+
+All elements and pseudo elements are reset to `border-box`. This allows padding and margin to be applied to elements without changing the overall dimensions of the elements. For example, an element that has a height of 100px and a width of 100px will maintain those dimensions regardless of the amount of padding or width of the border applied to it.
+
+```css title="reset.css"
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+```
+
+## Base
+
+The base layer is where most of the tokens and base styles are applied. This includes common tokens like animation, borders, colors, spacing, scaling, shadows and typography. These are the styles that you will spend most of your time using while building your components and apps. All styles defined on the base layer are css variables.
+
+```css title="space.css"
+@layer base {
+  .alku {
+    --ak-space-1: calc(2px * var(--ak-scaling));
+    --ak-space-2: calc(4px * var(--ak-scaling));
+    --ak-space-3: calc(8px * var(--ak-scaling));
+    --ak-space-4: calc(12px * var(--ak-scaling));
+    --ak-space-5: calc(16px * var(--ak-scaling));
+    --ak-space-6: calc(24px * var(--ak-scaling));
+    --ak-space-7: calc(32px * var(--ak-scaling));
+    --ak-space-8: calc(40px * var(--ak-scaling));
+    --ak-space-9: calc(48px * var(--ak-scaling));
+    --ak-space-10: calc(64px * var(--ak-scaling));
+  }
+}
+```
+
+## Components
+
+The components layer is reserved for styles that pertain to design system components like buttons, selects and inputs.
+
+```css title="button.css"
+@layer component {
+  .ak-button,
+  [ak-button] {
+    background: var(--ak-color-purple-9);
+    color: var(--ak-color-purple-contrast);
+    padding-block: var(--ak-space-1);
+    padding-inline: var(--ak-space-3);
+  }
+}
+```
