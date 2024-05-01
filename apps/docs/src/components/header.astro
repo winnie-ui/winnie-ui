@@ -1,13 +1,16 @@
 ---
 import type { Props } from "@astrojs/starlight/props";
+import ThemeSelect from "@astrojs/starlight/components/ThemeSelect.astro";
 import Search from "@astrojs/starlight/components/Search.astro";
 import SocialIcons from "@astrojs/starlight/components/SocialIcons.astro";
 ---
 
-<header>
+<h3>ALKU</h3>
+<div class="">
+  <ThemeSelect {...Astro.props} />
   <SocialIcons {...Astro.props} />
   <Search {...Astro.props} class="site-search"><slot /></Search>
-</header>
+</div>
 
 <script>
   const body = document.body;
@@ -18,10 +21,11 @@ import SocialIcons from "@astrojs/starlight/components/SocialIcons.astro";
 </script>
 
 <style>
-  header {
+  div {
     align-items: center;
     display: flex;
-    gap: var(--ak-space-4);
     justify-content: flex-end;
+    flex: 1;
+    gap: var(--ak-space-3);
   }
 </style>

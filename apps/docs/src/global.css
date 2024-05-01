@@ -9,9 +9,10 @@
   --sl-color-gray-5: var(--ak-color-grey-5);
   --sl-color-hairline-shade: var(--ak-color-grey-4);
   --sl-color-hairline-shade: var(--ak-color-grey-4);
-  --sl-color-white: var(--ak-color-white);
+  --sl-color-white: var(--ak-color-grey-12);
   --sl-color-text: var(--ak-color-grey-12);
   --sl-color-text-accent: var(--ak-accent-color-11);
+  --sl-color-bg-inline-code: var(--ak-accent-color-a4);
   --sl-font: var(--ak-font-family-sans);
   --sl-text-h2: var(--ak-font-size-7);
   --sl-text-h3: var(--ak-font-size-5);
@@ -39,6 +40,23 @@ h6 {
   border-top: none;
 }
 
+/* header */
+.header {
+  align-items: center;
+  display: flex;
+}
+
+/* headings in markdown */
+.sl-markdown-content :is(h1, h2, h3, h4, h5, h6):not(:where(.not-content *)) {
+  color: var(--sl-color-text);
+}
+
+/* inline code */
+.sl-markdown-content code:not(:where(.not-content *)) {
+  border-radius: var(--ak-border-radius-2);
+  color: var(--ak-accent-color-11);
+}
+
 /* code blocks */
 .alku .expressive-code .frame {
   --code-background: var(--ak-color-grey-2);
@@ -50,6 +68,7 @@ h6 {
   --ec-frm-edTabBarBrdBtmCol: var(--ak-color-grey-6);
   --ec-tm-insBg: var(--ak-color-grey-a3);
   --ec-tm-insBrdCol: var(--ak-color-grey-6);
+  --ec-frm-frameBoxShdCssVal: none;
   --header-border-radius: var(--ak-border-radius-3);
 }
 
@@ -58,17 +77,32 @@ nav.sidebar {
   .sidebar-pane {
     border-color: var(--sl-color-hairline);
 
+    .large {
+      color: var(--sl-color-text);
+    }
+
     ul {
       li {
         a {
+          &:hover {
+            color: var(--sl-color-text);
+          }
+
           &[aria-current="page"] {
             background: transparent;
+            font-weight: var(--ak-font-weight-normal);
             color: var(--ak-accent-color-11);
           }
         }
       }
     }
   }
+}
+
+/* tabs */
+.tab:where(.astro-ryr4kxdx)
+  :where(.astro-ryr4kxdx)[role="tab"][aria-selected="true"] {
+  color: var(--ak-color-grey-12);
 }
 
 /* table of contents */
@@ -85,6 +119,10 @@ nav.sidebar {
     li {
       a {
         color: var(--ak-color-grey-10);
+
+        &:hover {
+          color: var(--ak-color-grey-11);
+        }
 
         &[aria-current="true"] {
           color: var(--ak-color-grey-12);

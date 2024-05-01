@@ -1,0 +1,31 @@
+---
+title: Scaling
+description: Change the density of your application.
+---
+
+Often times users have a preference for the percieved size of elements in their application. Alku supports this concept via the `data-scaling` attribute. The scaling attribute modifies css values which affect the overall density of the layout in the application.
+
+```tsx title="root.tsx" ins="data-scaling="100%""
+export default function Root() {
+  return (
+    <html>
+      <head></head>
+      <body class="alku" data-accent-color="blue" data-scaling="100%">
+        <App />
+      </body>
+    </html>
+  );
+}
+```
+
+insert table here for all of the available scales
+
+## Scaling Factor
+
+Alku provides a scaling factor token that you can use to create custom components that adhere to the overall density of the application. When you modiy `data-scaling` this scaling factor will be updated.
+
+```css title="button.css" ins="var(--ak-scaling)"
+.my-button {
+  height: calc(32px * var(--ak-scaling));
+}
+```
