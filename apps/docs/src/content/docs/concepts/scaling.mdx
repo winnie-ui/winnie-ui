@@ -18,8 +18,6 @@ export default function Root() {
 }
 ```
 
-insert table here for all of the available scales
-
 ## Scaling Factor
 
 Alku provides a scaling factor token that you can use to create custom components that adhere to the overall density of the application. When you modiy `data-scaling` this scaling factor will be updated.
@@ -29,3 +27,13 @@ Alku provides a scaling factor token that you can use to create custom component
   height: calc(32px * var(--ak-scaling));
 }
 ```
+
+By default, Alku supports the following scaling factors:
+
+| Scaling | Factor |
+| ------- | ------ |
+| 90%     | 0.90   |
+| 95%     | 0.95   |
+| 100%    | 1.00   |
+| 105%    | 1.05   |
+| 110%    | 1.10   |
