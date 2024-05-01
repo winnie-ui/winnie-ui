@@ -16,10 +16,10 @@ export default defineConfig({
       title: "Alku",
       customCss: [
         "./src/global.css",
-        "@fontsource/geist-sans/400.css",
-        "@fontsource/geist-sans/500.css",
-        "@fontsource/geist-sans/700.css",
-        "@fontsource/geist-sans/900.css",
+        "@fontsource/manrope/400.css",
+        "@fontsource/manrope/500.css",
+        "@fontsource/manrope/700.css",
+        "@fontsource/manrope/800.css",
         "@fontsource/geist-mono/500.css",
       ],
       expressiveCode: {
