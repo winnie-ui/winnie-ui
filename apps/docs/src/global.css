@@ -1,5 +1,9 @@
 @import "@alku/css";
 
+:root {
+  --sl-font: var(--ak-font-family-sans);
+}
+
 .alku {
   --sl-color-black: var(--ak-color-grey-background);
   --sl-color-bg: var(--ak-color-grey-background);
@@ -12,8 +16,7 @@
   --sl-color-white: var(--ak-color-grey-12);
   --sl-color-text: var(--ak-color-grey-12);
   --sl-color-text-accent: var(--ak-accent-color-11);
-  --sl-color-bg-inline-code: var(--ak-accent-color-a4);
-  --sl-font: var(--ak-font-family-sans);
+  --sl-color-bg-inline-code: var(--ak-accent-color-a3);
   --sl-text-h2: var(--ak-font-size-7);
   --sl-text-h3: var(--ak-font-size-5);
   --sl-text-h4: var(--ak-font-size-4);
@@ -109,8 +112,6 @@ nav.sidebar {
 .sl-markdown-content table:not(:where(.not-content *)) {
   display: table;
   width: 100%;
-
-  border-radius: var(--ak-border-radius-3);
 }
 
 .sl-markdown-content thead tr:not(:where(.not-content *)) {

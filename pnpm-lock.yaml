@@ -44,9 +44,9 @@ importers:
       '@fontsource/geist-mono':
         specifier: 5.0.3
         version: 5.0.3
-      '@fontsource/manrope':
-        specifier: 5.0.20
-        version: 5.0.20
+      '@fontsource/geist-sans':
+        specifier: 5.0.3
+        version: 5.0.3
       astro:
         specifier: 4.3.5
         version: 4.3.5(@types/node@20.12.7)(typescript@5.4.5)
@@ -663,8 +663,8 @@ packages:
   '@fontsource/geist-mono@5.0.3':
     resolution: {integrity: sha512-ekY5FNiK7aMxan/c6lgVQa/rIwQ/AMEJZJWY7768jBrLVdkrCxfEfCe1ePpe7C3JnySy7c9R6HC4Xh4ksfjTaw==}
 
-  '@fontsource/manrope@5.0.20':
-    resolution: {integrity: sha512-FW1t+WAvJroALa7zgd5S2dn3zy/sxxHhry/OwDGKmO7Be/zlLBIVaWW+cjyfyA6a6zWEx5YQ4OFfYlA6An5osQ==}
+  '@fontsource/geist-sans@5.0.3':
+    resolution: {integrity: sha512-oGwoSIqNPMvjtCwj1lZaEr47MeiG27XPhypwkF643u1TQduvwbm3V3hYB01JekeaT34SAGP4I1h+WCdRpJkcwA==}
 
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
@@ -4472,7 +4472,7 @@ snapshots:
 
   '@fontsource/geist-mono@5.0.3': {}
 
-  '@fontsource/manrope@5.0.20': {}
+  '@fontsource/geist-sans@5.0.3': {}
 
   '@humanwhocodes/config-array@0.11.14':
     dependencies:

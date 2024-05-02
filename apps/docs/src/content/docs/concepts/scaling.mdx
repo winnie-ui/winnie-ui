@@ -3,14 +3,18 @@ title: Scaling
 description: Change the density of your application.
 ---
 
+import { TabItem, Tabs } from "@astrojs/starlight/components";
+
+import MovieList from "../../../components/movie-list.astro";
+
 Often times users have a preference for the percieved size of elements in their application. Alku supports this concept via the `data-scaling` attribute. The scaling attribute modifies css values which affect the overall density of the layout in the application.
 
-```tsx title="root.tsx" ins="data-scaling="100%""
+```tsx title="root.tsx" ins="class="alku"" ins="data-scaling="100%""
 export default function Root() {
   return (
     <html>
       <head></head>
-      <body class="alku" data-accent-color="blue" data-scaling="100%">
+      <body class="alku" data-scaling="100%">
         <App />
       </body>
     </html>
@@ -20,15 +24,7 @@ export default function Root() {
 
 ## Scaling Factor
 
-Alku provides a scaling factor token that you can use to create custom components that adhere to the overall density of the application. When you modiy `data-scaling` this scaling factor will be updated.
-
-```css title="button.css" ins="var(--ak-scaling)"
-.my-button {
-  height: calc(32px * var(--ak-scaling));
-}
-```
-
-By default, Alku supports the following scaling factors:
+Alku provides a scaling factor token that you can use to create custom components that adhere to the overall density of your application.
 
 | Scaling | Factor |
 | ------- | ------ |
@@ -37,3 +33,15 @@ By default, Alku supports the following scaling factors:
 | 100%    | 1.00   |
 | 105%    | 1.05   |
 | 110%    | 1.10   |
+
+Scaling factors can be used with the `calc` function in css.
+
+```css title="button.css" ins="var(--ak-scaling)"
+.my-button {
+  height: calc(32px * var(--ak-scaling));
+}
+```
+
+Putting this all together, we can create a component that scales across the diffferent factors seamlessly.
+
+<MovieList />

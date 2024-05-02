@@ -7,10 +7,10 @@
  */
 @layer base {
   :root {
-    --ak-border-width-1: 0.5px;
-    --ak-border-width-2: 1px;
-    --ak-border-width-3: 2px;
-    --ak-border-width-4: 3px;
+    --ak-border-width-05: 0.5px;
+    --ak-border-width-1: 1px;
+    --ak-border-width-2: 2px;
+    --ak-border-width-3: 3px;
   }
 
   .alku {

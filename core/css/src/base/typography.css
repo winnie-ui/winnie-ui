@@ -7,8 +7,8 @@
  */
 @layer base {
   :root {
-    --ak-font-family-sans: "Manrope", sans-serif;
-    --ak-font-family-serif: "Manrope", serif;
+    --ak-font-family-sans: "Geist Sans", sans-serif;
+    --ak-font-family-serif: "Geist Sans", serif;
     --ak-font-family-mono: "Geist Mono", monospace;
 
     --ak-font-weight-normal: 400;

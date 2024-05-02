@@ -1,0 +1,52 @@
+---
+import Movie, { type Props as MovieProps } from "./movie.astro";
+
+const movie = {
+  imgSrc:
+    "https://media.themoviedb.org/t/p/w188_and_h282_bestv2/d5NXSklXo0qyIYkgV94XAgMIckC.jpg",
+  rating: "PG-13",
+  title: "Dune",
+  year: 2021,
+} satisfies MovieProps;
+---
+
+<ul class="movie-list">
+  {
+    [90, 95, 100, 105, 110].map((scale) => {
+      return (
+        <li class="alku movie-list-item" data-scaling={`${scale}%`}>
+          <div class="movie-list-item-scale">
+            <code>{scale}%</code>
+          </div>
+          <Movie {...movie} />
+        </li>
+      );
+    })
+  }
+</ul>
+
+<style>
+  .movie-list {
+    border: var(--ak-border-width-1) solid var(--ak-color-grey-6);
+    border-radius: var(--ak-border-radius-5);
+    list-style: none;
+    padding: 0;
+    width: 100%;
+
+    .movie-list-item {
+      border-bottom: var(--ak-border-width-2) dashed var(--ak-color-grey-6);
+      display: grid;
+      gap: var(--ak-space-7);
+      grid-template-columns: 60px 1fr;
+      padding-inline: var(--ak-space-7);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .movie-list-item-scale {
+        align-self: center;
+      }
+    }
+  }
+</style>

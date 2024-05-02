@@ -1,0 +1,79 @@
+---
+export type Props = {
+  imgSrc: string;
+  rating: string;
+  title: string;
+  year: number;
+};
+
+const { imgSrc, rating, title, year } = Astro.props;
+---
+
+<div class="movie not-content">
+  <img class="movie-poster" loading="lazy" src={imgSrc} />
+  <div class="movie-content">
+    <span class="movie-title">{title}</span>
+    <div class="movie-info">
+      <span class="movie-rating">{rating}</span>
+      <span class="movie-year">{year}</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .movie {
+    --border-radius: var(--ak-border-radius-3);
+
+    align-items: flex-start;
+    background: var(--ak-color-grey-2);
+    border: var(--ak-border-width-1) solid var(--ak-color-grey-6);
+    border-radius: var(--border-radius);
+    display: flex;
+    gap: var(--ak-space-5);
+    max-width: calc(350px * var(--ak-scaling));
+    width: 100%;
+
+    .movie-poster {
+      max-height: calc(60px * var(--ak-scaling));
+      border-top-left-radius: var(--border-radius);
+      border-bottom-left-radius: var(--border-radius);
+    }
+
+    .movie-content {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: var(--ak-space-2);
+      padding-left: 0;
+
+      .movie-title {
+        color: var(--ak-color-grey-12);
+        font-size: var(--ak-font-size-2);
+        font-weight: var(--ak-font-weight-bold);
+      }
+
+      .movie-info {
+        align-items: center;
+        display: flex;
+        gap: var(--ak-space-3);
+
+        .movie-rating {
+          border: var(--ak-border-width-1) solid var(--ak-color-grey-7);
+          border-radius: var(--ak-border-radius-2);
+          color: var(--ak-color-grey-11);
+          font-size: var(--ak-font-size-1);
+          font-weight: var(--ak-font-weight-medium);
+          line-height: 1;
+          padding: var(--ak-space-2);
+          text-transform: uppercase;
+        }
+
+        .movie-year {
+          color: var(--ak-color-grey-11);
+          font-size: var(--ak-font-size-1);
+          font-weight: var(--ak-font-weight-medium);
+        }
+      }
+    }
+  }
+</style>
