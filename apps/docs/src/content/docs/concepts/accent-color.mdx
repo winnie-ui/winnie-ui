@@ -1,0 +1,32 @@
+---
+title: Accent Color
+description: Change the accent color of your application.
+---
+
+import Demo from "../../../components/demo.astro";
+
+Allow users to choose their favourite color or choose your brands color -- either way, Alku is here to help. Using `data-accent-color` you can control any css property that accepts color.
+
+<Demo>
+  <div
+    style={{
+      height: "100px",
+      width: "100px",
+      background: "var(--ak-accent-color-7)",
+    }}
+  />
+  {/* prettier-ignore */}
+  <div slot="demo-html">
+  ```html
+  <button>hello world</button>
+  ```
+  </div>
+  {/* prettier-ignore */}
+  <div slot="demo-css">
+  ```css
+  button {
+    background: red;
+  }
+  ```
+  </div>
+</Demo>

@@ -32,6 +32,16 @@ h6 {
   font-family: var(--ak-font-family-serif);
 }
 
+.background-polka {
+  background-color: var(--ak-color-grey-1);
+  opacity: 0.8;
+  background-image: radial-gradient(
+    var(--ak-color-grey-9) 0.5px,
+    var(--ak-color-grey-1) 0.5px
+  );
+  background-size: 10px 10px;
+}
+
 /* anchor hover */
 .sl-markdown-content a:hover:not(:where(.not-content *)) {
   color: var(--sl-color-text-accent);
@@ -103,9 +113,24 @@ nav.sidebar {
 }
 
 /* tabs */
-.tab:where(.astro-ryr4kxdx)
-  :where(.astro-ryr4kxdx)[role="tab"][aria-selected="true"] {
-  color: var(--ak-color-grey-12);
+.tablist-wrapper {
+  overflow-y: hidden;
+}
+
+ul[role="tablist"] {
+  border-bottom: var(--ak-border-width-1) solid var(--ak-color-grey-6);
+
+  .tab {
+    a[role="tab"] {
+      color: var(--ak-color-grey-12);
+      border-bottom: transparent;
+
+      &[aria-selected="true"] {
+        color: var(--ak-color-grey-12);
+        border-bottom: var(--ak-border-width-3) solid var(--ak-color-orange-9);
+      }
+    }
+  }
 }
 
 /* table */

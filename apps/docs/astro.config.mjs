@@ -40,7 +40,20 @@ export default defineConfig({
         },
         {
           label: "Concepts",
-          autogenerate: { directory: "concepts" },
+          items: [
+            {
+              label: "Layers",
+              link: "/concepts/layers",
+            },
+            {
+              label: "Accent Color",
+              link: "/concepts/accent-color",
+            },
+            {
+              label: "Scaling",
+              link: "/concepts/scaling",
+            },
+          ],
         },
       ],
     }),

@@ -1,0 +1,55 @@
+---
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+---
+
+<div class="demo not-content">
+  <!-- <header class="demo-header">
+    <slot name="header" />
+  </header> -->
+  <main class="demo-content background-polka">
+    <slot />
+  </main>
+  <div class="demo-code">
+    <Tabs>
+      <TabItem label="html">
+        <slot name="demo-html" />
+      </TabItem>
+      <TabItem label="css">
+        <slot name="demo-css" />
+      </TabItem>
+    </Tabs>
+  </div>
+</div>
+
+<style>
+  .demo {
+    --border-radius: var(--ak-border-radius-3);
+
+    border: var(--ak-border-width-1) solid var(--ak-color-grey-5);
+    border-radius: var(--border-radius);
+
+    .demo-header {
+      padding: var(--ak-space-3);
+    }
+
+    .demo-content {
+      border-bottom: var(--ak-border-width-1) solid var(--ak-color-grey-6);
+      padding: var(--ak-space-6);
+    }
+
+    .demo-code {
+      padding-top: var(--ak-space-3);
+
+      section[role="tabpanel"] {
+        margin: 0;
+
+        .expressive-code {
+          .frame {
+            --code-background: transparent;
+            --ec-brdCol: transparent;
+          }
+        }
+      }
+    }
+  }
+</style>
