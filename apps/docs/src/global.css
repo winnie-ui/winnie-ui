@@ -124,9 +124,11 @@ ul[role="tablist"] {
     a[role="tab"] {
       color: var(--ak-color-grey-12);
       border-bottom: transparent;
+      font-size: var(--ak-font-size-2);
 
       &[aria-selected="true"] {
         color: var(--ak-color-grey-12);
+        font-weight: var(--ak-font-weight-medium);
         border-bottom: var(--ak-border-width-3) solid var(--ak-color-orange-9);
       }
     }
