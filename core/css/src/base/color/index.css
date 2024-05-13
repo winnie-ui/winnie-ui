@@ -219,4 +219,34 @@
 
     --ak-accent-color-contrast: var(--ak-color-pink-contrast);
   }
+
+  [data-accent-color="brand"] {
+    --ak-accent-color-1: var(--ak-color-brand-1);
+    --ak-accent-color-2: var(--ak-color-brand-2);
+    --ak-accent-color-3: var(--ak-color-brand-3);
+    --ak-accent-color-4: var(--ak-color-brand-4);
+    --ak-accent-color-5: var(--ak-color-brand-5);
+    --ak-accent-color-6: var(--ak-color-brand-6);
+    --ak-accent-color-7: var(--ak-color-brand-7);
+    --ak-accent-color-8: var(--ak-color-brand-8);
+    --ak-accent-color-9: var(--ak-color-brand-9);
+    --ak-accent-color-10: var(--ak-color-brand-10);
+    --ak-accent-color-11: var(--ak-color-brand-11);
+    --ak-accent-color-12: var(--ak-color-brand-12);
+
+    --ak-accent-color-a1: var(--ak-color-brand-a1);
+    --ak-accent-color-a2: var(--ak-color-brand-a2);
+    --ak-accent-color-a3: var(--ak-color-brand-a3);
+    --ak-accent-color-a4: var(--ak-color-brand-a4);
+    --ak-accent-color-a5: var(--ak-color-brand-a5);
+    --ak-accent-color-a6: var(--ak-color-brand-a6);
+    --ak-accent-color-a7: var(--ak-color-brand-a7);
+    --ak-accent-color-a8: var(--ak-color-brand-a8);
+    --ak-accent-color-a9: var(--ak-color-brand-a9);
+    --ak-accent-color-a10: var(--ak-color-brand-a10);
+    --ak-accent-color-a11: var(--ak-color-brand-a11);
+    --ak-accent-color-a12: var(--ak-color-brand-a12);
+
+    --ak-accent-color-contrast: var(--ak-color-brand-contrast);
+  }
 }

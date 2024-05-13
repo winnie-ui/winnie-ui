@@ -3,15 +3,10 @@ title: Accent Color
 description: Change the accent color of your application.
 ---
 
-import { Foo } from "./_components/foo";
-import foo from "./_components/foo.tsx?raw";
-
+import AccentColorDemo from "./_components/accent-color-demo.astro";
 import { Code } from "@astrojs/starlight/components";
 
-import Demo from "../../../components/demo.astro";
-import PaintChip from "./_components/paint-chip.astro";
-
-Users and companies often have a preference for the accent color of their applications. Alku supports this using the `data-accent-color` attribute. The accent color attribute modifies the `--ak-accent-color` css variables which will affect any components that use those variables.
+Users and companies often have a preference for the accent color of their applications. Alku supports this using the `data-accent-color` attribute. The accent color attribute modifies the `--ak-accent-color-<value>` css variables which will affect any components that use those variables.
 
 ```tsx title="root.tsx" ins="class="alku"" ins="data-accent-color="purple""
 export default function Root() {
@@ -28,15 +23,7 @@ export default function Root() {
 
 Alku comes with seven colors that are available for use with `data-accent-color`.
 
-| Color  | Preview                      |
-| ------ | ---------------------------- |
-| red    | <PaintChip color="red" />    |
-| orange | <PaintChip color="orange" /> |
-| yellow | <PaintChip color="yellow" /> |
-| green  | <PaintChip color="green" />  |
-| blue   | <PaintChip color="blue" />   |
-| purple | <PaintChip color="purple" /> |
-| pink   | <PaintChip color="pink" />   |
+<AccentColorDemo />
 
 ## Branding
 
@@ -80,7 +67,6 @@ Each color can be overridden using css variables defined in a global css file in
   --ak-color-brand-contrast: #fff;
 }
 
-:root,
 .dark,
 .dark-theme,
 [data-theme="dark"] {

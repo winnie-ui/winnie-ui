@@ -29,7 +29,7 @@
     --ak-color-yellow-a11: #977100;
     --ak-color-yellow-a12: #352600e7;
 
-    --ak-color-yellow-contrast: #2a2009;
+    --ak-color-yellow-contrast: #000;
   }
 
   @supports (color: color(display-p3 1 1 1)) {
@@ -64,7 +64,7 @@
         --ak-color-yellow-a11: color(display-p3 0.498 0.361 0 / 0.859);
         --ak-color-yellow-a12: color(display-p3 0.18 0.133 0 / 0.887);
 
-        --ak-color-yellow-contrast: #2a2009;
+        --ak-color-yellow-contrast: #000;
       }
     }
   }
@@ -98,7 +98,7 @@
     --ak-color-yellow-a11: #ffc93ffe;
     --ak-color-yellow-a12: #ffeabcfc;
 
-    --ak-color-yellow-contrast: #2a2009;
+    --ak-color-yellow-contrast: #000;
   }
 
   @supports (color: color(display-p3 1 1 1)) {
@@ -132,7 +132,7 @@
         --ak-color-yellow-a11: color(display-p3 0.996 0.82 0.365 / 0.963);
         --ak-color-yellow-a12: color(display-p3 1 0.937 0.773 / 0.971);
 
-        --ak-color-yellow-contrast: #2a2009;
+        --ak-color-yellow-contrast: #000;
       }
     }
   }

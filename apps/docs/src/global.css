@@ -1,5 +1,143 @@
 @import "@alku/css";
 
+:root,
+.light,
+.light-theme,
+[data-theme="light"] {
+  --ak-color-brand-1: #f9fefd;
+  --ak-color-brand-2: #f2fcf9;
+  --ak-color-brand-3: #dbfaf1;
+  --ak-color-brand-4: #c4f5e9;
+  --ak-color-brand-5: #adedde;
+  --ak-color-brand-6: #94e2cf;
+  --ak-color-brand-7: #73d1bd;
+  --ak-color-brand-8: #34bda5;
+  --ak-color-brand-9: #23b39b;
+  --ak-color-brand-10: #00a78f;
+  --ak-color-brand-11: #007a66;
+  --ak-color-brand-12: #0f443a;
+
+  --ak-color-brand-a1: #00d5aa06;
+  --ak-color-brand-a2: #00c58a0d;
+  --ak-color-brand-a3: #00dc9c24;
+  --ak-color-brand-a4: #01d4a03b;
+  --ak-color-brand-a5: #00c89952;
+  --ak-color-brand-a6: #01ba8d6b;
+  --ak-color-brand-a7: #00ac878c;
+  --ak-color-brand-a8: #00ac8ecb;
+  --ak-color-brand-a9: #00a78bdc;
+  --ak-color-brand-a10: #00a78f;
+  --ak-color-brand-a11: #007a66;
+  --ak-color-brand-a12: #00382ef0;
+
+  --ak-color-brand-contrast: #fff;
+}
+
+@supports (color: color(display-p3 1 1 1)) {
+  @media (color-gamut: p3) {
+    :root,
+    .light,
+    .light-theme,
+    [data-theme="light"] {
+      --ak-color-brand-1: oklch(99.3% 0.006 177.9);
+      --ak-color-brand-2: oklch(98.2% 0.011 177.9);
+      --ak-color-brand-3: oklch(96% 0.034 177.9);
+      --ak-color-brand-4: oklch(93.3% 0.053 177.9);
+      --ak-color-brand-5: oklch(89.9% 0.069 177.9);
+      --ak-color-brand-6: oklch(85.6% 0.081 177.9);
+      --ak-color-brand-7: oklch(79.8% 0.096 177.9);
+      --ak-color-brand-8: oklch(72.2% 0.12 177.9);
+      --ak-color-brand-9: oklch(68.9% 0.12 177.9);
+      --ak-color-brand-10: oklch(65.1% 0.12 177.9);
+      --ak-color-brand-11: oklch(51.2% 0.107 177.9);
+      --ak-color-brand-12: oklch(35% 0.057 177.9);
+
+      --ak-color-brand-a1: color(display-p3 0.02 0.804 0.608 / 0.02);
+      --ak-color-brand-a2: color(display-p3 0.02 0.733 0.467 / 0.044);
+      --ak-color-brand-a3: color(display-p3 0.004 0.804 0.537 / 0.118);
+      --ak-color-brand-a4: color(display-p3 0.008 0.78 0.557 / 0.193);
+      --ak-color-brand-a5: color(display-p3 0.004 0.71 0.518 / 0.267);
+      --ak-color-brand-a6: color(display-p3 0.004 0.659 0.478 / 0.353);
+      --ak-color-brand-a7: color(display-p3 0.004 0.592 0.447 / 0.459);
+      --ak-color-brand-a8: color(display-p3 0 0.565 0.439 / 0.62);
+      --ak-color-brand-a9: color(display-p3 0 0.533 0.416 / 0.663);
+      --ak-color-brand-a10: color(display-p3 0 0.498 0.388 / 0.71);
+      --ak-color-brand-a11: color(display-p3 0 0.333 0.251 / 0.797);
+      --ak-color-brand-a12: color(display-p3 0 0.157 0.118 / 0.875);
+
+      --ak-color-brand-contrast: #fff;
+    }
+  }
+}
+
+.dark,
+.dark-theme,
+[data-theme="dark"] {
+  --ak-color-brand-1: #0b1311;
+  --ak-color-brand-2: #111c19;
+  --ak-color-brand-3: #102d27;
+  --ak-color-brand-4: #093b32;
+  --ak-color-brand-5: #10483e;
+  --ak-color-brand-6: #1b574b;
+  --ak-color-brand-7: #23695b;
+  --ak-color-brand-8: #297e6e;
+  --ak-color-brand-9: #23b39b;
+  --ak-color-brand-10: #00a78f;
+  --ak-color-brand-11: #50d3ba;
+  --ak-color-brand-12: #acf0df;
+
+  --ak-color-brand-a1: #00bb1103;
+  --ak-color-brand-a2: #12fbbc0c;
+  --ak-color-brand-a3: #09ffcc1e;
+  --ak-color-brand-a4: #00ffcc2d;
+  --ak-color-brand-a5: #0dffd43b;
+  --ak-color-brand-a6: #34ffd74b;
+  --ak-color-brand-a7: #41fdd85f;
+  --ak-color-brand-a8: #46ffdc75;
+  --ak-color-brand-a9: #2cffdcae;
+  --ak-color-brand-a10: #00ffd9a1;
+  --ak-color-brand-a11: #5fffe0d0;
+  --ak-color-brand-a12: #b6ffedef;
+
+  --ak-color-brand-contrast: #fff;
+}
+
+@supports (color: color(display-p3 1 1 1)) {
+  @media (color-gamut: p3) {
+    .dark,
+    .dark-theme,
+    [data-theme="dark"] {
+      --ak-color-brand-1: oklch(17.8% 0.012 177.9);
+      --ak-color-brand-2: oklch(21.5% 0.016 177.9);
+      --ak-color-brand-3: oklch(27.3% 0.037 177.9);
+      --ak-color-brand-4: oklch(31.7% 0.053 177.9);
+      --ak-color-brand-5: oklch(36.2% 0.059 177.9);
+      --ak-color-brand-6: oklch(41.3% 0.064 177.9);
+      --ak-color-brand-7: oklch(47.3% 0.072 177.9);
+      --ak-color-brand-8: oklch(53.9% 0.085 177.9);
+      --ak-color-brand-9: oklch(68.9% 0.12 177.9);
+      --ak-color-brand-10: oklch(65.1% 0.12 177.9);
+      --ak-color-brand-11: oklch(78.9% 0.12 177.9);
+      --ak-color-brand-12: oklch(90.5% 0.071 177.9);
+
+      --ak-color-brand-a1: color(display-p3 0 0.941 0.067 / 0.009);
+      --ak-color-brand-a2: color(display-p3 0.235 0.988 0.737 / 0.047);
+      --ak-color-brand-a3: color(display-p3 0.31 0.996 0.824 / 0.114);
+      --ak-color-brand-a4: color(display-p3 0.251 0.996 0.816 / 0.173);
+      --ak-color-brand-a5: color(display-p3 0.361 1 0.847 / 0.227);
+      --ak-color-brand-a6: color(display-p3 0.447 1 0.851 / 0.29);
+      --ak-color-brand-a7: color(display-p3 0.486 1 0.859 / 0.366);
+      --ak-color-brand-a8: color(display-p3 0.494 1 0.886 / 0.45);
+      --ak-color-brand-a9: color(display-p3 0.471 0.996 0.878 / 0.669);
+      --ak-color-brand-a10: color(display-p3 0.431 1 0.875 / 0.618);
+      --ak-color-brand-a11: color(display-p3 0.561 1 0.898 / 0.803);
+      --ak-color-brand-a12: color(display-p3 0.784 1 0.941 / 0.929);
+
+      --ak-color-brand-contrast: #fff;
+    }
+  }
+}
+
 :root {
   --sl-font: var(--ak-font-family-sans);
 }
@@ -68,6 +206,7 @@ h6 {
 .sl-markdown-content code:not(:where(.not-content *)) {
   border-radius: var(--ak-border-radius-2);
   color: var(--ak-accent-color-11);
+  font-family: var(--ak-font-family-mono);
 }
 
 /* code blocks */
