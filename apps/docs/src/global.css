@@ -220,6 +220,8 @@ h6 {
   --ec-frm-edTabBarBrdBtmCol: var(--ak-color-grey-6);
   --ec-tm-insBg: var(--ak-color-grey-a3);
   --ec-tm-insBrdCol: var(--ak-color-grey-6);
+  --ec-tm-markBg: var(--ak-accent-color-a3);
+  --ec-tm-markBrdCol: var(--ak-accent-color-9);
   --ec-frm-frameBoxShdCssVal: none;
   --header-border-radius: var(--ak-border-radius-3);
 }

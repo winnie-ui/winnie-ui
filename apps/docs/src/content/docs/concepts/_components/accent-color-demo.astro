@@ -1,5 +1,6 @@
 ---
 import Demo from "../../../../components/demo.astro";
+import Button from "../../../../components/button.astro";
 ---
 
 <script>
@@ -73,7 +74,7 @@ import Demo from "../../../../components/demo.astro";
   </div>
 
   <div class="accent-color-demo" data-accent-color="red">
-    <button class="accent-color-demo-button">Sign up</button>
+    <Button class="accent-color-demo-button">Sign up</Button>
   </div>
 </Demo>
 
@@ -117,44 +118,6 @@ import Demo from "../../../../components/demo.astro";
       font-family: var(--ak-font-family-mono);
       line-height: var(--ak-line-height-2);
       padding-inline: var(--ak-space-2);
-    }
-  }
-  .accent-color-demo-button {
-    background: linear-gradient(
-      to bottom,
-      var(--ak-accent-color-9),
-      var(--ak-accent-color-10)
-    );
-    border: var(--ak-border-width-1) solid var(--ak-accent-color-9);
-    border-radius: var(--ak-border-radius-3);
-    box-shadow:
-      inset 0 -1px 1px 0px var(--ak-color-grey-a9),
-      inset 0 1px 1px 0px var(--ak-color-white-a9);
-    color: var(--ak-accent-color-contrast);
-    font-size: var(--ak-font-size-2);
-    font-weight: var(--ak-font-weight-medium);
-    height: 32px;
-    padding-inline: var(--ak-space-3);
-    text-shadow: 0 0.5px var(--ak-color-grey-a9);
-
-    &:hover {
-      background: var(--ak-accent-color-10);
-    }
-
-    &:focus-visible {
-      background: var(--ak-accent-color-10);
-      border-color: var(--ak-accent-color-10);
-      outline: var(--ak-border-width-2) solid var(--ak-accent-color-10);
-      outline-offset: var(--ak-space-1);
-    }
-
-    &:active {
-      background: var(--ak-accent-color-10);
-      border-color: var(--ak-accent-color-10);
-      box-shadow:
-        inset 0 -1px 1px 0px var(--ak-color-white-a7),
-        inset 0 1px 1px 0px var(--ak-color-grey-a7);
-      padding-top: 1px;
     }
   }
 </style>

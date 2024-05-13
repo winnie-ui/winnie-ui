@@ -61,12 +61,17 @@ Import the Alku CSS file at the root of your application in the place of your ch
 
 Configure the `body` element with Alku CSS specific attributes
 
-```tsx title="root.tsx" ins="class="alku"" ins="data-accent-color="blue"" ins="data-scaling="100%""
+```tsx title="root.tsx" {6-9}
 export default function Root() {
   return (
     <html>
       <head></head>
-      <body class="alku" data-accent-color="blue" data-scaling="100%">
+      <body
+        class="alku"
+        data-accent-color="orange"
+        data-scaling="100%"
+        data-radius="md"
+      >
         <App />
       </body>
     </html>

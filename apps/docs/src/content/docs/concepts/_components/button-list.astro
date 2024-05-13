@@ -1,0 +1,48 @@
+---
+import Button from "../../../../components/button.astro";
+---
+
+<ul class="button-list">
+  {
+    ["none", "sm", "md", "lg", "round"].map((scale) => {
+      return (
+        <li class="alku button-list-item" data-radius={scale}>
+          <div class="button-list-item-scale">
+            <code>{scale}</code>
+          </div>
+          <Button>Sign up</Button>
+        </li>
+      );
+    })
+  }
+</ul>
+
+<style>
+  .button-list {
+    border: var(--ak-border-width-1) solid var(--ak-color-grey-6);
+    border-radius: var(--ak-border-radius-5);
+    list-style: none;
+    padding: 0;
+    width: 100%;
+
+    .button-list-item {
+      border-bottom: var(--ak-border-width-2) dashed var(--ak-color-grey-6);
+      display: grid;
+      gap: var(--ak-space-7);
+      grid-template-columns: 60px 1fr;
+      padding-inline: var(--ak-space-7);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .button-list-item-scale {
+        align-self: center;
+      }
+
+      button {
+        max-width: min-content;
+      }
+    }
+  }
+</style>

@@ -26,5 +26,25 @@
     &:where([data-scaling="110%"]) {
       --ak-scaling: 1.1;
     }
+
+    &:where([data-radius="none"]) {
+      --ak-radius-factor: 0;
+    }
+
+    &:where([data-radius="sm"]) {
+      --ak-radius-factor: 0.75;
+    }
+
+    &:where([data-radius="md"]) {
+      --ak-radius-factor: 1;
+    }
+
+    &:where([data-radius="lg"]) {
+      --ak-radius-factor: 1.5;
+    }
+
+    &:where([data-radius="round"]) {
+      --ak-radius-factor: 9999;
+    }
   }
 }
