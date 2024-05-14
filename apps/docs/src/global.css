@@ -172,9 +172,8 @@ h6 {
 
 .background-polka {
   background-color: var(--ak-color-grey-1);
-  opacity: 0.8;
   background-image: radial-gradient(
-    var(--ak-color-grey-9) 0.5px,
+    var(--ak-color-grey-a8) 0.5px,
     var(--ak-color-grey-1) 0.5px
   );
   background-size: 10px 10px;

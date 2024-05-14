@@ -24,7 +24,7 @@ export default defineConfig({
       },
       pagination: false,
       social: {
-        github: "https://github.com/withastro/starlight",
+        github: "https://github.com/adamaho/alku",
       },
       sidebar: [
         {
@@ -58,6 +58,15 @@ export default defineConfig({
             {
               label: "Radius",
               link: "/concepts/radius",
+            },
+          ],
+        },
+        {
+          label: "Reference",
+          items: [
+            {
+              label: "Colors",
+              link: "/reference/colors",
             },
           ],
         },

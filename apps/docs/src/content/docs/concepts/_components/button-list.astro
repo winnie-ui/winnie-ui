@@ -6,11 +6,13 @@ import Button from "../../../../components/button.astro";
   {
     ["none", "sm", "md", "lg", "round"].map((scale) => {
       return (
-        <li class="alku button-list-item" data-radius={scale}>
+        <li class="alku button-list-item">
           <div class="button-list-item-scale">
             <code>{scale}</code>
           </div>
-          <Button>Sign up</Button>
+          <div class="alku" data-radius={scale}>
+            <Button>Sign up</Button>
+          </div>
         </li>
       );
     })

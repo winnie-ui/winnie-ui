@@ -10,6 +10,36 @@
 @import "./yellow.css";
 
 @layer base {
+  [data-accent-color="grey"] {
+    --ak-accent-color-1: var(--ak-color-grey-1);
+    --ak-accent-color-2: var(--ak-color-grey-2);
+    --ak-accent-color-3: var(--ak-color-grey-3);
+    --ak-accent-color-4: var(--ak-color-grey-4);
+    --ak-accent-color-5: var(--ak-color-grey-5);
+    --ak-accent-color-6: var(--ak-color-grey-6);
+    --ak-accent-color-7: var(--ak-color-grey-7);
+    --ak-accent-color-8: var(--ak-color-grey-8);
+    --ak-accent-color-9: var(--ak-color-grey-9);
+    --ak-accent-color-10: var(--ak-color-grey-10);
+    --ak-accent-color-11: var(--ak-color-grey-11);
+    --ak-accent-color-12: var(--ak-color-grey-12);
+
+    --ak-accent-color-a1: var(--ak-color-grey-a1);
+    --ak-accent-color-a2: var(--ak-color-grey-a2);
+    --ak-accent-color-a3: var(--ak-color-grey-a3);
+    --ak-accent-color-a4: var(--ak-color-grey-a4);
+    --ak-accent-color-a5: var(--ak-color-grey-a5);
+    --ak-accent-color-a6: var(--ak-color-grey-a6);
+    --ak-accent-color-a7: var(--ak-color-grey-a7);
+    --ak-accent-color-a8: var(--ak-color-grey-a8);
+    --ak-accent-color-a9: var(--ak-color-grey-a9);
+    --ak-accent-color-a10: var(--ak-color-grey-a10);
+    --ak-accent-color-a11: var(--ak-color-grey-a11);
+    --ak-accent-color-a12: var(--ak-color-grey-a12);
+
+    --ak-accent-color-contrast: var(--ak-color-grey-contrast);
+  }
+
   [data-accent-color="red"] {
     --ak-accent-color-1: var(--ak-color-red-1);
     --ak-accent-color-2: var(--ak-color-red-2);
