@@ -77,14 +77,14 @@
       var(--ak-inner-shadow-highlight);
   }
 
-  :is(.light, .light-theme) {
+  :is(.light, .light-theme, [data-theme="light"]) {
     --ak-shadow-color: 220 3% 15%;
     --ak-shadow-strength: 1%;
     --ak-inner-shadow-highlight: inset 0 -0.5px 0 0 #fff,
       inset 0 0.5px 0 0 #0001;
   }
 
-  :is(.dark, .dark-theme) {
+  :is(.dark, .dark-theme, [data-theme="dark"]) {
     --ak-shadow-color: 220 40% 2%;
     --ak-shadow-strength: 25%;
     --ak-inner-shadow-highlight: inset 0 -0.5px 0 0 #fff1,

@@ -1,5 +1,6 @@
 @layer base {
   :root {
+    --ak-duration-05: 50ms;
     --ak-duration-1: 100ms;
     --ak-duration-2: 200ms;
     --ak-duration-3: 300ms;
@@ -69,10 +70,14 @@
 
   @media (prefers-reduced-motion: no-preference) {
     .ak-popper {
-      animation-timing-function: var(--ak-transition-function-1);
+      animation-timing-function: var(--ak-bezier-1);
 
-      &:where([data-state="delayed-open"], [data-state="open"]) {
-        animation-duration: var(--ak-duration-3);
+      &:where(
+          [popover]:popover-open,
+          [data-state="delayed-open"],
+          [data-state="open"]
+        ) {
+        animation-duration: var(--ak-duration-2);
 
         &:where([data-side="top"]) {
           animation-name: ak-slide-up, ak-fade-in;
@@ -92,16 +97,22 @@
       }
 
       &:where([data-state="closed"]) {
-        animation-duration: var(--c3-transition-duration-2);
-        animation-direction: reverse;
+        animation-duration: var(--ak-duration-1);
 
-        &:where(
-            [data-side="top"],
-            [data-side="bottom"],
-            [data-side="left"],
-            [data-side="right"]
-          ) {
+        &:where([data-side="top"]) {
+          animation-name: ak-slide-down, ak-fade-out;
+        }
+
+        &:where([data-side="bottom"]) {
           animation-name: ak-slide-up, ak-fade-out;
+        }
+
+        &:where([data-side="left"]) {
+          animation-name: ak-slide-right, ak-fade-out;
+        }
+
+        &:where([data-side="right"]) {
+          animation-name: ak-slide-left, ak-fade-out;
         }
       }
     }

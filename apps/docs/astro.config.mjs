@@ -1,4 +1,3 @@
-import solidJs from "@astrojs/solid-js";
 import starlight from "@astrojs/starlight";
 import { defineConfig } from "astro/config";
 
@@ -48,8 +47,8 @@ export default defineConfig({
               link: "/concepts/layers",
             },
             {
-              label: "Accent Color",
-              link: "/concepts/accent-color",
+              label: "Colors",
+              link: "/concepts/colors",
             },
             {
               label: "Scaling",
@@ -61,17 +60,7 @@ export default defineConfig({
             },
           ],
         },
-        {
-          label: "Reference",
-          items: [
-            {
-              label: "Colors",
-              link: "/reference/colors",
-            },
-          ],
-        },
       ],
     }),
-    solidJs(),
   ],
 });

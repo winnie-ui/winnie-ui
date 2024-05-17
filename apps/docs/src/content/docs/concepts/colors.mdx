@@ -1,10 +1,16 @@
 ---
-title: Accent Color
-description: Change the accent color of your application.
+title: Colors
+description: Precision crafted colors for all use cases.
 ---
 
 import AccentColorDemo from "./_components/accent-color-demo.astro";
-import { Code } from "@astrojs/starlight/components";
+import PaintChips from "./_components/paint-chips.astro";
+
+Alku includes a default set of colors that is a great place to start when building your next application. These colors are loosely based on the colors provided by [Tailwind](https://tailwindcss.com/docs/customizing-colors) and were created using the [Radix Colors](https://www.radix-ui.com/colors/custom) custom palette generator.
+
+<PaintChips />
+
+## Accent Color
 
 Users and companies often have a preference for the accent color of their applications. Alku supports this using the `data-accent-color` attribute. The accent color attribute modifies the `--ak-accent-color-<value>` css variables which will affect any components that use those variables.
 
@@ -21,17 +27,17 @@ export default function Root() {
 }
 ```
 
-Alku comes with seven colors that are available for use with `data-accent-color`.
+Any color that Alku supports can be used as an accent color. Including a custom [brand color](/concepts/colors#branding).
 
 <AccentColorDemo />
 
-## Branding
+## Customizing Colors
 
-Alku allows you to configure an additional brand accent color that can be used to style your components and application using the `brand` accent color.
+When the default palette doesn't suit your needs you can customize any of the colors by overriding the CSS Variables.
 
 Luckily, the community has started to create some amazing tools for generating color palettes. Alku's color palette is based on the one defined by [Radix Colors](https://www.radix-ui.com/colors/custom). We suggest you start there when it comes to configuring your brand color.
 
-Each color can be overridden using css variables defined in a global css file in your application. For example, if you want to define a custom brand color for your application you can do the following:
+Each color can be overridden using css variables defined in a global css file in your application. For example, if you want to define a custom `brand` color for your application you can do the following:
 
 ```css title="global.css"
 :root,
@@ -114,5 +120,3 @@ export default function Root() {
   );
 }
 ```
-
-For more information about working with colors in Alku and the default color palette, see the [Colors Reference](/reference/colors)

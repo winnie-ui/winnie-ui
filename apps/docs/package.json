@@ -13,15 +13,14 @@
   "dependencies": {
     "@alku/css": "workspace:*",
     "@astrojs/check": "0.5.10",
-    "@astrojs/solid-js": "^4.1.0",
     "@astrojs/starlight": "0.21.5",
+    "@floating-ui/dom": "1.6.5",
     "@fontsource/geist-mono": "5.0.3",
     "@fontsource/geist-sans": "5.0.3",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
     "astro": "4.3.5",
     "sharp": "0.33.3",
-    "solid-js": "^1.8.17",
     "typescript": "5.4.5"
   }
 }

@@ -12,6 +12,12 @@
     color: var(--ak-accent-color-contrast);
   }
 
+  *[popover] {
+    appearance: none;
+    border: none;
+    padding: 0;
+  }
+
   *,
   *::after,
   *::before {
