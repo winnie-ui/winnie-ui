@@ -46,6 +46,7 @@ import Button from "../../../../components/button.astro";
           "blue",
           "purple",
           "pink",
+          "grey",
           "brand",
         ].map((color) => {
           return (
@@ -113,11 +114,17 @@ import Button from "../../../../components/button.astro";
     .selected-accent-color {
       background-color: var(--ak-accent-color-a3);
       border-radius: var(--ak-border-radius-2);
+      display: inline-block;
       color: var(--ak-accent-color-11);
       font-size: var(--ak-font-size-2);
       font-family: var(--ak-font-family-mono);
       line-height: var(--ak-line-height-2);
       padding-inline: var(--ak-space-2);
+      white-space: nowrap;
+
+      @media only screen and (max-width: 800px) {
+        display: none;
+      }
     }
   }
 </style>
