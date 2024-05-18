@@ -17,6 +17,6 @@
     "clean": "rimraf node_modules"
   },
   "devDependencies": {
-    "rimraf": "5.0.5"
+    "rimraf": "5.0.7"
   }
 }
