@@ -1,0 +1,30 @@
+{
+  "name": "@alku/tailwind",
+  "version": "0.0.1",
+  "description": "tailwind theme for alku css",
+  "author": "Adam Aho",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.css"
+  },
+  "files": [
+    "src",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "node src/foo.js",
+    "clean": "rimraf node_modules",
+    "stylelint": "stylelint \"src/**/*.css\""
+  },
+  "peerDependencies": {
+    "tailwindcss": "4.0.0-alpha.15"
+  },
+  "dependencies": {
+    "@alku/css": "workspace:*"
+  },
+  "devDependencies": {
+    "@alku/stylelint-config-alku": "workspace:*",
+    "rimraf": "5.0.7",
+    "stylelint": "16.5.0"
+  }
+}

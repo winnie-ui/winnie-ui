@@ -68,9 +68,9 @@ importers:
 
   apps/tailwind-demo:
     dependencies:
-      '@alku/css':
+      '@alku/tailwind':
         specifier: workspace:*
-        version: link:../../core/css
+        version: link:../../core/tailwind
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -120,6 +120,28 @@ importers:
       '@alku/stylelint-config-alku':
         specifier: workspace:*
         version: link:../../tools/stylelint
+      rimraf:
+        specifier: 5.0.7
+        version: 5.0.7
+      stylelint:
+        specifier: 16.5.0
+        version: 16.5.0(typescript@5.4.5)
+
+  core/tailwind:
+    dependencies:
+      '@alku/css':
+        specifier: workspace:*
+        version: link:../css
+      tailwindcss:
+        specifier: 4.0.0-alpha.15
+        version: 4.0.0-alpha.15
+    devDependencies:
+      '@alku/stylelint-config-alku':
+        specifier: workspace:*
+        version: link:../../tools/stylelint
+      lightningcss:
+        specifier: 1.25.0
+        version: 1.25.0
       rimraf:
         specifier: 5.0.7
         version: 5.0.7

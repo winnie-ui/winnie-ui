@@ -61,18 +61,18 @@
             calc(var(--ak-shadow-strength) + 6%)),
       0 100px 80px -2px hsl(var(--ak-shadow-color) /
             calc(var(--ak-shadow-strength) + 7%));
-    --ak-inner-shadow-0: inset 0 0 0 1px
+    --ak-inner-shadow-1: inset 0 0 0 1px
       hsl(var(--ak-shadow-color) / calc(var(--ak-shadow-strength) + 9%));
-    --ak-inner-shadow-1: inset 0 1px 2px 0
+    --ak-inner-shadow-2: inset 0 1px 2px 0
         hsl(var(--ak-shadow-color) / calc(var(--ak-shadow-strength) + 9%)),
       var(--ak-inner-shadow-highlight);
-    --ak-inner-shadow-2: inset 0 1px 4px 0
+    --ak-inner-shadow-3: inset 0 1px 4px 0
         hsl(var(--ak-shadow-color) / calc(var(--ak-shadow-strength) + 9%)),
       var(--ak-inner-shadow-highlight);
-    --ak-inner-shadow-3: inset 0 2px 8px 0
+    --ak-inner-shadow-4: inset 0 2px 8px 0
         hsl(var(--ak-shadow-color) / calc(var(--ak-shadow-strength) + 9%)),
       var(--ak-inner-shadow-highlight);
-    --ak-inner-shadow-4: inset 0 2px 14px 0
+    --ak-inner-shadow-5: inset 0 2px 14px 0
         hsl(var(--ak-shadow-color) / calc(var(--ak-shadow-strength) + 9%)),
       var(--ak-inner-shadow-highlight);
   }

@@ -1,0 +1,392 @@
+@import "@alku/css" layer(alku);
+@import "tailwindcss/preflight" layer(base);
+@import "tailwindcss/utilities" layer(utilities);
+
+@layer utilities {
+  .alku {
+    @theme {
+      /* accent color */
+      --color-accent-1: var(--ak-accent-color-1);
+      --color-accent-2: var(--ak-accent-color-2);
+      --color-accent-3: var(--ak-accent-color-3);
+      --color-accent-4: var(--ak-accent-color-4);
+      --color-accent-5: var(--ak-accent-color-5);
+      --color-accent-6: var(--ak-accent-color-6);
+      --color-accent-7: var(--ak-accent-color-7);
+      --color-accent-8: var(--ak-accent-color-8);
+      --color-accent-9: var(--ak-accent-color-9);
+      --color-accent-10: var(--ak-accent-color-10);
+      --color-accent-11: var(--ak-accent-color-11);
+      --color-accent-12: var(--ak-accent-color-12);
+
+      --color-accent-contrast: var(--ak-accent-color-contrast);
+
+      --color-accent-a1: var(--ak-accent-color-a1);
+      --color-accent-a2: var(--ak-accent-color-a2);
+      --color-accent-a3: var(--ak-accent-color-a3);
+      --color-accent-a4: var(--ak-accent-color-a4);
+      --color-accent-a5: var(--ak-accent-color-a5);
+      --color-accent-a6: var(--ak-accent-color-a6);
+      --color-accent-a7: var(--ak-accent-color-a7);
+      --color-accent-a8: var(--ak-accent-color-a8);
+      --color-accent-a9: var(--ak-accent-color-a9);
+      --color-accent-a10: var(--ak-accent-color-a10);
+      --color-accent-a11: var(--ak-accent-color-a11);
+      --color-accent-a12: var(--ak-accent-color-a12);
+
+      /* white */
+      --color-white: var(--ak-color-white);
+      --color-white-a1: var(--ak-color-white-a1);
+      --color-white-a2: var(--ak-color-white-a2);
+      --color-white-a3: var(--ak-color-white-a3);
+      --color-white-a4: var(--ak-color-white-a4);
+      --color-white-a5: var(--ak-color-white-a5);
+      --color-white-a6: var(--ak-color-white-a6);
+      --color-white-a7: var(--ak-color-white-a7);
+      --color-white-a8: var(--ak-color-white-a8);
+      --color-white-a9: var(--ak-color-white-a9);
+      --color-white-a10: var(--ak-color-white-a10);
+      --color-white-a11: var(--ak-color-white-a11);
+      --color-white-a12: var(--ak-color-white-a12);
+
+      /* black */
+      --color-black: var(--ak-color-black);
+      --color-black-a1: var(--ak-color-black-a1);
+      --color-black-a2: var(--ak-color-black-a2);
+      --color-black-a3: var(--ak-color-black-a3);
+      --color-black-a4: var(--ak-color-black-a4);
+      --color-black-a5: var(--ak-color-black-a5);
+      --color-black-a6: var(--ak-color-black-a6);
+      --color-black-a7: var(--ak-color-black-a7);
+      --color-black-a8: var(--ak-color-black-a8);
+      --color-black-a9: var(--ak-color-black-a9);
+      --color-black-a10: var(--ak-color-black-a10);
+      --color-black-a11: var(--ak-color-black-a11);
+      --color-black-a12: var(--ak-color-black-a12);
+
+      /* grey */
+      --color-grey-1: var(--ak-color-grey-1);
+      --color-grey-2: var(--ak-color-grey-2);
+      --color-grey-3: var(--ak-color-grey-3);
+      --color-grey-4: var(--ak-color-grey-4);
+      --color-grey-5: var(--ak-color-grey-5);
+      --color-grey-6: var(--ak-color-grey-6);
+      --color-grey-7: var(--ak-color-grey-7);
+      --color-grey-8: var(--ak-color-grey-8);
+      --color-grey-9: var(--ak-color-grey-9);
+      --color-grey-10: var(--ak-color-grey-10);
+      --color-grey-11: var(--ak-color-grey-11);
+      --color-grey-12: var(--ak-color-grey-12);
+
+      --color-grey-contrast: var(--ak-color-grey-contrast);
+
+      --color-grey-a1: var(--ak-color-grey-a1);
+      --color-grey-a2: var(--ak-color-grey-a2);
+      --color-grey-a3: var(--ak-color-grey-a3);
+      --color-grey-a4: var(--ak-color-grey-a4);
+      --color-grey-a5: var(--ak-color-grey-a5);
+      --color-grey-a6: var(--ak-color-grey-a6);
+      --color-grey-a7: var(--ak-color-grey-a7);
+      --color-grey-a8: var(--ak-color-grey-a8);
+      --color-grey-a9: var(--ak-color-grey-a9);
+      --color-grey-a10: var(--ak-color-grey-a10);
+      --color-grey-a11: var(--ak-color-grey-a11);
+      --color-grey-a12: var(--ak-color-grey-a12);
+
+      /* red */
+      --color-red-1: var(--ak-color-red-1);
+      --color-red-2: var(--ak-color-red-2);
+      --color-red-3: var(--ak-color-red-3);
+      --color-red-4: var(--ak-color-red-4);
+      --color-red-5: var(--ak-color-red-5);
+      --color-red-6: var(--ak-color-red-6);
+      --color-red-7: var(--ak-color-red-7);
+      --color-red-8: var(--ak-color-red-8);
+      --color-red-9: var(--ak-color-red-9);
+      --color-red-10: var(--ak-color-red-10);
+      --color-red-11: var(--ak-color-red-11);
+      --color-red-12: var(--ak-color-red-12);
+
+      --color-red-contrast: var(--ak-color-red-contrast);
+
+      --color-red-a1: var(--ak-color-red-a1);
+      --color-red-a2: var(--ak-color-red-a2);
+      --color-red-a3: var(--ak-color-red-a3);
+      --color-red-a4: var(--ak-color-red-a4);
+      --color-red-a5: var(--ak-color-red-a5);
+      --color-red-a6: var(--ak-color-red-a6);
+      --color-red-a7: var(--ak-color-red-a7);
+      --color-red-a8: var(--ak-color-red-a8);
+      --color-red-a9: var(--ak-color-red-a9);
+      --color-red-a10: var(--ak-color-red-a10);
+      --color-red-a11: var(--ak-color-red-a11);
+      --color-red-a12: var(--ak-color-red-a12);
+
+      /* orange */
+      --color-orange-1: var(--ak-color-orange-1);
+      --color-orange-2: var(--ak-color-orange-2);
+      --color-orange-3: var(--ak-color-orange-3);
+      --color-orange-4: var(--ak-color-orange-4);
+      --color-orange-5: var(--ak-color-orange-5);
+      --color-orange-6: var(--ak-color-orange-6);
+      --color-orange-7: var(--ak-color-orange-7);
+      --color-orange-8: var(--ak-color-orange-8);
+      --color-orange-9: var(--ak-color-orange-9);
+      --color-orange-10: var(--ak-color-orange-10);
+      --color-orange-11: var(--ak-color-orange-11);
+      --color-orange-12: var(--ak-color-orange-12);
+
+      --color-orange-contrast: var(--ak-color-orange-contrast);
+
+      --color-orange-a1: var(--ak-color-orange-a1);
+      --color-orange-a2: var(--ak-color-orange-a2);
+      --color-orange-a3: var(--ak-color-orange-a3);
+      --color-orange-a4: var(--ak-color-orange-a4);
+      --color-orange-a5: var(--ak-color-orange-a5);
+      --color-orange-a6: var(--ak-color-orange-a6);
+      --color-orange-a7: var(--ak-color-orange-a7);
+      --color-orange-a8: var(--ak-color-orange-a8);
+      --color-orange-a9: var(--ak-color-orange-a9);
+      --color-orange-a10: var(--ak-color-orange-a10);
+      --color-orange-a11: var(--ak-color-orange-a11);
+      --color-orange-a12: var(--ak-color-orange-a12);
+
+      /* yellow */
+      --color-yellow-1: var(--ak-color-yellow-1);
+      --color-yellow-2: var(--ak-color-yellow-2);
+      --color-yellow-3: var(--ak-color-yellow-3);
+      --color-yellow-4: var(--ak-color-yellow-4);
+      --color-yellow-5: var(--ak-color-yellow-5);
+      --color-yellow-6: var(--ak-color-yellow-6);
+      --color-yellow-7: var(--ak-color-yellow-7);
+      --color-yellow-8: var(--ak-color-yellow-8);
+      --color-yellow-9: var(--ak-color-yellow-9);
+      --color-yellow-10: var(--ak-color-yellow-10);
+      --color-yellow-11: var(--ak-color-yellow-11);
+      --color-yellow-12: var(--ak-color-yellow-12);
+
+      --color-yellow-contrast: var(--ak-color-yellow-contrast);
+
+      --color-yellow-a1: var(--ak-color-yellow-a1);
+      --color-yellow-a2: var(--ak-color-yellow-a2);
+      --color-yellow-a3: var(--ak-color-yellow-a3);
+      --color-yellow-a4: var(--ak-color-yellow-a4);
+      --color-yellow-a5: var(--ak-color-yellow-a5);
+      --color-yellow-a6: var(--ak-color-yellow-a6);
+      --color-yellow-a7: var(--ak-color-yellow-a7);
+      --color-yellow-a8: var(--ak-color-yellow-a8);
+      --color-yellow-a9: var(--ak-color-yellow-a9);
+      --color-yellow-a10: var(--ak-color-yellow-a10);
+      --color-yellow-a11: var(--ak-color-yellow-a11);
+      --color-yellow-a12: var(--ak-color-yellow-a12);
+
+      /* green */
+      --color-green-1: var(--ak-color-green-1);
+      --color-green-2: var(--ak-color-green-2);
+      --color-green-3: var(--ak-color-green-3);
+      --color-green-4: var(--ak-color-green-4);
+      --color-green-5: var(--ak-color-green-5);
+      --color-green-6: var(--ak-color-green-6);
+      --color-green-7: var(--ak-color-green-7);
+      --color-green-8: var(--ak-color-green-8);
+      --color-green-9: var(--ak-color-green-9);
+      --color-green-10: var(--ak-color-green-10);
+      --color-green-11: var(--ak-color-green-11);
+      --color-green-12: var(--ak-color-green-12);
+
+      --color-green-contrast: var(--ak-color-green-contrast);
+
+      --color-green-a1: var(--ak-color-green-a1);
+      --color-green-a2: var(--ak-color-green-a2);
+      --color-green-a3: var(--ak-color-green-a3);
+      --color-green-a4: var(--ak-color-green-a4);
+      --color-green-a5: var(--ak-color-green-a5);
+      --color-green-a6: var(--ak-color-green-a6);
+      --color-green-a7: var(--ak-color-green-a7);
+      --color-green-a8: var(--ak-color-green-a8);
+      --color-green-a9: var(--ak-color-green-a9);
+      --color-green-a10: var(--ak-color-green-a10);
+      --color-green-a11: var(--ak-color-green-a11);
+      --color-green-a12: var(--ak-color-green-a12);
+
+      /* blue */
+      --color-blue-1: var(--ak-color-blue-1);
+      --color-blue-2: var(--ak-color-blue-2);
+      --color-blue-3: var(--ak-color-blue-3);
+      --color-blue-4: var(--ak-color-blue-4);
+      --color-blue-5: var(--ak-color-blue-5);
+      --color-blue-6: var(--ak-color-blue-6);
+      --color-blue-7: var(--ak-color-blue-7);
+      --color-blue-8: var(--ak-color-blue-8);
+      --color-blue-9: var(--ak-color-blue-9);
+      --color-blue-10: var(--ak-color-blue-10);
+      --color-blue-11: var(--ak-color-blue-11);
+      --color-blue-12: var(--ak-color-blue-12);
+
+      --color-blue-contrast: var(--ak-color-blue-contrast);
+
+      --color-blue-a1: var(--ak-color-blue-a1);
+      --color-blue-a2: var(--ak-color-blue-a2);
+      --color-blue-a3: var(--ak-color-blue-a3);
+      --color-blue-a4: var(--ak-color-blue-a4);
+      --color-blue-a5: var(--ak-color-blue-a5);
+      --color-blue-a6: var(--ak-color-blue-a6);
+      --color-blue-a7: var(--ak-color-blue-a7);
+      --color-blue-a8: var(--ak-color-blue-a8);
+      --color-blue-a9: var(--ak-color-blue-a9);
+      --color-blue-a10: var(--ak-color-blue-a10);
+      --color-blue-a11: var(--ak-color-blue-a11);
+      --color-blue-a12: var(--ak-color-blue-a12);
+
+      /* purple */
+      --color-purple-1: var(--ak-color-purple-1);
+      --color-purple-2: var(--ak-color-purple-2);
+      --color-purple-3: var(--ak-color-purple-3);
+      --color-purple-4: var(--ak-color-purple-4);
+      --color-purple-5: var(--ak-color-purple-5);
+      --color-purple-6: var(--ak-color-purple-6);
+      --color-purple-7: var(--ak-color-purple-7);
+      --color-purple-8: var(--ak-color-purple-8);
+      --color-purple-9: var(--ak-color-purple-9);
+      --color-purple-10: var(--ak-color-purple-10);
+      --color-purple-11: var(--ak-color-purple-11);
+      --color-purple-12: var(--ak-color-purple-12);
+
+      --color-purple-contrast: var(--ak-color-purple-contrast);
+
+      --color-purple-a1: var(--ak-color-purple-a1);
+      --color-purple-a2: var(--ak-color-purple-a2);
+      --color-purple-a3: var(--ak-color-purple-a3);
+      --color-purple-a4: var(--ak-color-purple-a4);
+      --color-purple-a5: var(--ak-color-purple-a5);
+      --color-purple-a6: var(--ak-color-purple-a6);
+      --color-purple-a7: var(--ak-color-purple-a7);
+      --color-purple-a8: var(--ak-color-purple-a8);
+      --color-purple-a9: var(--ak-color-purple-a9);
+      --color-purple-a10: var(--ak-color-purple-a10);
+      --color-purple-a11: var(--ak-color-purple-a11);
+      --color-purple-a12: var(--ak-color-purple-a12);
+
+      /* pink */
+      --color-pink-1: var(--ak-color-pink-1);
+      --color-pink-2: var(--ak-color-pink-2);
+      --color-pink-3: var(--ak-color-pink-3);
+      --color-pink-4: var(--ak-color-pink-4);
+      --color-pink-5: var(--ak-color-pink-5);
+      --color-pink-6: var(--ak-color-pink-6);
+      --color-pink-7: var(--ak-color-pink-7);
+      --color-pink-8: var(--ak-color-pink-8);
+      --color-pink-9: var(--ak-color-pink-9);
+      --color-pink-10: var(--ak-color-pink-10);
+      --color-pink-11: var(--ak-color-pink-11);
+      --color-pink-12: var(--ak-color-pink-12);
+
+      --color-pink-contrast: var(--ak-color-pink-contrast);
+
+      --color-pink-a1: var(--ak-color-pink-a1);
+      --color-pink-a2: var(--ak-color-pink-a2);
+      --color-pink-a3: var(--ak-color-pink-a3);
+      --color-pink-a4: var(--ak-color-pink-a4);
+      --color-pink-a5: var(--ak-color-pink-a5);
+      --color-pink-a6: var(--ak-color-pink-a6);
+      --color-pink-a7: var(--ak-color-pink-a7);
+      --color-pink-a8: var(--ak-color-pink-a8);
+      --color-pink-a9: var(--ak-color-pink-a9);
+      --color-pink-a10: var(--ak-color-pink-a10);
+      --color-pink-a11: var(--ak-color-pink-a11);
+      --color-pink-a12: var(--ak-color-pink-a12);
+
+      /* font-family */
+      --font-family-mono: var(--ak-font-family-mono);
+      --font-family-sans: var(--ak-font-family-sans);
+      --font-family-serif: var(--ak-font-family-serif);
+
+      --default-font-family: var(--ak-font-family-sans);
+      --default-mono-font-family: var(--ak-font-family-mono);
+
+      /* font-size */
+      --font-size-1: var(--ak-font-size-1);
+      --font-size-2: var(--ak-font-size-2);
+      --font-size-3: var(--ak-font-size-3);
+      --font-size-4: var(--ak-font-size-4);
+      --font-size-5: var(--ak-font-size-5);
+      --font-size-6: var(--ak-font-size-6);
+      --font-size-7: var(--ak-font-size-7);
+      --font-size-8: var(--ak-font-size-8);
+      --font-size-9: var(--ak-font-size-9);
+
+      /* font-weight */
+      --font-weight-normal: var(--ak-font-weight-normal);
+      --font-weight-medium: var(--ak-font-weight-medium);
+      --font-weight-bold: var(--ak-font-weight-bold);
+      --font-weight-extra-bold: var(--ak-font-weight-extra-bold);
+
+      /* inner shadow */
+      --inset-shadow-1: var(--ak-inner-shadow-1);
+      --inset-shadow-2: var(--ak-inner-shadow-2);
+      --inset-shadow-3: var(--ak-inner-shadow-3);
+      --inset-shadow-4: var(--ak-inner-shadow-4);
+      --inset-shadow-5: var(--ak-inner-shadow-5);
+
+      /* letter-spacing */
+      --letter-spacing-1: var(--ak-letter-spacing-1);
+      --letter-spacing-2: var(--ak-letter-spacing-2);
+      --letter-spacing-3: var(--ak-letter-spacing-3);
+      --letter-spacing-4: var(--ak-letter-spacing-4);
+      --letter-spacing-5: var(--ak-letter-spacing-5);
+      --letter-spacing-6: var(--ak-letter-spacing-6);
+      --letter-spacing-7: var(--ak-letter-spacing-7);
+      --letter-spacing-8: var(--ak-letter-spacing-8);
+
+      /* line-height */
+      --line-height-1: var(--ak-line-height-1);
+      --line-height-2: var(--ak-line-height-2);
+      --line-height-1: var(--ak-line-height-1);
+      --line-height-2: var(--ak-line-height-2);
+      --line-height-1: var(--ak-line-height-1);
+      --line-height-2: var(--ak-line-height-2);
+      --line-height-1: var(--ak-line-height-1);
+      --line-height-2: var(--ak-line-height-2);
+
+      /* radius */
+      --radius-1: var(--ak-border-radius-1);
+      --radius-2: var(--ak-border-radius-2);
+      --radius-3: var(--ak-border-radius-3);
+      --radius-4: var(--ak-border-radius-4);
+      --radius-5: var(--ak-border-radius-5);
+      --radius-6: var(--ak-border-radius-6);
+      --radius-7: var(--ak-border-radius-7);
+      --radius-round: var(--ak-border-radius-round);
+
+      /* shadow */
+      --shadow-1: var(--ak-shadow-1);
+      --shadow-2: var(--ak-shadow-2);
+      --shadow-3: var(--ak-shadow-3);
+      --shadow-4: var(--ak-shadow-4);
+      --shadow-5: var(--ak-shadow-5);
+      --shadow-6: var(--ak-shadow-6);
+
+      /* space */
+      --spacing-1: var(--ak-space-1);
+      --spacing-2: var(--ak-space-2);
+      --spacing-3: var(--ak-space-3);
+      --spacing-4: var(--ak-space-4);
+      --spacing-5: var(--ak-space-5);
+      --spacing-6: var(--ak-space-6);
+      --spacing-7: var(--ak-space-7);
+      --spacing-8: var(--ak-space-8);
+      --spacing-9: var(--ak-space-9);
+      --spacing-10: var(--ak-space-10);
+
+      /* transition-duration */
+      --tansition-duration-05: var(--ak-duration-05);
+      --tansition-duration-1: var(--ak-duration-1);
+      --tansition-duration-2: var(--ak-duration-2);
+      --tansition-duration-3: var(--ak-duration-3);
+      --tansition-duration-4: var(--ak-duration-4);
+
+      /* transition-timing-function */
+      --transition-timing-function-bezier: var(--ak-bezier-1);
+    }
+  }
+}
