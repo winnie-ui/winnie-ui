@@ -34,6 +34,10 @@ export default defineConfig({
               link: "/overview/getting-started",
             },
             {
+              label: "Tailwind",
+              link: "/overview/tailwind",
+            },
+            {
               label: "Changelog",
               link: "/overview/changelog",
             },
