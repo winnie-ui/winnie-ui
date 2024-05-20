@@ -5,7 +5,7 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   integrations: [
     starlight({
-      title: "Alku",
+      title: "Goho",
       customCss: [
         "./src/global.css",
         "@fontsource/geist-sans/400.css",
@@ -23,7 +23,7 @@ export default defineConfig({
       },
       pagination: false,
       social: {
-        github: "https://github.com/adamaho/alku",
+        github: "https://github.com/adamaho/goho",
       },
       sidebar: [
         {

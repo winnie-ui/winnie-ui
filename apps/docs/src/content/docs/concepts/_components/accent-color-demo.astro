@@ -74,7 +74,7 @@ import Button from "../../../../components/button.astro";
     >
   </div>
 
-  <div class="alku accent-color-demo" data-accent-color="red">
+  <div class="goho accent-color-demo" data-accent-color="red">
     <Button>Sign up</Button>
   </div>
 </Demo>
@@ -88,38 +88,38 @@ import Button from "../../../../components/button.astro";
       align-items: center;
       display: flex;
       flex: 1;
-      gap: var(--ak-space-3);
+      gap: var(--go-space-3);
 
       .accent-color-radio-item {
         opacity: 0;
       }
 
       .accent-color-radio-item-label {
-        background: var(--ak-accent-color-7);
-        border-radius: var(--ak-border-radius-round);
+        background: var(--go-accent-color-7);
+        border-radius: var(--go-border-radius-round);
         display: block;
         height: 18px;
         width: 18px;
 
         &:has(input[type="radio"]:checked) {
-          background: var(--ak-accent-color-9);
+          background: var(--go-accent-color-9);
         }
 
         &:has(input[type="radio"]:focus-visible) {
-          outline: var(--ak-border-width-2) solid var(--ak-accent-color-10);
+          outline: var(--go-border-width-2) solid var(--go-accent-color-10);
           outline-offset: 2px;
         }
       }
     }
     .selected-accent-color {
-      background-color: var(--ak-accent-color-a3);
-      border-radius: var(--ak-border-radius-2);
+      background-color: var(--go-accent-color-a3);
+      border-radius: var(--go-border-radius-2);
       display: inline-block;
-      color: var(--ak-accent-color-11);
-      font-size: var(--ak-font-size-2);
-      font-family: var(--ak-font-family-mono);
-      line-height: var(--ak-line-height-2);
-      padding-inline: var(--ak-space-2);
+      color: var(--go-accent-color-11);
+      font-size: var(--go-font-size-2);
+      font-family: var(--go-font-family-mono);
+      line-height: var(--go-line-height-2);
+      padding-inline: var(--go-space-2);
       white-space: nowrap;
 
       @media only screen and (max-width: 800px) {

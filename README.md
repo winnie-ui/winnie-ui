@@ -1,4 +1,4 @@
-# Alku
+# Goho
 
 <type>([scope]): <subject>
 

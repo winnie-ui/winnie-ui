@@ -3,33 +3,33 @@
   .light,
   .light-theme,
   [data-theme="light"] {
-    --ak-color-green-1: #fafefb;
-    --ak-color-green-2: #f4fbf5;
-    --ak-color-green-3: #e6f8e8;
-    --ak-color-green-4: #d5f2d9;
-    --ak-color-green-5: #c2ebc8;
-    --ak-color-green-6: #a9e1b2;
-    --ak-color-green-7: #87d295;
-    --ak-color-green-8: #4fbe6b;
-    --ak-color-green-9: #16a34a;
-    --ak-color-green-10: #00963d;
-    --ak-color-green-11: #008232;
-    --ak-color-green-12: #193d22;
+    --go-color-green-1: #fafefb;
+    --go-color-green-2: #f4fbf5;
+    --go-color-green-3: #e6f8e8;
+    --go-color-green-4: #d5f2d9;
+    --go-color-green-5: #c2ebc8;
+    --go-color-green-6: #a9e1b2;
+    --go-color-green-7: #87d295;
+    --go-color-green-8: #4fbe6b;
+    --go-color-green-9: #16a34a;
+    --go-color-green-10: #00963d;
+    --go-color-green-11: #008232;
+    --go-color-green-12: #193d22;
 
-    --ak-color-green-a1: #00cc3305;
-    --ak-color-green-a2: #00a3180b;
-    --ak-color-green-a3: #00b81519;
-    --ak-color-green-a4: #00b1192a;
-    --ak-color-green-a5: #00ac1a3d;
-    --ak-color-green-a6: #00a71b56;
-    --ak-color-green-a7: #00a01e78;
-    --ak-color-green-a8: #00a129b0;
-    --ak-color-green-a9: #009a39e9;
-    --ak-color-green-a10: #00963d;
-    --ak-color-green-a11: #008232;
-    --ak-color-green-a12: #00280ae6;
+    --go-color-green-a1: #00cc3305;
+    --go-color-green-a2: #00a3180b;
+    --go-color-green-a3: #00b81519;
+    --go-color-green-a4: #00b1192a;
+    --go-color-green-a5: #00ac1a3d;
+    --go-color-green-a6: #00a71b56;
+    --go-color-green-a7: #00a01e78;
+    --go-color-green-a8: #00a129b0;
+    --go-color-green-a9: #009a39e9;
+    --go-color-green-a10: #00963d;
+    --go-color-green-a11: #008232;
+    --go-color-green-a12: #00280ae6;
 
-    --ak-color-green-contrast: #fff;
+    --go-color-green-contrast: #fff;
   }
 
   @supports (color: color(display-p3 1 1 1)) {
@@ -38,33 +38,33 @@
       .light,
       .light-theme,
       [data-theme="light"] {
-        --ak-color-green-1: oklch(99.4% 0.006 149.2);
-        --ak-color-green-2: oklch(98.2% 0.011 149.2);
-        --ak-color-green-3: oklch(96.1% 0.028 149.2);
-        --ak-color-green-4: oklch(93.4% 0.045 149.2);
-        --ak-color-green-5: oklch(90.1% 0.064 149.2);
-        --ak-color-green-6: oklch(85.8% 0.086 149.2);
-        --ak-color-green-7: oklch(79.8% 0.114 149.2);
-        --ak-color-green-8: oklch(71.6% 0.156 149.2);
-        --ak-color-green-9: oklch(62.7% 0.17 149.2);
-        --ak-color-green-10: oklch(58.6% 0.17 149.2);
-        --ak-color-green-11: oklch(52.7% 0.157 149.2);
-        --ak-color-green-12: oklch(32.6% 0.064 149.2);
+        --go-color-green-1: oklch(99.4% 0.006 149.2);
+        --go-color-green-2: oklch(98.2% 0.011 149.2);
+        --go-color-green-3: oklch(96.1% 0.028 149.2);
+        --go-color-green-4: oklch(93.4% 0.045 149.2);
+        --go-color-green-5: oklch(90.1% 0.064 149.2);
+        --go-color-green-6: oklch(85.8% 0.086 149.2);
+        --go-color-green-7: oklch(79.8% 0.114 149.2);
+        --go-color-green-8: oklch(71.6% 0.156 149.2);
+        --go-color-green-9: oklch(62.7% 0.17 149.2);
+        --go-color-green-10: oklch(58.6% 0.17 149.2);
+        --go-color-green-11: oklch(52.7% 0.157 149.2);
+        --go-color-green-12: oklch(32.6% 0.064 149.2);
 
-        --ak-color-green-a1: color(display-p3 0.024 0.757 0.024 / 0.016);
-        --ak-color-green-a2: color(display-p3 0.024 0.612 0.024 / 0.04);
-        --ak-color-green-a3: color(display-p3 0.012 0.643 0.012 / 0.087);
-        --ak-color-green-a4: color(display-p3 0.008 0.616 0.008 / 0.142);
-        --ak-color-green-a5: color(display-p3 0.004 0.608 0.02 / 0.208);
-        --ak-color-green-a6: color(display-p3 0.004 0.573 0.02 / 0.291);
-        --ak-color-green-a7: color(display-p3 0.004 0.545 0.024 / 0.404);
-        --ak-color-green-a8: color(display-p3 0 0.537 0.035 / 0.569);
-        --ak-color-green-a9: color(display-p3 0 0.475 0.047 / 0.702);
-        --ak-color-green-a10: color(display-p3 0 0.435 0.031 / 0.742);
-        --ak-color-green-a11: color(display-p3 0 0.361 0.02 / 0.781);
-        --ak-color-green-a12: color(display-p3 0 0.118 0.016 / 0.867);
+        --go-color-green-a1: color(display-p3 0.024 0.757 0.024 / 0.016);
+        --go-color-green-a2: color(display-p3 0.024 0.612 0.024 / 0.04);
+        --go-color-green-a3: color(display-p3 0.012 0.643 0.012 / 0.087);
+        --go-color-green-a4: color(display-p3 0.008 0.616 0.008 / 0.142);
+        --go-color-green-a5: color(display-p3 0.004 0.608 0.02 / 0.208);
+        --go-color-green-a6: color(display-p3 0.004 0.573 0.02 / 0.291);
+        --go-color-green-a7: color(display-p3 0.004 0.545 0.024 / 0.404);
+        --go-color-green-a8: color(display-p3 0 0.537 0.035 / 0.569);
+        --go-color-green-a9: color(display-p3 0 0.475 0.047 / 0.702);
+        --go-color-green-a10: color(display-p3 0 0.435 0.031 / 0.742);
+        --go-color-green-a11: color(display-p3 0 0.361 0.02 / 0.781);
+        --go-color-green-a12: color(display-p3 0 0.118 0.016 / 0.867);
 
-        --ak-color-green-contrast: #fff;
+        --go-color-green-contrast: #fff;
       }
     }
   }
@@ -72,33 +72,33 @@
   .dark,
   .dark-theme,
   [data-theme="dark"] {
-    --ak-color-green-1: #0c130d;
-    --ak-color-green-2: #131a14;
-    --ak-color-green-3: #192a1c;
-    --ak-color-green-4: #193b21;
-    --ak-color-green-5: #204929;
-    --ak-color-green-6: #265832;
-    --ak-color-green-7: #2d693b;
-    --ak-color-green-8: #327c44;
-    --ak-color-green-9: #16a34a;
-    --ak-color-green-10: #00963d;
-    --ak-color-green-11: #5ed47b;
-    --ak-color-green-12: #b8f3c1;
+    --go-color-green-1: #0c130d;
+    --go-color-green-2: #131a14;
+    --go-color-green-3: #192a1c;
+    --go-color-green-4: #193b21;
+    --go-color-green-5: #204929;
+    --go-color-green-6: #265832;
+    --go-color-green-7: #2d693b;
+    --go-color-green-8: #327c44;
+    --go-color-green-9: #16a34a;
+    --go-color-green-10: #00963d;
+    --go-color-green-11: #5ed47b;
+    --go-color-green-12: #b8f3c1;
 
-    --ak-color-green-a1: #00bb0003;
-    --ak-color-green-a2: #45f75e0a;
-    --ak-color-green-a3: #5dfe791b;
-    --ak-color-green-a4: #3fff6c2d;
-    --ak-color-green-a5: #51ff773c;
-    --ak-color-green-a6: #57fd7f4d;
-    --ak-color-green-a7: #5cfd825f;
-    --ak-color-green-a8: #5bff8373;
-    --ak-color-green-a9: #19fe6d9d;
-    --ak-color-green-a10: #00ff608f;
-    --ak-color-green-a11: #6fff93d1;
-    --ak-color-green-a12: #c0fecaf3;
+    --go-color-green-a1: #00bb0003;
+    --go-color-green-a2: #45f75e0a;
+    --go-color-green-a3: #5dfe791b;
+    --go-color-green-a4: #3fff6c2d;
+    --go-color-green-a5: #51ff773c;
+    --go-color-green-a6: #57fd7f4d;
+    --go-color-green-a7: #5cfd825f;
+    --go-color-green-a8: #5bff8373;
+    --go-color-green-a9: #19fe6d9d;
+    --go-color-green-a10: #00ff608f;
+    --go-color-green-a11: #6fff93d1;
+    --go-color-green-a12: #c0fecaf3;
 
-    --ak-color-green-contrast: #fff;
+    --go-color-green-contrast: #fff;
   }
 
   @supports (color: color(display-p3 1 1 1)) {
@@ -106,33 +106,33 @@
       .dark,
       .dark-theme,
       [data-theme="dark"] {
-        --ak-color-green-1: oklch(17.8% 0.016 149.2);
-        --ak-color-green-2: oklch(20.9% 0.016 149.2);
-        --ak-color-green-3: oklch(26.6% 0.035 149.2);
-        --ak-color-green-4: oklch(31.9% 0.061 149.2);
-        --ak-color-green-5: oklch(36.6% 0.072 149.2);
-        --ak-color-green-6: oklch(41.6% 0.084 149.2);
-        --ak-color-green-7: oklch(46.8% 0.097 149.2);
-        --ak-color-green-8: oklch(52.4% 0.113 149.2);
-        --ak-color-green-9: oklch(62.7% 0.17 149.2);
-        --ak-color-green-10: oklch(58.6% 0.17 149.2);
-        --ak-color-green-11: oklch(78% 0.165 149.2);
-        --ak-color-green-12: oklch(91.1% 0.09 149.2);
+        --go-color-green-1: oklch(17.8% 0.016 149.2);
+        --go-color-green-2: oklch(20.9% 0.016 149.2);
+        --go-color-green-3: oklch(26.6% 0.035 149.2);
+        --go-color-green-4: oklch(31.9% 0.061 149.2);
+        --go-color-green-5: oklch(36.6% 0.072 149.2);
+        --go-color-green-6: oklch(41.6% 0.084 149.2);
+        --go-color-green-7: oklch(46.8% 0.097 149.2);
+        --go-color-green-8: oklch(52.4% 0.113 149.2);
+        --go-color-green-9: oklch(62.7% 0.17 149.2);
+        --go-color-green-10: oklch(58.6% 0.17 149.2);
+        --go-color-green-11: oklch(78% 0.165 149.2);
+        --go-color-green-12: oklch(91.1% 0.09 149.2);
 
-        --ak-color-green-a1: color(display-p3 0 0.941 0 / 0.009);
-        --ak-color-green-a2: color(display-p3 0.376 0.996 0.376 / 0.038);
-        --ak-color-green-a3: color(display-p3 0.514 0.992 0.514 / 0.106);
-        --ak-color-green-a4: color(display-p3 0.455 0.996 0.478 / 0.173);
-        --ak-color-green-a5: color(display-p3 0.51 1 0.525 / 0.232);
-        --ak-color-green-a6: color(display-p3 0.522 1 0.561 / 0.295);
-        --ak-color-green-a7: color(display-p3 0.537 1 0.573 / 0.366);
-        --ak-color-green-a8: color(display-p3 0.537 1 0.573 / 0.442);
-        --ak-color-green-a9: color(display-p3 0.447 0.996 0.498 / 0.606);
-        --ak-color-green-a10: color(display-p3 0.416 0.996 0.459 / 0.551);
-        --ak-color-green-a11: color(display-p3 0.6 1 0.627 / 0.807);
-        --ak-color-green-a12: color(display-p3 0.812 1 0.816 / 0.942);
+        --go-color-green-a1: color(display-p3 0 0.941 0 / 0.009);
+        --go-color-green-a2: color(display-p3 0.376 0.996 0.376 / 0.038);
+        --go-color-green-a3: color(display-p3 0.514 0.992 0.514 / 0.106);
+        --go-color-green-a4: color(display-p3 0.455 0.996 0.478 / 0.173);
+        --go-color-green-a5: color(display-p3 0.51 1 0.525 / 0.232);
+        --go-color-green-a6: color(display-p3 0.522 1 0.561 / 0.295);
+        --go-color-green-a7: color(display-p3 0.537 1 0.573 / 0.366);
+        --go-color-green-a8: color(display-p3 0.537 1 0.573 / 0.442);
+        --go-color-green-a9: color(display-p3 0.447 0.996 0.498 / 0.606);
+        --go-color-green-a10: color(display-p3 0.416 0.996 0.459 / 0.551);
+        --go-color-green-a11: color(display-p3 0.6 1 0.627 / 0.807);
+        --go-color-green-a12: color(display-p3 0.812 1 0.816 / 0.942);
 
-        --ak-color-green-contrast: #fff;
+        --go-color-green-contrast: #fff;
       }
     }
   }

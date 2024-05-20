@@ -11,7 +11,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@alku/css": "workspace:*",
+    "@goho/css": "workspace:*",
     "@astrojs/check": "0.7.0",
     "@astrojs/starlight": "0.23.1",
     "@floating-ui/dom": "1.6.5",

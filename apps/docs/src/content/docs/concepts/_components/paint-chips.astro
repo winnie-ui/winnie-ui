@@ -48,7 +48,7 @@ const swatches = [
       const swatch = s.getAttribute("data-swatch");
 
       try {
-        const css = `var(--ak-color-${color}-${swatch})`;
+        const css = `var(--go-color-${color}-${swatch})`;
         await navigator.clipboard.writeText(css);
       } catch (error) {
         console.warn("Failed to save color to clipboard");
@@ -119,27 +119,27 @@ const swatches = [
   .paint-chips {
     display: flex;
     flex-direction: column;
-    gap: var(--ak-space-4);
-    padding: var(--ak-space-1);
-    padding-left: var(--ak-space-2);
+    gap: var(--go-space-4);
+    padding: var(--go-space-1);
+    padding-left: var(--go-space-2);
     overflow-x: auto;
 
     .paint-chip-list-item {
       display: flex;
       flex-direction: column;
-      gap: var(--ak-space-3);
+      gap: var(--go-space-3);
 
       .paint-chip-list-item-title {
-        color: var(--ak-color-grey-12);
-        font-size: var(--ak-font-size-2);
-        font-weight: var(--ak-font-weight-medium);
+        color: var(--go-color-grey-12);
+        font-size: var(--go-font-size-2);
+        font-weight: var(--go-font-weight-medium);
         text-transform: capitalize;
       }
 
       .paint-chip-list-item-list {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
-        gap: var(--ak-space-3);
+        gap: var(--go-space-3);
         list-style: none;
         margin: 0;
         padding: 0;
@@ -147,41 +147,41 @@ const swatches = [
         .paint-chip-swatch-container {
           display: flex;
           flex-direction: column;
-          gap: var(--ak-space-2);
+          gap: var(--go-space-2);
           position: relative;
 
           .paint-chip-tooltip {
             position: absolute;
-            border: var(--ak-border-width-1) solid var(--ak-color-grey-6);
-            border-radius: var(--ak-border-radius-2);
-            background: var(--ak-color-grey-1);
-            box-shadow: var(--ak-shadow-3);
+            border: var(--go-border-width-1) solid var(--go-color-grey-6);
+            border-radius: var(--go-border-radius-2);
+            background: var(--go-color-grey-1);
+            box-shadow: var(--go-shadow-3);
             line-height: 1;
-            font-size: var(--ak-font-size-1);
-            padding: var(--ak-space-2);
+            font-size: var(--go-font-size-1);
+            padding: var(--go-space-2);
           }
 
           .paint-chip-swatch {
             aspect-ratio: 16 / 11;
             background-image: linear-gradient(
                 45deg,
-                var(--ak-color-grey-2) 25%,
+                var(--go-color-grey-2) 25%,
                 transparent 25%
               ),
               linear-gradient(
                 135deg,
-                var(--ak-color-grey-2) 25%,
+                var(--go-color-grey-2) 25%,
                 transparent 25%
               ),
               linear-gradient(
                 45deg,
                 transparent 75%,
-                var(--ak-color-grey-2) 75%
+                var(--go-color-grey-2) 75%
               ),
               linear-gradient(
                 135deg,
                 transparent 75%,
-                var(--ak-color-grey-2) 75%
+                var(--go-color-grey-2) 75%
               );
             background-size: 16px 16px;
             background-position:
@@ -192,118 +192,118 @@ const swatches = [
             height: 32px;
 
             &:focus-visible {
-              outline: var(--ak-border-width-2) solid var(--ak-accent-color-9);
+              outline: var(--go-border-width-2) solid var(--go-accent-color-9);
               outline-offset: 2px;
             }
 
             &[data-swatch="1"] {
-              --swatch-background: var(--ak-accent-color-1);
+              --swatch-background: var(--go-accent-color-1);
             }
 
             &[data-swatch="2"] {
-              --swatch-background: var(--ak-accent-color-2);
+              --swatch-background: var(--go-accent-color-2);
             }
 
             &[data-swatch="3"] {
-              --swatch-background: var(--ak-accent-color-3);
+              --swatch-background: var(--go-accent-color-3);
             }
 
             &[data-swatch="4"] {
-              --swatch-background: var(--ak-accent-color-4);
+              --swatch-background: var(--go-accent-color-4);
             }
 
             &[data-swatch="5"] {
-              --swatch-background: var(--ak-accent-color-5);
+              --swatch-background: var(--go-accent-color-5);
             }
 
             &[data-swatch="6"] {
-              --swatch-background: var(--ak-accent-color-6);
+              --swatch-background: var(--go-accent-color-6);
             }
 
             &[data-swatch="7"] {
-              --swatch-background: var(--ak-accent-color-7);
+              --swatch-background: var(--go-accent-color-7);
             }
 
             &[data-swatch="8"] {
-              --swatch-background: var(--ak-accent-color-8);
+              --swatch-background: var(--go-accent-color-8);
             }
 
             &[data-swatch="9"] {
-              --swatch-background: var(--ak-accent-color-9);
+              --swatch-background: var(--go-accent-color-9);
             }
 
             &[data-swatch="10"] {
-              --swatch-background: var(--ak-accent-color-10);
+              --swatch-background: var(--go-accent-color-10);
             }
 
             &[data-swatch="11"] {
-              --swatch-background: var(--ak-accent-color-11);
+              --swatch-background: var(--go-accent-color-11);
             }
 
             &[data-swatch="12"] {
-              --swatch-background: var(--ak-accent-color-12);
+              --swatch-background: var(--go-accent-color-12);
             }
 
             &[data-swatch="a1"] {
-              --swatch-background: var(--ak-accent-color-a1);
+              --swatch-background: var(--go-accent-color-a1);
             }
 
             &[data-swatch="a2"] {
-              --swatch-background: var(--ak-accent-color-a2);
+              --swatch-background: var(--go-accent-color-a2);
             }
 
             &[data-swatch="a3"] {
-              --swatch-background: var(--ak-accent-color-a3);
+              --swatch-background: var(--go-accent-color-a3);
             }
 
             &[data-swatch="a4"] {
-              --swatch-background: var(--ak-accent-color-a4);
+              --swatch-background: var(--go-accent-color-a4);
             }
 
             &[data-swatch="a5"] {
-              --swatch-background: var(--ak-accent-color-a5);
+              --swatch-background: var(--go-accent-color-a5);
             }
 
             &[data-swatch="a6"] {
-              --swatch-background: var(--ak-accent-color-a6);
+              --swatch-background: var(--go-accent-color-a6);
             }
 
             &[data-swatch="a7"] {
-              --swatch-background: var(--ak-accent-color-a7);
+              --swatch-background: var(--go-accent-color-a7);
             }
 
             &[data-swatch="a8"] {
-              --swatch-background: var(--ak-accent-color-a8);
+              --swatch-background: var(--go-accent-color-a8);
             }
 
             &[data-swatch="a9"] {
-              --swatch-background: var(--ak-accent-color-a9);
+              --swatch-background: var(--go-accent-color-a9);
             }
 
             &[data-swatch="a10"] {
-              --swatch-background: var(--ak-accent-color-a10);
+              --swatch-background: var(--go-accent-color-a10);
             }
 
             &[data-swatch="a11"] {
-              --swatch-background: var(--ak-accent-color-a11);
+              --swatch-background: var(--go-accent-color-a11);
             }
 
             &[data-swatch="a12"] {
-              --swatch-background: var(--ak-accent-color-a12);
+              --swatch-background: var(--go-accent-color-a12);
             }
 
             .paint-chip-swatch-color {
               background-color: var(--swatch-background);
-              border: var(--ak-border-width-1) solid var(--swatch-border);
-              border-radius: var(--ak-border-radius-3);
+              border: var(--go-border-width-1) solid var(--swatch-border);
+              border-radius: var(--go-border-radius-3);
               height: 100%;
               width: 100%;
             }
           }
 
           .paint-chip-swatch-number {
-            color: var(--ak-color-grey-12);
-            font-size: var(--ak-font-size-1);
+            color: var(--go-color-grey-12);
+            font-size: var(--go-font-size-1);
             line-height: 1;
           }
         }

@@ -1,11 +1,11 @@
 ---
 title: Layers
-description: Control the cascade of Alku CSS with layers
+description: Control the cascade of Goho CSS with layers
 ---
 
-All tokens and styles in Alku CSS make use of a concept in CSS called [Layers](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) which allow Alku CSS to define styles in a specific order of precedence.
+All tokens and styles in Goho CSS make use of a concept in CSS called [Layers](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) which allow Goho CSS to define styles in a specific order of precedence.
 
-Alku CSS defines tokens an styles in the following order from least to most precedence:
+Goho CSS defines tokens an styles in the following order from least to most precedence:
 
 ```css title="layer.css"
 @layer reset, base, component;
@@ -19,7 +19,7 @@ The reset layer is used to remove any default browser styles that get in the way
 
 ### Default margins are removed
 
-The reset layer removes margins from all of the heading and paragraph elements. Often times these user-agent margins conflict with the spacing scale provided by Alku. So we remove these margins to make styling these elements more predictable.
+The reset layer removes margins from all of the heading and paragraph elements. Often times these user-agent margins conflict with the spacing scale provided by Goho. So we remove these margins to make styling these elements more predictable.
 
 ```css title="reset.css"
 h1,
@@ -52,19 +52,19 @@ The base layer is where most of the tokens and base styles are applied. This inc
 ```css title="space.css"
 @layer base {
   :root {
-    --ak-font-weight-normal: 400;
-    --ak-font-weight-medium: 500;
-    --ak-font-weight-bold: 700;
-    --ak-font-weight-extra-bold: 800;
+    --go-font-weight-normal: 400;
+    --go-font-weight-medium: 500;
+    --go-font-weight-bold: 700;
+    --go-font-weight-extra-bold: 800;
 
-    --ak-letter-spacing-1: 0.0025em;
-    --ak-letter-spacing-2: 0em;
-    --ak-letter-spacing-3: -0.0025em;
-    --ak-letter-spacing-4: -0.005em;
-    --ak-letter-spacing-5: -0.00625em;
-    --ak-letter-spacing-6: -0.0075em;
-    --ak-letter-spacing-7: -0.01em;
-    --ak-letter-spacing-8: -0.025em;
+    --go-letter-spacing-1: 0.0025em;
+    --go-letter-spacing-2: 0em;
+    --go-letter-spacing-3: -0.0025em;
+    --go-letter-spacing-4: -0.005em;
+    --go-letter-spacing-5: -0.00625em;
+    --go-letter-spacing-6: -0.0075em;
+    --go-letter-spacing-7: -0.01em;
+    --go-letter-spacing-8: -0.025em;
   }
 }
 ```
@@ -77,10 +77,10 @@ The components layer is reserved for styles that pertain to design system compon
 @layer component {
   .ak-button,
   [ak-button] {
-    background: var(--ak-color-purple-9);
-    color: var(--ak-color-purple-contrast);
-    padding-block: var(--ak-space-1);
-    padding-inline: var(--ak-space-3);
+    background: var(--go-color-purple-9);
+    color: var(--go-color-purple-contrast);
+    padding-block: var(--go-space-1);
+    padding-inline: var(--go-space-3);
   }
 }
 ```

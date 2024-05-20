@@ -1,5 +1,5 @@
 {
-  "name": "@alku/css",
+  "name": "@goho/css",
   "version": "0.0.1",
   "description": "css tokens and styles for building web applications",
   "author": "Adam Aho",
@@ -20,7 +20,7 @@
     "stylelint": "stylelint \"src/**/*.css\""
   },
   "devDependencies": {
-    "@alku/stylelint-config-alku": "workspace:*",
+    "@goho/stylelint-config-goho": "workspace:*",
     "rimraf": "5.0.7",
     "stylelint": "16.5.0"
   }

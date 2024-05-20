@@ -7,14 +7,14 @@ import ButtonList from "./_components/button-list.astro";
 
 Corner radius drastically changes the feel of an application. Larger radius' make applications feel soft, where as no radius makes an application feel sharp and edgy.
 
-Alku allows you to adjust the corner radius of elements using the `data-radius` attribute. This means that any elements styled using the `--ak-radius-<value>` variables will react to changes in this attribute.
+Goho allows you to adjust the corner radius of elements using the `data-radius` attribute. This means that any elements styled using the `--go-radius-<value>` variables will react to changes in this attribute.
 
-```tsx title="root.tsx" ins="class="alku"" ins="data-radius="md""
+```tsx title="root.tsx" ins="class="goho"" ins="data-radius="md""
 export default function Root() {
   return (
     <html>
       <head></head>
-      <body class="alku" data-radius="md">
+      <body class="goho" data-radius="md">
         <App />
       </body>
     </html>
@@ -36,9 +36,9 @@ The implementation uses a radius factor, similar to [Scaling Factor](/concepts/s
 
 Corner radius variables can be applied to the `border-radius` property in css.
 
-```css title="button.css" ins="var(--ak-border-radius-2)"
+```css title="button.css" ins="var(--go-border-radius-2)"
 .my-button {
-  border-radius: var(--ak-border-radius-2);
+  border-radius: var(--go-border-radius-2);
 }
 ```
 

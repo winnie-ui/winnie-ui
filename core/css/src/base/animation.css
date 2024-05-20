@@ -1,11 +1,11 @@
 @layer base {
   :root {
-    --ak-duration-05: 50ms;
-    --ak-duration-1: 100ms;
-    --ak-duration-2: 200ms;
-    --ak-duration-3: 300ms;
-    --ak-duration-4: 500ms;
-    --ak-bezier-1: cubic-bezier(0.16, 1, 0.3, 1);
+    --go-duration-05: 50ms;
+    --go-duration-1: 100ms;
+    --go-duration-2: 200ms;
+    --go-duration-3: 300ms;
+    --go-duration-4: 500ms;
+    --go-bezier-1: cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   @keyframes ak-fade-in {
@@ -70,14 +70,14 @@
 
   @media (prefers-reduced-motion: no-preference) {
     .ak-popper {
-      animation-timing-function: var(--ak-bezier-1);
+      animation-timing-function: var(--go-bezier-1);
 
       &:where(
           [popover]:popover-open,
           [data-state="delayed-open"],
           [data-state="open"]
         ) {
-        animation-duration: var(--ak-duration-2);
+        animation-duration: var(--go-duration-2);
 
         &:where([data-side="top"]) {
           animation-name: ak-slide-up, ak-fade-in;
@@ -97,7 +97,7 @@
       }
 
       &:where([data-state="closed"]) {
-        animation-duration: var(--ak-duration-1);
+        animation-duration: var(--go-duration-1);
 
         &:where([data-side="top"]) {
           animation-name: ak-slide-down, ak-fade-out;

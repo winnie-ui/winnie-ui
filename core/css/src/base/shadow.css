@@ -6,88 +6,88 @@
  * https://github.com/argyleink/open-props/blob/main/src/props.shadows.css
  */
 @layer base {
-  .alku {
-    --ak-shadow-1: 0 1px 2px -1px hsl(var(--ak-shadow-color) /
-          calc(var(--ak-shadow-strength) + 9%));
-    --ak-shadow-2: 0 3px 5px -2px hsl(var(--ak-shadow-color) /
-            calc(var(--ak-shadow-strength) + 3%)),
-      0 7px 14px -5px hsl(var(--ak-shadow-color) /
-            calc(var(--ak-shadow-strength) + 5%));
-    --ak-shadow-3: 0 -1px 3px 0 hsl(var(--ak-shadow-color) /
-            calc(var(--ak-shadow-strength) + 2%)),
-      0 1px 2px -5px hsl(var(--ak-shadow-color) /
-            calc(var(--ak-shadow-strength) + 2%)),
-      0 2px 5px -5px hsl(var(--ak-shadow-color) /
-            calc(var(--ak-shadow-strength) + 4%)),
-      0 4px 12px -5px hsl(var(--ak-shadow-color) /
-            calc(var(--ak-shadow-strength) + 5%)),
-      0 12px 15px -5px hsl(var(--ak-shadow-color) /
-            calc(var(--ak-shadow-strength) + 7%));
-    --ak-shadow-4: 0 -2px 5px 0 hsl(var(--ak-shadow-color) /
-            calc(var(--ak-shadow-strength) + 2%)),
-      0 1px 1px -2px hsl(var(--ak-shadow-color) /
-            calc(var(--ak-shadow-strength) + 3%)),
-      0 2px 2px -2px hsl(var(--ak-shadow-color) /
-            calc(var(--ak-shadow-strength) + 3%)),
-      0 5px 5px -2px hsl(var(--ak-shadow-color) /
-            calc(var(--ak-shadow-strength) + 4%)),
-      0 9px 9px -2px hsl(var(--ak-shadow-color) /
-            calc(var(--ak-shadow-strength) + 5%)),
-      0 16px 16px -2px hsl(var(--ak-shadow-color) /
-            calc(var(--ak-shadow-strength) + 6%));
-    --ak-shadow-5: 0 -1px 2px 0 hsl(var(--ak-shadow-color) /
-            calc(var(--ak-shadow-strength) + 2%)),
-      0 2px 1px -2px hsl(var(--ak-shadow-color) /
-            calc(var(--ak-shadow-strength) + 3%)),
-      0 5px 5px -2px hsl(var(--ak-shadow-color) /
-            calc(var(--ak-shadow-strength) + 3%)),
-      0 10px 10px -2px hsl(var(--ak-shadow-color) /
-            calc(var(--ak-shadow-strength) + 4%)),
-      0 20px 20px -2px hsl(var(--ak-shadow-color) /
-            calc(var(--ak-shadow-strength) + 5%)),
-      0 40px 40px -2px hsl(var(--ak-shadow-color) /
-            calc(var(--ak-shadow-strength) + 7%));
-    --ak-shadow-6: 0 -1px 2px 0 hsl(var(--ak-shadow-color) /
-            calc(var(--ak-shadow-strength) + 2%)),
-      0 3px 2px -2px hsl(var(--ak-shadow-color) /
-            calc(var(--ak-shadow-strength) + 3%)),
-      0 7px 5px -2px hsl(var(--ak-shadow-color) /
-            calc(var(--ak-shadow-strength) + 3%)),
-      0 12px 10px -2px hsl(var(--ak-shadow-color) /
-            calc(var(--ak-shadow-strength) + 4%)),
-      0 22px 18px -2px hsl(var(--ak-shadow-color) /
-            calc(var(--ak-shadow-strength) + 5%)),
-      0 41px 33px -2px hsl(var(--ak-shadow-color) /
-            calc(var(--ak-shadow-strength) + 6%)),
-      0 100px 80px -2px hsl(var(--ak-shadow-color) /
-            calc(var(--ak-shadow-strength) + 7%));
-    --ak-inner-shadow-1: inset 0 0 0 1px
-      hsl(var(--ak-shadow-color) / calc(var(--ak-shadow-strength) + 9%));
-    --ak-inner-shadow-2: inset 0 1px 2px 0
-        hsl(var(--ak-shadow-color) / calc(var(--ak-shadow-strength) + 9%)),
-      var(--ak-inner-shadow-highlight);
-    --ak-inner-shadow-3: inset 0 1px 4px 0
-        hsl(var(--ak-shadow-color) / calc(var(--ak-shadow-strength) + 9%)),
-      var(--ak-inner-shadow-highlight);
-    --ak-inner-shadow-4: inset 0 2px 8px 0
-        hsl(var(--ak-shadow-color) / calc(var(--ak-shadow-strength) + 9%)),
-      var(--ak-inner-shadow-highlight);
-    --ak-inner-shadow-5: inset 0 2px 14px 0
-        hsl(var(--ak-shadow-color) / calc(var(--ak-shadow-strength) + 9%)),
-      var(--ak-inner-shadow-highlight);
+  .goho {
+    --go-shadow-1: 0 1px 2px -1px hsl(var(--go-shadow-color) /
+          calc(var(--go-shadow-strength) + 9%));
+    --go-shadow-2: 0 3px 5px -2px hsl(var(--go-shadow-color) /
+            calc(var(--go-shadow-strength) + 3%)),
+      0 7px 14px -5px hsl(var(--go-shadow-color) /
+            calc(var(--go-shadow-strength) + 5%));
+    --go-shadow-3: 0 -1px 3px 0 hsl(var(--go-shadow-color) /
+            calc(var(--go-shadow-strength) + 2%)),
+      0 1px 2px -5px hsl(var(--go-shadow-color) /
+            calc(var(--go-shadow-strength) + 2%)),
+      0 2px 5px -5px hsl(var(--go-shadow-color) /
+            calc(var(--go-shadow-strength) + 4%)),
+      0 4px 12px -5px hsl(var(--go-shadow-color) /
+            calc(var(--go-shadow-strength) + 5%)),
+      0 12px 15px -5px hsl(var(--go-shadow-color) /
+            calc(var(--go-shadow-strength) + 7%));
+    --go-shadow-4: 0 -2px 5px 0 hsl(var(--go-shadow-color) /
+            calc(var(--go-shadow-strength) + 2%)),
+      0 1px 1px -2px hsl(var(--go-shadow-color) /
+            calc(var(--go-shadow-strength) + 3%)),
+      0 2px 2px -2px hsl(var(--go-shadow-color) /
+            calc(var(--go-shadow-strength) + 3%)),
+      0 5px 5px -2px hsl(var(--go-shadow-color) /
+            calc(var(--go-shadow-strength) + 4%)),
+      0 9px 9px -2px hsl(var(--go-shadow-color) /
+            calc(var(--go-shadow-strength) + 5%)),
+      0 16px 16px -2px hsl(var(--go-shadow-color) /
+            calc(var(--go-shadow-strength) + 6%));
+    --go-shadow-5: 0 -1px 2px 0 hsl(var(--go-shadow-color) /
+            calc(var(--go-shadow-strength) + 2%)),
+      0 2px 1px -2px hsl(var(--go-shadow-color) /
+            calc(var(--go-shadow-strength) + 3%)),
+      0 5px 5px -2px hsl(var(--go-shadow-color) /
+            calc(var(--go-shadow-strength) + 3%)),
+      0 10px 10px -2px hsl(var(--go-shadow-color) /
+            calc(var(--go-shadow-strength) + 4%)),
+      0 20px 20px -2px hsl(var(--go-shadow-color) /
+            calc(var(--go-shadow-strength) + 5%)),
+      0 40px 40px -2px hsl(var(--go-shadow-color) /
+            calc(var(--go-shadow-strength) + 7%));
+    --go-shadow-6: 0 -1px 2px 0 hsl(var(--go-shadow-color) /
+            calc(var(--go-shadow-strength) + 2%)),
+      0 3px 2px -2px hsl(var(--go-shadow-color) /
+            calc(var(--go-shadow-strength) + 3%)),
+      0 7px 5px -2px hsl(var(--go-shadow-color) /
+            calc(var(--go-shadow-strength) + 3%)),
+      0 12px 10px -2px hsl(var(--go-shadow-color) /
+            calc(var(--go-shadow-strength) + 4%)),
+      0 22px 18px -2px hsl(var(--go-shadow-color) /
+            calc(var(--go-shadow-strength) + 5%)),
+      0 41px 33px -2px hsl(var(--go-shadow-color) /
+            calc(var(--go-shadow-strength) + 6%)),
+      0 100px 80px -2px hsl(var(--go-shadow-color) /
+            calc(var(--go-shadow-strength) + 7%));
+    --go-inner-shadow-1: inset 0 0 0 1px
+      hsl(var(--go-shadow-color) / calc(var(--go-shadow-strength) + 9%));
+    --go-inner-shadow-2: inset 0 1px 2px 0
+        hsl(var(--go-shadow-color) / calc(var(--go-shadow-strength) + 9%)),
+      var(--go-inner-shadow-highlight);
+    --go-inner-shadow-3: inset 0 1px 4px 0
+        hsl(var(--go-shadow-color) / calc(var(--go-shadow-strength) + 9%)),
+      var(--go-inner-shadow-highlight);
+    --go-inner-shadow-4: inset 0 2px 8px 0
+        hsl(var(--go-shadow-color) / calc(var(--go-shadow-strength) + 9%)),
+      var(--go-inner-shadow-highlight);
+    --go-inner-shadow-5: inset 0 2px 14px 0
+        hsl(var(--go-shadow-color) / calc(var(--go-shadow-strength) + 9%)),
+      var(--go-inner-shadow-highlight);
   }
 
   :is(.light, .light-theme, [data-theme="light"]) {
-    --ak-shadow-color: 220 3% 15%;
-    --ak-shadow-strength: 1%;
-    --ak-inner-shadow-highlight: inset 0 -0.5px 0 0 #fff,
+    --go-shadow-color: 220 3% 15%;
+    --go-shadow-strength: 1%;
+    --go-inner-shadow-highlight: inset 0 -0.5px 0 0 #fff,
       inset 0 0.5px 0 0 #0001;
   }
 
   :is(.dark, .dark-theme, [data-theme="dark"]) {
-    --ak-shadow-color: 220 40% 2%;
-    --ak-shadow-strength: 25%;
-    --ak-inner-shadow-highlight: inset 0 -0.5px 0 0 #fff1,
+    --go-shadow-color: 220 40% 2%;
+    --go-shadow-strength: 25%;
+    --go-inner-shadow-highlight: inset 0 -0.5px 0 0 #fff1,
       inset 0 0.5px 0 0 #0007;
   }
 }

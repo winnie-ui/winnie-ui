@@ -6,20 +6,20 @@ description: Precision crafted colors for all use cases.
 import AccentColorDemo from "./_components/accent-color-demo.astro";
 import PaintChips from "./_components/paint-chips.astro";
 
-Alku includes a default set of colors that is a great place to start when building your next application. These colors are loosely based on the colors provided by [Tailwind](https://tailwindcss.com/docs/customizing-colors) and were created using the [Radix Colors](https://www.radix-ui.com/colors/custom) custom palette generator.
+Goho includes a default set of colors that is a great place to start when building your next application. These colors are loosely based on the colors provided by [Tailwind](https://tailwindcss.com/docs/customizing-colors) and were created using the [Radix Colors](https://www.radix-ui.com/colors/custom) custom palette generator.
 
 <PaintChips />
 
 ## Accent Color
 
-Users and companies often have a preference for the accent color of their applications. Alku supports this using the `data-accent-color` attribute. The accent color attribute modifies the `--ak-accent-color-<value>` css variables which will affect any components that use those variables.
+Users and companies often have a preference for the accent color of their applications. Goho supports this using the `data-accent-color` attribute. The accent color attribute modifies the `--go-accent-color-<value>` css variables which will affect any components that use those variables.
 
-```tsx title="root.tsx" ins="class="alku"" ins="data-accent-color="purple""
+```tsx title="root.tsx" ins="class="goho"" ins="data-accent-color="purple""
 export default function Root() {
   return (
     <html>
       <head></head>
-      <body class="alku" data-accent-color="purple">
+      <body class="goho" data-accent-color="purple">
         <App />
       </body>
     </html>
@@ -27,7 +27,7 @@ export default function Root() {
 }
 ```
 
-Any color that Alku supports can be used as an accent color. Including a custom [brand color](/concepts/colors#branding).
+Any color that Goho supports can be used as an accent color. Including a custom [brand color](/concepts/colors#branding).
 
 <AccentColorDemo />
 
@@ -35,7 +35,7 @@ Any color that Alku supports can be used as an accent color. Including a custom 
 
 When the default palette doesn't suit your needs you can customize any of the colors by overriding the CSS Variables.
 
-Luckily, the community has started to create some amazing tools for generating color palettes. Alku's color palette is based on the one defined by [Radix Colors](https://www.radix-ui.com/colors/custom). We suggest you start there when it comes to configuring your brand color.
+Luckily, the community has started to create some amazing tools for generating color palettes. Goho's color palette is based on the one defined by [Radix Colors](https://www.radix-ui.com/colors/custom). We suggest you start there when it comes to configuring your brand color.
 
 Each color can be overridden using css variables defined in a global css file in your application. For example, if you want to define a custom `brand` color for your application you can do the following:
 
@@ -44,65 +44,65 @@ Each color can be overridden using css variables defined in a global css file in
 .light,
 .light-theme,
 [data-theme="light"] {
-  --ak-color-brand-1: #fcfdff;
-  --ak-color-brand-2: #f5f9ff;
-  --ak-color-brand-3: #eaf2ff;
-  --ak-color-brand-4: #dcebff;
-  --ak-color-brand-5: #cbe1ff;
-  --ak-color-brand-6: #b8d4ff;
-  --ak-color-brand-7: #9fc2fb;
-  --ak-color-brand-8: #7baaf6;
-  --ak-color-brand-9: #3b82f6;
-  --ak-color-brand-10: #2c74e9;
-  --ak-color-brand-11: #256cde;
-  --ak-color-brand-12: #123164;
+  --go-color-brand-1: #fcfdff;
+  --go-color-brand-2: #f5f9ff;
+  --go-color-brand-3: #eaf2ff;
+  --go-color-brand-4: #dcebff;
+  --go-color-brand-5: #cbe1ff;
+  --go-color-brand-6: #b8d4ff;
+  --go-color-brand-7: #9fc2fb;
+  --go-color-brand-8: #7baaf6;
+  --go-color-brand-9: #3b82f6;
+  --go-color-brand-10: #2c74e9;
+  --go-color-brand-11: #256cde;
+  --go-color-brand-12: #123164;
 
-  --ak-color-brand-a1: #0055ff03;
-  --ak-color-brand-a2: #0066ff0a;
-  --ak-color-brand-a3: #0062ff15;
-  --ak-color-brand-a4: #006eff23;
-  --ak-color-brand-a5: #006cff34;
-  --ak-color-brand-a6: #0065ff47;
-  --ak-color-brand-a7: #005df560;
-  --ak-color-brand-a8: #005bee84;
-  --ak-color-brand-a9: #005df3c4;
-  --ak-color-brand-a10: #0057e5d3;
-  --ak-color-brand-a11: #0053d8da;
-  --ak-color-brand-a12: #002158ed;
+  --go-color-brand-a1: #0055ff03;
+  --go-color-brand-a2: #0066ff0a;
+  --go-color-brand-a3: #0062ff15;
+  --go-color-brand-a4: #006eff23;
+  --go-color-brand-a5: #006cff34;
+  --go-color-brand-a6: #0065ff47;
+  --go-color-brand-a7: #005df560;
+  --go-color-brand-a8: #005bee84;
+  --go-color-brand-a9: #005df3c4;
+  --go-color-brand-a10: #0057e5d3;
+  --go-color-brand-a11: #0053d8da;
+  --go-color-brand-a12: #002158ed;
 
-  --ak-color-brand-contrast: #fff;
+  --go-color-brand-contrast: #fff;
 }
 
 .dark,
 .dark-theme,
 [data-theme="dark"] {
-  --ak-color-brand-1: #fcfdff;
-  --ak-color-brand-2: #f5f9ff;
-  --ak-color-brand-3: #eaf2ff;
-  --ak-color-brand-4: #dcebff;
-  --ak-color-brand-5: #cbe1ff;
-  --ak-color-brand-6: #b8d4ff;
-  --ak-color-brand-7: #9fc2fb;
-  --ak-color-brand-8: #7baaf6;
-  --ak-color-brand-9: #3b82f6;
-  --ak-color-brand-10: #2c74e9;
-  --ak-color-brand-11: #256cde;
-  --ak-color-brand-12: #123164;
+  --go-color-brand-1: #fcfdff;
+  --go-color-brand-2: #f5f9ff;
+  --go-color-brand-3: #eaf2ff;
+  --go-color-brand-4: #dcebff;
+  --go-color-brand-5: #cbe1ff;
+  --go-color-brand-6: #b8d4ff;
+  --go-color-brand-7: #9fc2fb;
+  --go-color-brand-8: #7baaf6;
+  --go-color-brand-9: #3b82f6;
+  --go-color-brand-10: #2c74e9;
+  --go-color-brand-11: #256cde;
+  --go-color-brand-12: #123164;
 
-  --ak-color-brand-a1: #0055ff03;
-  --ak-color-brand-a2: #0066ff0a;
-  --ak-color-brand-a3: #0062ff15;
-  --ak-color-brand-a4: #006eff23;
-  --ak-color-brand-a5: #006cff34;
-  --ak-color-brand-a6: #0065ff47;
-  --ak-color-brand-a7: #005df560;
-  --ak-color-brand-a8: #005bee84;
-  --ak-color-brand-a9: #005df3c4;
-  --ak-color-brand-a10: #0057e5d3;
-  --ak-color-brand-a11: #0053d8da;
-  --ak-color-brand-a12: #002158ed;
+  --go-color-brand-a1: #0055ff03;
+  --go-color-brand-a2: #0066ff0a;
+  --go-color-brand-a3: #0062ff15;
+  --go-color-brand-a4: #006eff23;
+  --go-color-brand-a5: #006cff34;
+  --go-color-brand-a6: #0065ff47;
+  --go-color-brand-a7: #005df560;
+  --go-color-brand-a8: #005bee84;
+  --go-color-brand-a9: #005df3c4;
+  --go-color-brand-a10: #0057e5d3;
+  --go-color-brand-a11: #0053d8da;
+  --go-color-brand-a12: #002158ed;
 
-  --ak-color-brand-contrast: #fff;
+  --go-color-brand-contrast: #fff;
 }
 ```
 
@@ -113,7 +113,7 @@ export default function Root() {
   return (
     <html>
       <head></head>
-      <body class="alku" data-accent-color="brand">
+      <body class="goho" data-accent-color="brand">
         <App />
       </body>
     </html>

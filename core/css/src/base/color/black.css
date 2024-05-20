@@ -1,18 +1,18 @@
 @layer base {
   :root {
-    --ak-color-black: #000;
+    --go-color-black: #000;
 
-    --ak-color-black-a1: rgba(0, 0, 0, 0.05);
-    --ak-color-black-a2: rgba(0, 0, 0, 0.1);
-    --ak-color-black-a3: rgba(0, 0, 0, 0.15);
-    --ak-color-black-a4: rgba(0, 0, 0, 0.2);
-    --ak-color-black-a5: rgba(0, 0, 0, 0.3);
-    --ak-color-black-a6: rgba(0, 0, 0, 0.4);
-    --ak-color-black-a7: rgba(0, 0, 0, 0.5);
-    --ak-color-black-a8: rgba(0, 0, 0, 0.6);
-    --ak-color-black-a9: rgba(0, 0, 0, 0.7);
-    --ak-color-black-a10: rgba(0, 0, 0, 0.8);
-    --ak-color-black-a11: rgba(0, 0, 0, 0.9);
-    --ak-color-black-a12: rgba(0, 0, 0, 0.95);
+    --go-color-black-a1: rgba(0, 0, 0, 0.05);
+    --go-color-black-a2: rgba(0, 0, 0, 0.1);
+    --go-color-black-a3: rgba(0, 0, 0, 0.15);
+    --go-color-black-a4: rgba(0, 0, 0, 0.2);
+    --go-color-black-a5: rgba(0, 0, 0, 0.3);
+    --go-color-black-a6: rgba(0, 0, 0, 0.4);
+    --go-color-black-a7: rgba(0, 0, 0, 0.5);
+    --go-color-black-a8: rgba(0, 0, 0, 0.6);
+    --go-color-black-a9: rgba(0, 0, 0, 0.7);
+    --go-color-black-a10: rgba(0, 0, 0, 0.8);
+    --go-color-black-a11: rgba(0, 0, 0, 0.9);
+    --go-color-black-a12: rgba(0, 0, 0, 0.95);
   }
 }

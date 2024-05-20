@@ -1,65 +1,65 @@
 ---
 title: Getting Started
-description: Install Alku CSS and start building your next application in minutes.
+description: Install Goho CSS and start building your next application in minutes.
 ---
 
 import { TabItem, Tabs } from "@astrojs/starlight/components";
 
-Alku CSS is a collection of css variables and component styles that can be used to style components in any framework.
+Goho CSS is a collection of css variables and component styles that can be used to style components in any framework.
 
 ## Installation
 
-Let's get you up and running with Alku CSS.
+Let's get you up and running with Goho CSS.
 
-### 1. Install Alku CSS
+### 1. Install Goho CSS
 
-Using the package manager of your choice, install Alku CSS from your command line:
+Using the package manager of your choice, install Goho CSS from your command line:
 
 {/* prettier-ignore */}
 <Tabs>
   <TabItem label="npm">
     ```bash frame="none"
-    npm install @alku/css
+    npm install @goho/css
     ```
   </TabItem>
   <TabItem label="yarn">
     ```bash frame="none"
-    yarn add @alku/css
+    yarn add @goho/css
     ```
   </TabItem>
   <TabItem label="pnpm">
     ```bash frame="none"
-    pnpm add @alku/css
+    pnpm add @goho/css
     ```
   </TabItem>
   <TabItem label="bun">
     ```bash frame="none"
-    bun install @alku/css
+    bun install @goho/css
     ```
   </TabItem>
 </Tabs>
 
 ### 2. Import the CSS
 
-Import the Alku CSS file at the root of your application in the place of your choice:
+Import the Goho CSS file at the root of your application in the place of your choice:
 
 {/* prettier-ignore */}
 <Tabs>
   <TabItem label="React">
     ```tsx title="main.tsx"
-    import "@alku/css";
+    import "@goho/css";
     ```
   </TabItem>
   <TabItem label="CSS">
     ```css title="global.css"
-    @import "@alku/css";
+    @import "@goho/css";
     ```
   </TabItem>
 </Tabs>
 
-### 3. Configure Alku CSS
+### 3. Configure Goho CSS
 
-Configure the `body` element with Alku CSS specific attributes
+Configure the `body` element with Goho CSS specific attributes
 
 ```tsx title="root.tsx" {6-9}
 export default function Root() {
@@ -67,7 +67,7 @@ export default function Root() {
     <html>
       <head></head>
       <body
-        class="alku"
+        class="goho"
         data-accent-color="orange"
         data-scaling="100%"
         data-radius="md"
@@ -81,20 +81,20 @@ export default function Root() {
 
 ### 4. Start Building
 
-Your app is now ready to go with Alku CSS.
+Your app is now ready to go with Goho CSS.
 
 ```css title="my-button.css"
 .my-button {
-  background: var(--ak-accent-color-9);
-  color: var(--ak-accent-color-contrast);
+  background: var(--go-accent-color-9);
+  color: var(--go-accent-color-contrast);
   height: 32px;
-  padding-inline: var(--ak-space-3);
+  padding-inline: var(--go-space-3);
 }
 ```
 
 ## Acknowledgements
 
-Alku wouldn't be where it is today without the work done by other projects in the community including:
+Goho wouldn't be where it is today without the work done by other projects in the community including:
 
 - [Radix Themes](https://www.radix-ui.com/)
 - [Open Props](https://github.com/argyleink/open-props)

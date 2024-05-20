@@ -1,6 +1,6 @@
 @layer reset {
   body {
-    font-family: var(--ak-font-family-sans);
+    font-family: var(--go-font-family-sans);
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
@@ -8,8 +8,8 @@
   }
 
   ::selection {
-    background: var(--ak-accent-color-9);
-    color: var(--ak-accent-color-contrast);
+    background: var(--go-accent-color-9);
+    color: var(--go-accent-color-contrast);
   }
 
   *[popover] {

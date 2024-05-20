@@ -6,45 +6,45 @@
  * https://github.com/radix-ui/themes/blob/main/packages/radix-ui-themes/src/styles/tokens/scaling.css
  */
 @layer base {
-  .alku {
+  .goho {
     &:where([data-scaling="90%"]) {
-      --ak-scaling: 0.9;
+      --go-scaling: 0.9;
     }
 
     &:where([data-scaling="95%"]) {
-      --ak-scaling: 0.95;
+      --go-scaling: 0.95;
     }
 
     &:where([data-scaling="100%"]) {
-      --ak-scaling: 1;
+      --go-scaling: 1;
     }
 
     &:where([data-scaling="105%"]) {
-      --ak-scaling: 1.05;
+      --go-scaling: 1.05;
     }
 
     &:where([data-scaling="110%"]) {
-      --ak-scaling: 1.1;
+      --go-scaling: 1.1;
     }
 
     &:where([data-radius="none"]) {
-      --ak-radius-factor: 0;
+      --go-radius-factor: 0;
     }
 
     &:where([data-radius="sm"]) {
-      --ak-radius-factor: 0.75;
+      --go-radius-factor: 0.75;
     }
 
     &:where([data-radius="md"]) {
-      --ak-radius-factor: 1;
+      --go-radius-factor: 1;
     }
 
     &:where([data-radius="lg"]) {
-      --ak-radius-factor: 1.5;
+      --go-radius-factor: 1.5;
     }
 
     &:where([data-radius="round"]) {
-      --ak-radius-factor: 9999;
+      --go-radius-factor: 9999;
     }
   }
 }

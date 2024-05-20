@@ -1,7 +1,7 @@
 {
-  "name": "@alku/ts-config-alku",
+  "name": "@goho/ts-config-goho",
   "version": "0.0.1",
-  "description": "Shared tsconfigs for alku",
+  "description": "Shared tsconfigs for goho",
   "author": "Adam Aho",
   "exports": {
     ".": "./base.json",

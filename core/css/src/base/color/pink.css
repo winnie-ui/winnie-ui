@@ -3,33 +3,33 @@
   .light,
   .light-theme,
   [data-theme="light"] {
-    --ak-color-pink-1: #fffcfd;
-    --ak-color-pink-2: #fef7f9;
-    --ak-color-pink-3: #ffe9f1;
-    --ak-color-pink-4: #fedce8;
-    --ak-color-pink-5: #facede;
-    --ak-color-pink-6: #f3bed2;
-    --ak-color-pink-7: #eaabc3;
-    --ak-color-pink-8: #e193b2;
-    --ak-color-pink-9: #ec4899;
-    --ak-color-pink-10: #dd3a8d;
-    --ak-color-pink-11: #c5237a;
-    --ak-color-pink-12: #63153c;
+    --go-color-pink-1: #fffcfd;
+    --go-color-pink-2: #fef7f9;
+    --go-color-pink-3: #ffe9f1;
+    --go-color-pink-4: #fedce8;
+    --go-color-pink-5: #facede;
+    --go-color-pink-6: #f3bed2;
+    --go-color-pink-7: #eaabc3;
+    --go-color-pink-8: #e193b2;
+    --go-color-pink-9: #ec4899;
+    --go-color-pink-10: #dd3a8d;
+    --go-color-pink-11: #c5237a;
+    --go-color-pink-12: #63153c;
 
-    --ak-color-pink-a1: #ff005503;
-    --ak-color-pink-a2: #e0004008;
-    --ak-color-pink-a3: #ff005d16;
-    --ak-color-pink-a4: #f8005823;
-    --ak-color-pink-a5: #e5005431;
-    --ak-color-pink-a6: #d0004f41;
-    --ak-color-pink-a7: #c0004954;
-    --ak-color-pink-a8: #b9004a6c;
-    --ak-color-pink-a9: #e50071b7;
-    --ak-color-pink-a10: #d3006cc5;
-    --ak-color-pink-a11: #bc0065dc;
-    --ak-color-pink-a12: #55002bea;
+    --go-color-pink-a1: #ff005503;
+    --go-color-pink-a2: #e0004008;
+    --go-color-pink-a3: #ff005d16;
+    --go-color-pink-a4: #f8005823;
+    --go-color-pink-a5: #e5005431;
+    --go-color-pink-a6: #d0004f41;
+    --go-color-pink-a7: #c0004954;
+    --go-color-pink-a8: #b9004a6c;
+    --go-color-pink-a9: #e50071b7;
+    --go-color-pink-a10: #d3006cc5;
+    --go-color-pink-a11: #bc0065dc;
+    --go-color-pink-a12: #55002bea;
 
-    --ak-color-pink-contrast: #fff;
+    --go-color-pink-contrast: #fff;
   }
 
   @supports (color: color(display-p3 1 1 1)) {
@@ -38,33 +38,33 @@
       .light,
       .light-theme,
       [data-theme="light"] {
-        --ak-color-pink-1: oklch(99.4% 0.003 354.3);
-        --ak-color-pink-2: oklch(98.2% 0.008 354.3);
-        --ak-color-pink-3: oklch(95.4% 0.026 354.3);
-        --ak-color-pink-4: oklch(92.5% 0.041 354.3);
-        --ak-color-pink-5: oklch(89.3% 0.054 354.3);
-        --ak-color-pink-6: oklch(85.5% 0.065 354.3);
-        --ak-color-pink-7: oklch(80.8% 0.079 354.3);
-        --ak-color-pink-8: oklch(75% 0.101 354.3);
-        --ak-color-pink-9: oklch(65.6% 0.212 354.3);
-        --ak-color-pink-10: oklch(61.6% 0.21 354.3);
-        --ak-color-pink-11: oklch(55.3% 0.207 354.3);
-        --ak-color-pink-12: oklch(34.3% 0.117 354.3);
+        --go-color-pink-1: oklch(99.4% 0.003 354.3);
+        --go-color-pink-2: oklch(98.2% 0.008 354.3);
+        --go-color-pink-3: oklch(95.4% 0.026 354.3);
+        --go-color-pink-4: oklch(92.5% 0.041 354.3);
+        --go-color-pink-5: oklch(89.3% 0.054 354.3);
+        --go-color-pink-6: oklch(85.5% 0.065 354.3);
+        --go-color-pink-7: oklch(80.8% 0.079 354.3);
+        --go-color-pink-8: oklch(75% 0.101 354.3);
+        --go-color-pink-9: oklch(65.6% 0.212 354.3);
+        --go-color-pink-10: oklch(61.6% 0.21 354.3);
+        --go-color-pink-11: oklch(55.3% 0.207 354.3);
+        --go-color-pink-12: oklch(34.3% 0.117 354.3);
 
-        --ak-color-pink-a1: color(display-p3 0.675 0.024 0.349 / 0.012);
-        --ak-color-pink-a2: color(display-p3 0.757 0.02 0.267 / 0.032);
-        --ak-color-pink-a3: color(display-p3 0.812 0.008 0.341 / 0.083);
-        --ak-color-pink-a4: color(display-p3 0.796 0.008 0.329 / 0.134);
-        --ak-color-pink-a5: color(display-p3 0.749 0.004 0.282 / 0.185);
-        --ak-color-pink-a6: color(display-p3 0.686 0.004 0.275 / 0.248);
-        --ak-color-pink-a7: color(display-p3 0.62 0.004 0.251 / 0.318);
-        --ak-color-pink-a8: color(display-p3 0.612 0.004 0.259 / 0.412);
-        --ak-color-pink-a9: color(display-p3 0.784 0 0.388 / 0.667);
-        --ak-color-pink-a10: color(display-p3 0.722 0 0.369 / 0.718);
-        --ak-color-pink-a11: color(display-p3 0.635 0 0.333 / 0.797);
-        --ak-color-pink-a12: color(display-p3 0.278 0 0.137 / 0.891);
+        --go-color-pink-a1: color(display-p3 0.675 0.024 0.349 / 0.012);
+        --go-color-pink-a2: color(display-p3 0.757 0.02 0.267 / 0.032);
+        --go-color-pink-a3: color(display-p3 0.812 0.008 0.341 / 0.083);
+        --go-color-pink-a4: color(display-p3 0.796 0.008 0.329 / 0.134);
+        --go-color-pink-a5: color(display-p3 0.749 0.004 0.282 / 0.185);
+        --go-color-pink-a6: color(display-p3 0.686 0.004 0.275 / 0.248);
+        --go-color-pink-a7: color(display-p3 0.62 0.004 0.251 / 0.318);
+        --go-color-pink-a8: color(display-p3 0.612 0.004 0.259 / 0.412);
+        --go-color-pink-a9: color(display-p3 0.784 0 0.388 / 0.667);
+        --go-color-pink-a10: color(display-p3 0.722 0 0.369 / 0.718);
+        --go-color-pink-a11: color(display-p3 0.635 0 0.333 / 0.797);
+        --go-color-pink-a12: color(display-p3 0.278 0 0.137 / 0.891);
 
-        --ak-color-pink-contrast: #fff;
+        --go-color-pink-contrast: #fff;
       }
     }
   }
@@ -72,33 +72,33 @@
   .dark,
   .dark-theme,
   [data-theme="dark"] {
-    --ak-color-pink-1: #170e11;
-    --ak-color-pink-2: #211218;
-    --ak-color-pink-3: #3a1425;
-    --ak-color-pink-4: #510d30;
-    --ak-color-pink-5: #5f153a;
-    --ak-color-pink-6: #702248;
-    --ak-color-pink-7: #8a315b;
-    --ak-color-pink-8: #b23f75;
-    --ak-color-pink-9: #ec4899;
-    --ak-color-pink-10: #de398d;
-    --ak-color-pink-11: #ff87c0;
-    --ak-color-pink-12: #ffd0e3;
+    --go-color-pink-1: #170e11;
+    --go-color-pink-2: #211218;
+    --go-color-pink-3: #3a1425;
+    --go-color-pink-4: #510d30;
+    --go-color-pink-5: #5f153a;
+    --go-color-pink-6: #702248;
+    --go-color-pink-7: #8a315b;
+    --go-color-pink-8: #b23f75;
+    --go-color-pink-9: #ec4899;
+    --go-color-pink-10: #de398d;
+    --go-color-pink-11: #ff87c0;
+    --go-color-pink-12: #ffd0e3;
 
-    --ak-color-pink-a1: #ec001207;
-    --ak-color-pink-a2: #f4207512;
-    --ak-color-pink-a3: #ff23852c;
-    --ak-color-pink-a4: #fe038445;
-    --ak-color-pink-a5: #fe1e8e54;
-    --ak-color-pink-a6: #ff3c9b66;
-    --ak-color-pink-a7: #ff50a382;
-    --ak-color-pink-a8: #ff55a5ad;
-    --ak-color-pink-a9: #ff4da5eb;
-    --ak-color-pink-a10: #ff40a1dc;
-    --ak-color-pink-a11: #ff87c0;
-    --ak-color-pink-a12: #ffd0e3;
+    --go-color-pink-a1: #ec001207;
+    --go-color-pink-a2: #f4207512;
+    --go-color-pink-a3: #ff23852c;
+    --go-color-pink-a4: #fe038445;
+    --go-color-pink-a5: #fe1e8e54;
+    --go-color-pink-a6: #ff3c9b66;
+    --go-color-pink-a7: #ff50a382;
+    --go-color-pink-a8: #ff55a5ad;
+    --go-color-pink-a9: #ff4da5eb;
+    --go-color-pink-a10: #ff40a1dc;
+    --go-color-pink-a11: #ff87c0;
+    --go-color-pink-a12: #ffd0e3;
 
-    --ak-color-pink-contrast: #fff;
+    --go-color-pink-contrast: #fff;
   }
 
   @supports (color: color(display-p3 1 1 1)) {
@@ -106,33 +106,33 @@
       .dark,
       .dark-theme,
       [data-theme="dark"] {
-        --ak-color-pink-1: oklch(17.8% 0.017 354.3);
-        --ak-color-pink-2: oklch(20.5% 0.028 354.3);
-        --ak-color-pink-3: oklch(25.7% 0.065 354.3);
-        --ak-color-pink-4: oklch(29.6% 0.103 354.3);
-        --ak-color-pink-5: oklch(33.5% 0.112 354.3);
-        --ak-color-pink-6: oklch(38.5% 0.116 354.3);
-        --ak-color-pink-7: oklch(45.4% 0.129 354.3);
-        --ak-color-pink-8: oklch(54.4% 0.158 354.3);
-        --ak-color-pink-9: oklch(65.6% 0.212 354.3);
-        --ak-color-pink-10: oklch(61.6% 0.212 354.3);
-        --ak-color-pink-11: oklch(78.8% 0.191 354.3);
-        --ak-color-pink-12: oklch(90.7% 0.061 354.3);
+        --go-color-pink-1: oklch(17.8% 0.017 354.3);
+        --go-color-pink-2: oklch(20.5% 0.028 354.3);
+        --go-color-pink-3: oklch(25.7% 0.065 354.3);
+        --go-color-pink-4: oklch(29.6% 0.103 354.3);
+        --go-color-pink-5: oklch(33.5% 0.112 354.3);
+        --go-color-pink-6: oklch(38.5% 0.116 354.3);
+        --go-color-pink-7: oklch(45.4% 0.129 354.3);
+        --go-color-pink-8: oklch(54.4% 0.158 354.3);
+        --go-color-pink-9: oklch(65.6% 0.212 354.3);
+        --go-color-pink-10: oklch(61.6% 0.212 354.3);
+        --go-color-pink-11: oklch(78.8% 0.191 354.3);
+        --go-color-pink-12: oklch(90.7% 0.061 354.3);
 
-        --ak-color-pink-a1: color(display-p3 0.961 0 0.067 / 0.022);
-        --ak-color-pink-a2: color(display-p3 1 0.2 0.533 / 0.059);
-        --ak-color-pink-a3: color(display-p3 0.996 0.196 0.584 / 0.152);
-        --ak-color-pink-a4: color(display-p3 1 0.102 0.557 / 0.24);
-        --ak-color-pink-a5: color(display-p3 1 0.2 0.6 / 0.295);
-        --ak-color-pink-a6: color(display-p3 1 0.318 0.655 / 0.362);
-        --ak-color-pink-a7: color(display-p3 1 0.388 0.682 / 0.467);
-        --ak-color-pink-a8: color(display-p3 1 0.408 0.694 / 0.622);
-        --ak-color-pink-a9: color(display-p3 1 0.38 0.686 / 0.845);
-        --ak-color-pink-a10: color(display-p3 1 0.333 0.671 / 0.79);
-        --ak-color-pink-a11: color(display-p3 1 0.588 0.796 / 0.933);
-        --ak-color-pink-a12: color(display-p3 1 0.847 0.914 / 0.971);
+        --go-color-pink-a1: color(display-p3 0.961 0 0.067 / 0.022);
+        --go-color-pink-a2: color(display-p3 1 0.2 0.533 / 0.059);
+        --go-color-pink-a3: color(display-p3 0.996 0.196 0.584 / 0.152);
+        --go-color-pink-a4: color(display-p3 1 0.102 0.557 / 0.24);
+        --go-color-pink-a5: color(display-p3 1 0.2 0.6 / 0.295);
+        --go-color-pink-a6: color(display-p3 1 0.318 0.655 / 0.362);
+        --go-color-pink-a7: color(display-p3 1 0.388 0.682 / 0.467);
+        --go-color-pink-a8: color(display-p3 1 0.408 0.694 / 0.622);
+        --go-color-pink-a9: color(display-p3 1 0.38 0.686 / 0.845);
+        --go-color-pink-a10: color(display-p3 1 0.333 0.671 / 0.79);
+        --go-color-pink-a11: color(display-p3 1 0.588 0.796 / 0.933);
+        --go-color-pink-a12: color(display-p3 1 0.847 0.914 / 0.971);
 
-        --ak-color-pink-contrast: #fff;
+        --go-color-pink-contrast: #fff;
       }
     }
   }

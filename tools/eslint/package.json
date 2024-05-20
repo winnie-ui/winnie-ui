@@ -1,7 +1,7 @@
 {
-  "name": "@alku/eslint-config-alku",
+  "name": "@goho/eslint-config-goho",
   "version": "0.0.1",
-  "description": "Shared eslint configs for alku",
+  "description": "Shared eslint configs for goho",
   "author": "Adam Aho",
   "exports": {
     ".": "./base.js",

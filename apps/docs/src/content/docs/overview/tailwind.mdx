@@ -1,56 +1,56 @@
 ---
 title: Tailwind
-description: Install Alku CSS and start building your next application with tailwind.
+description: Install Goho CSS and start building your next application with tailwind.
 ---
 
 import { TabItem, Tabs } from "@astrojs/starlight/components";
 
-Alku Tailwind includes all features included with Alku CSS along with all of the benefits of using tailwind. You can think of it as an extension to Alku CSS that exposes all features as tailwind utilities. We have created a custom tailwind theme that can be used with [Tailwind v4](https://tailwindcss.com/blog/tailwindcss-v4-alpha).
+Goho Tailwind includes all features included with Goho CSS along with all of the benefits of using tailwind. You can think of it as an extension to Goho CSS that exposes all features as tailwind utilities. We have created a custom tailwind theme that can be used with [Tailwind v4](https://tailwindcss.com/blog/tailwindcss-v4-alpha).
 
 ## Installation
 
-Let's get you up and running with Alku Tailwind. These instructions assume you have already configured tailwind in your application.
+Let's get you up and running with Goho Tailwind. These instructions assume you have already configured tailwind in your application.
 
-### 1. Install Alku Tailwind
+### 1. Install Goho Tailwind
 
-Using the package manager of your choice, install Alku Tailwind from your command line:
+Using the package manager of your choice, install Goho Tailwind from your command line:
 
 {/* prettier-ignore */}
 <Tabs>
   <TabItem label="npm">
     ```bash frame="none"
-    npm install @alku/tailwind
+    npm install @goho/tailwind
     ```
   </TabItem>
   <TabItem label="yarn">
     ```bash frame="none"
-    yarn add @alku/tailwind
+    yarn add @goho/tailwind
     ```
   </TabItem>
   <TabItem label="pnpm">
     ```bash frame="none"
-    pnpm add @alku/tailwind
+    pnpm add @goho/tailwind
     ```
   </TabItem>
   <TabItem label="bun">
     ```bash frame="none"
-    bun install @alku/tailwind
+    bun install @goho/tailwind
     ```
   </TabItem>
 </Tabs>
 
 ### 2. Import the CSS
 
-Import the Alku Tailwind file in the root css file of your application:
+Import the Goho Tailwind file in the root css file of your application:
 
 {/* prettier-ignore */}
 ```css title="global.css"
-@import "@alku/tailwind";
+@import "@goho/tailwind";
 ```
 
-### 3. Configure Alku CSS
+### 3. Configure Goho CSS
 
-Configure the `body` element with Alku CSS specific attributes
+Configure the `body` element with Goho CSS specific attributes
 
 ```tsx title="root.tsx" {6-9}
 export default function Root() {
@@ -58,7 +58,7 @@ export default function Root() {
     <html>
       <head></head>
       <body
-        class="alku"
+        class="goho"
         data-accent-color="orange"
         data-scaling="100%"
         data-radius="md"
@@ -72,12 +72,12 @@ export default function Root() {
 
 ### 4. Start Building
 
-Your app is now ready to go with Alku Tailwind.
+Your app is now ready to go with Goho Tailwind.
 
 ```tsx title="button.tsx"
 export const MyButton = ({ children }: React.PropsWithChildren) => {
   return (
-    <button className="bg-accent-9 text-accent-contrast h-[calc(32px * var(--ak-scaling))] px-3 rounded-2">
+    <button className="bg-accent-9 text-accent-contrast h-[calc(32px * var(--go-scaling))] px-3 rounded-2">
       {children}
     </button>
   );

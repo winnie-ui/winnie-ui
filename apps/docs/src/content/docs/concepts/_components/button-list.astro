@@ -6,11 +6,11 @@ import Button from "../../../../components/button.astro";
   {
     ["none", "sm", "md", "lg", "round"].map((scale) => {
       return (
-        <li class="alku button-list-item">
+        <li class="goho button-list-item">
           <div class="button-list-item-scale">
             <code>{scale}</code>
           </div>
-          <div class="alku" data-radius={scale}>
+          <div class="goho" data-radius={scale}>
             <Button>Sign up</Button>
           </div>
         </li>
@@ -21,18 +21,18 @@ import Button from "../../../../components/button.astro";
 
 <style>
   .button-list {
-    border: var(--ak-border-width-1) solid var(--ak-color-grey-6);
-    border-radius: var(--ak-border-radius-5);
+    border: var(--go-border-width-1) solid var(--go-color-grey-6);
+    border-radius: var(--go-border-radius-5);
     list-style: none;
     padding: 0;
     width: 100%;
 
     .button-list-item {
-      border-bottom: var(--ak-border-width-2) dashed var(--ak-color-grey-6);
+      border-bottom: var(--go-border-width-2) dashed var(--go-color-grey-6);
       display: grid;
-      gap: var(--ak-space-7);
+      gap: var(--go-space-7);
       grid-template-columns: 60px 1fr;
-      padding-inline: var(--ak-space-7);
+      padding-inline: var(--go-space-7);
 
       &:last-child {
         border-bottom: none;
