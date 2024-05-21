@@ -1,5 +1,5 @@
-@import "@goho/css" layer(goho);
-@import "tailwindcss/preflight" layer(base);
+@import "@goho/css";
+@import "tailwindcss/preflight" layer(reset);
 @import "tailwindcss/utilities" layer(utilities);
 
 @layer utilities {
