@@ -8,8 +8,8 @@
   }
 
   ::selection {
-    background: var(--go-accent-color-9);
-    color: var(--go-accent-color-contrast);
+    background: var(--go-color-accent-9);
+    color: var(--go-color-accent-contrast);
   }
 
   *[popover] {

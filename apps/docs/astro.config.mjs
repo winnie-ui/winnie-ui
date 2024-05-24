@@ -64,6 +64,15 @@ export default defineConfig({
             },
           ],
         },
+        {
+          label: "Reference",
+          items: [
+            {
+              label: "Colors",
+              link: "/reference/colors",
+            },
+          ],
+        },
       ],
     }),
   ],

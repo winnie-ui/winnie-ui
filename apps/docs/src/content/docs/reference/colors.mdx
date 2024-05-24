@@ -1,0 +1,67 @@
+---
+title: Color
+description: Variables for changing an elements color
+---
+
+import ReferenceColor from "./_components/reference-color.astro";
+import ReferenceTable from "./_components/reference-table.astro";
+
+<ReferenceTable>
+  {[
+    "grey",
+    "red",
+    "orange",
+    "yellow",
+    "green",
+    "blue",
+    "purple",
+    "pink",
+    "brand",
+    "accent",
+  ].map((color) => {
+    return [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "a1",
+      "a2",
+      "a3",
+      "a4",
+      "a5",
+      "a6",
+      "a7",
+      "a8",
+      "a9",
+      "a10",
+      "a11",
+      "a12",
+    ].map((swatch) => {
+      return (
+        <tr>
+          <td>
+            <code>
+              --go-color-{color}-{swatch}
+            </code>
+          </td>
+          <td>
+            <code>
+              (prefix)-{color}-{swatch}
+            </code>
+          </td>
+          <td>
+            <ReferenceColor color={color} swatch={swatch} />
+          </td>
+        </tr>
+      );
+    });
+  })}
+</ReferenceTable>

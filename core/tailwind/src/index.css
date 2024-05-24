@@ -6,33 +6,33 @@
   .goho {
     @theme {
       /* accent color */
-      --color-accent-1: var(--go-accent-color-1);
-      --color-accent-2: var(--go-accent-color-2);
-      --color-accent-3: var(--go-accent-color-3);
-      --color-accent-4: var(--go-accent-color-4);
-      --color-accent-5: var(--go-accent-color-5);
-      --color-accent-6: var(--go-accent-color-6);
-      --color-accent-7: var(--go-accent-color-7);
-      --color-accent-8: var(--go-accent-color-8);
-      --color-accent-9: var(--go-accent-color-9);
-      --color-accent-10: var(--go-accent-color-10);
-      --color-accent-11: var(--go-accent-color-11);
-      --color-accent-12: var(--go-accent-color-12);
+      --color-accent-1: var(--go-color-accent-1);
+      --color-accent-2: var(--go-color-accent-2);
+      --color-accent-3: var(--go-color-accent-3);
+      --color-accent-4: var(--go-color-accent-4);
+      --color-accent-5: var(--go-color-accent-5);
+      --color-accent-6: var(--go-color-accent-6);
+      --color-accent-7: var(--go-color-accent-7);
+      --color-accent-8: var(--go-color-accent-8);
+      --color-accent-9: var(--go-color-accent-9);
+      --color-accent-10: var(--go-color-accent-10);
+      --color-accent-11: var(--go-color-accent-11);
+      --color-accent-12: var(--go-color-accent-12);
 
-      --color-accent-contrast: var(--go-accent-color-contrast);
+      --color-accent-contrast: var(--go-color-accent-contrast);
 
-      --color-accent-a1: var(--go-accent-color-a1);
-      --color-accent-a2: var(--go-accent-color-a2);
-      --color-accent-a3: var(--go-accent-color-a3);
-      --color-accent-a4: var(--go-accent-color-a4);
-      --color-accent-a5: var(--go-accent-color-a5);
-      --color-accent-a6: var(--go-accent-color-a6);
-      --color-accent-a7: var(--go-accent-color-a7);
-      --color-accent-a8: var(--go-accent-color-a8);
-      --color-accent-a9: var(--go-accent-color-a9);
-      --color-accent-a10: var(--go-accent-color-a10);
-      --color-accent-a11: var(--go-accent-color-a11);
-      --color-accent-a12: var(--go-accent-color-a12);
+      --color-accent-a1: var(--go-color-accent-a1);
+      --color-accent-a2: var(--go-color-accent-a2);
+      --color-accent-a3: var(--go-color-accent-a3);
+      --color-accent-a4: var(--go-color-accent-a4);
+      --color-accent-a5: var(--go-color-accent-a5);
+      --color-accent-a6: var(--go-color-accent-a6);
+      --color-accent-a7: var(--go-color-accent-a7);
+      --color-accent-a8: var(--go-color-accent-a8);
+      --color-accent-a9: var(--go-color-accent-a9);
+      --color-accent-a10: var(--go-color-accent-a10);
+      --color-accent-a11: var(--go-color-accent-a11);
+      --color-accent-a12: var(--go-color-accent-a12);
 
       /* white */
       --color-white: var(--go-color-white);

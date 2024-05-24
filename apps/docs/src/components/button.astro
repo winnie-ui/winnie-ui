@@ -12,15 +12,15 @@ const props = Astro.props;
   .goho-button {
     background: linear-gradient(
       to bottom,
-      var(--go-accent-color-9),
-      var(--go-accent-color-10)
+      var(--go-color-accent-9),
+      var(--go-color-accent-10)
     );
-    border: var(--go-border-width-1) solid var(--go-accent-color-9);
+    border: var(--go-border-width-1) solid var(--go-color-accent-9);
     border-radius: var(--go-border-radius-3);
     box-shadow:
       inset 0 -1px 1px 0px var(--go-color-black-a6),
       inset 0 1px 1px 0px var(--go-color-white-a9);
-    color: var(--go-accent-color-contrast);
+    color: var(--go-color-accent-contrast);
     font-size: var(--go-font-size-2);
     font-weight: var(--go-font-weight-medium);
     height: 32px;
@@ -29,19 +29,19 @@ const props = Astro.props;
     white-space: nowrap;
 
     &:hover {
-      background: var(--go-accent-color-10);
+      background: var(--go-color-accent-10);
     }
 
     &:focus-visible {
-      background: var(--go-accent-color-10);
-      border-color: var(--go-accent-color-10);
-      outline: var(--go-border-width-2) solid var(--go-accent-color-10);
+      background: var(--go-color-accent-10);
+      border-color: var(--go-color-accent-10);
+      outline: var(--go-border-width-2) solid var(--go-color-accent-10);
       outline-offset: var(--go-space-1);
     }
 
     &:active {
-      background: var(--go-accent-color-10);
-      border-color: var(--go-accent-color-10);
+      background: var(--go-color-accent-10);
+      border-color: var(--go-color-accent-10);
       box-shadow:
         inset 0 -1px 1px 0px var(--go-color-white-a7),
         inset 0 1px 1px 0px var(--go-color-black-a6);
