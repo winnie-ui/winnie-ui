@@ -5,6 +5,9 @@
   <main class="background-polka demo-content">
     <slot />
   </main>
+  <div class="demo-footer">
+    <slot name="footer" />
+  </div>
 </div>
 
 <style>
@@ -15,14 +18,58 @@
     border-radius: var(--border-radius);
 
     .demo-header {
-      padding: var(--go-space-3);
-      border-bottom: var(--go-border-width-1) solid var(--go-color-grey-6);
+      display: none;
+
+      &:has(*) {
+        display: block;
+        padding: var(--go-space-3);
+        border-bottom: var(--go-border-width-1) solid var(--go-color-grey-6);
+      }
     }
 
     .demo-content {
       padding: var(--go-space-6);
-      border-bottom-left-radius: var(--border-radius);
-      border-bottom-right-radius: var(--border-radius);
+      border-radius: var(--border-radius);
+    }
+
+    .demo-footer {
+      display: none;
+
+      &:has(*) {
+        display: block;
+        border-top: var(--go-border-width-1) solid var(--go-color-grey-5);
+        padding-top: var(--go-space-3);
+      }
+
+      section[role="tabpanel"] {
+        margin: 0;
+
+        .expressive-code {
+          pre {
+            background: var(--demo-code-background);
+            border: none;
+            border-radius: 0;
+            border-bottom-left-radius: var(--border-radius);
+            border-bottom-right-radius: var(--border-radius);
+          }
+        }
+      }
+    }
+  }
+
+  :global(:is([data-theme="light"])) {
+    .demo {
+      .demo-footer {
+        --demo-code-background: var(--go-color-white);
+      }
+    }
+  }
+
+  :global(:is([data-theme="dark"])) {
+    .demo {
+      .demo-footer {
+        --demo-code-background: var(--go-color-grey-1);
+      }
     }
   }
 </style>

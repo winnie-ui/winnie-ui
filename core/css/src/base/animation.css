@@ -8,7 +8,7 @@
     --go-bezier-1: cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  @keyframes ak-fade-in {
+  @keyframes go-fade-in {
     from {
       opacity: 0;
     }
@@ -18,7 +18,7 @@
     }
   }
 
-  @keyframes ak-fade-out {
+  @keyframes go-fade-out {
     from {
       opacity: 1;
     }
@@ -28,7 +28,7 @@
     }
   }
 
-  @keyframes ak-slide-up {
+  @keyframes go-slide-up {
     from {
       transform: translateY(6px) scale(0.97);
     }
@@ -38,7 +38,7 @@
     }
   }
 
-  @keyframes ak-slide-down {
+  @keyframes go-slide-down {
     from {
       transform: translateY(-6px) scale(0.97);
     }
@@ -48,7 +48,7 @@
     }
   }
 
-  @keyframes ak-slide-left {
+  @keyframes go-slide-left {
     from {
       transform: translateX(6px) scale(0.97);
     }
@@ -58,7 +58,7 @@
     }
   }
 
-  @keyframes ak-slide-right {
+  @keyframes go-slide-right {
     from {
       transform: translateX(-6px) scale(0.97);
     }
@@ -69,7 +69,7 @@
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    .ak-popper {
+    .go-popper {
       animation-timing-function: var(--go-bezier-1);
 
       &:where(
@@ -80,19 +80,19 @@
         animation-duration: var(--go-duration-2);
 
         &:where([data-side="top"]) {
-          animation-name: ak-slide-up, ak-fade-in;
+          animation-name: go-slide-up, go-fade-in;
         }
 
         &:where([data-side="bottom"]) {
-          animation-name: ak-slide-down, ak-fade-in;
+          animation-name: go-slide-down, go-fade-in;
         }
 
         &:where([data-side="left"]) {
-          animation-name: ak-slide-left, ak-fade-in;
+          animation-name: go-slide-left, go-fade-in;
         }
 
         &:where([data-side="right"]) {
-          animation-name: ak-slide-right, ak-fade-in;
+          animation-name: go-slide-right, go-fade-in;
         }
       }
 
@@ -100,19 +100,19 @@
         animation-duration: var(--go-duration-1);
 
         &:where([data-side="top"]) {
-          animation-name: ak-slide-down, ak-fade-out;
+          animation-name: go-slide-down, go-fade-out;
         }
 
         &:where([data-side="bottom"]) {
-          animation-name: ak-slide-up, ak-fade-out;
+          animation-name: go-slide-up, go-fade-out;
         }
 
         &:where([data-side="left"]) {
-          animation-name: ak-slide-right, ak-fade-out;
+          animation-name: go-slide-right, go-fade-out;
         }
 
         &:where([data-side="right"]) {
-          animation-name: ak-slide-left, ak-fade-out;
+          animation-name: go-slide-left, go-fade-out;
         }
       }
     }

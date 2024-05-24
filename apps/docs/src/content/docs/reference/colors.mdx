@@ -4,7 +4,65 @@ description: Variables for changing an elements color
 ---
 
 import ReferenceColor from "./_components/reference-color.astro";
+import ReferenceDemoColorButton from "./_components/reference-demo-color-button.astro";
+import ReferenceDemoColorGradient from "./_components/reference-demo-color-gradient.astro";
+import ReferenceDemo from "./_components/reference-demo.astro";
 import ReferenceTable from "./_components/reference-table.astro";
+
+Goho colors can be used with any css property that supports setting color. Below are a couple examples for how to achieve this.
+
+<ReferenceDemo>
+  <ReferenceDemoColorButton /> 
+  <Fragment slot="html">
+    ```html
+    <button class="sign-up-button">
+      Sign up
+    </button>
+    ```
+  </Fragment>
+  <Fragment slot="css">
+    ```css {2-3} 
+    .sign-up-button {
+      background: var(--go-color-accent-9);
+      color: var(--go-color-accent-contrast);
+      ...
+    } 
+    ```
+  </Fragment>
+  <Fragment slot="tailwind">
+    ```html ins="bg-accent-9" ins="text-accent-contrast"
+    <button class="bg-accent-9 text-accent-contrast ...">
+      Sign up
+    </button>
+    ```
+  </Fragment>
+</ReferenceDemo>
+
+Use Goho colors to create vibrant gradients in the P3 color space.
+
+<ReferenceDemo>
+  <ReferenceDemoColorGradient /> 
+  <Fragment slot="html">
+    ```html
+    <div class="gradient"></div> 
+    ```
+  </Fragment>
+  <Fragment slot="css">
+    ```css {2} 
+    .gradient {
+      background: linear-gradient(to right, var(--go-color-accent-2), var(--go-color-accent-9));
+      ...
+    } 
+    ```
+  </Fragment>
+  <Fragment slot="tailwind">
+    ```html ins="from-accent-2" ins="to-accent-9"
+    <div class="bg-gradient-to-r from-accent-2 to-accent-9 ..."></div>
+    ```
+  </Fragment>
+</ReferenceDemo>
+
+## Reference
 
 <ReferenceTable>
   {[
@@ -44,9 +102,10 @@ import ReferenceTable from "./_components/reference-table.astro";
       "a10",
       "a11",
       "a12",
+      "contrast",
     ].map((swatch) => {
       return (
-        <tr>
+        <tr data-accent-color={color}>
           <td>
             <code>
               --go-color-{color}-{swatch}

@@ -211,14 +211,16 @@ h6 {
 /* code blocks */
 .goho .expressive-code .frame {
   --code-background: var(--go-color-grey-2);
+  --ec-codeFontFml: var(--go-font-family-mono);
   --ec-brdRad: var(--go-border-radius-3);
   --ec-brdCol: var(--go-color-grey-6);
   --ec-frm-edTabBarBrdCol: var(--go-color-grey-6);
   --ec-frm-edActTabIndBtmCol: var(--go-color-grey-6);
   --ec-frm-edActTabBrdCol: var(--go-color-grey-6);
   --ec-frm-edTabBarBrdBtmCol: var(--go-color-grey-6);
-  --ec-tm-insBg: var(--go-color-grey-a3);
-  --ec-tm-insBrdCol: var(--go-color-grey-6);
+  --ec-tm-inlMarkerPad: var(--go-space-2);
+  --ec-tm-insBg: var(--go-color-accent-a3);
+  --ec-tm-insBrdCol: var(--go-color-accent-6);
   --ec-tm-markBg: var(--go-color-accent-a3);
   --ec-tm-markBrdCol: var(--go-color-accent-9);
   --ec-frm-frameBoxShdCssVal: none;
@@ -269,7 +271,7 @@ ul[role="tablist"] {
       &[aria-selected="true"] {
         color: var(--go-color-grey-12);
         font-weight: var(--go-font-weight-medium);
-        border-bottom: var(--go-border-width-3) solid var(--go-color-orange-9);
+        border-bottom: var(--go-border-width-3) solid var(--go-color-accent-9);
       }
     }
   }

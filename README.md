@@ -11,6 +11,6 @@ types:
 - refactor: change that neither fixes a bug or adds a feature
 
 scopes:
-- app-docs
+- apps-docs
 - core-css
 - core-tailwind
