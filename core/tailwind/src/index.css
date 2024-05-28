@@ -34,6 +34,35 @@
       --color-accent-a11: var(--go-color-accent-a11);
       --color-accent-a12: var(--go-color-accent-a12);
 
+      /* brand color */
+      --color-brand-1: var(--go-color-brand-1);
+      --color-brand-2: var(--go-color-brand-2);
+      --color-brand-3: var(--go-color-brand-3);
+      --color-brand-4: var(--go-color-brand-4);
+      --color-brand-5: var(--go-color-brand-5);
+      --color-brand-6: var(--go-color-brand-6);
+      --color-brand-7: var(--go-color-brand-7);
+      --color-brand-8: var(--go-color-brand-8);
+      --color-brand-9: var(--go-color-brand-9);
+      --color-brand-10: var(--go-color-brand-10);
+      --color-brand-11: var(--go-color-brand-11);
+      --color-brand-12: var(--go-color-brand-12);
+
+      --color-brand-contrast: var(--go-color-brand-contrast);
+
+      --color-brand-a1: var(--go-color-brand-a1);
+      --color-brand-a2: var(--go-color-brand-a2);
+      --color-brand-a3: var(--go-color-brand-a3);
+      --color-brand-a4: var(--go-color-brand-a4);
+      --color-brand-a5: var(--go-color-brand-a5);
+      --color-brand-a6: var(--go-color-brand-a6);
+      --color-brand-a7: var(--go-color-brand-a7);
+      --color-brand-a8: var(--go-color-brand-a8);
+      --color-brand-a9: var(--go-color-brand-a9);
+      --color-brand-a10: var(--go-color-brand-a10);
+      --color-brand-a11: var(--go-color-brand-a11);
+      --color-brand-a12: var(--go-color-brand-a12);
+
       /* white */
       --color-white: var(--go-color-white);
       --color-white-a1: var(--go-color-white-a1);
