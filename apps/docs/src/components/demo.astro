@@ -13,9 +13,11 @@
 <style>
   .demo {
     --border-radius: var(--go-border-radius-3);
+    --border-color: var(--go-color-grey-5);
 
-    border: var(--go-border-width-1) solid var(--go-color-grey-5);
+    border: var(--go-border-width-1) solid var(--border-color);
     border-radius: var(--border-radius);
+    box-shadow: var(--go-shadow-2);
 
     .demo-header {
       display: none;
@@ -23,13 +25,14 @@
       &:has(*) {
         display: block;
         padding: var(--go-space-3);
-        border-bottom: var(--go-border-width-1) solid var(--go-color-grey-6);
+        border-bottom: var(--go-border-width-1) solid var(--border-color);
       }
     }
 
     .demo-content {
       padding: var(--go-space-6);
       border-radius: var(--border-radius);
+      position: relative;
     }
 
     .demo-footer {
@@ -37,7 +40,7 @@
 
       &:has(*) {
         display: block;
-        border-top: var(--go-border-width-1) solid var(--go-color-grey-5);
+        border-top: var(--go-border-width-1) solid var(--border-color);
         padding-top: var(--go-space-3);
       }
 

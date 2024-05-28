@@ -1,15 +1,19 @@
 <div class="reference-table-container not-content">
   <table class="reference-table">
     <thead class="reference-table-head">
-      <tr>
-        <th>
-          <div>Variable</div>
-        </th>
-        <th>
-          <div>Tailwind Class</div>
-        </th>
-        <th><div>&nbsp;</div></th>
-      </tr>
+      <slot name="head">
+        <Fragment>
+          <tr>
+            <th>
+              <div>Variable</div>
+            </th>
+            <th>
+              <div>Tailwind Class</div>
+            </th>
+            <th><div>&nbsp;</div></th>
+          </tr>
+        </Fragment>
+      </slot>
     </thead>
     <tbody class="reference-table-body"><slot /></tbody>
   </table>

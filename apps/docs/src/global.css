@@ -173,7 +173,7 @@ h6 {
 .background-polka {
   background-color: var(--go-color-grey-1);
   background-image: radial-gradient(
-    var(--go-color-grey-a8) 0.5px,
+    var(--go-color-grey-a6) 0.5px,
     var(--go-color-grey-1) 0.5px
   );
   background-size: 10px 10px;
@@ -337,5 +337,19 @@ ul[role="tablist"] {
         }
       }
     }
+  }
+}
+
+/* tooltip */
+.goho .expressive-code .copy {
+  .feedback {
+    --tooltip-arrow-size: 0;
+    border: var(--go-border-width-1) solid var(--go-color-grey-6);
+    border-radius: var(--go-border-radius-2);
+    background: var(--go-color-grey-1);
+    box-shadow: var(--go-shadow-3);
+    line-height: 1;
+    font-size: var(--go-font-size-1);
+    padding: var(--go-space-2);
   }
 }

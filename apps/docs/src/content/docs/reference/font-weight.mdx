@@ -1,0 +1,22 @@
+---
+title: Font Weight
+description: Variables for modifying the font weight of an element
+---
+
+import ReferenceTable from "./_components/reference-table.astro";
+
+<ReferenceTable>
+  {["normal", "medium", "bold", "extra-bold"].map((weight) => {
+    return (
+      <tr>
+        <td>
+          <code>--go-font-weight-{weight}</code>
+        </td>
+        <td>
+          <code>font-{weight}</code>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+    );
+  })}
+</ReferenceTable>

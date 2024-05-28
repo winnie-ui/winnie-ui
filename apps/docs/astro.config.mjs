@@ -68,8 +68,56 @@ export default defineConfig({
           label: "Reference",
           items: [
             {
-              label: "Colors",
-              link: "/reference/colors",
+              label: "Animation Duration",
+              link: "/reference/animation-duration",
+            },
+            {
+              label: "Animation Timing Function",
+              link: "/reference/animation-timing-function",
+            },
+            {
+              label: "Border Radius",
+              link: "/reference/border-radius",
+            },
+            {
+              label: "Border Width",
+              link: "/reference/border-width",
+            },
+            {
+              label: "Color",
+              link: "/reference/color",
+            },
+            {
+              label: "Font Family",
+              link: "/reference/font-family",
+            },
+            {
+              label: "Font Size",
+              link: "/reference/font-size",
+            },
+            {
+              label: "Font Weight",
+              link: "/reference/font-weight",
+            },
+            {
+              label: "Keyframes",
+              link: "/reference/keyframes",
+            },
+            {
+              label: "Letter Spacing",
+              link: "/reference/letter-spacing",
+            },
+            {
+              label: "Line Height",
+              link: "/reference/line-height",
+            },
+            {
+              label: "Shadow",
+              link: "/reference/shadow",
+            },
+            {
+              label: "Space",
+              link: "/reference/space",
             },
           ],
         },

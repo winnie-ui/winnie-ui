@@ -1,0 +1,22 @@
+---
+title: Font Size
+description: Variables for modifying the font size of an element
+---
+
+import ReferenceTable from "./_components/reference-table.astro";
+
+<ReferenceTable>
+  {["1", "2", "3", "4", "5", "6", "7", "8", "9"].map((size) => {
+    return (
+      <tr>
+        <td>
+          <code>--go-font-size-{size}</code>
+        </td>
+        <td>
+          <code>text-{size}</code>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+    );
+  })}
+</ReferenceTable>

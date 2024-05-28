@@ -322,11 +322,11 @@
       --font-weight-extra-bold: var(--go-font-weight-extra-bold);
 
       /* inner shadow */
-      --inset-shadow-1: var(--go-inner-shadow-1);
-      --inset-shadow-2: var(--go-inner-shadow-2);
-      --inset-shadow-3: var(--go-inner-shadow-3);
-      --inset-shadow-4: var(--go-inner-shadow-4);
-      --inset-shadow-5: var(--go-inner-shadow-5);
+      --inset-shadow-1: var(--go-shadow-inner-1);
+      --inset-shadow-2: var(--go-shadow-inner-2);
+      --inset-shadow-3: var(--go-shadow-inner-3);
+      --inset-shadow-4: var(--go-shadow-inner-4);
+      --inset-shadow-5: var(--go-shadow-inner-5);
 
       /* letter-spacing */
       --letter-spacing-1: var(--go-letter-spacing-1);
@@ -387,6 +387,67 @@
 
       /* transition-timing-function */
       --transition-timing-function-bezier: var(--go-bezier-1);
+
+      /* keyframes */
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fade-out {
+        from {
+          opacity: 1;
+        }
+
+        to {
+          opacity: 0;
+        }
+      }
+
+      @keyframes slide-up {
+        from {
+          transform: translateY(6px) scale(0.97);
+        }
+
+        to {
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @keyframes slide-down {
+        from {
+          transform: translateY(-6px) scale(0.97);
+        }
+
+        to {
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @keyframes slide-left {
+        from {
+          transform: translateX(6px) scale(0.97);
+        }
+
+        to {
+          transform: translateX(0) scale(1);
+        }
+      }
+
+      @keyframes slide-right {
+        from {
+          transform: translateX(-6px) scale(0.97);
+        }
+
+        to {
+          transform: translateX(0) scale(1);
+        }
+      }
     }
   }
 }

@@ -1,0 +1,22 @@
+---
+title: Letter Spacing
+description: Variables for modifying the letter spacing of an element
+---
+
+import ReferenceTable from "./_components/reference-table.astro";
+
+<ReferenceTable>
+  {["1", "2", "3", "4", "5", "6", "7", "8", "9"].map((spacing) => {
+    return (
+      <tr>
+        <td>
+          <code>--go-letter-spacing-{spacing}</code>
+        </td>
+        <td>
+          <code>tracking-{spacing}</code>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+    );
+  })}
+</ReferenceTable>

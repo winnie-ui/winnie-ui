@@ -1,0 +1,22 @@
+---
+title: Border Width
+description: Variables for modifying the border width of an element
+---
+
+import ReferenceTable from "./_components/reference-table.astro";
+
+<ReferenceTable>
+  {["05", "1", "2", "3"].map((width) => {
+    return (
+      <tr>
+        <td>
+          <code>--go-border-width-{width}</code>
+        </td>
+        <td>
+          <code>(border-property)-{width}</code>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+    );
+  })}
+</ReferenceTable>
