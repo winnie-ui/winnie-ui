@@ -1,0 +1,85 @@
+---
+title: Tailwind
+description: Install Winnie CSS and start building your next application with tailwind.
+---
+
+import { TabItem, Tabs } from "@astrojs/starlight/components";
+
+Winnie Tailwind includes all features included with Winnie CSS along with all of the benefits of using tailwind. You can think of it as an extension to Winnie CSS that exposes all features as tailwind utilities. We have created a custom tailwind theme that can be used with [Tailwind v4](https://tailwindcss.com/blog/tailwindcss-v4-alpha).
+
+## Installation
+
+Let's get you up and running with Winnie Tailwind. These instructions assume you have already configured tailwind in your application.
+
+### 1. Install Winnie Tailwind
+
+Using the package manager of your choice, install Winnie Tailwind from your command line:
+
+{/* prettier-ignore */}
+<Tabs>
+  <TabItem label="npm">
+    ```bash frame="none"
+    npm install @winnie-ui/tailwind
+    ```
+  </TabItem>
+  <TabItem label="yarn">
+    ```bash frame="none"
+    yarn add @winnie-ui/tailwind
+    ```
+  </TabItem>
+  <TabItem label="pnpm">
+    ```bash frame="none"
+    pnpm add @winnie-ui/tailwind
+    ```
+  </TabItem>
+  <TabItem label="bun">
+    ```bash frame="none"
+    bun install @winnie-ui/tailwind
+    ```
+  </TabItem>
+</Tabs>
+
+### 2. Import the CSS
+
+Import the Winnie Tailwind file in the root css file of your application:
+
+{/* prettier-ignore */}
+```css title="global.css"
+@import "@winnie-ui/tailwind";
+```
+
+### 3. Configure Winnie CSS
+
+Configure the `body` element with Winnie CSS specific attributes
+
+```tsx title="root.tsx" {6-9}
+export default function Root() {
+  return (
+    <html>
+      <head></head>
+      <body
+        class="winnie-ui"
+        data-accent-color="orange"
+        data-scaling="100%"
+        data-radius="md"
+      >
+        <App />
+      </body>
+    </html>
+  );
+}
+```
+
+### 4. Start Building
+
+Your app is now ready to go with Winnie Tailwind.
+
+```tsx title="button.tsx"
+export const MyButton = ({ children }: React.PropsWithChildren) => {
+  return (
+    <button className="bg-accent-9 text-accent-contrast h-[calc(32px * var(--wui-scaling))] px-3 rounded-2">
+      {children}
+    </button>
+  );
+};
+```

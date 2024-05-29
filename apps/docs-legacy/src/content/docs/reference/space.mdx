@@ -1,0 +1,22 @@
+---
+title: Space
+description: Variables for modifying space
+---
+
+import ReferenceTable from "./_components/reference-table.astro";
+
+<ReferenceTable>
+  {["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"].map((space) => {
+    return (
+      <tr>
+        <td>
+          <code>--wui-space-{space}</code>
+        </td>
+        <td>
+          <code>(p,m,etc.)-{space}</code>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+    );
+  })}
+</ReferenceTable>

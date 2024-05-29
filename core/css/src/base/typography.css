@@ -7,45 +7,45 @@
  */
 @layer base {
   :root {
-    --go-font-family-sans: "Geist Sans", sans-serif;
-    --go-font-family-serif: "Geist Sans", serif;
-    --go-font-family-mono: "Geist Mono", monospace;
+    --wui-font-family-sans: "Geist Sans", sans-serif;
+    --wui-font-family-serif: "Geist Sans", serif;
+    --wui-font-family-mono: "Geist Mono", monospace;
 
-    --go-font-weight-normal: 400;
-    --go-font-weight-medium: 500;
-    --go-font-weight-bold: 700;
-    --go-font-weight-extra-bold: 800;
+    --wui-font-weight-normal: 400;
+    --wui-font-weight-medium: 500;
+    --wui-font-weight-bold: 700;
+    --wui-font-weight-extra-bold: 800;
 
-    --go-letter-spacing-1: 0.0025em;
-    --go-letter-spacing-2: 0em;
-    --go-letter-spacing-3: -0.0025em;
-    --go-letter-spacing-4: -0.005em;
-    --go-letter-spacing-5: -0.00625em;
-    --go-letter-spacing-6: -0.0075em;
-    --go-letter-spacing-7: -0.01em;
-    --go-letter-spacing-8: -0.025em;
-    --go-letter-spacing-9: -0.025em;
+    --wui-letter-spacing-1: 0.0025em;
+    --wui-letter-spacing-2: 0em;
+    --wui-letter-spacing-3: -0.0025em;
+    --wui-letter-spacing-4: -0.005em;
+    --wui-letter-spacing-5: -0.00625em;
+    --wui-letter-spacing-6: -0.0075em;
+    --wui-letter-spacing-7: -0.01em;
+    --wui-letter-spacing-8: -0.025em;
+    --wui-letter-spacing-9: -0.025em;
   }
 
-  .goho {
-    --go-font-size-1: calc(12px * var(--go-scaling));
-    --go-font-size-2: calc(14px * var(--go-scaling));
-    --go-font-size-3: calc(16px * var(--go-scaling));
-    --go-font-size-4: calc(18px * var(--go-scaling));
-    --go-font-size-5: calc(20px * var(--go-scaling));
-    --go-font-size-6: calc(24px * var(--go-scaling));
-    --go-font-size-7: calc(28px * var(--go-scaling));
-    --go-font-size-8: calc(35px * var(--go-scaling));
-    --go-font-size-9: calc(60px * var(--go-scaling));
+  .winnie-ui {
+    --wui-font-size-1: calc(12px * var(--wui-scaling));
+    --wui-font-size-2: calc(14px * var(--wui-scaling));
+    --wui-font-size-3: calc(16px * var(--wui-scaling));
+    --wui-font-size-4: calc(18px * var(--wui-scaling));
+    --wui-font-size-5: calc(20px * var(--wui-scaling));
+    --wui-font-size-6: calc(24px * var(--wui-scaling));
+    --wui-font-size-7: calc(28px * var(--wui-scaling));
+    --wui-font-size-8: calc(35px * var(--wui-scaling));
+    --wui-font-size-9: calc(60px * var(--wui-scaling));
 
-    --go-line-height-1: calc(16px * var(--go-scaling));
-    --go-line-height-2: calc(20px * var(--go-scaling));
-    --go-line-height-3: calc(24px * var(--go-scaling));
-    --go-line-height-4: calc(26px * var(--go-scaling));
-    --go-line-height-5: calc(28px * var(--go-scaling));
-    --go-line-height-6: calc(30px * var(--go-scaling));
-    --go-line-height-7: calc(36px * var(--go-scaling));
-    --go-line-height-8: calc(40px * var(--go-scaling));
-    --go-line-height-9: calc(60px * var(--go-scaling));
+    --wui-line-height-1: calc(16px * var(--wui-scaling));
+    --wui-line-height-2: calc(20px * var(--wui-scaling));
+    --wui-line-height-3: calc(24px * var(--wui-scaling));
+    --wui-line-height-4: calc(26px * var(--wui-scaling));
+    --wui-line-height-5: calc(28px * var(--wui-scaling));
+    --wui-line-height-6: calc(30px * var(--wui-scaling));
+    --wui-line-height-7: calc(36px * var(--wui-scaling));
+    --wui-line-height-8: calc(40px * var(--wui-scaling));
+    --wui-line-height-9: calc(60px * var(--wui-scaling));
   }
 }

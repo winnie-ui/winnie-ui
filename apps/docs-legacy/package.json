@@ -1,0 +1,27 @@
+{
+  "name": "docs-legacy",
+  "type": "module",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "build": "astro check && astro build",
+    "clean": "rimraf node_modules",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@winnie-ui/css": "workspace:*",
+    "@astrojs/check": "0.7.0",
+    "@astrojs/starlight": "0.23.1",
+    "@floating-ui/dom": "1.6.5",
+    "@fontsource/geist-mono": "5.0.3",
+    "@fontsource/geist-sans": "5.0.3",
+    "@types/react": "^18.3.2",
+    "@types/react-dom": "^18.3.0",
+    "astro": "4.8.6",
+    "sharp": "0.33.4",
+    "typescript": "5.4.5"
+  }
+}

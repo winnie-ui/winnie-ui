@@ -1,4 +1,4 @@
 /** @type {import("stylelint").Config} */
 module.exports = {
-  extends: "@goho/stylelint-config-goho",
+  extends: "@winnie-ui/stylelint-config-winnie-ui",
 };

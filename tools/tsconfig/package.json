@@ -1,7 +1,7 @@
 {
-  "name": "@goho/ts-config-goho",
+  "name": "@winnie-ui/ts-config-winnie-ui",
   "version": "0.0.1",
-  "description": "Shared tsconfigs for goho",
+  "description": "Shared tsconfigs for winnie-ui",
   "author": "Adam Aho",
   "exports": {
     ".": "./base.json",

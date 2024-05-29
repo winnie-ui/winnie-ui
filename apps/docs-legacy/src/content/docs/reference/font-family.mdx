@@ -1,0 +1,22 @@
+---
+title: Border Width
+description: Variables for modifying the font family of an element
+---
+
+import ReferenceTable from "./_components/reference-table.astro";
+
+<ReferenceTable>
+  {["sans", "serif", "mono"].map((family) => {
+    return (
+      <tr>
+        <td>
+          <code>--wui-font-family-{family}</code>
+        </td>
+        <td>
+          <code>font-{family}</code>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+    );
+  })}
+</ReferenceTable>

@@ -1,5 +1,5 @@
 {
-  "name": "@goho/css",
+  "name": "@winnie-ui/css",
   "version": "0.0.1",
   "description": "css tokens and styles for building web applications",
   "author": "Adam Aho",
@@ -20,7 +20,7 @@
     "stylelint": "stylelint \"src/**/*.css\""
   },
   "devDependencies": {
-    "@goho/stylelint-config-goho": "workspace:*",
+    "@winnie-ui/stylelint-config-winnie-ui": "workspace:*",
     "rimraf": "5.0.7",
     "stylelint": "16.5.0"
   }

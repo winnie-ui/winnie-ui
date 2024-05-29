@@ -1,7 +1,7 @@
 {
-  "name": "@goho/tailwind",
+  "name": "@winnie-ui/tailwind",
   "version": "0.0.1",
-  "description": "tailwind theme for goho css",
+  "description": "tailwind theme for winnie-ui css",
   "author": "Adam Aho",
   "type": "module",
   "exports": {
@@ -20,10 +20,10 @@
     "tailwindcss": "4.0.0-alpha.15"
   },
   "dependencies": {
-    "@goho/css": "workspace:*"
+    "@winnie-ui/css": "workspace:*"
   },
   "devDependencies": {
-    "@goho/stylelint-config-goho": "workspace:*",
+    "@winnie-ui/stylelint-config-winnie-ui": "workspace:*",
     "rimraf": "5.0.7",
     "stylelint": "16.5.0"
   }

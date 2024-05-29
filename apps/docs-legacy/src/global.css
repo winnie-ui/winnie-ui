@@ -1,0 +1,356 @@
+@import "@winnie-ui/css";
+
+:root,
+.light,
+.light-theme,
+[data-theme="light"] {
+  --wui-color-brand-1: #f9fefd;
+  --wui-color-brand-2: #f2fcf9;
+  --wui-color-brand-3: #dbfaf1;
+  --wui-color-brand-4: #c4f5e9;
+  --wui-color-brand-5: #adedde;
+  --wui-color-brand-6: #94e2cf;
+  --wui-color-brand-7: #73d1bd;
+  --wui-color-brand-8: #34bda5;
+  --wui-color-brand-9: #23b39b;
+  --wui-color-brand-10: #00a78f;
+  --wui-color-brand-11: #007a66;
+  --wui-color-brand-12: #0f443a;
+
+  --wui-color-brand-a1: #00d5aa06;
+  --wui-color-brand-a2: #00c58a0d;
+  --wui-color-brand-a3: #00dc9c24;
+  --wui-color-brand-a4: #01d4a03b;
+  --wui-color-brand-a5: #00c89952;
+  --wui-color-brand-a6: #01ba8d6b;
+  --wui-color-brand-a7: #00ac878c;
+  --wui-color-brand-a8: #00ac8ecb;
+  --wui-color-brand-a9: #00a78bdc;
+  --wui-color-brand-a10: #00a78f;
+  --wui-color-brand-a11: #007a66;
+  --wui-color-brand-a12: #00382ef0;
+
+  --wui-color-brand-contrast: #fff;
+}
+
+@supports (color: color(display-p3 1 1 1)) {
+  @media (color-gamut: p3) {
+    :root,
+    .light,
+    .light-theme,
+    [data-theme="light"] {
+      --wui-color-brand-1: oklch(99.3% 0.006 177.9);
+      --wui-color-brand-2: oklch(98.2% 0.011 177.9);
+      --wui-color-brand-3: oklch(96% 0.034 177.9);
+      --wui-color-brand-4: oklch(93.3% 0.053 177.9);
+      --wui-color-brand-5: oklch(89.9% 0.069 177.9);
+      --wui-color-brand-6: oklch(85.6% 0.081 177.9);
+      --wui-color-brand-7: oklch(79.8% 0.096 177.9);
+      --wui-color-brand-8: oklch(72.2% 0.12 177.9);
+      --wui-color-brand-9: oklch(68.9% 0.12 177.9);
+      --wui-color-brand-10: oklch(65.1% 0.12 177.9);
+      --wui-color-brand-11: oklch(51.2% 0.107 177.9);
+      --wui-color-brand-12: oklch(35% 0.057 177.9);
+
+      --wui-color-brand-a1: color(display-p3 0.02 0.804 0.608 / 0.02);
+      --wui-color-brand-a2: color(display-p3 0.02 0.733 0.467 / 0.044);
+      --wui-color-brand-a3: color(display-p3 0.004 0.804 0.537 / 0.118);
+      --wui-color-brand-a4: color(display-p3 0.008 0.78 0.557 / 0.193);
+      --wui-color-brand-a5: color(display-p3 0.004 0.71 0.518 / 0.267);
+      --wui-color-brand-a6: color(display-p3 0.004 0.659 0.478 / 0.353);
+      --wui-color-brand-a7: color(display-p3 0.004 0.592 0.447 / 0.459);
+      --wui-color-brand-a8: color(display-p3 0 0.565 0.439 / 0.62);
+      --wui-color-brand-a9: color(display-p3 0 0.533 0.416 / 0.663);
+      --wui-color-brand-a10: color(display-p3 0 0.498 0.388 / 0.71);
+      --wui-color-brand-a11: color(display-p3 0 0.333 0.251 / 0.797);
+      --wui-color-brand-a12: color(display-p3 0 0.157 0.118 / 0.875);
+
+      --wui-color-brand-contrast: #fff;
+    }
+  }
+}
+
+.dark,
+.dark-theme,
+[data-theme="dark"] {
+  --wui-color-brand-1: #0b1311;
+  --wui-color-brand-2: #111c19;
+  --wui-color-brand-3: #102d27;
+  --wui-color-brand-4: #093b32;
+  --wui-color-brand-5: #10483e;
+  --wui-color-brand-6: #1b574b;
+  --wui-color-brand-7: #23695b;
+  --wui-color-brand-8: #297e6e;
+  --wui-color-brand-9: #23b39b;
+  --wui-color-brand-10: #00a78f;
+  --wui-color-brand-11: #50d3ba;
+  --wui-color-brand-12: #acf0df;
+
+  --wui-color-brand-a1: #00bb1103;
+  --wui-color-brand-a2: #12fbbc0c;
+  --wui-color-brand-a3: #09ffcc1e;
+  --wui-color-brand-a4: #00ffcc2d;
+  --wui-color-brand-a5: #0dffd43b;
+  --wui-color-brand-a6: #34ffd74b;
+  --wui-color-brand-a7: #41fdd85f;
+  --wui-color-brand-a8: #46ffdc75;
+  --wui-color-brand-a9: #2cffdcae;
+  --wui-color-brand-a10: #00ffd9a1;
+  --wui-color-brand-a11: #5fffe0d0;
+  --wui-color-brand-a12: #b6ffedef;
+
+  --wui-color-brand-contrast: #fff;
+}
+
+@supports (color: color(display-p3 1 1 1)) {
+  @media (color-gamut: p3) {
+    .dark,
+    .dark-theme,
+    [data-theme="dark"] {
+      --wui-color-brand-1: oklch(17.8% 0.012 177.9);
+      --wui-color-brand-2: oklch(21.5% 0.016 177.9);
+      --wui-color-brand-3: oklch(27.3% 0.037 177.9);
+      --wui-color-brand-4: oklch(31.7% 0.053 177.9);
+      --wui-color-brand-5: oklch(36.2% 0.059 177.9);
+      --wui-color-brand-6: oklch(41.3% 0.064 177.9);
+      --wui-color-brand-7: oklch(47.3% 0.072 177.9);
+      --wui-color-brand-8: oklch(53.9% 0.085 177.9);
+      --wui-color-brand-9: oklch(68.9% 0.12 177.9);
+      --wui-color-brand-10: oklch(65.1% 0.12 177.9);
+      --wui-color-brand-11: oklch(78.9% 0.12 177.9);
+      --wui-color-brand-12: oklch(90.5% 0.071 177.9);
+
+      --wui-color-brand-a1: color(display-p3 0 0.941 0.067 / 0.009);
+      --wui-color-brand-a2: color(display-p3 0.235 0.988 0.737 / 0.047);
+      --wui-color-brand-a3: color(display-p3 0.31 0.996 0.824 / 0.114);
+      --wui-color-brand-a4: color(display-p3 0.251 0.996 0.816 / 0.173);
+      --wui-color-brand-a5: color(display-p3 0.361 1 0.847 / 0.227);
+      --wui-color-brand-a6: color(display-p3 0.447 1 0.851 / 0.29);
+      --wui-color-brand-a7: color(display-p3 0.486 1 0.859 / 0.366);
+      --wui-color-brand-a8: color(display-p3 0.494 1 0.886 / 0.45);
+      --wui-color-brand-a9: color(display-p3 0.471 0.996 0.878 / 0.669);
+      --wui-color-brand-a10: color(display-p3 0.431 1 0.875 / 0.618);
+      --wui-color-brand-a11: color(display-p3 0.561 1 0.898 / 0.803);
+      --wui-color-brand-a12: color(display-p3 0.784 1 0.941 / 0.929);
+
+      --wui-color-brand-contrast: #fff;
+    }
+  }
+}
+
+:root {
+  --sl-font: var(--wui-font-family-sans);
+}
+
+.winnie-ui {
+  --sl-color-black: var(--wui-color-grey-background);
+  --sl-color-bg: var(--wui-color-grey-background);
+  --sl-color-bg-nav: var(--wui-color-grey-background);
+  --sl-color-bg-sidebar: var(--wui-color-grey-background);
+  --sl-color-gray-2: var(--wui-color-grey-9);
+  --sl-color-gray-5: var(--wui-color-grey-5);
+  --sl-color-hairline-shade: var(--wui-color-grey-4);
+  --sl-color-hairline-shade: var(--wui-color-grey-4);
+  --sl-color-white: var(--wui-color-grey-12);
+  --sl-color-text: var(--wui-color-grey-12);
+  --sl-color-text-accent: var(--wui-color-accent-11);
+  --sl-color-bg-inline-code: var(--wui-color-accent-a3);
+  --sl-text-h2: var(--wui-font-size-7);
+  --sl-text-h3: var(--wui-font-size-5);
+  --sl-text-h4: var(--wui-font-size-4);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--wui-font-weight-bold);
+  font-family: var(--wui-font-family-serif);
+}
+
+.background-polka {
+  background-color: var(--wui-color-grey-1);
+  background-image: radial-gradient(
+    var(--wui-color-grey-a6) 0.5px,
+    var(--wui-color-grey-1) 0.5px
+  );
+  background-size: 10px 10px;
+}
+
+/* anchor hover */
+.sl-markdown-content a:hover:not(:where(.not-content *)) {
+  color: var(--sl-color-text-accent);
+  text-decoration: underline;
+}
+
+/* content panel */
+.content-panel + .content-panel {
+  border-top: none;
+}
+
+/* header */
+.header {
+  align-items: center;
+  display: flex;
+}
+
+/* headings in markdown */
+.sl-markdown-content :is(h1, h2, h3, h4, h5, h6):not(:where(.not-content *)) {
+  color: var(--sl-color-text);
+}
+
+/* inline code */
+.sl-markdown-content code:not(:where(.not-content *)) {
+  border-radius: var(--wui-border-radius-2);
+  color: var(--wui-color-accent-11);
+  font-family: var(--wui-font-family-mono);
+}
+
+/* code blocks */
+.winnie-ui .expressive-code .frame {
+  --code-background: var(--wui-color-grey-2);
+  --ec-codeFontFml: var(--wui-font-family-mono);
+  --ec-brdRad: var(--wui-border-radius-3);
+  --ec-brdCol: var(--wui-color-grey-6);
+  --ec-frm-edTabBarBrdCol: var(--wui-color-grey-6);
+  --ec-frm-edActTabIndBtmCol: var(--wui-color-grey-6);
+  --ec-frm-edActTabBrdCol: var(--wui-color-grey-6);
+  --ec-frm-edTabBarBrdBtmCol: var(--wui-color-grey-6);
+  --ec-tm-inlMarkerPad: var(--wui-space-2);
+  --ec-tm-insBg: var(--wui-color-accent-a3);
+  --ec-tm-insBrdCol: var(--wui-color-accent-6);
+  --ec-tm-markBg: var(--wui-color-accent-a3);
+  --ec-tm-markBrdCol: var(--wui-color-accent-9);
+  --ec-frm-frameBoxShdCssVal: none;
+  --header-border-radius: var(--wui-border-radius-3);
+}
+
+/* sidebar nav */
+nav.sidebar {
+  .sidebar-pane {
+    border-color: var(--sl-color-hairline);
+
+    .large {
+      color: var(--sl-color-text);
+    }
+
+    ul {
+      li {
+        a {
+          &:hover {
+            color: var(--sl-color-text);
+          }
+
+          &[aria-current="page"] {
+            background: transparent;
+            font-weight: var(--wui-font-weight-normal);
+            color: var(--wui-color-accent-11);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* tabs */
+.tablist-wrapper {
+  overflow-y: hidden;
+}
+
+ul[role="tablist"] {
+  border-bottom: var(--wui-border-width-1) solid var(--wui-color-grey-6);
+
+  .tab {
+    a[role="tab"] {
+      color: var(--wui-color-grey-12);
+      border-bottom: transparent;
+      font-size: var(--wui-font-size-2);
+
+      &[aria-selected="true"] {
+        color: var(--wui-color-grey-12);
+        font-weight: var(--wui-font-weight-medium);
+        border-bottom: var(--wui-border-width-3) solid var(--wui-color-accent-9);
+      }
+    }
+  }
+}
+
+/* table */
+.sl-markdown-content table:not(:where(.not-content *)) {
+  display: table;
+  width: 100%;
+}
+
+.sl-markdown-content thead tr:not(:where(.not-content *)) {
+  background: var(--wui-color-grey-3);
+  text-align: left;
+}
+
+[data-theme="light"]
+  .sl-markdown-content
+  :is(th, td):not(:where(.not-content *)) {
+  border: var(--wui-border-width-1) solid var(--wui-color-grey-6);
+}
+
+[data-theme="light"] .sl-markdown-content thead tr:not(:where(.not-content *)) {
+  background: var(--wui-color-grey-2);
+}
+
+.sl-markdown-content tbody tr:nth-child(n):not(:where(.not-content *)) {
+  background: var(--wui-color-grey-2);
+}
+
+[data-theme="light"]
+  .sl-markdown-content
+  tbody
+  tr:nth-child(n):not(:where(.not-content *)) {
+  background: var(--wui-color-grey-1);
+}
+
+.sl-markdown-content tr:last-child td:last-child:not(:where(.not-content *)) {
+  border-bottom-left-radius: var(--wui-border-radius-3);
+}
+
+/* table of contents */
+.right-sidebar {
+  border-left: none;
+
+  h2 {
+    color: var(--wui-color-grey-12);
+    font-size: var(--wui-font-size-3);
+    font-weight: var(--wui-font-weight-medium);
+  }
+
+  ul {
+    li {
+      a {
+        color: var(--wui-color-grey-10);
+
+        &:hover {
+          color: var(--wui-color-grey-11);
+        }
+
+        &[aria-current="true"] {
+          color: var(--wui-color-grey-12);
+        }
+      }
+    }
+  }
+}
+
+/* tooltip */
+.winnie-ui .expressive-code .copy {
+  .feedback {
+    --tooltip-arrow-size: 0;
+    border: var(--wui-border-width-1) solid var(--wui-color-grey-6);
+    border-radius: var(--wui-border-radius-2);
+    background: var(--wui-color-grey-1);
+    box-shadow: var(--wui-shadow-3);
+    color: var(--wui-color-grey-11);
+    line-height: 1;
+    font-size: var(--wui-font-size-1);
+    padding: var(--wui-space-2);
+  }
+}

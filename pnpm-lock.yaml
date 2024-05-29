@@ -47,7 +47,7 @@ importers:
       '@fontsource/geist-sans':
         specifier: 5.0.3
         version: 5.0.3
-      '@goho/css':
+      '@winnie-ui/css':
         specifier: workspace:*
         version: link:../../core/css
       '@types/react':
@@ -105,7 +105,7 @@ importers:
 
   apps/tailwind-demo:
     dependencies:
-      '@goho/tailwind':
+      '@winnie-ui/tailwind':
         specifier: workspace:*
         version: link:../../core/tailwind
       react:
@@ -154,7 +154,7 @@ importers:
 
   core/css:
     devDependencies:
-      '@goho/stylelint-config-goho':
+      '@winnie-ui/stylelint-config-winnie-ui':
         specifier: workspace:*
         version: link:../../tools/stylelint
       rimraf:
@@ -166,14 +166,14 @@ importers:
 
   core/tailwind:
     dependencies:
-      '@goho/css':
+      '@winnie-ui/css':
         specifier: workspace:*
         version: link:../css
       tailwindcss:
         specifier: 4.0.0-alpha.15
         version: 4.0.0-alpha.15
     devDependencies:
-      '@goho/stylelint-config-goho':
+      '@winnie-ui/stylelint-config-winnie-ui':
         specifier: workspace:*
         version: link:../../tools/stylelint
       rimraf:

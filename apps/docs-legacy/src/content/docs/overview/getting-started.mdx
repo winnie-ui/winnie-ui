@@ -1,0 +1,101 @@
+---
+title: Getting Started
+description: Install Winnie CSS and start building your next application in minutes.
+---
+
+import { TabItem, Tabs } from "@astrojs/starlight/components";
+
+Winnie CSS is a collection of css variables and component styles that can be used to style components in any framework.
+
+## Installation
+
+Let's get you up and running with Winnie CSS.
+
+### 1. Install Winnie CSS
+
+Using the package manager of your choice, install Winnie CSS from your command line:
+
+{/* prettier-ignore */}
+<Tabs>
+  <TabItem label="npm">
+    ```bash frame="none"
+    npm install @winnie-ui/css
+    ```
+  </TabItem>
+  <TabItem label="yarn">
+    ```bash frame="none"
+    yarn add @winnie-ui/css
+    ```
+  </TabItem>
+  <TabItem label="pnpm">
+    ```bash frame="none"
+    pnpm add @winnie-ui/css
+    ```
+  </TabItem>
+  <TabItem label="bun">
+    ```bash frame="none"
+    bun install @winnie-ui/css
+    ```
+  </TabItem>
+</Tabs>
+
+### 2. Import the CSS
+
+Import the Winnie CSS file at the root of your application in the place of your choice:
+
+{/* prettier-ignore */}
+<Tabs>
+  <TabItem label="React">
+    ```tsx title="main.tsx"
+    import "@winnie-ui/css";
+    ```
+  </TabItem>
+  <TabItem label="CSS">
+    ```css title="global.css"
+    @import "@winnie-ui/css";
+    ```
+  </TabItem>
+</Tabs>
+
+### 3. Configure Winnie CSS
+
+Configure the `body` element with Winnie CSS specific attributes
+
+```tsx title="root.tsx" {6-9}
+export default function Root() {
+  return (
+    <html>
+      <head></head>
+      <body
+        class="winnie-ui"
+        data-accent-color="orange"
+        data-scaling="100%"
+        data-radius="md"
+      >
+        <App />
+      </body>
+    </html>
+  );
+}
+```
+
+### 4. Start Building
+
+Your app is now ready to go with Winnie CSS.
+
+```css title="my-button.css"
+.my-button {
+  background: var(--wui-color-accent-9);
+  color: var(--wui-color-accent-contrast);
+  height: 32px;
+  padding-inline: var(--wui-space-3);
+}
+```
+
+## Acknowledgements
+
+Winnie wouldn't be where it is today without the work done by other projects in the community including:
+
+- [Radix Themes](https://www.radix-ui.com/)
+- [Open Props](https://github.com/argyleink/open-props)
+- [Tailwind](https://tailwindcss.com/)

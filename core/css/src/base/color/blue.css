@@ -3,33 +3,33 @@
   .light,
   .light-theme,
   [data-theme="light"] {
-    --go-color-blue-1: #fcfdff;
-    --go-color-blue-2: #f5f9ff;
-    --go-color-blue-3: #eaf2ff;
-    --go-color-blue-4: #dcebff;
-    --go-color-blue-5: #cbe1ff;
-    --go-color-blue-6: #b8d4ff;
-    --go-color-blue-7: #9fc2fb;
-    --go-color-blue-8: #7baaf6;
-    --go-color-blue-9: #3b82f6;
-    --go-color-blue-10: #2c74e9;
-    --go-color-blue-11: #256cde;
-    --go-color-blue-12: #123164;
+    --wui-color-blue-1: #fcfdff;
+    --wui-color-blue-2: #f5f9ff;
+    --wui-color-blue-3: #eaf2ff;
+    --wui-color-blue-4: #dcebff;
+    --wui-color-blue-5: #cbe1ff;
+    --wui-color-blue-6: #b8d4ff;
+    --wui-color-blue-7: #9fc2fb;
+    --wui-color-blue-8: #7baaf6;
+    --wui-color-blue-9: #3b82f6;
+    --wui-color-blue-10: #2c74e9;
+    --wui-color-blue-11: #256cde;
+    --wui-color-blue-12: #123164;
 
-    --go-color-blue-a1: #0055ff03;
-    --go-color-blue-a2: #0066ff0a;
-    --go-color-blue-a3: #0062ff15;
-    --go-color-blue-a4: #006eff23;
-    --go-color-blue-a5: #006cff34;
-    --go-color-blue-a6: #0065ff47;
-    --go-color-blue-a7: #005df560;
-    --go-color-blue-a8: #005bee84;
-    --go-color-blue-a9: #005df3c4;
-    --go-color-blue-a10: #0057e5d3;
-    --go-color-blue-a11: #0053d8da;
-    --go-color-blue-a12: #002158ed;
+    --wui-color-blue-a1: #0055ff03;
+    --wui-color-blue-a2: #0066ff0a;
+    --wui-color-blue-a3: #0062ff15;
+    --wui-color-blue-a4: #006eff23;
+    --wui-color-blue-a5: #006cff34;
+    --wui-color-blue-a6: #0065ff47;
+    --wui-color-blue-a7: #005df560;
+    --wui-color-blue-a8: #005bee84;
+    --wui-color-blue-a9: #005df3c4;
+    --wui-color-blue-a10: #0057e5d3;
+    --wui-color-blue-a11: #0053d8da;
+    --wui-color-blue-a12: #002158ed;
 
-    --go-color-blue-contrast: #fff;
+    --wui-color-blue-contrast: #fff;
   }
 
   @supports (color: color(display-p3 1 1 1)) {
@@ -38,33 +38,33 @@
       .light,
       .light-theme,
       [data-theme="light"] {
-        --go-color-blue-1: oklch(99.3% 0.003 259.8);
-        --go-color-blue-2: oklch(98.2% 0.01 259.8);
-        --go-color-blue-3: oklch(96% 0.02 259.8);
-        --go-color-blue-4: oklch(93.7% 0.037 259.8);
-        --go-color-blue-5: oklch(90.6% 0.054 259.8);
-        --go-color-blue-6: oklch(86.4% 0.07 259.8);
-        --go-color-blue-7: oklch(80.9% 0.089 259.8);
-        --go-color-blue-8: oklch(73.4% 0.122 259.8);
-        --go-color-blue-9: oklch(62.3% 0.188 259.8);
-        --go-color-blue-10: oklch(58.2% 0.191 259.8);
-        --go-color-blue-11: oklch(55.4% 0.188 259.8);
-        --go-color-blue-12: oklch(32.3% 0.098 259.8);
+        --wui-color-blue-1: oklch(99.3% 0.003 259.8);
+        --wui-color-blue-2: oklch(98.2% 0.01 259.8);
+        --wui-color-blue-3: oklch(96% 0.02 259.8);
+        --wui-color-blue-4: oklch(93.7% 0.037 259.8);
+        --wui-color-blue-5: oklch(90.6% 0.054 259.8);
+        --wui-color-blue-6: oklch(86.4% 0.07 259.8);
+        --wui-color-blue-7: oklch(80.9% 0.089 259.8);
+        --wui-color-blue-8: oklch(73.4% 0.122 259.8);
+        --wui-color-blue-9: oklch(62.3% 0.188 259.8);
+        --wui-color-blue-10: oklch(58.2% 0.191 259.8);
+        --wui-color-blue-11: oklch(55.4% 0.188 259.8);
+        --wui-color-blue-12: oklch(32.3% 0.098 259.8);
 
-        --go-color-blue-a1: color(display-p3 0.024 0.349 1 / 0.012);
-        --go-color-blue-a2: color(display-p3 0.024 0.349 0.894 / 0.036);
-        --go-color-blue-a3: color(display-p3 0.008 0.357 0.953 / 0.079);
-        --go-color-blue-a4: color(display-p3 0.008 0.38 0.941 / 0.126);
-        --go-color-blue-a5: color(display-p3 0.008 0.357 0.941 / 0.189);
-        --go-color-blue-a6: color(display-p3 0.004 0.337 0.941 / 0.259);
-        --go-color-blue-a7: color(display-p3 0.004 0.306 0.898 / 0.35);
-        --go-color-blue-a8: color(display-p3 0.004 0.298 0.878 / 0.479);
-        --go-color-blue-a9: color(display-p3 0 0.282 0.902 / 0.695);
-        --go-color-blue-a10: color(display-p3 0 0.263 0.843 / 0.75);
-        --go-color-blue-a11: color(display-p3 0 0.251 0.796 / 0.773);
-        --go-color-blue-a12: color(display-p3 0 0.098 0.31 / 0.899);
+        --wui-color-blue-a1: color(display-p3 0.024 0.349 1 / 0.012);
+        --wui-color-blue-a2: color(display-p3 0.024 0.349 0.894 / 0.036);
+        --wui-color-blue-a3: color(display-p3 0.008 0.357 0.953 / 0.079);
+        --wui-color-blue-a4: color(display-p3 0.008 0.38 0.941 / 0.126);
+        --wui-color-blue-a5: color(display-p3 0.008 0.357 0.941 / 0.189);
+        --wui-color-blue-a6: color(display-p3 0.004 0.337 0.941 / 0.259);
+        --wui-color-blue-a7: color(display-p3 0.004 0.306 0.898 / 0.35);
+        --wui-color-blue-a8: color(display-p3 0.004 0.298 0.878 / 0.479);
+        --wui-color-blue-a9: color(display-p3 0 0.282 0.902 / 0.695);
+        --wui-color-blue-a10: color(display-p3 0 0.263 0.843 / 0.75);
+        --wui-color-blue-a11: color(display-p3 0 0.251 0.796 / 0.773);
+        --wui-color-blue-a12: color(display-p3 0 0.098 0.31 / 0.899);
 
-        --go-color-blue-contrast: #fff;
+        --wui-color-blue-contrast: #fff;
       }
     }
   }
@@ -72,33 +72,33 @@
   .dark,
   .dark-theme,
   [data-theme="dark"] {
-    --go-color-blue-1: #0b111c;
-    --go-color-blue-2: #101825;
-    --go-color-blue-3: #122647;
-    --go-color-blue-4: #123061;
-    --go-color-blue-5: #1a3c74;
-    --go-color-blue-6: #244985;
-    --go-color-blue-7: #2f589a;
-    --go-color-blue-8: #3868b8;
-    --go-color-blue-9: #3b82f6;
-    --go-color-blue-10: #2e75e8;
-    --go-color-blue-11: #85b5ff;
-    --go-color-blue-12: #d0e2ff;
+    --wui-color-blue-1: #0b111c;
+    --wui-color-blue-2: #101825;
+    --wui-color-blue-3: #122647;
+    --wui-color-blue-4: #123061;
+    --wui-color-blue-5: #1a3c74;
+    --wui-color-blue-6: #244985;
+    --wui-color-blue-7: #2f589a;
+    --wui-color-blue-8: #3868b8;
+    --wui-color-blue-9: #3b82f6;
+    --wui-color-blue-10: #2e75e8;
+    --wui-color-blue-11: #85b5ff;
+    --wui-color-blue-12: #d0e2ff;
 
-    --go-color-blue-a1: #0012fb0c;
-    --go-color-blue-a2: #0662f916;
-    --go-color-blue-a3: #166eff3a;
-    --go-color-blue-a4: #146dff56;
-    --go-color-blue-a5: #2778fd6b;
-    --go-color-blue-a6: #3883fd7d;
-    --go-color-blue-a7: #468dff93;
-    --go-color-blue-a8: #498dffb3;
-    --go-color-blue-a9: #3c86fef6;
-    --go-color-blue-a10: #317ffee7;
-    --go-color-blue-a11: #85b5ff;
-    --go-color-blue-a12: #d0e2ff;
+    --wui-color-blue-a1: #0012fb0c;
+    --wui-color-blue-a2: #0662f916;
+    --wui-color-blue-a3: #166eff3a;
+    --wui-color-blue-a4: #146dff56;
+    --wui-color-blue-a5: #2778fd6b;
+    --wui-color-blue-a6: #3883fd7d;
+    --wui-color-blue-a7: #468dff93;
+    --wui-color-blue-a8: #498dffb3;
+    --wui-color-blue-a9: #3c86fef6;
+    --wui-color-blue-a10: #317ffee7;
+    --wui-color-blue-a11: #85b5ff;
+    --wui-color-blue-a12: #d0e2ff;
 
-    --go-color-blue-contrast: #fff;
+    --wui-color-blue-contrast: #fff;
   }
 
   @supports (color: color(display-p3 1 1 1)) {
@@ -106,33 +106,33 @@
       .dark,
       .dark-theme,
       [data-theme="dark"] {
-        --go-color-blue-1: oklch(17.8% 0.025 259.8);
-        --go-color-blue-2: oklch(20.9% 0.029 259.8);
-        --go-color-blue-3: oklch(27.2% 0.066 259.8);
-        --go-color-blue-4: oklch(31.7% 0.095 259.8);
-        --go-color-blue-5: oklch(36.3% 0.104 259.8);
-        --go-color-blue-6: oklch(41.1% 0.109 259.8);
-        --go-color-blue-7: oklch(46.5% 0.118 259.8);
-        --go-color-blue-8: oklch(52.6% 0.136 259.8);
-        --go-color-blue-9: oklch(62.3% 0.188 259.8);
-        --go-color-blue-10: oklch(58.2% 0.188 259.8);
-        --go-color-blue-11: oklch(77.2% 0.126 259.8);
-        --go-color-blue-12: oklch(90.9% 0.045 259.8);
+        --wui-color-blue-1: oklch(17.8% 0.025 259.8);
+        --wui-color-blue-2: oklch(20.9% 0.029 259.8);
+        --wui-color-blue-3: oklch(27.2% 0.066 259.8);
+        --wui-color-blue-4: oklch(31.7% 0.095 259.8);
+        --wui-color-blue-5: oklch(36.3% 0.104 259.8);
+        --wui-color-blue-6: oklch(41.1% 0.109 259.8);
+        --wui-color-blue-7: oklch(46.5% 0.118 259.8);
+        --wui-color-blue-8: oklch(52.6% 0.136 259.8);
+        --wui-color-blue-9: oklch(62.3% 0.188 259.8);
+        --wui-color-blue-10: oklch(58.2% 0.188 259.8);
+        --wui-color-blue-11: oklch(77.2% 0.126 259.8);
+        --wui-color-blue-12: oklch(90.9% 0.045 259.8);
 
-        --go-color-blue-a1: color(display-p3 0 0.071 0.98 / 0.043);
-        --go-color-blue-a2: color(display-p3 0.118 0.412 1 / 0.08);
-        --go-color-blue-a3: color(display-p3 0.176 0.443 1 / 0.219);
-        --go-color-blue-a4: color(display-p3 0.176 0.431 1 / 0.324);
-        --go-color-blue-a5: color(display-p3 0.243 0.478 1 / 0.4);
-        --go-color-blue-a6: color(display-p3 0.302 0.525 1 / 0.471);
-        --go-color-blue-a7: color(display-p3 0.349 0.561 0.996 / 0.555);
-        --go-color-blue-a8: color(display-p3 0.365 0.569 1 / 0.677);
-        --go-color-blue-a9: color(display-p3 0.325 0.537 1 / 0.929);
-        --go-color-blue-a10: color(display-p3 0.29 0.51 1 / 0.87);
-        --go-color-blue-a11: color(display-p3 0.576 0.725 1 / 0.975);
-        --go-color-blue-a12: color(display-p3 0.839 0.894 1 / 0.988);
+        --wui-color-blue-a1: color(display-p3 0 0.071 0.98 / 0.043);
+        --wui-color-blue-a2: color(display-p3 0.118 0.412 1 / 0.08);
+        --wui-color-blue-a3: color(display-p3 0.176 0.443 1 / 0.219);
+        --wui-color-blue-a4: color(display-p3 0.176 0.431 1 / 0.324);
+        --wui-color-blue-a5: color(display-p3 0.243 0.478 1 / 0.4);
+        --wui-color-blue-a6: color(display-p3 0.302 0.525 1 / 0.471);
+        --wui-color-blue-a7: color(display-p3 0.349 0.561 0.996 / 0.555);
+        --wui-color-blue-a8: color(display-p3 0.365 0.569 1 / 0.677);
+        --wui-color-blue-a9: color(display-p3 0.325 0.537 1 / 0.929);
+        --wui-color-blue-a10: color(display-p3 0.29 0.51 1 / 0.87);
+        --wui-color-blue-a11: color(display-p3 0.576 0.725 1 / 0.975);
+        --wui-color-blue-a12: color(display-p3 0.839 0.894 1 / 0.988);
 
-        --go-color-blue-contrast: #fff;
+        --wui-color-blue-contrast: #fff;
       }
     }
   }

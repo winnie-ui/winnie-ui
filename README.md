@@ -1,4 +1,4 @@
-# Goho
+# Winnie
 
 <type>([scope]): <subject>
 

@@ -1,14 +1,14 @@
 @layer base {
   :root {
-    --go-duration-05: 50ms;
-    --go-duration-1: 100ms;
-    --go-duration-2: 200ms;
-    --go-duration-3: 300ms;
-    --go-duration-4: 500ms;
-    --go-bezier-1: cubic-bezier(0.16, 1, 0.3, 1);
+    --wui-duration-05: 50ms;
+    --wui-duration-1: 100ms;
+    --wui-duration-2: 200ms;
+    --wui-duration-3: 300ms;
+    --wui-duration-4: 500ms;
+    --wui-bezier-1: cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  @keyframes go-fade-in {
+  @keyframes wui-fade-in {
     from {
       opacity: 0;
     }
@@ -18,7 +18,7 @@
     }
   }
 
-  @keyframes go-fade-out {
+  @keyframes wui-fade-out {
     from {
       opacity: 1;
     }
@@ -28,7 +28,7 @@
     }
   }
 
-  @keyframes go-slide-up {
+  @keyframes wui-slide-up {
     from {
       transform: translateY(6px) scale(0.97);
     }
@@ -38,7 +38,7 @@
     }
   }
 
-  @keyframes go-slide-down {
+  @keyframes wui-slide-down {
     from {
       transform: translateY(-6px) scale(0.97);
     }
@@ -48,7 +48,7 @@
     }
   }
 
-  @keyframes go-slide-left {
+  @keyframes wui-slide-left {
     from {
       transform: translateX(6px) scale(0.97);
     }
@@ -58,7 +58,7 @@
     }
   }
 
-  @keyframes go-slide-right {
+  @keyframes wui-slide-right {
     from {
       transform: translateX(-6px) scale(0.97);
     }
@@ -69,50 +69,50 @@
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    .go-popper {
-      animation-timing-function: var(--go-bezier-1);
+    .wui-popper {
+      animation-timing-function: var(--wui-bezier-1);
 
       &:where(
           [popover]:popover-open,
           [data-state="delayed-open"],
           [data-state="open"]
         ) {
-        animation-duration: var(--go-duration-2);
+        animation-duration: var(--wui-duration-2);
 
         &:where([data-side="top"]) {
-          animation-name: go-slide-up, go-fade-in;
+          animation-name: wui-slide-up, wui-fade-in;
         }
 
         &:where([data-side="bottom"]) {
-          animation-name: go-slide-down, go-fade-in;
+          animation-name: wui-slide-down, wui-fade-in;
         }
 
         &:where([data-side="left"]) {
-          animation-name: go-slide-left, go-fade-in;
+          animation-name: wui-slide-left, wui-fade-in;
         }
 
         &:where([data-side="right"]) {
-          animation-name: go-slide-right, go-fade-in;
+          animation-name: wui-slide-right, wui-fade-in;
         }
       }
 
       &:where([data-state="closed"]) {
-        animation-duration: var(--go-duration-1);
+        animation-duration: var(--wui-duration-1);
 
         &:where([data-side="top"]) {
-          animation-name: go-slide-down, go-fade-out;
+          animation-name: wui-slide-down, wui-fade-out;
         }
 
         &:where([data-side="bottom"]) {
-          animation-name: go-slide-up, go-fade-out;
+          animation-name: wui-slide-up, wui-fade-out;
         }
 
         &:where([data-side="left"]) {
-          animation-name: go-slide-right, go-fade-out;
+          animation-name: wui-slide-right, wui-fade-out;
         }
 
         &:where([data-side="right"]) {
-          animation-name: go-slide-left, go-fade-out;
+          animation-name: wui-slide-left, wui-fade-out;
         }
       }
     }

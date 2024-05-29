@@ -6,45 +6,45 @@
  * https://github.com/radix-ui/themes/blob/main/packages/radix-ui-themes/src/styles/tokens/scaling.css
  */
 @layer base {
-  .goho {
+  .winnie-ui {
     &:where([data-scaling="90%"]) {
-      --go-scaling: 0.9;
+      --wui-scaling: 0.9;
     }
 
     &:where([data-scaling="95%"]) {
-      --go-scaling: 0.95;
+      --wui-scaling: 0.95;
     }
 
     &:where([data-scaling="100%"]) {
-      --go-scaling: 1;
+      --wui-scaling: 1;
     }
 
     &:where([data-scaling="105%"]) {
-      --go-scaling: 1.05;
+      --wui-scaling: 1.05;
     }
 
     &:where([data-scaling="110%"]) {
-      --go-scaling: 1.1;
+      --wui-scaling: 1.1;
     }
 
     &:where([data-radius="none"]) {
-      --go-radius-factor: 0;
+      --wui-radius-factor: 0;
     }
 
     &:where([data-radius="sm"]) {
-      --go-radius-factor: 0.75;
+      --wui-radius-factor: 0.75;
     }
 
     &:where([data-radius="md"]) {
-      --go-radius-factor: 1;
+      --wui-radius-factor: 1;
     }
 
     &:where([data-radius="lg"]) {
-      --go-radius-factor: 1.5;
+      --wui-radius-factor: 1.5;
     }
 
     &:where([data-radius="round"]) {
-      --go-radius-factor: 9999;
+      --wui-radius-factor: 9999;
     }
   }
 }

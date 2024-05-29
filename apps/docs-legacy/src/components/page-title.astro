@@ -1,0 +1,25 @@
+---
+import type { Props } from "@astrojs/starlight/props";
+
+const { title, description } = Astro.props.entry.data;
+---
+
+<h1 id="_top">{title}</h1>
+{description && <p class="page-description">{description}</p>}
+
+<style>
+  h1 {
+    margin-top: var(--wui-space-4);
+    font-size: var(--wui-font-size-8);
+    line-height: var(--wui-line-height-8);
+    font-weight: var(--wui-font-weight-bold);
+    color: var(--wui-color-grey-12);
+  }
+
+  p.page-description {
+    color: var(--wui-color-grey-10);
+    font-size: var(--wui-font-size-3);
+    font-weight: var(--wui-font-weight-normal);
+    margin-top: var(--wui-space-4);
+  }
+</style>

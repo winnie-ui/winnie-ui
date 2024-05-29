@@ -3,33 +3,33 @@
   .light,
   .light-theme,
   [data-theme="light"] {
-    --go-color-purple-1: #fdfcff;
-    --go-color-purple-2: #f9f8ff;
-    --go-color-purple-3: #f2efff;
-    --go-color-purple-4: #e9e4ff;
-    --go-color-purple-5: #dfd8ff;
-    --go-color-purple-6: #d3c8ff;
-    --go-color-purple-7: #c1b2ff;
-    --go-color-purple-8: #ac95fb;
-    --go-color-purple-9: #8b5cf6;
-    --go-color-purple-10: #7f4ee7;
-    --go-color-purple-11: #6f43cd;
-    --go-color-purple-12: #371e6b;
+    --wui-color-purple-1: #fdfcff;
+    --wui-color-purple-2: #f9f8ff;
+    --wui-color-purple-3: #f2efff;
+    --wui-color-purple-4: #e9e4ff;
+    --wui-color-purple-5: #dfd8ff;
+    --wui-color-purple-6: #d3c8ff;
+    --wui-color-purple-7: #c1b2ff;
+    --wui-color-purple-8: #ac95fb;
+    --wui-color-purple-9: #8b5cf6;
+    --wui-color-purple-10: #7f4ee7;
+    --wui-color-purple-11: #6f43cd;
+    --wui-color-purple-12: #371e6b;
 
-    --go-color-purple-a1: #5500ff03;
-    --go-color-purple-a2: #2500ff07;
-    --go-color-purple-a3: #3000ff10;
-    --go-color-purple-a4: #3000ff1b;
-    --go-color-purple-a5: #2e00ff27;
-    --go-color-purple-a6: #3300ff37;
-    --go-color-purple-a7: #3200ff4d;
-    --go-color-purple-a8: #3801f66a;
-    --go-color-purple-a9: #4a00f1a3;
-    --go-color-purple-a10: #4700ddb1;
-    --go-color-purple-a11: #3c00bbbc;
-    --go-color-purple-a12: #1c0057e1;
+    --wui-color-purple-a1: #5500ff03;
+    --wui-color-purple-a2: #2500ff07;
+    --wui-color-purple-a3: #3000ff10;
+    --wui-color-purple-a4: #3000ff1b;
+    --wui-color-purple-a5: #2e00ff27;
+    --wui-color-purple-a6: #3300ff37;
+    --wui-color-purple-a7: #3200ff4d;
+    --wui-color-purple-a8: #3801f66a;
+    --wui-color-purple-a9: #4a00f1a3;
+    --wui-color-purple-a10: #4700ddb1;
+    --wui-color-purple-a11: #3c00bbbc;
+    --wui-color-purple-a12: #1c0057e1;
 
-    --go-color-purple-contrast: #fff;
+    --wui-color-purple-contrast: #fff;
   }
 
   @supports (color: color(display-p3 1 1 1)) {
@@ -38,33 +38,33 @@
       .light,
       .light-theme,
       [data-theme="light"] {
-        --go-color-purple-1: oklch(99.3% 0.004 292.7);
-        --go-color-purple-2: oklch(98.3% 0.011 292.7);
-        --go-color-purple-3: oklch(96.1% 0.026 292.7);
-        --go-color-purple-4: oklch(93.3% 0.047 292.7);
-        --go-color-purple-5: oklch(90.2% 0.067 292.7);
-        --go-color-purple-6: oklch(86.2% 0.086 292.7);
-        --go-color-purple-7: oklch(80.5% 0.111 292.7);
-        --go-color-purple-8: oklch(73.1% 0.146 292.7);
-        --go-color-purple-9: oklch(60.6% 0.219 292.7);
-        --go-color-purple-10: oklch(56.3% 0.219 292.7);
-        --go-color-purple-11: oklch(51.2% 0.202 292.7);
-        --go-color-purple-12: oklch(31.8% 0.126 292.7);
+        --wui-color-purple-1: oklch(99.3% 0.004 292.7);
+        --wui-color-purple-2: oklch(98.3% 0.011 292.7);
+        --wui-color-purple-3: oklch(96.1% 0.026 292.7);
+        --wui-color-purple-4: oklch(93.3% 0.047 292.7);
+        --wui-color-purple-5: oklch(90.2% 0.067 292.7);
+        --wui-color-purple-6: oklch(86.2% 0.086 292.7);
+        --wui-color-purple-7: oklch(80.5% 0.111 292.7);
+        --wui-color-purple-8: oklch(73.1% 0.146 292.7);
+        --wui-color-purple-9: oklch(60.6% 0.219 292.7);
+        --wui-color-purple-10: oklch(56.3% 0.219 292.7);
+        --wui-color-purple-11: oklch(51.2% 0.202 292.7);
+        --wui-color-purple-12: oklch(31.8% 0.126 292.7);
 
-        --go-color-purple-a1: color(display-p3 0.349 0.024 1 / 0.012);
-        --go-color-purple-a2: color(display-p3 0.161 0.024 0.863 / 0.028);
-        --go-color-purple-a3: color(display-p3 0.129 0.008 0.941 / 0.063);
-        --go-color-purple-a4: color(display-p3 0.153 0.004 0.929 / 0.106);
-        --go-color-purple-a5: color(display-p3 0.157 0.004 0.925 / 0.153);
-        --go-color-purple-a6: color(display-p3 0.169 0.004 0.929 / 0.216);
-        --go-color-purple-a7: color(display-p3 0.149 0.004 0.937 / 0.299);
-        --go-color-purple-a8: color(display-p3 0.173 0.004 0.898 / 0.412);
-        --go-color-purple-a9: color(display-p3 0.235 0 0.894 / 0.632);
-        --go-color-purple-a10: color(display-p3 0.227 0 0.816 / 0.687);
-        --go-color-purple-a11: color(display-p3 0.192 0 0.694 / 0.73);
-        --go-color-purple-a12: color(display-p3 0.094 0 0.322 / 0.879);
+        --wui-color-purple-a1: color(display-p3 0.349 0.024 1 / 0.012);
+        --wui-color-purple-a2: color(display-p3 0.161 0.024 0.863 / 0.028);
+        --wui-color-purple-a3: color(display-p3 0.129 0.008 0.941 / 0.063);
+        --wui-color-purple-a4: color(display-p3 0.153 0.004 0.929 / 0.106);
+        --wui-color-purple-a5: color(display-p3 0.157 0.004 0.925 / 0.153);
+        --wui-color-purple-a6: color(display-p3 0.169 0.004 0.929 / 0.216);
+        --wui-color-purple-a7: color(display-p3 0.149 0.004 0.937 / 0.299);
+        --wui-color-purple-a8: color(display-p3 0.173 0.004 0.898 / 0.412);
+        --wui-color-purple-a9: color(display-p3 0.235 0 0.894 / 0.632);
+        --wui-color-purple-a10: color(display-p3 0.227 0 0.816 / 0.687);
+        --wui-color-purple-a11: color(display-p3 0.192 0 0.694 / 0.73);
+        --wui-color-purple-a12: color(display-p3 0.094 0 0.322 / 0.879);
 
-        --go-color-purple-contrast: #fff;
+        --wui-color-purple-contrast: #fff;
       }
     }
   }
@@ -72,33 +72,33 @@
   .dark,
   .dark-theme,
   [data-theme="dark"] {
-    --go-color-purple-1: #120e1e;
-    --go-color-purple-2: #191429;
-    --go-color-purple-3: #291b4b;
-    --go-color-purple-4: #351f65;
-    --go-color-purple-5: #3e2773;
-    --go-color-purple-6: #493282;
-    --go-color-purple-7: #593f9a;
-    --go-color-purple-8: #6f4fbf;
-    --go-color-purple-9: #8b5cf6;
-    --go-color-purple-10: #7f4ee7;
-    --go-color-purple-11: #bca2ff;
-    --go-color-purple-12: #e2dbff;
+    --wui-color-purple-1: #120e1e;
+    --wui-color-purple-2: #191429;
+    --wui-color-purple-3: #291b4b;
+    --wui-color-purple-4: #351f65;
+    --wui-color-purple-5: #3e2773;
+    --wui-color-purple-6: #493282;
+    --wui-color-purple-7: #593f9a;
+    --wui-color-purple-8: #6f4fbf;
+    --wui-color-purple-9: #8b5cf6;
+    --wui-color-purple-10: #7f4ee7;
+    --wui-color-purple-11: #bca2ff;
+    --wui-color-purple-12: #e2dbff;
 
-    --go-color-purple-a1: #2400fe0e;
-    --go-color-purple-a2: #602ffd1a;
-    --go-color-purple-a3: #733afc3f;
-    --go-color-purple-a4: #7739ff5a;
-    --go-color-purple-a5: #7f47ff69;
-    --go-color-purple-a6: #8656fd7a;
-    --go-color-purple-a7: #8e61ff93;
-    --go-color-purple-a8: #9165febb;
-    --go-color-purple-a9: #8f5efef6;
-    --go-color-purple-a10: #8b54fee6;
-    --go-color-purple-a11: #bca2ff;
-    --go-color-purple-a12: #e2dbff;
+    --wui-color-purple-a1: #2400fe0e;
+    --wui-color-purple-a2: #602ffd1a;
+    --wui-color-purple-a3: #733afc3f;
+    --wui-color-purple-a4: #7739ff5a;
+    --wui-color-purple-a5: #7f47ff69;
+    --wui-color-purple-a6: #8656fd7a;
+    --wui-color-purple-a7: #8e61ff93;
+    --wui-color-purple-a8: #9165febb;
+    --wui-color-purple-a9: #8f5efef6;
+    --wui-color-purple-a10: #8b54fee6;
+    --wui-color-purple-a11: #bca2ff;
+    --wui-color-purple-a12: #e2dbff;
 
-    --go-color-purple-contrast: #fff;
+    --wui-color-purple-contrast: #fff;
   }
 
   @supports (color: color(display-p3 1 1 1)) {
@@ -106,33 +106,33 @@
       .dark,
       .dark-theme,
       [data-theme="dark"] {
-        --go-color-purple-1: oklch(17.8% 0.032 292.7);
-        --go-color-purple-2: oklch(20.9% 0.04 292.7);
-        --go-color-purple-3: oklch(26.9% 0.084 292.7);
-        --go-color-purple-4: oklch(31.1% 0.117 292.7);
-        --go-color-purple-5: oklch(34.7% 0.125 292.7);
-        --go-color-purple-6: oklch(38.9% 0.13 292.7);
-        --go-color-purple-7: oklch(44.5% 0.142 292.7);
-        --go-color-purple-8: oklch(52.1% 0.168 292.7);
-        --go-color-purple-9: oklch(60.6% 0.219 292.7);
-        --go-color-purple-10: oklch(56.3% 0.219 292.7);
-        --go-color-purple-11: oklch(77.9% 0.18 292.7);
-        --go-color-purple-12: oklch(91.1% 0.059 292.7);
+        --wui-color-purple-1: oklch(17.8% 0.032 292.7);
+        --wui-color-purple-2: oklch(20.9% 0.04 292.7);
+        --wui-color-purple-3: oklch(26.9% 0.084 292.7);
+        --wui-color-purple-4: oklch(31.1% 0.117 292.7);
+        --wui-color-purple-5: oklch(34.7% 0.125 292.7);
+        --wui-color-purple-6: oklch(38.9% 0.13 292.7);
+        --wui-color-purple-7: oklch(44.5% 0.142 292.7);
+        --wui-color-purple-8: oklch(52.1% 0.168 292.7);
+        --wui-color-purple-9: oklch(60.6% 0.219 292.7);
+        --wui-color-purple-10: oklch(56.3% 0.219 292.7);
+        --wui-color-purple-11: oklch(77.9% 0.18 292.7);
+        --wui-color-purple-12: oklch(91.1% 0.059 292.7);
 
-        --go-color-purple-a1: color(display-p3 0.071 0 0.992 / 0.051);
-        --go-color-purple-a2: color(display-p3 0.353 0.188 1 / 0.097);
-        --go-color-purple-a3: color(display-p3 0.439 0.255 1 / 0.232);
-        --go-color-purple-a4: color(display-p3 0.451 0.243 1 / 0.337);
-        --go-color-purple-a5: color(display-p3 0.486 0.298 1 / 0.395);
-        --go-color-purple-a6: color(display-p3 0.525 0.361 1 / 0.454);
-        --go-color-purple-a7: color(display-p3 0.545 0.396 0.996 / 0.555);
-        --go-color-purple-a8: color(display-p3 0.561 0.416 1 / 0.706);
-        --go-color-purple-a9: color(display-p3 0.553 0.392 1 / 0.929);
-        --go-color-purple-a10: color(display-p3 0.533 0.353 1 / 0.866);
-        --go-color-purple-a11: color(display-p3 0.741 0.655 1 / 0.975);
-        --go-color-purple-a12: color(display-p3 0.894 0.871 1 / 0.988);
+        --wui-color-purple-a1: color(display-p3 0.071 0 0.992 / 0.051);
+        --wui-color-purple-a2: color(display-p3 0.353 0.188 1 / 0.097);
+        --wui-color-purple-a3: color(display-p3 0.439 0.255 1 / 0.232);
+        --wui-color-purple-a4: color(display-p3 0.451 0.243 1 / 0.337);
+        --wui-color-purple-a5: color(display-p3 0.486 0.298 1 / 0.395);
+        --wui-color-purple-a6: color(display-p3 0.525 0.361 1 / 0.454);
+        --wui-color-purple-a7: color(display-p3 0.545 0.396 0.996 / 0.555);
+        --wui-color-purple-a8: color(display-p3 0.561 0.416 1 / 0.706);
+        --wui-color-purple-a9: color(display-p3 0.553 0.392 1 / 0.929);
+        --wui-color-purple-a10: color(display-p3 0.533 0.353 1 / 0.866);
+        --wui-color-purple-a11: color(display-p3 0.741 0.655 1 / 0.975);
+        --wui-color-purple-a12: color(display-p3 0.894 0.871 1 / 0.988);
 
-        --go-color-purple-contrast: #fff;
+        --wui-color-purple-contrast: #fff;
       }
     }
   }
