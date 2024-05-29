@@ -1,15 +1,17 @@
 {
-  "name": "@winnie-ui/ts-config-winnie-ui",
+  "name": "@winnie-ui/tsconfig",
   "version": "0.0.1",
   "description": "Shared tsconfigs for winnie-ui",
   "author": "Adam Aho",
   "exports": {
     ".": "./base.json",
+    "./next": "./next.json",
     "./react": "./react.json",
     "./solid": "./solid.json"
   },
   "files": [
     "base.json",
+    "next.json",
     "react.json",
     "solid.json"
   ],

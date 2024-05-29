@@ -51,6 +51,9 @@ importers:
       '@types/react-dom':
         specifier: ^18
         version: 18.3.0
+      '@winnie-ui/tsconfig':
+        specifier: workspace:*
+        version: link:../../tools/tsconfig
       eslint:
         specifier: ^8
         version: 8.57.0
