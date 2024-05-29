@@ -2,6 +2,7 @@
 const config = {
   extends: [
     "./base.js",
+    "plugin:import/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
   ],

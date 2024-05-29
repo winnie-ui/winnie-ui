@@ -25,6 +25,6 @@
   "devDependencies": {
     "@winnie-ui/stylelint-config-winnie-ui": "workspace:*",
     "rimraf": "5.0.7",
-    "stylelint": "16.5.0"
+    "stylelint": "16.6.1"
   }
 }
