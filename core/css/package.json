@@ -4,6 +4,7 @@
   "description": "css tokens and styles for building web applications",
   "author": "Adam Aho",
   "type": "module",
+  "main": "./src/index.css",
   "exports": {
     ".": "./src/index.css",
     "./layer": "./src/layer.css",

@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  transpilePackages: ["@winnie-ui/tailwind", "@winnie-ui/css"],
+};
 
 export default nextConfig;
