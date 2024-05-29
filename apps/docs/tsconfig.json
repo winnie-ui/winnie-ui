@@ -1,5 +1,5 @@
 {
-  "extends": "@winnie-ui/tsconfig/next",
+  "extends": "@winnie-ui/ts-config/next",
   "compilerOptions": {
     "paths": {
       "~/*": ["./src/*"]
