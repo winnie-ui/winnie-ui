@@ -1,5 +1,5 @@
 {
-  "name": "@winnie-ui/stylelint-config-winnie-ui",
+  "name": "@winnie-ui/stylelint-config",
   "version": "0.0.1",
   "description": "Shared stylelint configs for winnie-ui",
   "author": "Adam Aho",

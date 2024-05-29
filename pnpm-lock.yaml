@@ -60,6 +60,9 @@ importers:
       '@winnie-ui/eslint-config':
         specifier: workspace:*
         version: link:../../tools/eslint
+      '@winnie-ui/stylelint-config':
+        specifier: workspace:*
+        version: link:../../tools/stylelint
       '@winnie-ui/tsconfig':
         specifier: workspace:*
         version: link:../../tools/tsconfig
@@ -117,7 +120,7 @@ importers:
 
   core/css:
     devDependencies:
-      '@winnie-ui/stylelint-config-winnie-ui':
+      '@winnie-ui/stylelint-config':
         specifier: workspace:*
         version: link:../../tools/stylelint
       rimraf:
@@ -136,7 +139,7 @@ importers:
         specifier: 4.0.0-alpha.15
         version: 4.0.0-alpha.15
     devDependencies:
-      '@winnie-ui/stylelint-config-winnie-ui':
+      '@winnie-ui/stylelint-config':
         specifier: workspace:*
         version: link:../../tools/stylelint
       rimraf:

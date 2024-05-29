@@ -23,7 +23,7 @@
     "@winnie-ui/css": "workspace:*"
   },
   "devDependencies": {
-    "@winnie-ui/stylelint-config-winnie-ui": "workspace:*",
+    "@winnie-ui/stylelint-config": "workspace:*",
     "rimraf": "5.0.7",
     "stylelint": "16.6.1"
   }

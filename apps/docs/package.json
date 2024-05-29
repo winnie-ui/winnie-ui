@@ -21,6 +21,7 @@
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
     "@winnie-ui/eslint-config": "workspace:*",
+    "@winnie-ui/stylelint-config": "workspace:*",
     "@winnie-ui/tsconfig": "workspace:*",
     "eslint": "8.57.0",
     "postcss": "8.4.38",
