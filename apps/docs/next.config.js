@@ -5,7 +5,7 @@ const nextConfig = {
   experimental: {
     reactCompiler: true,
   },
-  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+  pageExtensions: ["mdx", "ts", "tsx"],
   transpilePackages: ["@winnie-ui/tailwind", "@winnie-ui/css"],
 };
 
