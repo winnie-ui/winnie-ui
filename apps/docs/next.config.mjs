@@ -1,4 +1,11 @@
-const withMDX = require("@next/mdx")();
+import createMDX from "@next/mdx";
+
+const withMDX = createMDX({
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+  },
+});
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -9,4 +16,4 @@ const nextConfig = {
   transpilePackages: ["@winnie-ui/tailwind", "@winnie-ui/css"],
 };
 
-module.exports = withMDX(nextConfig);
+export default withMDX(nextConfig);
