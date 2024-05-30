@@ -1,0 +1,20 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import DocsLayout from "~/layouts/docs-layout.astro";
+
+export async function getStaticPaths() {
+  const docs = await getCollection("css");
+  return docs.map((doc) => ({
+    params: { slug: doc.slug },
+    props: doc,
+  }));
+}
+type Props = CollectionEntry<"css">;
+
+const doc = Astro.props;
+const { Content } = await doc.render();
+---
+
+<DocsLayout {...doc.data}>
+  <Content />
+</DocsLayout>
