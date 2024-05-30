@@ -1,7 +1,5 @@
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="bg-accent-9 p-4">asdfasdf</div>
-    </main>
+    <main className="flex min-h-screen w-full items-center justify-center p-24"></main>
   );
 }
