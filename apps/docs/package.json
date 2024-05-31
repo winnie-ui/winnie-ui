@@ -1,37 +1,25 @@
 {
   "name": "docs",
+  "type": "module",
   "version": "0.0.1",
-  "private": true,
   "scripts": {
-    "build": "next build",
-    "clean": "rimraf .next node_modules",
-    "dev": "next dev",
-    "lint": "next lint --report-unused-disabled-directives --max-warnings 0",
-    "start": "next start"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@mdx-js/loader": "3.0.1",
-    "@mdx-js/react": "3.0.1",
-    "@next/mdx": "14.2.3",
     "@winnie-ui/tailwind": "workspace:*",
-    "next": "15.0.0-rc.0",
-    "react": "19.0.0-rc-38e3b23483-20240529",
-    "react-dom": "19.0.0-rc-38e3b23483-20240529"
+    "@astrojs/check": "^0.7.0",
+    "@astrojs/mdx": "^3.0.1",
+    "@fontsource/geist-mono": "5.0.3",
+    "@fontsource/geist-sans": "5.0.3",
+    "astro": "^4.9.2",
+    "typescript": "^5.4.5"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "4.0.0-alpha.15",
-    "@types/mdx": "2.0.13",
-    "@types/node": "20.12.13",
-    "@types/react": "18.3.3",
-    "@types/react-dom": "18.3.0",
-    "@winnie-ui/eslint-config": "workspace:*",
-    "@winnie-ui/stylelint-config": "workspace:*",
-    "@winnie-ui/ts-config": "workspace:*",
-    "babel-plugin-react-compiler": "0.0.0-experimental-487cb0e-20240529",
-    "eslint": "8.57.0",
-    "postcss": "8.4.38",
-    "rimraf": "5.0.7",
     "tailwindcss": "4.0.0-alpha.15",
-    "typescript": "5.4.5"
+    "@tailwindcss/postcss": "4.0.0-alpha.15"
   }
 }
