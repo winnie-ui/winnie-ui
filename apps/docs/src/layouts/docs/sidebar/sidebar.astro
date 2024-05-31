@@ -1,33 +1,15 @@
-<nav
-  class="bg-accent-3 fixed h-full w-[calc(var(--wui-docs-layout-sidebar-width)-16px)]"
->
-  <div class="flex items-start p-6 pt-4 pr-3">
-    <div class="flex flex-1 items-center gap-5">
-      <span class="text-4 font-bold">Winnie</span>
+---
+import Button from "./button.astro";
+---
+
+<nav class="wui-docs-sidebar">
+  <div class="wui-docs-sidebar-header">
+    <div class="wui-docs-logo-container">
+      <span class="wui-docs-logo">Winnie</span>
       <span class="bg-accent-8 h-5 w-[1px]"></span>
-      <span class="text-4 text-accent-12">Docs</span>
+      <span class="wui-docs-info">Docs</span>
     </div>
-    <button
-      class="text-accent-11 bg-accent-5 hover:bg-accent-5 rounded-4 flex h-[30px] w-[30px] items-center justify-center"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        class="h-5"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="lucide lucide-paintbrush-vertical"
-        ><path d="M10 2v2"></path><path d="M14 2v4"></path><path
-          d="M17 2a1 1 0 0 1 1 1v9H6V3a1 1 0 0 1 1-1z"></path><path
-          d="M6 12a1 1 0 0 0-1 1v1a2 2 0 0 0 2 2h2a1 1 0 0 1 1 1v2.9a2 2 0 1 0 4 0V17a1 1 0 0 1 1-1h2a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1"
-        ></path></svg
-      >
-    </button>
+    <Button />
   </div>
   <div>
     <ul>
@@ -41,3 +23,43 @@
   </div>
   Sidebar
 </nav>
+
+<style>
+  .wui-docs-sidebar {
+    background: var(--wui-color-accent-3);
+    height: 100%;
+    position: fixed;
+    width: calc(var(--wui-docs-layout-sidebar-width) - 16px);
+
+    .wui-docs-sidebar-header {
+      display: flex;
+      padding: var(--wui-space-6);
+      padding-right: 0px;
+      padding-top: var(--wui-space-5);
+
+      .wui-docs-logo-container {
+        align-items: center;
+        display: flex;
+        flex: 1;
+        gap: var(--wui-space-4);
+
+        .wui-docs-logo {
+          color: var(--wui-color-grey-12);
+          font-size: var(--wui-font-size-3);
+          font-weight: var(--wui-font-weight-bold);
+        }
+
+        .wui-docs-separator {
+          background: var(--wui-color-accent-8);
+          height: 32px;
+          width: 1px;
+        }
+
+        .wui-docs-info {
+          color: var(--wui-color-accent-12);
+          font-size: var(--wui-font-size-3);
+        }
+      }
+    }
+  }
+</style>
