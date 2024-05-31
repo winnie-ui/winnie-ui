@@ -1,0 +1,20 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import BaseHead from "~/components/base-head.astro";
+import BaseLayout from "../base/layout.astro";
+import Sidebar from "./sidebar/sidebar.astro";
+import Content from "./content.astro";
+
+type Props = CollectionEntry<"css">["data"];
+
+const { title, description } = Astro.props;
+---
+
+<BaseLayout>
+  <BaseHead slot="head" title={title} description={description} />
+  <div class="flex min-h-dvh gap-4 [--wui-docs-layout-sidebar-width:296px]">
+    <Sidebar />
+    <Content title={title} description={description} />
+  </div>
+</BaseLayout>

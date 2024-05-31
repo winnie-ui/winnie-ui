@@ -1,0 +1,72 @@
+---
+export type Props = {
+  title: string;
+  description: string;
+};
+
+const { title, description } = Astro.props;
+---
+
+<main class="wui-docs-main">
+  <div class="wui-docs-content">
+    <article class="wui-docs-article">
+      <div class="wui-docs-article-header">
+        <h1 class="wui-docs-article-title">{title}</h1>
+        <p class="wui-docs-article-description">{description}</p>
+      </div>
+      <slot />
+    </article>
+    <aside class="wui-docs-minimap">Table of contents</aside>
+  </div>
+</main>
+
+<style>
+  .wui-docs-main {
+    background: var(--wui-color-accent-3);
+    padding: var(--wui-space-4) var(--wui-space-4) var(--wui-space-4)
+      var(--wui-docs-layout-sidebar-width);
+    width: 100%;
+
+    .wui-docs-content {
+      align-items: flex-start;
+      background: var(--wui-color-white-a9);
+      border-radius: var(--wui-border-radius-4);
+      border: var(--wui-border-width-1) solid var(--wui-color-accent-a5);
+      box-shadow: -2px 0px 16px -2px hsl(var(--wui-shadow-color) /
+            calc(var(--wui-shadow-strength) + 10%));
+      display: flex;
+      gap: var(--wui-space-6);
+      min-height: 100%;
+      overflow: auto;
+      padding-left: var(--wui-space-9);
+      padding-top: var(--wui-space-9);
+      padding-right: var(--wui-space-6);
+
+      .wui-docs-article {
+        margin-inline: auto;
+        max-width: 65ch;
+        width: 100%;
+
+        .wui-docs-article-header {
+          .wui-docs-article-title {
+            color: var(--wui-color-grey-12);
+            font-size: var(--wui-font-size-7);
+            font-weight: var(--wui-font-weight-bold);
+          }
+
+          .wui-docs-article-description {
+            color: var(--wui-color-accent-11);
+            font-size: var(--wui-font-size-4);
+          }
+        }
+      }
+
+      .wui-docs-minimap {
+        display: block;
+        position: sticky;
+        min-height: max-content;
+        top: 0;
+      }
+    }
+  }
+</style>
