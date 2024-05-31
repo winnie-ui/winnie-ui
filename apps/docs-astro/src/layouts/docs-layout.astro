@@ -11,17 +11,55 @@ const { title, description } = Astro.props;
 
 <BaseLayout>
   <BaseHead slot="head" title={title} description={description} />
-  <div class="flex h-full gap-4 [--wui-docs-layout-sidebar-width:296px]">
+  <div class="flex min-h-dvh gap-4 [--wui-docs-layout-sidebar-width:296px]">
     <nav
-      class="bg-accent-3 - 16px)] fixed h-full w-[calc(var(--wui-docs-layout-sidebar-width)"
+      class="bg-accent-3 fixed h-full w-[calc(var(--wui-docs-layout-sidebar-width)-16px)]"
     >
+      <div class="flex items-start p-6 pt-4 pr-3">
+        <div class="flex flex-1 items-center gap-5">
+          <span class="text-4 font-bold">Winnie</span>
+          <span class="bg-accent-8 h-5 w-[1px]"></span>
+          <span class="text-4 text-accent-12">Docs</span>
+        </div>
+        <button
+          class="text-accent-11 bg-accent-5 hover:bg-accent-5 rounded-4 flex h-[30px] w-[30px] items-center justify-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            class="h-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-paintbrush-vertical"
+            ><path d="M10 2v2"></path><path d="M14 2v4"></path><path
+              d="M17 2a1 1 0 0 1 1 1v9H6V3a1 1 0 0 1 1-1z"></path><path
+              d="M6 12a1 1 0 0 0-1 1v1a2 2 0 0 0 2 2h2a1 1 0 0 1 1 1v2.9a2 2 0 1 0 4 0V17a1 1 0 0 1 1-1h2a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1"
+            ></path></svg
+          >
+        </button>
+      </div>
+      <div>
+        <ul>
+          <li>
+            <button>Overview</button>
+            <ul>
+              <li>Getting Started</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
       Sidebar
     </nav>
     <main
       class="bg-accent-3 w-full p-4 pl-[var(--wui-docs-layout-sidebar-width)]"
     >
       <div
-        class="bg-white-a9 rounded-4 border-accent-a5 h-full overflow-auto border shadow-[-2px_0px_16px_-2px_hsl(var(--wui-shadow-color)/calc(var(--wui-shadow-strength)+10%))]"
+        class="bg-white-a9 rounded-4 border-accent-a5 min-h-full overflow-auto border shadow-[-2px_0px_16px_-2px_hsl(var(--wui-shadow-color)/calc(var(--wui-shadow-strength)+10%))]"
       >
         <div class="flex gap-6 pt-9 pr-6 pl-9">
           <article class="mx-auto w-full max-w-[65ch]">

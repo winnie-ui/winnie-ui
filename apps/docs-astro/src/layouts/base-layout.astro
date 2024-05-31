@@ -3,17 +3,17 @@ import "@fontsource/geist-sans";
 import "@fontsource/geist-mono";
 ---
 
-<html lang="en">
+<html
+  lang="en"
+  class="light winnie-ui bg-accent-3 min-h-dvh"
+  data-accent-color="brand"
+  data-radius="md"
+  data-scaling="100%"
+>
   <head>
     <slot name="head" />
   </head>
-  <body
-    class="light winnie-ui h-dvh"
-    data-accent-color="yellow"
-    data-radius="md"
-    data-scaling="100%"
-  >
+  <body class="min-h-dvh">
     <slot />
   </body>
 </html>
-<slot />
