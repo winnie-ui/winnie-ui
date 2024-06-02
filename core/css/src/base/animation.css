@@ -28,7 +28,7 @@
     }
   }
 
-  @keyframes wui-slide-up {
+  @keyframes wui-slide-up-enter {
     from {
       transform: translateY(6px) scale(0.97);
     }
@@ -38,7 +38,17 @@
     }
   }
 
-  @keyframes wui-slide-down {
+  @keyframes wui-slide-up-exit {
+    from {
+      transform: translateY(0) scale(1);
+    }
+
+    to {
+      transform: translateY(-6px) scale(0.97);
+    }
+  }
+
+  @keyframes wui-slide-down-enter {
     from {
       transform: translateY(-6px) scale(0.97);
     }
@@ -48,7 +58,17 @@
     }
   }
 
-  @keyframes wui-slide-left {
+  @keyframes wui-slide-down-exit {
+    from {
+      transform: translateY(0) scale(1);
+    }
+
+    to {
+      transform: translateY(6px) scale(0.97);
+    }
+  }
+
+  @keyframes wui-slide-left-enter {
     from {
       transform: translateX(6px) scale(0.97);
     }
@@ -58,7 +78,17 @@
     }
   }
 
-  @keyframes wui-slide-right {
+  @keyframes wui-slide-left-exit {
+    from {
+      transform: translateX(0) scale(1);
+    }
+
+    to {
+      transform: translateX(-6px) scale(0.97);
+    }
+  }
+
+  @keyframes wui-slide-right-enter {
     from {
       transform: translateX(-6px) scale(0.97);
     }
@@ -68,51 +98,67 @@
     }
   }
 
+  @keyframes wui-slide-right-exit {
+    from {
+      transform: translateX(0) scale(1);
+    }
+
+    to {
+      transform: translateX(6px) scale(0.97);
+    }
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     .wui-popper {
       animation-timing-function: var(--wui-bezier-1);
+      transform-origin: var(
+        --popover-transform-origin,
+        var(--radix-popover-content-transform-origin)
+      );
 
       &:where(
           [popover]:popover-open,
           [data-state="delayed-open"],
-          [data-state="open"]
+          [data-state="open"],
+          [data-entering],
+          [data-enter="true"]
         ) {
         animation-duration: var(--wui-duration-2);
 
-        &:where([data-side="top"]) {
-          animation-name: wui-slide-up, wui-fade-in;
+        &:where([data-side="top"], [data-placement="top"]) {
+          animation-name: wui-slide-up-enter, wui-fade-in;
         }
 
-        &:where([data-side="bottom"]) {
-          animation-name: wui-slide-down, wui-fade-in;
+        &:where([data-side="bottom"], [data-placement="bottom"]) {
+          animation-name: wui-slide-down-enter, wui-fade-in;
         }
 
-        &:where([data-side="left"]) {
-          animation-name: wui-slide-left, wui-fade-in;
+        &:where([data-side="left"], [data-placement="left"]) {
+          animation-name: wui-slide-left-enter, wui-fade-in;
         }
 
-        &:where([data-side="right"]) {
-          animation-name: wui-slide-right, wui-fade-in;
+        &:where([data-side="right"], [data-placement="right"]) {
+          animation-name: wui-slide-right-enter, wui-fade-in;
         }
       }
 
-      &:where([data-state="closed"]) {
-        animation-duration: var(--wui-duration-1);
+      &:where([data-state="closed"], [data-exiting], [data-leave="true"]) {
+        animation-duration: var(--wui-duration-2);
 
-        &:where([data-side="top"]) {
-          animation-name: wui-slide-down, wui-fade-out;
+        &:where([data-side="top"], [data-placement="top"]) {
+          animation-name: wui-slide-down-exit, wui-fade-out;
         }
 
-        &:where([data-side="bottom"]) {
-          animation-name: wui-slide-up, wui-fade-out;
+        &:where([data-side="bottom"], [data-placement="bottom"]) {
+          animation-name: wui-slide-up-exit, wui-fade-out;
         }
 
-        &:where([data-side="left"]) {
-          animation-name: wui-slide-right, wui-fade-out;
+        &:where([data-side="left"], [data-placement="left"]) {
+          animation-name: wui-slide-right-exit, wui-fade-out;
         }
 
-        &:where([data-side="right"]) {
-          animation-name: wui-slide-left, wui-fade-out;
+        &:where([data-side="right"], [data-placement="right"]) {
+          animation-name: wui-slide-left-exit, wui-fade-out;
         }
       }
     }

@@ -1,5 +1,5 @@
 ---
-import Button from "./button.astro";
+import { ThemePicker } from "./theme-picker";
 ---
 
 <nav class="wui-docs-sidebar">
@@ -9,7 +9,7 @@ import Button from "./button.astro";
       <span class="bg-accent-8 h-5 w-[1px]"></span>
       <span class="wui-docs-info">Docs</span>
     </div>
-    <Button />
+    <ThemePicker client:load />
   </div>
   <div>
     <ul>
@@ -26,7 +26,7 @@ import Button from "./button.astro";
 
 <style>
   .wui-docs-sidebar {
-    background: var(--wui-color-accent-3);
+    background: var(--wui-docs-layout-background);
     height: 100%;
     position: fixed;
     width: calc(var(--wui-docs-layout-sidebar-width) - 16px);
