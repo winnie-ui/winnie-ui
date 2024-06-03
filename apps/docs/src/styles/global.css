@@ -1,4 +1,4 @@
-@import "@winnie-ui/css";
+@import "@winnie-ui/tailwind";
 
 @layer base {
   :root,
