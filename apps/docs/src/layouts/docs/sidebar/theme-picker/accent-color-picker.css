@@ -23,9 +23,9 @@
       background: var(--wui-color-accent-9);
       border-radius: var(--wui-border-radius-round);
       display: flex;
-      height: calc(16px * var(--wui-scaling));
+      height: calc(16px * var(--wui-scale));
       justify-content: center;
-      width: calc(16px * var(--wui-scaling));
+      width: calc(16px * var(--wui-scale));
 
       &::before {
         background: var(--wui-color-grey-1);
@@ -47,8 +47,8 @@
 
       .wui-theme-picker-accent-color-bubble {
         &::before {
-          height: calc(8px * var(--wui-scaling));
-          width: calc(8px * var(--wui-scaling));
+          height: calc(8px * var(--wui-scale));
+          width: calc(8px * var(--wui-scale));
         }
       }
     }

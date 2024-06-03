@@ -60,7 +60,7 @@ export default function Root() {
       <body
         class="winnie-ui"
         data-accent-color="orange"
-        data-scaling="100%"
+        data-scale="100%"
         data-radius="md"
       >
         <App />
@@ -77,7 +77,7 @@ Your app is now ready to go with Winnie Tailwind.
 ```tsx title="button.tsx"
 export const MyButton = ({ children }: React.PropsWithChildren) => {
   return (
-    <button className="bg-accent-9 text-accent-contrast h-[calc(32px * var(--wui-scaling))] px-3 rounded-2">
+    <button className="bg-accent-9 text-accent-contrast h-[calc(32px * var(--wui-scale))] rounded-2 px-3">
       {children}
     </button>
   );

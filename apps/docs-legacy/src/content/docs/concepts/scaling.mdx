@@ -7,14 +7,14 @@ import { TabItem, Tabs } from "@astrojs/starlight/components";
 
 import MovieList from "./_components/movie-list.astro";
 
-Often times users have a preference for the percieved size of elements in their application. Winnie supports this concept via the `data-scaling` attribute. The scaling attribute modifies css values which affect the overall density of the layout in the application.
+Often times users have a preference for the percieved size of elements in their application. Winnie supports this concept via the `data-scale` attribute. The scaling attribute modifies css values which affect the overall density of the layout in the application.
 
-```tsx title="root.tsx" ins="class="winnie-ui"" ins="data-scaling="100%""
+```tsx title="root.tsx" ins="class="winnie-ui"" ins="data-scale="100%""
 export default function Root() {
   return (
     <html>
       <head></head>
-      <body class="winnie-ui" data-scaling="100%">
+      <body class="winnie-ui" data-scale="100%">
         <App />
       </body>
     </html>
@@ -36,9 +36,9 @@ Winnie provides a scaling factor token that you can use to create custom compone
 
 Scaling factors can be used with the `calc` function in css.
 
-```css title="movie-card.css" ins="var(--wui-scaling)"
+```css title="movie-card.css" ins="var(--wui-scale)"
 .movie-card {
-  height: calc(48px * var(--wui-scaling));
+  height: calc(48px * var(--wui-scale));
 }
 ```
 

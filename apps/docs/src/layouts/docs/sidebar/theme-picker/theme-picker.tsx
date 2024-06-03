@@ -8,6 +8,7 @@ import {
 
 import { AccentColorPicker } from "./accent-color-picker";
 import { RadiusPicker } from "./radius-picker";
+import { ScalePicker } from "./scale-picker";
 import { Settings2 } from "lucide-react";
 
 import "./theme-picker.css";
@@ -26,6 +27,7 @@ function Foo() {
       <div className="wui-theme-picker-content">
         <AccentColorPicker />
         <RadiusPicker />
+        <ScalePicker />
       </div>
     </div>
   );
@@ -42,7 +44,7 @@ function ThemePicker() {
         placement="bottom end"
         crossOffset={-8}
       >
-        <Dialog className="winnie-ui" data-radius="md">
+        <Dialog className="winnie-ui" data-radius="md" data-scale="100%">
           <Foo />
         </Dialog>
       </Popover>

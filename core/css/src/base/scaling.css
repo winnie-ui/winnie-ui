@@ -7,24 +7,24 @@
  */
 @layer base {
   .winnie-ui {
-    &:where([data-scaling="90%"]) {
-      --wui-scaling: 0.9;
+    &:where([data-scale="90%"]) {
+      --wui-scale: 0.9;
     }
 
-    &:where([data-scaling="95%"]) {
-      --wui-scaling: 0.95;
+    &:where([data-scale="95%"]) {
+      --wui-scale: 0.95;
     }
 
-    &:where([data-scaling="100%"]) {
-      --wui-scaling: 1;
+    &:where([data-scale="100%"]) {
+      --wui-scale: 1;
     }
 
-    &:where([data-scaling="105%"]) {
-      --wui-scaling: 1.05;
+    &:where([data-scale="105%"]) {
+      --wui-scale: 1.05;
     }
 
-    &:where([data-scaling="110%"]) {
-      --wui-scaling: 1.1;
+    &:where([data-scale="110%"]) {
+      --wui-scale: 1.1;
     }
 
     &:where([data-radius="none"]) {

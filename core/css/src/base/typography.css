@@ -28,24 +28,24 @@
   }
 
   .winnie-ui {
-    --wui-font-size-1: calc(12px * var(--wui-scaling));
-    --wui-font-size-2: calc(14px * var(--wui-scaling));
-    --wui-font-size-3: calc(16px * var(--wui-scaling));
-    --wui-font-size-4: calc(18px * var(--wui-scaling));
-    --wui-font-size-5: calc(20px * var(--wui-scaling));
-    --wui-font-size-6: calc(24px * var(--wui-scaling));
-    --wui-font-size-7: calc(28px * var(--wui-scaling));
-    --wui-font-size-8: calc(35px * var(--wui-scaling));
-    --wui-font-size-9: calc(60px * var(--wui-scaling));
+    --wui-font-size-1: calc(12px * var(--wui-scale));
+    --wui-font-size-2: calc(14px * var(--wui-scale));
+    --wui-font-size-3: calc(16px * var(--wui-scale));
+    --wui-font-size-4: calc(18px * var(--wui-scale));
+    --wui-font-size-5: calc(20px * var(--wui-scale));
+    --wui-font-size-6: calc(24px * var(--wui-scale));
+    --wui-font-size-7: calc(28px * var(--wui-scale));
+    --wui-font-size-8: calc(35px * var(--wui-scale));
+    --wui-font-size-9: calc(60px * var(--wui-scale));
 
-    --wui-line-height-1: calc(16px * var(--wui-scaling));
-    --wui-line-height-2: calc(20px * var(--wui-scaling));
-    --wui-line-height-3: calc(24px * var(--wui-scaling));
-    --wui-line-height-4: calc(26px * var(--wui-scaling));
-    --wui-line-height-5: calc(28px * var(--wui-scaling));
-    --wui-line-height-6: calc(30px * var(--wui-scaling));
-    --wui-line-height-7: calc(36px * var(--wui-scaling));
-    --wui-line-height-8: calc(40px * var(--wui-scaling));
-    --wui-line-height-9: calc(60px * var(--wui-scaling));
+    --wui-line-height-1: calc(16px * var(--wui-scale));
+    --wui-line-height-2: calc(20px * var(--wui-scale));
+    --wui-line-height-3: calc(24px * var(--wui-scale));
+    --wui-line-height-4: calc(26px * var(--wui-scale));
+    --wui-line-height-5: calc(28px * var(--wui-scale));
+    --wui-line-height-6: calc(30px * var(--wui-scale));
+    --wui-line-height-7: calc(36px * var(--wui-scale));
+    --wui-line-height-8: calc(40px * var(--wui-scale));
+    --wui-line-height-9: calc(60px * var(--wui-scale));
   }
 }

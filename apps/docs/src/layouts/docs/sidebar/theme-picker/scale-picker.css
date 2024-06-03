@@ -1,0 +1,24 @@
+.wui-theme-picker-scale-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--wui-space-4);
+
+  .wui-theme-picker-scale {
+    border-radius: var(--wui-border-radius-3);
+    border: var(--wui-border-width-1) solid var(--wui-color-grey-3);
+    font-size: var(--wui-font-size-1);
+    padding: var(--wui-space-3);
+    text-align: center;
+
+    &[data-hovered],
+    &[data-focus-visible] {
+      background: var(--wui-color-accent-a2);
+    }
+
+    &[data-selected] {
+      background: var(--wui-color-accent-a2);
+      outline: var(--wui-border-width-2) solid var(--wui-color-accent-8);
+      outline-offset: -2px;
+    }
+  }
+}

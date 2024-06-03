@@ -114,13 +114,6 @@
      */
     .wui-popper-animate {
       animation-timing-function: var(--wui-bezier-1);
-      transform-origin: var(
-        --wui-transform-orign,
-        var(
-          --popover-transform-origin,
-          var(--radix-popover-content-transform-origin, top center)
-        ),
-      );
 
       &:where(
           [data-state="delayed-open"],
@@ -130,22 +123,18 @@
         animation-duration: var(--wui-duration-2);
 
         &:where([data-side="top"], [data-placement="top"]) {
-          --wui-transform-origin: bottom center;
           animation-name: wui-slide-up-enter, wui-fade-in;
         }
 
         &:where([data-side="bottom"], [data-placement="bottom"]) {
-          --wui-transform-origin: top center;
           animation-name: wui-slide-down-enter, wui-fade-in;
         }
 
         &:where([data-side="left"], [data-placement="left"]) {
-          --wui-transform-origin: right;
           animation-name: wui-slide-left-enter, wui-fade-in;
         }
 
         &:where([data-side="right"], [data-placement="right"]) {
-          --wui-transform-origin: left;
           animation-name: wui-slide-right-enter, wui-fade-in;
         }
       }

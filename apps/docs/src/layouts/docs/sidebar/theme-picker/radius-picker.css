@@ -25,9 +25,9 @@
       border: var(--wui-border-width-1) solid var(--wui-color-accent-9);
       border-radius: var(--wui-border-radius-3);
       display: flex;
-      height: calc(24px * var(--wui-scaling));
+      height: calc(24px * var(--wui-scale));
       justify-content: center;
-      width: calc(24px * var(--wui-scaling));
+      width: calc(24px * var(--wui-scale));
     }
 
     &[data-selected] {

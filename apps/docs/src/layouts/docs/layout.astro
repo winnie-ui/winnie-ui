@@ -21,11 +21,11 @@ const { title, description } = Astro.props;
 
 <style>
   body {
-    --wui-docs-layout-sidebar-width: 296px;
+    --wui-docs-layout-sidebar-width: calc(296px * var(--wui-scale));
   }
 
   .wui-docs-body {
-    --wui-docs-layout-background: var(--wui-color-grey-2);
+    --wui-docs-layout-background: var(--wui-color-accent-1);
 
     display: flex;
     min-height: 100dvh;
