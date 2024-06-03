@@ -7,8 +7,8 @@
  */
 @layer base {
   :root {
-    --wui-font-family-sans: "Geist Sans", sans-serif;
-    --wui-font-family-serif: "Geist Sans", serif;
+    --wui-font-family-sans: "Inter", sans-serif;
+    --wui-font-family-serif: "Inter", serif;
     --wui-font-family-mono: "Geist Mono", monospace;
 
     --wui-font-weight-normal: 400;

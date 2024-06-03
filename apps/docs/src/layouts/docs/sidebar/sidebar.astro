@@ -1,12 +1,12 @@
 ---
-import { ThemePicker } from "./theme-picker";
+import { ThemePicker } from "./theme-picker/theme-picker";
 ---
 
 <nav class="wui-docs-sidebar">
   <div class="wui-docs-sidebar-header">
     <div class="wui-docs-logo-container">
       <span class="wui-docs-logo">Winnie</span>
-      <span class="bg-accent-8 h-5 w-[1px]"></span>
+      <span class="wui-docs-separator"></span>
       <span class="wui-docs-info">Docs</span>
     </div>
     <ThemePicker client:load />
@@ -50,13 +50,13 @@ import { ThemePicker } from "./theme-picker";
         }
 
         .wui-docs-separator {
-          background: var(--wui-color-accent-8);
-          height: 32px;
+          background: var(--wui-color-grey-6);
+          height: 20px;
           width: 1px;
         }
 
         .wui-docs-info {
-          color: var(--wui-color-accent-12);
+          color: var(--wui-color-grey-11);
           font-size: var(--wui-font-size-3);
         }
       }

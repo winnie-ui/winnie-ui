@@ -109,40 +109,48 @@
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    .wui-popper {
+    /* animates a popper relative to an anchor position. This is typically used in
+     * cases where the popper is mounted and unmounted from the dom
+     */
+    .wui-popper-animate {
       animation-timing-function: var(--wui-bezier-1);
       transform-origin: var(
-        --popover-transform-origin,
-        var(--radix-popover-content-transform-origin)
+        --wui-transform-orign,
+        var(
+          --popover-transform-origin,
+          var(--radix-popover-content-transform-origin, top center)
+        ),
       );
 
       &:where(
-          [popover]:popover-open,
           [data-state="delayed-open"],
           [data-state="open"],
-          [data-entering],
-          [data-enter="true"]
+          [data-entering]
         ) {
         animation-duration: var(--wui-duration-2);
 
         &:where([data-side="top"], [data-placement="top"]) {
+          --wui-transform-origin: bottom center;
           animation-name: wui-slide-up-enter, wui-fade-in;
         }
 
         &:where([data-side="bottom"], [data-placement="bottom"]) {
+          --wui-transform-origin: top center;
           animation-name: wui-slide-down-enter, wui-fade-in;
         }
 
         &:where([data-side="left"], [data-placement="left"]) {
+          --wui-transform-origin: right;
           animation-name: wui-slide-left-enter, wui-fade-in;
         }
 
         &:where([data-side="right"], [data-placement="right"]) {
+          --wui-transform-origin: left;
           animation-name: wui-slide-right-enter, wui-fade-in;
         }
       }
 
-      &:where([data-state="closed"], [data-exiting], [data-leave="true"]) {
+      &:where([data-state="closed"], [data-exiting]) {
         animation-duration: var(--wui-duration-2);
 
         &:where([data-side="top"], [data-placement="top"]) {
@@ -160,6 +168,48 @@
         &:where([data-side="right"], [data-placement="right"]) {
           animation-name: wui-slide-left-exit, wui-fade-out;
         }
+      }
+    }
+
+    /* transitions a popper relative to an anchor position. This is typically used in
+     * cases where the popper remains in the DOM. Like in the new Popover API
+     */
+    .wui-popper-transition {
+      transition-duration: var(--wui-duration-2);
+      transition-property: opacity, transform;
+      transition-timing-function: var(--wui-bezier-1);
+      transform-origin: var(--popover-transform-origin);
+
+      opacity: 0;
+      transform: translate(
+          var(--wui-popper-translateX, 0),
+          var(--wui-popper-translateY, 0)
+        )
+        scale(var(--wui-popper-scale));
+
+      &[data-placement="bottom"] {
+        --wui-popper-translateY: -6px;
+        --wui-popper-scale: 0.97;
+      }
+
+      &[data-placement="right"] {
+        --wui-popper-translateX: -6px;
+        --wui-popper-scale: 0.97;
+      }
+
+      &[data-placement="left"] {
+        --wui-popper-translateX: 6px;
+        --wui-popper-scale: 0.97;
+      }
+
+      &[data-placement="top"] {
+        --wui-popper-translateY: 6px;
+        --wui-popper-scale: 0.97;
+      }
+
+      &:where([popover]:popover-open, [data-enter="true"]) {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
       }
     }
   }
