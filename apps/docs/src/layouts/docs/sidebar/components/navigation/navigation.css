@@ -1,0 +1,15 @@
+.wui-scroll-area-mask {
+  --wui-scroll-padding: var(--wui-space-6);
+  --wui-mask-visible: var(--wui-color-black);
+  --wui-mask-invisible: transparent;
+  --wui-mask-ease: var(--wui-color-black-a1);
+  mask-image: linear-gradient(
+    to bottom,
+    var(--wui-mask-invisible) 0%,
+    var(--wui-mask-ease) calc(var(--wui-scroll-padding) / 2),
+    var(--wui-mask-visible) var(--wui-scroll-padding),
+    var(--wui-mask-visible) calc(100% - var(--wui-scroll-padding)),
+    var(--wui-mask-ease) calc(100% - calc(var(--wui-scroll-padding) / 2)),
+    var(--wui-mask-invisible) 100%
+  );
+}
