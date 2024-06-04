@@ -12,7 +12,7 @@
 
     /* Add a thumb */
     .wui-scrollbar::-webkit-scrollbar-thumb {
-      background: var(--wui-color-grey-7);
+      background: var(--wui-color-grey-6);
       border-radius: var(--wui-border-radius-round);
     }
   }

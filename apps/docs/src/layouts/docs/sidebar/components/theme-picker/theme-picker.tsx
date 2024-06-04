@@ -1,7 +1,7 @@
 import { Heading } from "react-aria-components";
 
 import { AccentColorPicker } from "./accent-color-picker";
-import { ModePicker } from "./mode-picker";
+// import { ModePicker } from "./mode-picker";
 import { RadiusPicker } from "./radius-picker";
 import { ScalePicker } from "./scale-picker";
 
@@ -16,7 +16,7 @@ function ThemePicker() {
           Change the vibes of your docs
         </p>
       </div>
-      <ModePicker />
+      {/* <ModePicker /> */}
       <AccentColorPicker />
       <RadiusPicker />
       <ScalePicker />

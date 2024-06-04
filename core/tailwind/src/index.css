@@ -5,6 +5,11 @@
 @layer utilities {
   .winnie-ui {
     @theme {
+      --blur: 8px;
+
+      /* transparent */
+      --color-transparent: transparent;
+
       /* accent color */
       --color-accent-1: var(--wui-color-accent-1);
       --color-accent-2: var(--wui-color-accent-2);

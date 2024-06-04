@@ -1,5 +1,0 @@
-.wui-theme-picker-popover-content {
-  --background-blur: blur(8px);
-  -webkit-backdrop-filter: var(--background-blur);
-  backdrop-filter: var(--background-blur);
-}

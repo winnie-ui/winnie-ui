@@ -1,5 +1,6 @@
 ---
-import { ThemePickerPopover } from "./theme-picker-popover";
+import { ThemePickerPopover } from "./components/theme-picker/theme-picker-popover";
+import { Navigation } from "./components/navigation/navigation";
 ---
 
 <nav
@@ -7,21 +8,11 @@ import { ThemePickerPopover } from "./theme-picker-popover";
 >
   <div class="flex pt-6 pb-6 pl-6">
     <div class="flex flex-1 items-center gap-4">
-      <span class="text-3 tracking-9 font-medium">Winnie</span>
+      <span class="text-3 text-grey-12 tracking-9 font-medium">Winnie</span>
       <span class="bg-grey-8 h-5 w-[1px]"></span>
       <span class="text-3 text-grey-11">Docs</span>
     </div>
     <ThemePickerPopover client:load />
   </div>
-  <div>
-    <ul>
-      <li>
-        <button>Overview</button>
-        <ul>
-          <li>Getting Started</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-  Sidebar
+  <Navigation client:load />
 </nav>
