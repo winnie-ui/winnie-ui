@@ -2,12 +2,14 @@
 import { ThemePickerPopover } from "./theme-picker-popover";
 ---
 
-<nav class="wui-docs-sidebar">
-  <div class="wui-docs-sidebar-header">
-    <div class="wui-docs-logo-container">
-      <span class="wui-docs-logo">Winnie</span>
-      <span class="wui-docs-separator"></span>
-      <span class="wui-docs-info">Docs</span>
+<nav
+  class="wui-docs-sidebar fixed h-full w-[calc(var(--wui-docs-layout-sidebar-width)-calc(16px*var(--wui-scale)))] bg-[var(--wui-docs-layout-background)]"
+>
+  <div class="flex pt-6 pb-6 pl-6">
+    <div class="flex flex-1 items-center gap-4">
+      <span class="text-3 tracking-9 font-medium">Winnie</span>
+      <span class="bg-grey-8 h-5 w-[1px]"></span>
+      <span class="text-3 text-grey-11">Docs</span>
     </div>
     <ThemePickerPopover client:load />
   </div>
@@ -23,43 +25,3 @@ import { ThemePickerPopover } from "./theme-picker-popover";
   </div>
   Sidebar
 </nav>
-
-<style>
-  .wui-docs-sidebar {
-    background: var(--wui-docs-layout-background);
-    height: 100%;
-    position: fixed;
-    width: calc(var(--wui-docs-layout-sidebar-width) - 16px);
-
-    .wui-docs-sidebar-header {
-      display: flex;
-      padding: var(--wui-space-6);
-      padding-right: 0px;
-      padding-top: var(--wui-space-5);
-
-      .wui-docs-logo-container {
-        align-items: center;
-        display: flex;
-        flex: 1;
-        gap: var(--wui-space-4);
-
-        .wui-docs-logo {
-          color: var(--wui-color-grey-12);
-          font-size: var(--wui-font-size-3);
-          font-weight: var(--wui-font-weight-bold);
-        }
-
-        .wui-docs-separator {
-          background: var(--wui-color-grey-6);
-          height: 20px;
-          width: 1px;
-        }
-
-        .wui-docs-info {
-          color: var(--wui-color-grey-11);
-          font-size: var(--wui-font-size-3);
-        }
-      }
-    }
-  }
-</style>

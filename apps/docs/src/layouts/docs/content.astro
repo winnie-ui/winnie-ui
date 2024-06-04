@@ -7,66 +7,21 @@ export type Props = {
 const { title, description } = Astro.props;
 ---
 
-<main class="wui-docs-main">
-  <div class="wui-docs-content">
-    <article class="wui-docs-article">
-      <div class="wui-docs-article-header">
-        <h1 class="wui-docs-article-title">{title}</h1>
-        <p class="wui-docs-article-description">{description}</p>
+<main
+  class="w-full bg-[var(--wui-docs-layout-background)] pt-4 pr-4 pb-4 pl-[var(--wui-docs-layout-sidebar-width)]"
+>
+  <div
+    class="bg-white-a9 border-grey-4 flex min-h-full items-start gap-6 overflow-auto rounded-[min(var(--wui-border-radius-4,20px))] border pt-9 pr-6 pl-9 shadow-[-2px_0_16px_-2px_hsl(var(--wui-shadow-color)/calc(var(--wui-shadow-strength)+10%))]"
+  >
+    <article class="mx-auto w-full max-w-[65ch]">
+      <div>
+        <h1 class="text-grey-12 text-8 tracking-9 font-medium">{title}</h1>
+        <p class="text-grey-11 text-3">{description}</p>
       </div>
       <slot />
     </article>
-    <aside class="wui-docs-minimap">Table of contents</aside>
+    <aside class="wui-docs-minimap max-h-content sticky top-0 block">
+      Table of contents
+    </aside>
   </div>
 </main>
-
-<style>
-  .wui-docs-main {
-    background: var(--wui-docs-layout-background);
-    padding: var(--wui-space-4) var(--wui-space-4) var(--wui-space-4)
-      var(--wui-docs-layout-sidebar-width);
-    width: 100%;
-
-    .wui-docs-content {
-      align-items: flex-start;
-      background: var(--wui-color-white-a9);
-      border-radius: min(var(--wui-border-radius-4), 20px);
-      border: var(--wui-border-width-1) solid var(--wui-color-grey-4);
-      box-shadow: -2px 0px 16px -2px hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 10%));
-      display: flex;
-      gap: var(--wui-space-6);
-      min-height: 100%;
-      overflow: auto;
-      padding-left: var(--wui-space-9);
-      padding-top: var(--wui-space-9);
-      padding-right: var(--wui-space-6);
-
-      .wui-docs-article {
-        margin-inline: auto;
-        max-width: 65ch;
-        width: 100%;
-
-        .wui-docs-article-header {
-          .wui-docs-article-title {
-            color: var(--wui-color-grey-12);
-            font-size: var(--wui-font-size-7);
-            font-weight: var(--wui-font-weight-bold);
-          }
-
-          .wui-docs-article-description {
-            color: var(--wui-color-accent-11);
-            font-size: var(--wui-font-size-4);
-          }
-        }
-      }
-
-      .wui-docs-minimap {
-        display: block;
-        position: sticky;
-        min-height: max-content;
-        top: 0;
-      }
-    }
-  }
-</style>

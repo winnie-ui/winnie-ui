@@ -36,7 +36,7 @@ function ThemePickerRadioGroup(props: ThemePickerRadioGroupProps) {
       defaultValue={getDefaultValue()}
       onChange={onValueChange}
     >
-      <Label className="text-grey-12 text-1 leading-1 mb-4 block font-bold">
+      <Label className="text-grey-12 text-1 leading-1 mb-4 block font-medium">
         {props.label}
       </Label>
       <div className="grid grid-cols-2 gap-3">

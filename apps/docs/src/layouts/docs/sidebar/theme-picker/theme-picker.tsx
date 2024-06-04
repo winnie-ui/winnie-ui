@@ -10,7 +10,7 @@ function ThemePicker() {
   return (
     <div className="p-5">
       <div className="mb-6">
-        <Heading className="text-grey-12 text-2 font-bold" slot="title">
+        <Heading className="text-grey-12 text-2 font-medium" slot="title">
           Customize Theme
         </Heading>
         <p className="text-grey-11 leading-1 text-1">

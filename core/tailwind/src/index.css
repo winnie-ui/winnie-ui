@@ -366,6 +366,7 @@
       --letter-spacing-6: var(--wui-letter-spacing-6);
       --letter-spacing-7: var(--wui-letter-spacing-7);
       --letter-spacing-8: var(--wui-letter-spacing-8);
+      --letter-spacing-9: var(--wui-letter-spacing-9);
 
       /* line-height */
       --line-height-1: var(--wui-line-height-1);

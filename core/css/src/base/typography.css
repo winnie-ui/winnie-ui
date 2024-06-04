@@ -35,7 +35,7 @@
     --wui-font-size-5: calc(20px * var(--wui-scale));
     --wui-font-size-6: calc(24px * var(--wui-scale));
     --wui-font-size-7: calc(28px * var(--wui-scale));
-    --wui-font-size-8: calc(35px * var(--wui-scale));
+    --wui-font-size-8: calc(32px * var(--wui-scale));
     --wui-font-size-9: calc(60px * var(--wui-scale));
 
     --wui-line-height-1: calc(16px * var(--wui-scale));
