@@ -3,6 +3,8 @@ import { Button, Dialog, DialogTrigger, Popover } from "react-aria-components";
 import { ThemePicker } from "./theme-picker/theme-picker";
 import { Settings2 } from "lucide-react";
 
+import "./theme-picker-popover.css";
+
 function ThemePickerPopover() {
   return (
     <DialogTrigger>

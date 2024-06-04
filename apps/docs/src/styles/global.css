@@ -3,7 +3,8 @@
 @layer base {
   :root,
   .light,
-  .light-theme {
+  .light-theme,
+  [data-theme="light"] {
     --wui-color-brand-1: #fdfdfc;
     --wui-color-brand-2: #fdf9f8;
     --wui-color-brand-3: #fcf0eb;
@@ -37,7 +38,8 @@
     @media (color-gamut: p3) {
       :root,
       .light,
-      .light-theme {
+      .light-theme,
+      [data-theme="light"] {
         --wui-color-brand-1: oklch(99.3% 0.001 42.9);
         --wui-color-brand-2: oklch(98.5% 0.004 42.9);
         --wui-color-brand-3: oklch(96.4% 0.015 42.9);
@@ -70,7 +72,8 @@
   }
 
   .dark,
-  .dark-theme {
+  .dark-theme,
+  [data-theme="dark"] {
     --wui-color-brand-1: #131110;
     --wui-color-brand-2: #1b1817;
     --wui-color-brand-3: #27211f;
@@ -106,7 +109,8 @@
   @supports (color: color(display-p3 1 1 1)) {
     @media (color-gamut: p3) {
       .dark,
-      .dark-theme {
+      .dark-theme,
+      [data-theme="dark"] {
         --wui-color-brand-1: oklch(17.8% 0.004 42.9);
         --wui-color-brand-2: oklch(21.3% 0.005 42.9);
         --wui-color-brand-3: oklch(25.3% 0.009 42.9);

@@ -1,5 +1,3 @@
-import { Label, Radio, RadioGroup } from "react-aria-components";
-
 import { ThemePickerRadioGroup } from "./theme-picker-radio-group";
 
 function ScalePicker() {

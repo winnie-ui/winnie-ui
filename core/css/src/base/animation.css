@@ -50,7 +50,7 @@
 
   @keyframes wui-slide-down-enter {
     from {
-      transform: translateY(-6px) scale(0.97);
+      transform: translateY(-12px) scale(0.97);
     }
 
     to {

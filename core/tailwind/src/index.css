@@ -397,6 +397,7 @@
       --shadow-6: var(--wui-shadow-6);
 
       /* space */
+      --spacing-0: 0px;
       --spacing-1: var(--wui-space-1);
       --spacing-2: var(--wui-space-2);
       --spacing-3: var(--wui-space-3);

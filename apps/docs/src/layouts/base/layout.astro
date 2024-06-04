@@ -1,14 +1,17 @@
 <html
   lang="en"
-  class="light winnie-ui"
+  class="winnie-ui"
   data-accent-color="brand"
   data-radius="md"
   data-scale="100%"
+  data-theme="light"
 >
   <head>
     <slot name="head" />
   </head>
-  <body class="[--wui-docs-layout-sidebar-width:calc(296px*var(--wui-scale))]">
+  <body
+    class="[--wui-docs-layout-background:var(--wui-color-accent-1)] [--wui-docs-layout-sidebar-width:calc(296px*var(--wui-scale))]"
+  >
     <slot />
   </body>
 </html>
