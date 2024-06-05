@@ -20,7 +20,7 @@ export function Navigation(props: NavigationProps) {
       type="scroll"
     >
       <ScrollAreaViewport className="wui-scroll-area-mask h-full w-full overscroll-contain scroll-auto">
-        <div className="h-[1000px] py-[var(--wui-scroll-padding)]">
+        <div className="py-[var(--wui-scroll-padding)]">
           <NavigationList items={props.items} />
         </div>
       </ScrollAreaViewport>

@@ -1,0 +1,15 @@
+.navigation-list-collapsible-content {
+  --wui-collapsible-content-height: var(--radix-collapsible-content-height);
+
+  &[data-state="open"] {
+    animation-name: wui-fade-in, wui-collapsible-down;
+    animation-duration: var(--wui-duration-2);
+    animation-timing-function: var(--wui-bezier-1);
+  }
+
+  &[data-state="closed"] {
+    animation-name: wui-fade-out, wui-collapsible-up;
+    animation-duration: var(--wui-duration-2);
+    animation-timing-function: var(--wui-bezier-1);
+  }
+}

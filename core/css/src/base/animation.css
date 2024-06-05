@@ -8,6 +8,30 @@
     --wui-bezier-1: cubic-bezier(0.16, 1, 0.3, 1);
   }
 
+  @keyframes wui-collapsible-down {
+    from {
+      height: 0;
+      transform: translateY(-4px);
+    }
+
+    to {
+      height: var(--wui-collapsible-content-height);
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes wui-collapsible-up {
+    from {
+      height: var(--wui-collapsible-content-height);
+      transform: translateY(0);
+    }
+
+    to {
+      height: 0;
+      transform: translateY(-4px);
+    }
+  }
+
   @keyframes wui-fade-in {
     from {
       opacity: 0;
