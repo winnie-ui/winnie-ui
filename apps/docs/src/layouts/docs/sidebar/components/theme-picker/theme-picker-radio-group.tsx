@@ -45,7 +45,7 @@ function ThemePickerRadioGroup(props: ThemePickerRadioGroupProps) {
             <Radio
               key={item.value}
               value={item.value}
-              className="rounded-3 border-grey-3 dark:border-grey-5 text-1 align-center text-grey-11 [&[data-hovered],&[data-focus-visible]]:bg-grey-a2 [&[data-selected]]:outline-accent-8 [&[data-selected]]:bg-accent-a2 border p-3 text-center select-none [&[data-selected]]:outline-2"
+              className="rounded-3 border-grey-4 text-1 align-center text-grey-11 [&[data-hovered],&[data-focus-visible]]:bg-grey-a2 [&[data-selected]]:outline-accent-8 [&[data-selected]]:bg-accent-a2 border p-3 text-center select-none [&[data-selected]]:outline-2"
             >
               {item.render}
             </Radio>

@@ -8,7 +8,7 @@ import { ScalePicker } from "./scale-picker";
 function ThemePicker() {
   return (
     <div className="p-5 pt-0">
-      <div className="pt-5 pb-5">
+      <div className="pt-5 pb-1">
         <Heading className="text-grey-12 text-2 font-medium" slot="title">
           Customize Theme
         </Heading>

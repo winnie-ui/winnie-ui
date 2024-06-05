@@ -1,6 +1,27 @@
 ---
+import type { NavigationItem } from "./components/navigation/types";
 import { ThemePickerPopover } from "./components/theme-picker/theme-picker-popover";
 import { Navigation } from "./components/navigation/navigation";
+
+const navigation = [
+  {
+    label: "Link 1",
+    link: "asdf",
+  },
+  {
+    label: "Collapsible 2",
+    items: [
+      {
+        label: "foo",
+        link: "foo",
+      },
+      {
+        label: "bar",
+        link: "bar",
+      },
+    ],
+  },
+] satisfies NavigationItem[];
 ---
 
 <nav
@@ -14,5 +35,5 @@ import { Navigation } from "./components/navigation/navigation";
     </div>
     <ThemePickerPopover client:load />
   </div>
-  <Navigation client:load />
+  <Navigation client:load items={navigation} />
 </nav>

@@ -16,7 +16,6 @@
     "@fontsource/inter": "5.0.18",
     "@fontsource/geist-mono": "5.0.3",
     "@radix-ui/react-collapsible": "1.0.3",
-    "@radix-ui/react-dialog": "1.0.5",
     "@radix-ui/react-popover": "1.0.7",
     "@radix-ui/react-scroll-area": "1.0.5",
     "@types/react": "^18.3.3",

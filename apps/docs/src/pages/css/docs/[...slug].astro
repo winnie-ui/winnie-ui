@@ -12,10 +12,11 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"css">;
 
 const doc = Astro.props;
+
 const { Content } = await doc.render();
 ---
 
-<DocsLayout {...doc.data}>
+<DocsLayout {...doc.data} slug={doc.slug}>
   asdf
   <Content />
 </DocsLayout>

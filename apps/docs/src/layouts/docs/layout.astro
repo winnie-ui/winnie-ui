@@ -8,7 +8,9 @@ import Content from "./content.astro";
 
 type Props = CollectionEntry<"css">["data"];
 
-const { title, description } = Astro.props;
+const { title, description, slug } = Astro.props;
+
+console.log(slug);
 ---
 
 <BaseLayout>
