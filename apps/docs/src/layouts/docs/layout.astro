@@ -9,14 +9,12 @@ import Content from "./content.astro";
 type Props = CollectionEntry<"css">["data"];
 
 const { title, description, slug } = Astro.props;
-
-console.log(slug);
 ---
 
 <BaseLayout>
   <BaseHead slot="head" title={title} description={description} />
   <div class="flex min-h-dvh gap-4">
-    <Sidebar />
+    <Sidebar slug={slug} />
     <Content title={title} description={description} />
   </div>
 </BaseLayout>

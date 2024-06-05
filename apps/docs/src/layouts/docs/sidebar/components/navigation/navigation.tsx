@@ -11,6 +11,7 @@ import "./navigation.css";
 
 type NavigationProps = {
   items: NavigationItem[];
+  slug: string;
 };
 
 export function Navigation(props: NavigationProps) {
@@ -21,7 +22,7 @@ export function Navigation(props: NavigationProps) {
     >
       <ScrollAreaViewport className="wui-scroll-area-mask h-full w-full overscroll-contain scroll-auto">
         <div className="py-[var(--wui-scroll-padding)]">
-          <NavigationList items={props.items} />
+          <NavigationList items={props.items} slug={props.slug} />
         </div>
       </ScrollAreaViewport>
       <ScrollAreaScrollbar

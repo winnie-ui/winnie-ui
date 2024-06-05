@@ -3,10 +3,14 @@ import type { NavigationItem } from "./components/navigation/types";
 import { ThemePickerPopover } from "./components/theme-picker/theme-picker-popover";
 import { Navigation } from "./components/navigation/navigation";
 
+type Props = {
+  slug: string;
+};
+
 const navigation = [
   {
-    label: "Link 1",
-    link: "asdf",
+    label: "Getting Started",
+    link: "getting-started",
   },
   {
     label: "Collapsible 2",
@@ -48,5 +52,5 @@ const navigation = [
     </div>
     <ThemePickerPopover client:load />
   </div>
-  <Navigation client:load items={navigation} />
+  <Navigation client:load items={navigation} slug={Astro.props.slug} />
 </nav>
