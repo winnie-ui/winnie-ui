@@ -60,10 +60,9 @@ export function NavigationList({
         const isCurrent = item.link?.endsWith(slug);
 
         return (
-          <li>
+          <li key={item.link}>
             <a
               href={item.link}
-              key={item.label}
               className={itemClassName}
               data-current={isCurrent}
               aria-current={isCurrent}

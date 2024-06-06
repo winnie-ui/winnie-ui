@@ -13,8 +13,10 @@ const { title, description, slug } = Astro.props;
 
 <BaseLayout>
   <BaseHead slot="head" title={title} description={description} />
+  <Sidebar slug={slug} />
   <div class="flex min-h-dvh gap-4">
-    <Sidebar slug={slug} />
-    <Content title={title} description={description} />
+    <Content title={title} description={description}>
+      <slot />
+    </Content>
   </div>
 </BaseLayout>

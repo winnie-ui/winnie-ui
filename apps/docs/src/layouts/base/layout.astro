@@ -1,3 +1,7 @@
+---
+import { fade } from "astro:transitions";
+---
+
 <html
   lang="en"
   class="winnie-ui light"
@@ -11,6 +15,7 @@
   </head>
   <body
     class="bg-white-a9 [--wui-docs-layout-background:var(--wui-color-accent-1)] [--wui-docs-layout-sidebar-width:calc(296px*var(--wui-scale))]"
+    transition:animate={fade({ duration: "0.1s" })}
   >
     <slot />
   </body>

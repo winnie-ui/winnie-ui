@@ -108,5 +108,10 @@ const navigation = [
     </div>
     <ThemePickerPopover client:load />
   </div>
-  <Navigation client:load items={navigation} slug={Astro.props.slug} />
+  <Navigation
+    client:load
+    transition:persist
+    items={navigation}
+    slug={Astro.props.slug}
+  />
 </nav>
