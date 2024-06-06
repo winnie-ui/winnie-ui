@@ -33,7 +33,7 @@ export function NavigationList({
       {items.map((item) => {
         if (item.items && item.items.length > 0) {
           const hasCurrentItem =
-            item.items.find((i) => i.link === slug) !== undefined;
+            item.items.find((i) => i.link?.endsWith(slug)) !== undefined;
           return (
             <Collapsible
               asChild
@@ -57,7 +57,7 @@ export function NavigationList({
           );
         }
 
-        const isCurrent = slug === item.link;
+        const isCurrent = item.link?.endsWith(slug);
 
         return (
           <li>
@@ -66,6 +66,7 @@ export function NavigationList({
               key={item.label}
               className={itemClassName}
               data-current={isCurrent}
+              aria-current={isCurrent}
             >
               {item.label}
             </a>

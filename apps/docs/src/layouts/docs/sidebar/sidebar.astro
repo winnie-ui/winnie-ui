@@ -10,35 +10,93 @@ type Props = {
 const navigation = [
   {
     label: "Getting Started",
-    link: "getting-started",
+    link: "/css/docs/getting-started",
   },
   {
-    label: "Collapsible 2",
+    label: "Tailwind",
+    link: "/css/docs/tailwind",
+  },
+  {
+    label: "Concepts",
     items: [
       {
-        label: "Foo",
-        link: "foo",
+        label: "Colors",
+        link: "/css/docs/concepts/colors",
       },
       {
-        label: "Bar",
-        link: "bar",
+        label: "Layers",
+        link: "/css/docs/concepts/layers",
+      },
+      {
+        label: "Radius",
+        link: "/css/docs/concepts/radius",
+      },
+      {
+        label: "Scaling",
+        link: "/css/docs/concepts/scaling",
       },
     ],
   },
   {
-    label: "Collapsible 3",
+    label: "Reference",
     items: [
       {
-        label: "Baz",
-        link: "baz",
+        label: "Animation Duration",
+        link: "/css/docs/reference/animation-duration",
       },
       {
-        label: "Zed",
-        link: "zed",
+        label: "Animation Timing Function",
+        link: "/css/docs/reference/animation-timing-function",
+      },
+      {
+        label: "Border Radius",
+        link: "/css/docs/reference/border-radius",
+      },
+      {
+        label: "Border Width",
+        link: "/css/docs/reference/border-width",
+      },
+      {
+        label: "Color",
+        link: "/css/docs/reference/color",
+      },
+      {
+        label: "Font Family",
+        link: "/css/docs/reference/font-family",
+      },
+      {
+        label: "Font Size",
+        link: "/css/docs/reference/font-size",
+      },
+      {
+        label: "Font Weight",
+        link: "/css/docs/reference/font-weight",
+      },
+      {
+        label: "Keyframes",
+        link: "/css/docs/reference/keyframes",
+      },
+      {
+        label: "Letter Spacing",
+        link: "/css/docs/reference/letter-spacing",
+      },
+      {
+        label: "Line Height",
+        link: "/css/docs/reference/line-height",
+      },
+      {
+        label: "Shadow",
+        link: "/css/docs/reference/shadow",
+      },
+      {
+        label: "Space",
+        link: "/css/docs/reference/space",
       },
     ],
   },
 ] satisfies NavigationItem[];
+
+console.log(Astro.props.slug);
 ---
 
 <nav
