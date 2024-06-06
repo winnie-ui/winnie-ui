@@ -16,7 +16,7 @@ type NavigationListProps = {
 };
 
 const itemClassName =
-  "text-2 flex items-center font-medium block text-grey-11 data-[state=open]:text-grey-12 data-[current=true]:text-grey-12 hover:bg-grey-a3 focus-visible:outline-2 focus-visible:outline-accent-9 px-3 h-[calc(34px*var(--wui-scale))] rounded-3 w-full";
+  "text-2 flex items-center font-medium block text-grey-11 data-[state=open]:text-black data-[current=true]:text-black hover:bg-grey-a3 focus-visible:outline-2 focus-visible:outline-accent-9 px-3 h-[calc(34px*var(--wui-scale))] rounded-3 w-full";
 
 export function NavigationList({
   level = 0,
