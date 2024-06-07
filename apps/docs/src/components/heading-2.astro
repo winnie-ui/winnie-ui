@@ -1,0 +1,11 @@
+---
+import Heading from "./heading.astro";
+
+type Props = {
+  id: string;
+};
+---
+
+<Heading {...Astro.props} element="h2">
+  <slot />
+</Heading>

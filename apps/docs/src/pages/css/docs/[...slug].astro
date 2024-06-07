@@ -2,6 +2,10 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import DocsLayout from "~/layouts/docs/layout.astro";
 
+import Heading2 from "~/components/heading-2.astro";
+import Heading3 from "~/components/heading-3.astro";
+import Heading4 from "~/components/heading-4.astro";
+
 export async function getStaticPaths() {
   const docs = await getCollection("css");
   return docs.map((doc) => ({
@@ -17,5 +21,11 @@ const { Content } = await doc.render();
 ---
 
 <DocsLayout {...doc.data} slug={doc.slug}>
-  <Content />
+  <Content
+    components={{
+      h2: Heading2,
+      h3: Heading3,
+      h4: Heading4,
+    }}
+  />
 </DocsLayout>

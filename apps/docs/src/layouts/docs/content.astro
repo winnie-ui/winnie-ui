@@ -14,14 +14,29 @@ const { title, description } = Astro.props;
     class="border-grey-4 flex min-h-full items-start gap-6 overflow-auto rounded-[min(var(--wui-border-radius-4),20px)] border bg-white pt-9 pr-6 pl-9 shadow-[-2px_0_16px_-2px_hsl(var(--wui-shadow-color)/calc(var(--wui-shadow-strength)+10%))]"
   >
     <article class="mx-auto w-full max-w-[65ch]" transition:animate="none">
-      <div>
+      <div class="mb-9">
         <h1 class="text-grey-12 text-8 tracking-9 font-medium">{title}</h1>
         <p class="text-grey-11 text-3">{description}</p>
       </div>
-      <slot />
+      <div class="wui-markdown-content">
+        <slot />
+      </div>
     </article>
     <aside class="wui-docs-minimap max-h-content sticky top-0 hidden lg:block">
       Table of contents
     </aside>
   </div>
 </main>
+
+<style>
+  .wui-markdown-content {
+    --wui-markdown-content-font-size: calc(15px * var(--wui-scale));
+
+    p {
+      color: var(--wui-color-grey-12);
+      font-size: var(--wui-markdown-content-font-size);
+      font-weight: var(--wui-font-weight-normal);
+      line-height: var(--wui-line-height-3);
+    }
+  }
+</style>
