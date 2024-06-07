@@ -13,7 +13,7 @@ const { title, description } = Astro.props;
   <div
     class="border-grey-4 flex min-h-full items-start gap-6 overflow-auto rounded-[min(var(--wui-border-radius-4),20px)] border bg-white pt-9 pr-6 pl-9 shadow-[-2px_0_16px_-2px_hsl(var(--wui-shadow-color)/calc(var(--wui-shadow-strength)+10%))]"
   >
-    <article class="mx-auto w-full max-w-[65ch]">
+    <article class="mx-auto w-full max-w-[65ch]" transition:animate="none">
       <div>
         <h1 class="text-grey-12 text-8 tracking-9 font-medium">{title}</h1>
         <p class="text-grey-11 text-3">{description}</p>

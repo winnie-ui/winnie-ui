@@ -4,7 +4,12 @@
 
     &[data-state="open"] {
       animation-name: wui-fade-in, wui-collapsible-down;
-      animation-duration: var(--wui-duration-2);
+
+      /* duration is zero for now until I find a way to prevent the animation from running
+       * when a page navigation occurs. the result is some jank layout shift 
+       */
+      animation-duration: 0;
+      /* animation-duration: var(--wui-duration-2); */
       animation-timing-function: var(--wui-bezier-1);
     }
 
