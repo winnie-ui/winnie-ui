@@ -1,0 +1,75 @@
+---
+type Props = {
+  logo: React.ReactNode;
+  color: "blue" | "green" | "yellow" | "purple";
+  title: string;
+  description: string;
+  link: string;
+};
+
+const { title, description, link, color } = Astro.props;
+---
+
+<a class="whats-next-card not-content" href={link} data-accent-color={color}>
+  <div class="app-card">
+    <slot />
+  </div>
+  <div>
+    <h3>{title}</h3>
+    <p class="not-content">{description}</p>
+  </div>
+</a>
+
+<style>
+  .whats-next-card {
+    border-radius: min(var(--wui-border-radius-3), 12px);
+    padding: var(--wui-space-5);
+
+    &:hover {
+      background: var(--wui-color-accent-a2);
+    }
+
+    &:focus-visible {
+      background: var(--wui-color-accent-a2);
+      outline: var(--wui-border-width-2) solid var(--wui-color-accent-9);
+    }
+
+    &:visited {
+      color: var(--wui-color-grey-12);
+    }
+
+    .app-card {
+      align-items: center;
+      background: linear-gradient(
+        to bottom right,
+        var(--wui-color-accent-8),
+        var(--wui-color-accent-10)
+      );
+      border-radius: var(--wui-border-radius-3);
+      color: var(--wui-color-accent-contrast);
+      display: flex;
+      height: calc(36px * var(--wui-scale));
+      justify-content: center;
+      margin-bottom: var(--wui-space-3);
+      width: calc(36px * var(--wui-scale));
+
+      & > svg {
+        height: calc(22px * var(--wui-scale));
+        width: calc(22px * var(--wui-scale));
+      }
+    }
+
+    h3 {
+      color: var(--wui-color-grey-12);
+      font-size: var(--wui-font-size-4);
+      font-weight: var(--wui-font-weight-medium);
+      margin-bottom: var(--wui-space-2);
+    }
+
+    p {
+      color: var(--wui-color-grey-11);
+      font-size: var(--wui-font-size-2);
+      line-height: var(--wui-line-height-2);
+    }
+  }
+</style>

@@ -19,19 +19,19 @@ const { element: Element = "h2", id } = Astro.props;
     font-weight: var(--wui-font-weight-medium);
   }
 
-  h2 {
+  h2:not(:where(.not-content *)) {
     font-size: var(--wui-font-size-6);
     line-height: var(--wui-line-height-6);
     margin-top: var(--wui-space-8);
   }
 
-  h3 {
+  h3:not(:where(.not-content *)) {
     font-size: calc(17px * var(--wui-scale));
     line-height: var(--wui-line-height-5);
     margin-top: var(--wui-space-7);
   }
 
-  h4 {
+  h4:not(:where(.not-content *)) {
     font-size: calc(15px * var(--wui-scale));
     line-height: var(--wui-line-height-3);
     margin-top: var(--wui-space-7);

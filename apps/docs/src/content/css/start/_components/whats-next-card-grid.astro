@@ -1,0 +1,17 @@
+<div class="whats-next-card-grid">
+  <slot />
+</div>
+
+<style>
+  .whats-next-card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: var(--wui-space-3);
+    margin-inline: calc(-1 * var(--wui-space-4));
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>

@@ -1,16 +1,17 @@
 ---
-title: Quick Start 
+title: Quick Start
 description: Install Winnie and start building your next application in minutes.
 ---
 
-import { WhatsNextCardGrid } from "./_components/whats-next-card-grid";
-import { WhatsNextCard } from "./_components/whats-next-card";
+import WhatsNextCardGrid from "./_components/whats-next-card-grid.astro";
+import WhatsNextCard from "./_components/whats-next-card.astro";
+import { Circle, Fullscreen, Layers3, SwatchBook } from "lucide-react";
 
-Winnie CSS is a collection of CSS primitives designed to help style applications in any framework. Whether you use plain old CSS, Tailwind, or any variety of CSS-in-JS, Winnie CSS provides the primitive styles you need to build the best experience for your users. 
+Winnie CSS is a collection of CSS primitives designed to help style applications in any framework. Whether you use plain old CSS, Tailwind, or any variety of CSS-in-JS, Winnie CSS provides the primitive styles you need to build the best experience for your users.
 
-## Installation 
+## Installation
 
-The simplest way to get up and running with Winnie CSS in any app is to start by installing Winnie CSS with the package manager of your choice. We will use `npm`, but `yarn` and `pnpm` also work as well. 
+The simplest way to get up and running with Winnie CSS in any app is to start by installing Winnie CSS with the package manager of your choice. We will use `npm`, but `yarn` and `pnpm` also work as well.
 
 ### Install Winnie CSS
 
@@ -18,7 +19,7 @@ The simplest way to get up and running with Winnie CSS in any app is to start by
 npm install @winnie-ui/css
 ```
 
-### Import the Style Sheet 
+### Import the Style Sheet
 
 Once you have Winnie CSS installed, you can then import the stylesheet in the root of your application.
 
@@ -26,10 +27,9 @@ Once you have Winnie CSS installed, you can then import the stylesheet in the ro
 @import "@winnie-ui/css";
 ```
 
-### Configure your Theme 
+### Configure your Theme
 
-Now, with Winnie CSS installed and imported, it's time to configure your theme. Winnie CSS allows you to choose the accent color, scale and border radius of your app. If you are looking to be more adventurous, see [Customize Theme](/css/docs/asdasd) for more information about how to customize your theme. 
-
+Now, with Winnie CSS installed and imported, it's time to configure your theme. Winnie CSS allows you to choose the accent color, scale and border radius of your app. If you are looking to be more adventurous, see [Customize Theme](/css/docs/asdasd) for more information about how to customize your theme.
 
 ```tsx title="root.tsx" {6-9}
 export default function Root() {
@@ -54,8 +54,40 @@ export default function Root() {
 Congrats! You are now ready to start working with Winnie CSS in your project. If you are a lover of [Tailwind CSS](https://tailwindcss.com/), we got you. Head over to [Working with Tailwind](/css/docs/working-with-tailwind), to learn more about how you can use Winnie CSS with Tailwind v4.
 
 <WhatsNextCardGrid>
-  <WhatsNextCard logo="logo" title="Colors" description="Precision crafted colors for all use cases." link="/css/docs/concepts/colors" />
-  <WhatsNextCard logo="logo" title="Layers" description="Control the cascade of Winnie CSS with layers." link="/css/docs/concepts/layers" />
-  <WhatsNextCard logo="logo" title="Radius" description="Adjust the feeling of your application is by changing the radius of corners" link="/css/docs/concepts/radius" />
-  <WhatsNextCard logo="logo" title="Scaling" description="Change the density of your application." link="/css/docs/concepts/scaling" />
+  <WhatsNextCard
+    color="blue"
+    logo="logo"
+    title="Colors"
+    description="Precision crafted colors for all use cases."
+    link="/css/docs/concepts/colors"
+  >
+    <SwatchBook />
+  </WhatsNextCard>
+  <WhatsNextCard
+    color="purple"
+    logo="logo"
+    title="Layers"
+    description="Control the cascade of Winnie CSS with layers."
+    link="/css/docs/concepts/layers"
+  >
+    <Layers3 />
+  </WhatsNextCard>
+  <WhatsNextCard
+    color="red"
+    logo="logo"
+    title="Radius"
+    description="Adjust the feeling of your application is by changing the radius of corners."
+    link="/css/docs/concepts/radius"
+  >
+    <Circle />
+  </WhatsNextCard>
+  <WhatsNextCard
+    color="green"
+    logo="logo"
+    title="Scaling"
+    description="Change the density of your application."
+    link="/css/docs/concepts/scaling"
+  >
+    <Fullscreen />
+  </WhatsNextCard>
 </WhatsNextCardGrid>

@@ -49,7 +49,7 @@ const { title, description } = Astro.props;
       .wui-docs-content-paper-article {
         margin-inline: auto;
         width: 100%;
-        max-width: 65ch;
+        max-width: 640px;
 
         .wui-docs-article-heading {
           margin-bottom: var(--wui-space-9);
@@ -63,7 +63,7 @@ const { title, description } = Astro.props;
 
           .wui-docs-article-description {
             color: var(--wui-color-grey-11);
-            font-size: var(--wui-font-size-3);
+            font-size: var(--wui-font-size-4);
             margin-top: var(--wui-space-2);
           }
         }
@@ -71,7 +71,7 @@ const { title, description } = Astro.props;
         .wui-markdown-content {
           --wui-markdown-content-font-size: calc(15px * var(--wui-scale));
 
-          p {
+          p:not(:where(.not-content *)) {
             color: var(--wui-color-grey-12);
             font-size: var(--wui-markdown-content-font-size);
             font-weight: var(--wui-font-weight-normal);
