@@ -16,20 +16,17 @@ type NavigationProps = {
 
 export function Navigation(props: NavigationProps) {
   return (
-    <ScrollArea
-      className="relative -mr-4 min-h-0 grow overflow-hidden"
-      type="scroll"
-    >
-      <ScrollAreaViewport className="wui-scroll-area-mask h-full w-full overscroll-contain scroll-auto">
-        <div className="py-[var(--wui-scroll-padding)]">
+    <ScrollArea className="wui-scroll-area" type="scroll">
+      <ScrollAreaViewport className="wui-scroll-area-mask">
+        <div className="wui-navigation-list-container">
           <NavigationList items={props.items} slug={props.slug} />
         </div>
       </ScrollAreaViewport>
       <ScrollAreaScrollbar
         orientation="vertical"
-        className="flex touch-none bg-transparent p-1 transition-all duration-[150ms] select-none data-[orientation=vertical]:w-[10px] hover:data-[orientation=vertical]:w-[12px]"
+        className="wui-scroll-area-scrollbar"
       >
-        <ScrollAreaThumb className="bg-grey-6 hover:bg-grey-7 rounded-round relative flex-1 before:absolute before:top-1/2 before:left-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-[''] hover:w-[14px]" />
+        <ScrollAreaThumb className="wui-scroll-area-thumb" />
       </ScrollAreaScrollbar>
     </ScrollArea>
   );

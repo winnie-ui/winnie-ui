@@ -1,3 +1,57 @@
+.navigation-list {
+  list-style: none;
+
+  &[data-level="0"] {
+    padding-right: var(--wui-space-4);
+    padding-left: var(--wui-space-5);
+  }
+
+  &[data-level="1"] {
+    padding-left: var(--wui-space-5);
+  }
+
+  .navigation-list-item {
+    align-items: center;
+    border-radius: var(--wui-border-radius-3);
+    color: var(--wui-color-grey-11);
+    display: flex;
+    font-size: var(--wui-font-size-2);
+    font-weight: var(--wui-font-weight-medium);
+    height: calc(34px * var(--wui-scale));
+    padding-inline: var(--wui-space-3);
+    width: 100%;
+
+    &:hover {
+      background: var(--wui-color-grey-a3);
+    }
+
+    &:focus-visible {
+      outline: var(--wui-border-width-2) solid var(--wui-color-accent-9);
+    }
+
+    &[data-state="open"] {
+      color: var(--wui-color-black);
+
+      .chevron {
+        transform: rotate(90deg);
+      }
+    }
+
+    &[data-current="true"] {
+      color: var(--wui-color-black);
+    }
+
+    .label {
+      flex: 1;
+    }
+
+    .chevron {
+      transition: transform var(--wui-duration-2) var(--wui-bezier-1);
+      width: var(--wui-space-5);
+    }
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .navigation-list-collapsible-content {
     --wui-collapsible-content-height: var(--radix-collapsible-content-height);

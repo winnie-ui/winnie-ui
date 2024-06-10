@@ -3,17 +3,19 @@ import { Button, Dialog, DialogTrigger, Popover } from "react-aria-components";
 import { ThemePicker } from "./theme-picker";
 import { Settings2 } from "lucide-react";
 
+import "./theme-picker-popover.css";
+
 function ThemePickerPopover() {
   return (
     <DialogTrigger>
       <Button
-        className="text-accent-11 rounded-3 [&:where([data-state='open'],[data-pressed],[data-hovered])]:bg-accent-4 data-[focus-visible]:bg-accent-3 flex h-[calc(28px*var(--wui-scale))] w-[calc(28px*var(--wui-scale))] items-center justify-center bg-transparent"
+        className="theme-picker-popover-trigger"
         aria-label="Customize Theme"
       >
-        <Settings2 className="h-[calc(16px*var(--wui-scale))] w-[calc(16px*var(--wui-scale))]" />
+        <Settings2 />
       </Button>
       <Popover
-        className="wui-popper-animate wui-scrollbar bg-white-a12 shadow-4 border-grey-4 w-[calc(var(--wui-docs-layout-sidebar-width)-var(--wui-space-5)*2)] overflow-auto rounded-[min(var(--wui-border-radius-3),20px)] border backdrop-blur [&>section]:outline-none"
+        className="wui-popper-animate wui-scrollbar theme-picker-popover-content"
         placement="bottom end"
         crossOffset={-8}
       >

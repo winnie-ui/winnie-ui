@@ -1,0 +1,21 @@
+.theme-picker {
+  padding: var(--wui-space-5);
+  padding-top: 0;
+
+  .theme-picker-header {
+    padding-top: var(--wui-space-5);
+    padding-bottom: var(--wui-space-1);
+
+    .theme-picker-title {
+      color: var(--wui-color-grey-12);
+      font-size: var(--wui-font-size-2);
+      font-weight: var(--wui-font-weight-medium);
+    }
+
+    .theme-picker-description {
+      color: var(--wui-color-grey-11);
+      line-height: var(--wui-line-height-1);
+      font-size: var(--wui-font-size-1);
+    }
+  }
+}

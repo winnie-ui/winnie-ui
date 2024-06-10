@@ -4,7 +4,6 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@radix-ui/react-collapsible";
-import clsx from "clsx";
 import { ChevronRight } from "lucide-react";
 
 import "./navigation-list.css";
@@ -15,21 +14,13 @@ type NavigationListProps = {
   slug: string;
 };
 
-const itemClassName =
-  "text-2 flex items-center font-medium block text-grey-11 data-[state=open]:text-black data-[current=true]:text-black hover:bg-grey-a3 focus-visible:outline-2 focus-visible:outline-accent-9 px-3 h-[calc(34px*var(--wui-scale))] rounded-3 w-full";
-
 export function NavigationList({
   level = 0,
   items,
   slug,
 }: NavigationListProps) {
   return (
-    <ul
-      className={clsx({
-        "pr-4 pl-5": level === 0,
-        "pl-5": level === 1,
-      })}
-    >
+    <ul className="navigation-list" data-level={level}>
       {items.map((item) => {
         if (item.items && item.items.length > 0) {
           const hasCurrentItem =
@@ -42,12 +33,12 @@ export function NavigationList({
             >
               <li>
                 <CollapsibleTrigger
-                  className={clsx(itemClassName, "group")}
+                  className="navigation-list-item"
                   data-current={hasCurrentItem}
                   aria-current={hasCurrentItem}
                 >
-                  <span className="flex-1">{item.label}</span>
-                  <ChevronRight className="w-5 transition-transform duration-[150ms] group-data-[state=open]:rotate-90" />
+                  <span className="label">{item.label}</span>
+                  <ChevronRight className="chevron" />
                 </CollapsibleTrigger>
                 <CollapsibleContent className="navigation-list-collapsible-content">
                   <NavigationList items={item.items} level={1} slug={slug} />
@@ -63,7 +54,7 @@ export function NavigationList({
           <li key={item.link}>
             <a
               href={item.link}
-              className={itemClassName}
+              className="navigation-list-item"
               data-current={isCurrent}
               aria-current={isCurrent}
             >

@@ -1,9 +1,19 @@
+import { useState } from "react";
+
 import { ThemePickerRadioGroup } from "./theme-picker-radio-group";
 
+import "./radius-picker.css";
+
 function RadiusPicker() {
+  const [defaultValue] = useState(() => {
+    const html = document.querySelector("html");
+
+    return html?.getAttribute("data-radius") ?? "md";
+  });
+
   return (
     <ThemePickerRadioGroup
-      defaultValue="md"
+      defaultValue={defaultValue}
       items={[
         { value: "none", label: "None" },
         { value: "sm", label: "Small" },
@@ -14,8 +24,8 @@ function RadiusPicker() {
         return {
           value: radius.value,
           render: (
-            <div className="flex flex-col items-center justify-center py-4">
-              <span className="rounded-3 border-accent-8 bg-accent-4 mb-3 h-6 w-6 border" />
+            <div className="winnie-ui radius-picker" data-radius={radius.value}>
+              <span className="preview" />
               {radius.label}
             </div>
           ),

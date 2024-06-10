@@ -14,9 +14,17 @@ const { title, description, slug } = Astro.props;
 <BaseLayout>
   <BaseHead slot="head" title={title} description={description} />
   <Sidebar slug={slug} />
-  <div class="flex min-h-dvh gap-4">
+  <div class="wui-docs-layout-content-container">
     <Content title={title} description={description}>
       <slot />
     </Content>
   </div>
 </BaseLayout>
+
+<style>
+  .wui-docs-layout-content-container {
+    display: flex;
+    min-height: 100dvh;
+    gap: var(--wui-space-4);
+  }
+</style>

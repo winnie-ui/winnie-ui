@@ -9,9 +9,16 @@
   <head>
     <slot name="head" />
   </head>
-  <body
-    class="bg-white-a9 [--wui-docs-layout-background:var(--wui-color-accent-1)] [--wui-docs-layout-sidebar-width:calc(296px*var(--wui-scale))]"
-  >
+  <body class="wui-layout">
     <slot />
   </body>
 </html>
+
+<style>
+  .wui-layout {
+    --wui-docs-layout-background: var(--wui-color-accent-1);
+    --wui-docs-layout-sidebar-width: calc(296px * var(--wui-scale));
+
+    background: var(--wui-color-white-a9);
+  }
+</style>

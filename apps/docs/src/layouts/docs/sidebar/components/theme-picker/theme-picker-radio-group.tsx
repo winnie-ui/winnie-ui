@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 import { Label, Radio, RadioGroup } from "react-aria-components";
 
+import "./theme-picker-radio-group.css";
+
 type ThemePickerRadioGroupProps = {
   defaultValue: string;
   label: string;
@@ -32,20 +34,18 @@ function ThemePickerRadioGroup(props: ThemePickerRadioGroupProps) {
 
   return (
     <RadioGroup
-      className="mt-6"
+      className="theme-picker-radio-group"
       defaultValue={getDefaultValue()}
       onChange={onValueChange}
     >
-      <Label className="text-grey-12 text-1 leading-1 mb-4 block font-medium">
-        {props.label}
-      </Label>
-      <div className="grid grid-cols-2 gap-3">
+      <Label className="radio-label">{props.label}</Label>
+      <div className="radio-grid">
         {props.items.map((item) => {
           return (
             <Radio
               key={item.value}
               value={item.value}
-              className="rounded-3 border-grey-4 text-1 align-center text-grey-11 [&[data-hovered],&[data-focus-visible]]:bg-grey-a2 [&[data-selected]]:outline-accent-8 [&[data-selected]]:bg-accent-a2 border p-3 text-center select-none [&[data-selected]]:outline-2"
+              className="radio-grid-item"
             >
               {item.render}
             </Radio>

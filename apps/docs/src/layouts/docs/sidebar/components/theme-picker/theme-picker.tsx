@@ -5,14 +5,16 @@ import { AccentColorPicker } from "./accent-color-picker";
 import { RadiusPicker } from "./radius-picker";
 import { ScalePicker } from "./scale-picker";
 
+import "./theme-picker.css";
+
 function ThemePicker() {
   return (
-    <div className="p-5 pt-0">
-      <div className="pt-5 pb-1">
-        <Heading className="text-grey-12 text-2 font-medium" slot="title">
+    <div className="theme-picker">
+      <div className="theme-picker-header">
+        <Heading className="theme-picker-title" slot="title">
           Customize Theme
         </Heading>
-        <p className="text-grey-11 leading-1 text-1">
+        <p className="theme-picker-description">
           Change the vibes of your docs
         </p>
       </div>

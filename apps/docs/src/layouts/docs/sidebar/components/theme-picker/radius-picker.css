@@ -1,0 +1,16 @@
+.radius-picker {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: var(--wui-space-4);
+
+  .preview {
+    background: var(--wui-color-accent-3);
+    border: var(--wui-border-width-1) solid var(--wui-color-accent-6);
+    border-radius: var(--wui-border-radius-2);
+    height: var(--wui-space-6);
+    margin-bottom: var(--wui-space-3);
+    width: var(--wui-space-6);
+  }
+}

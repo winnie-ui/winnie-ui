@@ -1,9 +1,19 @@
+import { useState } from "react";
+
 import { ThemePickerRadioGroup } from "./theme-picker-radio-group";
 
+import "./accent-picker.css";
+
 function AccentColorPicker() {
+  const [defaultValue] = useState(() => {
+    const html = document.querySelector("html");
+
+    return html?.getAttribute("data-accent-color") ?? "brand";
+  });
+
   return (
     <ThemePickerRadioGroup
-      defaultValue="brand"
+      defaultValue={defaultValue}
       items={[
         "red",
         "orange",
@@ -17,11 +27,8 @@ function AccentColorPicker() {
         return {
           value: color,
           render: (
-            <div
-              data-accent-color={color}
-              className="flex items-center gap-3 capitalize"
-            >
-              <span className="rounded-round bg-accent-9 flex h-5 w-5 items-center justify-center" />
+            <div data-accent-color={color} className="accent-picker">
+              <span className="indicator" />
               {color}
             </div>
           ),

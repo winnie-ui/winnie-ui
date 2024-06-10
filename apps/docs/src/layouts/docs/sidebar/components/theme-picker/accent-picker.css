@@ -1,0 +1,16 @@
+.accent-picker {
+  align-items: center;
+  display: flex;
+  gap: var(--wui-space-3);
+  text-transform: capitalize;
+
+  .indicator {
+    align-items: center;
+    border-radius: var(--wui-border-radius-round);
+    background: var(--wui-color-accent-9);
+    display: flex;
+    height: var(--wui-space-5);
+    justify-content: center;
+    width: var(--wui-space-5);
+  }
+}

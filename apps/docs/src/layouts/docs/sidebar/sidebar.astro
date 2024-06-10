@@ -10,11 +10,16 @@ type Props = {
 const navigation = [
   {
     label: "Getting Started",
-    link: "/css/docs/getting-started",
-  },
-  {
-    label: "Tailwind",
-    link: "/css/docs/tailwind",
+    items: [
+      {
+        label: "Quick Start",
+        link: "/css/docs/start/quick-start",
+      },
+      {
+        label: "Tailwind",
+        link: "/css/docs/start/tailwind",
+      },
+    ],
   },
   {
     label: "Concepts",
@@ -97,14 +102,12 @@ const navigation = [
 ] satisfies NavigationItem[];
 ---
 
-<nav
-  class="wui-docs-sidebar fixed flex h-full w-[calc(var(--wui-docs-layout-sidebar-width)-calc(16px*var(--wui-scale)))] flex-col bg-[var(--wui-docs-layout-background)] pb-6"
->
-  <div class="flex pt-6 pb-6 pl-6">
-    <div class="flex flex-1 items-center gap-4">
-      <span class="text-3 text-grey-12 tracking-9 font-medium">Winnie</span>
-      <span class="bg-grey-8 h-5 w-[1px]"></span>
-      <span class="text-3 text-grey-11">Docs</span>
+<nav class="wui-docs-sidebar">
+  <div class="wui-docs-sidebar-header">
+    <div class="wui-logo">
+      <span class="wui-logo-company">Winnie</span>
+      <span class="wui-logo-separator"></span>
+      <span class="wui-logo-app">Docs</span>
     </div>
     <ThemePickerPopover client:load />
   </div>
@@ -116,3 +119,49 @@ const navigation = [
     slug={Astro.props.slug}
   />
 </nav>
+
+<style>
+  .wui-docs-sidebar {
+    background: var(--wui-docs-layout-background);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-bottom: var(--wui-space-6);
+    position: fixed;
+    width: calc(
+      var(--wui-docs-layout-sidebar-width) - calc(16px * var(--wui-scale))
+    );
+
+    .wui-docs-sidebar-header {
+      display: flex;
+      padding-bottom: var(--wui-space-6);
+      padding-left: var(--wui-space-6);
+      padding-top: var(--wui-space-6);
+
+      .wui-logo {
+        align-items: center;
+        display: flex;
+        flex: 1;
+        gap: var(--wui-space-4);
+
+        .wui-logo-company {
+          color: var(--wui-color-grey-12);
+          letter-spacing: var(--wui-letter-spacing-9);
+          font-size: var(--wui-font-size-3);
+          font-weight: var(--wui-font-weight-medium);
+        }
+
+        .wui-logo-separator {
+          background: var(--wui-color-grey-8);
+          height: var(--wui-space-5);
+          width: 1px;
+        }
+
+        .wui-logo-app {
+          color: var(--wui-color-grey-11);
+          font-size: var(--wui-font-size-3);
+        }
+      }
+    }
+  }
+</style>
