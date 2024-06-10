@@ -1,4 +1,5 @@
 @import "@winnie-ui/css";
+@import "../code/code.css";
 
 @layer base {
   :root,
