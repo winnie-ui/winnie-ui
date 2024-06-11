@@ -1,10 +1,15 @@
 ---
+import type { MarkdownHeading } from "astro";
+
+import TableOfContents from "./toc/toc.astro";
+
 type Props = {
   title: string;
   description: string;
+  headings: MarkdownHeading[];
 };
 
-const { title, description } = Astro.props;
+const { title, description, headings } = Astro.props;
 ---
 
 <main class="wui-docs-layout-content">
@@ -18,7 +23,9 @@ const { title, description } = Astro.props;
         <slot />
       </div>
     </article>
-    <aside class="wui-docs-minimap">Table of contents</aside>
+    <aside class="wui-docs-minimap">
+      <TableOfContents headings={headings} />
+    </aside>
   </div>
 </main>
 
@@ -32,6 +39,8 @@ const { title, description } = Astro.props;
     width: 100%;
 
     .wui-docs-content-paper {
+      --wui-docs-content-paper-padding-block: var(--wui-space-9);
+
       align-items: flex-start;
       background: var(--wui-color-white);
       border: var(--wui-border-width-1) solid var(--wui-color-grey-4);
@@ -39,12 +48,15 @@ const { title, description } = Astro.props;
       box-shadow: -2px 0 16px -2px hsl(var(--wui-shadow-color) /
             calc(var(--wui-shadow-strength) + 10%));
       display: flex;
-      gap: var(--wui-space-6);
+      gap: var(--wui-space-9);
       min-height: 100%;
-      overflow: auto;
       padding-left: var(--wui-space-9);
-      padding-right: var(--wui-space-6);
-      padding-block: var(--wui-space-9);
+      padding-right: var(--wui-space-9);
+      padding-block: var(--wui-docs-content-paper-padding-block);
+
+      @media (min-width: 1024px) {
+        padding-right: var(--wui-space-6);
+      }
 
       .wui-docs-content-paper-article {
         margin-inline: auto;
@@ -64,6 +76,7 @@ const { title, description } = Astro.props;
           .wui-docs-article-description {
             color: var(--wui-color-grey-11);
             font-size: var(--wui-font-size-4);
+            line-height: var(--wui-line-height-4);
             margin-top: var(--wui-space-2);
           }
         }
@@ -95,12 +108,17 @@ const { title, description } = Astro.props;
           }
         }
       }
+
       .wui-docs-minimap {
         display: none;
+        max-width: 250px;
         position: sticky;
-        top: 0;
+        top: calc(
+          var(--wui-docs-content-paper-padding-block) + var(--wui-space-4)
+        );
+        width: 100%;
 
-        @media (min-width: 1024px) {
+        @media (min-width: 1280px) {
           display: block;
         }
       }

@@ -25,6 +25,7 @@ export function NavigationList({
         if (item.items && item.items.length > 0) {
           const hasCurrentItem =
             item.items.find((i) => i.link?.endsWith(slug)) !== undefined;
+
           return (
             <Collapsible
               asChild

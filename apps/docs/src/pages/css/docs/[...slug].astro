@@ -17,10 +17,10 @@ type Props = CollectionEntry<"css">;
 
 const doc = Astro.props;
 
-const { Content } = await doc.render();
+const { Content, headings } = await doc.render();
 ---
 
-<DocsLayout {...doc.data} slug={doc.slug}>
+<DocsLayout {...doc.data} slug={doc.slug} headings={headings}>
   <Content
     components={{
       h2: Heading2,

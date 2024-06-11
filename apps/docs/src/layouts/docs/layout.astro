@@ -5,17 +5,20 @@ import BaseHead from "~/components/base-head.astro";
 import BaseLayout from "../base/layout.astro";
 import Sidebar from "./sidebar/sidebar.astro";
 import Content from "./content.astro";
+import type { MarkdownHeading } from "astro";
 
-type Props = CollectionEntry<"css">["data"];
+type Props = CollectionEntry<"css">["data"] & {
+  headings: MarkdownHeading[];
+};
 
-const { title, description, slug } = Astro.props;
+const { title, description, slug, headings } = Astro.props;
 ---
 
 <BaseLayout>
   <BaseHead slot="head" title={title} description={description} />
   <Sidebar slug={slug} />
   <div class="wui-docs-layout-content-container">
-    <Content title={title} description={description}>
+    <Content title={title} description={description} headings={headings}>
       <slot />
     </Content>
   </div>
