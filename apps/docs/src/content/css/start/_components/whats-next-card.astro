@@ -10,7 +10,7 @@ type Props = {
 const { title, description, link, color } = Astro.props;
 ---
 
-<a class="whats-next-card not-content" href={link} data-accent-color={color}>
+<a class="whats-next-card" href={link} data-accent-color={color}>
   <div class="app-card">
     <slot />
   </div>
@@ -22,11 +22,11 @@ const { title, description, link, color } = Astro.props;
 
 <style>
   .whats-next-card {
-    border-radius: min(var(--wui-border-radius-3), 12px);
-    padding: var(--wui-space-5);
+    border-radius: min(var(--wui-border-radius-4), 20px);
+    padding: var(--wui-space-6);
 
     &:hover {
-      background: var(--wui-color-accent-a2);
+      background: var(--wui-color-accent-a4);
     }
 
     &:focus-visible {

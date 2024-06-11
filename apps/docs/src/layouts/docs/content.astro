@@ -120,12 +120,14 @@ const { title, description, headings } = Astro.props;
           code:not(:where(.not-content *)) {
             background: var(--wui-color-accent-3);
             border: var(--wui-border-width-1) solid var(--wui-color-accent-5);
-            border-radius: var(--wui-border-radius-2);
+            border-radius: min(var(--wui-border-radius-2), 6px);
             color: var(--wui-color-accent-12);
             font-family: var(--wui-font-family-mono);
             font-size: var(--wui-font-size-2);
+            line-height: 1;
             margin: var(--wui-space-6) auto;
             padding-inline: var(--wui-space-1);
+            padding-bottom: var(--wui-space-1);
           }
         }
       }

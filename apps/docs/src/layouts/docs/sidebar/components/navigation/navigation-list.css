@@ -52,6 +52,14 @@
   }
 }
 
+:where([data-radius="round"]) {
+  .navigation-list {
+    .navigation-list-item {
+      padding-left: var(--wui-space-4);
+    }
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .navigation-list-collapsible-content {
     --wui-collapsible-content-height: var(--radix-collapsible-content-height);
