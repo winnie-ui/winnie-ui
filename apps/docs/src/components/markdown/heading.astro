@@ -19,7 +19,7 @@ const { element: Element = "h2", id } = Astro.props;
 <style>
   .heading {
     align-items: center;
-    display: inline-flex;
+    display: flex;
     gap: var(--wui-space-3);
 
     .heading-anchor {
@@ -44,25 +44,7 @@ const { element: Element = "h2", id } = Astro.props;
       }
     }
 
-    h2:not(:where(.not-content *)) {
-      font-size: var(--wui-font-size-6);
-      line-height: var(--wui-line-height-6);
-      margin-top: var(--wui-space-8);
-    }
-
-    h3:not(:where(.not-content *)) {
-      font-size: calc(17px * var(--wui-scale));
-      line-height: var(--wui-line-height-5);
-      margin-top: var(--wui-space-7);
-    }
-
-    h4:not(:where(.not-content *)) {
-      font-size: calc(15px * var(--wui-scale));
-      line-height: var(--wui-line-height-3);
-      margin-top: var(--wui-space-7);
-    }
-
-    &:hover {
+    &:has(:where(a:hover, a:focus-visible)) {
       padding-right: var(--wui-space-6);
 
       .heading-anchor {
@@ -80,11 +62,29 @@ const { element: Element = "h2", id } = Astro.props;
       }
     }
 
-    &:focus-within {
+    &:has(a:focus-visible) {
       border-radius: min(var(--wui-border-radius-2), 8px);
       padding-left: var(--wui-space-4);
       margin-left: calc(-1 * var(--wui-space-4));
       outline: var(--wui-border-width-2) solid var(--wui-color-accent-9);
     }
+  }
+
+  h2:not(:where(.not-content *)) {
+    font-size: var(--wui-font-size-6);
+    line-height: var(--wui-line-height-6);
+    margin-top: var(--wui-space-9);
+  }
+
+  h3:not(:where(.not-content *)) {
+    font-size: calc(17px * var(--wui-scale));
+    line-height: var(--wui-line-height-5);
+    margin-top: var(--wui-space-7);
+  }
+
+  h4:not(:where(.not-content *)) {
+    font-size: calc(15px * var(--wui-scale));
+    line-height: var(--wui-line-height-3);
+    margin-top: var(--wui-space-7);
   }
 </style>

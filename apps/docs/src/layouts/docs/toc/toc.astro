@@ -10,6 +10,8 @@ type Props = {
 const { headings } = Astro.props;
 ---
 
+<script></script>
+
 <nav class="toc">
   <div class="toc-header">
     <AlignLeft />
@@ -18,6 +20,10 @@ const { headings } = Astro.props;
   <ul class="toc-list">
     {
       headings.map((heading) => {
+        if (heading.depth > 3) {
+          return null;
+        }
+
         return (
           <li class="toc-list-item" data-level={heading.depth}>
             <a href={`#${heading.slug}`}>{heading.text}</a>

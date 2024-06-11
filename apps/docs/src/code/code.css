@@ -54,5 +54,7 @@
     --ec-frm-trmBg: var(--wui-ec-background);
     --ec-frm-trmDotsFg: var(--wui-color-grey-8);
     --ec-frm-trmTtbBg: var(--wui-ec-background);
+    --ec-tm-markBg: var(--wui-color-accent-a3);
+    --ec-tm-markBrdCol: var(--wui-color-accent-a8);
   }
 }

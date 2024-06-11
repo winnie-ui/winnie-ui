@@ -11,9 +11,9 @@ Winnie CSS is a collection of CSS primitives designed to help style applications
 
 ## Installation
 
-The simplest way to get up and running with Winnie CSS in any app is to start by installing Winnie CSS with the package manager of your choice. We will use `npm`, but `yarn` and `pnpm` also work as well.
-
 ### Install Winnie CSS
+
+The simplest way to get up and running with Winnie CSS in any app is to start by installing Winnie CSS with the package manager of your choice. We will use `npm`, but `yarn` and `pnpm` also work as well.
 
 ```bash
 npm install @winnie-ui/css
@@ -31,16 +31,17 @@ Once you have Winnie CSS installed, you can then import the stylesheet in the ro
 
 Now, with Winnie CSS installed and imported, it's time to configure your theme. Winnie CSS allows you to choose the accent color, scale and border radius of your app. If you are looking to be more adventurous, see [Customize Theme](/css/docs/asdasd) for more information about how to customize your theme.
 
-```tsx title="root.tsx" {6-9}
+```tsx title="root.tsx" {6-10}
 export default function Root() {
   return (
     <html>
       <head>...</head>
       <body
-        class="winnie-ui light"
+        class="winnie-ui"
         data-accent-color="purple"
         data-scale="100%"
         data-radius="md"
+        data-theme="light"
       >
         <App />
       </body>

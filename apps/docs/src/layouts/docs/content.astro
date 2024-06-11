@@ -61,7 +61,7 @@ const { title, description, headings } = Astro.props;
       .wui-docs-content-paper-article {
         margin-inline: auto;
         width: 100%;
-        max-width: 640px;
+        max-width: 70ch;
 
         .wui-docs-article-heading {
           margin-bottom: var(--wui-space-9);
@@ -107,7 +107,12 @@ const { title, description, headings } = Astro.props;
             margin: var(--wui-space-6) auto;
           }
 
-          h2 + p {
+          h2 + p:not(:where(.not-content *)) {
+            margin-bottom: var(--wui-space-7);
+            margin-top: var(--wui-space-5);
+          }
+
+          h3 + p:not(:where(.not-content *)) {
             margin-bottom: var(--wui-space-7);
             margin-top: var(--wui-space-5);
           }
