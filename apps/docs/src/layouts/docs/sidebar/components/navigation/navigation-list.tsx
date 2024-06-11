@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import type { NavigationItem } from "./types";
 import {
   Collapsible,
@@ -19,6 +21,12 @@ export function NavigationList({
   items,
   slug,
 }: NavigationListProps) {
+  useEffect(() => {
+    console.log(slug, items, "mounted");
+
+    return () => console.log(slug, items, "unmounted");
+  }, []);
+
   return (
     <ul className="navigation-list" data-level={level}>
       {items.map((item) => {
@@ -35,6 +43,7 @@ export function NavigationList({
               <li>
                 <CollapsibleTrigger
                   className="navigation-list-item"
+                  data-collapsible-trigger={true}
                   data-current={hasCurrentItem}
                   aria-current={hasCurrentItem}
                 >

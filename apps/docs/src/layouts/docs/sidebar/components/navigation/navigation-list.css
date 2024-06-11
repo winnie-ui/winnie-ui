@@ -22,7 +22,7 @@
     width: 100%;
 
     &:hover {
-      background: var(--wui-color-grey-a3);
+      background: var(--wui-color-grey-a2);
     }
 
     &:focus-visible {
@@ -37,8 +37,12 @@
       }
     }
 
-    &[data-current="true"] {
+    &:is([data-current="true"], [data-collapsible-trigger="true"]) {
       color: var(--wui-color-black);
+    }
+
+    &[data-current="true"]:not([data-collapsible-trigger="true"]) {
+      background: var(--wui-color-grey-a3);
     }
 
     .label {
@@ -70,8 +74,8 @@
       /* duration is zero for now until I find a way to prevent the animation from running
        * when a page navigation occurs. the result is some jank layout shift 
        */
-      animation-duration: 0;
-      /* animation-duration: var(--wui-duration-2); */
+      /* animation-duration: 0; */
+      animation-duration: var(--wui-duration-2);
       animation-timing-function: var(--wui-bezier-1);
     }
 
