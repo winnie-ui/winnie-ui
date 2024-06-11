@@ -1,4 +1,6 @@
 ---
+import { Link } from "lucide-react";
+
 export type Props = {
   element: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   id: string;
@@ -7,33 +9,74 @@ export type Props = {
 const { element: Element = "h2", id } = Astro.props;
 ---
 
-<Element>
+<Element class="heading">
   <a id={id} href={`#${id}`} class="heading-anchor">
     <slot />
   </a>
+  <Link className="heading-link-icon" />
 </Element>
 
 <style>
-  .heading-anchor {
-    color: var(--wui-color-grey-12);
-    font-weight: var(--wui-font-weight-medium);
-  }
+  .heading {
+    align-items: center;
+    display: inline-flex;
+    gap: var(--wui-space-3);
+    padding-right: var(--wui-space-6);
 
-  h2:not(:where(.not-content *)) {
-    font-size: var(--wui-font-size-6);
-    line-height: var(--wui-line-height-6);
-    margin-top: var(--wui-space-8);
-  }
+    .heading-anchor {
+      color: var(--wui-color-grey-12);
+      font-weight: var(--wui-font-weight-medium);
+      outline: none;
+    }
 
-  h3:not(:where(.not-content *)) {
-    font-size: calc(17px * var(--wui-scale));
-    line-height: var(--wui-line-height-5);
-    margin-top: var(--wui-space-7);
-  }
+    .heading-link-icon {
+      color: var(--wui-color-grey-9);
+      height: calc(14px * var(--wui-scale));
+      opacity: 0;
+      transition-property: opacity, transform;
+      transition-duration: var(--wui-duration-3);
+      transition-timing-function: var(--wui-bezier-1);
+      width: calc(14px * var(--wui-scale));
 
-  h4:not(:where(.not-content *)) {
-    font-size: calc(15px * var(--wui-scale));
-    line-height: var(--wui-line-height-3);
-    margin-top: var(--wui-space-7);
+      @media (prefers-reduced-motion: no-preference) {
+        & {
+          transform: translateX(-6px);
+        }
+      }
+    }
+
+    h2:not(:where(.not-content *)) {
+      font-size: var(--wui-font-size-6);
+      line-height: var(--wui-line-height-6);
+      margin-top: var(--wui-space-8);
+    }
+
+    h3:not(:where(.not-content *)) {
+      font-size: calc(17px * var(--wui-scale));
+      line-height: var(--wui-line-height-5);
+      margin-top: var(--wui-space-7);
+    }
+
+    h4:not(:where(.not-content *)) {
+      font-size: calc(15px * var(--wui-scale));
+      line-height: var(--wui-line-height-3);
+      margin-top: var(--wui-space-7);
+    }
+
+    &:hover {
+      .heading-anchor {
+        outline: none;
+      }
+
+      .heading-link-icon {
+        opacity: 1;
+
+        @media (prefers-reduced-motion: no-preference) {
+          & {
+            transform: translateX(0px);
+          }
+        }
+      }
+    }
   }
 </style>
