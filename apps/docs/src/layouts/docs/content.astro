@@ -70,7 +70,7 @@ const { title, description, headings } = Astro.props;
             color: var(--wui-color-grey-12);
             font-size: var(--wui-font-size-8);
             letter-spacing: var(--wui-letter-spacing-9);
-            font-weight: var(--wui-font-weight-medium);
+            font-weight: var(--wui-font-weight-semibold);
           }
 
           .wui-docs-article-description {
@@ -83,6 +83,21 @@ const { title, description, headings } = Astro.props;
 
         .wui-markdown-content {
           --wui-markdown-content-font-size: calc(15px * var(--wui-scale));
+
+          a:not(:where(.not-content *)) {
+            color: var(--wui-color-accent-11);
+            border-radius: min(var(--wui-border-radius-1), 8px);
+            font-weight: var(--wui-font-weight-medium);
+
+            &:hover {
+              color: var(--wui-color-accent-12);
+            }
+
+            &:focus-visible {
+              outline: var(--wui-border-width-2) solid var(--wui-color-accent-9);
+              outline-offset: var(--wui-space-1);
+            }
+          }
 
           p:not(:where(.not-content *)) {
             color: var(--wui-color-grey-12);
@@ -97,14 +112,15 @@ const { title, description, headings } = Astro.props;
             margin-top: var(--wui-space-5);
           }
 
-          .astro-code {
+          code:not(:where(.not-content *)) {
+            background: var(--wui-color-accent-3);
+            border: var(--wui-border-width-1) solid var(--wui-color-accent-5);
             border-radius: var(--wui-border-radius-2);
-            border-width: var(--wui-border-width-1);
-            border-style: solid;
+            color: var(--wui-color-accent-12);
             font-family: var(--wui-font-family-mono);
             font-size: var(--wui-font-size-2);
-            padding: var(--wui-space-3);
             margin: var(--wui-space-6) auto;
+            padding-inline: var(--wui-space-1);
           }
         }
       }

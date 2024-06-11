@@ -9,7 +9,7 @@ export type Props = {
 const { element: Element = "h2", id } = Astro.props;
 ---
 
-<Element class="heading">
+<Element class="heading not-content">
   <a id={id} href={`#${id}`} class="heading-anchor">
     <slot />
   </a>
@@ -21,7 +21,6 @@ const { element: Element = "h2", id } = Astro.props;
     align-items: center;
     display: inline-flex;
     gap: var(--wui-space-3);
-    padding-right: var(--wui-space-6);
 
     .heading-anchor {
       color: var(--wui-color-grey-12);
@@ -64,6 +63,8 @@ const { element: Element = "h2", id } = Astro.props;
     }
 
     &:hover {
+      padding-right: var(--wui-space-6);
+
       .heading-anchor {
         outline: none;
       }
@@ -77,6 +78,13 @@ const { element: Element = "h2", id } = Astro.props;
           }
         }
       }
+    }
+
+    &:focus-within {
+      border-radius: min(var(--wui-border-radius-2), 8px);
+      padding-left: var(--wui-space-4);
+      margin-left: calc(-1 * var(--wui-space-4));
+      outline: var(--wui-border-width-2) solid var(--wui-color-accent-9);
     }
   }
 </style>
