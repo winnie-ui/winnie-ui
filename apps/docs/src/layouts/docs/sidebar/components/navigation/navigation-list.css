@@ -18,6 +18,7 @@
     font-size: var(--wui-font-size-2);
     font-weight: var(--wui-font-weight-medium);
     height: calc(34px * var(--wui-scale));
+    margin-bottom: var(--wui-space-1);
     padding-inline: var(--wui-space-3);
     width: 100%;
 
@@ -37,7 +38,10 @@
       }
     }
 
-    &:is([data-current="true"], [data-collapsible-trigger="true"]) {
+    &:is(
+        [data-current="true"],
+        [data-current="true"][data-collapsible-trigger="true"]
+      ) {
       color: var(--wui-color-black);
     }
 

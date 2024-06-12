@@ -1,12 +1,5 @@
-import { useEffect } from "react";
-
+import { NavigationListCollapsible } from "./navigation-list-collapsible";
 import type { NavigationItem } from "./types";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@radix-ui/react-collapsible";
-import { ChevronRight } from "lucide-react";
 
 import "./navigation-list.css";
 
@@ -21,12 +14,6 @@ export function NavigationList({
   items,
   slug,
 }: NavigationListProps) {
-  useEffect(() => {
-    console.log(slug, items, "mounted");
-
-    return () => console.log(slug, items, "unmounted");
-  }, []);
-
   return (
     <ul className="navigation-list" data-level={level}>
       {items.map((item) => {
@@ -35,26 +22,13 @@ export function NavigationList({
             item.items.find((i) => i.link?.endsWith(slug)) !== undefined;
 
           return (
-            <Collapsible
-              asChild
-              key={`${item.label}`}
-              defaultOpen={hasCurrentItem}
+            <NavigationListCollapsible
+              key={`item-${item.label}`}
+              hasCurrentItem={hasCurrentItem}
+              item={item}
             >
-              <li>
-                <CollapsibleTrigger
-                  className="navigation-list-item"
-                  data-collapsible-trigger={true}
-                  data-current={hasCurrentItem}
-                  aria-current={hasCurrentItem}
-                >
-                  <span className="label">{item.label}</span>
-                  <ChevronRight className="chevron" />
-                </CollapsibleTrigger>
-                <CollapsibleContent className="navigation-list-collapsible-content">
-                  <NavigationList items={item.items} level={1} slug={slug} />
-                </CollapsibleContent>
-              </li>
-            </Collapsible>
+              <NavigationList items={item.items} level={1} slug={slug} />
+            </NavigationListCollapsible>
           );
         }
 
