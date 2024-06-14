@@ -1,15 +1,17 @@
 import { ThemePickerRadioGroup } from "./theme-picker-radio-group";
+import type { Theme } from "~/utils/theme";
 
 function ModePicker() {
+  const modes = ["light", "dark"] satisfies Theme["mode"][];
   return (
     <ThemePickerRadioGroup
-      defaultValue="100%"
-      items={["light", "dark"].map((mode) => {
+      items={modes.map((mode) => {
         return {
           value: mode,
           render: mode,
         };
       })}
+      themeKey="mode"
       label="Mode"
       selector="data-theme"
     />

@@ -12,14 +12,20 @@ export type Theme = {
     | "brand";
   radius: "none" | "sm" | "md" | "lg" | "round";
   scale: "90%" | "95%" | "100%" | "105%" | "110%";
+  mode: "light" | "dark";
 };
 
-export type ThemeSelectors = "data-radius" | "data-accent-color" | "data-scale";
+export type ThemeSelectors =
+  | "data-radius"
+  | "data-accent-color"
+  | "data-scale"
+  | "data-theme";
 
 export const defaultTheme = {
   color: "yellow",
   radius: "round",
-  scale: "100%",
+  scale: "95%",
+  mode: "light",
 } satisfies Theme;
 
 /**
@@ -41,6 +47,11 @@ export function getTheme() {
  * @param theme Current theme configuration
  */
 export function setTheme(theme: Theme) {
+  const html = document.querySelector("html")!;
+  html.setAttribute("data-accent-color", theme.color);
+  html.setAttribute("data-radius", theme.radius);
+  html.setAttribute("data-scale", theme.scale);
+  html.setAttribute("data-theme", theme.mode);
   localStorage.setItem(THEME_LOCALSTORAGE_KEY, JSON.stringify(theme));
 }
 
@@ -49,18 +60,11 @@ export function setTheme(theme: Theme) {
  *
  * @param theme Current theme configuration
  */
-export function updateTheme(
-  key: keyof Theme,
-  selector: ThemeSelectors,
-  value: string,
-) {
-  const html = document.querySelector("html");
-  html!.setAttribute(selector, value);
-
+export function updateTheme(key: keyof Theme, value: string) {
   const currentTheme = getTheme();
 
-  localStorage.setItem(
-    THEME_LOCALSTORAGE_KEY,
-    JSON.stringify({ ...currentTheme, [key]: value }),
-  );
+  setTheme({
+    ...currentTheme,
+    [key]: value,
+  });
 }

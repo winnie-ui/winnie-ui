@@ -24,7 +24,6 @@ function ThemePickerRadioGroup({
   label,
   items,
   themeKey,
-  selector,
 }: ThemePickerRadioGroupProps) {
   /**
    * Sets the attribute on the body element
@@ -32,7 +31,7 @@ function ThemePickerRadioGroup({
    * @param value Value of the radio group that has been selected
    */
   function onValueChange(value: string) {
-    updateTheme(themeKey, selector, value);
+    updateTheme(themeKey, value);
   }
 
   /**

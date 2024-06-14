@@ -1,20 +1,3 @@
-<script>
-  import { getTheme } from "~/utils/theme";
-
-  function setThemeOnDocument() {
-    const theme = getTheme();
-
-    const html = document.querySelector("html")!;
-    html.setAttribute("data-accent-color", theme.color);
-    html.setAttribute("data-radius", theme.radius);
-    html.setAttribute("data-scale", theme.scale);
-  }
-
-  document.addEventListener("astro:after-swap", setThemeOnDocument);
-  document.addEventListener("astro:page-load", setThemeOnDocument, {
-    once: true,
-  });
-</script>
 <html
   lang="en"
   class="winnie-ui light"
@@ -29,28 +12,55 @@
   </body>
 </html>
 
+<!--
+Intentionally setting this script inline with a IIFE to prevent a flash of unstyled content
+-->
+<script is:inline>
+  (function setThemeOnDocument() {
+    const themeJSON =
+      typeof localStorage !== "undefined" && localStorage.getItem("wuiTheme");
+
+    let theme;
+
+    if (themeJSON == null) {
+      theme = {
+        color: "yellow",
+        radius: "round",
+        scale: "95%",
+        mode: "light",
+      };
+    } else {
+      theme = JSON.parse(themeJSON);
+    }
+
+    const html = document.querySelector("html");
+    html.setAttribute("data-accent-color", theme.color);
+    html.setAttribute("data-radius", theme.radius);
+    html.setAttribute("data-scale", theme.scale);
+    html.setAttribute("data-theme", theme.mode);
+  })();
+</script>
+
+<!--
+To make sure the theme is still set on the document after a view transition,
+I am listening to the `after-swap` event and setting the attributes
+-->
+<script>
+  import { getTheme, setTheme } from "~/utils/theme";
+
+  function setThemeAfterSwap() {
+    const theme = getTheme();
+    setTheme(theme);
+  }
+
+  document.addEventListener("astro:after-swap", setThemeAfterSwap);
+</script>
+
 <style>
   .wui-layout {
     --wui-docs-layout-background: var(--wui-color-accent-1);
     --wui-docs-layout-sidebar-width: calc(296px * var(--wui-scale));
 
     background: var(--wui-color-white-a9);
-  }
-</style>
-
-<style is:global>
-  body {
-    visibility: hidden;
-    opacity: 0;
-  }
-</style>
-
-<style is:inline>
-  body {
-    visibility: visible;
-    opacity: 1;
-    transition:
-      visibility 0.2s linear,
-      opacity 0.2s linear;
   }
 </style>
