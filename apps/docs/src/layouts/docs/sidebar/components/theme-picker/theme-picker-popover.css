@@ -28,7 +28,7 @@
   -webkit-backdrop-filter: blur(8px);
   border: var(--wui-border-width-1) solid var(--wui-color-grey-4);
   border-radius: min(var(--wui-border-radius-3), 20px);
-  box-shadow: var(--wui-shadow-4);
+  box-shadow: var(--wui-shadow-3);
   overflow: auto;
   width: calc(var(--wui-docs-layout-sidebar-width) - var(--wui-space-5) * 2);
 
