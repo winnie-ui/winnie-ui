@@ -1,4 +1,4 @@
-import type { PropsWithChildren } from "react";
+import type { LegacyRef, PropsWithChildren } from "react";
 
 import {
   ScrollArea as RadixScrollArea,
@@ -14,16 +14,21 @@ import "./scroll-area.css";
 type ScrollAreaProps = {
   className?: string;
   type?: RadixScrollAreaProps["type"];
+  viewportRef?: LegacyRef<HTMLDivElement>;
 };
 
 export function ScrollArea({
   className,
   children,
   type = "scroll",
+  viewportRef,
 }: PropsWithChildren<ScrollAreaProps>) {
   return (
     <RadixScrollArea className={clsx("wui-scroll-area", className)} type={type}>
-      <RadixScrollAreaViewport className="wui-scroll-area-mask">
+      <RadixScrollAreaViewport
+        className="wui-scroll-area-mask"
+        ref={viewportRef}
+      >
         <div className="wui-scroll-area-content">{children}</div>
       </RadixScrollAreaViewport>
       <RadixScrollAreaScrollbar
