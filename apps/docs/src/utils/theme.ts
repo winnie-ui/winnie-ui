@@ -16,7 +16,7 @@ export type Theme = {
 
 export type ThemeSelectors = "data-radius" | "data-accent-color" | "data-scale";
 
-const defaultTheme = {
+export const defaultTheme = {
   color: "yellow",
   radius: "round",
   scale: "100%",

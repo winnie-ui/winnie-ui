@@ -86,7 +86,7 @@ const { title, description, headings } = Astro.props;
 
           a:not(:where(.not-content *)) {
             color: var(--wui-color-accent-11);
-            border-radius: min(var(--wui-border-radius-1), 8px);
+            border-radius: min(var(--wui-border-radius-1), 4px);
             font-size: var(--wui-markdown-content-font-size);
             font-weight: var(--wui-font-weight-medium);
 
@@ -134,7 +134,7 @@ const { title, description, headings } = Astro.props;
           ul:not(:where(.not-content *)) {
             list-style-type: disc;
             margin: var(--wui-space-6) 0;
-            padding-left: var(--wui-space-5);
+            padding-left: var(--wui-space-8);
           }
         }
       }

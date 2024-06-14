@@ -1,21 +1,25 @@
-<!-- <script>
+<script>
   import { getTheme } from "~/utils/theme";
-  const theme = getTheme();
 
-  const html = document.querySelector("html")!;
+  function setThemeOnDocument() {
+    const theme = getTheme();
 
-  html.setAttribute("data-accent-color", theme.color);
-  html.setAttribute("data-radius", theme.radius);
-  html.setAttribute("data-scale", theme.scale);
-</script> -->
+    const html = document.querySelector("html")!;
+    html.setAttribute("data-accent-color", theme.color);
+    html.setAttribute("data-radius", theme.radius);
+    html.setAttribute("data-scale", theme.scale);
+  }
+
+  document.addEventListener("astro:after-swap", setThemeOnDocument);
+  document.addEventListener("astro:page-load", setThemeOnDocument, {
+    once: true,
+  });
+</script>
 <html
   lang="en"
   class="winnie-ui light"
   data-theme="light"
   data-code-theme="github-light"
-  data-accent-color="yellow"
-  data-radius="round"
-  data-scale="100%"
 >
   <head>
     <slot name="head" />
@@ -31,5 +35,22 @@
     --wui-docs-layout-sidebar-width: calc(296px * var(--wui-scale));
 
     background: var(--wui-color-white-a9);
+  }
+</style>
+
+<style is:global>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+
+<style is:inline>
+  body {
+    visibility: visible;
+    opacity: 1;
+    transition:
+      visibility 0.2s linear,
+      opacity 0.2s linear;
   }
 </style>
