@@ -1,29 +1,23 @@
-import { useState } from "react";
-
 import { ThemePickerRadioGroup } from "./theme-picker-radio-group";
+import type { Theme } from "~/utils/theme";
 
 import "./accent-picker.css";
 
 function AccentColorPicker() {
-  const [defaultValue] = useState(() => {
-    const html = document.querySelector("html");
-
-    return html?.getAttribute("data-accent-color") ?? "brand";
-  });
+  const colors = [
+    "red",
+    "orange",
+    "yellow",
+    "green",
+    "blue",
+    "purple",
+    "pink",
+    "brand",
+  ] satisfies Theme["color"][];
 
   return (
     <ThemePickerRadioGroup
-      defaultValue={defaultValue}
-      items={[
-        "red",
-        "orange",
-        "yellow",
-        "green",
-        "blue",
-        "purple",
-        "pink",
-        "brand",
-      ].map((color) => {
+      items={colors.map((color) => {
         return {
           value: color,
           render: (
@@ -35,6 +29,7 @@ function AccentColorPicker() {
         };
       })}
       label="Color"
+      themeKey="color"
       selector="data-accent-color"
     />
   );

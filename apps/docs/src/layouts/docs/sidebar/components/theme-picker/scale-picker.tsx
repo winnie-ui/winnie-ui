@@ -1,23 +1,27 @@
 import { useState } from "react";
 
 import { ThemePickerRadioGroup } from "./theme-picker-radio-group";
+import type { Theme } from "~/utils/theme";
 
 function ScalePicker() {
-  const [defaultValue] = useState(() => {
-    const html = document.querySelector("html");
+  const scales = [
+    "90%",
+    "95%",
+    "100%",
+    "105%",
+    "110%",
+  ] satisfies Theme["scale"][];
 
-    return html?.getAttribute("data-scale") ?? "100%";
-  });
   return (
     <ThemePickerRadioGroup
-      defaultValue={defaultValue}
-      items={["90%", "95%", "100%", "105%", "110%"].map((scale) => {
+      items={scales.map((scale) => {
         return {
           value: scale,
           render: scale,
         };
       })}
       label="Scale"
+      themeKey="scale"
       selector="data-scale"
     />
   );

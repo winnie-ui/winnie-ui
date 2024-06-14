@@ -1,26 +1,20 @@
-import { useState } from "react";
-
 import { ThemePickerRadioGroup } from "./theme-picker-radio-group";
+import type { Theme } from "~/utils/theme";
 
 import "./radius-picker.css";
 
 function RadiusPicker() {
-  const [defaultValue] = useState(() => {
-    const html = document.querySelector("html");
-
-    return html?.getAttribute("data-radius") ?? "md";
-  });
+  const radii = [
+    { value: "none", label: "None" },
+    { value: "sm", label: "Small" },
+    { value: "md", label: "Medium" },
+    { value: "lg", label: "Large" },
+    { value: "round", label: "Round" },
+  ] satisfies { value: Theme["radius"]; label: string }[];
 
   return (
     <ThemePickerRadioGroup
-      defaultValue={defaultValue}
-      items={[
-        { value: "none", label: "None" },
-        { value: "sm", label: "Small" },
-        { value: "md", label: "Medium" },
-        { value: "lg", label: "Large" },
-        { value: "round", label: "Round" },
-      ].map((radius) => {
+      items={radii.map((radius) => {
         return {
           value: radius.value,
           render: (
@@ -31,6 +25,7 @@ function RadiusPicker() {
           ),
         };
       })}
+      themeKey="radius"
       label="Radius"
       selector="data-radius"
     />

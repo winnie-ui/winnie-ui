@@ -1,35 +1,46 @@
 import type { ReactNode } from "react";
 import { Label, Radio, RadioGroup } from "react-aria-components";
 
+import {
+  type Theme,
+  type ThemeSelectors,
+  getTheme,
+  updateTheme,
+} from "~/utils/theme";
+
 import "./theme-picker-radio-group.css";
 
 type ThemePickerRadioGroupProps = {
-  defaultValue: string;
   label: string;
   items: {
     value: string;
     render: ReactNode;
   }[];
-  selector: string;
+  themeKey: keyof Theme;
+  selector: ThemeSelectors;
 };
 
-function ThemePickerRadioGroup(props: ThemePickerRadioGroupProps) {
+function ThemePickerRadioGroup({
+  label,
+  items,
+  themeKey,
+  selector,
+}: ThemePickerRadioGroupProps) {
   /**
    * Sets the attribute on the body element
    *
    * @param value Value of the radio group that has been selected
    */
   function onValueChange(value: string) {
-    const html = document.querySelector("html");
-    html!.setAttribute(props.selector, value);
+    updateTheme(themeKey, selector, value);
   }
 
   /**
    * Gets the radius attribute value from the body element
    */
   function getDefaultValue() {
-    const html = document.querySelector("html");
-    return html!.getAttribute(props.selector) ?? props.defaultValue;
+    const theme = getTheme();
+    return theme[themeKey];
   }
 
   return (
@@ -38,9 +49,9 @@ function ThemePickerRadioGroup(props: ThemePickerRadioGroupProps) {
       defaultValue={getDefaultValue()}
       onChange={onValueChange}
     >
-      <Label className="radio-label">{props.label}</Label>
+      <Label className="radio-label">{label}</Label>
       <div className="radio-grid">
-        {props.items.map((item) => {
+        {items.map((item) => {
           return (
             <Radio
               key={item.value}
