@@ -6,6 +6,8 @@ import Heading2 from "~/components/markdown/heading-2.astro";
 import Heading3 from "~/components/markdown/heading-3.astro";
 import Heading4 from "~/components/markdown/heading-4.astro";
 
+export const prerender = true;
+
 export async function getStaticPaths() {
   const docs = await getCollection("css");
   return docs.map((doc) => ({

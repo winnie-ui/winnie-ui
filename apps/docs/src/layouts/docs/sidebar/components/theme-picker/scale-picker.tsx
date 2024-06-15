@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import { ThemePickerRadioGroup } from "./theme-picker-radio-group";
 import type { Theme } from "~/utils/theme";
 

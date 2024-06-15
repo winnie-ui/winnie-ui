@@ -1,20 +1,15 @@
 import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 import expressiveCode from "astro-expressive-code";
-import { addClassName } from 'astro-expressive-code/hast';
+import { addClassName } from "astro-expressive-code/hast";
+import aws from "astro-sst";
 import { defineConfig } from "astro/config";
-
-// import fs from "node:fs";
-//
-// const jsoncString = fs.readFileSync(
-//   new URL(`./src/code/light.jsonc`, import.meta.url),
-//   "utf-8",
-// );
-// const light = ExpressiveCodeTheme.fromJSONString(jsoncString);
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://example.com",
+  output: "server",
+  adapter: aws(),
   integrations: [
     expressiveCode({
       frames: {
