@@ -5,6 +5,7 @@
   "scripts": {
     "astro": "astro",
     "build": "astro check && astro build",
+    "clean": "rimraf node_modules dist .astro",
     "dev": "astro dev",
     "dev:sst": "sst dev astro dev",
     "deploy:staging": "sst deploy --stage=staging",
@@ -34,5 +35,8 @@
     "react-dom": "^18.3.1",
     "sst": "ion",
     "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "rimraf": "5.0.7"
   }
 }

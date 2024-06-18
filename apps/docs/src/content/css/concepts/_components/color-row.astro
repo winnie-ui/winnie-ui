@@ -7,47 +7,87 @@ type Props = {
 };
 
 const { color } = Astro.props;
+
+const colors = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
+const colorsAlpha = [
+  "a1",
+  "a2",
+  "a3",
+  "a4",
+  "a5",
+  "a6",
+  "a7",
+  "a8",
+  "a9",
+  "a10",
+  "a11",
+  "a12",
+];
 ---
 
 <slot />
-<ul class="color-row not-content" data-accent-color={color}>
-  {
-    [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7",
-      "8",
-      "9",
-      "10",
-      "11",
-      "12",
-      "a1",
-      "a2",
-      "a3",
-      "a4",
-      "a5",
-      "a6",
-      "a7",
-      "a8",
-      "a9",
-      "a10",
-      "a11",
-      "a12",
-    ].map((level) => {
-      return <ColorChip color={color} level={level} />;
-    })
-  }
-</ul>
+<div class="color-grid">
+  <div class="color-row">
+    <span class="color-row-label">{color}</span>
+    <ul class="color-row-content not-content" data-accent-color={color}>
+      {
+        colors.map((level) => {
+          return <ColorChip color={color} level={level} />;
+        })
+      }
+    </ul>
+  </div>
+  <div class="color-row">
+    <span class="color-row-label">{color} Alpha</span>
+    <ul class="color-row-content not-content" data-accent-color={color}>
+      {
+        colorsAlpha.map((level) => {
+          return <ColorChip color={color} level={level} />;
+        })
+      }
+    </ul>
+  </div>
 
-<style>
+  <div class="color-row">
+    <span class="color-row-label">{color} Dark</span>
+    <ul class="color-row-content not-content dark" data-accent-color={color}>
+      {
+        colors.map((level) => {
+          return <ColorChip color={color} level={level} />;
+        })
+      }
+    </ul>
+  </div>
+
+  <div class="color-row">
+    <span class="color-row-label">{color} Alpha Dark</span>
+    <ul class="color-row-content not-content dark" data-accent-color={color}>
+      {
+        colorsAlpha.map((level) => {
+          return <ColorChip color={color} level={level} />;
+        })
+      }
+    </ul>
+  </div>
+</div>
+
+<style is:global>
   .color-row {
     display: grid;
-    gap: var(--wui-space-2);
-    grid-template-columns: repeat(12, 1fr);
-    grid-auto-rows: 1fr;
+    grid-template-columns: calc(130px * var(--wui-scale)) 1fr;
+    margin-bottom: 1px;
+
+    .color-row-label {
+      align-self: center;
+      color: var(--wui-color-grey-11);
+      font-size: var(--wui-font-size-2);
+      text-transform: capitalize;
+    }
+
+    .color-row-content {
+      display: grid;
+      gap: 1px;
+      grid-template-columns: repeat(12, 1fr);
+    }
   }
 </style>

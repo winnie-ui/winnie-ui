@@ -1,13 +1,12 @@
 .color-chip {
-  height: 40px;
+  height: 32px;
+  max-width: 48px;
   width: 100%;
+  position: relative;
 
   .color-chip-button {
     background: var(--wui-color-white);
-    border: var(--wui-border-width-1) solid var(--wui-color-grey-4);
-    border-radius: var(--wui-border-radius-3);
     box-shadow: var(--wui-shadow-1);
-    padding: var(--wui-space-2);
     perspective: 1000px;
     transform-origin: center center;
     transition-property: transform, box-shadow;
@@ -18,7 +17,9 @@
 
     &:is(:hover, :focus-visible) {
       box-shadow: var(--wui-shadow-2);
-      transform: scale(1.1);
+      transform: scale(1.2);
+      position: absolute;
+      z-index: 1;
     }
 
     &:focus-visible {
@@ -32,29 +33,35 @@
     }
 
     .color-chip-demo {
-      background-image: linear-gradient(
-          45deg,
-          var(--wui-color-grey-2) 25%,
-          transparent 25%
+      background:
+        linear-gradient(
+          var(--wui-paint-chip-background),
+          var(--wui-paint-chip-background)
         ),
-        linear-gradient(135deg, var(--wui-color-grey-2) 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, var(--wui-color-grey-2) 75%),
-        linear-gradient(135deg, transparent 75%, var(--wui-color-grey-2) 75%);
-      background-size: 16px 16px;
-      background-position:
-        0px 0px,
-        8px 0px,
-        8px -8px,
-        0px 8px;
-      border-radius: calc(var(--wui-border-radius-3) - var(--wui-space-2));
+        repeating-conic-gradient(
+            var(--block-background) 0% 25%,
+            var(--block-secondary-background) 0% 50%
+          )
+          50% / 14px 14px;
       height: 100%;
       width: 100%;
+    }
+  }
+}
 
-      .color-chip-color {
-        border-radius: calc(var(--wui-border-radius-3) - var(--wui-space-2));
-        background: var(--wui-paint-chip-background);
-        height: 100%;
-        width: 100%;
+:where(.light, .light-theme, [data-theme="light"]) {
+  .color-row-content:not(.dark) {
+    .color-chip {
+      --block-secondary-background: var(--wui-color-white);
+      --block-background: var(--wui-color-grey-2);
+    }
+  }
+
+  .color-row-content.dark {
+    .color-chip {
+      .color-chip-demo {
+        --block-secondary-background: var(--wui-color-grey-1);
+        --block-background: var(--wui-color-grey-2);
       }
     }
   }

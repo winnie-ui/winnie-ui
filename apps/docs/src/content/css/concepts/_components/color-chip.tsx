@@ -31,9 +31,7 @@ export function ColorChip({ color, level }: ColorChipProps) {
           "--wui-paint-chip-background": `var(--wui-color-accent-${level})`,
         }}
       >
-        <div className="color-chip-demo">
-          <div className="color-chip-color" />
-        </div>
+        <div className="color-chip-demo" />
       </button>
     </li>
   );
