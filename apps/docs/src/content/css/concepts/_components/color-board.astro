@@ -1,0 +1,15 @@
+---
+import ColorRow from "./color-row.astro";
+---
+
+<div class="color-book">
+  <slot />
+</div>
+
+<style>
+  .color-book {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wui-space-6);
+  }
+</style>

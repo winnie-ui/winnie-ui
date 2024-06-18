@@ -8,6 +8,7 @@
     "dev": "astro dev",
     "dev:sst": "sst dev astro dev",
     "deploy:staging": "sst deploy --stage=staging",
+    "remove:staging": "sst remove --stage=staging",
     "preview": "astro preview",
     "start": "astro dev"
   },
