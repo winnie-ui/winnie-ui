@@ -6,7 +6,7 @@ description: Precision crafted colors for all use cases.
 import ColorBoard from "./_components/color-board.astro";
 import ColorRow from "./_components/color-row.astro";
 
-## All Colors
+## Scales
 
 Winnie CSS includes a default set of colors that is a great place to start when building your next application. These colors are loosely based on the colors provided by [Tailwind](https://tailwindcss.com/docs/customizing-colors) and were created using the [Radix Colors](https://www.radix-ui.com/colors/custom) custom palette generator.
 
@@ -41,6 +41,25 @@ Winnie CSS includes a default set of colors that is a great place to start when 
   </ColorRow>
 </ColorBoard>
 
+## Working with Color Scales
+
+Winnie CSS tries to make working with colors very straight forward using the [Radix Color System](https://www.radix-ui.com/colors/docs/palette-composition/understanding-the-scale). There are 12 colors in each scale, each color has a specific purpose. However, there will be cases where these colors need to be adjusted to get things just right. There is no silver bullet when it comes to swapping hues for dark mode, so be sure to take extra care when designing for dark mode.
+
+| Step | Use Case                                 |
+| ---- | ---------------------------------------- |
+| 1    | App background                           |
+| 2    | Subtle background                        |
+| 3    | UI element background                    |
+| 4    | Hovered UI element background            |
+| 5    | Active / Selected UI element background  |
+| 6    | Subtle borders and separators            |
+| 7    | UI element border and focus rings        |
+| 8    | Hovered UI element border                |
+| 9    | Solid background for things like buttons |
+| 10   | Hovered solid background                 |
+| 11   | Low-contast text                         |
+| 12   | High-contast text                        |
+
 ## Accent Color
 
 Users and companies often have a preference for the accent color of their applications. Winnie CSS supports this using the `data-accent-color` attribute. The accent color attribute modifies the `--wui-color-accent-<value>` css variables which will affect any components that use those variables.
@@ -59,3 +78,7 @@ export default function Root() {
 ```
 
 Any color that Winnie CSS supports can be used as an accent color, including [custom colors](/css/docs/concepts/colors#customizing-colors).
+
+## Customizing Colors
+
+## Dark Mode

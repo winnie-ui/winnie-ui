@@ -9,7 +9,7 @@ export type Props = {
 const { element: Element = "h2", id } = Astro.props;
 ---
 
-<Element class="heading not-content">
+<Element class="heading">
   <a id={id} href={`#${id}`} class="heading-anchor">
     <slot />
   </a>
