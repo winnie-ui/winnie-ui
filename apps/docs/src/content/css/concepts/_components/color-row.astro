@@ -29,14 +29,24 @@ const colorsAlpha = [
 <div class="color-grid">
   <div class="color-row">
     <span class="color-row-label">{color}</span>
-    <ul class="color-row-content not-content" data-accent-color={color}>
-      {
-        colors.map((level) => {
-          return <ColorChip color={color} level={level} />;
-        })
-      }
-    </ul>
+    <div>
+      <div class="color-row-content not-content">
+        {
+          colors.map((_, index) => {
+            return <span class="color-chip-label">{index + 1}</span>;
+          })
+        }
+      </div>
+      <ul class="color-row-content not-content" data-accent-color={color}>
+        {
+          colors.map((level) => {
+            return <ColorChip color={color} level={level} />;
+          })
+        }
+      </ul>
+    </div>
   </div>
+
   <div class="color-row">
     <span class="color-row-label">{color} Alpha</span>
     <ul class="color-row-content not-content" data-accent-color={color}>
@@ -88,6 +98,13 @@ const colorsAlpha = [
       display: grid;
       gap: 1px;
       grid-template-columns: repeat(12, 1fr);
+
+      .color-chip-label {
+        color: var(--wui-color-grey-11);
+        font-size: var(--wui-font-size-2);
+        margin-bottom: var(--wui-space-2);
+        text-align: center;
+      }
     }
   }
 </style>
