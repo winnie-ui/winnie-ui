@@ -43,7 +43,7 @@ Winnie CSS includes a default set of colors that is a great place to start when 
 
 ## Working with Color Scales
 
-Winnie CSS tries to make working with colors very straight forward using the [Radix Color System](https://www.radix-ui.com/colors/docs/palette-composition/understanding-the-scale). There are 12 colors in each scale, each color has a specific purpose. However, there will be cases where these colors need to be adjusted to get things just right. There is no silver bullet when it comes to swapping hues for dark mode, so be sure to take extra care when designing for dark mode.
+Winnie CSS makes working with colors predictable using the [Radix Color System](https://www.radix-ui.com/colors/docs/palette-composition/understanding-the-scale). There are 12 colors in each scale, each color has a specific purpose. However, there will be cases where these colors need to be adjusted to get things just right. There is no silver bullet when it comes to swapping hues for dark mode, so be sure to take extra care when designing for dark mode.
 
 | Step | Use Case                                 |
 | ---- | ---------------------------------------- |
@@ -77,8 +77,85 @@ export default function Root() {
 }
 ```
 
+Insert demo accent color demo here.
+
 Any color that Winnie CSS supports can be used as an accent color, including [custom colors](/css/docs/concepts/colors#customizing-colors).
 
 ## Customizing Colors
+
+When the default palette doesn't suit your needs you can customize any of the colors by overriding the CSS Variables.
+
+Luckily, the community has started to create some amazing tools for generating color palettes. Our color palette is based on the one defined by [Radix Color Palette Generator](https://www.radix-ui.com/colors/custom). We suggest you start there when it comes to configuring your brand color.
+
+Each color can be overridden using css variables defined in a global css file in your application. For example, if you want to define a custom `brand` color for your application you can do the following:
+
+```css title="global.css"
+:root,
+.light,
+.light-theme,
+[data-theme="light"] {
+  --wui-color-brand-1: #fcfdff;
+  --wui-color-brand-2: #f5f9ff;
+  --wui-color-brand-3: #eaf2ff;
+  --wui-color-brand-4: #dcebff;
+  --wui-color-brand-5: #cbe1ff;
+  --wui-color-brand-6: #b8d4ff;
+  --wui-color-brand-7: #9fc2fb;
+  --wui-color-brand-8: #7baaf6;
+  --wui-color-brand-9: #3b82f6;
+  --wui-color-brand-10: #2c74e9;
+  --wui-color-brand-11: #256cde;
+  --wui-color-brand-12: #123164;
+
+  --wui-color-brand-a1: #0055ff03;
+  --wui-color-brand-a2: #0066ff0a;
+  --wui-color-brand-a3: #0062ff15;
+  --wui-color-brand-a4: #006eff23;
+  --wui-color-brand-a5: #006cff34;
+  --wui-color-brand-a6: #0065ff47;
+  --wui-color-brand-a7: #005df560;
+  --wui-color-brand-a8: #005bee84;
+  --wui-color-brand-a9: #005df3c4;
+  --wui-color-brand-a10: #0057e5d3;
+  --wui-color-brand-a11: #0053d8da;
+  --wui-color-brand-a12: #002158ed;
+
+  --wui-color-brand-contrast: #fff;
+}
+
+.dark,
+.dark-theme,
+[data-theme="dark"] {
+  --wui-color-brand-1: #fcfdff;
+  --wui-color-brand-2: #f5f9ff;
+  --wui-color-brand-3: #eaf2ff;
+  --wui-color-brand-4: #dcebff;
+  --wui-color-brand-5: #cbe1ff;
+  --wui-color-brand-6: #b8d4ff;
+  --wui-color-brand-7: #9fc2fb;
+  --wui-color-brand-8: #7baaf6;
+  --wui-color-brand-9: #3b82f6;
+  --wui-color-brand-10: #2c74e9;
+  --wui-color-brand-11: #256cde;
+  --wui-color-brand-12: #123164;
+
+  --wui-color-brand-a1: #0055ff03;
+  --wui-color-brand-a2: #0066ff0a;
+  --wui-color-brand-a3: #0062ff15;
+  --wui-color-brand-a4: #006eff23;
+  --wui-color-brand-a5: #006cff34;
+  --wui-color-brand-a6: #0065ff47;
+  --wui-color-brand-a7: #005df560;
+  --wui-color-brand-a8: #005bee84;
+  --wui-color-brand-a9: #005df3c4;
+  --wui-color-brand-a10: #0057e5d3;
+  --wui-color-brand-a11: #0053d8da;
+  --wui-color-brand-a12: #002158ed;
+
+  --wui-color-brand-contrast: #fff;
+}
+```
+
+Once you have configured your custom brand color you can set `data-accent-color` to `brand` and all of your components will use that color as the accent.
 
 ## Dark Mode

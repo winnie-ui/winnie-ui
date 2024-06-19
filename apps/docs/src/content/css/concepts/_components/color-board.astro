@@ -2,14 +2,15 @@
 import ColorRow from "./color-row.astro";
 ---
 
-<div class="color-book">
+<div class="color-board">
   <slot />
 </div>
 
 <style>
-  .color-book {
+  .color-board {
     display: flex;
     flex-direction: column;
     gap: var(--wui-space-6);
+    margin-bottom: calc(80px * var(--wui-scale));
   }
 </style>
