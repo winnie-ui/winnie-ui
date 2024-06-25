@@ -1,6 +1,7 @@
-@import "@winnie-ui/css";
-@import "tailwindcss/preflight" layer(reset);
-@import "tailwindcss/utilities" layer(utilities);
+@import "@winnie-ui/css/layer";
+@import "@winnie-ui/css/reset";
+@import "@winnie-ui/css/base";
+@import "tailwindcss" layer(tailwind);
 
 @layer utilities {
   .winnie-ui {

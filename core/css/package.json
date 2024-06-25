@@ -9,8 +9,7 @@
     ".": "./src/index.css",
     "./layer": "./src/layer.css",
     "./reset": "./src/reset.css",
-    "./base": "./src/base/index.css",
-    "./components": "./src/components/index.css"
+    "./base": "./src/base/index.css"
   },
   "files": [
     "src",
