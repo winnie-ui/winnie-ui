@@ -1,0 +1,93 @@
+---
+import type { Color } from "./types";
+
+type Props = {
+  color: Color;
+  level: string;
+};
+
+const { color, level } = Astro.props;
+---
+
+<li class="color-chip">
+  <button
+    class="color-chip-button"
+    aria-label={`${color}: level ${level}`}
+    style={{
+      // @ts-ignore
+      "--wui-paint-chip-background": `var(--wui-color-accent-${level})`,
+    }}
+  >
+    <div class="color-chip-demo"></div>
+  </button>
+</li>
+
+<style is:global>
+  .color-chip {
+    height: 32px;
+    max-width: 48px;
+    width: 100%;
+    position: relative;
+
+    .color-chip-button {
+      background: var(--wui-color-white);
+      box-shadow: var(--wui-shadow-1);
+      perspective: 1000px;
+      transform-origin: center center;
+      transition-property: transform, box-shadow;
+      transition-duration: var(--wui-duration-3);
+      transition-timing-function: var(--wui-bezier-1);
+      height: 100%;
+      width: 100%;
+
+      /* &:is(:hover, :focus-visible) {
+      box-shadow: var(--wui-shadow-2);
+      transform: scale(1.2);
+      position: absolute;
+      z-index: 1;
+    }
+
+    &:focus-visible {
+      outline: var(--wui-border-width-2) solid var(--wui-color-accent-7);
+      outline-offset: 2px;
+    }
+
+    &:active {
+      box-shadow: none;
+      transform: scale(1);
+    } */
+
+      .color-chip-demo {
+        background:
+          linear-gradient(
+            var(--wui-paint-chip-background),
+            var(--wui-paint-chip-background)
+          ),
+          repeating-conic-gradient(
+              var(--block-background) 0% 25%,
+              var(--block-secondary-background) 0% 50%
+            )
+            50% / 14px 14px;
+
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  .color-row-content:not(.dark) {
+    .color-chip {
+      --block-secondary-background: var(--wui-color-white);
+      --block-background: var(--wui-color-grey-2);
+    }
+  }
+
+  .color-row-content.dark {
+    .color-chip {
+      .color-chip-demo {
+        --block-secondary-background: var(--wui-color-grey-1);
+        --block-background: var(--wui-color-grey-2);
+      }
+    }
+  }
+</style>
