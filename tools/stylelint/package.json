@@ -16,7 +16,7 @@
     "stylelint": "16.3.1"
   },
   "dependencies": {
-    "stylelint-config-recommended": "14.0.0"
+    "stylelint-config-recommended": "14.0.1"
   },
   "devDependencies": {
     "rimraf": "5.0.7",
