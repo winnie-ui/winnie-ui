@@ -4,6 +4,7 @@ export type ContentResponse = {
   description: string;
   body: string;
   slug: string;
+  href: string;
 };
 
 export type CollectionResponse = {
