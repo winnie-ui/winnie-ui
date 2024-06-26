@@ -117,7 +117,6 @@ export function SearchCommandMenu() {
                   return (
                     <Command.Item
                       key={item.id}
-                      className="search-command-menu-item"
                       onSelect={() => {
                         // This is a hacky way to make sure that we still trigger a view
                         // transition. If we try to us something like `window.location.href = href`
@@ -135,7 +134,14 @@ export function SearchCommandMenu() {
                       }}
                       asChild
                     >
-                      <a href={item.href}>{item.title}</a>
+                      <a href={item.href} className="search-command-menu-item">
+                        <span className="search-command-menu-item-title">
+                          {item.title}
+                        </span>
+                        <span className="search-command-menu-item-description">
+                          {item.description}
+                        </span>
+                      </a>
                     </Command.Item>
                   );
                 })}
