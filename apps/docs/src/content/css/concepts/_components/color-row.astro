@@ -26,27 +26,29 @@ const colorsAlpha = [
 ---
 
 <slot />
-<div class="color-grid">
+
+<div>
   <div class="color-row">
-    <span class="color-row-label">{color}</span>
-    <div>
-      <div class="color-row-content not-content">
-        {
-          colors.map((_, index) => {
-            return <span class="color-chip-label">{index + 1}</span>;
-          })
-        }
-      </div>
-      <ul class="color-row-content not-content" data-accent-color={color}>
-        {
-          colors.map((level) => {
-            return <ColorChip color={color} level={level} />;
-          })
-        }
-      </ul>
+    <span class="color-row-label">&nbsp;</span>
+    <div class="color-row-content not-content">
+      {
+        colors.map((_, index) => {
+          return <span class="color-chip-label">{index + 1}</span>;
+        })
+      }
     </div>
   </div>
 
+  <div class="color-row">
+    <span class="color-row-label">{color}</span>
+    <ul class="color-row-content not-content" data-accent-color={color}>
+      {
+        colors.map((level) => {
+          return <ColorChip color={color} level={level} />;
+        })
+      }
+    </ul>
+  </div>
   <div class="color-row">
     <span class="color-row-label">{color} Alpha</span>
     <ul class="color-row-content not-content" data-accent-color={color}>
