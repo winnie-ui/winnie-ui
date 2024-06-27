@@ -8,6 +8,7 @@ import {
 
 import { Command } from "cmdk";
 import Flexsearch from "flexsearch";
+import { Search } from "lucide-react";
 import {
   type CollectionResponse,
   type ContentResponse,
@@ -37,6 +38,11 @@ export function SearchCommandMenu() {
   const [items, setItems] = useState<ContentResponse[]>([]);
 
   /**
+   * tracks the current search term
+   */
+  const [searchTerm, setSearchTerm] = useState("");
+
+  /**
    * searches for the query in the indexes and maps the index to the content
    */
   const handleSearch = useCallback(
@@ -54,6 +60,7 @@ export function SearchCommandMenu() {
         }
       }
       setItems(items);
+      setSearchTerm(search);
     },
     [index, store],
   );
@@ -105,12 +112,16 @@ export function SearchCommandMenu() {
         <Modal className="search-modal">
           <Dialog className="search-dialog">
             <Command className="search-command-menu" shouldFilter={false}>
-              <Command.Input
-                onValueChange={handleSearch}
-                autoFocus
-                className="search-command-menu-input"
-                placeholder="Search docs..."
-              />
+              <div className="search-command-menu-input-container">
+                <Search />
+                <Command.Input
+                  value={searchTerm}
+                  onValueChange={handleSearch}
+                  autoFocus
+                  className="search-command-menu-input"
+                  placeholder="Search docs..."
+                />
+              </div>
               <Command.List className="search-command-menu-list">
                 <Command.Empty>No results found.</Command.Empty>
                 {items.map((item) => {

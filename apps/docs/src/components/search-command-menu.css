@@ -40,14 +40,29 @@
       width: 100%;
     }
 
-    .search-command-menu-input {
-      font-size: var(--wui-font-size-3);
-      font-family: var(--wui-font-family-sans);
+    .search-command-menu-input-container {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      gap: var(--wui-space-3);
+      color: var(--wui-color-grey-11);
       padding: var(--wui-space-4);
-      width: 100%;
 
-      &:placeholder {
-        color: var(--wui-color-grey-11);
+      & > svg {
+        --size: var(--wui-font-size-4);
+
+        height: var(--size);
+        width: var(--size);
+      }
+
+      .search-command-menu-input {
+        font-size: var(--wui-font-size-3);
+        font-family: var(--wui-font-family-sans);
+        width: 100%;
+
+        &:placeholder {
+          color: var(--wui-color-grey-11);
+        }
       }
     }
 
