@@ -60,7 +60,7 @@ export function NavigationListCollapsible({
     <Collapsible
       asChild
       key={`${item.label}`}
-      defaultOpen={hasCurrentItem}
+      defaultOpen
       onOpenChange={handleOpenChange}
     >
       <li>

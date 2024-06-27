@@ -8,8 +8,7 @@ export const prerender = true;
  * and organizes it in a way that can be easily indexed
  * for the purposes of searching
  */
-export const GET: APIRoute = async ({ url }) => {
-  console.log(url.pathname);
+export const GET: APIRoute = async () => {
   const collection = (await getCollection("css")).map((c, id) => {
     return {
       id,

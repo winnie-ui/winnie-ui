@@ -6,7 +6,7 @@ import {
   ModalOverlay,
 } from "react-aria-components";
 
-import { getMarkedDescription, getMarkedTitle } from "./get-marked-excerpt";
+import { getMarkedDescription, getMarkedTitle } from "./utils";
 import { Command } from "cmdk";
 import Flexsearch from "flexsearch";
 import { Search } from "lucide-react";
@@ -56,17 +56,28 @@ export function SearchCommandMenu() {
    */
   const handleSearch = useCallback(
     (search: string) => {
+      // escape the query
       const query = search.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
-
       const matchingIds = index.current.search(query);
-
       const items = [];
 
       for (const id of matchingIds) {
         const content = store.get(id as number);
         if (content) {
           const markedTitle = getMarkedTitle(content.title, search);
-          const markedDescription = getMarkedDescription(content.body, search);
+          const markedDescription = getMarkedDescription(
+            content.body
+              // Note: this is far from the most performant way to do this. But for now it is fine
+              // Also, cheers to GPT lol, regex stinx.
+              // prettier-ignore
+              // replace any braces from markdown and preserve the link text
+              .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1 - $2")
+              // replace any import lines with a blank string
+              .replace(/^import.*\n/gm, "")
+              // replace any jsx with a blank string
+              .replace(/<[^>]+>/g, ""),
+            search,
+          );
           items.push({
             id: content.id,
             title: markedTitle ?? content.title,
@@ -81,6 +92,10 @@ export function SearchCommandMenu() {
     [index, store],
   );
 
+  /**
+   * Handles opening the search command menu when the specified keyboard shortcut has
+   * been pressed
+   */
   const handleKeydown = useCallback((e: KeyboardEvent) => {
     if ((e.metaKey && e.key === "k") || e.key === "/") {
       e.preventDefault();
@@ -88,9 +103,25 @@ export function SearchCommandMenu() {
     }
   }, []);
 
+  const handleItemSelect = useCallback((href: string) => {
+    // This is a hacky way to make sure that we still trigger a view
+    // transition. If we try to us something like `window.location.href = href`
+    // the result is a bunch of jank from a full page reload, and we completely
+    // bypass the view transition lifecycle. So instead we are programmitcally
+    // click the anchor tag to remain in the lifecycle
+    (
+      document
+        .querySelector("[cmdk-root]")
+        ?.querySelector(`a[href='${href}']`) as HTMLAnchorElement
+    )?.click();
+    setOpen(false);
+    setSearchTerm("");
+    setItems([]);
+  }, []);
+
   /**
    * fetches content collections and listens to window keydown event
-   * for cmd + k
+   * for keyboard shortcut
    */
   useEffect(() => {
     /**
@@ -145,19 +176,7 @@ export function SearchCommandMenu() {
                     <Command.Item
                       key={item.id}
                       onSelect={() => {
-                        // This is a hacky way to make sure that we still trigger a view
-                        // transition. If we try to us something like `window.location.href = href`
-                        // the result is a bunch of jank from a full page reload, and we completely
-                        // bypass the view transition lifecycle. So instead we are programmitcally
-                        // click the anchor tag to remain in the lifecycle
-                        (
-                          document
-                            .querySelector("[cmdk-root]")
-                            ?.querySelector(
-                              `a[href='${item.href}']`,
-                            ) as HTMLAnchorElement
-                        )?.click();
-                        setOpen(false);
+                        handleItemSelect(item.href);
                       }}
                       asChild
                     >
