@@ -169,31 +169,40 @@ export function SearchCommandMenu() {
                   placeholder="Search docs..."
                 />
               </div>
-              <Command.List className="search-command-menu-list">
-                <Command.Empty>No results found.</Command.Empty>
-                {items.map((item) => {
-                  return (
-                    <Command.Item
-                      key={item.id}
-                      onSelect={() => {
-                        handleItemSelect(item.href);
-                      }}
-                      asChild
-                    >
-                      <a href={item.href} className="search-command-menu-item">
-                        <span
-                          className="search-command-menu-item-title"
-                          dangerouslySetInnerHTML={{ __html: item.title }}
-                        />
-                        <span
-                          className="search-command-menu-item-description"
-                          dangerouslySetInnerHTML={{ __html: item.description }}
-                        />
-                      </a>
-                    </Command.Item>
-                  );
-                })}
-              </Command.List>
+              {searchTerm === "" ? null : (
+                <Command.List className="search-command-menu-list">
+                  <>
+                    <Command.Empty>No Results found</Command.Empty>
+                    {items.map((item) => {
+                      return (
+                        <Command.Item
+                          key={item.id}
+                          onSelect={() => {
+                            handleItemSelect(item.href);
+                          }}
+                          asChild
+                        >
+                          <a
+                            href={item.href}
+                            className="search-command-menu-item"
+                          >
+                            <span
+                              className="search-command-menu-item-title"
+                              dangerouslySetInnerHTML={{ __html: item.title }}
+                            />
+                            <span
+                              className="search-command-menu-item-description"
+                              dangerouslySetInnerHTML={{
+                                __html: item.description,
+                              }}
+                            />
+                          </a>
+                        </Command.Item>
+                      );
+                    })}
+                  </>
+                </Command.List>
+              )}
             </Command>
           </Dialog>
         </Modal>
