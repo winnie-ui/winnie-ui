@@ -6,6 +6,7 @@ import {
   ModalOverlay,
 } from "react-aria-components";
 
+import { getMarkedDescription, getMarkedTitle } from "./get-marked-excerpt";
 import { Command } from "cmdk";
 import Flexsearch from "flexsearch";
 import { Search } from "lucide-react";
@@ -35,7 +36,15 @@ export function SearchCommandMenu() {
   /**
    * tracks the currently matching items of the search
    */
-  const [items, setItems] = useState<ContentResponse[]>([]);
+  const [items, setItems] = useState<
+    {
+      id: ContentResponse["id"];
+      title: ContentResponse["title"];
+      description: ContentResponse["description"];
+      href: ContentResponse["href"];
+      excerpt?: string;
+    }[]
+  >([]);
 
   /**
    * tracks the current search term
@@ -56,7 +65,14 @@ export function SearchCommandMenu() {
       for (const id of matchingIds) {
         const content = store.get(id as number);
         if (content) {
-          items.push(content);
+          const markedTitle = getMarkedTitle(content.title, search);
+          const markedDescription = getMarkedDescription(content.body, search);
+          items.push({
+            id: content.id,
+            title: markedTitle ?? content.title,
+            description: markedDescription ?? content.description,
+            href: content.href,
+          });
         }
       }
       setItems(items);
@@ -146,12 +162,14 @@ export function SearchCommandMenu() {
                       asChild
                     >
                       <a href={item.href} className="search-command-menu-item">
-                        <span className="search-command-menu-item-title">
-                          {item.title}
-                        </span>
-                        <span className="search-command-menu-item-description">
-                          {item.description}
-                        </span>
+                        <span
+                          className="search-command-menu-item-title"
+                          dangerouslySetInnerHTML={{ __html: item.title }}
+                        />
+                        <span
+                          className="search-command-menu-item-description"
+                          dangerouslySetInnerHTML={{ __html: item.description }}
+                        />
                       </a>
                     </Command.Item>
                   );

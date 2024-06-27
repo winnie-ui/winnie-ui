@@ -96,6 +96,16 @@
 
         .search-command-menu-item-description {
           font-size: var(--wui-font-size-2);
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        mark {
+          border-radius: var(--wui-border-radius-2);
+          background: var(--wui-color-accent-a4);
+          color: var(--wui-color-grey-12);
+          font-weight: var(--wui-font-weight-medium);
         }
       }
     }
