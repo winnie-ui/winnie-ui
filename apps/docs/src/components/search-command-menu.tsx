@@ -123,7 +123,6 @@ export function SearchCommandMenu() {
                         // the result is a bunch of jank from a full page reload, and we completely
                         // bypass the view transition lifecycle. So instead we are programmitcally
                         // click the anchor tag to remain in the lifecycle
-                        setOpen(false);
                         (
                           document
                             .querySelector("[cmdk-root]")
@@ -131,6 +130,7 @@ export function SearchCommandMenu() {
                               `a[href='${item.href}']`,
                             ) as HTMLAnchorElement
                         )?.click();
+                        setOpen(false);
                       }}
                       asChild
                     >
