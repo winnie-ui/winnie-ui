@@ -169,7 +169,9 @@ export function SearchCommandMenu() {
                   placeholder="Search docs..."
                 />
               </div>
-              {searchTerm === "" ? null : (
+              {searchTerm === "" ? (
+                <Command.List />
+              ) : (
                 <Command.List className="search-command-menu-list">
                   <>
                     <Command.Empty>No Results found</Command.Empty>
