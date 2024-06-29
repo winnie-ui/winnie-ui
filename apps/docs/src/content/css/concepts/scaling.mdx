@@ -2,3 +2,40 @@
 title: Scaling
 description: Change the density of your application.
 ---
+
+Often times users have a preference for the percieved size of elements in their application. Winnie supports this concept via the `data-scale` attribute. The scaling attribute modifies css values which affect the overall density of the layout in the application.
+
+```tsx title="root.tsx" ins="class="winnie-ui"" ins="data-scale="100%""
+export default function Root() {
+  return (
+    <html>
+      <head></head>
+      <body class="winnie-ui" data-scale="100%">
+        <App />
+      </body>
+    </html>
+  );
+}
+```
+
+## Scaling Factor
+
+Winnie provides a scaling factor token that you can use to create custom components that adhere to the overall density of your application.
+
+| Scaling | Factor |
+| ------- | ------ |
+| 90%     | 0.90   |
+| 95%     | 0.95   |
+| 100%    | 1.00   |
+| 105%    | 1.05   |
+| 110%    | 1.10   |
+
+Scaling factors can be used with the `calc` function in css.
+
+```css title="movie-card.css" ins="var(--wui-scale)"
+.movie-card {
+  height: calc(48px * var(--wui-scale));
+}
+```
+
+Putting this all together, we can create a component that scales across the diffferent factors seamlessly.

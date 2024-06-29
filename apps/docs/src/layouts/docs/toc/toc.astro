@@ -10,29 +10,29 @@ type Props = {
 const { headings } = Astro.props;
 ---
 
-<script></script>
+{
+  headings.length > 0 && (
+    <nav class="toc">
+      <div class="toc-header">
+        <AlignLeft />
+        <h2 class="toc-title">On this page</h2>
+      </div>
+      <ul class="toc-list">
+        {headings.map((heading) => {
+          if (heading.depth > 3) {
+            return null;
+          }
 
-<nav class="toc">
-  <div class="toc-header">
-    <AlignLeft />
-    <h2 class="toc-title">On this page</h2>
-  </div>
-  <ul class="toc-list">
-    {
-      headings.map((heading) => {
-        if (heading.depth > 3) {
-          return null;
-        }
-
-        return (
-          <li class="toc-list-item" data-level={heading.depth}>
-            <a href={`#${heading.slug}`}>{heading.text}</a>
-          </li>
-        );
-      })
-    }
-  </ul>
-</nav>
+          return (
+            <li class="toc-list-item" data-level={heading.depth}>
+              <a href={`#${heading.slug}`}>{heading.text}</a>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+  )
+}
 
 <style>
   .toc {

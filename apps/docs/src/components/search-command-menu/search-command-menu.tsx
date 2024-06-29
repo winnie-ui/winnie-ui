@@ -174,7 +174,15 @@ export function SearchCommandMenu() {
               ) : (
                 <Command.List className="search-command-menu-list">
                   <>
-                    <Command.Empty>No Results found</Command.Empty>
+                    <Command.Empty className="search-command-menu-empty">
+                      <Search />
+                      <div className="search-command-menu-empty-title">
+                        No docs found
+                      </div>
+                      <div className="search-command-menu-empty-description">
+                        We couldn't find docs with text matching "{searchTerm}"
+                      </div>
+                    </Command.Empty>
                     {items.map((item) => {
                       return (
                         <Command.Item
