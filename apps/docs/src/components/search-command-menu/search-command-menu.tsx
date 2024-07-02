@@ -70,12 +70,11 @@ export function SearchCommandMenu() {
               // Note: this is far from the most performant way to do this. But for now it is fine
               // Also, cheers to GPT lol, regex stinx.
               // prettier-ignore
-              // replace any braces from markdown and preserve the link text
-              .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1 - $2")
-              // replace any import lines with a blank string
-              .replace(/^import.*\n/gm, "")
-              // replace any jsx with a blank string
-              .replace(/<[^>]+>/g, ""),
+              .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1 - $2") // replace any braces from markdown and preserve the link text
+              .replace(/^import.*\n/gm, "") // replace any import lines with a blank string
+              .replace(/^\|.*\|$/gm, (line) => line.replace(/\|/g, "")) // Remove all | characters in lines starting and ending with |
+              .replace(/^\s*[-:]+\s*[-:|\s]*$/gm, "") // Remove lines that are just dashes or column separators
+              .replace(/<[^>]+>/g, ""), // replace any jsx with a blank string
             search,
           );
           items.push({
