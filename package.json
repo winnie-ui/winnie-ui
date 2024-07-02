@@ -8,7 +8,7 @@
   "scripts": {
     "build": "turbo run build",
     "clean": "turbo run clean && rimraf node_modules",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,yml,yaml}\"",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,yml,yaml,.md,.mdx}\"",
     "lint": "turbo run lint",
     "stylelint": "turbo run stylelint",
     "tsc": "turbo run tsc",

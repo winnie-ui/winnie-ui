@@ -55,7 +55,7 @@
     --ec-frm-trmDotsFg: var(--wui-color-grey-8);
     --ec-frm-trmTtbBg: var(--wui-ec-background);
     --ec-tm-insBg: var(--wui-color-accent-4);
-    --ec-tm-insBrdCol: var(--wui-color-accent-7);
+    --ec-tm-insBrdCol: var(--wui-color-accent-6);
     --ec-tm-markBg: var(--wui-color-accent-a3);
     --ec-tm-markBrdCol: var(--wui-color-accent-a8);
   }
