@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
+  Button,
   Dialog,
   DialogTrigger,
   Modal,
@@ -92,7 +93,7 @@ export function SearchCommandMenu() {
   );
 
   /**
-   * Handles opening the search command menu when the specified keyboard shortcut has
+   * opens the search command menu when the specified keyboard shortcut has
    * been pressed
    */
   const handleKeydown = useCallback((e: KeyboardEvent) => {
@@ -102,21 +103,48 @@ export function SearchCommandMenu() {
     }
   }, []);
 
-  const handleItemSelect = useCallback((href: string) => {
-    // This is a hacky way to make sure that we still trigger a view
-    // transition. If we try to us something like `window.location.href = href`
-    // the result is a bunch of jank from a full page reload, and we completely
-    // bypass the view transition lifecycle. So instead we are programmitcally
-    // click the anchor tag to remain in the lifecycle
-    (
-      document
-        .querySelector("[cmdk-root]")
-        ?.querySelector(`a[href='${href}']`) as HTMLAnchorElement
-    )?.click();
-    setOpen(false);
+  /**
+   * handles resetting the search command menu
+   */
+  const reset = useCallback(() => {
     setSearchTerm("");
     setItems([]);
   }, []);
+
+  /**
+   * navigates to the item href route based on the selection
+   */
+  const handleItemSelect = useCallback(
+    (href: string) => {
+      // This is a hacky way to make sure that we still trigger a view
+      // transition. If we try to us something like `window.location.href = href`
+      // the result is a bunch of jank from a full page reload, and we completely
+      // bypass the view transition lifecycle. So instead we are programmitcally
+      // click the anchor tag to remain in the lifecycle
+      (
+        document
+          .querySelector("[cmdk-root]")
+          ?.querySelector(`a[href='${href}']`) as HTMLAnchorElement
+      )?.click();
+      setOpen(false);
+      reset();
+    },
+    [reset],
+  );
+
+  /**
+   * handles resetting the search command menu when the dialog closes
+   */
+  const handleOnOpenChange = useCallback(
+    (open: boolean) => {
+      if (!open) {
+        reset();
+      }
+
+      setOpen(open);
+    },
+    [reset],
+  );
 
   /**
    * fetches content collections and listens to window keydown event
@@ -153,7 +181,14 @@ export function SearchCommandMenu() {
   }, [index]);
 
   return (
-    <DialogTrigger isOpen={open} onOpenChange={setOpen}>
+    <DialogTrigger isOpen={open} onOpenChange={handleOnOpenChange}>
+      <Button className="search-trigger">
+        <div className="search-trigger-text-container">
+          <Search />
+          <span className="search-trigger-text">Search docs...</span>
+        </div>
+        <kbd className="search-trigger-kbd">/</kbd>
+      </Button>
       <ModalOverlay className="search-modal-overlay" isDismissable>
         <Modal className="search-modal">
           <Dialog className="search-dialog">

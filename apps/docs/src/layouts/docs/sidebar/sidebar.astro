@@ -2,6 +2,7 @@
 import type { NavigationItem } from "./components/navigation/types";
 import { ThemePickerPopover } from "./components/theme-picker/theme-picker-popover";
 import { Navigation } from "./components/navigation/navigation";
+import { SearchCommandMenu } from "~/components/search-command-menu/search-command-menu";
 
 type Props = {
   slug: string;
@@ -116,6 +117,7 @@ const navigation = [
     -->
     <ThemePickerPopover client:load />
   </div>
+  <SearchCommandMenu client:load transition:persist />
   <Navigation
     client:load
     transition:persist

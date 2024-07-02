@@ -1,8 +1,6 @@
 ---
 import type { MarkdownHeading } from "astro";
 
-import { SearchCommandMenu } from "~/components/search-command-menu/search-command-menu";
-
 import TableOfContents from "./toc/toc.astro";
 
 type Props = {
@@ -14,7 +12,6 @@ type Props = {
 const { title, description, headings } = Astro.props;
 ---
 
-<SearchCommandMenu client:load transition:persist />
 <main class="wui-docs-layout-content">
   <div class="wui-docs-content-paper" transition:animate="none">
     <article class="wui-docs-content-paper-article">
