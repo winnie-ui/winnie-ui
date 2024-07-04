@@ -1,0 +1,50 @@
+---
+import ColorRowHeader from "./color-row-header.astro";
+import ColorRow from "./color-row.astro";
+import ColorRowAlpha from "./color-row-alpha.astro";
+import type { Color } from "./types";
+
+type Props = {
+  color: Color;
+};
+
+const { color } = Astro.props;
+---
+
+<slot />
+
+<div>
+  <ColorRowHeader />
+  <ColorRow color={color} />
+  <ColorRowAlpha color={color} />
+  <ColorRow color={color} mode="dark" />
+  <ColorRowAlpha color={color} mode="dark" />
+</div>
+
+<style is:global>
+  .color-row {
+    display: grid;
+    grid-template-columns: calc(130px * var(--wui-scale)) 1fr;
+    margin-bottom: 1px;
+
+    .color-row-label {
+      align-self: center;
+      color: var(--wui-color-grey-11);
+      font-size: var(--wui-font-size-2);
+      text-transform: capitalize;
+    }
+
+    .color-row-content {
+      display: grid;
+      gap: 1px;
+      grid-template-columns: repeat(12, 1fr);
+
+      .color-chip-label {
+        color: var(--wui-color-grey-11);
+        font-size: var(--wui-font-size-2);
+        margin-bottom: var(--wui-space-2);
+        text-align: center;
+      }
+    }
+  }
+</style>

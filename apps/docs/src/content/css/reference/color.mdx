@@ -3,7 +3,10 @@ title: Color
 description: Variables for changing an elements color
 ---
 
+import ColorBlock from "./_components/color-block.astro";
 import ColorBoard from "./_components/color-board.astro";
+import ColorRowAlpha from "./_components/color-row-alpha.astro";
+import ColorRowHeader from "./_components/color-row-header.astro";
 import ColorRow from "./_components/color-row.astro";
 
 ## Scales
@@ -12,34 +15,39 @@ Winnie CSS includes a default set of colors that is a great place to start when 
 
 {/* prettier-ignore */}
 <ColorBoard>
-  <ColorRow color="grey">
+  <ColorBlock color="grey">
     ### Grey
-  </ColorRow>
-  <ColorRow color="brand">
+  </ColorBlock>
+  <ColorBlock color="brand">
     ### Brand
-  </ColorRow>
-  <ColorRow color="red">
+  </ColorBlock>
+  <ColorBlock color="red">
     ### Red
-  </ColorRow>
-  <ColorRow color="orange">
+  </ColorBlock>
+  <ColorBlock color="orange">
     ### Orange
-  </ColorRow>
-  <ColorRow color="yellow">
+  </ColorBlock>
+  <ColorBlock color="yellow">
     ### Yellow
-  </ColorRow>
-  <ColorRow color="green">
+  </ColorBlock>
+  <ColorBlock color="green">
     ### Green
-  </ColorRow>
-  <ColorRow color="blue">
+  </ColorBlock>
+  <ColorBlock color="blue">
     ### Blue
-  </ColorRow>
-  <ColorRow color="purple">
+  </ColorBlock>
+  <ColorBlock color="purple">
     ### Purple
-  </ColorRow>
-  <ColorRow color="pink">
+  </ColorBlock>
+  <ColorBlock color="pink">
     ### Pink
-  </ColorRow>
-  ### TODO Black and White
+  </ColorBlock>
+  <div>
+    ### Mono 
+    <ColorRowHeader />
+    <ColorRowAlpha color="black" />
+    <ColorRowAlpha color="white" mode="dark"/>
+  </div>
 </ColorBoard>
 
 ## Working with Color Scales

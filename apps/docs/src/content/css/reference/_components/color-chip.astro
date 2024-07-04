@@ -13,9 +13,14 @@ const { color, level } = Astro.props;
   <button
     class="color-chip-button"
     aria-label={`${color}: level ${level}`}
+    data-color={color}
     style={{
       // @ts-ignore
       "--wui-paint-chip-background": `var(--wui-color-accent-${level})`,
+      "--wui-mono":
+        color === "black" || color === "white"
+          ? `var(--wui-color-${color}-${level})`
+          : undefined,
     }}
   >
     <div class="color-chip-demo"></div>
@@ -60,8 +65,8 @@ const { color, level } = Astro.props;
       .color-chip-demo {
         background:
           linear-gradient(
-            var(--wui-paint-chip-background),
-            var(--wui-paint-chip-background)
+            var(--wui-mono, var(--wui-paint-chip-background)),
+            var(--wui-mono, var(--wui-paint-chip-background))
           ),
           repeating-conic-gradient(
               var(--block-background) 0% 25%,
