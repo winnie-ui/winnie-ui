@@ -227,6 +227,10 @@ const { title, description, headings } = Astro.props;
         @media (min-width: 1280px) {
           display: block;
         }
+
+        &:not(:has(a)) {
+          display: none;
+        }
       }
     }
   }

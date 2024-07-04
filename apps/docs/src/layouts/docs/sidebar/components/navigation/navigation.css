@@ -1,3 +1,4 @@
 .wui-navigation {
   margin-right: calc(-1 * var(--wui-space-4));
+  flex: 1;
 }

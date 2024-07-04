@@ -108,16 +108,13 @@ const navigation = [
     <div class="wui-logo">
       <span class="wui-logo-company">Winnie</span>
       <span class="wui-logo-separator"></span>
-      <span class="wui-logo-app">Docs</span>
+      <span class="wui-logo-app">CSS</span>
     </div>
-    <!--
-    Commenting this out for now since this site is not server rendered
-    we cannot easily store the users current theme settings. In the future we could
-    probably do this, but for now we will not server render it just to save some money.
-    -->
     <ThemePickerPopover client:load />
   </div>
-  <SearchCommandMenu client:load transition:persist />
+  <div class="wui-docs-sidebar-search">
+    <SearchCommandMenu client:load transition:persist />
+  </div>
   <Navigation
     client:load
     transition:persist
@@ -133,7 +130,6 @@ const navigation = [
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding-bottom: var(--wui-space-6);
     position: fixed;
     width: calc(
       var(--wui-docs-layout-sidebar-width) - calc(16px * var(--wui-scale))
@@ -161,6 +157,7 @@ const navigation = [
         .wui-logo-separator {
           background: var(--wui-color-grey-8);
           height: var(--wui-space-5);
+          transform: rotate(20deg);
           width: 1px;
         }
 
@@ -169,6 +166,11 @@ const navigation = [
           font-size: var(--wui-font-size-3);
         }
       }
+    }
+
+    .wui-docs-sidebar-search {
+      padding-left: var(--wui-space-5);
+      width: 100;
     }
   }
 </style>
