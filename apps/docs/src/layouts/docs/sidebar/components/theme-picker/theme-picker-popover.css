@@ -32,7 +32,7 @@
   border-radius: min(var(--wui-border-radius-3), 20px);
   box-shadow: var(--wui-shadow-3);
   overflow: auto;
-  width: 275px;
+  width: calc(var(--wui-docs-layout-sidebar-width) - var(--wui-space-6));
 
   & > section {
     outline: none;
