@@ -10,6 +10,9 @@ export default defineConfig({
   site: "https://example.com",
   output: "server",
   adapter: aws(),
+  redirects: {
+    "/": "/css/docs/start/quick-start"
+  },
   integrations: [
     expressiveCode({
       frames: {

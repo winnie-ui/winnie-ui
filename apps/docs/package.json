@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "astro": "astro",
-    "build": "astro check && astro build",
+    "build": "rimraf dist .astro && astro check && astro build",
     "clean": "rimraf node_modules dist .astro",
     "dev": "astro dev",
     "dev:sst": "sst dev astro dev",
@@ -24,18 +24,18 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@winnie-ui/css": "workspace:*",
-    "astro": "^4.11.1",
+    "astro": "^4.11.5",
     "astro-expressive-code": "^0.35.3",
     "astro-sst": "2.43.3",
     "clsx": "2.1.1",
     "cmdk": "1.0.0",
     "flexsearch": "0.7.43",
-    "lucide-react": "0.396.0",
+    "lucide-react": "0.400.0",
     "react": "^18.3.1",
     "react-aria-components": "1.2.1",
     "react-dom": "^18.3.1",
     "sst": "ion",
-    "typescript": "^5.5.2"
+    "typescript": "^5.5.3"
   },
   "devDependencies": {
     "@types/flexsearch": "0.7.6",

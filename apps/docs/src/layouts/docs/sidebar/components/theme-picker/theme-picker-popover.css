@@ -11,7 +11,7 @@
   width: calc(34px * var(--wui-scale));
 
   &:where([data-state="open"], [data-pressed], [data-hovered]) {
-    background: var(--wui-color-accent-5);
+    background: var(--wui-color-accent-4);
   }
 
   &[focus-visible] {
