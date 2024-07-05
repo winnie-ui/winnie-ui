@@ -1,0 +1,95 @@
+---
+import { Code } from "astro-expressive-code/components";
+import { DemoTabs } from "./demo-tabs";
+
+type Props = {
+  tsx: string;
+  css: string;
+};
+
+const { tsx, css } = Astro.props;
+---
+
+<div class="demo not-content">
+  <header class="demo-header">
+    <slot name="header" />
+  </header>
+  <main class="background-polka demo-content">
+    <slot />
+  </main>
+  <div class="demo-footer">
+    <!-- not sure how to type slots -->
+    <!-- @ts-expect-error -->
+    <DemoTabs client:load>
+      <Code slot="tsx" lang="tsx" code={tsx} />
+      <Code slot="css" lang="css" code={css} />
+    </DemoTabs>
+  </div>
+</div>
+
+<style>
+  .demo {
+    --border-radius: min(var(--wui-border-radius-3), 15px);
+    --border-color: var(--wui-color-grey-5);
+
+    border: var(--wui-border-width-1) solid var(--border-color);
+    border-radius: var(--border-radius);
+
+    .demo-header {
+      display: none;
+
+      &:has(*) {
+        display: block;
+        padding: var(--wui-space-3);
+        border-bottom: var(--wui-border-width-1) solid var(--border-color);
+      }
+    }
+
+    .demo-content {
+      background-color: var(--demo-content-background);
+      background-image: radial-gradient(
+        var(--wui-color-grey-4) 1px,
+        var(--wui-color-white) 1px
+      );
+      background-size: 10px 10px;
+      padding: var(--wui-space-6);
+      border-radius: var(--border-radius);
+      position: relative;
+    }
+
+    .demo-footer {
+      display: block;
+      border-top: var(--wui-border-width-1) solid var(--border-color);
+
+      .expressive-code {
+        margin: 0;
+        pre {
+          background: var(--demo-code-background);
+          border: none;
+          border-radius: 0;
+          border-bottom-left-radius: var(--border-radius);
+          border-bottom-right-radius: var(--border-radius);
+        }
+      }
+    }
+  }
+
+  :global(:is([data-theme="light"])) {
+    .demo {
+      .demo-content {
+        --demo-content-background: var(--wui-color-white);
+      }
+      .demo-footer {
+        --demo-code-background: var(--wui-color-grey-2);
+      }
+    }
+  }
+
+  :global(:is([data-theme="dark"])) {
+    .demo {
+      .demo-footer {
+        --demo-code-background: var(--wui-color-grey-1);
+      }
+    }
+  }
+</style>

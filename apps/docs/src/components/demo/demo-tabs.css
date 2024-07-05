@@ -1,0 +1,38 @@
+.wui-demo-tabs {
+  .wui-demo-tab-list {
+    background: var(--demo-code-background);
+    border-bottom: var(--wui-border-width-1) solid var(--wui-color-grey-5);
+    align-items: center;
+    display: flex;
+    gap: var(--wui-space-2);
+    padding-block: var(--wui-space-2);
+    padding-left: var(--wui-space-4);
+
+    .wui-demo-tab {
+      align-items: center;
+      border-radius: var(--wui-border-radius-2);
+      cursor: default;
+      display: flex;
+      font-size: var(--wui-font-size-2);
+      line-height: var(--wui-line-height-4);
+      outline: none;
+      padding-inline: var(--wui-space-3);
+      position: relative;
+      text-align: center;
+
+      &[data-selected]:before {
+        background: var(--wui-color-accent-9);
+        bottom: calc(-1 * var(--wui-space-2));
+        content: "";
+        left: 0;
+        height: var(--wui-border-width-2);
+        position: absolute;
+        width: 100%;
+      }
+
+      &[data-hovered] {
+        background: var(--wui-color-grey-4);
+      }
+    }
+  }
+}
