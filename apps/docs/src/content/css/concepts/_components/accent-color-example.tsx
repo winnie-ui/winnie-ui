@@ -98,7 +98,7 @@ export function AccentColorExample() {
                     <header className="ace-example-header">
                       <div className="ace-example-title">Dalton Varsho</div>
                       <div className="ace-example-description">
-                        OPS and batting average by per month.
+                        OPS and batting average by month.
                       </div>
                     </header>
                     <div className="ace-example-chart">

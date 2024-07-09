@@ -89,7 +89,10 @@ export function BaseballPlayerChart() {
           axisLine={false}
           tickMargin={8}
           tickFormatter={(value) => value.slice(0, 3)}
-          tick={{ fontSize: "var(--wui-font-size-2)" }}
+          tick={{
+            fontSize: "var(--wui-font-size-2)",
+            color: "var(--wui-color-grey-11)",
+          }}
         />
         <RechartTooltip cursor={false} content={<TooltipContent />} />
         <Area
