@@ -1,0 +1,51 @@
+.chart {
+  outline: none;
+
+  .recharts-surface {
+    outline: none;
+  }
+}
+
+.chart-axis {
+  background: red;
+
+  .recharts-cartesian-axis-tick {
+    color: red;
+  }
+}
+
+.chart-tooltip-content {
+  background: var(--wui-color-white);
+  box-shadow: var(--wui-shadow-2);
+  padding: var(--wui-space-3);
+
+  .chart-tooltip-label {
+    color: var(--wui-color-grey-12);
+    font-weight: var(--wui-font-weight-medium);
+    font-size: var(--wui-font-size-2);
+  }
+
+  .chart-tooltip-item-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wui-space-2);
+    margin-top: var(--wui-space-4);
+
+    .chart-tooltip-item {
+      align-items: center;
+      color: var(--wui-color-grey-11);
+      font-size: var(--wui-font-size-1);
+      gap: var(--wui-space-2);
+      display: flex;
+
+      .chart-tooltip-item-indicator {
+        --size: var(--wui-font-size-2);
+
+        background: var(--item-background);
+        border-radius: var(--wui-border-radius-1);
+        height: var(--size);
+        width: var(--size);
+      }
+    }
+  }
+}
