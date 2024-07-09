@@ -34,6 +34,7 @@
     "react": "^18.3.1",
     "react-aria-components": "1.2.1",
     "react-dom": "^18.3.1",
+    "recharts": "2.12.7",
     "sst": "ion",
     "typescript": "^5.5.3"
   },

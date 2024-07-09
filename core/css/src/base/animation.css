@@ -5,7 +5,9 @@
     --wui-duration-2: 200ms;
     --wui-duration-3: 300ms;
     --wui-duration-4: 500ms;
+    --wui-duration-5: 800ms;
     --wui-bezier-1: cubic-bezier(0.16, 1, 0.3, 1);
+    --wui-linear-1: linear;
   }
 
   @keyframes wui-collapsible-down {

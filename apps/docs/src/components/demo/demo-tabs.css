@@ -11,6 +11,7 @@
     .wui-demo-tab {
       align-items: center;
       border-radius: var(--wui-border-radius-2);
+      color: var(--wui-color-grey-12);
       cursor: default;
       display: flex;
       font-size: var(--wui-font-size-2);
