@@ -13,7 +13,7 @@ import {
   XAxis,
 } from "recharts";
 
-import "./area-chart.css";
+import "./baseball-player-chart.css";
 
 const CHART_DATA = [
   { month: "April", ops: 186, bpct: 80 },

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Radio, RadioGroup } from "react-aria-components";
 
-import { BaseballPlayerChart } from "./area-chart";
+import { BaseballPlayerChart } from "./baseball-player-chart";
 
 import "./accent-color-example.css";
 
@@ -96,9 +96,10 @@ export function AccentColorExample() {
                 <div className="ace-content-example">
                   <div className="ace-example">
                     <header className="ace-example-header">
-                      <div className="ace-example-title">Dalton Varsho</div>
+                      <div className="ace-example-title">Daulton Varsho</div>
                       <div className="ace-example-description">
-                        OPS and batting average by month.
+                        Showing total On-base Percentage and Batting Average by
+                        month
                       </div>
                     </header>
                     <div className="ace-example-chart">
