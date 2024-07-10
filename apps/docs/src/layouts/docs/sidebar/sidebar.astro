@@ -127,7 +127,7 @@ const navigation = [
 <style>
   .wui-docs-sidebar {
     background: var(--wui-docs-layout-background);
-    display: flex;
+    display: none;
     flex-direction: column;
     height: 100%;
     position: fixed;
@@ -171,6 +171,10 @@ const navigation = [
     .wui-docs-sidebar-search {
       padding-left: var(--wui-space-5);
       width: 100;
+    }
+
+    @media (min-width: 768px) {
+      display: flex;
     }
   }
 </style>

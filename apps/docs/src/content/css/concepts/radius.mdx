@@ -3,6 +3,11 @@ title: Radius
 description: Adjust the feeling of your application by changing the radius of corners.
 ---
 
+import radiusExampleCss from "./_components/radius-example.css?raw";
+import { RadiusExample } from "./_components/radius-example.tsx";
+import radiusExampleTsx from "./_components/radius-example.tsx?raw";
+import Demo from "~/components/demo/demo.astro";
+
 Corner radius drastically changes the feel of an application. Larger radius' make applications feel soft, where as no radius makes an application feel sharp and edgy.
 
 Winnie allows you to adjust the corner radius of elements using the `data-radius` attribute. This means that any elements styled using the `--wui-radius-<value>` variables will react to changes in this attribute.
@@ -40,4 +45,10 @@ Corner radius variables can be applied to the `border-radius` property in css.
 }
 ```
 
-Putting this all together, we can create a button whose personality changes based on the radius factor.
+## Example
+
+Putting this all together, we can create a interfaces whose personality changes based on the radius factor.
+
+<Demo tsx={radiusExampleTsx} css={radiusExampleCss}>
+  <RadiusExample client:load />
+</Demo>

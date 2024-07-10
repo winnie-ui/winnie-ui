@@ -25,7 +25,7 @@ const CHART_DATA = [
 ];
 
 const LABEL_MAP = {
-  ops: "On-base Plus Slugging",
+  ops: "On-base Percentage",
   bpct: "Batting Average",
 };
 
