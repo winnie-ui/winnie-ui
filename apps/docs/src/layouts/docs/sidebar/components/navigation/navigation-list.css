@@ -2,12 +2,8 @@
   list-style: none;
 
   &[data-level="0"] {
-    padding-right: var(--wui-space-4);
     padding-left: var(--wui-space-5);
-  }
-
-  &[data-level="1"] {
-    padding-left: var(--wui-space-5);
+    padding-right: var(--wui-sidebar-inline-padding);
   }
 
   .navigation-list-item {
@@ -36,6 +32,10 @@
       .chevron {
         transform: rotate(90deg);
       }
+    }
+
+    &[data-level="1"] {
+      padding-left: var(--wui-space-5);
     }
 
     &:is(

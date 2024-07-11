@@ -39,6 +39,7 @@ export function NavigationList({
             <a
               href={item.link}
               className="navigation-list-item"
+              data-level={level}
               data-current={isCurrent}
               aria-current={isCurrent}
             >

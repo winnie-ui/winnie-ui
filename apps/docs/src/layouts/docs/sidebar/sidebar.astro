@@ -126,20 +126,27 @@ const navigation = [
 
 <style>
   .wui-docs-sidebar {
-    background: var(--wui-docs-layout-background);
-    display: none;
-    flex-direction: column;
+    --wui-docs-layout-sidebar-mobile-height: 70px;
+    --wui-sidebar-inline-padding: var(--wui-space-5);
+
+    background: var(--wui-color-white);
     height: 100%;
+    flex-direction: column;
+    overflow: hidden;
     position: fixed;
-    width: calc(
-      var(--wui-docs-layout-sidebar-width) - calc(16px * var(--wui-scale))
-    );
+    width: 100%;
+    z-index: 1;
+
+    @media (min-width: 768px) {
+      background: var(--wui-docs-layout-background);
+      display: flex;
+      width: var(--wui-docs-layout-sidebar-width);
+      z-index: 0;
+    }
 
     .wui-docs-sidebar-header {
       display: flex;
-      padding-bottom: var(--wui-space-6);
-      padding-left: var(--wui-space-6);
-      padding-top: var(--wui-space-6);
+      padding: var(--wui-space-5) var(--wui-sidebar-inline-padding);
 
       .wui-logo {
         align-items: center;
@@ -169,12 +176,8 @@ const navigation = [
     }
 
     .wui-docs-sidebar-search {
-      padding-left: var(--wui-space-5);
-      width: 100;
-    }
-
-    @media (min-width: 768px) {
-      display: flex;
+      padding-inline: var(--wui-sidebar-inline-padding);
+      width: 100%;
     }
   }
 </style>

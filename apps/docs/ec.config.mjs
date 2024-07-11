@@ -1,4 +1,3 @@
-import expressiveCode from "astro-expressive-code";
 import { addClassName } from "astro-expressive-code/hast";
 
 export default {

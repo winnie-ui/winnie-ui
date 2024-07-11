@@ -200,7 +200,7 @@ export function SearchCommandMenu() {
                   onValueChange={handleSearch}
                   autoFocus
                   className="search-command-menu-input"
-                  placeholder="Search docs..."
+                  placeholder="Search docs or ask a question..."
                 />
               </div>
               {searchTerm === "" ? (
@@ -217,6 +217,9 @@ export function SearchCommandMenu() {
                         We couldn't find docs with text matching "{searchTerm}"
                       </div>
                     </Command.Empty>
+                    <Command.Item value="ai">
+                      TBD Ask AI your questions
+                    </Command.Item>
                     {items.map((item) => {
                       return (
                         <Command.Item
