@@ -5,6 +5,7 @@
     padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: greyscale;
+    -webkit-tap-highlight-color: transparent;
   }
 
   ::selection {

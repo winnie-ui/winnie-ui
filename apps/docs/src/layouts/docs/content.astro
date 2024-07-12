@@ -43,7 +43,7 @@ const { title, description, headings } = Astro.props;
     }
 
     .wui-docs-content-paper {
-      --wui-docs-content-paper-padding-block: calc(120px + var(--wui-space-4));
+      --wui-docs-content-paper-padding-block: calc(112px + var(--wui-space-4));
 
       align-items: flex-start;
       background: var(--wui-color-white-a11);
@@ -53,8 +53,8 @@ const { title, description, headings } = Astro.props;
       display: flex;
       gap: var(--wui-space-9);
       padding-inline: var(--wui-space-6);
-      padding-top: var(--wui-docs-content-paper-padding-block);
-      padding-bottom: var(--wui-space-9);
+      margin-top: var(--wui-docs-content-paper-padding-block);
+      padding-top: var(--wui-space-6);
       min-height: 100%;
       position: relative;
 
@@ -66,6 +66,7 @@ const { title, description, headings } = Astro.props;
         box-shadow: -2px 0 8px -2px hsl(var(--wui-shadow-color) /
               calc(var(--wui-shadow-strength) + 10%));
         padding-inline: var(--wui-space-9);
+        margin-top: 0;
       }
 
       @media (min-width: 1024px) {

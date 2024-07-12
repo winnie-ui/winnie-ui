@@ -1,5 +1,5 @@
 ---
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Menu } from "lucide-react";
 
 import type { NavigationItem } from "./components/navigation/types";
 import { ThemePickerPopover } from "./components/theme-picker/theme-picker-popover";
@@ -138,8 +138,11 @@ for (const section of navigation) {
     <div class="wui-mobile-title-container">
       <span class="wui-mobile-section">{sectionTitle}</span>
       <ChevronRight />
-      <span class="wui-mobile-page">{pageTitle}</span>
+      <span class="wui-mobile-page"
+        >{pageTitle}asdfasdfasdfasdfasdfasdfddddddddddddd</span
+      >
     </div>
+    <Menu />
   </label>
   <div class="wui-docs-sidebar-search">
     <SearchCommandMenu client:load transition:persist />
@@ -179,7 +182,6 @@ for (const section of navigation) {
       display: flex;
       height: 100%;
       width: var(--wui-docs-layout-sidebar-width);
-      z-index: 0;
     }
 
     .wui-docs-navigation-container {
@@ -232,6 +234,15 @@ for (const section of navigation) {
         font-size: var(--wui-font-size-2);
         font-weight: var(--wui-font-weight-medium);
         flex: 1;
+        overflow: hidden;
+        padding-right: var(--wui-space-4);
+        white-space: nowrap;
+
+        .wui-mobile-page {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
 
         & > svg {
           --size: calc(16px * var(--wui-scale));
@@ -239,6 +250,15 @@ for (const section of navigation) {
           height: var(--size);
           width: var(--size);
         }
+      }
+
+      & > svg {
+        --size: var(--wui-font-size-5);
+
+        color: var(--wui-color-grey-11);
+        margin-right: var(--wui-space-3);
+        height: var(--size);
+        width: var(--size);
       }
 
       @media (min-width: 768px) {
