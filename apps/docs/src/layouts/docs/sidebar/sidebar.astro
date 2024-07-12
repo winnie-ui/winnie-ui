@@ -1,4 +1,6 @@
 ---
+import { ChevronRight } from "lucide-react";
+
 import type { NavigationItem } from "./components/navigation/types";
 import { ThemePickerPopover } from "./components/theme-picker/theme-picker-popover";
 import { Navigation } from "./components/navigation/navigation";
@@ -101,6 +103,21 @@ const navigation = [
     ],
   },
 ] satisfies NavigationItem[];
+
+const { slug } = Astro.props;
+
+let sectionTitle = "Unknown Section";
+let pageTitle = "Unknown Title";
+
+for (const section of navigation) {
+  for (const page of section.items) {
+    if (page.link === `/css/docs/${slug}`) {
+      sectionTitle = section.label;
+      pageTitle = page.label;
+      break;
+    }
+  }
+}
 ---
 
 <nav class="wui-docs-sidebar">
@@ -112,6 +129,18 @@ const navigation = [
     </div>
     <ThemePickerPopover client:load />
   </div>
+  <input type="checkbox" id="docs-menu-toggle" class="wui-docs-mobile-toggle" />
+  <label
+    class="wui-docs-sidebar-mobile-header"
+    for="docs-menu-toggle"
+    aria-label="Toggle Docs Menu"
+  >
+    <div class="wui-mobile-title-container">
+      <span class="wui-mobile-section">{sectionTitle}</span>
+      <ChevronRight />
+      <span class="wui-mobile-page">{pageTitle}</span>
+    </div>
+  </label>
   <div class="wui-docs-sidebar-search">
     <SearchCommandMenu client:load transition:persist />
   </div>
@@ -130,18 +159,31 @@ const navigation = [
     --wui-sidebar-inline-padding: var(--wui-space-5);
 
     background: var(--wui-color-white);
-    height: 100%;
     flex-direction: column;
     overflow: hidden;
+    display: flex;
     position: fixed;
     width: 100%;
     z-index: 1;
 
+    &:has(#docs-menu-toggle:checked) {
+      height: 100%;
+
+      .wui-navigation {
+        display: block;
+      }
+    }
+
     @media (min-width: 768px) {
       background: var(--wui-docs-layout-background);
       display: flex;
+      height: 100%;
       width: var(--wui-docs-layout-sidebar-width);
       z-index: 0;
+    }
+
+    .wui-docs-navigation-container {
+      display: none;
     }
 
     .wui-docs-sidebar-header {
@@ -175,9 +217,52 @@ const navigation = [
       }
     }
 
+    .wui-docs-sidebar-mobile-header {
+      display: flex;
+      border-bottom: var(--wui-border-width-1) solid var(--wui-color-grey-5);
+      padding-top: var(--wui-space-4);
+      padding-bottom: var(--wui-space-5);
+      padding-inline: var(--wui-space-5);
+
+      .wui-mobile-title-container {
+        align-items: center;
+        color: var(--wui-color-grey-11);
+        display: flex;
+        gap: var(--wui-space-2);
+        font-size: var(--wui-font-size-2);
+        font-weight: var(--wui-font-weight-medium);
+        flex: 1;
+
+        & > svg {
+          --size: calc(16px * var(--wui-scale));
+          color: var(--wui-color-grey-8);
+          height: var(--size);
+          width: var(--size);
+        }
+      }
+
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
+
     .wui-docs-sidebar-search {
+      display: none;
       padding-inline: var(--wui-sidebar-inline-padding);
       width: 100%;
+
+      @media (min-width: 768px) {
+        display: block;
+      }
+    }
+
+    .wui-navigation {
+      display: none;
+      user-select: none;
+
+      @media (min-width: 768px) {
+        display: block;
+      }
     }
   }
 </style>

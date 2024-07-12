@@ -1,6 +1,13 @@
 @import "@winnie-ui/css";
 @import "../code/code.css";
 
+html:has(#docs-menu-toggle:checked) {
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 @layer base {
   :root,
   .light,
