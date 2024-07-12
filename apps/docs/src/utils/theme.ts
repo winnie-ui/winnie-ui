@@ -31,7 +31,7 @@ export const defaultTheme = {
 /**
  * Retrieves the users current theme from localStorage
  */
-export function getTheme() {
+export function getTheme(): Theme {
   const theme = localStorage.getItem(THEME_LOCALSTORAGE_KEY);
 
   if (theme == null) {

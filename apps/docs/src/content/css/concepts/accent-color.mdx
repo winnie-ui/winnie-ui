@@ -3,10 +3,11 @@ title: Accent Color
 description: Customize the accent color of your application.
 ---
 
+import Demo from "~/components/demo/demo.astro";
+
 import accentColorExampleCss from "./_components/accent-color-example.css?raw";
 import { AccentColorExample } from "./_components/accent-color-example.tsx";
 import accentColorExampleTsx from "./_components/accent-color-example.tsx?raw";
-import Demo from "~/components/demo/demo.astro";
 
 Users and companies often have a preference for the accent color of their applications. Winnie CSS supports this using the `data-accent-color` attribute. The accent color attribute modifies the `--wui-color-accent-<value>` css variables which will affect any components that use those variables.
 
@@ -30,5 +31,5 @@ Any color that Winnie CSS supports can be used as an accent color, including [cu
 You use the accent color variables to create dynamic color changing experiences for components. Remember, you can use `data-accent-color` on any html element. It doesn't need to just be defined at the top level of your app.
 
 <Demo tsx={accentColorExampleTsx} css={accentColorExampleCss}>
-  <AccentColorExample client:load />
+  <AccentColorExample client:only />
 </Demo>

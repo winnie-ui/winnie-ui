@@ -7,14 +7,16 @@ import {
   ModalOverlay,
 } from "react-aria-components";
 
-import { getMarkedDescription, getMarkedTitle } from "./utils";
 import { Command } from "cmdk";
 import Flexsearch from "flexsearch";
+import { Sparkles } from "lucide-react";
 import { Search } from "lucide-react";
 import {
   type CollectionResponse,
   type ContentResponse,
 } from "~/types/collections";
+
+import { getMarkedDescription, getMarkedTitle } from "./utils";
 
 import "./search-command-menu.css";
 
@@ -217,8 +219,13 @@ export function SearchCommandMenu() {
                         We couldn't find docs with text matching "{searchTerm}"
                       </div>
                     </Command.Empty>
-                    <Command.Item value="ai">
-                      TBD Ask AI your questions
+                    <Command.Item
+                      value="ai"
+                      className="search-command-menu-item ai"
+                    >
+                      <Sparkles />
+                      Ask Winnie AI:{" "}
+                      <span className="ai-search-term">{searchTerm}</span>
                     </Command.Item>
                     {items.map((item) => {
                       return (

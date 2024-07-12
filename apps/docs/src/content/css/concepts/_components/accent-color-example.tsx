@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Radio, RadioGroup } from "react-aria-components";
 
+import { type Theme, getTheme } from "~/utils/theme";
+
 import { BaseballPlayerChart } from "./baseball-player-chart";
 
 import "./accent-color-example.css";
-
-const DEFAULT_VALUE = "red";
 
 const COLORS = [
   "red",
@@ -22,14 +22,16 @@ export function AccentColorExample() {
   /**
    * tracks the selected accent color
    */
-  const [accentColor, setAccentColor] = useState(DEFAULT_VALUE);
+  const [accentColor, setAccentColor] = useState(() => {
+    return getTheme().color;
+  });
 
   /**
    * tracks the previously selected accent color
    */
-  const [previousAccentColor, setPreviousAccentColor] = useState<string | null>(
-    null,
-  );
+  const [previousAccentColor, setPreviousAccentColor] = useState<
+    Theme["color"] | null
+  >(null);
 
   /**
    * Sets the attribute on the body element
@@ -37,10 +39,10 @@ export function AccentColorExample() {
    * @param value Value of the radio group that has been selected
    */
   function onValueChange(value: string) {
-    let prevColor = accentColor;
+    let prevColor = accentColor satisfies Theme["color"];
     setAccentColor((prev) => {
       prevColor = prev;
-      return value;
+      return value as Theme["color"];
     });
     setPreviousAccentColor(prevColor);
   }
@@ -48,7 +50,7 @@ export function AccentColorExample() {
   return (
     <div className="ace">
       <RadioGroup
-        defaultValue={DEFAULT_VALUE}
+        value={accentColor}
         aria-label="Select color"
         className="ace-radio-group"
         onChange={onValueChange}
