@@ -33,7 +33,6 @@ const { title, description, headings } = Astro.props;
   .wui-docs-layout-content {
     background: var(--wui-docs-layout-background);
     padding: 0;
-    padding-top: var(--wui-docs-layout-sidebar-mobile-height);
     width: 100%;
 
     @media (min-width: 768px) {
@@ -44,23 +43,29 @@ const { title, description, headings } = Astro.props;
     }
 
     .wui-docs-content-paper {
-      --wui-docs-content-paper-padding-block: var(--wui-space-9);
+      --wui-docs-content-paper-padding-block: calc(120px + var(--wui-space-4));
 
       align-items: flex-start;
       background: var(--wui-color-white-a11);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
-      border: var(--wui-border-width-1) solid var(--wui-color-grey-4);
-      border-radius: min(var(--wui-border-radius-4), 20px);
-      box-shadow: -2px 0 8px -2px hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 10%));
+      border-radius: 0;
       display: flex;
       gap: var(--wui-space-9);
-      min-height: 100%;
       padding-left: var(--wui-space-9);
       padding-right: var(--wui-space-9);
       padding-block: var(--wui-docs-content-paper-padding-block);
+      min-height: 100%;
       position: relative;
+
+      @media (min-width: 768px) {
+        --wui-docs-content-paper-padding-block: var(--wui-space-9);
+
+        border: var(--wui-border-width-1) solid var(--wui-color-grey-4);
+        border-radius: min(var(--wui-border-radius-4), 20px);
+        box-shadow: -2px 0 8px -2px hsl(var(--wui-shadow-color) /
+              calc(var(--wui-shadow-strength) + 10%));
+      }
 
       @media (min-width: 1024px) {
         padding-right: var(--wui-space-6);
