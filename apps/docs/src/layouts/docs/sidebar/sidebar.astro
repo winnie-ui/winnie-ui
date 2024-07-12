@@ -120,7 +120,7 @@ for (const section of navigation) {
 }
 ---
 
-<nav class="wui-docs-sidebar">
+<nav class="wui-docs-sidebar" transition:animate="none">
   <div class="wui-docs-sidebar-header">
     <div class="wui-logo">
       <span class="wui-logo-company">Winnie</span>
@@ -138,9 +138,7 @@ for (const section of navigation) {
     <div class="wui-mobile-title-container">
       <span class="wui-mobile-section">{sectionTitle}</span>
       <ChevronRight />
-      <span class="wui-mobile-page"
-        >{pageTitle}asdfasdfasdfasdfasdfasdfddddddddddddd</span
-      >
+      <span class="wui-mobile-page">{pageTitle}</span>
     </div>
     <Menu />
   </label>
@@ -150,7 +148,6 @@ for (const section of navigation) {
   <Navigation
     client:load
     transition:persist
-    transition:animate="none"
     items={navigation}
     slug={Astro.props.slug}
   />
