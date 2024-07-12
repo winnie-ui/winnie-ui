@@ -66,6 +66,7 @@ const { title, description, headings } = Astro.props;
         box-shadow: -2px 0 8px -2px hsl(var(--wui-shadow-color) /
               calc(var(--wui-shadow-strength) + 10%));
         padding-inline: var(--wui-space-9);
+        padding-block: var(--wui-space-9);
         margin-top: 0;
       }
 
@@ -196,6 +197,7 @@ const { title, description, headings } = Astro.props;
                   color: var(--wui-color-grey-12);
                   font-size: var(--wui-font-size-2);
                   padding: var(--wui-space-3) var(--wui-space-4);
+                  white-space: nowrap;
 
                   &:first-child {
                     border-left: var(--wui-border-width-1) solid

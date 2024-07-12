@@ -6,7 +6,7 @@
     margin-bottom: var(--wui-space-5);
 
     .ace-radio-item {
-      aspect-ratio: 2 / 1;
+      aspect-ratio: 1 / 1;
       background: var(--wui-color-accent-8);
       border-radius: var(--wui-border-radius-3);
       display: block;
@@ -74,7 +74,11 @@
         display: flex;
         height: var(--ace-content-height);
         justify-content: center;
-        padding: var(--wui-space-9);
+        padding: var(--wui-space-4);
+
+        @media (min-width: 1024px) {
+          padding: var(--wui-space-9);
+        }
 
         .ace-example {
           --padding-inline: var(--wui-space-6);
