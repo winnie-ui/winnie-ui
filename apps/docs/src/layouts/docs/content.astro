@@ -52,9 +52,9 @@ const { title, description, headings } = Astro.props;
       border-radius: 0;
       display: flex;
       gap: var(--wui-space-9);
-      padding-left: var(--wui-space-9);
-      padding-right: var(--wui-space-9);
-      padding-block: var(--wui-docs-content-paper-padding-block);
+      padding-inline: var(--wui-space-6);
+      padding-top: var(--wui-docs-content-paper-padding-block);
+      padding-bottom: var(--wui-space-9);
       min-height: 100%;
       position: relative;
 
@@ -65,6 +65,7 @@ const { title, description, headings } = Astro.props;
         border-radius: min(var(--wui-border-radius-4), 20px);
         box-shadow: -2px 0 8px -2px hsl(var(--wui-shadow-color) /
               calc(var(--wui-shadow-strength) + 10%));
+        padding-inline: var(--wui-space-9);
       }
 
       @media (min-width: 1024px) {
