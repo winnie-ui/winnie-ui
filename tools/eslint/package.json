@@ -20,10 +20,10 @@
     "eslint": "8.57.0"
   },
   "dependencies": {
-    "@next/eslint-plugin-next": "14.2.4",
-    "@typescript-eslint/eslint-plugin": "7.15.0",
-    "@typescript-eslint/parser": "7.15.0",
-    "eslint-config-next": "14.2.4",
+    "@next/eslint-plugin-next": "14.2.5",
+    "@typescript-eslint/eslint-plugin": "7.16.0",
+    "@typescript-eslint/parser": "7.16.0",
+    "eslint-config-next": "14.2.5",
     "eslint-config-prettier": "9.1.0",
     "eslint-config-turbo": "2.0.6",
     "eslint-import-resolver-typescript": "3.6.1",
@@ -35,7 +35,7 @@
     "eslint-plugin-solid": "0.14.1"
   },
   "devDependencies": {
-    "eslint": "9.6.0",
+    "eslint": "9.7.0",
     "rimraf": "5.0.7"
   }
 }

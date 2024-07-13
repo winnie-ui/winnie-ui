@@ -20,6 +20,6 @@
   },
   "devDependencies": {
     "rimraf": "5.0.7",
-    "stylelint": "16.6.1"
+    "stylelint": "16.7.0"
   }
 }
