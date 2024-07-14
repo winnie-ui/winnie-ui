@@ -9,11 +9,17 @@ export default $config({
     };
   },
   async run() {
+    const isProduction = $app.stage === "production";
+
+    const domain = isProduction
+      ? {
+          name: "winnie-ui.com",
+          dns: sst.cloudflare.dns(),
+        }
+      : undefined;
+
     new sst.aws.Astro("WinnieDocs", {
-      domain: {
-        name: "winnie-ui.com",
-        dns: sst.cloudflare.dns(),
-      },
+      domain,
     });
   },
 });
