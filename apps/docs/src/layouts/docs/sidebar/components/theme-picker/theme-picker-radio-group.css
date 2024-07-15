@@ -16,8 +16,12 @@
 
   .radio-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: var(--wui-space-3);
+
+    @media (min-width: 378px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
 
     .radio-grid-item {
       align-items: center;
@@ -29,12 +33,16 @@
       text-align: center;
       user-select: none;
 
-      &:is([data-hovered], [data-focus-visible]) {
+      &[data-hovered] {
         background: var(--wui-color-grey-a2);
       }
 
       &[data-selected] {
         background: var(--wui-color-accent-a2);
+        border-color: var(--wui-color-accent-9);
+      }
+
+      &[data-focus-visible] {
         outline: var(--wui-border-width-2) solid var(--wui-color-accent-8);
         outline-offset: -1px;
       }

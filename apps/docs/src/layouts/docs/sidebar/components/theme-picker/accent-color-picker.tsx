@@ -1,5 +1,6 @@
-import { ThemePickerRadioGroup } from "./theme-picker-radio-group";
 import type { Theme } from "~/utils/theme";
+
+import { ThemePickerRadioGroup } from "./theme-picker-radio-group";
 
 import "./accent-picker.css";
 
@@ -28,7 +29,7 @@ function AccentColorPicker() {
           ),
         };
       })}
-      label="Color"
+      label="Accent Color"
       themeKey="color"
       selector="data-accent-color"
     />

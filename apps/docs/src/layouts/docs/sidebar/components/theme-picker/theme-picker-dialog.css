@@ -117,6 +117,11 @@
           background: var(--wui-color-grey-5);
         }
 
+        &[data-focus-visible] {
+          outline: var(--wui-border-width-2) solid var(--wui-color-accent-9);
+          outline-offset: 2px;
+        }
+
         & > svg {
           --size: var(--wui-font-size-4);
           color: var(--wui-color-grey-11);
