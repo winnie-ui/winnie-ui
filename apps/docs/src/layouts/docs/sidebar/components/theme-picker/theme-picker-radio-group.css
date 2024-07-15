@@ -1,6 +1,10 @@
 .theme-picker-radio-group {
   margin-top: var(--wui-space-6);
 
+  &:first-child {
+    margin-top: 0;
+  }
+
   .radio-label {
     color: var(--wui-color-grey-12);
     display: block;
@@ -12,7 +16,7 @@
 
   .radio-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: var(--wui-space-3);
 
     .radio-grid-item {

@@ -6,7 +6,7 @@
 
   .indicator {
     align-items: center;
-    border-radius: var(--wui-border-radius-round);
+    border-radius: var(--wui-border-radius-1);
     background: var(--wui-color-accent-9);
     display: flex;
     height: var(--wui-space-5);

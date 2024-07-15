@@ -2,7 +2,8 @@
 import { ChevronRight, Menu } from "lucide-react";
 
 import type { NavigationItem } from "./components/navigation/types";
-import { ThemePickerPopover } from "./components/theme-picker/theme-picker-popover";
+// import { ThemePickerPopover } from "./components/theme-picker/theme-picker-popover";
+import { ThemePickerDialog } from "./components/theme-picker/theme-picker-dialog";
 import { Navigation } from "./components/navigation/navigation";
 import { SearchCommandMenu } from "~/components/search-command-menu/search-command-menu";
 
@@ -127,7 +128,8 @@ for (const section of navigation) {
       <span class="wui-logo-separator"></span>
       <span class="wui-logo-app">CSS</span>
     </div>
-    <ThemePickerPopover client:load />
+    <!-- <ThemePickerPopover client:load /> -->
+    <ThemePickerDialog client:load />
   </div>
   <input type="checkbox" id="docs-menu-toggle" class="wui-docs-mobile-toggle" />
   <label
