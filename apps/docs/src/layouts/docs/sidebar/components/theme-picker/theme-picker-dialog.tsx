@@ -19,9 +19,20 @@ import "./theme-picker-dialog.css";
  * CloseButton
  * -----------------------------------------------------------------------------------------------*/
 function CloseButton() {
-  let state = useContext(OverlayTriggerStateContext)!;
+  /**
+   * subscribe to modal state
+   */
+  const state = useContext(OverlayTriggerStateContext)!;
+
+  /**
+   * handle press event
+   */
+  function onPress() {
+    state.close();
+  }
+
   return (
-    <Button onPress={() => state.close()} className="theme-picker-dialog-close">
+    <Button onPress={onPress} className="theme-picker-dialog-close">
       <X />
     </Button>
   );
@@ -42,18 +53,29 @@ function ThemePickerDialog() {
       <ModalOverlay className="theme-picker-modal-overlay" isDismissable>
         <Modal isDismissable className="theme-picker-modal wui-scrollbar">
           <Dialog className="theme-picker-dialog">
-            <div className="theme-picker-dialog-header">
-              <Heading className="theme-picker-dialog-title" slot="title">
-                Customize Theme
-              </Heading>
-              <p className="theme-picker-dialog-description">
-                Change the vibes of your docs
-              </p>
-            </div>
-            <div className="theme-picker-dialog-content">
-              <ThemePicker />
-            </div>
-            <CloseButton />
+            {({ close }) => {
+              return (
+                <>
+                  <div className="theme-picker-dialog-header">
+                    <Heading className="theme-picker-dialog-title" slot="title">
+                      Customize Theme
+                    </Heading>
+                    <p className="theme-picker-dialog-description">
+                      Change the vibes of your docs
+                    </p>
+                  </div>
+                  <div className="theme-picker-dialog-content">
+                    <ThemePicker />
+                  </div>
+                  <Button
+                    onPressStart={close}
+                    className="theme-picker-dialog-close"
+                  >
+                    <X />
+                  </Button>
+                </>
+              );
+            }}
           </Dialog>
         </Modal>
       </ModalOverlay>

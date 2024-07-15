@@ -5,6 +5,7 @@ import DocsLayout from "~/layouts/docs/layout.astro";
 import Heading2 from "~/components/markdown/heading-2.astro";
 import Heading3 from "~/components/markdown/heading-3.astro";
 import Heading4 from "~/components/markdown/heading-4.astro";
+import Table from "~/components/markdown/table.astro";
 
 export const prerender = true;
 
@@ -29,6 +30,7 @@ const { Content, headings } = await doc.render();
       h2: Heading2,
       h3: Heading3,
       h4: Heading4,
+      table: Table,
     }}
   />
 </DocsLayout>

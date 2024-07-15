@@ -33,7 +33,7 @@
   flex-direction: column;
   left: 0;
   height: var(--visual-viewport-height);
-  padding-top: var(--wui-space-9);
+  padding-top: 150px;
   padding-inline: var(--wui-space-5);
   position: fixed;
   top: 0;
@@ -44,10 +44,6 @@
     animation: wui-fade-in var(--wui-duration-3) var(--wui-bezier-1);
   }
 
-  @media (min-width: 768px) {
-    padding-top: 50px;
-  }
-
   .theme-picker-modal {
     background: var(--wui-color-white);
     border-radius: min(var(--wui-border-radius-5), 20px);
@@ -56,7 +52,6 @@
     max-height: calc(100% - var(--wui-space-4) * 2);
     max-width: calc(100% - var(--wui-space-4) * 2);
     width: 100%;
-    position: relative;
     transform-origin: center center;
     outline: none;
     overflow: auto;
