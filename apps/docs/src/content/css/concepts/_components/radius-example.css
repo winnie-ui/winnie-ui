@@ -1,3 +1,59 @@
-.radius-example {
-  background: red;
+.re {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--wui-space-8);
+
+  .re-radio-group {
+    align-items: center;
+    display: flex;
+    gap: var(--wui-space-5);
+
+    .re-radio-item {
+      --size: calc(28px * var(--wui-scale));
+
+      background: var(--wui-color-accent-4);
+      border: var(--wui-border-width-1) solid var(--wui-color-accent-7);
+      border-radius: var(--wui-border-radius-3);
+      height: var(--size);
+      width: var(--size);
+    }
+  }
+
+  .transition-radius {
+    transition: border-radius var(--wui-duration-4) var(--wui-bezier-1);
+  }
+
+  .now-playing {
+    --max-radius: 50px;
+    --inline-padding: var(--wui-space-4);
+
+    aspect-ratio: 9 / 16;
+    background: linear-gradient(
+      to bottom,
+      var(--wui-color-accent-9),
+      var(--wui-color-accent-7)
+    );
+    border: var(--wui-border-width-1) solid var(--wui-color-grey-3);
+    border-radius: min(var(--wui-border-radius-7), var(--max-radius));
+    box-shadow: var(--wui-shadow-3);
+    height: calc(500px * var(--wui-scale));
+
+    .now-playing-album {
+      aspect-ratio: 1 / 1;
+      padding-block: var(--wui-space-4);
+      padding-inline: var(--inline-padding);
+      width: 100%;
+
+      .now-playing-cover {
+        border-radius: min(
+          calc(var(--wui-border-radius-7) - var(--wui-space-4)),
+          calc(var(--max-radius) - var(--wui-space-4))
+        );
+        box-shadow: var(--wui-shadow-4);
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
 }

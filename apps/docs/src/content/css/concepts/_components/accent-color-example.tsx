@@ -34,7 +34,7 @@ export function AccentColorExample() {
   >(null);
 
   /**
-   * Sets the attribute on the body element
+   * Sets the attribute on the demo element
    *
    * @param value Value of the radio group that has been selected
    */

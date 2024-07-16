@@ -8,6 +8,8 @@ type Props = {
 };
 
 const { tsx, css } = Astro.props;
+
+const showFooter = Boolean(tsx && css);
 ---
 
 <div class="demo not-content">
@@ -17,14 +19,17 @@ const { tsx, css } = Astro.props;
   <main class="background-polka demo-content">
     <slot />
   </main>
-  <div class="demo-footer">
-    <!-- not sure how to type slots -->
-    <!-- @ts-expect-error -->
-    <DemoTabs client:load>
-      <Code slot="tsx" lang="tsx" code={tsx} />
-      <Code slot="css" lang="css" code={css} />
-    </DemoTabs>
-  </div>
+  {
+    showFooter && (
+      <div class="demo-footer">
+        {/* @ts-expect-error */}
+        <DemoTabs client:load>
+          <Code slot="tsx" lang="tsx" code={tsx} />
+          <Code slot="css" lang="css" code={css} />
+        </DemoTabs>
+      </div>
+    )
+  }
 </div>
 
 <style>

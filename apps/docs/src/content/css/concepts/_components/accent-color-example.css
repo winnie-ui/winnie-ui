@@ -8,7 +8,7 @@
     .ace-radio-item {
       aspect-ratio: 1 / 1;
       background: var(--wui-color-accent-8);
-      border-radius: var(--wui-border-radius-3);
+      border-radius: min(var(--wui-border-radius-2), 6px);
       display: block;
       height: calc(20px * var(--wui-scale));
       transition: transform var(--wui-duration-2) var(--wui-bezier-1);
