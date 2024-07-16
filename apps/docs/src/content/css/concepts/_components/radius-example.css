@@ -12,47 +12,151 @@
     .re-radio-item {
       --size: calc(28px * var(--wui-scale));
 
-      background: var(--wui-color-accent-4);
+      background: var(--wui-color-accent-2);
       border: var(--wui-border-width-1) solid var(--wui-color-accent-7);
       border-radius: var(--wui-border-radius-3);
       height: var(--size);
       width: var(--size);
-    }
-  }
 
-  .transition-radius {
-    transition: border-radius var(--wui-duration-4) var(--wui-bezier-1);
+      &[data-hovered] {
+        background: var(--wui-color-accent-3);
+      }
+
+      &[data-focus-visible] {
+        outline: var(--wui-border-width-2) solid var(--wui-color-accent-9);
+      }
+
+      &[data-selected] {
+        background: var(--wui-color-accent-5);
+        border-color: var(--wui-color-accent-9);
+      }
+    }
   }
 
   .now-playing {
     --max-radius: 50px;
-    --inline-padding: var(--wui-space-4);
+    --padding-inline: var(--wui-space-4);
 
     aspect-ratio: 9 / 16;
     background: linear-gradient(
       to bottom,
-      var(--wui-color-accent-9),
-      var(--wui-color-accent-7)
+      var(--wui-color-white) 40%,
+      var(--wui-color-accent-2)
     );
-    border: var(--wui-border-width-1) solid var(--wui-color-grey-3);
+    border: var(--wui-border-width-1) solid var(--wui-color-grey-5);
     border-radius: min(var(--wui-border-radius-7), var(--max-radius));
-    box-shadow: var(--wui-shadow-3);
+    box-shadow: var(--wui-shadow-2);
     height: calc(500px * var(--wui-scale));
 
     .now-playing-album {
       aspect-ratio: 1 / 1;
-      padding-block: var(--wui-space-4);
-      padding-inline: var(--inline-padding);
+      padding: var(--wui-space-8);
+      transition: padding var(--wui-duration-3) var(--wui-bezier-1);
       width: 100%;
+
+      &[data-playing="true"] {
+        padding-block: var(--wui-space-4);
+        padding-inline: var(--padding-inline);
+      }
 
       .now-playing-cover {
         border-radius: min(
           calc(var(--wui-border-radius-7) - var(--wui-space-4)),
           calc(var(--max-radius) - var(--wui-space-4))
         );
-        box-shadow: var(--wui-shadow-4);
+        box-shadow: var(--wui-shadow-2);
         height: 100%;
         width: 100%;
+      }
+    }
+
+    .now-playing-song {
+      align-items: center;
+      display: flex;
+      padding-inline: var(--padding-inline);
+
+      .now-playing-song-details {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        .now-playing-song-title {
+          color: var(--wui-color-grey-12);
+          font-size: var(--wui-font-size-4);
+          font-weight: var(--wui-font-weight-semibold);
+        }
+
+        .now-playing-song-description {
+          color: var(--wui-color-grey-11);
+          font-size: var(--wui-font-size-4);
+          font-weight: var(--wui-font-weight-normal);
+        }
+      }
+
+      .now-playing-favourite {
+        --size: calc(28px * var(--wui-scale));
+
+        align-items: center;
+        background: var(--wui-color-accent-a4);
+        border-radius: var(--wui-border-radius-2);
+        color: var(--wui-color-grey-12);
+        display: flex;
+        height: var(--size);
+        justify-content: center;
+        transition: transform var(--wui-duration-4) var(--wui-bezier-1);
+        width: var(--size);
+
+        & > svg {
+          --size: var(--wui-font-size-3);
+
+          height: var(--size);
+          width: var(--size);
+        }
+
+        &[data-selected] {
+          background: var(--wui-color-accent-9);
+          color: var(--wui-color-accent-contrast);
+
+          &[data-hovered] {
+            background: var(--wui-color-accent-10);
+          }
+
+          & > svg {
+            fill: var(--wui-color-accent-contrast);
+            stroke-width: 0;
+          }
+        }
+
+        &[data-pressed] {
+          transform: scale(0.9);
+        }
+
+        &[data-hovered] {
+          background: var(--wui-color-accent-a5);
+        }
+
+        &[data-focus-visible] {
+          outline: var(--wui-border-width-2) solid var(--wui-color-accent-9);
+        }
+      }
+    }
+
+    .now-playing-controls {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      padding-inline: var(--wui-space-8);
+      padding-block: var(--wui-space-8);
+
+      .now-playing-control {
+        --size: var(--wui-font-size-7);
+
+        & > svg {
+          fill: var(--wui-color-grey-11);
+          height: var(--size);
+          stroke-width: 0;
+          width: var(--size);
+        }
       }
     }
   }

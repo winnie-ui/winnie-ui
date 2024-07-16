@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Radio, RadioGroup } from "react-aria-components";
+import { Radio, RadioGroup, ToggleButton } from "react-aria-components";
 
+import { FastForward, Heart, Pause, Play, Rewind } from "lucide-react";
 import albumCover from "~/images/album-cover.jpg";
 import { type Theme, getTheme } from "~/utils/theme";
 
@@ -15,6 +16,11 @@ export function RadiusExample() {
   const [radius, setRadius] = useState(() => {
     return getTheme().radius;
   });
+
+  /**
+   * tracks the play state of the example
+   */
+  const [playing, setPlaying] = useState(true);
 
   /**
    * Sets the attribute on the demo element
@@ -45,16 +51,43 @@ export function RadiusExample() {
           );
         })}
       </RadioGroup>
-      <div
-        className="now-playing transition-radius winnie-ui"
-        data-radius={radius}
-      >
-        <div className="now-playing-album">
+      <div className="now-playing winnie-ui" data-radius={radius}>
+        <div className="now-playing-album" data-playing={playing}>
           <img
-            className="now-playing-cover transition-radius"
+            className="now-playing-cover"
             src={albumCover.src}
             alt="only u by brock"
           />
+        </div>
+        <div className="now-playing-song">
+          <div className="now-playing-song-details">
+            <span className="now-playing-song-title">only u</span>
+            <span className="now-playing-song-description">brock</span>
+          </div>
+          <ToggleButton className="now-playing-favourite">
+            <Heart />
+          </ToggleButton>
+        </div>
+        <div className="now-playing-controls">
+          <span className="now-playing-control">
+            <Rewind />
+          </span>
+          <ToggleButton
+            isSelected={playing}
+            className="now-playing-control now-playing-play-control"
+            onChange={setPlaying}
+          >
+            {({ isSelected }) => {
+              if (isSelected) {
+                return <Pause />;
+              }
+
+              return <Play />;
+            }}
+          </ToggleButton>
+          <span className="now-playing-control">
+            <FastForward />
+          </span>
         </div>
       </div>
     </div>
