@@ -35,7 +35,7 @@
 
   .now-playing {
     --max-radius: 50px;
-    --padding-inline: var(--wui-space-4);
+    --padding-inline: var(--wui-space-5);
 
     aspect-ratio: 9 / 16;
     background: linear-gradient(
@@ -49,17 +49,17 @@
     height: calc(500px * var(--wui-scale));
 
     .now-playing-album {
-      aspect-ratio: 1 / 1;
       padding: var(--wui-space-8);
       transition: padding var(--wui-duration-3) var(--wui-bezier-1);
       width: 100%;
 
       &[data-playing="true"] {
-        padding-block: var(--wui-space-4);
+        padding-block: var(--padding-inline);
         padding-inline: var(--padding-inline);
       }
 
       .now-playing-cover {
+        aspect-ratio: 1 / 1;
         border-radius: min(
           calc(var(--wui-border-radius-7) - var(--wui-space-4)),
           calc(var(--max-radius) - var(--wui-space-4))
