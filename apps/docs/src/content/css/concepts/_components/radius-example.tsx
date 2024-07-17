@@ -1,7 +1,23 @@
 import { useState } from "react";
-import { Radio, RadioGroup, ToggleButton } from "react-aria-components";
+import {
+  Radio,
+  RadioGroup,
+  Slider,
+  SliderOutput,
+  SliderThumb,
+  SliderTrack,
+  ToggleButton,
+} from "react-aria-components";
 
-import { FastForward, Heart, Pause, Play, Rewind } from "lucide-react";
+import {
+  FastForward,
+  Heart,
+  Pause,
+  Play,
+  Rewind,
+  Volume,
+  Volume2,
+} from "lucide-react";
 import albumCover from "~/images/album-cover.jpg";
 import { type Theme, getTheme } from "~/utils/theme";
 
@@ -61,8 +77,8 @@ export function RadiusExample() {
         </div>
         <div className="now-playing-song">
           <div className="now-playing-song-details">
-            <span className="now-playing-song-title">only u</span>
-            <span className="now-playing-song-description">brock</span>
+            <span className="now-playing-song-title">Jungle</span>
+            <span className="now-playing-song-description">Fred again..</span>
           </div>
           <ToggleButton className="now-playing-favourite">
             <Heart />
@@ -88,6 +104,32 @@ export function RadiusExample() {
           <span className="now-playing-control">
             <FastForward />
           </span>
+        </div>
+        <div className="now-playing-volume">
+          <Volume className="now-playing-volume-icon" />
+          <Slider
+            defaultValue={30}
+            aria-label="Adjust volume"
+            className="volume-slider"
+          >
+            <SliderTrack className="volume-slider-track">
+              {({ state }) => {
+                const percent = state.getThumbPercent(0) * 100 + "%";
+                return (
+                  <>
+                    <div className="volume-slider-track-inner" />
+                    <div
+                      className="volume-slider-track-fill"
+                      style={{ width: percent }}
+                      data-percent={percent}
+                    />
+                    <SliderThumb className="volume-slider-thumb" />
+                  </>
+                );
+              }}
+            </SliderTrack>
+          </Slider>
+          <Volume2 className="now-playing-volume-icon" />
         </div>
       </div>
     </div>
