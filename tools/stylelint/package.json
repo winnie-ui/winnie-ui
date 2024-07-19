@@ -19,7 +19,7 @@
     "stylelint-config-recommended": "14.0.1"
   },
   "devDependencies": {
-    "rimraf": "5.0.7",
+    "rimraf": "6.0.1",
     "stylelint": "16.7.0"
   }
 }
