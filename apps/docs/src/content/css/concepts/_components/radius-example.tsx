@@ -3,7 +3,6 @@ import {
   Radio,
   RadioGroup,
   Slider,
-  SliderOutput,
   SliderThumb,
   SliderTrack,
   ToggleButton,

@@ -7,36 +7,12 @@ import {
   Modal,
   ModalOverlay,
 } from "react-aria-components";
-import { OverlayTriggerStateContext } from "react-aria-components";
 
 import { Settings2, X } from "lucide-react";
 
 import { ThemePicker } from "./theme-picker";
 
 import "./theme-picker-dialog.css";
-
-/* -------------------------------------------------------------------------------------------------
- * CloseButton
- * -----------------------------------------------------------------------------------------------*/
-function CloseButton() {
-  /**
-   * subscribe to modal state
-   */
-  const state = useContext(OverlayTriggerStateContext)!;
-
-  /**
-   * handle press event
-   */
-  function onPress() {
-    state.close();
-  }
-
-  return (
-    <Button onPress={onPress} className="theme-picker-dialog-close">
-      <X />
-    </Button>
-  );
-}
 
 /* -------------------------------------------------------------------------------------------------
  * ThemePickerDialog
