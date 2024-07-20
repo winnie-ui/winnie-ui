@@ -1,6 +1,6 @@
 <html
   lang="en"
-  class="winnie-ui light"
+  class="winnie-ui"
   data-theme="light"
   data-code-theme="github-light"
 >
@@ -38,6 +38,7 @@ Intentionally setting this script inline with a IIFE to prevent a flash of unsty
     html.setAttribute("data-radius", theme.radius);
     html.setAttribute("data-scale", theme.scale);
     html.setAttribute("data-theme", theme.mode);
+    html.setAttribute("data-code-theme", `github-${theme.mode}`);
   })();
 </script>
 
@@ -63,9 +64,25 @@ I am listening to the `after-swap` event and setting the attributes
 
     background: var(--wui-color-grey-1);
     overscroll-behavior-y: none;
+  }
 
-    @media (min-width: 768px) {
+  :global(:is([data-theme="light"])) {
+    .wui-layout {
+      --wui-docs-layout-background: var(--wui-color-white);
+
+      @media (min-width: 768px) {
+        --wui-docs-layout-background: var(--wui-color-grey-1);
+      }
+    }
+  }
+
+  :global(:is([data-theme="dark"])) {
+    .wui-layout {
       --wui-docs-layout-background: var(--wui-color-grey-1);
+
+      @media (min-width: 768px) {
+        --wui-docs-layout-background: var(--wui-color-black);
+      }
     }
   }
 </style>

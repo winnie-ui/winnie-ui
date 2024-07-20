@@ -2,7 +2,7 @@ import type { Theme } from "~/utils/theme";
 
 import { ThemePickerRadioGroup } from "./theme-picker-radio-group";
 
-import "./accent-picker.css";
+import "./accent-color-picker.css";
 
 function AccentColorPicker() {
   const colors = [
@@ -22,7 +22,7 @@ function AccentColorPicker() {
         return {
           value: color,
           render: (
-            <div data-accent-color={color} className="accent-picker">
+            <div data-accent-color={color} className="accent-color-picker">
               <span className="indicator" />
               {color}
             </div>

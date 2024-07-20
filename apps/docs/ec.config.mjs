@@ -15,7 +15,7 @@ export default {
       },
     },
   ],
-  themes: ["github-light"],
+  themes: ["github-light", "github-dark"],
   themeCssSelector: (theme) => `[data-code-theme="${theme.name}"]`,
   useDarkModeMediaQuery: false,
 };

@@ -15,7 +15,9 @@
 }
 
 .chart-tooltip-content {
-  background: var(--wui-color-white);
+  background: var(--chart-tooltip-background);
+  border: var(--wui-border-width-1) solid var(--chart-tooltip-border-color);
+  border-radius: min(var(--wui-border-radius-2), 10px);
   box-shadow: var(--wui-shadow-2);
   padding: var(--wui-space-3);
 
@@ -47,5 +49,33 @@
         width: var(--size);
       }
     }
+  }
+}
+
+:where([data-theme="light"]) {
+  .chart {
+    --chart-layer-1-background: var(--wui-color-accent-4);
+    --chart-layer-1-border-color: var(--wui-color-accent-7);
+    --chart-layer-2-background: var(--wui-color-accent-6);
+    --chart-layer-2-border-color: var(--wui-color-accent-7);
+  }
+
+  .chart-tooltip-content {
+    --chart-tooltip-background: var(--wui-color-white);
+    --chart-tooltip-border-color: var(--wui-color-grey-5);
+  }
+}
+
+:where([data-theme="dark"]) {
+  .chart {
+    --chart-layer-1-background: var(--wui-color-accent-4);
+    --chart-layer-1-border-color: var(--wui-color-accent-9);
+    --chart-layer-2-background: var(--wui-color-accent-6);
+    --chart-layer-2-border-color: var(--wui-color-accent-11);
+  }
+
+  .chart-tooltip-content {
+    --chart-tooltip-background: var(--wui-color-grey-2);
+    --chart-tooltip-border-color: var(--wui-color-grey-4);
   }
 }

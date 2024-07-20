@@ -82,7 +82,7 @@ export function BaseballPlayerChart() {
         }}
         className="chart"
       >
-        <CartesianGrid vertical={false} />
+        <CartesianGrid vertical={false} stroke="var(--wui-color-grey-4)" />
         <XAxis
           dataKey="month"
           tickLine={false}
@@ -98,18 +98,18 @@ export function BaseballPlayerChart() {
         <Area
           dataKey="ops"
           type="natural"
-          fill="var(--wui-color-accent-4)"
-          fillOpacity={0.4}
-          stroke="var(--wui-color-accent-4)"
+          fill="var(--chart-layer-1-background)"
+          stroke="var(--chart-layer-1-border-color)"
+          fillOpacity={0.8}
           stackId="a"
           isAnimationActive={false}
         />
         <Area
           dataKey="bpct"
           type="natural"
-          fill="var(--wui-color-accent-7)"
-          fillOpacity={0.4}
-          stroke="var(--wui-color-accent-6)"
+          fill="var(--chart-layer-2-background)"
+          stroke="var(--chart-layer-2-border-color)"
+          fillOpacity={0.8}
           stackId="a"
           isAnimationActive={false}
         />

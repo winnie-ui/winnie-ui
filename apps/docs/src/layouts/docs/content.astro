@@ -46,7 +46,7 @@ const { title, description, headings } = Astro.props;
       --wui-docs-content-paper-padding-block: calc(112px + var(--wui-space-4));
 
       align-items: flex-start;
-      background: var(--wui-color-white-a11);
+      background: var(--content-paper-background);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       border-radius: 0;
@@ -172,6 +172,18 @@ const { title, description, headings } = Astro.props;
           display: none;
         }
       }
+    }
+  }
+
+  :global(:where([data-theme="light"])) {
+    .wui-docs-content-paper {
+      --content-paper-background: var(--wui-color-white);
+    }
+  }
+
+  :global(:where([data-theme="dark"])) {
+    .wui-docs-content-paper {
+      --content-paper-background: var(--wui-color-grey-1);
     }
   }
 </style>

@@ -1,12 +1,12 @@
 import { AccentColorPicker } from "./accent-color-picker";
-// import { ModePicker } from "./mode-picker";
+import { ModePicker } from "./mode-picker";
 import { RadiusPicker } from "./radius-picker";
 import { ScalePicker } from "./scale-picker";
 
 function ThemePicker() {
   return (
     <div className="theme-picker">
-      {/* <ModePicker /> */}
+      <ModePicker />
       <AccentColorPicker />
       <RadiusPicker />
       <ScalePicker />

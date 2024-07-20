@@ -26,7 +26,7 @@
 
 .theme-picker-modal-overlay {
   align-items: center;
-  background: var(--wui-color-white-a7);
+  background: var(--overlay-background);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
   display: flex;
@@ -45,7 +45,7 @@
   }
 
   .theme-picker-modal {
-    background: var(--wui-color-white);
+    background: var(--modal-background);
     border-radius: min(var(--wui-border-radius-5), 20px);
     border: var(--wui-border-width-1) solid var(--wui-color-grey-2);
     box-shadow: var(--wui-shadow-5);
@@ -124,6 +124,26 @@
           width: var(--size);
         }
       }
+    }
+  }
+}
+
+:where([data-theme="light"]) {
+  .theme-picker-modal-overlay {
+    --overlay-background: var(--wui-color-white-a7);
+
+    .theme-picker-modal {
+      --modal-background: var(--wui-color-white);
+    }
+  }
+}
+
+:where([data-theme="dark"]) {
+  .theme-picker-modal-overlay {
+    --overlay-background: var(--wui-color-black-a6);
+
+    .theme-picker-modal {
+      --modal-background: var(--wui-color-grey-1);
     }
   }
 }
