@@ -1,4 +1,14 @@
 @layer reset {
+  html {
+    &:is(.light, .light-theme, [data-theme="light"]) {
+      color-scheme: light;
+    }
+
+    &:is(.dark, .dark-theme, [data-theme="dark"]) {
+      color-scheme: dark;
+    }
+  }
+
   body {
     font-family: var(--wui-font-family-sans);
     margin: 0;

@@ -40,7 +40,7 @@
     aspect-ratio: 9 / 16;
     background: linear-gradient(
       to bottom,
-      var(--wui-color-white) 40%,
+      var(--now-playing-background-1) 40%,
       var(--wui-color-accent-2)
     );
     border: var(--wui-border-width-1) solid var(--wui-color-grey-5);
@@ -64,7 +64,6 @@
           calc(var(--wui-border-radius-7) - var(--wui-space-4)),
           calc(var(--max-radius) - var(--wui-space-4))
         );
-        box-shadow: 0 0 18px 6px var(--wui-color-accent-a3);
         height: 100%;
         width: 100%;
       }
@@ -264,5 +263,17 @@
         }
       }
     }
+  }
+}
+
+:where([data-theme="light"]) {
+  .now-playing {
+    --now-playing-background-1: var(--wui-color-white);
+  }
+}
+
+:where([data-theme="dark"]) {
+  .now-playing {
+    --now-playing-background-1: var(--wui-color-grey-3);
   }
 }

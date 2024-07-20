@@ -47,7 +47,7 @@
   .theme-picker-modal {
     background: var(--modal-background);
     border-radius: min(var(--wui-border-radius-5), 20px);
-    border: var(--wui-border-width-1) solid var(--wui-color-grey-2);
+    border: var(--wui-border-width-1) solid var(--modal-border-color);
     box-shadow: var(--wui-shadow-5);
     max-height: calc(100% - var(--wui-space-4) * 2);
     max-width: calc(100% - var(--wui-space-4) * 2);
@@ -134,6 +134,7 @@
 
     .theme-picker-modal {
       --modal-background: var(--wui-color-white);
+      --modal-border-color: var(--wui-color-grey-5);
     }
   }
 }
@@ -143,7 +144,8 @@
     --overlay-background: var(--wui-color-black-a6);
 
     .theme-picker-modal {
-      --modal-background: var(--wui-color-grey-1);
+      --modal-background: var(--wui-color-grey-2);
+      --modal-border-color: var(--wui-color-grey-4);
     }
   }
 }

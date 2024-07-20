@@ -5,10 +5,24 @@
   justify-content: flex-start;
 
   .preview {
-    background: var(--wui-color-accent-3);
-    border: var(--wui-border-width-1) solid var(--wui-color-accent-6);
+    background: var(--preview-background);
+    border: var(--wui-border-width-1) solid var(--preview-border-color);
     border-radius: var(--wui-border-radius-2);
     height: var(--wui-space-5);
     width: var(--wui-space-5);
+  }
+}
+
+:where([data-theme="light"]) {
+  .preview {
+    --preview-background: var(--wui-color-accent-3);
+    --preview-border-color: var(--wui-color-accent-6);
+  }
+}
+
+:where([data-theme="dark"]) {
+  .preview {
+    --preview-background: var(--wui-color-accent-6);
+    --preview-border-color: var(--wui-color-accent-8);
   }
 }

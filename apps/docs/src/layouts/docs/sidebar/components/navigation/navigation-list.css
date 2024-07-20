@@ -19,7 +19,7 @@
     width: 100%;
 
     &:hover {
-      background: var(--wui-color-grey-a2);
+      background: var(--list-item-background-hover);
     }
 
     &:focus-visible {
@@ -27,7 +27,7 @@
     }
 
     &[data-state="open"] {
-      color: var(--wui-color-black);
+      color: var(--wui-color-grey-12);
 
       .chevron {
         transform: rotate(90deg);
@@ -42,7 +42,7 @@
         [data-current="true"],
         [data-current="true"][data-collapsible-trigger="true"]
       ) {
-      color: var(--wui-color-black);
+      color: var(--wui-color-grey-12);
     }
 
     &[data-current="true"]:not([data-collapsible-trigger="true"]) {
@@ -68,17 +68,28 @@
   }
 }
 
+:where([data-theme="light"]) {
+  .navigation-list {
+    .navigation-list-item {
+      --list-item-background-hover: var(--wui-color-grey-a3);
+    }
+  }
+}
+
+:where([data-theme="dark"]) {
+  .navigation-list {
+    .navigation-list-item {
+      --list-item-background-hover: var(--wui-color-grey-a3);
+    }
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .navigation-list-collapsible-content {
     --wui-collapsible-content-height: var(--radix-collapsible-content-height);
 
     &[data-state="open"] {
       animation-name: wui-fade-in, wui-collapsible-down;
-
-      /* duration is zero for now until I find a way to prevent the animation from running
-       * when a page navigation occurs. the result is some jank layout shift 
-       */
-      /* animation-duration: 0; */
       animation-duration: var(--wui-duration-2);
       animation-timing-function: var(--wui-bezier-1);
     }

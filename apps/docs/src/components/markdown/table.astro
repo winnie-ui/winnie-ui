@@ -19,11 +19,12 @@
       thead {
         tr {
           th {
-            background: var(--wui-color-grey-2);
+            background: var(--th-background);
             border-top: var(--wui-border-width-1) solid
               var(--wui-table-outer-border-color);
             border-bottom: var(--wui-border-width-1) solid
               var(--wui-table-outer-border-color);
+            color: var(--wui-color-grey-12);
             font-size: var(--wui-font-size-2);
             font-weight: var(--wui-font-weight-medium);
             padding: var(--wui-space-4) var(--wui-space-4);
@@ -66,7 +67,7 @@
           }
 
           &:nth-child(even) {
-            background: var(--wui-color-grey-1);
+            background: var(--tr-even-background);
           }
 
           &:last-child {
@@ -79,6 +80,38 @@
             }
           }
         }
+      }
+    }
+  }
+
+  :global(:where([data-theme="light"])) {
+    thead {
+      tr {
+        th {
+          --th-background: var(--wui-color-grey-2);
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        --tr-even-background: var(--wui-color-grey-2);
+      }
+    }
+  }
+
+  :global(:where([data-theme="dark"])) {
+    thead {
+      tr {
+        th {
+          --th-background: var(--wui-color-grey-2);
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        --tr-even-background: var(--wui-color-grey-a2);
       }
     }
   }
