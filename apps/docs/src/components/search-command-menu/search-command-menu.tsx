@@ -219,14 +219,14 @@ export function SearchCommandMenu() {
                         We couldn't find docs with text matching "{searchTerm}"
                       </div>
                     </Command.Empty>
-                    <Command.Item
-                      value="ai"
-                      className="search-command-menu-item ai"
-                    >
-                      <Sparkles />
-                      Ask Winnie AI:{" "}
-                      <span className="ai-search-term">{searchTerm}</span>
-                    </Command.Item>
+                    {/* <Command.Item */}
+                    {/*   value="ai" */}
+                    {/*   className="search-command-menu-item ai" */}
+                    {/* > */}
+                    {/*   <Sparkles /> */}
+                    {/*   Ask Winnie AI:{" "} */}
+                    {/*   <span className="ai-search-term">{searchTerm}</span> */}
+                    {/* </Command.Item> */}
                     {items.map((item) => {
                       return (
                         <Command.Item
