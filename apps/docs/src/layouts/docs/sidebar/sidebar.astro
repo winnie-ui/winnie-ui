@@ -160,7 +160,7 @@ for (const section of navigation) {
     --wui-docs-layout-sidebar-mobile-height: 70px;
     --wui-sidebar-inline-padding: var(--wui-space-5);
 
-    background: var(--wui-color-white);
+    background: var(--sidebar-background);
     flex-direction: column;
     overflow: hidden;
     display: flex;
@@ -177,7 +177,7 @@ for (const section of navigation) {
     }
 
     @media (min-width: 768px) {
-      background: var(--wui-docs-layout-background);
+      --sidebar-background: var(--wui-docs-layout-background);
       display: flex;
       height: 100%;
       width: var(--wui-docs-layout-sidebar-width);
@@ -283,5 +283,13 @@ for (const section of navigation) {
         display: block;
       }
     }
+  }
+
+  :global(:where([data-theme="light"])) {
+    --sidebar-background: var(--wui-color-white);
+  }
+
+  :global(:where([data-theme="dark"])) {
+    --sidebar-background: var(--wui-color-grey-1);
   }
 </style>
