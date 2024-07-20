@@ -33,7 +33,7 @@
   flex-direction: column;
   left: 0;
   height: var(--visual-viewport-height);
-  padding-top: 150px;
+  padding-top: var(--wui-space-9);
   padding-inline: var(--wui-space-5);
   position: fixed;
   top: 0;
@@ -42,6 +42,10 @@
 
   &[data-entering] {
     animation: wui-fade-in var(--wui-duration-3) var(--wui-bezier-1);
+  }
+
+  @media (min-width: 768px) {
+    padding-top: 150px;
   }
 
   .theme-picker-modal {

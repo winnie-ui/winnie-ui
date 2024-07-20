@@ -128,8 +128,12 @@ for (const section of navigation) {
       <span class="wui-logo-separator"></span>
       <span class="wui-logo-app">CSS</span>
     </div>
-    <!-- <ThemePickerPopover client:load /> -->
-    <ThemePickerDialog client:load />
+    <div class="wui-docs-sidebar-actions">
+      <div class="wui-docs-sidebar-search-action">
+        <SearchCommandMenu client:load transition:persist />
+      </div>
+      <ThemePickerDialog client:load />
+    </div>
   </div>
   <input type="checkbox" id="docs-menu-toggle" class="wui-docs-mobile-toggle" />
   <label
@@ -214,6 +218,20 @@ for (const section of navigation) {
         .wui-logo-app {
           color: var(--wui-color-grey-11);
           font-size: var(--wui-font-size-3);
+        }
+      }
+
+      .wui-docs-sidebar-actions {
+        align-items: center;
+        display: flex;
+        gap: var(--wui-space-2);
+
+        .wui-docs-sidebar-search-action {
+          display: block;
+
+          @media (min-width: 768px) {
+            display: none;
+          }
         }
       }
     }
