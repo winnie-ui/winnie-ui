@@ -9,7 +9,7 @@ import {
 
 import { Command } from "cmdk";
 import Flexsearch from "flexsearch";
-import { Sparkles } from "lucide-react";
+// import { Sparkles } from "lucide-react";
 import { Search } from "lucide-react";
 import {
   type CollectionResponse,
