@@ -117,6 +117,7 @@
     max-width: calc(100% - var(--wui-space-4) * 2);
     width: 100%;
     position: relative;
+    outline: none;
     transform-origin: center center;
 
     &[data-entering] {

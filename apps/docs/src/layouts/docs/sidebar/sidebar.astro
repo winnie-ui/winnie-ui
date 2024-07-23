@@ -2,10 +2,9 @@
 import { ChevronRight, Menu } from "lucide-react";
 
 import type { NavigationItem } from "./components/navigation/types";
-// import { ThemePickerPopover } from "./components/theme-picker/theme-picker-popover";
-import { ThemePickerDialog } from "./components/theme-picker/theme-picker-dialog";
+import { Actions } from "./components/actions";
+import { Search } from "./components/search";
 import { Navigation } from "./components/navigation/navigation";
-import { SearchCommandMenu } from "~/components/search-command-menu/search-command-menu";
 
 type Props = {
   slug: string;
@@ -124,15 +123,12 @@ for (const section of navigation) {
 <nav class="wui-docs-sidebar" transition:animate="none">
   <div class="wui-docs-sidebar-header">
     <div class="wui-logo">
-      <span class="wui-logo-company">Winnie</span>
+      <a class="wui-logo-company" href="/css">Winnie</a>
       <span class="wui-logo-separator"></span>
       <span class="wui-logo-app">CSS</span>
     </div>
     <div class="wui-docs-sidebar-actions">
-      <div class="wui-docs-sidebar-search-action">
-        <SearchCommandMenu client:load transition:persist />
-      </div>
-      <ThemePickerDialog client:load />
+      <Actions client:load transition:persist />
     </div>
   </div>
   <input type="checkbox" id="docs-menu-toggle" class="wui-docs-mobile-toggle" />
@@ -149,7 +145,7 @@ for (const section of navigation) {
     <Menu />
   </label>
   <div class="wui-docs-sidebar-search">
-    <SearchCommandMenu client:load transition:persist />
+    <Search client:load transition:persist />
   </div>
   <Navigation
     client:load

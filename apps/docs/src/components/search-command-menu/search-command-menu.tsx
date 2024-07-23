@@ -202,7 +202,7 @@ export function SearchCommandMenu() {
                   onValueChange={handleSearch}
                   autoFocus
                   className="search-command-menu-input"
-                  placeholder="Search docs or ask a question..."
+                  placeholder="Search docs..."
                 />
               </div>
               {searchTerm === "" ? (
