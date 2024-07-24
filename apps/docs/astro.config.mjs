@@ -10,6 +10,7 @@ export default defineConfig({
   output: "server",
   adapter: aws(),
   redirects: {
+    "": "/css",
     "/": "/css",
     "/css/docs": "/css/docs/start/quick-start"
   },

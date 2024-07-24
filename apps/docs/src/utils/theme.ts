@@ -22,8 +22,8 @@ export type ThemeSelectors =
   | "data-theme";
 
 export const defaultTheme = {
-  color: "yellow",
-  radius: "round",
+  color: "orange",
+  radius: "lg",
   scale: "95%",
   mode: "light",
 } satisfies Theme;
