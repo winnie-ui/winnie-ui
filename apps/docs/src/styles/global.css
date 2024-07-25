@@ -40,6 +40,10 @@ html:has(#docs-menu-toggle:checked) {
     --wui-color-brand-a12: #0a0200d6;
 
     --wui-color-brand-contrast: #fff;
+
+    body {
+      background: var(--wui-color-white);
+    }
   }
 
   @supports (color: color(display-p3 1 1 1)) {
@@ -109,9 +113,10 @@ html:has(#docs-menu-toggle:checked) {
     --wui-color-brand-a12: #fee8dff5;
 
     --wui-color-brand-contrast: #fff;
-    --wui-color-brand-surface: #251f1d80;
-    --wui-color-brand-indicator: #5f4b43;
-    --wui-color-brand-track: #5f4b43;
+
+    body {
+      background: var(--wui-color-black);
+    }
   }
 
   @supports (color: color(display-p3 1 1 1)) {

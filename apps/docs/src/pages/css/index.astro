@@ -13,49 +13,42 @@ import BaseLayout from "~/layouts/base/layout.astro";
   <main class="hero polka-background" transition:animate="none">
     <div class="hero-gradient"></div>
     <div class="hero-content">
-      <div class="hero-text">
-        <h2 class="winnie-ui light" data-accent-color="orange">css</h2>
-        <h1>Winnie</h1>
-        <p>
-          A <span>flexible</span> and <span>opinionated</span> collection of CSS
-          primitives for building applications.
-        </p>
+      <div class="hero-area-a">
+        <div class="hero-text">
+          <h2 class="winnie-ui light" data-accent-color="orange">css</h2>
+          <h1>Winnie</h1>
+          <p>
+            A <span>flexible</span> and <span>opinionated</span> collection of CSS
+            primitives for building applications.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="/css/docs/start/quick-start">Start building</a>
+        </div>
       </div>
-      <div class="actions">
-        <a href="/css/docs/start/quick-start">Start building</a>
+      <div class="hero-area-b">
+        <div class="demo-container">
+          <div class="demo">asdfasfd</div>
+        </div>
       </div>
-      <!-- <div class="features"> -->
-      <!--   <div class="feature-item"> -->
-      <!--     <SwatchBook /> -->
-      <!--     <span>Match your brand</span> -->
-      <!--   </div> -->
-      <!--   <div class="feature-item"> -->
-      <!--     <Circle /> -->
-      <!--     <span>Pick a radius</span> -->
-      <!--   </div> -->
-      <!--   <div class="feature-item"> -->
-      <!--     <Fullscreen /> -->
-      <!--     <span>Change the density</span> -->
-      <!--   </div> -->
-      <!--   <div class="feature-item"> -->
-      <!--     <Layers3 /> -->
-      <!--     <span>Built with Layers</span> -->
-      <!--   </div> -->
-      <!-- </div> -->
     </div>
   </main>
 </BaseLayout>
 
 <style>
-  main {
-    overlay: auto;
-  }
   .hero {
+    --max-page-width: 1024px;
+
     display: flex;
     justify-content: center;
     min-height: 100dvh;
     padding-top: var(--wui-space-9);
     position: relative;
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+      padding-top: 140px;
+    }
 
     .hero-gradient {
       height: 100%;
@@ -77,131 +70,111 @@ import BaseLayout from "~/layouts/base/layout.astro";
 
     .hero-content {
       position: absolute;
+      --grid-column-count: 3;
+
+      display: grid;
+      grid-template-columns: repeat(var(--grid-column-count), 1fr);
+      gap: var(--wui-space-7);
 
       @media (min-width: 768px) {
-        max-width: 65ch;
+        --grid-column-count: 6;
+
+        max-width: var(--max-page-width);
         margin-inline: auto;
         width: 100%;
       }
 
-      .hero-text {
-        padding: var(--wui-space-6);
-        padding-bottom: 0;
-
-        h2 {
-          background: linear-gradient(
-            to bottom right,
-            var(--wui-color-accent-9),
-            var(--wui-color-accent-8)
-          );
-          border-radius: var(--wui-border-radius-3);
-          font-weight: var(--wui-font-weight-normal);
-          color: var(--wui-color-accent-contrast);
-          display: inline-block;
-          font-size: var(--wui-font-size-4);
-          letter-spacing: var(--wui-letter-spacing-9);
-          padding-inline: var(--wui-space-3);
-          padding-bottom: var(--wui-space-2);
-        }
-
-        h1 {
-          color: var(--wui-color-grey-12);
-          font-size: var(--wui-font-size-8);
-          font-weight: var(--wui-font-weight-semibold);
-          letter-spacing: var(--wui-letter-spacing-9);
-          line-height: var(--wui-line-height-8);
-          margin-top: var(--wui-space-6);
-        }
-
-        p {
-          color: var(--wui-color-grey-11);
-          font-size: var(--wui-font-size-3);
-          line-height: var(--wui-line-height-3);
-          margin-top: var(--wui-space-5);
-
-          span {
-            color: var(--wui-color-grey-12);
-            font-weight: var(--wui-font-weight-medium);
-          }
-        }
+      .hero-area-a {
+        grid-column: span 3;
+        padding-inline: var(--wui-space-6);
 
         @media (min-width: 768px) {
-          h1 {
-            font-size: var(--wui-font-size-9);
-            line-height: var(--wui-line-height-9);
+          grid-column: span calc(var(--grid-column-count) / 2);
+        }
+
+        .hero-text {
+          h2 {
+            background: linear-gradient(
+              to bottom right,
+              var(--wui-color-accent-9),
+              var(--wui-color-accent-8)
+            );
+            border-radius: var(--wui-border-radius-3);
+            font-weight: var(--wui-font-weight-normal);
+            color: var(--wui-color-accent-contrast);
+            display: inline-block;
+            font-size: var(--wui-font-size-5);
+            letter-spacing: var(--wui-letter-spacing-9);
+            padding-inline: var(--wui-space-3);
+            padding-bottom: var(--wui-space-2);
           }
 
-          h2 {
-            font-size: var(--wui-font-size-5);
+          h1 {
+            color: var(--wui-color-grey-12);
+            font-size: var(--wui-font-size-9);
+            font-size: var(--wui-font-size-9);
+            font-weight: var(--wui-font-weight-semibold);
+            line-height: var(--wui-line-height-9);
+            letter-spacing: var(--wui-letter-spacing-9);
+            margin-top: var(--wui-space-6);
           }
 
           p {
+            color: var(--wui-color-grey-11);
             font-size: var(--wui-font-size-4);
             line-height: var(--wui-line-height-4);
+            margin-top: var(--wui-space-5);
+
+            span {
+              color: var(--wui-color-grey-12);
+              font-weight: var(--wui-font-weight-medium);
+            }
           }
         }
-      }
 
-      .actions {
-        margin-top: var(--wui-space-6);
-        padding-inline: var(--wui-space-6);
+        .actions {
+          margin-top: var(--wui-space-6);
 
-        a {
-          align-items: center;
-          background: var(--action-background);
-          border-radius: var(--wui-border-radius-3);
-          color: var(--action-color);
-          display: inline-flex;
-          font-size: var(--wui-font-size-2);
-          font-weight: var(--wui-font-weight-medium);
-          height: calc(34px * var(--wui-scale));
-          justify-content: center;
-          padding-inline: var(--wui-space-4);
-
-          &:hover {
-            background: var(--action-background-hover);
-          }
-
-          &:active {
-            background: var(--action-background-active);
-          }
-
-          &:focus-visible {
-            outline: var(--wui-border-width-2) solid var(--wui-color-accent-9);
-            outline-offset: 2px;
-          }
-
-          @media (min-width: 768px) {
-            height: calc(42px * var(--wui-scale));
+          a {
+            align-items: center;
+            background: var(--action-background);
+            border-radius: var(--wui-border-radius-3);
+            color: var(--action-color);
+            display: inline-flex;
             font-size: var(--wui-font-size-3);
+            font-weight: var(--wui-font-weight-medium);
+            height: calc(42px * var(--wui-scale));
+            justify-content: center;
             padding-inline: var(--wui-space-5);
+
+            &:hover {
+              background: var(--action-background-hover);
+            }
+
+            &:active {
+              background: var(--action-background-active);
+            }
+
+            &:focus-visible {
+              outline: var(--wui-border-width-2) solid var(--wui-color-accent-9);
+              outline-offset: 2px;
+            }
+
+            @media (min-width: 768px) {
+              height: calc(42px * var(--wui-scale));
+              font-size: var(--wui-font-size-3);
+              padding-inline: var(--wui-space-5);
+            }
           }
         }
       }
 
-      .features {
-        display: grid;
-        grid-template-columns: repeat(2, auto);
-        gap: var(--wui-space-5);
-        margin-top: var(--wui-space-6);
+      .hero-area-b {
+        grid-column: span 3;
         padding-inline: var(--wui-space-6);
 
-        .feature-item {
-          align-items: center;
-          display: flex;
-          gap: var(--wui-space-3);
-
-          & svg {
-            --size: var(--wui-font-size-4);
-            height: var(--size);
-            width: var(--size);
-          }
-
-          span {
-            color: var(--wui-color-grey-12);
-            flex: 1;
-            font-size: var(--wui-font-size-2);
-          }
+        @media (min-width: 768px) {
+          grid-column: span calc(var(--grid-column-count) / 2);
         }
       }
     }
