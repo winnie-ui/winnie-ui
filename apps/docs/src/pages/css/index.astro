@@ -2,6 +2,7 @@
 // import { Circle, Fullscreen, Layers3, SwatchBook } from "lucide-react";
 import BaseHead from "~/layouts/base/base-head.astro";
 import BaseLayout from "~/layouts/base/layout.astro";
+import { BaseballPlayerChart } from "~/content/css/concepts/_components/baseball-player-chart";
 ---
 
 <BaseLayout>
@@ -15,7 +16,7 @@ import BaseLayout from "~/layouts/base/layout.astro";
     <div class="hero-content">
       <div class="hero-area-a">
         <div class="hero-text">
-          <h2 class="winnie-ui light" data-accent-color="orange">css</h2>
+          <h2 class="winnie-ui light">css</h2>
           <h1>Winnie</h1>
           <p>
             A <span>flexible</span> and <span>opinionated</span> collection of CSS
@@ -28,7 +29,40 @@ import BaseLayout from "~/layouts/base/layout.astro";
       </div>
       <div class="hero-area-b">
         <div class="demo-container">
-          <div class="demo">asdfasfd</div>
+          <div class="demo">
+            <header class="demo-header">
+              <div class="team-select-container">
+                <span class="title">Teams</span>
+                <span class="separator">/</span>
+                <span class="team-select">Blue Jays</span>
+              </div>
+              <div class="header-actions">
+                <button>AA</button>
+              </div>
+            </header>
+            <main class="demo-content">
+              <div class="demo-content-header">
+                <span class="demo-content-title">Dashboard</span>
+              </div>
+              <div class="demo-content-main">
+                <div class="demo-content-area-a widget"></div>
+                <div class="demo-content-area-b widget"></div>
+                <div class="demo-content-area-c widget"></div>
+                <div class="demo-content-area-d widget">
+                  <div class="chart-header">
+                    <span class="chart-title">Hitting Stats</span>
+                    <span class="chart-description"
+                      >Showing batting average and on-base percentage by month</span
+                    >
+                  </div>
+                  <div class="chart-container">
+                    <BaseballPlayerChart client:only="react" />
+                  </div>
+                </div>
+                <div class="demo-content-area-e widget"></div>
+              </div>
+            </main>
+          </div>
         </div>
       </div>
     </div>
@@ -38,20 +72,21 @@ import BaseLayout from "~/layouts/base/layout.astro";
 <style>
   .hero {
     --max-page-width: 1024px;
+    --hero-padding-top: var(--wui-space-9);
 
     display: flex;
     justify-content: center;
     min-height: 100dvh;
-    padding-top: var(--wui-space-9);
+    padding-top: var(--hero-padding-top);
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
 
     @media (min-width: 768px) {
-      padding-top: 140px;
+      --hero-padding-top: 140px;
     }
 
     .hero-gradient {
-      height: 100%;
+      height: calc(100% - var(--wui-hero-padding-top));
       background: linear-gradient(
         to bottom,
         transparent,
@@ -176,6 +211,138 @@ import BaseLayout from "~/layouts/base/layout.astro";
         @media (min-width: 768px) {
           grid-column: span calc(var(--grid-column-count) / 2);
         }
+
+        .demo {
+          --border-radius: min(var(--wui-border-radius-3), 14px);
+          background: var(--demo-background);
+          border: var(--wui-border-width-1) solid var(--demo-border-color);
+          border-radius: var(--border-radius);
+          box-shadow: var(--demo-box-shadow);
+          display: flex;
+          flex-direction: column;
+          min-height: 600px;
+          max-width: 800px;
+          margin-right: -50vw;
+
+          .demo-header {
+            align-items: center;
+            background: var(--demo-header-background);
+            border-top-left-radius: var(--border-radius);
+            border-top-right-radius: var(--border-radius);
+            border-bottom: var(--wui-border-width-1) solid
+              var(--demo-border-color);
+            display: flex;
+            height: 50px;
+            flex-shrink: 0;
+            padding-inline: var(--wui-space-6);
+
+            .team-select-container {
+              align-items: center;
+              display: flex;
+              flex: 1;
+              gap: var(--wui-space-3);
+
+              .title {
+                color: var(--wui-color-grey-12);
+                font-size: var(--wui-font-size-2);
+                font-weight: var(--wui-font-weight-medium);
+              }
+
+              .separator {
+                color: var(--wui-color-grey-9);
+                font-size: var(--wui-font-size-2);
+              }
+
+              .team-select {
+                color: var(--wui-color-grey-12);
+                font-size: var(--wui-font-size-2);
+              }
+            }
+          }
+
+          .demo-content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding-block: var(--wui-space-6);
+            padding-inline: var(--wui-space-6);
+
+            .demo-content-header {
+              height: 50px;
+              .demo-content-title {
+                color: var(--wui-color-grey-12);
+                font-size: var(--wui-font-size-4);
+                font-weight: var(--wui-font-weight-medium);
+              }
+            }
+
+            .demo-content-main {
+              flex: 1;
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              grid-template-rows: 80px repeat(2, 1fr);
+              grid-template-areas:
+                "a b c"
+                "d d e"
+                "d d e";
+              gap: var(--wui-space-6);
+
+              .widget {
+                border: var(--wui-border-width-1) solid var(--wui-color-grey-4);
+                border-radius: min(var(--wui-border-radius-3), 12px);
+                background: var(--dashboard-widget-color);
+                box-shadow: var(--dashboard-widget-shadow);
+                padding: var(--wui-space-5);
+              }
+
+              .demo-content-area-a {
+                grid-area: a;
+              }
+
+              .demo-content-area-b {
+                grid-area: b;
+              }
+
+              .demo-content-area-c {
+                grid-area: c;
+              }
+
+              .demo-content-area-d {
+                display: flex;
+                flex-direction: column;
+                gap: var(--wui-space-5);
+                grid-area: d;
+
+                .chart-header {
+                  display: flex;
+                  flex-direction: column;
+                  flex-shrink: 0;
+
+                  .chart-title {
+                    color: var(--wui-color-grey-12);
+                    font-size: var(--wui-font-size-3);
+                    font-weight: var(--wui-font-weight-medium);
+                    line-height: var(--wui-line-height-6);
+                  }
+
+                  .chart-description {
+                    color: var(--wui-color-grey-11);
+                    font-size: var(--wui-font-size-2);
+                  }
+                }
+
+                .chart-container {
+                  flex: 1;
+                  margin-top: var(--wui-space-5);
+                }
+              }
+
+              .demo-content-area-e {
+                grid-area: e;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -195,8 +362,16 @@ import BaseLayout from "~/layouts/base/layout.astro";
     --action-background-hover: var(--wui-color-black);
     --action-background-active: var(--wui-color-black);
 
+    --demo-background: var(--wui-color-white);
+    --demo-border-color: var(--wui-color-grey-4);
+    --demo-box-shadow: var(--wui-shadow-2);
+    --demo-header-background: var(--wui-color-grey-1);
+
+    --dashboard-widget-color: var(--wui-color-grey-1);
+    --dashboard-widget-shadow: var(--wui-shadow-1);
+
     .polka-background {
-      --polka-background: var(--wui-color-white);
+      --polka-background: var(--wui-color-grey-1);
       --polka-dot-background: var(--wui-color-grey-5);
     }
 
@@ -210,6 +385,14 @@ import BaseLayout from "~/layouts/base/layout.astro";
     --action-color: var(--wui-color-black);
     --action-background-hover: var(--wui-color-white);
     --action-background-active: var(--wui-color-white);
+
+    --demo-background: var(--wui-color-black);
+    --demo-border-color: var(--wui-color-grey-3);
+    --demo-box-shadow: var(--wui-shadow-3);
+    --demo-header-background: var(--wui-color-black);
+
+    --dashboard-widget-color: var(--wui-color-grey-1);
+    --dashboard-widget-shadow: var(--wui-shadow-2);
 
     .polka-background {
       --polka-background: var(--wui-color-black);
