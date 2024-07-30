@@ -45,7 +45,7 @@
   }
 
   @media (min-width: 768px) {
-    padding-top: 150px;
+    padding-top: calc(var(--wui-space-9) * 2);
   }
 
   .theme-picker-modal {

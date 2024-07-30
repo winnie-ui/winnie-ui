@@ -1,8 +1,12 @@
 ---
-// import { Circle, Fullscreen, Layers3, SwatchBook } from "lucide-react";
 import BaseHead from "~/layouts/base/base-head.astro";
 import BaseLayout from "~/layouts/base/layout.astro";
 import { BaseballPlayerChart } from "~/content/css/concepts/_components/baseball-player-chart";
+import baltimore from "~/images/baltimore.png";
+import yankees from "~/images/yankees.png";
+import rangers from "~/images/rangers.png";
+import rays from "~/images/rays.png";
+import dodgers from "~/images/dodgers.png";
 ---
 
 <BaseLayout>
@@ -45,9 +49,25 @@ import { BaseballPlayerChart } from "~/content/css/concepts/_components/baseball
                 <span class="demo-content-title">Dashboard</span>
               </div>
               <div class="demo-content-main">
-                <div class="demo-content-area-a widget"></div>
-                <div class="demo-content-area-b widget"></div>
-                <div class="demo-content-area-c widget"></div>
+                <div class="demo-content-area-a widget metric">
+                  <span class="metric-title">Record</span>
+                  <span class="metric-number">49 / 56</span>
+                  <span class="metric-description">-5% from last month</span>
+                </div>
+                <div class="demo-content-area-b widget metric">
+                  <span class="metric-title"> Team ERA </span>
+                  <span class="metric-number"> 3.5 </span>
+                  <span class="metric-description">
+                    +0.4 ERA from last month
+                  </span>
+                </div>
+                <div class="demo-content-area-c widget metric">
+                  <span class="metric-title"> Total Home Runs </span>
+                  <span class="metric-number"> 97 </span>
+                  <span class="metric-description">
+                    -12 home runs from last month
+                  </span>
+                </div>
                 <div class="demo-content-area-d widget">
                   <div class="chart-header">
                     <span class="chart-title">Hitting Stats</span>
@@ -59,7 +79,74 @@ import { BaseballPlayerChart } from "~/content/css/concepts/_components/baseball
                     <BaseballPlayerChart client:only="react" />
                   </div>
                 </div>
-                <div class="demo-content-area-e widget"></div>
+                <div class="demo-content-area-e widget">
+                  <span class="game-title">Recent Games</span>
+                  <p class="game-description">
+                    Showing the most recent 5 games
+                  </p>
+                  <ul class="game-list">
+                    <li class="game-list-item">
+                      <img
+                        src={baltimore.src}
+                        alt="baltimore orioles"
+                        class="team-logo"
+                      />
+                      <div class="game-team-container">
+                        <span class="game-team">Baltimore Orioles</span>
+                        <span class="game-result">Loss</span>
+                      </div>
+                      <span class="game-score">5-4</span>
+                    </li>
+                    <li class="game-list-item">
+                      <img
+                        src={rangers.src}
+                        alt="texas rangers"
+                        class="team-logo"
+                      />
+                      <div class="game-team-container">
+                        <span class="game-team">Texas Rangers</span>
+                        <span class="game-result">Loss</span>
+                      </div>
+                      <span class="game-score">7-1</span>
+                    </li>
+                    <li class="game-list-item">
+                      <img
+                        src={yankees.src}
+                        alt="new york yankees"
+                        class="team-logo"
+                      />
+                      <div class="game-team-container">
+                        <span class="game-team">New York Yankees</span>
+                        <span class="game-result">Loss</span>
+                      </div>
+                      <span class="game-score">10-2</span>
+                    </li>
+                    <li class="game-list-item">
+                      <img
+                        src={rays.src}
+                        alt="Tampa Bay Rays"
+                        class="team-logo"
+                      />
+                      <div class="game-team-container">
+                        <span class="game-team">Tampa Bay Rays</span>
+                        <span class="game-result">Loss</span>
+                      </div>
+                      <span class="game-score">11-4</span>
+                    </li>
+                    <li class="game-list-item">
+                      <img
+                        src={dodgers.src}
+                        alt="L.A Dodgers"
+                        class="team-logo"
+                      />
+                      <div class="game-team-container">
+                        <span class="game-team">L.A Dodgers</span>
+                        <span class="game-result">Loss</span>
+                      </div>
+                      <span class="game-score">8-7</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </main>
           </div>
@@ -125,6 +212,8 @@ import { BaseballPlayerChart } from "~/content/css/concepts/_components/baseball
 
         @media (min-width: 768px) {
           grid-column: span calc(var(--grid-column-count) / 2);
+          padding-right: 0;
+          padding-left: var(--wui-space-6);
         }
 
         .hero-text {
@@ -207,9 +296,11 @@ import { BaseballPlayerChart } from "~/content/css/concepts/_components/baseball
       .hero-area-b {
         grid-column: span 3;
         padding-inline: var(--wui-space-6);
+        margin-bottom: var(--wui-space-7);
 
         @media (min-width: 768px) {
           grid-column: span calc(var(--grid-column-count) / 2);
+          padding-inline: 0;
         }
 
         .demo {
@@ -221,7 +312,8 @@ import { BaseballPlayerChart } from "~/content/css/concepts/_components/baseball
           display: flex;
           flex-direction: column;
           min-height: 600px;
-          max-width: 800px;
+          max-width: 900px;
+          min-width: 600px;
           margin-right: -50vw;
 
           .demo-header {
@@ -280,7 +372,7 @@ import { BaseballPlayerChart } from "~/content/css/concepts/_components/baseball
               flex: 1;
               display: grid;
               grid-template-columns: repeat(3, 1fr);
-              grid-template-rows: 80px repeat(2, 1fr);
+              grid-template-rows: auto repeat(2, 1fr);
               grid-template-areas:
                 "a b c"
                 "d d e"
@@ -292,7 +384,32 @@ import { BaseballPlayerChart } from "~/content/css/concepts/_components/baseball
                 border-radius: min(var(--wui-border-radius-3), 12px);
                 background: var(--dashboard-widget-color);
                 box-shadow: var(--dashboard-widget-shadow);
-                padding: var(--wui-space-5);
+                padding: var(--wui-space-6);
+              }
+
+              .metric {
+                display: flex;
+                flex-direction: column;
+                gap: var(--wui-space-2);
+
+                .metric-title {
+                  color: var(--wui-color-grey-12);
+                  font-size: var(--wui-font-size-3);
+                  font-weight: var(--wui-font-weight-medium);
+                  letter-spacing: var(--wui-letter-spacing-9);
+                }
+
+                .metric-number {
+                  color: var(--wui-color-grey-12);
+                  font-size: var(--wui-font-size-6);
+                  font-weight: var(--wui-font-weight-bold);
+                  letter-spacing: var(--wui-letter-spacing-9);
+                }
+
+                .metric-description {
+                  color: var(--wui-color-grey-11);
+                  font-size: var(--wui-font-size-2);
+                }
               }
 
               .demo-content-area-a {
@@ -322,7 +439,8 @@ import { BaseballPlayerChart } from "~/content/css/concepts/_components/baseball
                     color: var(--wui-color-grey-12);
                     font-size: var(--wui-font-size-3);
                     font-weight: var(--wui-font-weight-medium);
-                    line-height: var(--wui-line-height-6);
+                    margin-bottom: var(--wui-space-2);
+                    letter-spacing: var(--wui-letter-spacing-9);
                   }
 
                   .chart-description {
@@ -339,6 +457,64 @@ import { BaseballPlayerChart } from "~/content/css/concepts/_components/baseball
 
               .demo-content-area-e {
                 grid-area: e;
+
+                .game-title {
+                  color: var(--wui-color-grey-12);
+                  font-size: var(--wui-font-size-3);
+                  font-weight: var(--wui-font-weight-medium);
+                  letter-spacing: var(--wui-letter-spacing-9);
+                }
+
+                .game-description {
+                  color: var(--wui-color-grey-11);
+                  font-size: var(--wui-font-size-2);
+                  margin-top: var(--wui-space-2);
+                }
+
+                .game-list {
+                  margin-top: var(--wui-space-6);
+
+                  .game-list-item {
+                    align-items: center;
+                    display: flex;
+                    gap: var(--wui-space-4);
+                    padding-bottom: var(--wui-space-4);
+
+                    &:not(:last-child) {
+                      border-bottom: var(--wui-border-width-1) solid
+                        var(--wui-color-grey-5);
+                      margin-bottom: var(--wui-space-4);
+                    }
+
+                    .team-logo {
+                      --size: 26px;
+                      height: var(--size);
+                      width: var(--size);
+                    }
+
+                    .game-team-container {
+                      display: flex;
+                      flex-direction: column;
+                      flex: 1;
+
+                      .game-team {
+                        color: var(--wui-color-grey-12);
+                        font-size: var(--wui-font-size-1);
+                        font-weight: var(--wui-font-weight-medium);
+                      }
+
+                      .game-result {
+                        color: var(--wui-color-grey-11);
+                        font-size: var(--wui-font-size-1);
+                      }
+                    }
+
+                    .game-score {
+                      color: var(--wui-color-grey-11);
+                      font-size: var(--wui-font-size-1);
+                    }
+                  }
+                }
               }
             }
           }
