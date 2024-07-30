@@ -1,12 +1,14 @@
 ---
-import BaseHead from "~/layouts/base/base-head.astro";
-import BaseLayout from "~/layouts/base/layout.astro";
-import { BaseballPlayerChart } from "~/content/css/concepts/_components/baseball-player-chart";
 import baltimore from "~/images/baltimore.png";
 import yankees from "~/images/yankees.png";
 import rangers from "~/images/rangers.png";
 import rays from "~/images/rays.png";
 import dodgers from "~/images/dodgers.png";
+
+import BaseHead from "~/layouts/base/base-head.astro";
+import BaseLayout from "~/layouts/base/layout.astro";
+import { BaseballPlayerChart } from "~/content/css/concepts/_components/baseball-player-chart";
+import { ThemePickerDialog } from "~/layouts/docs/sidebar/components/theme-picker/theme-picker-dialog";
 ---
 
 <BaseLayout>
@@ -15,13 +17,19 @@ import dodgers from "~/images/dodgers.png";
     title="Winnie CSS"
     description="A flexible and opinionated collection of CSS primitives for building applications."
   />
+  <header class="landing-header">
+    <div class="landing-header-content">
+      Winnie
+      <ThemePickerDialog client:load />
+    </div>
+  </header>
   <main class="hero polka-background" transition:animate="none">
     <div class="hero-gradient"></div>
     <div class="hero-content">
       <div class="hero-area-a">
         <div class="hero-text">
           <h2 class="winnie-ui light">css</h2>
-          <h1>Winnie</h1>
+          <h1>Take your style the extra mile</h1>
           <p>
             A <span>flexible</span> and <span>opinionated</span> collection of CSS
             primitives for building applications.
@@ -157,16 +165,37 @@ import dodgers from "~/images/dodgers.png";
 </BaseLayout>
 
 <style>
-  .hero {
+  body {
     --max-page-width: 1024px;
-    --hero-padding-top: var(--wui-space-9);
+  }
+
+  .landing-header {
+    left: 0;
+    position: fixed;
+    top: 0;
+    padding-block: var(--wui-space-4);
+    width: 100%;
+    z-index: 1;
+
+    .landing-header-content {
+      align-items: center;
+      display: flex;
+      height: 48px;
+      max-width: var(--max-page-width);
+      margin-inline: auto;
+      padding-inline: var(--wui-space-6);
+    }
+  }
+
+  .hero {
+    --hero-padding-top: 100px;
 
     display: flex;
     justify-content: center;
     min-height: 100dvh;
     padding-top: var(--hero-padding-top);
     position: relative;
-    overflow-x: hidden;
+    overflow: hidden;
 
     @media (min-width: 768px) {
       --hero-padding-top: 140px;
@@ -235,12 +264,16 @@ import dodgers from "~/images/dodgers.png";
 
           h1 {
             color: var(--wui-color-grey-12);
-            font-size: var(--wui-font-size-9);
-            font-size: var(--wui-font-size-9);
+            font-size: 44px;
             font-weight: var(--wui-font-weight-semibold);
-            line-height: var(--wui-line-height-9);
+            line-height: 50px;
             letter-spacing: var(--wui-letter-spacing-9);
             margin-top: var(--wui-space-6);
+
+            @media (min-width: 768px) {
+              font-size: 56px;
+              line-height: var(--wui-line-height-9);
+            }
           }
 
           p {
@@ -363,7 +396,7 @@ import dodgers from "~/images/dodgers.png";
               height: 50px;
               .demo-content-title {
                 color: var(--wui-color-grey-12);
-                font-size: var(--wui-font-size-4);
+                font-size: var(--wui-font-size-5);
                 font-weight: var(--wui-font-weight-medium);
               }
             }
@@ -437,7 +470,7 @@ import dodgers from "~/images/dodgers.png";
 
                   .chart-title {
                     color: var(--wui-color-grey-12);
-                    font-size: var(--wui-font-size-3);
+                    font-size: var(--wui-font-size-4);
                     font-weight: var(--wui-font-weight-medium);
                     margin-bottom: var(--wui-space-2);
                     letter-spacing: var(--wui-letter-spacing-9);
@@ -460,7 +493,7 @@ import dodgers from "~/images/dodgers.png";
 
                 .game-title {
                   color: var(--wui-color-grey-12);
-                  font-size: var(--wui-font-size-3);
+                  font-size: var(--wui-font-size-4);
                   font-weight: var(--wui-font-weight-medium);
                   letter-spacing: var(--wui-letter-spacing-9);
                 }
