@@ -9,6 +9,9 @@ import BaseHead from "~/layouts/base/base-head.astro";
 import BaseLayout from "~/layouts/base/layout.astro";
 import { BaseballPlayerChart } from "~/content/css/concepts/_components/baseball-player-chart";
 import { ThemePickerDialog } from "~/layouts/docs/sidebar/components/theme-picker/theme-picker-dialog";
+import { Github } from "lucide-react";
+
+export const prerender = true;
 ---
 
 <BaseLayout>
@@ -17,18 +20,34 @@ import { ThemePickerDialog } from "~/layouts/docs/sidebar/components/theme-picke
     title="Winnie CSS"
     description="A flexible and opinionated collection of CSS primitives for building applications."
   />
-  <header class="landing-header">
+  <header class="landing-header" transition:animate="none">
     <div class="landing-header-content">
       <div class="landing-header-logo">
         <span> Winnie </span>
       </div>
       <div class="landing-header-actions">
+        <a
+          href="https://github.com/adamaho/winnie-ui"
+          target="_blank"
+          rel="noreferrer"
+          class="github-link"
+        >
+          <svg
+            role="img"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title>GitHub</title>
+            <path
+              d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+            ></path>
+          </svg>
+        </a>
         <ThemePickerDialog client:load />
       </div>
     </div>
   </header>
   <main class="hero polka-background" transition:animate="none">
-    <div class="hero-gradient"></div>
     <div class="hero-content">
       <div class="hero-area-a">
         <div class="hero-text">
@@ -208,7 +227,35 @@ import { ThemePickerDialog } from "~/layouts/docs/sidebar/components/theme-picke
       .landing-header-actions {
         align-items: center;
         display: flex;
+        flex-shrink: 0;
         gap: var(--wui-space-3);
+
+        .github-link {
+          align-items: center;
+          border-radius: var(--wui-border-radius-3);
+          color: var(--wui-color-grey-12);
+          display: flex;
+          font-size: var(--wui-font-size-2);
+          font-weight: var(--wui-font-weight-semibold);
+          height: calc(34px * var(--wui-scale));
+          justify-content: center;
+          width: calc(34px * var(--wui-scale));
+
+          &:where(:hover, :active) {
+            background: var(--wui-color-accent-4);
+          }
+
+          &:focus-visible {
+            background: var(--wui-color-accent-3);
+            outline: none;
+          }
+
+          & > svg {
+            fill: var(--wui-color-grey-12);
+            height: calc(16px * var(--wui-scale));
+            width: calc(16px * var(--wui-scale));
+          }
+        }
       }
     }
   }
@@ -226,26 +273,7 @@ import { ThemePickerDialog } from "~/layouts/docs/sidebar/components/theme-picke
       --hero-padding-top: 140px;
     }
 
-    .hero-gradient {
-      height: calc(100% - var(--wui-hero-padding-top));
-      background: linear-gradient(
-        to bottom,
-        transparent,
-        var(--hero-gradient-1) 10%,
-        transparent 60%
-      );
-      background-size: auto 300px;
-      background-repeat: no-repeat;
-      position: absolute;
-      width: 100%;
-
-      @media (min-width: 768px) {
-        background-size: auto 600px;
-      }
-    }
-
     .hero-content {
-      position: absolute;
       --grid-column-count: 3;
 
       display: grid;
@@ -268,6 +296,10 @@ import { ThemePickerDialog } from "~/layouts/docs/sidebar/components/theme-picke
           grid-column: span calc(var(--grid-column-count) / 2);
           padding-right: 0;
           padding-left: var(--wui-space-6);
+        }
+
+        @media (min-width: 1054px) {
+          padding-left: 0;
         }
 
         .hero-text {

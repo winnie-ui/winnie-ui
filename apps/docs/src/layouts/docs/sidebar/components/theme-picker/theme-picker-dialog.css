@@ -5,7 +5,6 @@
   display: flex;
   font-size: var(--wui-font-size-2);
   font-weight: var(--wui-font-weight-semibold);
-  gap: var(--wui-space-3);
   height: calc(34px * var(--wui-scale));
   justify-content: center;
   width: calc(34px * var(--wui-scale));
@@ -14,7 +13,7 @@
     background: var(--wui-color-accent-4);
   }
 
-  &[focus-visible] {
+  &[data-focus-visible] {
     background: var(--wui-color-accent-3);
   }
 

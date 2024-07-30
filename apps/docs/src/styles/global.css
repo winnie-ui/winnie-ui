@@ -8,6 +8,10 @@ html:has(#docs-menu-toggle:checked) {
   width: 100%;
 }
 
+body {
+  background: var(--wui-site-background);
+}
+
 @layer base {
   :root,
   .light,
@@ -41,9 +45,7 @@ html:has(#docs-menu-toggle:checked) {
 
     --wui-color-brand-contrast: #fff;
 
-    body {
-      background: var(--wui-color-white);
-    }
+    --wui-site-background: var(--wui-color-white);
   }
 
   @supports (color: color(display-p3 1 1 1)) {
@@ -79,6 +81,7 @@ html:has(#docs-menu-toggle:checked) {
         --wui-color-brand-a12: color(display-p3 0.031 0.008 0 / 0.84);
 
         --wui-color-brand-contrast: #fff;
+        --wui-site-background: var(--wui-color-white);
       }
     }
   }
@@ -113,10 +116,7 @@ html:has(#docs-menu-toggle:checked) {
     --wui-color-brand-a12: #fee8dff5;
 
     --wui-color-brand-contrast: #fff;
-
-    body {
-      background: var(--wui-color-black);
-    }
+    --wui-site-background: var(--wui-color-black);
   }
 
   @supports (color: color(display-p3 1 1 1)) {
@@ -151,9 +151,8 @@ html:has(#docs-menu-toggle:checked) {
         --wui-color-brand-a12: color(display-p3 1 0.933 0.894 / 0.942);
 
         --wui-color-brand-contrast: #fff;
-        --wui-color-brand-surface: color(display-p3 0.141 0.118 0.11 / 0.5);
-        --wui-color-brand-indicator: oklch(43.1% 0.03 42.9);
-        --wui-color-brand-track: oklch(43.1% 0.03 42.9);
+
+        --wui-site-background: var(--wui-color-black);
       }
     }
   }
