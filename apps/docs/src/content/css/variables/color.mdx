@@ -3,11 +3,14 @@ title: Color
 description: Variables for changing an elements color
 ---
 
+import Demo from "~/components/demo/demo.astro";
+
 import ColorBlock from "./_components/color-block.astro";
 import ColorBoard from "./_components/color-board.astro";
 import ColorRowAlpha from "./_components/color-row-alpha.astro";
 import ColorRowHeader from "./_components/color-row-header.astro";
 import ColorRow from "./_components/color-row.astro";
+import { DarkModeExample } from "./_components/dark-mode-example";
 
 ## Scales
 
@@ -54,20 +57,21 @@ Winnie CSS includes a default set of colors that is a great place to start when 
 
 Winnie CSS makes working with colors predictable using the [Radix Color System](https://www.radix-ui.com/colors/docs/palette-composition/understanding-the-scale). There are 12 colors in each scale, each color has a specific purpose. However, there will be cases where these colors need to be adjusted to get things just right. There is no silver bullet when it comes to swapping hues for dark mode, so be sure to take extra care when designing for dark mode.
 
-| Step | Use Case                                 |
-| ---- | ---------------------------------------- |
-| 1    | App background                           |
-| 2    | Subtle background                        |
-| 3    | UI element background                    |
-| 4    | Hovered UI element background            |
-| 5    | Active / Selected UI element background  |
-| 6    | Subtle borders and separators            |
-| 7    | UI element border and focus rings        |
-| 8    | Hovered UI element border                |
-| 9    | Solid background for things like buttons |
-| 10   | Hovered solid background                 |
-| 11   | Low-contast text                         |
-| 12   | High-contast text                        |
+| Step     | Use Case                                 |
+| -------- | ---------------------------------------- |
+| 1        | App background                           |
+| 2        | Subtle background                        |
+| 3        | UI element background                    |
+| 4        | Hovered UI element background            |
+| 5        | Active / Selected UI element background  |
+| 6        | Subtle borders and separators            |
+| 7        | UI element border and focus rings        |
+| 8        | Hovered UI element border                |
+| 9        | Solid background for things like buttons |
+| 10       | Hovered solid background                 |
+| 11       | Low-contast text                         |
+| 12       | High-contast text                        |
+| contrast | Step 9 and 10 contrast color for text    |
 
 ## Customizing Colors
 
@@ -144,11 +148,36 @@ Each color can be overridden using css variables defined in a global css file in
 }
 ```
 
-Once you have configured your custom brand color you can set `data-accent-color` to `brand` and all of your components will use that color as the accent.
+Once you have configured your custom brand color you can set `data-accent-color` to `brand` and all of your components will use that color as the accent. Keep in mind that `brand` is a special accent color that has been defined by Winnie CSS. You cannot choose an arbitrary color name and use it as an accent color. Only the colors provided by Winnie CSS can be customized.
 
 ## Dark Mode
 
-TODO
+Winnie CSS supports dark mode with no compromises. It even allows you to scope dark mode colors to specific components or sections of your applications.
+
+### Usage
+
+Dark mode can be configured via class name or data attribute. For class names you can use `dark` or `dark-theme` and for data attributes you can use `[data-theme="dark"]`
+
+```tsx title="root.tsx" ins="data-theme="dark""
+export default function Root() {
+  return (
+    <html>
+      <head></head>
+      <body class="winnie-ui" data-theme="dark" data-accent-color="purple">
+        <App />
+      </body>
+    </html>
+  );
+}
+```
+
+### Example
+
+Dark mode can be also be scoped to specific components. This means you are not restricted to the application level. This is useful for items that you want to be higher contrast.
+
+<Demo>
+  <DarkModeExample client:only="react" />
+</Demo>
 
 ## Reference
 

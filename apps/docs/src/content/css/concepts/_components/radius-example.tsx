@@ -26,7 +26,7 @@ const RADIUS = ["none", "sm", "md", "lg", "round"];
 
 export function RadiusExample() {
   /**
-   * tracks the selected accent color
+   * tracks the selected radius
    */
   const [radius, setRadius] = useState(() => {
     return getTheme().radius;
