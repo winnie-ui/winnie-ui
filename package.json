@@ -16,13 +16,13 @@
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "4.3.0",
-    "husky": "9.1.1",
+    "husky": "9.1.4",
     "lint-staged": "15.2.7",
     "prettier": "3.3.3",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.6.5",
     "rimraf": "6.0.1",
-    "turbo": "2.0.9"
+    "turbo": "2.0.11"
   },
   "engines": {
     "node": ">=21.7.3",

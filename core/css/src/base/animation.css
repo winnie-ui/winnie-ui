@@ -10,6 +10,17 @@
     --wui-linear-1: linear;
   }
 
+  @keyframes wui-dialog-open {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -48%) scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
   @keyframes wui-collapsible-down {
     from {
       height: 0;
