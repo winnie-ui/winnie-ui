@@ -71,7 +71,7 @@ export function RadiusExample() {
           <img
             className="now-playing-cover"
             src={albumCover.src}
-            alt="only u by brock"
+            alt="Jungle by Fred Again.."
           />
         </div>
         <div className="now-playing-song">

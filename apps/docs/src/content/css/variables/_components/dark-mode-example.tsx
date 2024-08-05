@@ -11,7 +11,7 @@ const MODE_ICON_MAP = {
   dark: <Moon />,
 } satisfies Record<Theme["mode"], ReactNode>;
 
-export const DarkModeExample = () => {
+export function DarkModeExample() {
   /**
    * tracks the selected theme mode
    */
@@ -85,4 +85,4 @@ export const DarkModeExample = () => {
       </div>
     </div>
   );
-};
+}
