@@ -17,75 +17,77 @@ const { element: Element = "h2", id } = Astro.props;
 </Element>
 
 <style>
-  .heading {
-    align-items: center;
-    display: flex;
-    gap: var(--wui-space-3);
-    letter-spacing: var(--wui-letter-spacing-9);
-
-    .heading-anchor {
-      color: var(--wui-color-grey-12);
-      font-weight: var(--wui-font-weight-medium);
-      outline: none;
-    }
-
-    .heading-link-icon {
-      color: var(--wui-color-grey-9);
-      height: calc(14px * var(--wui-scale));
-      opacity: 0;
-      transition-property: opacity, transform;
-      transition-duration: var(--wui-duration-3);
-      transition-timing-function: var(--wui-bezier-1);
-      width: calc(14px * var(--wui-scale));
-
-      @media (prefers-reduced-motion: no-preference) {
-        & {
-          transform: translateX(-6px);
-        }
-      }
-    }
-
-    &:has(:where(a:hover, a:focus-visible)) {
-      padding-right: var(--wui-space-6);
+  @layer markdown {
+    .heading {
+      align-items: center;
+      display: flex;
+      gap: var(--wui-space-3);
+      letter-spacing: var(--wui-letter-spacing-9);
 
       .heading-anchor {
+        color: var(--wui-color-grey-12);
+        font-weight: var(--wui-font-weight-medium);
         outline: none;
       }
 
       .heading-link-icon {
-        opacity: 1;
+        color: var(--wui-color-grey-9);
+        height: calc(14px * var(--wui-scale));
+        opacity: 0;
+        transition-property: opacity, transform;
+        transition-duration: var(--wui-duration-3);
+        transition-timing-function: var(--wui-bezier-1);
+        width: calc(14px * var(--wui-scale));
 
         @media (prefers-reduced-motion: no-preference) {
           & {
-            transform: translateX(0px);
+            transform: translateX(-6px);
           }
         }
       }
+
+      &:has(:where(a:hover, a:focus-visible)) {
+        padding-right: var(--wui-space-6);
+
+        .heading-anchor {
+          outline: none;
+        }
+
+        .heading-link-icon {
+          opacity: 1;
+
+          @media (prefers-reduced-motion: no-preference) {
+            & {
+              transform: translateX(0px);
+            }
+          }
+        }
+      }
+
+      &:has(a:focus-visible) {
+        border-radius: min(var(--wui-border-radius-2), 8px);
+        padding-left: var(--wui-space-4);
+        margin-left: calc(-1 * var(--wui-space-4));
+        outline: var(--wui-border-width-2) solid var(--wui-color-accent-9);
+      }
     }
 
-    &:has(a:focus-visible) {
-      border-radius: min(var(--wui-border-radius-2), 8px);
-      padding-left: var(--wui-space-4);
-      margin-left: calc(-1 * var(--wui-space-4));
-      outline: var(--wui-border-width-2) solid var(--wui-color-accent-9);
+    h2:not(:where(.not-content *)) {
+      font-size: var(--wui-font-size-6);
+      line-height: var(--wui-line-height-6);
+      margin-top: var(--wui-space-9);
     }
-  }
 
-  h2:not(:where(.not-content *)) {
-    font-size: var(--wui-font-size-6);
-    line-height: var(--wui-line-height-6);
-    margin-top: var(--wui-space-9);
-  }
+    h3:not(:where(.not-content *)) {
+      font-size: calc(17px * var(--wui-scale));
+      line-height: var(--wui-line-height-5);
+      margin-top: var(--wui-space-7);
+    }
 
-  h3:not(:where(.not-content *)) {
-    font-size: calc(17px * var(--wui-scale));
-    line-height: var(--wui-line-height-5);
-    margin-top: var(--wui-space-7);
-  }
-
-  h4:not(:where(.not-content *)) {
-    font-size: calc(15px * var(--wui-scale));
-    line-height: var(--wui-line-height-3);
-    margin-top: var(--wui-space-7);
+    h4:not(:where(.not-content *)) {
+      font-size: calc(15px * var(--wui-scale));
+      line-height: var(--wui-line-height-3);
+      margin-top: var(--wui-space-7);
+    }
   }
 </style>

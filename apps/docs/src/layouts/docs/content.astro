@@ -97,60 +97,63 @@ const { title, description, headings } = Astro.props;
           }
         }
 
-        .wui-markdown-content {
-          --wui-markdown-content-font-size: calc(15px * var(--wui-scale));
+        @layer markdown {
+          .wui-markdown-content {
+            --wui-markdown-content-font-size: calc(15px * var(--wui-scale));
 
-          a:not(:where(.not-content *), .heading-anchor) {
-            color: var(--wui-color-accent-11);
-            border-radius: min(var(--wui-border-radius-1), 4px);
-            font-size: var(--wui-markdown-content-font-size);
-            font-weight: var(--wui-font-weight-medium);
+            a:not(:where(.not-content *), .heading-anchor) {
+              color: var(--wui-color-accent-11);
+              border-radius: min(var(--wui-border-radius-1), 4px);
+              font-size: var(--wui-markdown-content-font-size);
+              font-weight: var(--wui-font-weight-medium);
 
-            &:hover {
+              &:hover {
+                color: var(--wui-color-accent-12);
+              }
+
+              &:focus-visible {
+                outline: var(--wui-border-width-2) solid
+                  var(--wui-color-accent-9);
+                outline-offset: var(--wui-space-1);
+              }
+            }
+
+            p:not(:where(.not-content *)) {
+              color: var(--wui-color-grey-12);
+              font-size: var(--wui-markdown-content-font-size);
+              font-weight: var(--wui-font-weight-normal);
+              line-height: var(--wui-line-height-3);
+              margin: var(--wui-space-6) auto;
+            }
+
+            h2 + p:not(:where(.not-content *)) {
+              margin-bottom: var(--wui-space-7);
+              margin-top: var(--wui-space-5);
+            }
+
+            h3 + p:not(:where(.not-content *)) {
+              margin-bottom: var(--wui-space-7);
+              margin-top: var(--wui-space-5);
+            }
+
+            code:not(:where(.not-content *)) {
+              background: var(--wui-color-accent-3);
+              border: var(--wui-border-width-1) solid var(--wui-color-accent-5);
+              border-radius: min(var(--wui-border-radius-2), 6px);
               color: var(--wui-color-accent-12);
+              font-family: var(--wui-font-family-mono);
+              font-size: var(--wui-font-size-2);
+              line-height: 1;
+              margin: var(--wui-space-6) auto;
+              padding-inline: var(--wui-space-1);
+              padding-bottom: var(--wui-space-1);
             }
 
-            &:focus-visible {
-              outline: var(--wui-border-width-2) solid var(--wui-color-accent-9);
-              outline-offset: var(--wui-space-1);
+            ul:not(:where(.not-content)) {
+              list-style-type: disc;
+              margin: var(--wui-space-6) 0;
+              padding-left: var(--wui-space-8);
             }
-          }
-
-          p:not(:where(.not-content *)) {
-            color: var(--wui-color-grey-12);
-            font-size: var(--wui-markdown-content-font-size);
-            font-weight: var(--wui-font-weight-normal);
-            line-height: var(--wui-line-height-3);
-            margin: var(--wui-space-6) auto;
-          }
-
-          h2 + p:not(:where(.not-content *)) {
-            margin-bottom: var(--wui-space-7);
-            margin-top: var(--wui-space-5);
-          }
-
-          h3 + p:not(:where(.not-content *)) {
-            margin-bottom: var(--wui-space-7);
-            margin-top: var(--wui-space-5);
-          }
-
-          code:not(:where(.not-content *)) {
-            background: var(--wui-color-accent-3);
-            border: var(--wui-border-width-1) solid var(--wui-color-accent-5);
-            border-radius: min(var(--wui-border-radius-2), 6px);
-            color: var(--wui-color-accent-12);
-            font-family: var(--wui-font-family-mono);
-            font-size: var(--wui-font-size-2);
-            line-height: 1;
-            margin: var(--wui-space-6) auto;
-            padding-inline: var(--wui-space-1);
-            padding-bottom: var(--wui-space-1);
-          }
-
-          ul:not(:where(.not-content)) {
-            list-style-type: disc;
-            margin: var(--wui-space-6) 0;
-            padding-left: var(--wui-space-8);
           }
         }
       }

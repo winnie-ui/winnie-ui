@@ -1,12 +1,16 @@
 ---
-import { Info, TriangleAlert } from "lucide-react";
+import { FlaskConical, Info, TriangleAlert } from "lucide-react";
 
 type Props = {
-  type: "info" | "warning";
+  type: "experimental" | "info" | "warning";
   title: string;
 };
 
 const icon = {
+  experimental: {
+    icon: FlaskConical,
+    title: "Experimental",
+  },
   info: {
     icon: Info,
     title: "Info",
@@ -22,9 +26,9 @@ const { type = "info", title } = Astro.props;
 const Icon = icon[type].icon;
 ---
 
-<aside class="aside not-content" data-type={type}>
+<aside class="aside" data-type={type}>
   <Icon />
-  <div class="aside-content not-content">
+  <div class="aside-content">
     <span class="aside-title">{icon[type].title}</span>
     <slot />
   </div>
@@ -37,6 +41,12 @@ const Icon = icon[type].icon;
     border: var(--wui-border-width-1) solid var(--wui-aside-border-color);
     display: flex;
     padding: var(--wui-space-5);
+
+    &[data-type="experimental"] {
+      --wui-aside-background: var(--wui-color-green-a3);
+      --wui-aside-border-color: var(--wui-color-green-a4);
+      --wui-aside-color: var(--wui-color-green-11);
+    }
 
     &[data-type="info"] {
       --wui-aside-background: var(--wui-color-blue-a3);
@@ -74,6 +84,10 @@ const Icon = icon[type].icon;
         .aside-title {
           margin-bottom: var(--wui-space-3);
         }
+      }
+
+      p {
+        margin-block: 0;
       }
     }
   }

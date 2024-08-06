@@ -1,6 +1,8 @@
 @import "@winnie-ui/css";
 @import "./code.css";
 
+@layer markdown;
+
 html:has(#docs-menu-toggle:checked) {
   overflow-y: scroll;
   position: fixed;
