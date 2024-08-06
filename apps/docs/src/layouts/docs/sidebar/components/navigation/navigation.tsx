@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useRef } from "react";
 
+import { ScrollArea } from "~/components/scroll-area/scroll-area";
+
 import { NavigationList } from "./navigation-list";
 import type { NavigationItem } from "./types";
-import { ScrollArea } from "~/components/scroll-area";
 
 import "./navigation.css";
 

@@ -1,5 +1,5 @@
 @import "@winnie-ui/css";
-@import "../code/code.css";
+@import "./code.css";
 
 html:has(#docs-menu-toggle:checked) {
   overflow-y: scroll;

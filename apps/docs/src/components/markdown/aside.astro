@@ -1,0 +1,80 @@
+---
+import { Info, TriangleAlert } from "lucide-react";
+
+type Props = {
+  type: "info" | "warning";
+  title: string;
+};
+
+const icon = {
+  info: {
+    icon: Info,
+    title: "Info",
+  },
+  warning: {
+    icon: TriangleAlert,
+    title: "Warning",
+  },
+} satisfies Record<Props["type"], any>;
+
+const { type = "info", title } = Astro.props;
+
+const Icon = icon[type].icon;
+---
+
+<aside class="aside not-content" data-type={type}>
+  <Icon />
+  <div class="aside-content not-content">
+    <span class="aside-title">{icon[type].title}</span>
+    <slot />
+  </div>
+</aside>
+
+<style>
+  .aside {
+    background: var(--wui-aside-background);
+    border-radius: var(--wui-border-radius-3);
+    border: var(--wui-border-width-1) solid var(--wui-aside-border-color);
+    display: flex;
+    padding: var(--wui-space-5);
+
+    &[data-type="info"] {
+      --wui-aside-background: var(--wui-color-blue-a3);
+      --wui-aside-border-color: var(--wui-color-blue-a4);
+      --wui-aside-color: var(--wui-color-blue-11);
+    }
+
+    &[data-type="warning"] {
+      --wui-aside-background: var(--wui-color-yellow-a3);
+      --wui-aside-border-color: var(--wui-color-yellow-a4);
+      --wui-aside-color: var(--wui-color-yellow-11);
+    }
+
+    & > svg {
+      --size: 20px;
+
+      height: var(--size);
+      stroke: var(--wui-aside-color);
+      width: var(--size);
+    }
+
+    .aside-content {
+      margin-left: var(--wui-space-3);
+      width: 100%;
+
+      .aside-title {
+        color: var(--wui-aside-color);
+        display: inline-block;
+        font-size: var(--wui-font-size-3);
+        font-weight: var(--wui-font-weight-medium);
+        line-height: 1;
+      }
+
+      &:has(.aside-title + *) {
+        .aside-title {
+          margin-bottom: var(--wui-space-3);
+        }
+      }
+    }
+  }
+</style>
