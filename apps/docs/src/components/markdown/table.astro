@@ -7,6 +7,7 @@
 <style>
   .wui-docs-table {
     margin: var(--wui-space-9) auto;
+    max-height: 600px;
     overflow: auto;
 
     table:not(:where(.not-content)) {
@@ -17,6 +18,9 @@
       width: 100%;
 
       thead {
+        top: 0;
+        position: sticky;
+
         tr {
           th {
             background: var(--th-background);
@@ -46,6 +50,7 @@
       }
 
       tbody {
+        border-top-left-radius: var(--wui-table-border-radius);
         tr {
           td {
             border-bottom: var(--wui-border-width-1) solid
