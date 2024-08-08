@@ -1,11 +1,14 @@
-name: publish
+name: pr
 on:
+  pull_request:
+    branches: [main]
+    types: [opened, reopened, synchronize]
   push:
     branches:
       - main
 
 jobs:
-  publish:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo
@@ -34,10 +37,5 @@ jobs:
       - name: install dependencies
         run: pnpm install
 
-      - name: create release pull request or publish to npm
-        uses: changesets/action@v1
-        with:
-          publish: pnpm publish
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: build
+        run: pnpm build
