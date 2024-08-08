@@ -9,7 +9,7 @@
   "commit": false,
   "fixed": [["@winnie-ui/css", "@winnie-ui/tailwind"]],
   "linked": [],
-  "access": "restricted",
+  "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
   "ignore": []
