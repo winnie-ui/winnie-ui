@@ -1,8 +1,6 @@
 name: publish
 on:
   push:
-    branches:
-      - main
 
 jobs:
   publish:
@@ -22,7 +20,7 @@ jobs:
       - name: install node
         uses: actions/setup-node@v4
         with:
-          node-version: 21.7.3
+          node-version: 22.5.0
           cache: "pnpm"
 
       - name: install dependencies
