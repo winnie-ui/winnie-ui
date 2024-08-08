@@ -1,9 +1,6 @@
 {
   "name": "winnie-ui",
   "version": "0.0.1",
-  "description": "A collection of tools for writing React applications",
-  "author": "Adam Aho",
-  "license": "ISC",
   "private": true,
   "scripts": {
     "build": "turbo run build --cache-dir=.turbo",
