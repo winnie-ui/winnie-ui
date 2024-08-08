@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Shared eslint configs for winnie-ui",
   "author": "Adam Aho",
+  "private": true,
   "exports": {
     ".": "./base.js",
     "./react": "./react.js",
@@ -21,11 +22,11 @@
   },
   "dependencies": {
     "@next/eslint-plugin-next": "14.2.5",
-    "@typescript-eslint/eslint-plugin": "8.0.0",
-    "@typescript-eslint/parser": "8.0.0",
+    "@typescript-eslint/eslint-plugin": "8.0.1",
+    "@typescript-eslint/parser": "8.0.1",
     "eslint-config-next": "14.2.5",
     "eslint-config-prettier": "9.1.0",
-    "eslint-config-turbo": "2.0.11",
+    "eslint-config-turbo": "2.0.12",
     "eslint-import-resolver-typescript": "3.6.1",
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-no-only-tests": "3.1.0",
