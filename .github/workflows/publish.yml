@@ -10,6 +10,9 @@ jobs:
     steps:
       - name: checkout repo
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.WINNIE_UI_GITHUB_TOKEN }}
+          fetch-depth: 0
 
       - name: cache turbo build
         uses: actions/cache@v4
