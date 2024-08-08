@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Shared tsconfigs for winnie-ui",
   "author": "Adam Aho",
+  "private": true,
   "exports": {
     ".": "./base.json",
     "./next": "./next.json",

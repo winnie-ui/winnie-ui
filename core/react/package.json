@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Collection of react components",
   "author": "Adam Aho",
+  "private": true,
   "exports": {
     ".": "./src/index.ts"
   },
