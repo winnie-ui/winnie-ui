@@ -1,8 +1,6 @@
 name: publish
 on:
   push:
-    branches:
-      - main
 
 jobs:
   publish:
@@ -10,8 +8,6 @@ jobs:
     steps:
       - name: checkout repo
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: install pnpm
         uses: pnpm/action-setup@v4
@@ -22,7 +18,7 @@ jobs:
       - name: install node
         uses: actions/setup-node@v4
         with:
-          node-version: 21.7.3
+          node-version: 22.5.0
           cache: "pnpm"
 
       - name: install dependencies
