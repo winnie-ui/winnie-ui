@@ -1,5 +1,11 @@
 # @winnie-ui/css
 
+## 0.0.3
+
+### Patch Changes
+
+- [#9](https://github.com/winnie-ui/winnie-ui/pull/9) [`8f9f95b`](https://github.com/winnie-ui/winnie-ui/commit/8f9f95bab4e5ef49f5cad0285cea158a4b23cca0) Thanks [@adamaho](https://github.com/adamaho)! - attempt to publish attempt 2
+
 ## 0.0.2
 
 ### Patch Changes
