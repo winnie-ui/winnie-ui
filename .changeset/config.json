@@ -3,7 +3,7 @@
   "changelog": [
     "@changesets/changelog-github",
     {
-      "repo": "adamaho/winnie-ui"
+      "repo": "winnie-ui/winnie-ui"
     }
   ],
   "commit": false,

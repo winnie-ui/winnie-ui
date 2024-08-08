@@ -40,7 +40,7 @@ jobs:
       - name: create release pull request or publish to npm
         uses: changesets/action@v1
         with:
-          publish: pnpm publish
+          publish: pnpm changeset:publish
         env:
           GITHUB_TOKEN: ${{ secrets.WINNIE_UI_GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
