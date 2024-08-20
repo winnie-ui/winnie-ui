@@ -30,7 +30,7 @@ jobs:
         run: bun install
 
       - name: build
-        run: bun build
+        run: bun run build
 
       - name: create release pull request or publish to npm
         uses: changesets/action@v1
