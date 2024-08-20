@@ -2,10 +2,15 @@
   "name": "winnie-ui",
   "version": "0.0.1",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "core/*",
+    "tools/*"
+  ],
   "scripts": {
     "build": "turbo run build --cache-dir=.turbo",
     "changeset": "changeset",
-    "changeset:publish": "pnpm build && changeset publish",
+    "changeset:publish": "bun build && changeset publish",
     "clean": "turbo run clean && rimraf node_modules",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,yml,yaml,.md,.mdx}\"",
     "lint": "turbo run lint",
@@ -17,16 +22,16 @@
     "@changesets/changelog-github": "0.5.0",
     "@changesets/cli": "2.27.7",
     "@trivago/prettier-plugin-sort-imports": "4.3.0",
-    "husky": "9.1.4",
-    "lint-staged": "15.2.8",
+    "husky": "9.1.5",
+    "lint-staged": "15.2.9",
     "prettier": "3.3.3",
     "prettier-plugin-astro": "0.14.1",
     "rimraf": "6.0.1",
-    "turbo": "2.0.12"
+    "turbo": "2.0.14"
   },
   "engines": {
     "node": ">=22.5.0",
-    "pnpm": ">=9.7.0"
+    "bun": ">=1.1.25"
   },
-  "packageManager": "pnpm@9.7.0"
+  "packageManager": "bun@1.1.25"
 }

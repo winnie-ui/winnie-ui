@@ -60,7 +60,7 @@
     "package.json"
   ],
   "scripts": {
-    "build": "rimraf dist && concurrently pnpm:dist:* -m 25",
+    "build": "rimraf dist && concurrently bun:dist:* -m 25",
     "dist:all": "lightningcss src/index.css -o dist/index.min.css --minify --bundle --targets 'last 2 versions'",
     "dist:base": "lightningcss src/base/index.css -o dist/base.min.css --minify --bundle --targets 'last 2 versions'",
     "dist:base-animation": "lightningcss src/base/animation.css -o dist/base/animation.min.css --minify --bundle --targets 'last 2 versions'",
@@ -93,6 +93,6 @@
     "lightningcss": "1.26.0",
     "lightningcss-cli": "1.26.0",
     "rimraf": "6.0.1",
-    "stylelint": "16.8.1"
+    "stylelint": "16.8.2"
   }
 }
