@@ -29,8 +29,8 @@ jobs:
       - name: install dependencies
         run: bun install
 
-      - name: install dependencies
-        run: bun install
+      - name: build
+        run: bun build
 
       - name: create release pull request or publish to npm
         uses: changesets/action@v1
