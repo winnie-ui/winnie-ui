@@ -21,7 +21,7 @@ const icon = {
   },
 } satisfies Record<Props["type"], any>;
 
-const { type = "info", title } = Astro.props;
+const { type = "info" } = Astro.props;
 
 const Icon = icon[type].icon;
 ---
