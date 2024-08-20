@@ -1,5 +1,11 @@
 # @winnie-ui/css
 
+## 0.0.5
+
+### Patch Changes
+
+- [#15](https://github.com/winnie-ui/winnie-ui/pull/15) [`403d1b1`](https://github.com/winnie-ui/winnie-ui/commit/403d1b14dbaf2f9d4f9052d647b21e0be431b43d) Thanks [@adamaho](https://github.com/adamaho)! - exports minified css for minified imports
+
 ## 0.0.4
 
 ### Patch Changes
