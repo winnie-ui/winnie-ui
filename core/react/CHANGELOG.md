@@ -1,5 +1,12 @@
 # @winnie-ui/react
 
+## 0.0.6
+
+### Patch Changes
+
+- Updated dependencies [[`3544a4f`](https://github.com/winnie-ui/winnie-ui/commit/3544a4f47dff3d827c4ceef3f75ae59159055226)]:
+  - @winnie-ui/css@0.0.6
+
 ## 0.0.5
 
 ### Patch Changes

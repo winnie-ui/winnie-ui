@@ -1,5 +1,11 @@
 # @winnie-ui/css
 
+## 0.0.6
+
+### Patch Changes
+
+- [#18](https://github.com/winnie-ui/winnie-ui/pull/18) [`3544a4f`](https://github.com/winnie-ui/winnie-ui/commit/3544a4f47dff3d827c4ceef3f75ae59159055226) Thanks [@adamaho](https://github.com/adamaho)! - fix(css): fixes exports resolution
+
 ## 0.0.5
 
 ### Patch Changes
