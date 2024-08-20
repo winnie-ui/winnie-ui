@@ -22,25 +22,20 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-turbo-build-
 
-      - name: install pnpm
-        uses: pnpm/action-setup@v4
+      - uses: oven-sh/setup-bun@v2
         with:
-          version: 9.7.0
-          run_install: false
-
-      - name: install node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22.5.0
-          cache: "pnpm"
+          bun-version: 1.1.25
 
       - name: install dependencies
-        run: pnpm install
+        run: bun install
+
+      - name: build
+        run: bun run build
 
       - name: create release pull request or publish to npm
         uses: changesets/action@v1
         with:
-          publish: pnpm changeset:publish
+          publish: bun run changeset:publish
         env:
           GITHUB_TOKEN: ${{ secrets.WINNIE_UI_GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.WINNIE_UI_NPM_TOKEN }}
