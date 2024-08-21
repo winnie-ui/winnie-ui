@@ -10,7 +10,7 @@
   "scripts": {
     "build": "turbo run build --cache-dir=.turbo",
     "changeset": "changeset",
-    "changeset:publish": "bun run build && changeset publish",
+    "changeset:publish": "changeset publish",
     "clean": "turbo run clean && rimraf node_modules",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,yml,yaml,.md,.mdx}\"",
     "lint": "turbo run lint",
