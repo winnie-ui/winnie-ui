@@ -1,5 +1,11 @@
 # @winnie-ui/css
 
+## 0.0.7
+
+### Patch Changes
+
+- [`fa281fc`](https://github.com/winnie-ui/winnie-ui/commit/fa281fc9d700c1caa55f6c5a35199297a85d3f45) Thanks [@adamaho](https://github.com/adamaho)! - fix(css): fixes publish config
+
 ## 0.0.6
 
 ### Patch Changes
