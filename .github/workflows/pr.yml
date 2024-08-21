@@ -22,12 +22,19 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-turbo-build-
 
-      - uses: oven-sh/setup-bun@v2
+      - name: install pnpm
+        uses: pnpm/action-setup@v4
         with:
-          bun-version: latest
+          run_install: false
+
+      - name: install node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.5.0
+          cache: "pnpm"
 
       - name: install dependencies
-        run: bun install
+        run: pnpm install
 
       - name: build
-        run: bun run build
+        run: pnpm build
