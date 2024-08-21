@@ -1,5 +1,12 @@
 # @winnie-ui/tailwind
 
+## 0.0.10
+
+### Patch Changes
+
+- Updated dependencies [[`3a34ad9`](https://github.com/winnie-ui/winnie-ui/commit/3a34ad9438b6af12726f36782cdc139890838279)]:
+  - @winnie-ui/css@0.0.10
+
 ## 0.0.9
 
 ### Patch Changes
