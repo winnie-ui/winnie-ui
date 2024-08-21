@@ -1,5 +1,11 @@
 # @winnie-ui/css
 
+## 0.0.8
+
+### Patch Changes
+
+- [`241c0ba`](https://github.com/winnie-ui/winnie-ui/commit/241c0ba1d173f61906da989dd93383d460efbd53) Thanks [@adamaho](https://github.com/adamaho)! - fix(ci): publish with pnpm so that publish config works
+
 ## 0.0.7
 
 ### Patch Changes
