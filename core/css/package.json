@@ -4,7 +4,6 @@
   "description": "A flexible and opinionated collection of CSS primitives for building applications.",
   "author": "Adam Aho",
   "type": "module",
-  "main": "./src/index.css",
   "exports": {
     ".": "./src/index.css",
     "./base": "./src/base/index.css",
