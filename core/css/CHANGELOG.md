@@ -1,5 +1,11 @@
 # @winnie-ui/css
 
+## 0.0.9
+
+### Patch Changes
+
+- [#23](https://github.com/winnie-ui/winnie-ui/pull/23) [`55cb895`](https://github.com/winnie-ui/winnie-ui/commit/55cb89573ac3f9e73cb52596b91c748ad97672ab) Thanks [@adamaho](https://github.com/adamaho)! - fix(css): updates publish config to reflect dist
+
 ## 0.0.8
 
 ### Patch Changes
