@@ -12,6 +12,30 @@ import ColorRowHeader from "./_components/color-row-header.astro";
 import ColorRow from "./_components/color-row.astro";
 import { DarkModeExample } from "./_components/dark-mode-example";
 
+## Import
+
+Import just the all of the color variables or just the ones you want. Note if you want to make use of `data-accent-color` you will need to make sure you import the `accent` css.
+
+```css
+/* all colors */
+@import "@winnie-ui/base/colors";
+
+/* each color individually */
+@import "@winnie-ui/base/colors/red";
+@import "@winnie-ui/base/colors/orange";
+@import "@winnie-ui/base/colors/yellow";
+@import "@winnie-ui/base/colors/green";
+@import "@winnie-ui/base/colors/blue";
+@import "@winnie-ui/base/colors/purple";
+@import "@winnie-ui/base/colors/pink";
+@import "@winnie-ui/base/colors/grey";
+@import "@winnie-ui/base/colors/black";
+@import "@winnie-ui/base/colors/white";
+
+/* accent color */
+@import "@winnie-ui/base/colors/accent";
+```
+
 ## Scales
 
 Winnie CSS includes a default set of colors that is a great place to start when building your next application. These colors are loosely based on the colors provided by [Tailwind](https://tailwindcss.com/docs/customizing-colors) and were created using the [Radix Colors](https://www.radix-ui.com/colors/custom) custom palette generator.
@@ -180,6 +204,8 @@ Dark mode can be also be scoped to specific components. This means you are not r
 </Demo>
 
 ## Reference
+
+Below is a list of the available color variables in Winnie CSS.
 
 | Variable                      | Tailwind Class                   |
 | ----------------------------- | -------------------------------- |
