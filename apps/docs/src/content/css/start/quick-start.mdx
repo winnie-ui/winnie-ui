@@ -28,6 +28,12 @@ Once you have Winnie CSS installed, you can then import the stylesheet in the ro
 @import "@winnie-ui/css";
 ```
 
+If you want to reduce your css bundle size, you can import just the css you need and nothing more. We recommend you at least import the layers and then go from there. Each specific variable page outlines what needs to be imported in order to have access to the variables.
+
+```css title="global.css"
+@import "@winnie-ui/css/layer";
+```
+
 ### Configure your Theme
 
 Now, with Winnie CSS installed and imported, it's time to configure your theme. Winnie CSS allows you to choose the accent color, scale and border radius of your app.
