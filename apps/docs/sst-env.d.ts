@@ -1,12 +1,12 @@
 /* tslint:disable */
 /* eslint-disable */
-import "sst";
+import "sst"
 declare module "sst" {
   export interface Resource {
-    WinnieDocs: {
-      type: "sst.aws.Astro";
-      url: string;
-    };
+    "WinnieDocs": {
+      "type": "sst.aws.Astro"
+      "url": string
+    }
   }
 }
-export {};
+export {}
