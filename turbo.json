@@ -1,17 +1,17 @@
 {
-  "$schema": "https://turbo.build/schema.json",
-  "tasks": {
-    "build": {
-      "inputs": ["src/**", "locales/**"],
-      "outputs": ["dist/**"],
-      "dependsOn": ["topo"]
-    },
-    "clean": {},
-    "lint": {},
-    "stylelint": {},
-    "topo": {
-      "dependsOn": ["^topo"]
-    },
-    "tsc": {}
-  }
+	"$schema": "https://turbo.build/schema.json",
+	"tasks": {
+		"build": {
+			"inputs": ["src/**", "locales/**"],
+			"outputs": ["dist/**"],
+			"dependsOn": ["topo"]
+		},
+		"clean": {},
+		"biome:check": {},
+		"stylelint": {},
+		"topo": {
+			"dependsOn": ["^topo"]
+		},
+		"tsc": {}
+	}
 }
