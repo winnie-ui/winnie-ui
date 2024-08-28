@@ -1,8 +1,0 @@
-{
-  "extends": "@winnie-ui/ts-config/react",
-  "compilerOptions": {
-    "baseUrl": "."
-  },
-  "include": ["src"],
-  "exclude": ["node_modules"]
-}
