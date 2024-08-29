@@ -6,9 +6,6 @@
 			"outputs": ["dist/**"],
 			"dependsOn": ["topo"]
 		},
-		"clean": {},
-		"biome:check": {},
-		"stylelint": {},
 		"topo": {
 			"dependsOn": ["^topo"]
 		},

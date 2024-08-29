@@ -10,8 +10,7 @@
 	},
 	"files": ["src", "package.json"],
 	"scripts": {
-		"clean": "rimraf node_modules",
-		"stylelint": "stylelint \"src/**/*.css\""
+		"clean": "rimraf node_modules"
 	},
 	"peerDependencies": {
 		"tailwindcss": "4.0.0-alpha.15"
