@@ -6,7 +6,10 @@
 			"outputs": ["dist/**"],
 			"dependsOn": ["topo"]
 		},
-		"biome:check": {},
+		"format:check": {},
+		"format:write": {},
+		"lint:check": {},
+		"lint:write": {},
 		"topo": {
 			"dependsOn": ["^topo"]
 		},

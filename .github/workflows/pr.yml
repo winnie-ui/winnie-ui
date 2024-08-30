@@ -18,9 +18,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .turbo
-          key: ${{ runner.os }}-turbo-build-${{ github.sha }}
+          key: ${{ runner.os }}-turbo-${{ github.sha }}
           restore-keys: |
-            ${{ runner.os }}-turbo-build-
+            ${{ runner.os }}-turbo-
 
       - name: install pnpm
         uses: pnpm/action-setup@v4
@@ -37,7 +37,10 @@ jobs:
         run: pnpm install
 
       - name: lint
-        run: pnpm lint
+        run: pnpm lint:check
+
+      - name: format 
+        run: pnpm format:check
 
       - name: build
         run: pnpm build
