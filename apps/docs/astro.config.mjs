@@ -6,17 +6,13 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://winnie-ui.com",
-  output: "server",
-  adapter: aws(),
-  redirects: {
-    "": "/css",
-    "/": "/css",
-    "/css/docs": "/css/docs/start/quick-start"
-  },
-  integrations: [
-    expressiveCode(),
-    mdx(),
-    react(),
-  ],
+	site: "https://winnie-ui.com",
+	output: "server",
+	adapter: aws(),
+	redirects: {
+		"": "/css",
+		"/": "/css",
+		"/css/docs": "/css/docs/start/quick-start",
+	},
+	integrations: [expressiveCode(), mdx(), react()],
 });

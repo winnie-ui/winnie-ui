@@ -6,6 +6,7 @@
 			"outputs": ["dist/**"],
 			"dependsOn": ["topo"]
 		},
+		"biome:check": {},
 		"topo": {
 			"dependsOn": ["^topo"]
 		},

@@ -2,10 +2,10 @@ import { SearchCommandMenu } from "~/components/search-command-menu/search-comma
 import { useMediaQuery } from "~/hooks/use-media-query";
 
 export const Search = () => {
-  /**
-   * Computes if the current breakpoint is less than 768px
-   */
-  const isMobile = useMediaQuery("(max-width: 768px)");
+	/**
+	 * Computes if the current breakpoint is less than 768px
+	 */
+	const isMobile = useMediaQuery("(max-width: 768px)");
 
-  return !isMobile ? <SearchCommandMenu /> : null;
+	return !isMobile ? <SearchCommandMenu /> : null;
 };

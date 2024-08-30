@@ -6,6 +6,7 @@
 	"scripts": {
 		"astro": "astro",
 		"build": "rimraf dist .astro && astro check && astro build",
+		"biome:check": "biome check ./src --write --unsafe --no-errors-on-unmatched",
 		"clean": "rimraf node_modules dist .astro",
 		"dev": "astro dev",
 		"dev:sst": "sst dev astro dev",

@@ -1,18 +1,18 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "solid",
-  "extends": "./base.json",
-  "compilerOptions": {
-    "allowJs": false,
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
-    "jsx": "preserve",
-    "jsxImportSource": "solid-js",
-    "lib": ["es2022", "dom"],
-    "target": "es2022",
-    "module": "es2022",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "useDefineForClassFields": true
-  }
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"display": "solid",
+	"extends": "./base.json",
+	"compilerOptions": {
+		"allowJs": false,
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": ".",
+		"jsx": "preserve",
+		"jsxImportSource": "solid-js",
+		"lib": ["es2022", "dom"],
+		"target": "es2022",
+		"module": "es2022",
+		"moduleResolution": "bundler",
+		"resolveJsonModule": true,
+		"useDefineForClassFields": true
+	}
 }

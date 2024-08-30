@@ -1,14 +1,14 @@
 ---
 import type { CollectionEntry } from "astro:content";
 
+import type { MarkdownHeading } from "astro";
 import BaseHead from "~/layouts/base/base-head.astro";
 import BaseLayout from "../base/layout.astro";
-import Sidebar from "./sidebar/sidebar.astro";
 import Content from "./content.astro";
-import type { MarkdownHeading } from "astro";
+import Sidebar from "./sidebar/sidebar.astro";
 
 type Props = CollectionEntry<"css">["data"] & {
-  headings: MarkdownHeading[];
+	headings: MarkdownHeading[];
 };
 
 const { title, description, slug, headings } = Astro.props;

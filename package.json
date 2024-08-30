@@ -4,10 +4,11 @@
 	"private": true,
 	"scripts": {
 		"build": "turbo run build --cache-dir=.turbo",
-		"biome:check": "biome check --write --unsafe --no-errors-on-unmatched",
+		"biome:check": "turbo run biome:check --cache-dir=.turbo",
 		"changeset": "changeset",
 		"changeset:publish": "changeset publish",
 		"clean": "turbo run clean && rimraf node_modules",
+		"lint": "biome check --unsafe --no-errors-on-unmatched",
 		"tsc": "turbo run tsc",
 		"prepare": "husky"
 	},
