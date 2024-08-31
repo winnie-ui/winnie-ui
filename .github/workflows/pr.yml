@@ -38,3 +38,65 @@ jobs:
 
       - name: build
         run: pnpm build
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v4
+
+      - name: cache turbo build
+        uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: ${{ runner.os }}-turbo-lint-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-lint-
+
+      - name: install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
+      - name: install node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.5.0
+          cache: "pnpm"
+
+      - name: install dependencies
+        run: pnpm install
+
+      - name: lint
+        run: pnpm lint:check
+
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v4
+
+      - name: cache turbo build
+        uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: ${{ runner.os }}-turbo-format-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-format-
+
+      - name: install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
+      - name: install node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.5.0
+          cache: "pnpm"
+
+      - name: install dependencies
+        run: pnpm install
+
+      - name: format 
+        run: pnpm format:check

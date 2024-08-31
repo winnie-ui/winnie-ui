@@ -2,23 +2,23 @@
 import { FlaskConical, Info, TriangleAlert } from "lucide-react";
 
 type Props = {
-  type: "experimental" | "info" | "warning";
-  title: string;
+	type: "experimental" | "info" | "warning";
+	title: string;
 };
 
 const icon = {
-  experimental: {
-    icon: FlaskConical,
-    title: "Experimental",
-  },
-  info: {
-    icon: Info,
-    title: "Info",
-  },
-  warning: {
-    icon: TriangleAlert,
-    title: "Warning",
-  },
+	experimental: {
+		icon: FlaskConical,
+		title: "Experimental",
+	},
+	info: {
+		icon: Info,
+		title: "Info",
+	},
+	warning: {
+		icon: TriangleAlert,
+		title: "Warning",
+	},
 } satisfies Record<Props["type"], any>;
 
 const { type = "info" } = Astro.props;

@@ -57,6 +57,10 @@
 	"files": ["dist", "package.json"],
 	"scripts": {
 		"build": "rimraf dist && concurrently pnpm:dist:* -m 25",
+		"format:check": "biome format ./src --no-errors-on-unmatched",
+		"format:write": "biome format ./src --write --no-errors-on-unmatched",
+		"lint:check": "biome lint ./src --no-errors-on-unmatched",
+		"lint:write": "biome lint ./src --write --unsafe --no-errors-on-unmatched",
 		"dist:all": "lightningcss src/index.css -o dist/index.min.css --minify --bundle --targets 'last 2 versions'",
 		"dist:base": "lightningcss src/base/index.css -o dist/base.min.css --minify --bundle --targets 'last 2 versions'",
 		"dist:base-animation": "lightningcss src/base/animation.css -o dist/base/animation.min.css --minify --bundle --targets 'last 2 versions'",

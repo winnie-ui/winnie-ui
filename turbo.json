@@ -6,6 +6,10 @@
 			"outputs": ["dist/**"],
 			"dependsOn": ["topo"]
 		},
+		"format:check": {},
+		"format:write": {},
+		"lint:check": {},
+		"lint:write": {},
 		"topo": {
 			"dependsOn": ["^topo"]
 		},

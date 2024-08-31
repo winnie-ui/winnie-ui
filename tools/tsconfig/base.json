@@ -1,20 +1,20 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "base",
-  "compilerOptions": {
-    "allowImportingTsExtensions": true,
-    "composite": false,
-    "declaration": false,
-    "declarationMap": false,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "inlineSources": false,
-    "isolatedModules": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "preserveWatchOutput": true,
-    "skipLibCheck": true,
-    "noEmit": true,
-    "strict": true
-  }
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"display": "base",
+	"compilerOptions": {
+		"allowImportingTsExtensions": true,
+		"composite": false,
+		"declaration": false,
+		"declarationMap": false,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"inlineSources": false,
+		"isolatedModules": true,
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
+		"preserveWatchOutput": true,
+		"skipLibCheck": true,
+		"noEmit": true,
+		"strict": true
+	}
 }
