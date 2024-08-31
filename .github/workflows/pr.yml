@@ -98,5 +98,5 @@ jobs:
       - name: install dependencies
         run: pnpm install
 
-      - name: lint
+      - name: format 
         run: pnpm format:check
