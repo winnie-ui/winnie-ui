@@ -25,6 +25,7 @@
 		"./base/shadow": "./src/base/shadow.css",
 		"./base/space": "./src/base/space.css",
 		"./base/typography": "./src/base/typography.css",
+		"./component/button": "./src/component/button.css",
 		"./layer": "./src/layer.css",
 		"./reset": "./src/reset.css"
 	},
@@ -50,6 +51,7 @@
 			"./base/shadow": "./dist/base/shadow.min.css",
 			"./base/space": "./dist/base/space.min.css",
 			"./base/typography": "./dist/base/typography.min.css",
+			"./component/button": "./dist/component/button.min.css",
 			"./layer": "./dist/layer.min.css",
 			"./reset": "./dist/reset.min.css"
 		}

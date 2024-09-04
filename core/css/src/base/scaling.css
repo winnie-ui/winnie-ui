@@ -26,25 +26,25 @@
     &:where([data-scale="110%"]) {
       --wui-scale: 1.1;
     }
+  }
 
-    &:where([data-radius="none"]) {
-      --wui-radius-factor: 0;
-    }
+  [data-radius="none"] {
+    --wui-radius-factor: 0;
+  }
 
-    &:where([data-radius="sm"]) {
-      --wui-radius-factor: 0.75;
-    }
+  [data-radius="sm"] {
+    --wui-radius-factor: 0.75;
+  }
 
-    &:where([data-radius="md"]) {
-      --wui-radius-factor: 1;
-    }
+  [data-radius="md"] {
+    --wui-radius-factor: 1;
+  }
 
-    &:where([data-radius="lg"]) {
-      --wui-radius-factor: 1.5;
-    }
+  [data-radius="lg"] {
+    --wui-radius-factor: 1.5;
+  }
 
-    &:where([data-radius="round"]) {
-      --wui-radius-factor: 9999;
-    }
+  [data-radius="round"] {
+    --wui-radius-factor: 9999;
   }
 }

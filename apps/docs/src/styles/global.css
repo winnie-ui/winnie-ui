@@ -15,6 +15,13 @@ body {
   background: var(--wui-site-background);
 }
 
+/** component theme overrides example */
+/*:root {*/
+/*  [data-wui-component="button"] {*/
+/*    --wui-button-sm-border-radius: var(--wui-border-radius-1);*/
+/*  }*/
+/*}*/
+
 @layer base {
   :root,
   .light,

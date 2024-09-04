@@ -1,0 +1,103 @@
+---
+import { Bookmark, Loader } from "lucide-react";
+import BaseHead from "~/layouts/base/base-head.astro";
+import BaseLayout from "~/layouts/base/layout.astro";
+---
+
+<BaseLayout>
+  <BaseHead slot="head" title="playground" description="playground" />
+  <div class="center">
+    <div class="row">
+      <button data-wui-component="button" data-size="sm">
+        <span data-wui-component="text">Bookmark</span>
+      </button>
+      <button data-wui-component="button" data-size="md">
+        <span data-wui-component="text">Bookmark</span>
+      </button>
+      <button data-wui-component="button" data-size="lg">
+        <span data-wui-component="text">Bookmark</span>
+      </button>
+    </div>
+    <div class="row">
+      <button data-wui-component="button" data-radius="none">
+        <span data-wui-component="text">Bookmark</span>
+      </button>
+      <button data-wui-component="button" data-radius="sm">
+        <span data-wui-component="text">Bookmark</span>
+      </button>
+      <button data-wui-component="button" data-radius="md">
+        <span data-wui-component="text">Bookmark</span>
+      </button>
+      <button data-wui-component="button" data-radius="lg">
+        <span data-wui-component="text">Bookmark</span>
+      </button>
+      <button data-wui-component="button" data-radius="round">
+        <Bookmark data-wui-component="icon" />
+        <span data-wui-component="text">Bookmark</span>
+      </button>
+    </div>
+    <div class="row">
+      <button data-wui-component="button" data-size="sm">
+        <Bookmark data-wui-component="icon" />
+        <span data-wui-component="text">Bookmark</span>
+      </button>
+      <button data-wui-component="button" data-size="md">
+        <span data-wui-component="text">Bookmark</span>
+        <Bookmark data-wui-component="icon" />
+      </button>
+      <button data-wui-component="button" data-size="lg">
+        <Bookmark data-wui-component="icon" />
+        <span data-wui-component="text">Bookmark</span>
+        <Bookmark data-wui-component="icon" />
+      </button>
+    </div>
+    <div class="row">
+      <button data-wui-component="button" data-size="sm">
+        <Bookmark data-wui-component="icon" />
+      </button>
+      <button data-wui-component="button" data-size="md" data-radius="round">
+        <Bookmark data-wui-component="icon" />
+      </button>
+      <button data-wui-component="button" data-size="lg">
+        <Bookmark data-wui-component="icon" />
+      </button>
+    </div>
+    <div class="row">
+      <button data-wui-component="button" data-size="sm" data-radius="none">
+        <Bookmark data-wui-component="icon" />
+        <Loader data-wui-component="loading" />
+      </button>
+      <button data-wui-component="button" data-size="lg" data-radius="round">
+        <Bookmark data-wui-component="icon" />
+        <span data-wui-component="text">Bookmark</span>
+        <Loader data-wui-component="loading" />
+      </button>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  button {
+    background: var(--wui-color-accent-9);
+  }
+
+  .center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--wui-space-4);
+    height: 100dvh;
+  }
+
+  .row {
+    align-items: center;
+    display: flex;
+    gap: var(--wui-space-4);
+  }
+
+  [data-wui-component="loading"] {
+    color: white;
+    height: var(--wui-button-md-icon-size);
+    width: var(--wui-button-md-icon-size);
+  }
+</style>
