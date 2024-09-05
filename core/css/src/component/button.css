@@ -60,6 +60,7 @@
       var(--wui-button-space, var(--wui-button-md-space))
     );
     position: relative;
+    user-select: none;
     white-space: nowrap;
 
     [data-wui-component="text"] {

@@ -2,16 +2,21 @@
 import { Code } from "astro-expressive-code/components";
 import { DemoTabs } from "./demo-tabs";
 
-type Props = {
-	tsx: string;
-	css: string;
+type CodeTabProps = {
+	code: string;
+	ins: string;
 };
 
-const { tsx, css } = Astro.props;
+type Props = {
+	tsx?: CodeTabProps;
+	css?: CodeTabProps;
+	html?: CodeTabProps;
+};
 
-const showFooter = Boolean(tsx && css);
+const { tsx, css, html } = Astro.props;
+
+const hasTabs = Boolean(tsx || css || html);
 ---
-
 <div class="demo not-content">
   <header class="demo-header">
     <slot name="header" />
@@ -20,12 +25,12 @@ const showFooter = Boolean(tsx && css);
     <slot />
   </main>
   {
-    showFooter && (
-      <div class="demo-footer">
-        {/* @ts-expect-error */}
-        <DemoTabs client:load>
-          <Code slot="tsx" lang="tsx" code={tsx} />
-          <Code slot="css" lang="css" code={css} />
+    hasTabs && (
+      <div class="demo-footer" slot="footer">
+        <DemoTabs client:load renderTsx={Boolean(tsx)} renderCss={Boolean(css)} renderHtml={Boolean(html)}>
+          {tsx && <Code code={tsx.code} ins={tsx.ins} lang="tsx" slot="tsx" />}
+          {html && <Code code={html.code} ins={html.ins} lang="html" slot="html" />}
+          {css && <Code code={css.code} ins={css.ins} lang="css" slot="css" />}
         </DemoTabs>
       </div>
     )

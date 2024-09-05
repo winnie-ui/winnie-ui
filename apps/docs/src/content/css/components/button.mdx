@@ -1,0 +1,24 @@
+---
+title: Button 
+description: Trigger an event, action or operation. 
+---
+
+import Demo from "~/components/demo/demo.astro";
+
+import Button from "./_components/button.astro";
+
+import buttonHtml from "_components/button.html?raw";
+import buttonCss from "_components/button.css?raw";
+
+<Demo html={{ code: buttonHtml }} css={{ code: buttonCss }}>
+  <Button />
+</Demo>
+
+## Import
+
+Import just the button styles.
+
+```css
+@import "@winnie-ui/component/button";
+```
+
