@@ -24,11 +24,6 @@
       &:active {
         background: oklch(from var(--wui-color-accent-10) calc(l * 0.9) c h);
       }
-
-      &:focus-visible {
-        outline: var(--wui-border-width-2) solid var(--wui-color-accent-8);
-        outline-offset: 2px;
-      }
     }
 
     &[data-variant="soft"] {
@@ -42,11 +37,6 @@
 
       &:active {
         background: var(--wui-color-accent-a5);
-      }
-
-      &:focus-visible {
-        outline: var(--wui-border-width-2) solid var(--wui-color-accent-8);
-        outline-offset: 2px;
       }
     }
 
@@ -63,11 +53,11 @@
       &:active {
         background: var(--wui-color-accent-a3);
       }
+    }
 
-      &:focus-visible {
-        outline: var(--wui-border-width-2) solid var(--wui-color-accent-8);
-        outline-offset: 2px;
-      }
+    &:focus-visible {
+      outline: var(--wui-border-width-2) solid var(--wui-color-accent-8);
+      outline-offset: 2px;
     }
   }
 </style>
