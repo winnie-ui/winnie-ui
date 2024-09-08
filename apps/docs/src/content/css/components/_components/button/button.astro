@@ -12,16 +12,47 @@
 
 <style>
   .button {
-    background: var(--wui-color-accent-9);
-    color: var(--wui-color-accent-contrast);
-    font-weight: var(--wui-font-weight-medium);
+    &[data-variant="solid"] {
+      background: var(--wui-color-accent-9);
+      color: var(--wui-color-accent-contrast);
+      font-weight: var(--wui-font-weight-medium);
 
-    &:hover {
-      background: var(--wui-color-accent-10);
+      &:hover {
+        background: var(--wui-color-accent-10);
+      }
+
+      &:active {
+        background: oklch(from var(--wui-color-accent-10) calc(l * 0.9) c h);
+      }
     }
 
-    &:active {
-      background: oklch(from var(--wui-color-accent-10) calc(l * 0.9) c h);
+    &[data-variant="soft"] {
+      background: var(--wui-color-accent-a3);
+      color: var(--wui-color-accent-a11);
+      font-weight: var(--wui-font-weight-medium);
+
+      &:hover {
+        background: var(--wui-color-accent-a4);
+      }
+
+      &:active {
+        background: var(--wui-color-accent-a5);
+      }
+    }
+
+    &[data-variant="outlined"] {
+      background: var(--wui-color-accent-a1);
+      border: var(--wui-border-width-1) solid var(--wui-color-accent-7);
+      color: var(--wui-color-accent-a11);
+      font-weight: var(--wui-font-weight-medium);
+
+      &:hover {
+        background: var(--wui-color-accent-a2);
+      }
+
+      &:active {
+        background: var(--wui-color-accent-a3);
+      }
     }
 
     &:focus-visible {
