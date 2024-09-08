@@ -75,11 +75,9 @@ The component layer is reserved for styles that pertain to design system compone
 
 ```css title="button.css"
 @layer component {
-  .wui-button {
+  .[data-component="button"] {
     background: var(--wui-color-purple-9);
     color: var(--wui-color-purple-contrast);
-    padding-block: var(--wui-space-1);
-    padding-inline: var(--wui-space-3);
   }
 }
 ```

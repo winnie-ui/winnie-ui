@@ -1,0 +1,17 @@
+---
+import Button from "./button.astro";
+---
+
+<div class="row">
+  <Button data-size="sm">New Issue</Button>
+  <Button>New Issue</Button>
+  <Button data-size="lg">New Issue</Button>
+</div>
+
+<style>
+  .row {
+    align-items: center;
+    display: flex;
+    gap: var(--wui-space-4);
+  }
+</style>

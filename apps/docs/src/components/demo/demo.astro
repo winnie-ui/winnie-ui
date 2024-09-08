@@ -1,15 +1,8 @@
 ---
-import { Code } from "astro-expressive-code/components";
 import { DemoTabs } from "./demo-tabs";
 
-type Props = {
-	tsx: string;
-	css: string;
-};
-
-const { tsx, css } = Astro.props;
-
-const showFooter = Boolean(tsx && css);
+const hasTabs =
+	Astro.slots.has("tsx") || Astro.slots.has("css") || Astro.slots.has("html");
 ---
 
 <div class="demo not-content">
@@ -20,13 +13,25 @@ const showFooter = Boolean(tsx && css);
     <slot />
   </main>
   {
-    showFooter && (
+    hasTabs && Object.values(Astro.slots).length > 2 && (
       <div class="demo-footer">
-        {/* @ts-expect-error */}
-        <DemoTabs client:load>
-          <Code slot="tsx" lang="tsx" code={tsx} />
-          <Code slot="css" lang="css" code={css} />
+        <DemoTabs
+          client:load
+          renderTsx={Astro.slots.has("tsx")}
+          renderCss={Astro.slots.has("css")}
+          renderHtml={Astro.slots.has("html")}
+        >
+          <slot slot="tsx" name="tsx" />
+          <slot slot="html" name="html" />
+          <slot slot="css" name="css" />
         </DemoTabs>
+      </div>
+    )
+  }
+  {
+    Astro.slots.has("footer") && (
+      <div class="demo-footer">
+        <slot name="footer" />
       </div>
     )
   }
@@ -98,7 +103,7 @@ const showFooter = Boolean(tsx && css);
       }
 
       .demo-footer {
-        --demo-code-background: var(--wui-color-grey-1);
+        --demo-code-background: var(--wui-color-grey-2);
       }
     }
   }

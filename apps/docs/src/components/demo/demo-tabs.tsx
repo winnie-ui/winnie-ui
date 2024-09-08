@@ -1,30 +1,57 @@
-import type { PropsWithChildren, ReactNode } from "react";
+import type { ReactNode } from "react";
+
 import { Tab, TabList, TabPanel, Tabs } from "react-aria-components";
 
 import "./demo-tabs.css";
 
 type DemoTabsProps = {
-	tsx: ReactNode;
-	css: ReactNode;
+	tsx?: ReactNode;
+	css?: ReactNode;
+	html?: ReactNode;
+	/*
+	 * This is a drawback of client:load in astro.
+	 * when a slot is passed to a react component a element is created even if technically
+	 * it should be conditionally rendered from the astro side. So as a workaround, we are passing
+	 * the renderX to allow us to conditionally render tabs and tab panels
+	 */
+	renderTsx: boolean;
+	renderCss: boolean;
+	renderHtml: boolean;
 };
 
-export function DemoTabs({ tsx, css }: PropsWithChildren<DemoTabsProps>) {
+function DemoTabs({
+	tsx,
+	css,
+	html,
+	renderTsx,
+	renderCss,
+	renderHtml,
+}: DemoTabsProps) {
 	return (
 		<Tabs className="wui-demo-tabs">
-			<TabList className="wui-demo-tab-list" aria-label="React and CSS Code">
-				<Tab id="tsx" className="wui-demo-tab">
-					React
-				</Tab>
-				<Tab id="css" className="wui-demo-tab">
-					CSS
-				</Tab>
+			<TabList className="wui-demo-tab-list">
+				{renderTsx && (
+					<Tab className="wui-demo-tab" id="tsx">
+						React
+					</Tab>
+				)}
+				{renderHtml && (
+					<Tab className="wui-demo-tab" id="html">
+						HTML
+					</Tab>
+				)}
+				{renderCss && (
+					<Tab className="wui-demo-tab" id="css">
+						CSS
+					</Tab>
+				)}
 			</TabList>
-			<TabPanel id="tsx" className="wui-demo-tab-panel">
-				{tsx}
-			</TabPanel>
-			<TabPanel id="css" className="wui-demo-tab-panel">
-				{css}
-			</TabPanel>
+			{renderTsx && <TabPanel id="tsx">{tsx}</TabPanel>}
+			{renderHtml && <TabPanel id="html">{html}</TabPanel>}
+			{renderCss && <TabPanel id="css">{css}</TabPanel>}
 		</Tabs>
 	);
 }
+
+export { DemoTabs };
+export type { DemoTabsProps };

@@ -1,0 +1,17 @@
+---
+import Button from "./button.astro";
+---
+
+<div class="row">
+  <Button data-radius="none">New Issue</Button>
+  <Button data-radius="md">New Issue</Button>
+  <Button data-radius="round">New Issue</Button>
+</div>
+
+<style>
+  .row {
+    align-items: center;
+    display: flex;
+    gap: var(--wui-space-4);
+  }
+</style>
