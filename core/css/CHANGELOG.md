@@ -1,5 +1,11 @@
 # @winnie-ui/css
 
+## 0.0.11
+
+### Patch Changes
+
+- [#29](https://github.com/winnie-ui/winnie-ui/pull/29) [`e9d841e`](https://github.com/winnie-ui/winnie-ui/commit/e9d841ef168ae200e76eadbe3b63baab7ef31d35) Thanks [@adamaho](https://github.com/adamaho)! - adds new button component primitive
+
 ## 0.0.10
 
 ### Patch Changes
