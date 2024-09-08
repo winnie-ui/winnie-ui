@@ -1,0 +1,32 @@
+<button class="button" data-component="button" {...Astro.props}>
+  <slot name="icon" />
+  <slot name="loading" />
+  {
+    Astro.slots.has("default") && (
+      <span data-component="text">
+        <slot />
+      </span>
+    )
+  }
+</button>
+
+<style>
+  .button {
+    background: var(--wui-color-accent-9);
+    color: var(--wui-color-accent-contrast);
+    font-weight: var(--wui-font-weight-medium);
+
+    &:hover {
+      background: var(--wui-color-accent-10);
+    }
+
+    &:active {
+      background: oklch(from var(--wui-color-accent-10) calc(l * 0.9) c h);
+    }
+
+    &:focus-visible {
+      outline: var(--wui-border-width-2) solid var(--wui-color-accent-8);
+      outline-offset: 2px;
+    }
+  }
+</style>

@@ -17,7 +17,7 @@ body {
 
 /** component theme overrides example */
 /*:root {*/
-/*  [data-wui-component="button"] {*/
+/*  [data-component="button"] {*/
 /*    --wui-button-sm-border-radius: var(--wui-border-radius-1);*/
 /*  }*/
 /*}*/

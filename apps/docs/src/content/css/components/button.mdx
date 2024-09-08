@@ -5,13 +5,22 @@ description: Trigger an event, action or operation.
 
 import Demo from "~/components/demo/demo.astro";
 
-import Button from "./_components/button.astro";
+import ButtonHero from "./_components/button/button-hero.astro";
+import ButtonIcon from "./_components/button/button-icon.astro";
+import ButtonSize from "./_components/button/button-size.astro";
+import ButtonRadius from "./_components/button/button-radius.astro";
+import ButtonLoading from "./_components/button/button-loading.astro";
 
-import buttonHtml from "_components/button.html?raw";
-import buttonCss from "_components/button.css?raw";
-
-<Demo html={{ code: buttonHtml }} css={{ code: buttonCss }}>
-  <Button />
+<Demo>
+  <ButtonHero />
+  <Fragment slot="footer">
+    ```tsx
+    <button data-component="button">
+      <i class="organization" data-component="icon"></i>
+      <span data-component="text">Create Organization</span>
+    <button>
+    ```
+  </Fragment>
 </Demo>
 
 ## Import
@@ -21,4 +30,119 @@ Import just the button styles.
 ```css
 @import "@winnie-ui/component/button";
 ```
+
+## Anatomy
+
+Attach the appropriate `data-component` attributes in the structure below.
+
+```html
+<button data-component="button">
+  <i data-component="icon"></i>
+  <span data-component="text"></span>
+  <span data-component="loading"></span>
+<button>
+```
+
+## Examples
+
+### Size
+
+Use the `data-size` attribute to change the size.
+
+<Demo>
+  <ButtonSize />
+  <Fragment slot="footer">
+    ```tsx ins=data-size="sm" ins=data-size="md" ins=data-size="lg"
+    <button data-component="button" data-size="sm">
+      <span data-component="text">New Issue</span>
+    </button>
+    <button data-component="button" data-size="md">
+      <span data-component="text">New Issue</span>
+    </button>
+    <button data-component="button" data-size="lg">
+      <span data-component="text">New Issue</span>
+    </button>
+    ```
+  </Fragment>
+</Demo>
+
+### Radius 
+
+Use the `data-radius` attribute to change the size.
+
+<Demo>
+  <ButtonRadius />
+  <Fragment slot="footer">
+    ```tsx ins=data-radius="none" ins=data-radius="md" ins=data-radius="round"
+    <button data-component="button" data-radius="none">
+      <span data-component="text">New Issue</span>
+    </button>
+    <button data-component="button" data-radius="md">
+      <span data-component="text">New Issue</span>
+    </button>
+    <button data-component="button" data-radius="round">
+      <span data-component="text">New Issue</span>
+    </button>
+    ```
+  </Fragment>
+</Demo>
+
+### With Icon
+
+Add an icon with the `data-component="icon"` attribute as a child of the button.
+
+<Demo>
+  <ButtonHero />
+  <Fragment slot="footer">
+    ```tsx
+    <button data-component="button">
+      <i class="organization" data-component="icon"></i>
+      <span data-component="text">Create Organization</span>
+    <button>
+    ```
+  </Fragment>
+</Demo>
+
+### Icon Only
+
+Create an icon button by only passing an icon with the `data-component="icon"` attribute as a child of the button.
+
+<Demo>
+  <ButtonIcon />
+  <Fragment slot="footer">
+    ```tsx
+    <button data-component="button">
+      <i class="plus" data-component="icon"></i>
+    <button>
+    ```
+  </Fragment>
+</Demo>
+
+### Loading
+
+If a child of the button is rendered with the `data-component="loading"` attribute, any text and icons rendered in the button will be hidden and the `loading` component will be rendered.
+
+<Demo>
+  <ButtonLoading />
+  <Fragment slot="footer">
+    ```tsx ins=data-component="loading"
+    <button data-component="button">
+      <span data-component="loading">
+        <i class="loader"></i>
+      </span>
+      <span data-component="text">New Issue</span>
+    </button>
+    ```
+  </Fragment>
+</Demo>
+
+
+## Reference
+
+Below is a list of the available button `data-` attributes available for Button.
+
+| Attribute           | Value                                       |
+| ------------------- | --------------------------------------------|
+| `data-radius`       | `"none" \| "sm" \| "md" \| "lg" \| "round"` |
+| `data-size`         | `"sm" \| "md" \| "lg"`                      |
 
