@@ -26,6 +26,7 @@
 		"./base/space": "./src/base/space.css",
 		"./base/typography": "./src/base/typography.css",
 		"./component/button": "./src/component/button.css",
+		"./component": "./src/component/index.css",
 		"./layer": "./src/layer.css",
 		"./reset": "./src/reset.css"
 	},
@@ -51,6 +52,7 @@
 			"./base/shadow": "./dist/base/shadow.min.css",
 			"./base/space": "./dist/base/space.min.css",
 			"./base/typography": "./dist/base/typography.min.css",
+			"./component": "./src/component/index.min.css",
 			"./component/button": "./dist/component/button.min.css",
 			"./layer": "./dist/layer.min.css",
 			"./reset": "./dist/reset.min.css"
@@ -84,6 +86,7 @@
 		"dist:base-shadow": "lightningcss src/base/shadow.css -o dist/base/shadow.min.css --minify --bundle --targets 'last 2 versions'",
 		"dist:base-space": "lightningcss src/base/space.css -o dist/base/space.min.css --minify --bundle --targets 'last 2 versions'",
 		"dist:base-typography": "lightningcss src/base/typography.css -o dist/base/typography.min.css --minify --bundle --targets 'last 2 versions'",
+		"dist:component": "lightningcss src/component/index.css -o dist/component/index.min.css --minify --bundle --targets 'last 2 versions'",
 		"dist:component-button": "lightningcss src/component/button.css -o dist/component/button.min.css --minify --bundle --targets 'last 2 versions'",
 		"dist:layer": "lightningcss src/layer.css -o dist/layer.min.css --minify --bundle --targets 'last 2 versions'",
 		"dist:reset": "lightningcss src/reset.css -o dist/reset.min.css --minify --bundle --targets 'last 2 versions'",

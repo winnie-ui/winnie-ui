@@ -70,7 +70,10 @@ export function NavigationListCollapsible({
 					data-current={hasCurrentItem}
 					aria-current={hasCurrentItem}
 				>
-					<span className="label">{item.label}</span>
+					<div className="label">
+						<span>{item.label}</span>
+						{item.badge && <span className="badge">{item.badge}</span>}
+					</div>
 					<ChevronRight className="chevron" />
 				</CollapsibleTrigger>
 				<CollapsibleContent

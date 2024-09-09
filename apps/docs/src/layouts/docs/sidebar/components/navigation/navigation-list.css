@@ -50,7 +50,21 @@
     }
 
     .label {
+      align-items: center;
+      display: flex;
+      gap: var(--wui-space-4);
       flex: 1;
+    }
+
+    .badge {
+      align-items: center;
+      background: var(--wui-color-accent-a5);
+      border-radius: var(--wui-border-radius-3);
+      display: flex;
+      height: calc(24px * var(--wui-scale));
+      font-size: var(--wui-font-size-1);
+      padding-inline: var(--wui-space-3);
+      text-transform: uppercase;
     }
 
     .chevron {
