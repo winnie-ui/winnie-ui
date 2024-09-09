@@ -45,7 +45,20 @@ const navigation = [
 			},
 		],
 	},
-
+	{
+		label: "Components",
+		badge: "wip",
+		items: [
+			{
+				label: "Introduction",
+				link: "/css/docs/components/introduction",
+			},
+			{
+				label: "Button",
+				link: "/css/docs/components/button",
+			},
+		],
+	},
 	{
 		label: "Variables",
 		items: [
@@ -103,15 +116,6 @@ const navigation = [
 			},
 		],
 	},
-	// {
-	//   label: "Components",
-	//   items: [
-	//     {
-	//       label: "Button",
-	//       link: "/css/docs/components/button",
-	//     },
-	//   ],
-	// },
 ] satisfies NavigationItem[];
 
 const { slug } = Astro.props;
