@@ -1,0 +1,58 @@
+@layer component {
+  [data-component="input"] {
+    /* font-size */
+    --wui-input-sm-font-size: var(--wui-font-size-1);
+    --wui-input-md-font-size: var(--wui-font-size-2);
+    --wui-input-lg-font-size: var(--wui-font-size-3);
+
+    /* border-radius */
+    --wui-input-sm-border-radius: var(--wui-border-radius-1);
+    --wui-input-md-border-radius: var(--wui-border-radius-2);
+    --wui-input-lg-border-radius: var(--wui-border-radius-3);
+
+    /* height */
+    --wui-input-sm-height: calc(26px * var(--wui-scale));
+    --wui-input-md-height: calc(32px * var(--wui-scale));
+    --wui-input-lg-height: calc(40px * var(--wui-scale));
+
+    /* icon size */
+    --wui-input-sm-icon-size: 1em;
+    --wui-input-md-icon-size: 1em;
+    --wui-input-lg-icon-size: 1em;
+
+    /* space */
+    --wui-input-sm-space: var(--wui-space-3);
+    --wui-input-md-space: var(--wui-space-3);
+    --wui-input-lg-space: var(--wui-space-4);
+
+    border-radius: var(
+      --wui-input-border-radius,
+      var(--wui-input-md-border-radius)
+    );
+    font-size: var(--wui-input-font-size, var(--wui-input-md-font-size));
+    height: var(--wui-input-height, var(--wui-input-md-height));
+    padding-inline: var(--wui-input-space, var(--wui-input-md-space));
+    width: 100%;
+
+    &[data-size="sm"] {
+      --wui-input-border-radius: var(--wui-input-sm-border-radius);
+      --wui-input-font-size: var(--wui-input-sm-font-size);
+      --wui-input-height: var(--wui-input-sm-height);
+      --wui-input-space: var(--wui-input-sm-space);
+    }
+
+    &[data-size="md"] {
+      --wui-input-border-radius: var(--wui-input-md-border-radius);
+      --wui-input-height: var(--wui-input-md-height);
+      --wui-input-font-size: var(--wui-input-md-font-size);
+      --wui-input-space: var(--wui-input-md-space);
+    }
+
+    &[data-size="lg"] {
+      --wui-input-border-radius: var(--wui-input-lg-border-radius);
+      --wui-input-height: var(--wui-input-lg-height);
+      --wui-input-font-size: var(--wui-input-lg-font-size);
+      --wui-input-space: var(--wui-input-lg-space);
+    }
+  }
+}

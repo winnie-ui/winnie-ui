@@ -1,0 +1,77 @@
+@layer component {
+  [data-component="group"] {
+    /* font-size */
+    --wui-group-sm-font-size: var(--wui-font-size-1);
+    --wui-group-md-font-size: var(--wui-font-size-2);
+    --wui-group-lg-font-size: var(--wui-font-size-3);
+
+    /* icon-size */
+    --wui-group-sm-icon-size: 1em;
+    --wui-group-md-icon-size: 1em;
+    --wui-group-lg-icon-size: 1em;
+
+    /* space */
+    --wui-group-sm-space: var(--wui-space-3);
+    --wui-group-md-space: var(--wui-space-3);
+    --wui-group-lg-space: var(--wui-space-4);
+
+    align-items: center;
+    display: grid;
+    font-size: var(--wui-group-font-size, var(--wui-group-md-font-size));
+    grid-template-columns: auto 1fr auto;
+    position: relative;
+    width: 100%;
+
+    [data-component="icon"] {
+      position: absolute;
+      height: var(--wui-group-icon-size, var(--wui-group-md-icon-size));
+      width: var(--wui-group-icon-size, var(--wui-group-md-icon-size));
+    }
+
+    [data-component="input"] {
+      grid-column: 1 / 4;
+    }
+
+    &:has(:is([data-component="input"])[data-size="sm"]) {
+      --wui-group-font-size: var(--wui-group-sm-font-size);
+      --wui-group-icon-size: var(--wui-group-sm-icon-size);
+      --wui-group-space: var(--wui-group-sm-space);
+    }
+
+    &:has(:is([data-component="input"])[data-size="md"]) {
+      --wui-group-font-size: var(--wui-group-md-font-size);
+      --wui-group-icon-size: var(--wui-group-md-icon-size);
+      --wui-group-space: var(--wui-group-md-space);
+    }
+
+    &:has(:is([data-component="input"])[data-size="lg"]) {
+      --wui-group-font-size: var(--wui-group-lg-font-size);
+      --wui-group-icon-size: var(--wui-group-lg-icon-size);
+      --wui-group-space: var(--wui-group-lg-space);
+    }
+
+    &:has([data-component="icon"]:first-child) {
+      [data-component="input"] {
+        padding-left: calc(
+          (var(--wui-group-space) * 2) + var(--wui-group-icon-size)
+        );
+      }
+
+      [data-component="icon"]:first-child {
+        left: var(--wui-group-space);
+      }
+    }
+
+    &:has([data-component="icon"]:last-child) {
+      [data-component="input"] {
+        padding-right: calc(
+          (var(--wui-group-space) * 2) + var(--wui-group-icon-size)
+        );
+      }
+
+      [data-component="icon"]:last-child {
+        right: var(--wui-group-space);
+      }
+    }
+  }
+}
