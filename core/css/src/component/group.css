@@ -5,11 +5,6 @@
     --wui-group-md-font-size: var(--wui-font-size-2);
     --wui-group-lg-font-size: var(--wui-font-size-3);
 
-    /* border-radius */
-    --wui-group-sm-border-radius: var(--wui-border-radius-1);
-    --wui-group-md-border-radius: var(--wui-border-radius-2);
-    --wui-group-lg-border-radius: var(--wui-border-radius-3);
-
     /* icon-size */
     --wui-group-sm-icon-size: 1em;
     --wui-group-md-icon-size: 1em;
