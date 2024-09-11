@@ -1,16 +1,16 @@
 @layer component {
   [data-component="button"] {
-    /* border radius variables */
+    /* border radius */
     --wui-button-sm-border-radius: var(--wui-border-radius-1);
     --wui-button-md-border-radius: var(--wui-border-radius-2);
     --wui-button-lg-border-radius: var(--wui-border-radius-3);
 
-    /* font size variables */
+    /* font size */
     --wui-button-sm-font-size: var(--wui-font-size-1);
     --wui-button-md-font-size: var(--wui-font-size-2);
     --wui-button-lg-font-size: var(--wui-font-size-3);
 
-    /* height variables */
+    /* height */
     --wui-button-sm-height: calc(26px * var(--wui-scale));
     --wui-button-md-height: calc(32px * var(--wui-scale));
     --wui-button-lg-height: calc(40px * var(--wui-scale));
@@ -20,7 +20,7 @@
     --wui-button-md-icon-size: 1em;
     --wui-button-lg-icon-size: 1em;
 
-    /* inline space variables */
+    /* space */
     --wui-button-sm-space: var(--wui-space-4);
     --wui-button-md-space: var(--wui-space-4);
     --wui-button-lg-space: var(--wui-space-5);
