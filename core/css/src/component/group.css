@@ -1,29 +1,21 @@
 @layer component {
   [data-component="group"] {
-    /**
-     * font-size 
-     */
+    /* font-size */
     --wui-group-sm-font-size: var(--wui-font-size-1);
     --wui-group-md-font-size: var(--wui-font-size-2);
     --wui-group-lg-font-size: var(--wui-font-size-3);
 
-    /**
-   * border-radius 
-   */
+    /* border-radius */
     --wui-group-sm-border-radius: var(--wui-border-radius-1);
     --wui-group-md-border-radius: var(--wui-border-radius-2);
     --wui-group-lg-border-radius: var(--wui-border-radius-3);
 
-    /**
-   * icon-size 
-   */
+    /* icon-size */
     --wui-group-sm-icon-size: 1em;
     --wui-group-md-icon-size: 1em;
     --wui-group-lg-icon-size: 1em;
 
-    /**
-   * space 
-   */
+    /* space */
     --wui-group-sm-space: var(--wui-space-3);
     --wui-group-md-space: var(--wui-space-3);
     --wui-group-lg-space: var(--wui-space-4);
