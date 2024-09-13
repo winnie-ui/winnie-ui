@@ -57,11 +57,11 @@
         background: var(--input-background);
         border: var(--wui-border-width-1) solid var(--wui-color-grey-6);
         box-shadow: var(--wui-shadow-1);
-      }
 
-      &:focus {
-        outline: var(--wui-border-width-2) solid var(--wui-color-accent-8);
-        border-color: transparent;
+        &:focus {
+          outline: var(--wui-border-width-2) solid var(--wui-color-accent-8);
+          border-color: transparent;
+        }
       }
     }
   }
