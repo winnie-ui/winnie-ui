@@ -1,5 +1,11 @@
 # @winnie-ui/css
 
+## 0.0.13
+
+### Patch Changes
+
+- [#35](https://github.com/winnie-ui/winnie-ui/pull/35) [`8f1da56`](https://github.com/winnie-ui/winnie-ui/commit/8f1da5633a1d82f0ac2c23b412071e58edba6c4f) Thanks [@adamaho](https://github.com/adamaho)! - feat(core-css): adds new input and group component
+
 ## 0.0.12
 
 ### Patch Changes
