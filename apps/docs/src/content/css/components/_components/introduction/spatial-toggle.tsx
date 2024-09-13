@@ -1,4 +1,4 @@
-import { BoxSelect, Palette } from "lucide-react";
+import { BoxSelect, Palette, Search } from "lucide-react";
 import { type ReactNode, useState } from "react";
 import { Radio, RadioGroup } from "react-aria-components";
 
@@ -47,14 +47,25 @@ export function SpatialToggle() {
 					);
 				})}
 			</RadioGroup>
-			<button
-				className="spatial-hero-button"
-				data-mode={mode}
-				data-component="button"
-				type="button"
-			>
-				<span data-component="text">Create an account</span>
-			</button>
+			<div className="sp-hero-container">
+				<div data-component="group" className="sp-hero-group">
+					<Search data-component="icon" />
+					<input
+						data-component="input"
+						className="sp-hero-input"
+						placeholder="Search docs..."
+						data-mode={mode}
+					/>
+				</div>
+				<button
+					className="sp-hero-button"
+					data-mode={mode}
+					data-component="button"
+					type="button"
+				>
+					<span data-component="text">Search</span>
+				</button>
+			</div>
 		</>
 	);
 }
