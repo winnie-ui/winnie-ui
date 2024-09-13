@@ -39,27 +39,67 @@
   }
 }
 
-.spatial-hero-button {
-  &[data-mode="spatial"] {
-    border: var(--wui-border-width-1) dashed var(--wui-color-grey-8);
+.sp-hero-container {
+  align-items: center;
+  display: flex;
+  gap: var(--wui-space-4);
+
+  .sp-hero-group {
+    color: var(--wui-color-grey-12);
+
+    .sp-hero-input {
+      &[data-mode="spatial"] {
+        border: var(--wui-border-width-1) dashed var(--wui-color-grey-8);
+        background: transparent;
+      }
+
+      &[data-mode="color"] {
+        background: var(--input-background);
+        border: var(--wui-border-width-1) solid var(--wui-color-grey-6);
+        box-shadow: var(--wui-shadow-1);
+      }
+
+      &:focus {
+        outline: var(--wui-border-width-2) solid var(--wui-color-accent-8);
+        border-color: transparent;
+      }
+    }
   }
 
-  &[data-mode="color"] {
-    background: var(--wui-color-accent-9);
-    color: var(--wui-color-accent-contrast);
-    font-weight: var(--wui-font-weight-medium);
-
-    &:hover {
-      background: var(--wui-color-accent-10);
+  .sp-hero-button {
+    &[data-mode="spatial"] {
+      border: var(--wui-border-width-1) dashed var(--wui-color-grey-8);
     }
 
-    &:active {
-      background: oklch(from var(--wui-color-accent-10) calc(l * 0.9) c h);
-    }
+    &[data-mode="color"] {
+      background: var(--wui-color-accent-9);
+      color: var(--wui-color-accent-contrast);
+      font-weight: var(--wui-font-weight-medium);
 
-    &:focus-visible {
-      outline: var(--wui-border-width-2) solid var(--wui-color-accent-8);
-      outline-offset: 2px;
+      &:hover {
+        background: var(--wui-color-accent-10);
+      }
+
+      &:active {
+        background: oklch(from var(--wui-color-accent-10) calc(l * 0.9) c h);
+      }
+
+      &:focus-visible {
+        outline: var(--wui-border-width-2) solid var(--wui-color-accent-8);
+        outline-offset: 2px;
+      }
     }
+  }
+}
+
+:where([data-theme="light"]) {
+  .sp-hero-group {
+    --input-background: var(--wui-color-grey-1);
+  }
+}
+
+:where([data-theme="dark"]) {
+  .sp-hero-group {
+    --input-background: var(--wui-color-grey-2);
   }
 }
