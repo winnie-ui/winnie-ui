@@ -34,6 +34,12 @@
     padding-inline: var(--wui-input-space, var(--wui-input-md-space));
     width: 100%;
 
+    &[data-radius="round"] {
+      padding-inline: calc(
+        var(--wui-input-space, var(--wui-input-md-space)) * 1.5 
+      );
+    }
+
     &[data-size="sm"] {
       --wui-input-border-radius: var(--wui-input-sm-border-radius);
       --wui-input-font-size: var(--wui-input-sm-font-size);

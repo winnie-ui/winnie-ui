@@ -1,0 +1,17 @@
+---
+import Input from "./input.astro";
+
+import { ChevronsUpDown } from "lucide-react";
+---
+
+<div class="item">
+  <Input placeholder="Search docs...">
+    <ChevronsUpDown slot="end" data-component="icon" />
+  </Input>
+</div>
+
+<style>
+  .item {
+    max-width: 300px;
+  }
+</style>

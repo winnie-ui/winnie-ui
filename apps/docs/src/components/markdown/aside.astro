@@ -40,6 +40,7 @@ const Icon = icon[type].icon;
     border-radius: var(--wui-border-radius-3);
     border: var(--wui-border-width-1) solid var(--wui-aside-border-color);
     display: flex;
+    margin-block: var(--wui-space-6);
     padding: var(--wui-space-5);
 
     &[data-type="experimental"] {
@@ -83,6 +84,12 @@ const Icon = icon[type].icon;
       &:has(.aside-title + *) {
         .aside-title {
           margin-bottom: var(--wui-space-3);
+        }
+      }
+
+      &:has(.expressive-code) {
+        .expressive-code {
+          margin-block: var(--wui-space-4);
         }
       }
 

@@ -1,0 +1,106 @@
+---
+title: Input
+description: Captures user input. 
+---
+
+import Aside from "~/components/markdown/aside.astro";
+import Demo from "~/components/demo/demo.astro";
+
+import InputHero from "./_components/input/input-hero.astro";
+import InputIcon from "./_components/input/input-icon.astro";
+import InputRadius from "./_components/input/input-radius.astro";
+import InputSize from "./_components/input/input-size.astro";
+
+<Demo>
+  <InputHero />
+  <Fragment slot="footer">
+    ```tsx
+    <div data-component="group">
+      <i class="search" data-component="icon"></i>
+      <input data-component="input" />
+    </div>
+    ```
+  </Fragment>
+</Demo>
+
+## Import
+
+Import just the input styles.
+
+```css
+@import "@winnie-ui/component/input";
+```
+
+## Anatomy
+
+Attach the appropriate `data-component` attributes in the structure below.
+
+```html
+<input data-component="input" />
+```
+
+## Examples
+
+### Size
+
+Use the `data-size` attribute to change the size.
+
+<Demo>
+  <InputSize />
+  <Fragment slot="footer">
+    ```tsx ins=data-size="sm" ins=data-size="md" ins=data-size="lg"
+    <input data-component="input" data-size="sm" />
+    <input data-component="input" data-size="md" />
+    <input data-component="input" data-size="lg" />
+    ```
+  </Fragment>
+</Demo>
+
+### Radius 
+
+Use the `data-radius` attribute to change the size.
+
+<Demo>
+  <InputRadius />
+  <Fragment slot="footer">
+    ```tsx ins=data-radius="none" ins=data-radius="md" ins=data-radius="round"
+    <input data-component="input" data-radius="none" />
+    <input data-component="input" data-radius="md" />
+    <input data-component="input" data-radius="round" />
+    ```
+  </Fragment>
+</Demo>
+
+### With Icon
+
+Wrap the input in an element with the `data-component="group"` attribute define and pass the input and icons as children.
+
+<Aside type="info">
+  If you are just importing the input styles, you will need to also import the group styles for this to work.
+
+  ```css
+  @import "@winnie-ui/component/group";
+  ```
+</Aside>
+
+<Demo>
+  <InputIcon />
+  <Fragment slot="footer">
+    ```tsx
+    <div data-component="group">
+      <input data-component="input" data-radius="none" />
+      <i class="chevron-up-down" data-component="icon"></i>
+    </div>
+    ```
+  </Fragment>
+</Demo>
+
+## Reference
+
+Below is a list of the available input `data-` attributes available for input.
+
+| Attribute           | Value                                       |
+| ------------------- | --------------------------------------------|
+| `data-radius`       | `"none" \| "sm" \| "md" \| "lg" \| "round"` |
+| `data-size`         | `"sm" \| "md" \| "lg"`                      |
+

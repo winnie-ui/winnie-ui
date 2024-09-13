@@ -1,0 +1,27 @@
+<div data-component="group">
+  <slot name="start" />
+  <input {...Astro.props} data-component="input" class="input" />
+  <slot name="end" />
+</div>
+
+<style>
+  .input {
+    background: var(--input-background);
+    border: var(--wui-border-width-1) solid var(--wui-color-grey-6);
+    box-shadow: var(--wui-shadow-1);
+    color: var(--wui-color-grey-12);
+
+    &:focus {
+      outline: var(--wui-border-width-2) solid var(--wui-color-accent-8);
+      border-color: transparent;
+    }
+  }
+
+  :global(:where([data-theme="light"])) {
+    --input-background: var(--wui-color-grey-1);
+  }
+
+  :global(:where([data-theme="dark"])) {
+    --input-background: var(--wui-color-grey-2);
+  }
+</style>
