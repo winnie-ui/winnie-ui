@@ -53,24 +53,26 @@
     &:has([data-component="icon"]:first-child) {
       [data-component="input"] {
         padding-left: calc(
-          (var(--wui-group-space) * 2) + var(--wui-group-icon-size)
+          (var(--wui-group-space, var(--wui-group-md-space)) * 2) +
+            var(--wui-group-icon-size, var(--wui-group-md-icon-size))
         );
       }
 
       [data-component="icon"]:first-child {
-        left: var(--wui-group-space);
+        left: var(--wui-group-space, var(--wui-group-md-space));
       }
     }
 
     &:has([data-component="icon"]:last-child) {
       [data-component="input"] {
         padding-right: calc(
-          (var(--wui-group-space) * 2) + var(--wui-group-icon-size)
+          (var(--wui-group-space, var(--wui-group-md-space)) * 2) +
+            var(--wui-group-icon-size, var(--wui-group-md-icon-size))
         );
       }
 
       [data-component="icon"]:last-child {
-        right: var(--wui-group-space);
+        right: var(--wui-group-space, var(--wui-group-md-space));
       }
     }
   }

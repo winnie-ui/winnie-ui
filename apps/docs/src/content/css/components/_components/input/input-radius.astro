@@ -1,0 +1,18 @@
+---
+import Input from "./input.astro";
+---
+
+<div class="stack">
+    <Input placeholder="Search docs..." data-radius="none" />
+    <Input placeholder="Search docs..." data-radius="md" />
+    <Input placeholder="Search docs..." data-radius="round" />
+</div>
+
+<style>
+  .stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wui-space-5);
+    max-width: 250px;
+  }
+</style>

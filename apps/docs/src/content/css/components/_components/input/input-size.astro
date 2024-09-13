@@ -1,0 +1,35 @@
+---
+import Input from "./input.astro";
+---
+
+<div class="stack">
+  <div class="item-sm">
+    <Input placeholder="Search docs..." data-size="sm" />
+  </div>
+  <div class="item-md">
+    <Input placeholder="Search docs..." data-size="md" />
+  </div>
+  <div class="item-lg">
+    <Input placeholder="Search docs..." data-size="lg" />
+  </div>
+</div>
+
+<style>
+  .stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wui-space-5);
+
+    .item-sm {
+      max-width: 250px;
+    }
+
+    .item-md {
+      max-width: 300px;
+    }
+
+    .item-lg {
+      max-width: 350px;
+    }
+  }
+</style>
