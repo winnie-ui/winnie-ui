@@ -1,0 +1,17 @@
+---
+import Input from "../input/input.astro";
+---
+
+<div data-component="field" class="field">
+  <label data-component="label" class="label">Shipping details</label>
+  <slot name="description" />
+  <Input />
+  <slot name="error" />
+</div>
+
+<style>
+  .label {
+    font-family: var(--wui-font-family-sans);
+    font-weight: var(--wui-font-weight-medium);
+  }
+</style>

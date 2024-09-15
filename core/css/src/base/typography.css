@@ -6,47 +6,47 @@
  * https://github.com/radix-ui/themes/blob/main/packages/radix-ui-themes/src/styles/tokens/typography.css
  */
 @layer base {
-  :root {
-    --wui-font-family-sans: "Inter", sans-serif;
-    --wui-font-family-serif: "Inter", serif;
-    --wui-font-family-mono: "Geist Mono", monospace;
+	:root {
+		--wui-font-family-sans: "Inter", sans-serif;
+		--wui-font-family-serif: "Inter", serif;
+		--wui-font-family-mono: "Geist Mono", monospace;
 
-    --wui-font-weight-normal: 400;
-    --wui-font-weight-medium: 500;
-    --wui-font-weight-semibold: 600;
-    --wui-font-weight-bold: 700;
-    --wui-font-weight-extra-bold: 800;
+		--wui-font-weight-normal: 400;
+		--wui-font-weight-medium: 500;
+		--wui-font-weight-semibold: 600;
+		--wui-font-weight-bold: 700;
+		--wui-font-weight-extra-bold: 800;
 
-    --wui-letter-spacing-1: 0.0025em;
-    --wui-letter-spacing-2: 0em;
-    --wui-letter-spacing-3: -0.0025em;
-    --wui-letter-spacing-4: -0.005em;
-    --wui-letter-spacing-5: -0.00625em;
-    --wui-letter-spacing-6: -0.0075em;
-    --wui-letter-spacing-7: -0.01em;
-    --wui-letter-spacing-8: -0.025em;
-    --wui-letter-spacing-9: -0.025em;
-  }
+		--wui-letter-spacing-1: 0.0025em;
+		--wui-letter-spacing-2: 0em;
+		--wui-letter-spacing-3: -0.0025em;
+		--wui-letter-spacing-4: -0.005em;
+		--wui-letter-spacing-5: -0.00625em;
+		--wui-letter-spacing-6: -0.0075em;
+		--wui-letter-spacing-7: -0.01em;
+		--wui-letter-spacing-8: -0.025em;
+		--wui-letter-spacing-9: -0.025em;
+	}
 
-  .winnie-ui {
-    --wui-font-size-1: calc(12px * var(--wui-scale));
-    --wui-font-size-2: calc(14px * var(--wui-scale));
-    --wui-font-size-3: calc(16px * var(--wui-scale));
-    --wui-font-size-4: calc(18px * var(--wui-scale));
-    --wui-font-size-5: calc(20px * var(--wui-scale));
-    --wui-font-size-6: calc(24px * var(--wui-scale));
-    --wui-font-size-7: calc(28px * var(--wui-scale));
-    --wui-font-size-8: calc(32px * var(--wui-scale));
-    --wui-font-size-9: calc(60px * var(--wui-scale));
+	.winnie-ui {
+		--wui-font-size-1: calc(12px * var(--wui-scale));
+		--wui-font-size-2: calc(14px * var(--wui-scale));
+		--wui-font-size-3: calc(16px * var(--wui-scale));
+		--wui-font-size-4: calc(18px * var(--wui-scale));
+		--wui-font-size-5: calc(20px * var(--wui-scale));
+		--wui-font-size-6: calc(24px * var(--wui-scale));
+		--wui-font-size-7: calc(28px * var(--wui-scale));
+		--wui-font-size-8: calc(32px * var(--wui-scale));
+		--wui-font-size-9: calc(60px * var(--wui-scale));
 
-    --wui-line-height-1: calc(16px * var(--wui-scale));
-    --wui-line-height-2: calc(20px * var(--wui-scale));
-    --wui-line-height-3: calc(24px * var(--wui-scale));
-    --wui-line-height-4: calc(26px * var(--wui-scale));
-    --wui-line-height-5: calc(28px * var(--wui-scale));
-    --wui-line-height-6: calc(30px * var(--wui-scale));
-    --wui-line-height-7: calc(36px * var(--wui-scale));
-    --wui-line-height-8: calc(40px * var(--wui-scale));
-    --wui-line-height-9: calc(60px * var(--wui-scale));
-  }
+		--wui-line-height-1: calc(16px * var(--wui-scale));
+		--wui-line-height-2: calc(20px * var(--wui-scale));
+		--wui-line-height-3: calc(24px * var(--wui-scale));
+		--wui-line-height-4: calc(26px * var(--wui-scale));
+		--wui-line-height-5: calc(28px * var(--wui-scale));
+		--wui-line-height-6: calc(30px * var(--wui-scale));
+		--wui-line-height-7: calc(36px * var(--wui-scale));
+		--wui-line-height-8: calc(40px * var(--wui-scale));
+		--wui-line-height-9: calc(60px * var(--wui-scale));
+	}
 }

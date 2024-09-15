@@ -8,104 +8,30 @@ import { ChevronsUpDown, Search } from "lucide-react";
 <BaseLayout>
   <BaseHead slot="head" title="playground" description="playground" />
   <div class="center">
-    <div class="row">
-      <input
-        data-component="input"
-        data-size="sm"
-        data-radius="round"
-        placeholder="Search the docs..."
-      />
-      <input
-        data-component="input"
-        data-size="md"
-        placeholder="Search the docs..."
-      />
-      <input
-        data-component="input"
-        data-size="lg"
-        placeholder="Search the docs..."
-      />
-    </div>
-    <div class="row">
-      <div data-component="group">
-        <Search data-component="icon" />
-        <input
-          data-component="input"
-          data-size="sm"
-          placeholder="Search the docs..."
-        />
+
+    <div class="form">
+      <div data-component="field">
+        <label data-component="label">Street address</label>
+        <input data-component="input" />
       </div>
-      <div data-component="group">
-        <Search data-component="icon" />
-        <input
-          data-component="input"
-          data-size="md"
-          placeholder="Search the docs..."
-        />
+
+      <div data-component="field">
+        <label data-component="label">Country</label>
+        <input data-component="input" />
+        <span data-component="description">We only ship to North America.</span>
       </div>
-      <div data-component="group">
-        <Search data-component="icon" />
-        <input
-          data-component="input"
-          data-size="lg"
-          placeholder="Search the docs..."
-        />
+
+      <div data-component="field">
+        <label data-component="label">Country</label>
+        <span data-component="description">We only ship to North America.</span>
+        <input data-component="input" />
       </div>
-    </div>
-    <div class="row">
-      <div data-component="group">
-        <input
-          data-component="input"
-          data-size="sm"
-          placeholder="Search the docs..."
-        />
-        <ChevronsUpDown data-component="icon" />
-      </div>
-      <div data-component="group">
-        <input
-          data-component="input"
-          data-size="md"
-          placeholder="Search the docs..."
-        />
-        <ChevronsUpDown data-component="icon" />
-      </div>
-      <div data-component="group">
-        <input
-          data-component="input"
-          data-size="lg"
-          placeholder="Search the docs..."
-        />
-        <ChevronsUpDown data-component="icon" />
-      </div>
-    </div>
-    <div class="row">
-      <div data-component="group">
-        <Search data-component="icon" />
-        <input
-          data-component="input"
-          data-size="sm"
-          placeholder="Search the docs..."
-        />
-        <ChevronsUpDown data-component="icon" />
-      </div>
-      <div data-component="group">
-        <Search data-component="icon" />
-        <input
-          data-component="input"
-          data-size="md"
-          placeholder="Search the docs..."
-        />
-        <ChevronsUpDown data-component="icon" />
-      </div>
-      <div data-component="group">
-        <Search data-component="icon" />
-        <input
-          data-component="input"
-          data-size="lg"
-          data-radius="round"
-          placeholder="Search the docs..."
-        />
-        <ChevronsUpDown data-component="icon" />
+
+      <div data-component="field">
+        <label data-component="label">Country</label>
+        <span data-component="description">We only ship to North America.</span>
+        <input data-component="input" />
+        <span data-component="error">Select a county</span>
       </div>
     </div>
   </div>
@@ -113,6 +39,7 @@ import { ChevronsUpDown, Search } from "lucide-react";
 
 <style>
   .center {
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -121,13 +48,34 @@ import { ChevronsUpDown, Search } from "lucide-react";
     height: 100dvh;
   }
 
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wui-space-8);
+    max-width: 400px;
+    width: 100%;
+  }
+
   .row {
     align-items: center;
     display: flex;
     gap: var(--wui-space-4);
   }
 
-  input {
+  [data-component="label"] {
+    font-family: var(--wui-font-family-sans);
+    font-weight: var(--wui-font-weight-medium);
+  }
+
+  [data-component="input"] {
     border: var(--wui-border-width-1) solid var(--wui-color-grey-7);
+  }
+
+  [data-component="description"] {
+    color: var(--wui-color-grey-11);
+  }
+
+  [data-component="error"] {
+    color: var(--wui-color-red-11);
   }
 </style>

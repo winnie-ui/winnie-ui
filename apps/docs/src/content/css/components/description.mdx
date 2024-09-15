@@ -1,0 +1,37 @@
+---
+title: Description 
+description: Accessory text information in a form field.
+---
+
+import Demo from "~/components/demo/demo.astro";
+
+import FieldDescription from "./_components/field/field-description.astro";
+
+<Demo>
+  <FieldDescription />
+  <Fragment slot="footer">
+    ```tsx
+    <div data-component="field">
+      <label data-component="label">Shipping details</label>
+      <span data-component="description">Where should we put your package?</span>
+      <input data-component="input" />
+    </div>
+    ```
+  </Fragment>
+</Demo>
+
+## Import
+
+Import just the description styles.
+
+```css
+@import "@winnie-ui/component/description";
+```
+
+## Anatomy
+
+Attach the appropriate `data-component` attributes in the structure below.
+
+```html
+<span data-component="description" />
+```

@@ -1,0 +1,18 @@
+---
+import Field from "./field.astro";
+---
+
+<Field>
+  <span data-component="description" class="description" slot="description">Where should we put your package?</span>
+  <span data-component="error" class="error" slot="error">Required field error missing</span>
+</Field>
+
+<style>
+  .description {
+    color: var(--wui-color-grey-11);
+  }
+
+  .error {
+    color: var(--wui-color-red-11);
+  }
+</style>

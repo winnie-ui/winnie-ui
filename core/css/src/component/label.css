@@ -1,0 +1,8 @@
+@layer component {
+	[data-component="label"] {
+		cursor: var(--wui-cursor-pressable, default);
+		display: block;
+		font-size: var(--wui-font-size-2);
+		white-space: nowrap;
+	}
+}

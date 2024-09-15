@@ -1,28 +1,28 @@
 .radius-picker {
-  align-items: center;
-  display: flex;
-  gap: var(--wui-space-3);
-  justify-content: flex-start;
+	align-items: center;
+	display: flex;
+	gap: var(--wui-space-3);
+	justify-content: flex-start;
 
-  .preview {
-    background: var(--preview-background);
-    border: var(--wui-border-width-1) solid var(--preview-border-color);
-    border-radius: var(--wui-border-radius-2);
-    height: var(--wui-space-5);
-    width: var(--wui-space-5);
-  }
+	.preview {
+		background: var(--preview-background);
+		border: var(--wui-border-width-1) solid var(--preview-border-color);
+		border-radius: var(--wui-border-radius-2);
+		height: var(--wui-space-5);
+		width: var(--wui-space-5);
+	}
 }
 
 :where([data-theme="light"]) {
-  .preview {
-    --preview-background: var(--wui-color-accent-3);
-    --preview-border-color: var(--wui-color-accent-6);
-  }
+	.preview {
+		--preview-background: var(--wui-color-accent-3);
+		--preview-border-color: var(--wui-color-accent-6);
+	}
 }
 
 :where([data-theme="dark"]) {
-  .preview {
-    --preview-background: var(--wui-color-accent-6);
-    --preview-border-color: var(--wui-color-accent-8);
-  }
+	.preview {
+		--preview-background: var(--wui-color-accent-6);
+		--preview-border-color: var(--wui-color-accent-8);
+	}
 }
