@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      '@astrojs/ts-plugin':
+        specifier: 1.10.2
+        version: 1.10.2
       '@biomejs/biome':
         specifier: 1.9.0
         version: 1.9.0
@@ -201,6 +204,9 @@ packages:
   '@astrojs/telemetry@3.1.0':
     resolution: {integrity: sha512-/ca/+D8MIKEC8/A9cSaPUqQNZm+Es/ZinRv0ZAzvu2ios7POQSsVD+VOj7/hypWNsNM3T7RpfgNq7H2TU1KEHA==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
+
+  '@astrojs/ts-plugin@1.10.2':
+    resolution: {integrity: sha512-Q7EvUh9dU9Ufi6Jfe5JRcisBuremlLZ7jJImUY2/eMe6OVwCXSmETDir/tVwT0K+lnfNiUwju9qHZYX2/5ch0Q==}
 
   '@astrojs/webapi@3.0.0':
     resolution: {integrity: sha512-+/Wruju2Ho99z0jI8zxMFGBkKKG97RzR/srSaColejUDrczkAjR3HjULKTVfDdIpvtvFZLyl7OMBmHKQazfeZg==}
@@ -4564,11 +4570,6 @@ packages:
     resolution: {integrity: sha512-CBKFWExMn46Foo4cldiChEzn7S7SRV+wqiluAb6xmueD/fGyRHIhX8m14vVGgeFWjN540nKCNVj6P21eQjgTuA==}
     engines: {node: '>= 14'}
 
-  yaml@2.5.0:
-    resolution: {integrity: sha512-2wWLbGbYDiSqqIKoPjar3MPgB94ErzCtrNE1FdqGuaO0pi2JGjmE8aW8TDZwzU7vuxcGRdL/4gPQwQ7hD5AMSw==}
-    engines: {node: '>= 14'}
-    hasBin: true
-
   yaml@2.5.1:
     resolution: {integrity: sha512-bLQOjaX/ADgQ20isPJRvF0iRUHIxVhYvr53Of7wGcWlO2jvtUlH5m87DsmulFVxRpNLOnI4tB6p/oh8D7kpn9Q==}
     engines: {node: '>= 14'}
@@ -4724,13 +4725,23 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@astrojs/ts-plugin@1.10.2':
+    dependencies:
+      '@astrojs/compiler': 2.10.3
+      '@astrojs/yaml2ts': 0.2.1
+      '@jridgewell/sourcemap-codec': 1.5.0
+      '@volar/language-core': 2.4.0
+      '@volar/typescript': 2.4.0
+      semver: 7.6.3
+      vscode-languageserver-textdocument: 1.0.12
+
   '@astrojs/webapi@3.0.0':
     dependencies:
       undici: 5.28.4
 
   '@astrojs/yaml2ts@0.2.1':
     dependencies:
-      yaml: 2.5.0
+      yaml: 2.5.1
 
   '@aws-crypto/crc32@3.0.0':
     dependencies:
@@ -10436,8 +10447,6 @@ snapshots:
       prettier: 2.8.7
 
   yaml@2.2.2: {}
-
-  yaml@2.5.0: {}
 
   yaml@2.5.1: {}
 
