@@ -39,7 +39,7 @@
       }
     }
 
-    /* control error */
+    /* control description error */
     &:has(
         :is([data-component="group"], [data-component="input"])
           + [data-component="error"]
