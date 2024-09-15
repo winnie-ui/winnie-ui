@@ -1,242 +1,242 @@
 @layer base {
-  :root {
-    --wui-duration-05: 50ms;
-    --wui-duration-1: 100ms;
-    --wui-duration-2: 200ms;
-    --wui-duration-3: 300ms;
-    --wui-duration-4: 500ms;
-    --wui-duration-5: 800ms;
-    --wui-bezier-1: cubic-bezier(0.16, 1, 0.3, 1);
-    --wui-linear-1: linear;
-  }
+	:root {
+		--wui-duration-05: 50ms;
+		--wui-duration-1: 100ms;
+		--wui-duration-2: 200ms;
+		--wui-duration-3: 300ms;
+		--wui-duration-4: 500ms;
+		--wui-duration-5: 800ms;
+		--wui-bezier-1: cubic-bezier(0.16, 1, 0.3, 1);
+		--wui-linear-1: linear;
+	}
 
-  @keyframes wui-dialog-open {
-    from {
-      opacity: 0;
-      transform: translate(-50%, -48%) scale(0.96);
-    }
-    to {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
-    }
-  }
+	@keyframes wui-dialog-open {
+		from {
+			opacity: 0;
+			transform: translate(-50%, -48%) scale(0.96);
+		}
+		to {
+			opacity: 1;
+			transform: translate(-50%, -50%) scale(1);
+		}
+	}
 
-  @keyframes wui-collapsible-down {
-    from {
-      height: 0;
-      transform: translateY(-4px);
-    }
+	@keyframes wui-collapsible-down {
+		from {
+			height: 0;
+			transform: translateY(-4px);
+		}
 
-    to {
-      height: var(--wui-collapsible-content-height);
-      transform: translateY(0);
-    }
-  }
+		to {
+			height: var(--wui-collapsible-content-height);
+			transform: translateY(0);
+		}
+	}
 
-  @keyframes wui-collapsible-up {
-    from {
-      height: var(--wui-collapsible-content-height);
-      transform: translateY(0);
-    }
+	@keyframes wui-collapsible-up {
+		from {
+			height: var(--wui-collapsible-content-height);
+			transform: translateY(0);
+		}
 
-    to {
-      height: 0;
-      transform: translateY(-4px);
-    }
-  }
+		to {
+			height: 0;
+			transform: translateY(-4px);
+		}
+	}
 
-  @keyframes wui-fade-in {
-    from {
-      opacity: 0;
-    }
+	@keyframes wui-fade-in {
+		from {
+			opacity: 0;
+		}
 
-    to {
-      opacity: 1;
-    }
-  }
+		to {
+			opacity: 1;
+		}
+	}
 
-  @keyframes wui-fade-out {
-    from {
-      opacity: 1;
-    }
+	@keyframes wui-fade-out {
+		from {
+			opacity: 1;
+		}
 
-    to {
-      opacity: 0;
-    }
-  }
+		to {
+			opacity: 0;
+		}
+	}
 
-  @keyframes wui-slide-up-enter {
-    from {
-      transform: translateY(6px) scale(0.97);
-    }
+	@keyframes wui-slide-up-enter {
+		from {
+			transform: translateY(6px) scale(0.97);
+		}
 
-    to {
-      transform: translateY(0) scale(1);
-    }
-  }
+		to {
+			transform: translateY(0) scale(1);
+		}
+	}
 
-  @keyframes wui-slide-up-exit {
-    from {
-      transform: translateY(0) scale(1);
-    }
+	@keyframes wui-slide-up-exit {
+		from {
+			transform: translateY(0) scale(1);
+		}
 
-    to {
-      transform: translateY(-6px) scale(0.97);
-    }
-  }
+		to {
+			transform: translateY(-6px) scale(0.97);
+		}
+	}
 
-  @keyframes wui-slide-down-enter {
-    from {
-      transform: translateY(-12px) scale(0.97);
-    }
+	@keyframes wui-slide-down-enter {
+		from {
+			transform: translateY(-12px) scale(0.97);
+		}
 
-    to {
-      transform: translateY(0) scale(1);
-    }
-  }
+		to {
+			transform: translateY(0) scale(1);
+		}
+	}
 
-  @keyframes wui-slide-down-exit {
-    from {
-      transform: translateY(0) scale(1);
-    }
+	@keyframes wui-slide-down-exit {
+		from {
+			transform: translateY(0) scale(1);
+		}
 
-    to {
-      transform: translateY(6px) scale(0.97);
-    }
-  }
+		to {
+			transform: translateY(6px) scale(0.97);
+		}
+	}
 
-  @keyframes wui-slide-left-enter {
-    from {
-      transform: translateX(6px) scale(0.97);
-    }
+	@keyframes wui-slide-left-enter {
+		from {
+			transform: translateX(6px) scale(0.97);
+		}
 
-    to {
-      transform: translateX(0) scale(1);
-    }
-  }
+		to {
+			transform: translateX(0) scale(1);
+		}
+	}
 
-  @keyframes wui-slide-left-exit {
-    from {
-      transform: translateX(0) scale(1);
-    }
+	@keyframes wui-slide-left-exit {
+		from {
+			transform: translateX(0) scale(1);
+		}
 
-    to {
-      transform: translateX(-6px) scale(0.97);
-    }
-  }
+		to {
+			transform: translateX(-6px) scale(0.97);
+		}
+	}
 
-  @keyframes wui-slide-right-enter {
-    from {
-      transform: translateX(-6px) scale(0.97);
-    }
+	@keyframes wui-slide-right-enter {
+		from {
+			transform: translateX(-6px) scale(0.97);
+		}
 
-    to {
-      transform: translateX(0) scale(1);
-    }
-  }
+		to {
+			transform: translateX(0) scale(1);
+		}
+	}
 
-  @keyframes wui-slide-right-exit {
-    from {
-      transform: translateX(0) scale(1);
-    }
+	@keyframes wui-slide-right-exit {
+		from {
+			transform: translateX(0) scale(1);
+		}
 
-    to {
-      transform: translateX(6px) scale(0.97);
-    }
-  }
+		to {
+			transform: translateX(6px) scale(0.97);
+		}
+	}
 
-  @media (prefers-reduced-motion: no-preference) {
-    /* animates a popper relative to an anchor position. This is typically used in
+	@media (prefers-reduced-motion: no-preference) {
+		/* animates a popper relative to an anchor position. This is typically used in
      * cases where the popper is mounted and unmounted from the dom
      */
-    .wui-popper-animate {
-      animation-timing-function: var(--wui-bezier-1);
+		.wui-popper-animate {
+			animation-timing-function: var(--wui-bezier-1);
 
-      &:where(
-          [data-state="delayed-open"],
-          [data-state="open"],
-          [data-entering]
-        ) {
-        animation-duration: var(--wui-duration-2);
+			&:where(
+					[data-state="delayed-open"],
+					[data-state="open"],
+					[data-entering]
+				) {
+				animation-duration: var(--wui-duration-2);
 
-        &:where([data-side="top"], [data-placement="top"]) {
-          animation-name: wui-slide-up-enter, wui-fade-in;
-        }
+				&:where([data-side="top"], [data-placement="top"]) {
+					animation-name: wui-slide-up-enter, wui-fade-in;
+				}
 
-        &:where([data-side="bottom"], [data-placement="bottom"]) {
-          animation-name: wui-slide-down-enter, wui-fade-in;
-        }
+				&:where([data-side="bottom"], [data-placement="bottom"]) {
+					animation-name: wui-slide-down-enter, wui-fade-in;
+				}
 
-        &:where([data-side="left"], [data-placement="left"]) {
-          animation-name: wui-slide-left-enter, wui-fade-in;
-        }
+				&:where([data-side="left"], [data-placement="left"]) {
+					animation-name: wui-slide-left-enter, wui-fade-in;
+				}
 
-        &:where([data-side="right"], [data-placement="right"]) {
-          animation-name: wui-slide-right-enter, wui-fade-in;
-        }
-      }
+				&:where([data-side="right"], [data-placement="right"]) {
+					animation-name: wui-slide-right-enter, wui-fade-in;
+				}
+			}
 
-      &:where([data-state="closed"], [data-exiting]) {
-        animation-duration: var(--wui-duration-2);
+			&:where([data-state="closed"], [data-exiting]) {
+				animation-duration: var(--wui-duration-2);
 
-        &:where([data-side="top"], [data-placement="top"]) {
-          animation-name: wui-slide-down-exit, wui-fade-out;
-        }
+				&:where([data-side="top"], [data-placement="top"]) {
+					animation-name: wui-slide-down-exit, wui-fade-out;
+				}
 
-        &:where([data-side="bottom"], [data-placement="bottom"]) {
-          animation-name: wui-slide-up-exit, wui-fade-out;
-        }
+				&:where([data-side="bottom"], [data-placement="bottom"]) {
+					animation-name: wui-slide-up-exit, wui-fade-out;
+				}
 
-        &:where([data-side="left"], [data-placement="left"]) {
-          animation-name: wui-slide-right-exit, wui-fade-out;
-        }
+				&:where([data-side="left"], [data-placement="left"]) {
+					animation-name: wui-slide-right-exit, wui-fade-out;
+				}
 
-        &:where([data-side="right"], [data-placement="right"]) {
-          animation-name: wui-slide-left-exit, wui-fade-out;
-        }
-      }
-    }
+				&:where([data-side="right"], [data-placement="right"]) {
+					animation-name: wui-slide-left-exit, wui-fade-out;
+				}
+			}
+		}
 
-    /* transitions a popper relative to an anchor position. This is typically used in
+		/* transitions a popper relative to an anchor position. This is typically used in
      * cases where the popper remains in the DOM. Like in the new Popover API
      */
-    .wui-popper-transition {
-      transition-duration: var(--wui-duration-2);
-      transition-property: opacity, transform;
-      transition-timing-function: var(--wui-bezier-1);
-      transform-origin: var(--popover-transform-origin);
+		.wui-popper-transition {
+			transition-duration: var(--wui-duration-2);
+			transition-property: opacity, transform;
+			transition-timing-function: var(--wui-bezier-1);
+			transform-origin: var(--popover-transform-origin);
 
-      opacity: 0;
-      transform: translate(
-          var(--wui-popper-translateX, 0),
-          var(--wui-popper-translateY, 0)
-        )
-        scale(var(--wui-popper-scale));
+			opacity: 0;
+			transform: translate(
+					var(--wui-popper-translateX, 0),
+					var(--wui-popper-translateY, 0)
+				)
+				scale(var(--wui-popper-scale));
 
-      &[data-placement="bottom"] {
-        --wui-popper-translateY: -6px;
-        --wui-popper-scale: 0.97;
-      }
+			&[data-placement="bottom"] {
+				--wui-popper-translateY: -6px;
+				--wui-popper-scale: 0.97;
+			}
 
-      &[data-placement="right"] {
-        --wui-popper-translateX: -6px;
-        --wui-popper-scale: 0.97;
-      }
+			&[data-placement="right"] {
+				--wui-popper-translateX: -6px;
+				--wui-popper-scale: 0.97;
+			}
 
-      &[data-placement="left"] {
-        --wui-popper-translateX: 6px;
-        --wui-popper-scale: 0.97;
-      }
+			&[data-placement="left"] {
+				--wui-popper-translateX: 6px;
+				--wui-popper-scale: 0.97;
+			}
 
-      &[data-placement="top"] {
-        --wui-popper-translateY: 6px;
-        --wui-popper-scale: 0.97;
-      }
+			&[data-placement="top"] {
+				--wui-popper-translateY: 6px;
+				--wui-popper-scale: 0.97;
+			}
 
-      &:where([popover]:popover-open, [data-enter="true"]) {
-        opacity: 1;
-        transform: translate(0, 0) scale(1);
-      }
-    }
-  }
+			&:where([popover]:popover-open, [data-enter="true"]) {
+				opacity: 1;
+				transform: translate(0, 0) scale(1);
+			}
+		}
+	}
 }

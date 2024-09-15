@@ -1,85 +1,85 @@
 :root {
-  .expressive-code {
-    --ec-brdRad: min(var(--wui-border-radius-3), 15px);
-    --ec-brdWd: var(--wui-border-width-1);
-    --ec-codeFontFml: var(--wui-font-family-mono);
-    --ec-codeFontSize: var(--wui-font-size-2);
-    --ec-codeLineHt: var(--wui-line-height-2);
-    --ec-codePadBlk: var(--wui-space-5);
-    --ec-codePadInl: var(--wui-space-5);
-    --ec-gtrBrdWd: var(--wui-border-width-1);
-    --ec-uiFontFml: var(--wui-font-family-sans);
-    --ec-uiFontSize: var(--wui-font-size-2);
-    --ec-uiLineHt: var(--wui-line-height-1);
-    --ec-frm-frameBoxShdCssVal: none;
+	.expressive-code {
+		--ec-brdRad: min(var(--wui-border-radius-3), 15px);
+		--ec-brdWd: var(--wui-border-width-1);
+		--ec-codeFontFml: var(--wui-font-family-mono);
+		--ec-codeFontSize: var(--wui-font-size-2);
+		--ec-codeLineHt: var(--wui-line-height-2);
+		--ec-codePadBlk: var(--wui-space-5);
+		--ec-codePadInl: var(--wui-space-5);
+		--ec-gtrBrdWd: var(--wui-border-width-1);
+		--ec-uiFontFml: var(--wui-font-family-sans);
+		--ec-uiFontSize: var(--wui-font-size-2);
+		--ec-uiLineHt: var(--wui-line-height-1);
+		--ec-frm-frameBoxShdCssVal: none;
 
-    margin-block: var(--wui-space-7);
+		margin-block: var(--wui-space-7);
 
-    .frame {
-      &.has-title {
-        &:not(.is-terminal) {
-          .header {
-            --ec-brdWd: 1px;
-          }
+		.frame {
+			&.has-title {
+				&:not(.is-terminal) {
+					.header {
+						--ec-brdWd: 1px;
+					}
 
-          .title {
-            border-top-right-radius: 0;
-            border-top-left-radius: var(--ec-brdRad);
-            font-family: var(--wui-font-family-sans);
-            font-size: var(--wui-font-size-1);
+					.title {
+						border-top-right-radius: 0;
+						border-top-left-radius: var(--ec-brdRad);
+						font-family: var(--wui-font-family-sans);
+						font-size: var(--wui-font-size-1);
 
-            &:after {
-              border-top: none;
-            }
-          }
-        }
-      }
-    }
-  }
+						&:after {
+							border-top: none;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 :root[data-theme="light"][data-code-theme="github-light"]
-  .expressive-code:not([data-code-theme="github-dark"]) {
-  --wui-ec-background: var(--wui-color-grey-2);
-  --wui-ec-border-color: var(--wui-color-grey-5);
+	.expressive-code:not([data-code-theme="github-dark"]) {
+	--wui-ec-background: var(--wui-color-grey-2);
+	--wui-ec-border-color: var(--wui-color-grey-5);
 
-  --ec-brdCol: var(--wui-ec-border-color);
-  --ec-frm-edActTabBrdCol: var(--wui-ec-border-color);
-  --ec-frm-edActTabFg: var(--wui-color-grey-11);
-  --ec-frm-edActTabBg: var(--wui-ec-background);
-  --ec-frm-edActTabIndBtmCol: var(--wui-ec-background);
-  --ec-frm-edBg: var(--wui-ec-background);
-  --ec-frm-edTabBarBg: var(--wui-ec-background);
-  --ec-frm-edTabBarBrdCol: var(--wui-ec-border-color);
-  --ec-frm-edTabBarBrdBtmCol: var(--wui-ec-border-color);
-  --ec-frm-trmBg: var(--wui-ec-background);
-  --ec-frm-trmDotsFg: var(--wui-color-grey-8);
-  --ec-frm-trmTtbBg: var(--wui-ec-background);
-  --ec-tm-insBg: var(--wui-color-accent-3);
-  --ec-tm-insBrdCol: var(--wui-color-accent-6);
-  --ec-tm-markBg: var(--wui-color-accent-a3);
-  --ec-tm-markBrdCol: var(--wui-color-accent-a8);
+	--ec-brdCol: var(--wui-ec-border-color);
+	--ec-frm-edActTabBrdCol: var(--wui-ec-border-color);
+	--ec-frm-edActTabFg: var(--wui-color-grey-11);
+	--ec-frm-edActTabBg: var(--wui-ec-background);
+	--ec-frm-edActTabIndBtmCol: var(--wui-ec-background);
+	--ec-frm-edBg: var(--wui-ec-background);
+	--ec-frm-edTabBarBg: var(--wui-ec-background);
+	--ec-frm-edTabBarBrdCol: var(--wui-ec-border-color);
+	--ec-frm-edTabBarBrdBtmCol: var(--wui-ec-border-color);
+	--ec-frm-trmBg: var(--wui-ec-background);
+	--ec-frm-trmDotsFg: var(--wui-color-grey-8);
+	--ec-frm-trmTtbBg: var(--wui-ec-background);
+	--ec-tm-insBg: var(--wui-color-accent-3);
+	--ec-tm-insBrdCol: var(--wui-color-accent-6);
+	--ec-tm-markBg: var(--wui-color-accent-a3);
+	--ec-tm-markBrdCol: var(--wui-color-accent-a8);
 }
 
 :root[data-theme="dark"][data-code-theme="github-dark"]
-  .expressive-code:not([data-code-theme="github-light"]) {
-  --wui-ec-background: var(--wui-color-grey-2);
-  --wui-ec-border-color: var(--wui-color-grey-5);
+	.expressive-code:not([data-code-theme="github-light"]) {
+	--wui-ec-background: var(--wui-color-grey-2);
+	--wui-ec-border-color: var(--wui-color-grey-5);
 
-  --ec-brdCol: var(--wui-ec-border-color);
-  --ec-frm-edActTabBrdCol: var(--wui-ec-border-color);
-  --ec-frm-edActTabFg: var(--wui-color-grey-11);
-  --ec-frm-edActTabBg: var(--wui-ec-background);
-  --ec-frm-edActTabIndBtmCol: var(--wui-ec-background);
-  --ec-frm-edBg: var(--wui-ec-background);
-  --ec-frm-edTabBarBg: var(--wui-ec-background);
-  --ec-frm-edTabBarBrdCol: var(--wui-ec-border-color);
-  --ec-frm-edTabBarBrdBtmCol: var(--wui-ec-border-color);
-  --ec-frm-trmBg: var(--wui-ec-background);
-  --ec-frm-trmDotsFg: var(--wui-color-grey-8);
-  --ec-frm-trmTtbBg: var(--wui-ec-background);
-  --ec-tm-insBg: var(--wui-color-accent-3);
-  --ec-tm-insBrdCol: var(--wui-color-accent-6);
-  --ec-tm-markBg: var(--wui-color-accent-a3);
-  --ec-tm-markBrdCol: var(--wui-color-accent-a8);
+	--ec-brdCol: var(--wui-ec-border-color);
+	--ec-frm-edActTabBrdCol: var(--wui-ec-border-color);
+	--ec-frm-edActTabFg: var(--wui-color-grey-11);
+	--ec-frm-edActTabBg: var(--wui-ec-background);
+	--ec-frm-edActTabIndBtmCol: var(--wui-ec-background);
+	--ec-frm-edBg: var(--wui-ec-background);
+	--ec-frm-edTabBarBg: var(--wui-ec-background);
+	--ec-frm-edTabBarBrdCol: var(--wui-ec-border-color);
+	--ec-frm-edTabBarBrdBtmCol: var(--wui-ec-border-color);
+	--ec-frm-trmBg: var(--wui-ec-background);
+	--ec-frm-trmDotsFg: var(--wui-color-grey-8);
+	--ec-frm-trmTtbBg: var(--wui-ec-background);
+	--ec-tm-insBg: var(--wui-color-accent-3);
+	--ec-tm-insBrdCol: var(--wui-color-accent-6);
+	--ec-tm-markBg: var(--wui-color-accent-a3);
+	--ec-tm-markBrdCol: var(--wui-color-accent-a8);
 }

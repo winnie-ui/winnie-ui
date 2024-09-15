@@ -1,139 +1,139 @@
 @layer base {
-  :root,
-  .light,
-  .light-theme,
-  [data-theme="light"] {
-    --wui-color-red-1: #fffcfc;
-    --wui-color-red-2: #fff7f6;
-    --wui-color-red-3: #ffebe9;
-    --wui-color-red-4: #ffdcd7;
-    --wui-color-red-5: #ffccc6;
-    --wui-color-red-6: #ffbcb5;
-    --wui-color-red-7: #f8a8a0;
-    --wui-color-red-8: #f08c84;
-    --wui-color-red-9: #ef4444;
-    --wui-color-red-10: #e13237;
-    --wui-color-red-11: #d3232c;
-    --wui-color-red-12: #661717;
+	:root,
+	.light,
+	.light-theme,
+	[data-theme="light"] {
+		--wui-color-red-1: #fffcfc;
+		--wui-color-red-2: #fff7f6;
+		--wui-color-red-3: #ffebe9;
+		--wui-color-red-4: #ffdcd7;
+		--wui-color-red-5: #ffccc6;
+		--wui-color-red-6: #ffbcb5;
+		--wui-color-red-7: #f8a8a0;
+		--wui-color-red-8: #f08c84;
+		--wui-color-red-9: #ef4444;
+		--wui-color-red-10: #e13237;
+		--wui-color-red-11: #d3232c;
+		--wui-color-red-12: #661717;
 
-    --wui-color-red-a1: #ff000003;
-    --wui-color-red-a2: #ff1d0009;
-    --wui-color-red-a3: #ff180016;
-    --wui-color-red-a4: #ff200028;
-    --wui-color-red-a5: #ff1b0039;
-    --wui-color-red-a6: #ff19014a;
-    --wui-color-red-a7: #ed16005f;
-    --wui-color-red-a8: #e011017b;
-    --wui-color-red-a9: #e90000bb;
-    --wui-color-red-a10: #da0006cd;
-    --wui-color-red-a11: #cc000bdc;
-    --wui-color-red-a12: #570000e8;
+		--wui-color-red-a1: #ff000003;
+		--wui-color-red-a2: #ff1d0009;
+		--wui-color-red-a3: #ff180016;
+		--wui-color-red-a4: #ff200028;
+		--wui-color-red-a5: #ff1b0039;
+		--wui-color-red-a6: #ff19014a;
+		--wui-color-red-a7: #ed16005f;
+		--wui-color-red-a8: #e011017b;
+		--wui-color-red-a9: #e90000bb;
+		--wui-color-red-a10: #da0006cd;
+		--wui-color-red-a11: #cc000bdc;
+		--wui-color-red-a12: #570000e8;
 
-    --wui-color-red-contrast: #fff;
-  }
+		--wui-color-red-contrast: #fff;
+	}
 
-  @supports (color: color(display-p3 1 1 1)) {
-    @media (color-gamut: p3) {
-      :root,
-      .light,
-      .light-theme,
-      [data-theme="light"] {
-        --wui-color-red-1: oklch(99.4% 0.003 25.33);
-        --wui-color-red-2: oklch(98.3% 0.009 25.33);
-        --wui-color-red-3: oklch(95.6% 0.023 25.33);
-        --wui-color-red-4: oklch(92.8% 0.051 25.33);
-        --wui-color-red-5: oklch(89.6% 0.067 25.33);
-        --wui-color-red-6: oklch(85.6% 0.08 25.33);
-        --wui-color-red-7: oklch(80.7% 0.097 25.33);
-        --wui-color-red-8: oklch(74.4% 0.122 25.33);
-        --wui-color-red-9: oklch(63.7% 0.208 25.33);
-        --wui-color-red-10: oklch(59.6% 0.21 25.33);
-        --wui-color-red-11: oklch(55.9% 0.208 25.33);
-        --wui-color-red-12: oklch(34% 0.112 25.33);
+	@supports (color: color(display-p3 1 1 1)) {
+		@media (color-gamut: p3) {
+			:root,
+			.light,
+			.light-theme,
+			[data-theme="light"] {
+				--wui-color-red-1: oklch(99.4% 0.003 25.33);
+				--wui-color-red-2: oklch(98.3% 0.009 25.33);
+				--wui-color-red-3: oklch(95.6% 0.023 25.33);
+				--wui-color-red-4: oklch(92.8% 0.051 25.33);
+				--wui-color-red-5: oklch(89.6% 0.067 25.33);
+				--wui-color-red-6: oklch(85.6% 0.08 25.33);
+				--wui-color-red-7: oklch(80.7% 0.097 25.33);
+				--wui-color-red-8: oklch(74.4% 0.122 25.33);
+				--wui-color-red-9: oklch(63.7% 0.208 25.33);
+				--wui-color-red-10: oklch(59.6% 0.21 25.33);
+				--wui-color-red-11: oklch(55.9% 0.208 25.33);
+				--wui-color-red-12: oklch(34% 0.112 25.33);
 
-        --wui-color-red-a1: color(display-p3 0.675 0.024 0.024 / 0.012);
-        --wui-color-red-a2: color(display-p3 0.894 0.129 0.024 / 0.036);
-        --wui-color-red-a3: color(display-p3 0.859 0.106 0.008 / 0.083);
-        --wui-color-red-a4: color(display-p3 0.847 0.129 0.004 / 0.153);
-        --wui-color-red-a5: color(display-p3 0.855 0.114 0.004 / 0.216);
-        --wui-color-red-a6: color(display-p3 0.863 0.114 0.004 / 0.283);
-        --wui-color-red-a7: color(display-p3 0.796 0.09 0.004 / 0.361);
-        --wui-color-red-a8: color(display-p3 0.761 0.086 0.004 / 0.471);
-        --wui-color-red-a9: color(display-p3 0.812 0.035 0 / 0.702);
-        --wui-color-red-a10: color(display-p3 0.749 0.02 0 / 0.753);
-        --wui-color-red-a11: color(display-p3 0.698 0.012 0 / 0.793);
-        --wui-color-red-a12: color(display-p3 0.294 0.012 0 / 0.895);
+				--wui-color-red-a1: color(display-p3 0.675 0.024 0.024 / 0.012);
+				--wui-color-red-a2: color(display-p3 0.894 0.129 0.024 / 0.036);
+				--wui-color-red-a3: color(display-p3 0.859 0.106 0.008 / 0.083);
+				--wui-color-red-a4: color(display-p3 0.847 0.129 0.004 / 0.153);
+				--wui-color-red-a5: color(display-p3 0.855 0.114 0.004 / 0.216);
+				--wui-color-red-a6: color(display-p3 0.863 0.114 0.004 / 0.283);
+				--wui-color-red-a7: color(display-p3 0.796 0.09 0.004 / 0.361);
+				--wui-color-red-a8: color(display-p3 0.761 0.086 0.004 / 0.471);
+				--wui-color-red-a9: color(display-p3 0.812 0.035 0 / 0.702);
+				--wui-color-red-a10: color(display-p3 0.749 0.02 0 / 0.753);
+				--wui-color-red-a11: color(display-p3 0.698 0.012 0 / 0.793);
+				--wui-color-red-a12: color(display-p3 0.294 0.012 0 / 0.895);
 
-        --wui-color-red-contrast: #fff;
-      }
-    }
-  }
+				--wui-color-red-contrast: #fff;
+			}
+		}
+	}
 
-  .dark,
-  .dark-theme,
-  [data-theme="dark"] {
-    --wui-color-red-1: #170f0e;
-    --wui-color-red-2: #201312;
-    --wui-color-red-3: #3c1210;
-    --wui-color-red-4: #520c0e;
-    --wui-color-red-5: #631314;
-    --wui-color-red-6: #752120;
-    --wui-color-red-7: #8f312f;
-    --wui-color-red-8: #b8413e;
-    --wui-color-red-9: #ef4444;
-    --wui-color-red-10: #e03438;
-    --wui-color-red-11: #ff8e84;
-    --wui-color-red-12: #ffd1cc;
+	.dark,
+	.dark-theme,
+	[data-theme="dark"] {
+		--wui-color-red-1: #170f0e;
+		--wui-color-red-2: #201312;
+		--wui-color-red-3: #3c1210;
+		--wui-color-red-4: #520c0e;
+		--wui-color-red-5: #631314;
+		--wui-color-red-6: #752120;
+		--wui-color-red-7: #8f312f;
+		--wui-color-red-8: #b8413e;
+		--wui-color-red-9: #ef4444;
+		--wui-color-red-10: #e03438;
+		--wui-color-red-11: #ff8e84;
+		--wui-color-red-12: #ffd1cc;
 
-    --wui-color-red-a1: #ec000007;
-    --wui-color-red-a2: #f22f2011;
-    --wui-color-red-a3: #fb170c2f;
-    --wui-color-red-a4: #fe000746;
-    --wui-color-red-a5: #ff171a58;
-    --wui-color-red-a6: #fd37356c;
-    --wui-color-red-a7: #ff4e4a87;
-    --wui-color-red-a8: #ff5651b3;
-    --wui-color-red-a9: #ff4848ee;
-    --wui-color-red-a10: #ff3a3ede;
-    --wui-color-red-a11: #ff8e84;
-    --wui-color-red-a12: #ffd1cc;
+		--wui-color-red-a1: #ec000007;
+		--wui-color-red-a2: #f22f2011;
+		--wui-color-red-a3: #fb170c2f;
+		--wui-color-red-a4: #fe000746;
+		--wui-color-red-a5: #ff171a58;
+		--wui-color-red-a6: #fd37356c;
+		--wui-color-red-a7: #ff4e4a87;
+		--wui-color-red-a8: #ff5651b3;
+		--wui-color-red-a9: #ff4848ee;
+		--wui-color-red-a10: #ff3a3ede;
+		--wui-color-red-a11: #ff8e84;
+		--wui-color-red-a12: #ffd1cc;
 
-    --wui-color-red-contrast: #fff;
-  }
+		--wui-color-red-contrast: #fff;
+	}
 
-  @supports (color: color(display-p3 1 1 1)) {
-    @media (color-gamut: p3) {
-      .dark,
-      .dark-theme,
-      [data-theme="dark"] {
-        --wui-color-red-1: oklch(17.8% 0.014 25.33);
-        --wui-color-red-2: oklch(20.4% 0.022 25.33);
-        --wui-color-red-3: oklch(25% 0.067 25.33);
-        --wui-color-red-4: oklch(28.9% 0.101 25.33);
-        --wui-color-red-5: oklch(33.1% 0.113 25.33);
-        --wui-color-red-6: oklch(38.2% 0.118 25.33);
-        --wui-color-red-7: oklch(45% 0.127 25.33);
-        --wui-color-red-8: oklch(54.3% 0.155 25.33);
-        --wui-color-red-9: oklch(63.7% 0.208 25.33);
-        --wui-color-red-10: oklch(59.6% 0.208 25.33);
-        --wui-color-red-11: oklch(78.4% 0.174 25.33);
-        --wui-color-red-12: oklch(90.2% 0.055 25.33);
+	@supports (color: color(display-p3 1 1 1)) {
+		@media (color-gamut: p3) {
+			.dark,
+			.dark-theme,
+			[data-theme="dark"] {
+				--wui-color-red-1: oklch(17.8% 0.014 25.33);
+				--wui-color-red-2: oklch(20.4% 0.022 25.33);
+				--wui-color-red-3: oklch(25% 0.067 25.33);
+				--wui-color-red-4: oklch(28.9% 0.101 25.33);
+				--wui-color-red-5: oklch(33.1% 0.113 25.33);
+				--wui-color-red-6: oklch(38.2% 0.118 25.33);
+				--wui-color-red-7: oklch(45% 0.127 25.33);
+				--wui-color-red-8: oklch(54.3% 0.155 25.33);
+				--wui-color-red-9: oklch(63.7% 0.208 25.33);
+				--wui-color-red-10: oklch(59.6% 0.208 25.33);
+				--wui-color-red-11: oklch(78.4% 0.174 25.33);
+				--wui-color-red-12: oklch(90.2% 0.055 25.33);
 
-        --wui-color-red-a1: color(display-p3 0.961 0 0 / 0.022);
-        --wui-color-red-a2: color(display-p3 0.996 0.282 0.141 / 0.055);
-        --wui-color-red-a3: color(display-p3 1 0.165 0.094 / 0.16);
-        --wui-color-red-a4: color(display-p3 1 0.102 0.067 / 0.244);
-        --wui-color-red-a5: color(display-p3 1 0.18 0.157 / 0.311);
-        --wui-color-red-a6: color(display-p3 1 0.294 0.263 / 0.383);
-        --wui-color-red-a7: color(display-p3 1 0.376 0.341 / 0.484);
-        --wui-color-red-a8: color(display-p3 1 0.408 0.373 / 0.643);
-        --wui-color-red-a9: color(display-p3 1 0.365 0.337 / 0.858);
-        --wui-color-red-a10: color(display-p3 1 0.322 0.302 / 0.795);
-        --wui-color-red-a11: color(display-p3 1 0.616 0.565 / 0.937);
-        --wui-color-red-a12: color(display-p3 1 0.851 0.827 / 0.971);
+				--wui-color-red-a1: color(display-p3 0.961 0 0 / 0.022);
+				--wui-color-red-a2: color(display-p3 0.996 0.282 0.141 / 0.055);
+				--wui-color-red-a3: color(display-p3 1 0.165 0.094 / 0.16);
+				--wui-color-red-a4: color(display-p3 1 0.102 0.067 / 0.244);
+				--wui-color-red-a5: color(display-p3 1 0.18 0.157 / 0.311);
+				--wui-color-red-a6: color(display-p3 1 0.294 0.263 / 0.383);
+				--wui-color-red-a7: color(display-p3 1 0.376 0.341 / 0.484);
+				--wui-color-red-a8: color(display-p3 1 0.408 0.373 / 0.643);
+				--wui-color-red-a9: color(display-p3 1 0.365 0.337 / 0.858);
+				--wui-color-red-a10: color(display-p3 1 0.322 0.302 / 0.795);
+				--wui-color-red-a11: color(display-p3 1 0.616 0.565 / 0.937);
+				--wui-color-red-a12: color(display-p3 1 0.851 0.827 / 0.971);
 
-        --wui-color-red-contrast: #fff;
-      }
-    }
-  }
+				--wui-color-red-contrast: #fff;
+			}
+		}
+	}
 }

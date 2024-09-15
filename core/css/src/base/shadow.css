@@ -6,88 +6,140 @@
  * https://github.com/argyleink/open-props/blob/main/src/props.shadows.css
  */
 @layer base {
-  .winnie-ui {
-    --wui-shadow-1: 0 1px 2px -1px hsl(var(--wui-shadow-color) /
-          calc(var(--wui-shadow-strength) + 9%));
-    --wui-shadow-2: 0 3px 5px -2px hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 3%)),
-      0 7px 14px -5px hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 5%));
-    --wui-shadow-3: 0 -1px 3px 0 hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 2%)),
-      0 1px 2px -5px hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 2%)),
-      0 2px 5px -5px hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 4%)),
-      0 4px 12px -5px hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 5%)),
-      0 12px 15px -5px hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 7%));
-    --wui-shadow-4: 0 -2px 5px 0 hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 2%)),
-      0 1px 1px -2px hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 3%)),
-      0 2px 2px -2px hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 3%)),
-      0 5px 5px -2px hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 4%)),
-      0 9px 9px -2px hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 5%)),
-      0 16px 16px -2px hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 6%));
-    --wui-shadow-5: 0 -1px 2px 0 hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 2%)),
-      0 2px 1px -2px hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 3%)),
-      0 5px 5px -2px hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 3%)),
-      0 10px 10px -2px hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 4%)),
-      0 20px 20px -2px hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 5%)),
-      0 40px 40px -2px hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 7%));
-    --wui-shadow-6: 0 -1px 2px 0 hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 2%)),
-      0 3px 2px -2px hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 3%)),
-      0 7px 5px -2px hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 3%)),
-      0 12px 10px -2px hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 4%)),
-      0 22px 18px -2px hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 5%)),
-      0 41px 33px -2px hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 6%)),
-      0 100px 80px -2px hsl(var(--wui-shadow-color) /
-            calc(var(--wui-shadow-strength) + 7%));
-    --wui-shadow-inner-1: inset 0 0 0 1px
-      hsl(var(--wui-shadow-color) / calc(var(--wui-shadow-strength) + 9%));
-    --wui-shadow-inner-2: inset 0 1px 2px 0
-        hsl(var(--wui-shadow-color) / calc(var(--wui-shadow-strength) + 9%)),
-      var(--wui-shadow-inner-highlight);
-    --wui-shadow-inner-3: inset 0 1px 4px 0
-        hsl(var(--wui-shadow-color) / calc(var(--wui-shadow-strength) + 9%)),
-      var(--wui-shadow-inner-highlight);
-    --wui-shadow-inner-4: inset 0 2px 8px 0
-        hsl(var(--wui-shadow-color) / calc(var(--wui-shadow-strength) + 9%)),
-      var(--wui-shadow-inner-highlight);
-    --wui-shadow-inner-5: inset 0 2px 14px 0
-        hsl(var(--wui-shadow-color) / calc(var(--wui-shadow-strength) + 9%)),
-      var(--wui-shadow-inner-highlight);
-  }
+	.winnie-ui {
+		--wui-shadow-1: 0 1px 2px -1px
+			hsl(var(--wui-shadow-color) / calc(var(--wui-shadow-strength) + 9%));
+		--wui-shadow-2: 0 3px 5px -2px
+			hsl(var(--wui-shadow-color) / calc(var(--wui-shadow-strength) + 3%)), 0
+			7px 14px -5px
+			hsl(var(--wui-shadow-color) / calc(var(--wui-shadow-strength) + 5%));
+		--wui-shadow-3:
+			0 -1px 3px 0 hsl(
+				var(--wui-shadow-color) /
+				calc(var(--wui-shadow-strength) + 2%)
+			),
+			0 1px 2px -5px hsl(
+				var(--wui-shadow-color) /
+				calc(var(--wui-shadow-strength) + 2%)
+			),
+			0 2px 5px -5px hsl(
+				var(--wui-shadow-color) /
+				calc(var(--wui-shadow-strength) + 4%)
+			),
+			0 4px 12px -5px hsl(
+				var(--wui-shadow-color) /
+				calc(var(--wui-shadow-strength) + 5%)
+			),
+			0 12px 15px -5px hsl(
+				var(--wui-shadow-color) /
+				calc(var(--wui-shadow-strength) + 7%)
+			);
+		--wui-shadow-4:
+			0 -2px 5px 0 hsl(
+				var(--wui-shadow-color) /
+				calc(var(--wui-shadow-strength) + 2%)
+			),
+			0 1px 1px -2px hsl(
+				var(--wui-shadow-color) /
+				calc(var(--wui-shadow-strength) + 3%)
+			),
+			0 2px 2px -2px hsl(
+				var(--wui-shadow-color) /
+				calc(var(--wui-shadow-strength) + 3%)
+			),
+			0 5px 5px -2px hsl(
+				var(--wui-shadow-color) /
+				calc(var(--wui-shadow-strength) + 4%)
+			),
+			0 9px 9px -2px hsl(
+				var(--wui-shadow-color) /
+				calc(var(--wui-shadow-strength) + 5%)
+			),
+			0 16px 16px -2px hsl(
+				var(--wui-shadow-color) /
+				calc(var(--wui-shadow-strength) + 6%)
+			);
+		--wui-shadow-5:
+			0 -1px 2px 0 hsl(
+				var(--wui-shadow-color) /
+				calc(var(--wui-shadow-strength) + 2%)
+			),
+			0 2px 1px -2px hsl(
+				var(--wui-shadow-color) /
+				calc(var(--wui-shadow-strength) + 3%)
+			),
+			0 5px 5px -2px hsl(
+				var(--wui-shadow-color) /
+				calc(var(--wui-shadow-strength) + 3%)
+			),
+			0 10px 10px -2px hsl(
+				var(--wui-shadow-color) /
+				calc(var(--wui-shadow-strength) + 4%)
+			),
+			0 20px 20px -2px hsl(
+				var(--wui-shadow-color) /
+				calc(var(--wui-shadow-strength) + 5%)
+			),
+			0 40px 40px -2px hsl(
+				var(--wui-shadow-color) /
+				calc(var(--wui-shadow-strength) + 7%)
+			);
+		--wui-shadow-6:
+			0 -1px 2px 0 hsl(
+				var(--wui-shadow-color) /
+				calc(var(--wui-shadow-strength) + 2%)
+			),
+			0 3px 2px -2px hsl(
+				var(--wui-shadow-color) /
+				calc(var(--wui-shadow-strength) + 3%)
+			),
+			0 7px 5px -2px hsl(
+				var(--wui-shadow-color) /
+				calc(var(--wui-shadow-strength) + 3%)
+			),
+			0 12px 10px -2px hsl(
+				var(--wui-shadow-color) /
+				calc(var(--wui-shadow-strength) + 4%)
+			),
+			0 22px 18px -2px hsl(
+				var(--wui-shadow-color) /
+				calc(var(--wui-shadow-strength) + 5%)
+			),
+			0 41px 33px -2px hsl(
+				var(--wui-shadow-color) /
+				calc(var(--wui-shadow-strength) + 6%)
+			),
+			0 100px 80px -2px hsl(
+				var(--wui-shadow-color) /
+				calc(var(--wui-shadow-strength) + 7%)
+			);
+		--wui-shadow-inner-1: inset 0 0 0 1px
+			hsl(var(--wui-shadow-color) / calc(var(--wui-shadow-strength) + 9%));
+		--wui-shadow-inner-2: inset 0 1px 2px 0
+			hsl(var(--wui-shadow-color) / calc(var(--wui-shadow-strength) + 9%)),
+			var(--wui-shadow-inner-highlight);
+		--wui-shadow-inner-3: inset 0 1px 4px 0
+			hsl(var(--wui-shadow-color) / calc(var(--wui-shadow-strength) + 9%)),
+			var(--wui-shadow-inner-highlight);
+		--wui-shadow-inner-4: inset 0 2px 8px 0
+			hsl(var(--wui-shadow-color) / calc(var(--wui-shadow-strength) + 9%)),
+			var(--wui-shadow-inner-highlight);
+		--wui-shadow-inner-5: inset 0 2px 14px 0
+			hsl(var(--wui-shadow-color) / calc(var(--wui-shadow-strength) + 9%)),
+			var(--wui-shadow-inner-highlight);
+	}
 
-  :is(.light, .light-theme, [data-theme="light"]) {
-    --wui-shadow-color: 220 3% 15%;
-    --wui-shadow-strength: 1%;
-    --wui-shadow-inner-highlight: inset 0 -0.5px 0 0 #fff,
-      inset 0 0.5px 0 0 #0001;
-  }
+	:is(.light, .light-theme, [data-theme="light"]) {
+		--wui-shadow-color: 220 3% 15%;
+		--wui-shadow-strength: 1%;
+		--wui-shadow-inner-highlight: inset 0 -0.5px 0 0 #fff, inset 0 0.5px 0 0
+			#0001;
+	}
 
-  :is(.dark, .dark-theme, [data-theme="dark"]) {
-    --wui-shadow-color: 220 40% 2%;
-    --wui-shadow-strength: 25%;
-    --wui-shadow-inner-highlight: inset 0 -0.5px 0 0 #fff1,
-      inset 0 0.5px 0 0 #0007;
-  }
+	:is(.dark, .dark-theme, [data-theme="dark"]) {
+		--wui-shadow-color: 220 40% 2%;
+		--wui-shadow-strength: 25%;
+		--wui-shadow-inner-highlight: inset 0 -0.5px 0 0 #fff1, inset 0 0.5px 0 0
+			#0007;
+	}
 }

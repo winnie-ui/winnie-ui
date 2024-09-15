@@ -1,138 +1,138 @@
 @layer component {
-  [data-component="button"] {
-    /* border radius */
-    --wui-button-sm-border-radius: var(--wui-border-radius-1);
-    --wui-button-md-border-radius: var(--wui-border-radius-2);
-    --wui-button-lg-border-radius: var(--wui-border-radius-3);
+	[data-component="button"] {
+		/* border radius */
+		--wui-button-sm-border-radius: var(--wui-border-radius-1);
+		--wui-button-md-border-radius: var(--wui-border-radius-2);
+		--wui-button-lg-border-radius: var(--wui-border-radius-3);
 
-    /* font size */
-    --wui-button-sm-font-size: var(--wui-font-size-1);
-    --wui-button-md-font-size: var(--wui-font-size-2);
-    --wui-button-lg-font-size: var(--wui-font-size-3);
+		/* font size */
+		--wui-button-sm-font-size: var(--wui-font-size-1);
+		--wui-button-md-font-size: var(--wui-font-size-2);
+		--wui-button-lg-font-size: var(--wui-font-size-3);
 
-    /* height */
-    --wui-button-sm-height: calc(26px * var(--wui-scale));
-    --wui-button-md-height: calc(32px * var(--wui-scale));
-    --wui-button-lg-height: calc(40px * var(--wui-scale));
+		/* height */
+		--wui-button-sm-height: calc(26px * var(--wui-scale));
+		--wui-button-md-height: calc(32px * var(--wui-scale));
+		--wui-button-lg-height: calc(40px * var(--wui-scale));
 
-    /* icon size */
-    --wui-button-sm-icon-size: 1em;
-    --wui-button-md-icon-size: 1em;
-    --wui-button-lg-icon-size: 1em;
+		/* icon size */
+		--wui-button-sm-icon-size: 1em;
+		--wui-button-md-icon-size: 1em;
+		--wui-button-lg-icon-size: 1em;
 
-    /* space */
-    --wui-button-sm-space: var(--wui-space-4);
-    --wui-button-md-space: var(--wui-space-4);
-    --wui-button-lg-space: var(--wui-space-5);
+		/* space */
+		--wui-button-sm-space: var(--wui-space-4);
+		--wui-button-md-space: var(--wui-space-4);
+		--wui-button-lg-space: var(--wui-space-5);
 
-    align-items: center;
-    border-radius: var(
-      --wui-button-border-radius,
-      var(--wui-button-md-border-radius)
-    );
-    cursor: var(--wui-cursor-pressable, default);
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    isolation: isolate;
-    font-size: var(--wui-button-font-size, var(--wui-button-md-font-size));
-    gap: calc(var(--wui-button-space, var(--wui-button-md-space)) / 2);
-    height: var(--wui-button-height, var(--wui-button-md-height));
-    min-width: max-content;
-    padding-inline: var(--wui-button-space, var(--wui-button-md-space));
-    position: relative;
-    white-space: nowrap;
+		align-items: center;
+		border-radius: var(
+			--wui-button-border-radius,
+			var(--wui-button-md-border-radius)
+		);
+		cursor: var(--wui-cursor-pressable, default);
+		display: grid;
+		grid-template-columns: auto 1fr auto;
+		isolation: isolate;
+		font-size: var(--wui-button-font-size, var(--wui-button-md-font-size));
+		gap: calc(var(--wui-button-space, var(--wui-button-md-space)) / 2);
+		height: var(--wui-button-height, var(--wui-button-md-height));
+		min-width: max-content;
+		padding-inline: var(--wui-button-space, var(--wui-button-md-space));
+		position: relative;
+		white-space: nowrap;
 
-    [data-component="text"] {
-      font-size: var(--wui-button-font-size, var(--wui-button-md-font-size));
-      grid-column: 1 / 4;
-    }
+		[data-component="text"] {
+			font-size: var(--wui-button-font-size, var(--wui-button-md-font-size));
+			grid-column: 1 / 4;
+		}
 
-    [data-component="icon"] {
-      height: var(--wui-button-icon-size, var(--wui-button-md-icon-size));
-      width: var(--wui-button-icon-size, var(--wui-button-md-icon-size));
-    }
+		[data-component="icon"] {
+			height: var(--wui-button-icon-size, var(--wui-button-md-icon-size));
+			width: var(--wui-button-icon-size, var(--wui-button-md-icon-size));
+		}
 
-    [data-component="loading"] {
-      position: absolute;
-      z-index: 1;
-    }
+		[data-component="loading"] {
+			position: absolute;
+			z-index: 1;
+		}
 
-    /* has loading */
-    &:has([data-component="loading"]) {
-      &::after {
-        border-radius: var(
-          --wui-button-border-radius,
-          var(--wui-button-md-border-radius)
-        );
-        content: "";
-        inset: 0;
-        height: 100%;
-        position: absolute;
-        width: 100%;
-      }
+		/* has loading */
+		&:has([data-component="loading"]) {
+			&::after {
+				border-radius: var(
+					--wui-button-border-radius,
+					var(--wui-button-md-border-radius)
+				);
+				content: "";
+				inset: 0;
+				height: 100%;
+				position: absolute;
+				width: 100%;
+			}
 
-      [data-component="text"],
-      [data-component="icon"] {
-        opacity: 0;
-      }
-    }
+			[data-component="text"],
+			[data-component="icon"] {
+				opacity: 0;
+			}
+		}
 
-    /* icon followed by an text */
-    &:has([data-component="icon"] + [data-component="text"])
-      [data-component="text"] {
-      grid-column: 2 / 4;
-    }
+		/* icon followed by an text */
+		&:has([data-component="icon"] + [data-component="text"])
+			[data-component="text"] {
+			grid-column: 2 / 4;
+		}
 
-    /* text followed by an icon */
-    &:has([data-component="text"] + [data-component="icon"])
-      [data-component="text"] {
-      grid-column: 1 / 3;
-    }
+		/* text followed by an icon */
+		&:has([data-component="text"] + [data-component="icon"])
+			[data-component="text"] {
+			grid-column: 1 / 3;
+		}
 
-    /* icon followed by text followed by an icon */
-    &:has(
-        > [data-component="icon"]
-          + [data-component="text"]
-          + [data-component="icon"]
-      )
-      [data-component="text"] {
-      grid-column: 2 / 3;
-    }
+		/* icon followed by text followed by an icon */
+		&:has(
+				> [data-component="icon"]
+					+ [data-component="text"]
+					+ [data-component="icon"]
+			)
+			[data-component="text"] {
+			grid-column: 2 / 3;
+		}
 
-    /* only a single icon in the button */
-    &:has(
-        [data-component="icon"]:only-child,
-        [data-component="icon"] + [data-component="loading"]
-      ):not([data-component="text"]) {
-      grid-template-columns: 1fr;
-      height: var(--wui-button-height, var(--wui-button-md-height));
-      justify-items: center;
-      padding: 0;
-      width: var(--wui-button-height, var(--wui-button-md-height));
-    }
+		/* only a single icon in the button */
+		&:has(
+				[data-component="icon"]:only-child,
+				[data-component="icon"] + [data-component="loading"]
+			):not([data-component="text"]) {
+			grid-template-columns: 1fr;
+			height: var(--wui-button-height, var(--wui-button-md-height));
+			justify-items: center;
+			padding: 0;
+			width: var(--wui-button-height, var(--wui-button-md-height));
+		}
 
-    &[data-size="sm"] {
-      --wui-button-border-radius: var(--wui-button-sm-border-radius);
-      --wui-button-font-size: var(--wui-button-sm-font-size);
-      --wui-button-height: var(--wui-button-sm-height);
-      --wui-button-icon-size: 1em;
-      --wui-button-space: var(--wui-button-sm-space);
-    }
+		&[data-size="sm"] {
+			--wui-button-border-radius: var(--wui-button-sm-border-radius);
+			--wui-button-font-size: var(--wui-button-sm-font-size);
+			--wui-button-height: var(--wui-button-sm-height);
+			--wui-button-icon-size: 1em;
+			--wui-button-space: var(--wui-button-sm-space);
+		}
 
-    &[data-size="md"] {
-      --wui-button-border-radius: var(--wui-button-md-border-radius);
-      --wui-button-height: var(--wui-button-md-height);
-      --wui-button-font-size: var(--wui-button-md-font-size);
-      --wui-button-icon-size: 1em;
-      --wui-button-space: var(--wui-button-md-space);
-    }
+		&[data-size="md"] {
+			--wui-button-border-radius: var(--wui-button-md-border-radius);
+			--wui-button-height: var(--wui-button-md-height);
+			--wui-button-font-size: var(--wui-button-md-font-size);
+			--wui-button-icon-size: 1em;
+			--wui-button-space: var(--wui-button-md-space);
+		}
 
-    &[data-size="lg"] {
-      --wui-button-border-radius: var(--wui-button-lg-border-radius);
-      --wui-button-height: var(--wui-button-lg-height);
-      --wui-button-font-size: var(--wui-button-lg-font-size);
-      --wui-button-icon-size: 1em;
-      --wui-button-space: var(--wui-button-lg-space);
-    }
-  }
+		&[data-size="lg"] {
+			--wui-button-border-radius: var(--wui-button-lg-border-radius);
+			--wui-button-height: var(--wui-button-lg-height);
+			--wui-button-font-size: var(--wui-button-lg-font-size);
+			--wui-button-icon-size: 1em;
+			--wui-button-space: var(--wui-button-lg-space);
+		}
+	}
 }
