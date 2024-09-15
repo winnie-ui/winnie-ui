@@ -1,0 +1,7 @@
+@layer component {
+  [data-component="error"] {
+    display: block;
+    font-size: var(--wui-font-size-2);
+    white-space: nowrap;
+  }
+}

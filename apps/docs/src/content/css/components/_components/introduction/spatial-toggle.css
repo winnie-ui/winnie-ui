@@ -40,33 +40,82 @@
 }
 
 .sp-hero-container {
-  align-items: center;
+  align-items: flex-end;
   display: flex;
-  gap: var(--wui-space-4);
+  flex-direction: column;
+  gap: var(--wui-space-7);
+  max-width: 400px;
+  width: 100%;
 
-  .sp-hero-group {
+  .sp-hero-label {
+    color: var(--wui-color-grey-12);
+  }
+
+  .sp-hero-description {
+    &[data-mode="spatial"] {
+      color: var(--wui-color-grey-12);
+    }
+
+    &[data-mode="color"] {
+      color: var(--wui-color-grey-11);
+    }
+  }
+
+  .sp-hero-input {
     color: var(--wui-color-grey-12);
 
-    .sp-hero-input {
-      &[data-mode="spatial"] {
-        border: var(--wui-border-width-1) dashed var(--wui-color-grey-8);
-        background: transparent;
-      }
+    &[data-mode="spatial"] {
+      border: var(--wui-border-width-1) dashed var(--wui-color-grey-8);
+      background: transparent;
+    }
 
-      &[data-mode="color"] {
-        background: var(--input-background);
-        border: var(--wui-border-width-1) solid var(--wui-color-grey-6);
-        box-shadow: var(--wui-shadow-1);
+    &[data-mode="color"] {
+      background: var(--input-background);
+      border: var(--wui-border-width-1) solid var(--wui-color-grey-6);
+      box-shadow: var(--wui-shadow-1);
 
-        &:focus {
-          outline: var(--wui-border-width-2) solid var(--wui-color-accent-8);
-          border-color: transparent;
-        }
+      &:focus {
+        outline: var(--wui-border-width-2) solid var(--wui-color-accent-8);
+        border-color: transparent;
       }
     }
   }
 
-  .sp-hero-button {
+  .sp-hero-footer {
+    align-items: center;
+    display: flex;
+    gap: var(--wui-space-4);
+    justify-content: flex-end;
+  }
+
+  .sp-hero-cancel-button {
+    border: var(--wui-border-width-1) dashed transparent;
+
+    &[data-mode="spatial"] {
+      border-color: var(--wui-color-grey-8);
+    }
+
+    &[data-mode="color"] {
+      background: transparent;
+      color: var(--wui-color-accent-11);
+      font-weight: var(--wui-font-weight-medium);
+
+      &:hover {
+        background: var(--wui-color-accent-a3);
+      }
+
+      &:active {
+        background: var(--wui-color-accent-a4);
+      }
+
+      &:focus-visible {
+        outline: var(--wui-border-width-2) solid var(--wui-color-accent-8);
+        outline-offset: 0px;
+      }
+    }
+  }
+
+  .sp-hero-action-button {
     &[data-mode="spatial"] {
       border: var(--wui-border-width-1) dashed var(--wui-color-grey-8);
     }
@@ -93,13 +142,13 @@
 }
 
 :where([data-theme="light"]) {
-  .sp-hero-group {
+  .sp-hero-input {
     --input-background: var(--wui-color-grey-1);
   }
 }
 
 :where([data-theme="dark"]) {
-  .sp-hero-group {
+  .sp-hero-input {
     --input-background: var(--wui-color-grey-2);
   }
 }

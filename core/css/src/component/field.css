@@ -1,0 +1,63 @@
+@layer component {
+  [data-component="field"] {
+    width: 100%;
+
+    /* label control */
+    &:has(
+        [data-component="label"]
+          + :is([data-component="group"], [data-component="input"])
+      ) {
+      [data-component="label"] {
+        margin-bottom: var(--wui-space-4);
+      }
+    }
+
+    /* label description */
+    &:has([data-component="label"] + [data-component="description"]) {
+      [data-component="description"] {
+        margin-top: var(--wui-space-3);
+      }
+    }
+
+    /* description control */
+    &:has(
+        [data-component="description"]
+          + :is([data-component="group"], [data-component="input"])
+      ) {
+      [data-component="description"] {
+        margin-bottom: var(--wui-space-4);
+      }
+    }
+
+    /* control description */
+    &:has(
+        :is([data-component="group"], [data-component="input"])
+          + [data-component="description"]
+      ) {
+      [data-component="description"] {
+        margin-top: var(--wui-space-4);
+      }
+    }
+
+    /* control error */
+    &:has(
+        :is([data-component="group"], [data-component="input"])
+          + [data-component="error"]
+      ) {
+      [data-component="error"] {
+        margin-top: var(--wui-space-4);
+      }
+    }
+
+    /* control error */
+    &:has(
+        :is([data-component="group"], [data-component="input"])
+          + [data-component="description"]
+          + [data-component="error"]
+      ) {
+      [data-component="error"] {
+        margin-top: var(--wui-space-4);
+      }
+    }
+  }
+}

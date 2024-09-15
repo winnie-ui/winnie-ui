@@ -1,0 +1,45 @@
+---
+title: Field 
+description: Represents an item in a form.
+---
+
+import Demo from "~/components/demo/demo.astro";
+
+import FieldError from "./_components/field/field-error.astro";
+
+<Demo>
+  <FieldError />
+  <Fragment slot="footer">
+    ```tsx
+    <div data-component="field">
+      <label data-component="label">Shipping details</label>
+      <span data-component="description">Where should we put your package?</span>
+      <input data-component="input" />
+    </div>
+    ```
+  </Fragment>
+</Demo>
+
+## Import
+
+Import all of the field styles.
+
+```css
+@import "@winnie-ui/component/description";
+@import "@winnie-ui/component/error";
+@import "@winnie-ui/component/field";
+@import "@winnie-ui/component/label";
+```
+
+## Anatomy
+
+Attach the appropriate `data-component` attributes in the structure below.
+
+```html
+<div data-component="field">
+  <label data-component="label" />
+  <span data-component="description" />
+  <!-- control component -->
+  <span data-component="error" />
+</div>
+```

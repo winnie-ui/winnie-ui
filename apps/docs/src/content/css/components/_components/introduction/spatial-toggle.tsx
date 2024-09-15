@@ -1,4 +1,4 @@
-import { BoxSelect, Palette, Search } from "lucide-react";
+import { AtSign, BoxSelect, DollarSign, Palette, Search } from "lucide-react";
 import { type ReactNode, useState } from "react";
 import { Radio, RadioGroup } from "react-aria-components";
 
@@ -48,23 +48,64 @@ export function SpatialToggle() {
 				})}
 			</RadioGroup>
 			<div className="sp-hero-container">
-				<div data-component="group" className="sp-hero-group">
-					<Search data-component="icon" />
+				<div className="sp-hero-field" data-component="field">
+					<label
+						className="sp-hero-label"
+						data-component="label"
+						htmlFor="firstName"
+					>
+						Dish name
+					</label>
 					<input
 						data-component="input"
+						id="firstName"
 						className="sp-hero-input"
-						placeholder="Search docs..."
 						data-mode={mode}
 					/>
 				</div>
-				<button
-					className="sp-hero-button"
-					data-mode={mode}
-					data-component="button"
-					type="button"
-				>
-					<span data-component="text">Search</span>
-				</button>
+				<div className="sp-hero-field" data-component="field">
+					<label
+						className="sp-hero-label"
+						data-component="label"
+						htmlFor="price"
+					>
+						Price
+					</label>
+					<span
+						className="sp-hero-description"
+						data-component="description"
+						data-mode={mode}
+					>
+						All prices are in CAD
+					</span>
+					<div className="sp-hero-group" data-component="group">
+						<DollarSign data-component="icon" />
+						<input
+							data-component="input"
+							id="price"
+							className="sp-hero-input"
+							data-mode={mode}
+						/>
+					</div>
+				</div>
+				<div className="sp-hero-footer">
+					<button
+						className="sp-hero-cancel-button"
+						data-mode={mode}
+						data-component="button"
+						type="button"
+					>
+						<span data-component="text">Cancel</span>
+					</button>
+					<button
+						className="sp-hero-action-button"
+						data-mode={mode}
+						data-component="button"
+						type="button"
+					>
+						<span data-component="text">Create dish</span>
+					</button>
+				</div>
 			</div>
 		</>
 	);

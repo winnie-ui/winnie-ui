@@ -1,0 +1,36 @@
+---
+title: Label 
+description: Identifies a form field.
+---
+
+import Demo from "~/components/demo/demo.astro";
+
+import FieldLabel from "./_components/field/field-label.astro";
+
+<Demo>
+  <FieldLabel />
+  <Fragment slot="footer">
+    ```tsx
+    <div data-component="field">
+      <label data-component="label">Shipping details</label>
+      <input data-component="input" />
+    </div>
+    ```
+  </Fragment>
+</Demo>
+
+## Import
+
+Import just the label styles.
+
+```css
+@import "@winnie-ui/component/label";
+```
+
+## Anatomy
+
+Attach the appropriate `data-component` attributes in the structure below.
+
+```html
+<span data-component="label" />
+```

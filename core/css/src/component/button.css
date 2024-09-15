@@ -43,6 +43,7 @@
     white-space: nowrap;
 
     [data-component="text"] {
+      font-size: var(--wui-button-font-size, var(--wui-button-md-font-size));
       grid-column: 1 / 4;
     }
 
