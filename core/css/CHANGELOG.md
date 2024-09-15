@@ -1,5 +1,11 @@
 # @winnie-ui/css
 
+## 0.0.14
+
+### Patch Changes
+
+- [#38](https://github.com/winnie-ui/winnie-ui/pull/38) [`8a7bce1`](https://github.com/winnie-ui/winnie-ui/commit/8a7bce1785ef42cbec9efc168742767dd8d9798f) Thanks [@adamaho](https://github.com/adamaho)! - feat(core-css): adds description, error, label and field components
+
 ## 0.0.13
 
 ### Patch Changes
