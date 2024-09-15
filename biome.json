@@ -1,9 +1,12 @@
 {
 	"$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
 	"files": {
-		"ignore": ["sst-env.d.ts"]
+		"ignore": ["apps/docs/sst-env.d.ts"]
 	},
 	"organizeImports": {
+		"enabled": true
+	},
+	"formatter": {
 		"enabled": true
 	},
 	"linter": {
@@ -14,8 +17,14 @@
 				"noNonNullAssertion": "off"
 			},
 			"suspicious": {
+				"noConsoleLog": "error",
 				"noExplicitAny": "off"
 			}
 		}
-	}
+	},
+	"overrides": [
+		{
+			"include": ["*.astro"]
+		}
+	]
 }
