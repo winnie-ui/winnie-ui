@@ -1,6 +1,10 @@
 @layer component {
   [data-component="listbox"] {
     --wui-listbox-grid-columns: auto auto 1fr auto;
+    --wui-listbox-column-gap: var(
+      --wui-listbox-item-space,
+      var(--wui-listbox-item-md-space)
+    );
 
     /* border radius */
     --wui-listbox-item-sm-border-radius: var(--wui-border-radius-1);
@@ -29,6 +33,20 @@
 
     display: grid;
     grid-template-columns: var(--wui-listbox-grid-columns);
+
+    &[data-mode="selection"] {
+      --wui-listbox-grid-columns: calc(
+          var(
+              --wui-listbox-item-font-size,
+              var(--wui-listbox-item-md-font-size)
+            ) +
+            (
+              var(--wui-listbox-item-space, var(--wui-listbox-item-md-space)) *
+                2
+            )
+        )
+        auto 1fr auto;
+    }
 
     &[data-size="sm"] {
       --wui-listbox-item-border-radius: var(
@@ -94,12 +112,12 @@
         --wui-listbox-item-border-radius,
         var(--wui-listbox-item-md-border-radius)
       );
-      column-gap: var(
-        --wui-listbox-item-space,
-        var(--wui-listbox-item-md-space)
-      );
       cursor: var(--wui-cursor-pressable, default);
       display: grid;
+      font-size: var(
+        --wui-listbox-item-font-size,
+        var(--wui-listbox-item-md-font-size)
+      );
       height: var(--wui-listbox-item-height, var(--wui-listbox-item-md-height));
       grid-template-columns: subgrid;
       grid-column: 1 / -1;
@@ -138,6 +156,34 @@
           var(--wui-listbox-item-md-font-size)
         );
         grid-column-start: 3;
+      }
+
+      /* indicator followed by icon followed by label */
+      &:has([data-component="icon"] + [data-component="label"]) {
+        [data-component="icon"] {
+          margin-right: var(
+            --wui-listbox-item-space,
+            var(--wui-listbox-item-md-space)
+          );
+        }
+      }
+    }
+
+    /* not in selection mode */
+    &:not([data-mode="selection"]) {
+      [data-component="listbox-item"] {
+        /* indicator followed by icon or indicator followed by label */
+        &:has(
+            [data-component="indicator"] + [data-component="icon"],
+            [data-component="indicator"] + [data-component="label"]
+          ) {
+          [data-component="indicator"] {
+            margin-right: var(
+              --wui-listbox-item-space,
+              var(--wui-listbox-item-md-space)
+            );
+          }
+        }
       }
     }
   }

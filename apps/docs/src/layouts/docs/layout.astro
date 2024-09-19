@@ -8,7 +8,7 @@ import Content from "./content.astro";
 import Sidebar from "./sidebar/sidebar.astro";
 
 type Props = CollectionEntry<"css">["data"] & {
-	headings: MarkdownHeading[];
+  headings: MarkdownHeading[];
 };
 
 const { title, description, slug, headings } = Astro.props;

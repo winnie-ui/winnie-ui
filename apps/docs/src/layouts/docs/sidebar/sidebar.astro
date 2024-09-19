@@ -7,135 +7,135 @@ import type { NavigationItem } from "./components/navigation/types";
 import { Search } from "./components/search";
 
 type Props = {
-	slug: string;
+  slug: string;
 };
 
 const navigation = [
-	{
-		label: "Getting Started",
-		items: [
-			{
-				label: "Quick Start",
-				link: "/css/docs/start/quick-start",
-			},
-			{
-				label: "Integrating with Tailwind",
-				link: "/css/docs/start/integrating-with-tailwind",
-			},
-		],
-	},
-	{
-		label: "Concepts",
-		items: [
-			{
-				label: "Accent Color",
-				link: "/css/docs/concepts/accent-color",
-			},
-			{
-				label: "Layers",
-				link: "/css/docs/concepts/layers",
-			},
-			{
-				label: "Radius",
-				link: "/css/docs/concepts/radius",
-			},
-			{
-				label: "Scaling",
-				link: "/css/docs/concepts/scaling",
-			},
-		],
-	},
-	{
-		label: "Components",
-		badge: "wip",
-		items: [
-			{
-				label: "Introduction",
-				link: "/css/docs/components/introduction",
-			},
-			{
-				label: "Button",
-				link: "/css/docs/components/button",
-			},
-			{
-				label: "Description",
-				link: "/css/docs/components/description",
-			},
-			{
-				label: "Error",
-				link: "/css/docs/components/error",
-			},
-			{
-				label: "Field",
-				link: "/css/docs/components/field",
-			},
-			{
-				label: "Input",
-				link: "/css/docs/components/input",
-			},
-			{
-				label: "Label",
-				link: "/css/docs/components/label",
-			},
-		],
-	},
-	{
-		label: "Variables",
-		items: [
-			{
-				label: "Animation Duration",
-				link: "/css/docs/variables/animation-duration",
-			},
-			{
-				label: "Animation Timing Function",
-				link: "/css/docs/variables/animation-timing-function",
-			},
-			{
-				label: "Border Radius",
-				link: "/css/docs/variables/border-radius",
-			},
-			{
-				label: "Border Width",
-				link: "/css/docs/variables/border-width",
-			},
-			{
-				label: "Color",
-				link: "/css/docs/variables/color",
-			},
-			{
-				label: "Font Family",
-				link: "/css/docs/variables/font-family",
-			},
-			{
-				label: "Font Size",
-				link: "/css/docs/variables/font-size",
-			},
-			{
-				label: "Font Weight",
-				link: "/css/docs/variables/font-weight",
-			},
-			{
-				label: "Keyframes",
-				link: "/css/docs/variables/keyframes",
-			},
-			{
-				label: "Letter Spacing",
-				link: "/css/docs/variables/letter-spacing",
-			},
-			{
-				label: "Line Height",
-				link: "/css/docs/variables/line-height",
-			},
-			{
-				label: "Shadow",
-				link: "/css/docs/variables/shadow",
-			},
-			{
-				label: "Space",
-				link: "/css/docs/variables/space",
-			},
-		],
-	},
+  {
+    label: "Getting Started",
+    items: [
+      {
+        label: "Quick Start",
+        link: "/css/docs/start/quick-start",
+      },
+      {
+        label: "Integrating with Tailwind",
+        link: "/css/docs/start/integrating-with-tailwind",
+      },
+    ],
+  },
+  {
+    label: "Concepts",
+    items: [
+      {
+        label: "Accent Color",
+        link: "/css/docs/concepts/accent-color",
+      },
+      {
+        label: "Layers",
+        link: "/css/docs/concepts/layers",
+      },
+      {
+        label: "Radius",
+        link: "/css/docs/concepts/radius",
+      },
+      {
+        label: "Scaling",
+        link: "/css/docs/concepts/scaling",
+      },
+    ],
+  },
+  {
+    label: "Components",
+    badge: "wip",
+    items: [
+      {
+        label: "Introduction",
+        link: "/css/docs/components/introduction",
+      },
+      {
+        label: "Button",
+        link: "/css/docs/components/button",
+      },
+      {
+        label: "Description",
+        link: "/css/docs/components/description",
+      },
+      {
+        label: "Error",
+        link: "/css/docs/components/error",
+      },
+      {
+        label: "Field",
+        link: "/css/docs/components/field",
+      },
+      {
+        label: "Input",
+        link: "/css/docs/components/input",
+      },
+      {
+        label: "Label",
+        link: "/css/docs/components/label",
+      },
+    ],
+  },
+  {
+    label: "Variables",
+    items: [
+      {
+        label: "Animation Duration",
+        link: "/css/docs/variables/animation-duration",
+      },
+      {
+        label: "Animation Timing Function",
+        link: "/css/docs/variables/animation-timing-function",
+      },
+      {
+        label: "Border Radius",
+        link: "/css/docs/variables/border-radius",
+      },
+      {
+        label: "Border Width",
+        link: "/css/docs/variables/border-width",
+      },
+      {
+        label: "Color",
+        link: "/css/docs/variables/color",
+      },
+      {
+        label: "Font Family",
+        link: "/css/docs/variables/font-family",
+      },
+      {
+        label: "Font Size",
+        link: "/css/docs/variables/font-size",
+      },
+      {
+        label: "Font Weight",
+        link: "/css/docs/variables/font-weight",
+      },
+      {
+        label: "Keyframes",
+        link: "/css/docs/variables/keyframes",
+      },
+      {
+        label: "Letter Spacing",
+        link: "/css/docs/variables/letter-spacing",
+      },
+      {
+        label: "Line Height",
+        link: "/css/docs/variables/line-height",
+      },
+      {
+        label: "Shadow",
+        link: "/css/docs/variables/shadow",
+      },
+      {
+        label: "Space",
+        link: "/css/docs/variables/space",
+      },
+    ],
+  },
 ] satisfies NavigationItem[];
 
 const { slug } = Astro.props;
@@ -144,13 +144,13 @@ let sectionTitle = "Unknown Section";
 let pageTitle = "Unknown Title";
 
 for (const section of navigation) {
-	for (const page of section.items) {
-		if (page.link === `/css/docs/${slug}`) {
-			sectionTitle = section.label;
-			pageTitle = page.label;
-			break;
-		}
-	}
+  for (const page of section.items) {
+    if (page.link === `/css/docs/${slug}`) {
+      sectionTitle = section.label;
+      pageTitle = page.label;
+      break;
+    }
+  }
 }
 ---
 

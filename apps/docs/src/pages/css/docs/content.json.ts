@@ -9,20 +9,20 @@ export const prerender = true;
  * for the purposes of searching
  */
 export const GET: APIRoute = async () => {
-	const collection = (await getCollection("css")).map((c, id) => {
-		return {
-			id,
-			title: c.data.title,
-			description: c.data.description,
-			body: c.body,
-			slug: c.slug,
-			href: `/css/docs/${c.slug}`,
-		};
-	});
+  const collection = (await getCollection("css")).map((c, id) => {
+    return {
+      id,
+      title: c.data.title,
+      description: c.data.description,
+      body: c.body,
+      slug: c.slug,
+      href: `/css/docs/${c.slug}`,
+    };
+  });
 
-	return new Response(
-		JSON.stringify({
-			collection,
-		}),
-	);
+  return new Response(
+    JSON.stringify({
+      collection,
+    }),
+  );
 };

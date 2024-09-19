@@ -6,45 +6,45 @@
  * https://github.com/radix-ui/themes/blob/main/packages/radix-ui-themes/src/styles/tokens/scaling.css
  */
 @layer base {
-	.winnie-ui {
-		&:where([data-scale="90%"]) {
-			--wui-scale: 0.9;
-		}
+  .winnie-ui {
+    &:where([data-scale="90%"]) {
+      --wui-scale: 0.9;
+    }
 
-		&:where([data-scale="95%"]) {
-			--wui-scale: 0.95;
-		}
+    &:where([data-scale="95%"]) {
+      --wui-scale: 0.95;
+    }
 
-		&:where([data-scale="100%"]) {
-			--wui-scale: 1;
-		}
+    &:where([data-scale="100%"]) {
+      --wui-scale: 1;
+    }
 
-		&:where([data-scale="105%"]) {
-			--wui-scale: 1.05;
-		}
+    &:where([data-scale="105%"]) {
+      --wui-scale: 1.05;
+    }
 
-		&:where([data-scale="110%"]) {
-			--wui-scale: 1.1;
-		}
-	}
+    &:where([data-scale="110%"]) {
+      --wui-scale: 1.1;
+    }
+  }
 
-	[data-radius="none"] {
-		--wui-radius-factor: 0;
-	}
+  [data-radius="none"] {
+    --wui-radius-factor: 0;
+  }
 
-	[data-radius="sm"] {
-		--wui-radius-factor: 0.75;
-	}
+  [data-radius="sm"] {
+    --wui-radius-factor: 0.75;
+  }
 
-	[data-radius="md"] {
-		--wui-radius-factor: 1;
-	}
+  [data-radius="md"] {
+    --wui-radius-factor: 1;
+  }
 
-	[data-radius="lg"] {
-		--wui-radius-factor: 1.5;
-	}
+  [data-radius="lg"] {
+    --wui-radius-factor: 1.5;
+  }
 
-	[data-radius="round"] {
-		--wui-radius-factor: 9999;
-	}
+  [data-radius="round"] {
+    --wui-radius-factor: 9999;
+  }
 }

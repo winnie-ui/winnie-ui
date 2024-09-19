@@ -7,106 +7,156 @@ import "./spatial-toggle.css";
 type Mode = "spatial" | "color";
 
 const MODE_ICON_MAP = {
-	spatial: <BoxSelect />,
-	color: <Palette />,
+  spatial: <BoxSelect />,
+  color: <Palette />,
 } satisfies Record<Mode, ReactNode>;
 
 export function SpatialToggle() {
-	/**
-	 * tracks the selected mode
-	 */
-	const [mode, setMode] = useState<Mode>("color");
+  /**
+   * tracks the selected mode
+   */
+  const [mode, setMode] = useState<Mode>("color");
 
-	/**
-	 * Sets the data-mode attribute on the demo element
-	 *
-	 * @param value Value of the radio group that has been selected
-	 */
-	function onValueChange(value: string) {
-		setMode(value as Mode);
-	}
+  /**
+   * Sets the data-mode attribute on the demo element
+   *
+   * @param value Value of the radio group that has been selected
+   */
+  function onValueChange(value: string) {
+    setMode(value as Mode);
+  }
 
-	return (
-		<>
-			<RadioGroup
-				defaultValue={mode}
-				aria-label="Select Spatial Mode"
-				className="sp-radio-group"
-				onChange={onValueChange}
-			>
-				{["spatial", "color"].map((m) => {
-					return (
-						<Radio
-							key={m}
-							value={m}
-							aria-label={`${m} mode`}
-							className="sp-radio-item"
-						>
-							{MODE_ICON_MAP[m as Mode]}
-						</Radio>
-					);
-				})}
-			</RadioGroup>
-			<div className="sp-hero-container">
-				<div className="sp-hero-field" data-component="field">
-					<label
-						className="sp-hero-label"
-						data-component="label"
-						htmlFor="firstName"
-					>
-						Dish name
-					</label>
-					<input
-						data-component="input"
-						id="firstName"
-						className="sp-hero-input"
-						data-mode={mode}
-					/>
-				</div>
-				<div className="sp-hero-field" data-component="field">
-					<label
-						className="sp-hero-label"
-						data-component="label"
-						htmlFor="price"
-					>
-						Price
-					</label>
-					<span
-						className="sp-hero-description"
-						data-component="description"
-						data-mode={mode}
-					>
-						All prices are in CAD
-					</span>
-					<div className="sp-hero-group" data-component="group">
-						<DollarSign data-component="icon" />
-						<input
-							data-component="input"
-							id="price"
-							className="sp-hero-input"
-							data-mode={mode}
-						/>
-					</div>
-				</div>
-				<div className="sp-hero-footer">
-					<button
-						className="sp-hero-cancel-button"
-						data-mode={mode}
-						data-component="button"
-						type="button"
-					>
-						<span data-component="text">Cancel</span>
-					</button>
-					<button
-						className="sp-hero-action-button"
-						data-mode={mode}
-						data-component="button"
-						type="button"
-					>
-						<span data-component="text">Create dish</span>
-					</button>
-				</div>
-			</div>
-		</>
-	);
+  return (
+    <>
+      <RadioGroup
+        defaultValue={mode}
+        aria-label="Select Spatial Mode"
+        className="sp-radio-group"
+        onChange={onValueChange}
+      >
+        {["spatial", "color"].map((m) => {
+          return (
+            <Radio
+              key={m}
+              value={m}
+              aria-label={`${m} mode`}
+              className="sp-radio-item"
+            >
+              {MODE_ICON_MAP[m as Mode]}
+            </Radio>
+          );
+        })}
+      </RadioGroup>
+      <div className="sp-hero-container">
+        <div className="sp-hero-field" data-component="field">
+          <label
+            className="sp-hero-label"
+            data-component="label"
+            htmlFor="firstName"
+          >
+            Dish name
+          </label>
+          <input
+            data-component="input"
+            id="firstName"
+            className="sp-hero-input"
+            data-mode={mode}
+          />
+        </div>
+        <div className="sp-hero-field" data-component="field">
+          <label
+            className="sp-hero-label"
+            data-component="label"
+            htmlFor="price"
+          >
+            Price
+          </label>
+          <span
+            className="sp-hero-description"
+            data-component="description"
+            data-mode={mode}
+          >
+            All prices are in CAD
+          </span>
+          <div className="sp-hero-group" data-component="group">
+            <DollarSign data-component="icon" />
+            <input
+              data-component="input"
+              id="price"
+              className="sp-hero-input"
+              data-mode={mode}
+            />
+          </div>
+        </div>
+        <div className="sp-hero-field" data-component="field">
+          <label
+            className="sp-hero-label"
+            data-component="label"
+            htmlFor="food"
+          >
+            Foods
+          </label>
+          <ul data-component="listbox" className="not-content">
+            <li data-component="listbox-item">
+              <span data-component="label">Chicken</span>
+            </li>
+            <li data-component="listbox-item">
+              <span data-component="label">Beef</span>
+            </li>
+            <li data-component="listbox-item">
+              <span data-component="label">Fish</span>
+            </li>
+            <div data-component="separator" />
+            <section data-component="section">
+              <header data-component="header">
+                <span data-component="label">Fruits</span>
+              </header>
+              <li data-component="listbox-item">
+                <span data-component="label">Strawberry</span>
+              </li>
+              <li data-component="listbox-item">
+                <span data-component="label">Banana</span>
+              </li>
+              <li data-component="listbox-item">
+                <span data-component="label">Mango</span>
+              </li>
+            </section>
+            <div data-component="separator" />
+            <section data-component="section">
+              <header data-component="header">
+                <span data-component="label">Vegatables</span>
+              </header>
+              <li data-component="listbox-item">
+                <span data-component="label">Broccoli</span>
+              </li>
+              <li data-component="listbox-item">
+                <span data-component="label">Spinach</span>
+              </li>
+              <li data-component="listbox-item">
+                <span data-component="label">Sweet Potatoe</span>
+              </li>
+            </section>
+          </ul>
+        </div>
+        <div className="sp-hero-footer">
+          <button
+            className="sp-hero-cancel-button"
+            data-mode={mode}
+            data-component="button"
+            type="button"
+          >
+            <span data-component="text">Cancel</span>
+          </button>
+          <button
+            className="sp-hero-action-button"
+            data-mode={mode}
+            data-component="button"
+            type="button"
+          >
+            <span data-component="text">Create dish</span>
+          </button>
+        </div>
+      </div>
+    </>
+  );
 }

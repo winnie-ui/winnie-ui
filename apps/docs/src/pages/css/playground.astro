@@ -9,123 +9,106 @@ import BaseLayout from "~/layouts/base/layout.astro";
   <BaseHead slot="head" title="playground" description="playground" />
   <div class="center">
     <div class="form">
-      <ul data-component="listbox" data-size="sm" class="demo-listbox">
+      <ul data-component="listbox" data-mode="selection" class="demo-listbox">
         <li data-component="listbox-item">
+          <span data-component="label">Chicken</span>
+        </li>
+        <li data-component="listbox-item">
+          <!-- <Check data-component="indicator" /> -->
           <Cog data-component="icon" />
-          <span data-component="label">label</span>
+          <span data-component="label">Beef</span>
         </li>
         <li data-component="listbox-item">
-          <Check data-component="indicator" />
-          <Cog data-component="icon" />
-          <span data-component="label">label</span>
+          <!-- <Check data-component="indicator" /> -->
+          <span data-component="label">Fish</span>
         </li>
-        <li data-component="listbox-item">
-          <span data-component="label">label</span>
-        </li>
-      </ul>
-      <ul data-component="listbox" data-size="md" class="demo-listbox">
-        <li data-component="listbox-item">
-          <Cog data-component="icon" />
-          <span data-component="label">label</span>
-        </li>
-        <li data-component="listbox-item">
-          <Check data-component="indicator" />
-          <Cog data-component="icon" />
-          <span data-component="label">label</span>
-        </li>
-        <li data-component="listbox-item">
-          <span data-component="label">label</span>
-        </li>
-      </ul>
-      <ul data-component="listbox" data-size="md" class="demo-listbox">
-        <li data-component="listbox-item">
-          <span data-component="label">label</span>
-        </li>
-        <li data-component="listbox-item">
-          <span data-component="label">label</span>
-        </li>
-        <li data-component="listbox-item">
-          <span data-component="label">label</span>
-        </li>
-      </ul>
-      <ul
-        data-component="listbox"
-        data-size="lg"
-        data-radius="round"
-        class="demo-listbox"
-      >
-        <li data-component="listbox-item">
-          <Cog data-component="icon" />
-          <span data-component="label">label</span>
-        </li>
-        <li data-component="listbox-item">
-          <Check data-component="indicator" />
-          <Cog data-component="icon" />
-          <span data-component="label">label</span>
-        </li>
-        <li data-component="listbox-item">
-          <span data-component="label">label</span>
-        </li>
-      </ul>
-
-      <ul
-        data-component="listbox"
-        class="demo-listbox"
-      >
+        <div data-component="separator"></div>
         <section data-component="section">
           <header data-component="header">
-            <span data-component="label">Header 1</span>
+            <span data-component="label">Fruits</span>
           </header>
           <li data-component="listbox-item">
             <Cog data-component="icon" />
-            <span data-component="label">label</span>
+            <span data-component="label">Strawberry</span>
           </li>
           <li data-component="listbox-item">
-            <Check data-component="indicator" />
-            <Cog data-component="icon" />
-            <span data-component="label">label</span>
+            <span data-component="label">Banana</span>
           </li>
           <li data-component="listbox-item">
-            <Cog data-component="icon" />
-            <span data-component="label">label</span>
+            <span data-component="label">Mango</span>
           </li>
         </section>
         <div data-component="separator"></div>
         <section data-component="section">
           <header data-component="header">
-            <span data-component="label">Header 2</span>
+            <span data-component="label">Vegatables</span>
           </header>
           <li data-component="listbox-item">
-            <Cog data-component="icon" />
-            <span data-component="label">label</span>
+            <span data-component="label">Broccoli</span>
           </li>
           <li data-component="listbox-item">
-            <Check data-component="indicator" />
-            <Cog data-component="icon" />
-            <span data-component="label">label</span>
+            <span data-component="label">Spinach</span>
           </li>
           <li data-component="listbox-item">
-            <span data-component="label">label</span>
+            <span data-component="label">Sweet Potatoe</span>
           </li>
         </section>
-        <div data-component="separator"></div>
-        <li data-component="listbox-item">
-          <Cog data-component="icon" />
-          <span data-component="label">label</span>
-        </li>
-        <li data-component="listbox-item">
-          <Check data-component="indicator" />
-          <Cog data-component="icon" />
-          <span data-component="label">label</span>
-        </li>
-        <li data-component="listbox-item">
-          <span data-component="label">label</span>
-        </li>
-        <div data-component="separator"></div>
-        <li data-component="listbox-item">
-          <span data-component="label">label</span>
-        </li>
       </ul>
+      <!-- <ul data-component="listbox" class="demo-listbox" data-size="lg"> -->
+      <!--   <section data-component="section"> -->
+      <!--     <header data-component="header"> -->
+      <!--       <span data-component="label">Header 1</span> -->
+      <!--     </header> -->
+      <!--     <li data-component="listbox-item"> -->
+      <!--       <Cog data-component="icon" /> -->
+      <!--       <span data-component="label">label</span> -->
+      <!--     </li> -->
+      <!--     <li data-component="listbox-item"> -->
+      <!--       <Check data-component="indicator" /> -->
+      <!--       <Cog data-component="icon" /> -->
+      <!--       <span data-component="label">label</span> -->
+      <!--     </li> -->
+      <!--     <li data-component="listbox-item"> -->
+      <!--       <Cog data-component="icon" /> -->
+      <!--       <span data-component="label">label</span> -->
+      <!--     </li> -->
+      <!--   </section> -->
+      <!--   <div data-component="separator"></div> -->
+      <!--   <section data-component="section"> -->
+      <!--     <header data-component="header"> -->
+      <!--       <span data-component="label">Header 2</span> -->
+      <!--     </header> -->
+      <!--     <li data-component="listbox-item"> -->
+      <!--       <Cog data-component="icon" /> -->
+      <!--       <span data-component="label">label</span> -->
+      <!--     </li> -->
+      <!--     <li data-component="listbox-item"> -->
+      <!--       <Check data-component="indicator" /> -->
+      <!--       <Cog data-component="icon" /> -->
+      <!--       <span data-component="label">label</span> -->
+      <!--     </li> -->
+      <!--     <li data-component="listbox-item"> -->
+      <!--       <span data-component="label">label</span> -->
+      <!--     </li> -->
+      <!--   </section> -->
+      <!--   <div data-component="separator"></div> -->
+      <!--   <li data-component="listbox-item"> -->
+      <!--     <Cog data-component="icon" /> -->
+      <!--     <span data-component="label">label</span> -->
+      <!--   </li> -->
+      <!--   <li data-component="listbox-item"> -->
+      <!--     <Check data-component="indicator" /> -->
+      <!--     <Cog data-component="icon" /> -->
+      <!--     <span data-component="label">label</span> -->
+      <!--   </li> -->
+      <!--   <li data-component="listbox-item"> -->
+      <!--     <span data-component="label">label</span> -->
+      <!--   </li> -->
+      <!--   <div data-component="separator"></div> -->
+      <!--   <li data-component="listbox-item"> -->
+      <!--     <span data-component="label">label</span> -->
+      <!--   </li> -->
+      <!-- </ul> -->
     </div>
   </div>
 </BaseLayout>
@@ -160,12 +143,28 @@ import BaseLayout from "~/layouts/base/layout.astro";
     [data-component="listbox-item"] {
       &:hover {
         background: var(--wui-color-grey-3);
+
+        [data-component="label"] {
+          color: var(--wui-color-grey-12);
+        }
+
+        [data-component="icon"] {
+          color: var(--wui-color-grey-12);
+        }
+      }
+
+      [data-component="icon"] {
+        color: var(--wui-color-grey-11);
+      }
+
+      [data-component="label"] {
+        color: var(--wui-color-grey-11);
       }
     }
 
     [data-component="header"] {
       [data-component="label"] {
-        color: var(--wui-color-grey-11);
+        color: var(--wui-color-grey-12);
         font-weight: var(--wui-font-weight-medium);
       }
     }

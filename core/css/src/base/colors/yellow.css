@@ -1,139 +1,139 @@
 @layer base {
-	:root,
-	.light,
-	.light-theme,
-	[data-theme="light"] {
-		--wui-color-yellow-1: #fefdf9;
-		--wui-color-yellow-2: #fffae7;
-		--wui-color-yellow-3: #fff4d7;
-		--wui-color-yellow-4: #ffebb9;
-		--wui-color-yellow-5: #ffe093;
-		--wui-color-yellow-6: #ffd051;
-		--wui-color-yellow-7: #f1c04c;
-		--wui-color-yellow-8: #dfa800;
-		--wui-color-yellow-9: #eab308;
-		--wui-color-yellow-10: #dfa800;
-		--wui-color-yellow-11: #977100;
-		--wui-color-yellow-12: #483a18;
+  :root,
+  .light,
+  .light-theme,
+  [data-theme="light"] {
+    --wui-color-yellow-1: #fefdf9;
+    --wui-color-yellow-2: #fffae7;
+    --wui-color-yellow-3: #fff4d7;
+    --wui-color-yellow-4: #ffebb9;
+    --wui-color-yellow-5: #ffe093;
+    --wui-color-yellow-6: #ffd051;
+    --wui-color-yellow-7: #f1c04c;
+    --wui-color-yellow-8: #dfa800;
+    --wui-color-yellow-9: #eab308;
+    --wui-color-yellow-10: #dfa800;
+    --wui-color-yellow-11: #977100;
+    --wui-color-yellow-12: #483a18;
 
-		--wui-color-yellow-a1: #d5aa0006;
-		--wui-color-yellow-a2: #ffca0018;
-		--wui-color-yellow-a3: #ffb90028;
-		--wui-color-yellow-a4: #ffb70046;
-		--wui-color-yellow-a5: #ffb6006c;
-		--wui-color-yellow-a6: #ffba00ae;
-		--wui-color-yellow-a7: #eba500b3;
-		--wui-color-yellow-a8: #dfa800;
-		--wui-color-yellow-a9: #e9b100f7;
-		--wui-color-yellow-a10: #dfa800;
-		--wui-color-yellow-a11: #977100;
-		--wui-color-yellow-a12: #352600e7;
+    --wui-color-yellow-a1: #d5aa0006;
+    --wui-color-yellow-a2: #ffca0018;
+    --wui-color-yellow-a3: #ffb90028;
+    --wui-color-yellow-a4: #ffb70046;
+    --wui-color-yellow-a5: #ffb6006c;
+    --wui-color-yellow-a6: #ffba00ae;
+    --wui-color-yellow-a7: #eba500b3;
+    --wui-color-yellow-a8: #dfa800;
+    --wui-color-yellow-a9: #e9b100f7;
+    --wui-color-yellow-a10: #dfa800;
+    --wui-color-yellow-a11: #977100;
+    --wui-color-yellow-a12: #352600e7;
 
-		--wui-color-yellow-contrast: #000;
-	}
+    --wui-color-yellow-contrast: #000;
+  }
 
-	@supports (color: color(display-p3 1 1 1)) {
-		@media (color-gamut: p3) {
-			:root,
-			.light,
-			.light-theme,
-			[data-theme="light"] {
-				--wui-color-yellow-1: oklch(99.3% 0.005 86.05);
-				--wui-color-yellow-2: oklch(98.7% 0.029 86.05);
-				--wui-color-yellow-3: oklch(97.2% 0.09 86.05);
-				--wui-color-yellow-4: oklch(94.9% 0.13 86.05);
-				--wui-color-yellow-5: oklch(92.2% 0.161 86.05);
-				--wui-color-yellow-6: oklch(88.1% 0.151 86.05);
-				--wui-color-yellow-7: oklch(83.1% 0.142 86.05);
-				--wui-color-yellow-8: oklch(76.2% 0.162 86.05);
-				--wui-color-yellow-9: oklch(79.5% 0.162 86.05);
-				--wui-color-yellow-10: oklch(76.2% 0.162 86.05);
-				--wui-color-yellow-11: oklch(57.2% 0.162 86.05);
-				--wui-color-yellow-12: oklch(35.5% 0.053 86.05);
+  @supports (color: color(display-p3 1 1 1)) {
+    @media (color-gamut: p3) {
+      :root,
+      .light,
+      .light-theme,
+      [data-theme="light"] {
+        --wui-color-yellow-1: oklch(99.3% 0.005 86.05);
+        --wui-color-yellow-2: oklch(98.7% 0.029 86.05);
+        --wui-color-yellow-3: oklch(97.2% 0.09 86.05);
+        --wui-color-yellow-4: oklch(94.9% 0.13 86.05);
+        --wui-color-yellow-5: oklch(92.2% 0.161 86.05);
+        --wui-color-yellow-6: oklch(88.1% 0.151 86.05);
+        --wui-color-yellow-7: oklch(83.1% 0.142 86.05);
+        --wui-color-yellow-8: oklch(76.2% 0.162 86.05);
+        --wui-color-yellow-9: oklch(79.5% 0.162 86.05);
+        --wui-color-yellow-10: oklch(76.2% 0.162 86.05);
+        --wui-color-yellow-11: oklch(57.2% 0.162 86.05);
+        --wui-color-yellow-12: oklch(35.5% 0.053 86.05);
 
-				--wui-color-yellow-a1: color(display-p3 0.839 0.675 0.024 / 0.024);
-				--wui-color-yellow-a2: color(display-p3 0.957 0.776 0.012 / 0.087);
-				--wui-color-yellow-a3: color(display-p3 0.949 0.706 0.008 / 0.146);
-				--wui-color-yellow-a4: color(display-p3 0.957 0.706 0.004 / 0.251);
-				--wui-color-yellow-a5: color(display-p3 0.949 0.694 0.004 / 0.385);
-				--wui-color-yellow-a6: color(display-p3 0.953 0.702 0 / 0.593);
-				--wui-color-yellow-a7: color(display-p3 0.863 0.616 0 / 0.62);
-				--wui-color-yellow-a8: color(display-p3 0.796 0.573 0 / 0.777);
-				--wui-color-yellow-a9: color(display-p3 0.851 0.616 0 / 0.757);
-				--wui-color-yellow-a10: color(display-p3 0.796 0.573 0 / 0.777);
-				--wui-color-yellow-a11: color(display-p3 0.498 0.361 0 / 0.859);
-				--wui-color-yellow-a12: color(display-p3 0.18 0.133 0 / 0.887);
+        --wui-color-yellow-a1: color(display-p3 0.839 0.675 0.024 / 0.024);
+        --wui-color-yellow-a2: color(display-p3 0.957 0.776 0.012 / 0.087);
+        --wui-color-yellow-a3: color(display-p3 0.949 0.706 0.008 / 0.146);
+        --wui-color-yellow-a4: color(display-p3 0.957 0.706 0.004 / 0.251);
+        --wui-color-yellow-a5: color(display-p3 0.949 0.694 0.004 / 0.385);
+        --wui-color-yellow-a6: color(display-p3 0.953 0.702 0 / 0.593);
+        --wui-color-yellow-a7: color(display-p3 0.863 0.616 0 / 0.62);
+        --wui-color-yellow-a8: color(display-p3 0.796 0.573 0 / 0.777);
+        --wui-color-yellow-a9: color(display-p3 0.851 0.616 0 / 0.757);
+        --wui-color-yellow-a10: color(display-p3 0.796 0.573 0 / 0.777);
+        --wui-color-yellow-a11: color(display-p3 0.498 0.361 0 / 0.859);
+        --wui-color-yellow-a12: color(display-p3 0.18 0.133 0 / 0.887);
 
-				--wui-color-yellow-contrast: #000;
-			}
-		}
-	}
+        --wui-color-yellow-contrast: #000;
+      }
+    }
+  }
 
-	.dark,
-	.dark-theme,
-	[data-theme="dark"] {
-		--wui-color-yellow-1: #13110b;
-		--wui-color-yellow-2: #1c180f;
-		--wui-color-yellow-3: #2c220a;
-		--wui-color-yellow-4: #3b2900;
-		--wui-color-yellow-5: #483300;
-		--wui-color-yellow-6: #56410a;
-		--wui-color-yellow-7: #69531c;
-		--wui-color-yellow-8: #856a26;
-		--wui-color-yellow-9: #eab308;
-		--wui-color-yellow-10: #dfa800;
-		--wui-color-yellow-11: #fec83f;
-		--wui-color-yellow-12: #fce7ba;
+  .dark,
+  .dark-theme,
+  [data-theme="dark"] {
+    --wui-color-yellow-1: #13110b;
+    --wui-color-yellow-2: #1c180f;
+    --wui-color-yellow-3: #2c220a;
+    --wui-color-yellow-4: #3b2900;
+    --wui-color-yellow-5: #483300;
+    --wui-color-yellow-6: #56410a;
+    --wui-color-yellow-7: #69531c;
+    --wui-color-yellow-8: #856a26;
+    --wui-color-yellow-9: #eab308;
+    --wui-color-yellow-10: #dfa800;
+    --wui-color-yellow-11: #fec83f;
+    --wui-color-yellow-12: #fce7ba;
 
-		--wui-color-yellow-a1: #bb110003;
-		--wui-color-yellow-a2: #fba6000c;
-		--wui-color-yellow-a3: #ffa7001d;
-		--wui-color-yellow-a4: #ff99002d;
-		--wui-color-yellow-a5: #ffa4003b;
-		--wui-color-yellow-a6: #ffb7004a;
-		--wui-color-yellow-a7: #fdc22e5f;
-		--wui-color-yellow-a8: #fdc63c7d;
-		--wui-color-yellow-a9: #ffc308e9;
-		--wui-color-yellow-a10: #ffc000dd;
-		--wui-color-yellow-a11: #ffc93ffe;
-		--wui-color-yellow-a12: #ffeabcfc;
+    --wui-color-yellow-a1: #bb110003;
+    --wui-color-yellow-a2: #fba6000c;
+    --wui-color-yellow-a3: #ffa7001d;
+    --wui-color-yellow-a4: #ff99002d;
+    --wui-color-yellow-a5: #ffa4003b;
+    --wui-color-yellow-a6: #ffb7004a;
+    --wui-color-yellow-a7: #fdc22e5f;
+    --wui-color-yellow-a8: #fdc63c7d;
+    --wui-color-yellow-a9: #ffc308e9;
+    --wui-color-yellow-a10: #ffc000dd;
+    --wui-color-yellow-a11: #ffc93ffe;
+    --wui-color-yellow-a12: #ffeabcfc;
 
-		--wui-color-yellow-contrast: #000;
-	}
+    --wui-color-yellow-contrast: #000;
+  }
 
-	@supports (color: color(display-p3 1 1 1)) {
-		@media (color-gamut: p3) {
-			.dark,
-			.dark-theme,
-			[data-theme="dark"] {
-				--wui-color-yellow-1: oklch(17.8% 0.011 86.05);
-				--wui-color-yellow-2: oklch(21% 0.017 86.05);
-				--wui-color-yellow-3: oklch(25.7% 0.041 86.05);
-				--wui-color-yellow-4: oklch(29.5% 0.067 86.05);
-				--wui-color-yellow-5: oklch(33.6% 0.076 86.05);
-				--wui-color-yellow-6: oklch(38.7% 0.073 86.05);
-				--wui-color-yellow-7: oklch(45.3% 0.077 86.05);
-				--wui-color-yellow-8: oklch(53.7% 0.091 86.05);
-				--wui-color-yellow-9: oklch(79.5% 0.162 86.05);
-				--wui-color-yellow-10: oklch(76.2% 0.162 86.05);
-				--wui-color-yellow-11: oklch(85.8% 0.157 86.05);
-				--wui-color-yellow-12: oklch(93.3% 0.063 86.05);
+  @supports (color: color(display-p3 1 1 1)) {
+    @media (color-gamut: p3) {
+      .dark,
+      .dark-theme,
+      [data-theme="dark"] {
+        --wui-color-yellow-1: oklch(17.8% 0.011 86.05);
+        --wui-color-yellow-2: oklch(21% 0.017 86.05);
+        --wui-color-yellow-3: oklch(25.7% 0.041 86.05);
+        --wui-color-yellow-4: oklch(29.5% 0.067 86.05);
+        --wui-color-yellow-5: oklch(33.6% 0.076 86.05);
+        --wui-color-yellow-6: oklch(38.7% 0.073 86.05);
+        --wui-color-yellow-7: oklch(45.3% 0.077 86.05);
+        --wui-color-yellow-8: oklch(53.7% 0.091 86.05);
+        --wui-color-yellow-9: oklch(79.5% 0.162 86.05);
+        --wui-color-yellow-10: oklch(76.2% 0.162 86.05);
+        --wui-color-yellow-11: oklch(85.8% 0.157 86.05);
+        --wui-color-yellow-12: oklch(93.3% 0.063 86.05);
 
-				--wui-color-yellow-a1: color(display-p3 0.941 0.067 0 / 0.009);
-				--wui-color-yellow-a2: color(display-p3 0.98 0.706 0 / 0.043);
-				--wui-color-yellow-a3: color(display-p3 0.992 0.698 0 / 0.106);
-				--wui-color-yellow-a4: color(display-p3 1 0.667 0 / 0.164);
-				--wui-color-yellow-a5: color(display-p3 1 0.694 0 / 0.219);
-				--wui-color-yellow-a6: color(display-p3 1 0.761 0.137 / 0.278);
-				--wui-color-yellow-a7: color(display-p3 1 0.804 0.298 / 0.358);
-				--wui-color-yellow-a8: color(display-p3 1 0.82 0.345 / 0.471);
-				--wui-color-yellow-a9: color(display-p3 1 0.8 0.267 / 0.879);
-				--wui-color-yellow-a10: color(display-p3 1 0.788 0.255 / 0.832);
-				--wui-color-yellow-a11: color(display-p3 0.996 0.82 0.365 / 0.963);
-				--wui-color-yellow-a12: color(display-p3 1 0.937 0.773 / 0.971);
+        --wui-color-yellow-a1: color(display-p3 0.941 0.067 0 / 0.009);
+        --wui-color-yellow-a2: color(display-p3 0.98 0.706 0 / 0.043);
+        --wui-color-yellow-a3: color(display-p3 0.992 0.698 0 / 0.106);
+        --wui-color-yellow-a4: color(display-p3 1 0.667 0 / 0.164);
+        --wui-color-yellow-a5: color(display-p3 1 0.694 0 / 0.219);
+        --wui-color-yellow-a6: color(display-p3 1 0.761 0.137 / 0.278);
+        --wui-color-yellow-a7: color(display-p3 1 0.804 0.298 / 0.358);
+        --wui-color-yellow-a8: color(display-p3 1 0.82 0.345 / 0.471);
+        --wui-color-yellow-a9: color(display-p3 1 0.8 0.267 / 0.879);
+        --wui-color-yellow-a10: color(display-p3 1 0.788 0.255 / 0.832);
+        --wui-color-yellow-a11: color(display-p3 0.996 0.82 0.365 / 0.963);
+        --wui-color-yellow-a12: color(display-p3 1 0.937 0.773 / 0.971);
 
-				--wui-color-yellow-contrast: #000;
-			}
-		}
-	}
+        --wui-color-yellow-contrast: #000;
+      }
+    }
+  }
 }
