@@ -1,6 +1,16 @@
-import { BoxSelect, DollarSign, Palette } from "lucide-react";
+import { BoxSelect, ChevronDown, DollarSign, Palette } from "lucide-react";
 import { type ReactNode, useState } from "react";
-import { Radio, RadioGroup } from "react-aria-components";
+import {
+  Button,
+  Label,
+  ListBox,
+  ListBoxItem,
+  Popover,
+  Radio,
+  RadioGroup,
+  Select,
+  SelectValue,
+} from "react-aria-components";
 
 import "./spatial-toggle.css";
 
@@ -88,56 +98,31 @@ export function SpatialToggle() {
             />
           </div>
         </div>
-        <div className="sp-hero-field" data-component="field">
-          <label
-            className="sp-hero-label"
-            data-component="label"
-            htmlFor="food"
-          >
-            Foods
-          </label>
-          <ul data-component="listbox" className="not-content">
-            <li data-component="listbox-item">
-              <span data-component="label">Chicken</span>
-            </li>
-            <li data-component="listbox-item">
-              <span data-component="label">Beef</span>
-            </li>
-            <li data-component="listbox-item">
-              <span data-component="label">Fish</span>
-            </li>
-            <div data-component="separator" />
-            <section data-component="section">
-              <header data-component="header">
-                <span data-component="label">Fruits</span>
-              </header>
-              <li data-component="listbox-item">
-                <span data-component="label">Strawberry</span>
-              </li>
-              <li data-component="listbox-item">
-                <span data-component="label">Banana</span>
-              </li>
-              <li data-component="listbox-item">
-                <span data-component="label">Mango</span>
-              </li>
-            </section>
-            <div data-component="separator" />
-            <section data-component="section">
-              <header data-component="header">
-                <span data-component="label">Vegatables</span>
-              </header>
-              <li data-component="listbox-item">
-                <span data-component="label">Broccoli</span>
-              </li>
-              <li data-component="listbox-item">
-                <span data-component="label">Spinach</span>
-              </li>
-              <li data-component="listbox-item">
-                <span data-component="label">Sweet Potatoe</span>
-              </li>
-            </section>
-          </ul>
-        </div>
+        <Select data-component="field" className="sp-hero-field">
+          <Label data-component="label" className="sp-hero-label">
+            Foo
+          </Label>
+          <Button data-component="group" className="sp-hero-group">
+            <div
+              data-component="input"
+              className="sp-hero-input"
+              data-mode={mode}
+            >
+              <SelectValue />
+            </div>
+            <ChevronDown data-component="icon" />
+          </Button>
+          <Popover>
+            <ListBox data-component="listbox">
+              <ListBoxItem data-component="listbox-item">Aardvark</ListBoxItem>
+              <ListBoxItem data-component="listbox-item">Cat</ListBoxItem>
+              <ListBoxItem data-component="listbox-item">Dog</ListBoxItem>
+              <ListBoxItem data-component="listbox-item">Kangaroo</ListBoxItem>
+              <ListBoxItem data-component="listbox-item">Panda</ListBoxItem>
+              <ListBoxItem data-component="listbox-item">Snake</ListBoxItem>
+            </ListBox>
+          </Popover>
+        </Select>
         <div className="sp-hero-footer">
           <button
             className="sp-hero-cancel-button"

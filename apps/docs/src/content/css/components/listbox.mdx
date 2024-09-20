@@ -1,0 +1,97 @@
+---
+title: Listbox
+description: A list of options that allows a user to optionally select one or more of them.
+---
+
+import Demo from "~/components/demo/demo.astro";
+import ListboxHero from "./_components/listbox/listbox-hero.astro";
+
+<Demo>
+  <ListboxHero />
+  <Fragment slot="footer">
+    ```tsx
+    <ul data-component="listbox" class="demo-listbox not-content">
+      <li data-component="listbox-item">
+        <i data-component="icon" class="user"></i>
+        <span data-component="label">Account</span>
+      </li>
+      <li data-component="listbox-item">
+        <i data-component="icon" class="cog"></i>
+        <span data-component="label">Settings</span>
+      </li>
+      <li data-component="listbox-item">
+        <i data-component="icon" class="info"></i>
+        <span data-component="label">Help Center</span>
+      </li>
+      <div data-component="separator"></div>
+      <li data-component="listbox-item">
+        <i data-component="icon" class="moon"></i>
+        <span data-component="label">Dark mode</span>
+      </li>
+      <div data-component="separator"></div>
+      <li data-component="listbox-item">
+        <i data-component="icon" class="logout"></i>
+        <span data-component="label">Sign out</span>
+      </li>
+    </ul>
+    ```
+  </Fragment>
+</Demo>
+
+## Import
+
+Import just the listbox styles.
+
+```css
+@import "@winnie-ui/component/listbox";
+```
+
+## Anatomy
+
+Attach the appropriate `data-component` attributes in the structure below.
+
+```html
+<ul data-component="listbox">
+  <li data-component="listbox-item">
+    <span data-component="label"></span>
+  </li>
+  <div data-component="separator"></div>
+  <section data-component="section">
+    <header data-component="header"></header>
+    <li data-component="listbox-item">
+      <i data-component="indicator" class="check"></i>
+      <span data-component="label"></span>
+    </li>
+    <li data-component="listbox-item">
+      <i data-component="icon" class="settings"></i>
+      <span data-component="label"></span>
+    </li>
+  </section>
+</ul>
+```
+
+## Examples
+
+### Size
+
+Use the `data-size` attribute to change the size.
+
+### Radius
+
+Use the `data-radius` attribute to change the size.
+
+### Mode
+
+Use the `data-mode` attribute to account for dynamically rendered indicators.
+
+### Indicators
+
+Add an icon to indicate that an item has been selected using the `data-component="indicator"` attribute as a child of a list item. Note, if you want to reduce layout shift when using indicators that dynamically render on selection, see [Mode](#mode).
+
+### Icons
+
+Add an icon to an item using the `data-component="icon"` attribute as a child of a list item.
+
+### Sections
+
+Use the `data-component="section"`, `data-component="header"`, and `data-component="separator"` attributes to group items.

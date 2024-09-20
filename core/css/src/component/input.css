@@ -25,10 +25,12 @@
     --wui-input-md-space: var(--wui-space-3);
     --wui-input-lg-space: var(--wui-space-4);
 
+    align-items: center;
     border-radius: var(
       --wui-input-border-radius,
       var(--wui-input-md-border-radius)
     );
+    display: flex;
     font-size: var(--wui-input-font-size, var(--wui-input-md-font-size));
     height: var(--wui-input-height, var(--wui-input-md-height));
     padding-inline: var(--wui-input-space, var(--wui-input-md-space));
@@ -36,8 +38,7 @@
 
     &[data-radius="round"] {
       padding-inline: calc(
-        var(--wui-input-space, var(--wui-input-md-space)) *
-        1.5
+        var(--wui-input-space, var(--wui-input-md-space)) * 1.5
       );
     }
 
