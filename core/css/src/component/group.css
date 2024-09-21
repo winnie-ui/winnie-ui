@@ -54,7 +54,7 @@
       [data-component="input"] {
         padding-left: calc(
           (var(--wui-group-space, var(--wui-group-md-space)) * 2) +
-            var(--wui-group-icon-size, var(--wui-group-md-icon-size))
+          var(--wui-group-icon-size, var(--wui-group-md-icon-size))
         );
       }
 
@@ -67,7 +67,7 @@
       [data-component="input"] {
         padding-right: calc(
           (var(--wui-group-space, var(--wui-group-md-space)) * 2) +
-            var(--wui-group-icon-size, var(--wui-group-md-icon-size))
+          var(--wui-group-icon-size, var(--wui-group-md-icon-size))
         );
       }
 
