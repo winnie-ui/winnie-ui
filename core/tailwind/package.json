@@ -1,24 +1,24 @@
 {
-	"name": "@winnie-ui/tailwind",
-	"version": "0.0.14",
-	"description": "tailwind theme for winnie-ui css",
-	"author": "Adam Aho",
-	"type": "module",
-	"main": "./src/index.css",
-	"exports": {
-		".": "./src/index.css"
-	},
-	"files": ["src", "package.json"],
-	"scripts": {
-		"clean": "rimraf node_modules"
-	},
-	"peerDependencies": {
-		"tailwindcss": "4.0.0-alpha.15"
-	},
-	"dependencies": {
-		"@winnie-ui/css": "workspace:*"
-	},
-	"devDependencies": {
-		"rimraf": "6.0.1"
-	}
+  "name": "@winnie-ui/tailwind",
+  "version": "0.0.15",
+  "description": "tailwind theme for winnie-ui css",
+  "author": "Adam Aho",
+  "type": "module",
+  "main": "./src/index.css",
+  "exports": {
+    ".": "./src/index.css"
+  },
+  "files": ["src", "package.json"],
+  "scripts": {
+    "clean": "rimraf node_modules"
+  },
+  "peerDependencies": {
+    "tailwindcss": "4.0.0-alpha.15"
+  },
+  "dependencies": {
+    "@winnie-ui/css": "workspace:*"
+  },
+  "devDependencies": {
+    "rimraf": "6.0.1"
+  }
 }

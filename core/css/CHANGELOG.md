@@ -1,5 +1,11 @@
 # @winnie-ui/css
 
+## 0.0.15
+
+### Patch Changes
+
+- [#41](https://github.com/winnie-ui/winnie-ui/pull/41) [`42ef813`](https://github.com/winnie-ui/winnie-ui/commit/42ef8131458012903358599d1142b998661e82a8) Thanks [@adamaho](https://github.com/adamaho)! - feat: adds first iteration of listbox component
+
 ## 0.0.14
 
 ### Patch Changes
