@@ -5,7 +5,7 @@ export function ListboxModeContent() {
   /**
    * tracks the currently selected items
    */
-  const [items, setItems] = useState<Set<string>>(new Set([]));
+  const [items, setItems] = useState<Set<string>>(new Set(["Cherry"]));
 
   return (
     <ul
@@ -18,6 +18,7 @@ export function ListboxModeContent() {
           <li
             key={label}
             data-component="listbox-item"
+            onKeyDown={() => ({})}
             onClick={() => {
               const newItems = new Set(items);
               if (items.has(label)) {

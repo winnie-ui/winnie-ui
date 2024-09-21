@@ -6,6 +6,7 @@ import Demo from "~/components/demo/demo.astro";
 
 import ListboxHero from "./_components/listbox/listbox-hero.astro";
 import ListboxIcons from "./_components/listbox/listbox-icons.astro";
+import ListboxIndicator from "./_components/listbox/listbox-indicator.astro";
 import ListboxMode from "./_components/listbox/listbox-mode.astro";
 import ListboxRadius from "./_components/listbox/listbox-radius.astro";
 import ListboxSize from "./_components/listbox/listbox-size.astro";
@@ -16,7 +17,7 @@ import "./_components/listbox/listbox-demo.css";
 <Demo>
   <ListboxHero />
   <Fragment slot="footer">
-    ```tsx
+    ```html
     <ul data-component="listbox">
       <li data-component="listbox-item">
         <i data-component="icon" class="user"></i>
@@ -86,7 +87,7 @@ Use the `data-size` attribute to change the size.
 <Demo>
   <ListboxSize />
   <Fragment slot="footer">
-    ```tsx ins=data-size="sm" ins=data-size="md" ins=data-size="lg"
+    ```html ins=data-size="sm" ins=data-size="md" ins=data-size="lg"
     <ul data-component="listbox" data-size="sm">
     ...
     </ul>
@@ -107,7 +108,7 @@ Use the `data-radius` attribute to change the size.
 <Demo>
   <ListboxRadius />
   <Fragment slot="footer">
-    ```tsx ins=data-radius="none" ins=data-radius="md" ins=data-radius="round"
+    ```html ins=data-radius="none" ins=data-radius="md" ins=data-radius="round"
     <ul data-component="listbox" data-radius="none">
     ...
     </ul>
@@ -128,7 +129,7 @@ Add an icon to an item using the `data-component="icon"` attribute as a child of
 <Demo>
   <ListboxIcons />
   <Fragment slot="footer">
-    ```tsx ins=data-component="icon"
+    ```html ins=data-component="icon"
     <ul data-component="listbox" class="demo-listbox not-content">
       <li data-component="listbox-item">
         <i data-component="icon" class="user"></i>
@@ -165,7 +166,7 @@ Use the `section`, `header`, and `separator` attributes to group items.
 <Demo>
   <ListboxSection />
   <Fragment slot="footer">
-    ```tsx ins=data-component="section" ins=data-component="header" ins=data-component="separator"
+    ```html ins=data-component="section" ins=data-component="header" ins=data-component="separator"
     <ul data-component="listbox" class="demo-listbox not-content">
       <section data-component="section">
         <header data-component="header">
@@ -204,9 +205,26 @@ Use the `section`, `header`, and `separator` attributes to group items.
 Add an icon to indicate that an item has been selected using the `data-component="indicator"` attribute as a child of a list item. Note, if you want to reduce layout shift when using indicators that dynamically render on selection, see [Mode](#mode).
 
 <Demo>
-  <ListboxHero />
+  <ListboxIndicator />
   <Fragment slot="footer">
-    ```tsx
+    ```html
+    <ul data-component="listbox">
+      <section data-component="section">
+        ...
+        <li data-component="listbox-item">
+          <i data-component="indicator" class="dot"></i>
+          <span data-component="label">Red</span>
+        </li>
+      </section>
+      <div data-component="separator"></div>
+      <section data-component="section">
+        ...
+        <li data-component="listbox-item">
+          <i data-component="indicator" class="dot"></i>
+          <span data-component="label">Elephant</span>
+        </li>
+      </section>
+    </ul>
     ```
   </Fragment>
 </Demo>
@@ -218,7 +236,7 @@ Use the `data-mode` attribute to account for dynamically rendered indicators.
 <Demo>
   <ListboxMode />
   <Fragment slot="footer">
-    ```tsx ins=data-mode="selection" ins=data-component="indicator"
+    ```html ins=data-mode="selection" ins=data-component="indicator"
     <ul data-component="listbox" data-mode="selection">
       <li data-component="listbox-item">
         <span data-component="label">Apple</span>
