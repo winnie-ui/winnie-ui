@@ -2,15 +2,22 @@
 title: Listbox
 description: A list of options that allows a user to optionally select one or more of them.
 ---
-
 import Demo from "~/components/demo/demo.astro";
+
 import ListboxHero from "./_components/listbox/listbox-hero.astro";
+import ListboxIcons from "./_components/listbox/listbox-icons.astro";
+import ListboxMode from "./_components/listbox/listbox-mode.astro";
+import ListboxRadius from "./_components/listbox/listbox-radius.astro";
+import ListboxSize from "./_components/listbox/listbox-size.astro";
+import ListboxSection from "./_components/listbox/listbox-section.astro";
+
+import "./_components/listbox/listbox-demo.css";
 
 <Demo>
   <ListboxHero />
   <Fragment slot="footer">
     ```tsx
-    <ul data-component="listbox" class="demo-listbox not-content">
+    <ul data-component="listbox">
       <li data-component="listbox-item">
         <i data-component="icon" class="user"></i>
         <span data-component="label">Account</span>
@@ -76,22 +83,160 @@ Attach the appropriate `data-component` attributes in the structure below.
 
 Use the `data-size` attribute to change the size.
 
+<Demo>
+  <ListboxSize />
+  <Fragment slot="footer">
+    ```tsx ins=data-size="sm" ins=data-size="md" ins=data-size="lg"
+    <ul data-component="listbox" data-size="sm">
+    ...
+    </ul>
+    <ul data-component="listbox" data-size="md">
+    ...
+    </ul>
+    <ul data-component="listbox" data-size="lg">
+    ...
+    </ul>
+    ```
+  </Fragment>
+</Demo>
+
 ### Radius
 
 Use the `data-radius` attribute to change the size.
 
-### Mode
-
-Use the `data-mode` attribute to account for dynamically rendered indicators.
-
-### Indicators
-
-Add an icon to indicate that an item has been selected using the `data-component="indicator"` attribute as a child of a list item. Note, if you want to reduce layout shift when using indicators that dynamically render on selection, see [Mode](#mode).
+<Demo>
+  <ListboxRadius />
+  <Fragment slot="footer">
+    ```tsx ins=data-radius="none" ins=data-radius="md" ins=data-radius="round"
+    <ul data-component="listbox" data-radius="none">
+    ...
+    </ul>
+    <ul data-component="listbox" data-radius="md">
+    ...
+    </ul>
+    <ul data-component="listbox" data-radius="round">
+    ...
+    </ul>
+    ```
+  </Fragment>
+</Demo>
 
 ### Icons
 
 Add an icon to an item using the `data-component="icon"` attribute as a child of a list item.
 
+<Demo>
+  <ListboxIcons />
+  <Fragment slot="footer">
+    ```tsx ins=data-component="icon"
+    <ul data-component="listbox" class="demo-listbox not-content">
+      <li data-component="listbox-item">
+        <i data-component="icon" class="user"></i>
+        <span data-component="label">Account</span>
+      </li>
+      <li data-component="listbox-item">
+        <i data-component="icon" class="cog"></i>
+        <span data-component="label">Settings</span>
+      </li>
+      <div data-component="separator"></div>
+      <li data-component="listbox-item">
+        <i data-component="icon" class="info"></i>
+        <span data-component="label">Help Center</span>
+      </li>
+      <div data-component="separator"></div>
+      <li data-component="listbox-item">
+        <i data-component="icon" class="moon"></i>
+        <span data-component="label">Dark mode</span>
+      </li>
+      <div data-component="separator"></div>
+      <li data-component="listbox-item">
+        <i data-component="icon" class="logout"></i>
+        <span data-component="label">Sign out</span>
+      </li>
+    </ul>
+    ```
+  </Fragment>
+</Demo>
+
 ### Sections
 
-Use the `data-component="section"`, `data-component="header"`, and `data-component="separator"` attributes to group items.
+Use the `section`, `header`, and `separator` attributes to group items.
+
+<Demo>
+  <ListboxSection />
+  <Fragment slot="footer">
+    ```tsx ins=data-component="section" ins=data-component="header" ins=data-component="separator"
+    <ul data-component="listbox" class="demo-listbox not-content">
+      <section data-component="section">
+        <header data-component="header">
+          <span data-component="label">User Settings</span>
+        </header>
+        ...
+      </section>
+      <div data-component="separator"></div>
+      <section data-component="section">
+        <header data-component="header">
+          <span data-component="label">Support</span>
+        </header>
+        ...
+      </section>
+      <div data-component="separator"></div>
+      <section data-component="section">
+        <header data-component="header">
+          <span data-component="label">Preferences</span>
+        </header>
+        ...
+      </section>
+      <div data-component="separator"></div>
+      <section data-component="section">
+        <header data-component="header">
+          <span data-component="label">Account Actions</span>
+        </header>
+        ...
+      </section>
+    </ul>
+    ```
+  </Fragment>
+</Demo>
+
+### Indicators
+
+Add an icon to indicate that an item has been selected using the `data-component="indicator"` attribute as a child of a list item. Note, if you want to reduce layout shift when using indicators that dynamically render on selection, see [Mode](#mode).
+
+<Demo>
+  <ListboxHero />
+  <Fragment slot="footer">
+    ```tsx
+    ```
+  </Fragment>
+</Demo>
+
+### Mode
+
+Use the `data-mode` attribute to account for dynamically rendered indicators.
+
+<Demo>
+  <ListboxMode />
+  <Fragment slot="footer">
+    ```tsx ins=data-mode="selection" ins=data-component="indicator"
+    <ul data-component="listbox" data-mode="selection">
+      <li data-component="listbox-item">
+        <span data-component="label">Apple</span>
+      </li>
+      <li data-component="listbox-item">
+        <span data-component="label">Banana</span>
+      </li>
+      <li data-component="listbox-item">
+        <i data-component="indicator" class="check"></i>
+        <span data-component="label">Cherry</span>
+      </li>
+      <li data-component="listbox-item">
+        <span data-component="label">Date</span>
+      </li>
+      <li data-component="listbox-item">
+        <span data-component="label">Elderberry</span>
+      </li>
+    </ul>
+    ```
+  </Fragment>
+</Demo>

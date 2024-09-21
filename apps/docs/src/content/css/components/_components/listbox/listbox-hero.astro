@@ -1,100 +1,14 @@
----
-import { Check, Cog, Info, LogOut, Moon, UserRound } from "lucide-react";
----
-
 <div class="demo-listbox-container">
   <ul data-component="listbox" class="demo-listbox not-content">
     <li data-component="listbox-item">
-      <UserRound data-component="icon" />
-      <span data-component="label">Account</span>
+      <span data-component="label">Edit</span>
     </li>
     <li data-component="listbox-item">
-      <Cog data-component="icon" />
-      <span data-component="label">Settings</span>
-    </li>
-    <li data-component="listbox-item">
-      <Info data-component="icon" />
-      <span data-component="label">Help Center</span>
+      <span data-component="label">Duplicate</span>
     </li>
     <div data-component="separator"></div>
     <li data-component="listbox-item">
-      <Moon data-component="icon" />
-      <span data-component="label">Dark mode</span>
-    </li>
-    <div data-component="separator"></div>
-    <li data-component="listbox-item">
-      <LogOut data-component="icon" />
-      <span data-component="label">Sign out</span>
+      <span data-component="label">Archive</span>
     </li>
   </ul>
 </div>
-
-<style>
-  .demo-listbox-container {
-    background: var(--container-background);
-    border: var(--wui-border-width-1) solid var(--wui-color-grey-5);
-    box-shadow: var(--wui-shadow-2);
-    border-radius: var(--wui-border-radius-3);
-    padding: var(--wui-space-2);
-    width: max-content;
-
-    .demo-listbox {
-      [data-component="listbox-item"] {
-        &:hover,
-        &:active {
-          [data-component="label"] {
-            color: var(--wui-color-grey-12);
-          }
-
-          [data-component="icon"] {
-            color: var(--wui-color-grey-12);
-          }
-        }
-
-        &:hover {
-          background: var(--listbox-item-background-hover);
-        }
-
-        &:active {
-          background: var(--listbox-item-background-active);
-        }
-
-        [data-component="icon"] {
-          color: var(--wui-color-grey-11);
-        }
-
-        [data-component="label"] {
-          color: var(--wui-color-grey-11);
-        }
-      }
-
-      [data-component="header"] {
-        [data-component="label"] {
-          color: var(--wui-color-grey-12);
-          font-weight: var(--wui-font-weight-medium);
-        }
-      }
-
-      [data-component="separator"] {
-        background: var(--wui-color-grey-5);
-        height: 1px;
-      }
-    }
-  }
-
-  :global(:where([data-theme="light"])) {
-    .demo-listbox-container {
-      --container-background: var(--wui-color-grey-1);
-      --listbox-item-background-hover: var(--wui-color-grey-3);
-      --listbox-item-background-active: var(--wui-color-grey-4);
-    }
-  }
-
-  :global(:where([data-theme="dark"])) {
-    .demo-listbox-container {
-      --container-background: var(--wui-color-grey-2);
-      --listbox-item-background-hover: var(--wui-color-grey-4);
-      --listbox-item-background-active: var(--wui-color-grey-5);
-    }
-  }
-</style>

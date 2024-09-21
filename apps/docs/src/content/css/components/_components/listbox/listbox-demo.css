@@ -1,0 +1,64 @@
+.demo-listbox-container {
+  background: var(--container-background);
+  border: var(--wui-border-width-1) solid var(--wui-color-grey-5);
+  box-shadow: var(--wui-shadow-2);
+  border-radius: min(var(--wui-border-radius-3), 18px);
+  padding: var(--wui-space-2);
+  width: max-content;
+
+  .demo-listbox {
+    [data-component="listbox-item"] {
+      color: var(--wui-color-grey-11);
+
+      &:hover,
+      &:active {
+        color: var(--listbox-item-color-hover);
+        /* [data-component="label"] {
+          color: var(--wui-color-grey-12);
+        }
+
+        [data-component="icon"] {
+          color: var(--wui-color-grey-12);
+        } */
+      }
+
+      &:hover {
+        background: var(--listbox-item-background-hover);
+      }
+
+      &:active {
+        background: var(--listbox-item-background-active);
+      }
+    }
+
+    [data-component="header"] {
+      [data-component="label"] {
+        color: var(--wui-color-grey-11);
+        font-weight: var(--wui-font-weight-medium);
+      }
+    }
+
+    [data-component="separator"] {
+      background: var(--wui-color-grey-5);
+      height: 1px;
+    }
+  }
+}
+
+:where([data-theme="light"]) {
+  .demo-listbox-container {
+    --container-background: var(--wui-color-grey-1);
+    --listbox-item-color-hover: var(--wui-color-accent-contrast);
+    --listbox-item-background-hover: var(--wui-color-accent-9);
+    --listbox-item-background-active: var(--wui-color-accent-10);
+  }
+}
+
+:where([data-theme="dark"]) {
+  .demo-listbox-container {
+    --container-background: var(--wui-color-grey-2);
+    --listbox-item-color-hover: var(--wui-color-accent-contrast);
+    --listbox-item-background-hover: var(--wui-color-accent-9);
+    --listbox-item-background-active: var(--wui-color-accent-10);
+  }
+}

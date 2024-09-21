@@ -16,6 +16,10 @@
     --wui-listbox-item-md-font-size: var(--wui-font-size-2);
     --wui-listbox-item-lg-font-size: var(--wui-font-size-3);
 
+    --wui-listbox-header-sm-font-size: var(--wui-font-size-1);
+    --wui-listbox-header-md-font-size: var(--wui-font-size-1);
+    --wui-listbox-header-lg-font-size: var(--wui-font-size-2);
+
     /* height */
     --wui-listbox-item-sm-height: calc(26px * var(--wui-scale));
     --wui-listbox-item-md-height: calc(32px * var(--wui-scale));
@@ -26,6 +30,11 @@
     --wui-listbox-item-md-icon-size: 1em;
     --wui-listbox-item-lg-icon-size: 1em;
 
+    /* padding inline */
+    --wui-listbox-item-sm-padding-inline: var(--wui-space-4);
+    --wui-listbox-item-md-padding-inline: var(--wui-space-4);
+    --wui-listbox-item-lg-padding-inline: var(--wui-space-5);
+
     /* space */
     --wui-listbox-item-sm-space: var(--wui-space-3);
     --wui-listbox-item-md-space: var(--wui-space-3);
@@ -35,15 +44,19 @@
     grid-template-columns: var(--wui-listbox-grid-columns);
 
     &[data-mode="selection"] {
-      --wui-listbox-grid-columns: calc(
-          var(
-              --wui-listbox-item-font-size,
-              var(--wui-listbox-item-md-font-size)
-            ) +
-            (
-              var(--wui-listbox-item-space, var(--wui-listbox-item-md-space)) *
-                2
-            )
+      --wui-listbox-grid-columns: minmax(
+          calc(
+            var(
+                --wui-listbox-item-font-size,
+                var(--wui-listbox-item-md-font-size)
+              ) +
+              var(--wui-listbox-item-space, var(--wui-listbox-item-md-space)) +
+              var(
+                --wui-listbox-item-padding-inline,
+                var(--wui-listbox-item-md-padding-inline)
+              )
+          ),
+          auto
         )
         auto 1fr auto;
     }
@@ -53,8 +66,12 @@
         --wui-listbox-item-sm-border-radius
       );
       --wui-listbox-item-font-size: var(--wui-listbox-item-sm-font-size);
+      --wui-listbox-header-font-size: var(--wui-listbox-header-sm-font-size);
       --wui-listbox-item-height: var(--wui-listbox-item-sm-height);
       --wui-listbox-item-icon-size: var(--wui-listbox-item-sm-icon-size);
+      --wui-listbox-item-padding-inline: var(
+        --wui-listbox-item-sm-padding-inline
+      );
       --wui-listbox-item-space: var(--wui-listbox-item-sm-space);
     }
 
@@ -63,8 +80,12 @@
         --wui-listbox-item-md-border-radius
       );
       --wui-listbox-item-font-size: var(--wui-listbox-item-md-font-size);
+      --wui-listbox-header-font-size: var(--wui-listbox-header-md-font-size);
       --wui-listbox-item-height: var(--wui-listbox-item-md-height);
       --wui-listbox-item-icon-size: var(--wui-listbox-item-md-icon-size);
+      --wui-listbox-item-padding-inline: var(
+        --wui-listbox-item-md-padding-inline
+      );
       --wui-listbox-item-space: var(--wui-listbox-item-md-space);
     }
 
@@ -73,8 +94,12 @@
         --wui-listbox-item-lg-border-radius
       );
       --wui-listbox-item-font-size: var(--wui-listbox-item-lg-font-size);
+      --wui-listbox-header-font-size: var(--wui-listbox-header-lg-font-size);
       --wui-listbox-item-height: var(--wui-listbox-item-lg-height);
       --wui-listbox-item-icon-size: var(--wui-listbox-item-lg-icon-size);
+      --wui-listbox-item-padding-inline: var(
+        --wui-listbox-item-lg-padding-inline
+      );
       --wui-listbox-item-space: var(--wui-listbox-item-lg-space);
     }
 
@@ -94,8 +119,8 @@
 
         [data-component="label"] {
           font-size: var(
-            --wui-listbox-item-font-size,
-            var(--wui-listbox-item-md-font-size)
+            --wui-listbox-header-font-size,
+            var(--wui-listbox-header-md-font-size)
           );
         }
       }
@@ -122,9 +147,10 @@
       grid-template-columns: subgrid;
       grid-column: 1 / -1;
       padding-inline: var(
-        --wui-listbox-item-space,
-        var(--wui-listbox-item-md-space)
+        --wui-listbox-item-padding-inline,
+        var(--wui-listbox-item-md-padding-inline)
       );
+      user-select: none;
 
       [data-component="indicator"] {
         height: var(

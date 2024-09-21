@@ -1,0 +1,31 @@
+---
+import { Cog, Info, LogOut, Moon, UserRound } from "lucide-react";
+---
+
+<div class="demo-listbox-container">
+  <ul data-component="listbox" class="demo-listbox not-content">
+    <li data-component="listbox-item">
+      <UserRound data-component="icon" />
+      <span data-component="label">Account</span>
+    </li>
+    <li data-component="listbox-item">
+      <Cog data-component="icon" />
+      <span data-component="label">Settings</span>
+    </li>
+    <div data-component="separator"></div>
+    <li data-component="listbox-item">
+      <Info data-component="icon" />
+      <span data-component="label">Help Center</span>
+    </li>
+    <div data-component="separator"></div>
+    <li data-component="listbox-item">
+      <Moon data-component="icon" />
+      <span data-component="label">Dark mode</span>
+    </li>
+    <div data-component="separator"></div>
+    <li data-component="listbox-item">
+      <LogOut data-component="icon" />
+      <span data-component="label">Sign out</span>
+    </li>
+  </ul>
+</div>
