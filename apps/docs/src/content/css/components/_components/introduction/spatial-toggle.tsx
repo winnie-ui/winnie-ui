@@ -1,16 +1,6 @@
-import { BoxSelect, ChevronDown, DollarSign, Palette } from "lucide-react";
+import { BoxSelect, DollarSign, Palette } from "lucide-react";
 import { type ReactNode, useState } from "react";
-import {
-  Button,
-  Label,
-  ListBox,
-  ListBoxItem,
-  Popover,
-  Radio,
-  RadioGroup,
-  Select,
-  SelectValue,
-} from "react-aria-components";
+import { Radio, RadioGroup } from "react-aria-components";
 
 import "./spatial-toggle.css";
 
@@ -98,31 +88,6 @@ export function SpatialToggle() {
             />
           </div>
         </div>
-        <Select data-component="field" className="sp-hero-field">
-          <Label data-component="label" className="sp-hero-label">
-            Foo
-          </Label>
-          <Button data-component="group" className="sp-hero-group">
-            <div
-              data-component="input"
-              className="sp-hero-input"
-              data-mode={mode}
-            >
-              <SelectValue />
-            </div>
-            <ChevronDown data-component="icon" />
-          </Button>
-          <Popover>
-            <ListBox data-component="listbox">
-              <ListBoxItem data-component="listbox-item">Aardvark</ListBoxItem>
-              <ListBoxItem data-component="listbox-item">Cat</ListBoxItem>
-              <ListBoxItem data-component="listbox-item">Dog</ListBoxItem>
-              <ListBoxItem data-component="listbox-item">Kangaroo</ListBoxItem>
-              <ListBoxItem data-component="listbox-item">Panda</ListBoxItem>
-              <ListBoxItem data-component="listbox-item">Snake</ListBoxItem>
-            </ListBox>
-          </Popover>
-        </Select>
         <div className="sp-hero-footer">
           <button
             className="sp-hero-cancel-button"
