@@ -1,4 +1,6 @@
 ---
+import { Check, Cog } from "lucide-react";
+
 import BaseHead from "~/layouts/base/base-head.astro";
 import BaseLayout from "~/layouts/base/layout.astro";
 ---
@@ -6,31 +8,107 @@ import BaseLayout from "~/layouts/base/layout.astro";
 <BaseLayout>
   <BaseHead slot="head" title="playground" description="playground" />
   <div class="center">
-
     <div class="form">
-      <div data-component="field">
-        <label data-component="label">Street address</label>
-        <input data-component="input" />
-      </div>
-
-      <div data-component="field">
-        <label data-component="label">Country</label>
-        <input data-component="input" />
-        <span data-component="description">We only ship to North America.</span>
-      </div>
-
-      <div data-component="field">
-        <label data-component="label">Country</label>
-        <span data-component="description">We only ship to North America.</span>
-        <input data-component="input" />
-      </div>
-
-      <div data-component="field">
-        <label data-component="label">Country</label>
-        <span data-component="description">We only ship to North America.</span>
-        <input data-component="input" />
-        <span data-component="error">Select a county</span>
-      </div>
+      <ul data-component="listbox" data-mode="selection" class="demo-listbox">
+        <li data-component="listbox-item">
+          <span data-component="label">Chicken</span>
+        </li>
+        <li data-component="listbox-item">
+          <Check data-component="indicator" />
+          <Cog data-component="icon" />
+          <span data-component="label">Beef</span>
+        </li>
+        <li data-component="listbox-item">
+          <!-- <Check data-component="indicator" /> -->
+          <span data-component="label">Fish</span>
+        </li>
+        <div data-component="separator"></div>
+        <section data-component="section">
+          <header data-component="header">
+            <span data-component="label">Fruits</span>
+          </header>
+          <li data-component="listbox-item">
+            <Cog data-component="icon" />
+            <span data-component="label">Strawberry</span>
+          </li>
+          <li data-component="listbox-item">
+            <span data-component="label">Banana</span>
+          </li>
+          <li data-component="listbox-item">
+            <span data-component="label">Mango</span>
+          </li>
+        </section>
+        <div data-component="separator"></div>
+        <section data-component="section">
+          <header data-component="header">
+            <span data-component="label">Vegatables</span>
+          </header>
+          <li data-component="listbox-item">
+            <span data-component="label">Broccoli</span>
+          </li>
+          <li data-component="listbox-item">
+            <span data-component="label">Spinach</span>
+          </li>
+          <li data-component="listbox-item">
+            <span data-component="label">Sweet Potatoe</span>
+          </li>
+        </section>
+      </ul>
+      <!-- <ul data-component="listbox" class="demo-listbox" data-size="lg"> -->
+      <!--   <section data-component="section"> -->
+      <!--     <header data-component="header"> -->
+      <!--       <span data-component="label">Header 1</span> -->
+      <!--     </header> -->
+      <!--     <li data-component="listbox-item"> -->
+      <!--       <Cog data-component="icon" /> -->
+      <!--       <span data-component="label">label</span> -->
+      <!--     </li> -->
+      <!--     <li data-component="listbox-item"> -->
+      <!--       <Check data-component="indicator" /> -->
+      <!--       <Cog data-component="icon" /> -->
+      <!--       <span data-component="label">label</span> -->
+      <!--     </li> -->
+      <!--     <li data-component="listbox-item"> -->
+      <!--       <Cog data-component="icon" /> -->
+      <!--       <span data-component="label">label</span> -->
+      <!--     </li> -->
+      <!--   </section> -->
+      <!--   <div data-component="separator"></div> -->
+      <!--   <section data-component="section"> -->
+      <!--     <header data-component="header"> -->
+      <!--       <span data-component="label">Header 2</span> -->
+      <!--     </header> -->
+      <!--     <li data-component="listbox-item"> -->
+      <!--       <Cog data-component="icon" /> -->
+      <!--       <span data-component="label">label</span> -->
+      <!--     </li> -->
+      <!--     <li data-component="listbox-item"> -->
+      <!--       <Check data-component="indicator" /> -->
+      <!--       <Cog data-component="icon" /> -->
+      <!--       <span data-component="label">label</span> -->
+      <!--     </li> -->
+      <!--     <li data-component="listbox-item"> -->
+      <!--       <span data-component="label">label</span> -->
+      <!--     </li> -->
+      <!--   </section> -->
+      <!--   <div data-component="separator"></div> -->
+      <!--   <li data-component="listbox-item"> -->
+      <!--     <Cog data-component="icon" /> -->
+      <!--     <span data-component="label">label</span> -->
+      <!--   </li> -->
+      <!--   <li data-component="listbox-item"> -->
+      <!--     <Check data-component="indicator" /> -->
+      <!--     <Cog data-component="icon" /> -->
+      <!--     <span data-component="label">label</span> -->
+      <!--   </li> -->
+      <!--   <li data-component="listbox-item"> -->
+      <!--     <span data-component="label">label</span> -->
+      <!--   </li> -->
+      <!--   <div data-component="separator"></div> -->
+      <!--   <li data-component="listbox-item"> -->
+      <!--     <span data-component="label">label</span> -->
+      <!--   </li> -->
+      <!-- </ul> -->
     </div>
   </div>
 </BaseLayout>
@@ -44,6 +122,7 @@ import BaseLayout from "~/layouts/base/layout.astro";
     gap: var(--wui-space-4);
     padding: var(--wui-space-5);
     height: 100dvh;
+    overflow: auto;
   }
 
   .form {
@@ -60,20 +139,39 @@ import BaseLayout from "~/layouts/base/layout.astro";
     gap: var(--wui-space-4);
   }
 
-  [data-component="label"] {
-    font-family: var(--wui-font-family-sans);
-    font-weight: var(--wui-font-weight-medium);
-  }
+  .demo-listbox {
+    [data-component="listbox-item"] {
+      &:hover {
+        background: var(--wui-color-grey-3);
 
-  [data-component="input"] {
-    border: var(--wui-border-width-1) solid var(--wui-color-grey-7);
-  }
+        [data-component="label"] {
+          color: var(--wui-color-grey-12);
+        }
 
-  [data-component="description"] {
-    color: var(--wui-color-grey-11);
-  }
+        [data-component="icon"] {
+          color: var(--wui-color-grey-12);
+        }
+      }
 
-  [data-component="error"] {
-    color: var(--wui-color-red-11);
+      [data-component="icon"] {
+        color: var(--wui-color-grey-11);
+      }
+
+      [data-component="label"] {
+        color: var(--wui-color-grey-11);
+      }
+    }
+
+    [data-component="header"] {
+      [data-component="label"] {
+        color: var(--wui-color-grey-12);
+        font-weight: var(--wui-font-weight-medium);
+      }
+    }
+
+    [data-component="separator"] {
+      background: var(--wui-color-grey-5);
+      height: 1px;
+    }
   }
 </style>

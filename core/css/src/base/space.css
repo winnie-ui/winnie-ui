@@ -6,16 +6,16 @@
  * https://github.com/radix-ui/themes/blob/main/packages/radix-ui-themes/src/styles/tokens/space.css
  */
 @layer base {
-	.winnie-ui {
-		--wui-space-1: calc(2px * var(--wui-scale));
-		--wui-space-2: calc(4px * var(--wui-scale));
-		--wui-space-3: calc(8px * var(--wui-scale));
-		--wui-space-4: calc(12px * var(--wui-scale));
-		--wui-space-5: calc(16px * var(--wui-scale));
-		--wui-space-6: calc(24px * var(--wui-scale));
-		--wui-space-7: calc(32px * var(--wui-scale));
-		--wui-space-8: calc(40px * var(--wui-scale));
-		--wui-space-9: calc(48px * var(--wui-scale));
-		--wui-space-10: calc(64px * var(--wui-scale));
-	}
+  .winnie-ui {
+    --wui-space-1: calc(2px * var(--wui-scale));
+    --wui-space-2: calc(4px * var(--wui-scale));
+    --wui-space-3: calc(8px * var(--wui-scale));
+    --wui-space-4: calc(12px * var(--wui-scale));
+    --wui-space-5: calc(16px * var(--wui-scale));
+    --wui-space-6: calc(24px * var(--wui-scale));
+    --wui-space-7: calc(32px * var(--wui-scale));
+    --wui-space-8: calc(40px * var(--wui-scale));
+    --wui-space-9: calc(48px * var(--wui-scale));
+    --wui-space-10: calc(64px * var(--wui-scale));
+  }
 }

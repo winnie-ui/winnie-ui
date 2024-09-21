@@ -33,6 +33,7 @@
 		"./component/group": "./src/component/group.css",
 		"./component/label": "./src/component/label.css",
 		"./component/input": "./src/component/input.css",
+		"./component/listbox": "./src/component/listbox.css",
 		"./layer": "./src/layer.css",
 		"./reset": "./src/reset.css"
 	},
@@ -66,6 +67,7 @@
 			"./component/group": "./dist/component/group.min.css",
 			"./component/label": "./dist/component/label.min.css",
 			"./component/input": "./dist/component/input.min.css",
+			"./component/listbox": "./dist/component/listbox.min.css",
 			"./layer": "./dist/layer.min.css",
 			"./reset": "./dist/reset.min.css"
 		}

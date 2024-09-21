@@ -1,19 +1,19 @@
 @layer base {
-	.winnie-ui {
-		.wui-scrollbar {
-			scrollbar-color: var(--wui-color-grey-6) transparent;
-			scrollbar-width: thin;
-		}
+  .winnie-ui {
+    .wui-scrollbar {
+      scrollbar-color: var(--wui-color-grey-6) transparent;
+      scrollbar-width: thin;
+    }
 
-		.wui-scrollbar::-webkit-scrollbar {
-			background: transparent;
-			width: calc(6px * var(--wui-scale));
-		}
+    .wui-scrollbar::-webkit-scrollbar {
+      background: transparent;
+      width: calc(6px * var(--wui-scale));
+    }
 
-		/* Add a thumb */
-		.wui-scrollbar::-webkit-scrollbar-thumb {
-			background: var(--wui-color-grey-6);
-			border-radius: var(--wui-border-radius-round);
-		}
-	}
+    /* Add a thumb */
+    .wui-scrollbar::-webkit-scrollbar-thumb {
+      background: var(--wui-color-grey-6);
+      border-radius: var(--wui-border-radius-round);
+    }
+  }
 }

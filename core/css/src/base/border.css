@@ -6,53 +6,53 @@
  * https://github.com/radix-ui/themes/blob/main/packages/radix-ui-themes/src/styles/tokens/radius.css
  */
 @layer base {
-	:root {
-		--wui-border-width-05: 0.5px;
-		--wui-border-width-1: 1px;
-		--wui-border-width-2: 2px;
-		--wui-border-width-3: 3px;
-	}
+  :root {
+    --wui-border-width-05: 0.5px;
+    --wui-border-width-1: 1px;
+    --wui-border-width-2: 2px;
+    --wui-border-width-3: 3px;
+  }
 
-	[data-radius] {
-		--wui-border-radius-1: calc(
-			3px *
-			var(--wui-scale) *
-			var(--wui-radius-factor)
-		);
-		--wui-border-radius-2: calc(
-			4px *
-			var(--wui-scale) *
-			var(--wui-radius-factor)
-		);
-		--wui-border-radius-3: calc(
-			6px *
-			var(--wui-scale) *
-			var(--wui-radius-factor)
-		);
-		--wui-border-radius-4: calc(
-			8px *
-			var(--wui-scale) *
-			var(--wui-radius-factor)
-		);
-		--wui-border-radius-5: calc(
-			12px *
-			var(--wui-scale) *
-			var(--wui-radius-factor)
-		);
-		--wui-border-radius-6: calc(
-			16px *
-			var(--wui-scale) *
-			var(--wui-radius-factor)
-		);
-		--wui-border-radius-7: calc(
-			24px *
-			var(--wui-scale) *
-			var(--wui-radius-factor)
-		);
-		--wui-border-radius-round: calc(
-			9999px *
-			var(--wui-scale) *
-			var(--wui-radius-factor)
-		);
-	}
+  [data-radius] {
+    --wui-border-radius-1: calc(
+      3px *
+      var(--wui-scale) *
+      var(--wui-radius-factor)
+    );
+    --wui-border-radius-2: calc(
+      4px *
+      var(--wui-scale) *
+      var(--wui-radius-factor)
+    );
+    --wui-border-radius-3: calc(
+      6px *
+      var(--wui-scale) *
+      var(--wui-radius-factor)
+    );
+    --wui-border-radius-4: calc(
+      8px *
+      var(--wui-scale) *
+      var(--wui-radius-factor)
+    );
+    --wui-border-radius-5: calc(
+      12px *
+      var(--wui-scale) *
+      var(--wui-radius-factor)
+    );
+    --wui-border-radius-6: calc(
+      16px *
+      var(--wui-scale) *
+      var(--wui-radius-factor)
+    );
+    --wui-border-radius-7: calc(
+      24px *
+      var(--wui-scale) *
+      var(--wui-radius-factor)
+    );
+    --wui-border-radius-round: calc(
+      9999px *
+      var(--wui-scale) *
+      var(--wui-radius-factor)
+    );
+  }
 }

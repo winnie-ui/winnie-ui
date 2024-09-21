@@ -21,10 +21,14 @@
   }
 
   :global(:where([data-theme="light"])) {
-    --input-background: var(--wui-color-grey-1);
+    .group {
+      --input-background: var(--wui-color-grey-1);
+    }
   }
 
   :global(:where([data-theme="dark"])) {
-    --input-background: var(--wui-color-grey-2);
+    .group {
+      --input-background: var(--wui-color-grey-2);
+    }
   }
 </style>

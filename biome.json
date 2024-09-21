@@ -1,30 +1,32 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
-	"files": {
-		"ignore": ["apps/docs/sst-env.d.ts"]
-	},
-	"organizeImports": {
-		"enabled": true
-	},
-	"formatter": {
-		"enabled": true
-	},
-	"linter": {
-		"enabled": true,
-		"rules": {
-			"recommended": true,
-			"style": {
-				"noNonNullAssertion": "off"
-			},
-			"suspicious": {
-				"noConsoleLog": "error",
-				"noExplicitAny": "off"
-			}
-		}
-	},
-	"overrides": [
-		{
-			"include": ["*.astro"]
-		}
-	]
+  "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+  "files": {
+    "ignore": ["apps/docs/sst-env.d.ts"]
+  },
+  "organizeImports": {
+    "enabled": true
+  },
+  "formatter": {
+    "enabled": true,
+    "indentWidth": 2,
+    "indentStyle": "space"
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "style": {
+        "noNonNullAssertion": "off"
+      },
+      "suspicious": {
+        "noConsoleLog": "error",
+        "noExplicitAny": "off"
+      }
+    }
+  },
+  "overrides": [
+    {
+      "include": ["*.astro"]
+    }
+  ]
 }

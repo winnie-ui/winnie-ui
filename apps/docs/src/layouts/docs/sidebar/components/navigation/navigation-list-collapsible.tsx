@@ -1,88 +1,88 @@
 import {
-	type PropsWithChildren,
-	useCallback,
-	useEffect,
-	useState,
+  type PropsWithChildren,
+  useCallback,
+  useEffect,
+  useState,
 } from "react";
 
 import {
-	Collapsible,
-	CollapsibleContent,
-	CollapsibleTrigger,
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
 } from "@radix-ui/react-collapsible";
 import { ChevronRight } from "lucide-react";
 import type { NavigationItem } from "./types";
 
 type NavigationListCollapsibleProps = {
-	item: NavigationItem;
-	hasCurrentItem: boolean;
+  item: NavigationItem;
+  hasCurrentItem: boolean;
 };
 
 export function NavigationListCollapsible({
-	children,
-	item,
-	hasCurrentItem,
+  children,
+  item,
+  hasCurrentItem,
 }: PropsWithChildren<NavigationListCollapsibleProps>) {
-	const [transitioning, setTransitioning] = useState(false);
+  const [transitioning, setTransitioning] = useState(false);
 
-	/**
-	 * Handles the event that is called before the page swap from the view transition.
-	 * Responsible for setting the boolean state that is used to turn off animations to
-	 * prevent some animation jank and layout shift.
-	 */
-	const handleBeforeSwap = useCallback(() => {
-		setTransitioning(true);
-	}, []);
+  /**
+   * Handles the event that is called before the page swap from the view transition.
+   * Responsible for setting the boolean state that is used to turn off animations to
+   * prevent some animation jank and layout shift.
+   */
+  const handleBeforeSwap = useCallback(() => {
+    setTransitioning(true);
+  }, []);
 
-	/**
-	 * Sets transitioning to false to re-enable the animation and allow close animations
-	 * to continue working once the view transition as completed
-	 */
-	function handleOpenChange() {
-		setTransitioning(false);
-	}
+  /**
+   * Sets transitioning to false to re-enable the animation and allow close animations
+   * to continue working once the view transition as completed
+   */
+  function handleOpenChange() {
+    setTransitioning(false);
+  }
 
-	/*
-	 * Sets up document event listeners for the start and end of page view transitions
-	 */
-	useEffect(() => {
-		document.addEventListener("astro:before-preparation", handleBeforeSwap);
+  /*
+   * Sets up document event listeners for the start and end of page view transitions
+   */
+  useEffect(() => {
+    document.addEventListener("astro:before-preparation", handleBeforeSwap);
 
-		return () => {
-			document.removeEventListener(
-				"astro:before-preparation",
-				handleBeforeSwap,
-			);
-		};
-	}, [handleBeforeSwap]);
+    return () => {
+      document.removeEventListener(
+        "astro:before-preparation",
+        handleBeforeSwap,
+      );
+    };
+  }, [handleBeforeSwap]);
 
-	return (
-		<Collapsible
-			asChild
-			key={`${item.label}`}
-			defaultOpen
-			onOpenChange={handleOpenChange}
-		>
-			<li>
-				<CollapsibleTrigger
-					className="navigation-list-item"
-					data-collapsible-trigger={true}
-					data-current={hasCurrentItem}
-					aria-current={hasCurrentItem}
-				>
-					<div className="label">
-						<span>{item.label}</span>
-						{item.badge && <span className="badge">{item.badge}</span>}
-					</div>
-					<ChevronRight className="chevron" />
-				</CollapsibleTrigger>
-				<CollapsibleContent
-					className="navigation-list-collapsible-content"
-					style={{ animationName: transitioning ? "none" : undefined }}
-				>
-					{children}
-				</CollapsibleContent>
-			</li>
-		</Collapsible>
-	);
+  return (
+    <Collapsible
+      asChild
+      key={`${item.label}`}
+      defaultOpen
+      onOpenChange={handleOpenChange}
+    >
+      <li>
+        <CollapsibleTrigger
+          className="navigation-list-item"
+          data-collapsible-trigger={true}
+          data-current={hasCurrentItem}
+          aria-current={hasCurrentItem}
+        >
+          <div className="label">
+            <span>{item.label}</span>
+            {item.badge && <span className="badge">{item.badge}</span>}
+          </div>
+          <ChevronRight className="chevron" />
+        </CollapsibleTrigger>
+        <CollapsibleContent
+          className="navigation-list-collapsible-content"
+          style={{ animationName: transitioning ? "none" : undefined }}
+        >
+          {children}
+        </CollapsibleContent>
+      </li>
+    </Collapsible>
+  );
 }

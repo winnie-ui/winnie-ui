@@ -1,69 +1,69 @@
 .wui-scroll-area {
-	min-height: 0;
-	overflow: hidden;
-	position: relative;
+  min-height: 0;
+  overflow: hidden;
+  position: relative;
 
-	.wui-scroll-area-mask {
-		--wui-scroll-padding: var(--wui-space-6);
-		--wui-mask-visible: var(--wui-color-black);
-		--wui-mask-invisible: transparent;
-		--wui-mask-ease: var(--wui-color-black-a1);
-		height: 100%;
-		overscroll-behavior: contain;
-		overflow: auto;
-		mask-image: linear-gradient(
-			to bottom,
-			var(--wui-mask-invisible) 0%,
-			var(--wui-mask-ease) calc(var(--wui-scroll-padding) / 2),
-			var(--wui-mask-visible) var(--wui-scroll-padding),
-			var(--wui-mask-visible) calc(100% - var(--wui-scroll-padding)),
-			var(--wui-mask-ease) calc(100% - calc(var(--wui-scroll-padding) / 2)),
-			var(--wui-mask-invisible) 100%
-		);
-		width: 100%;
+  .wui-scroll-area-mask {
+    --wui-scroll-padding: var(--wui-space-6);
+    --wui-mask-visible: var(--wui-color-black);
+    --wui-mask-invisible: transparent;
+    --wui-mask-ease: var(--wui-color-black-a1);
+    height: 100%;
+    overscroll-behavior: contain;
+    overflow: auto;
+    mask-image: linear-gradient(
+      to bottom,
+      var(--wui-mask-invisible) 0%,
+      var(--wui-mask-ease) calc(var(--wui-scroll-padding) / 2),
+      var(--wui-mask-visible) var(--wui-scroll-padding),
+      var(--wui-mask-visible) calc(100% - var(--wui-scroll-padding)),
+      var(--wui-mask-ease) calc(100% - calc(var(--wui-scroll-padding) / 2)),
+      var(--wui-mask-invisible) 100%
+    );
+    width: 100%;
 
-		.wui-scroll-area-content {
-			padding-block: var(--wui-scroll-padding);
-		}
-	}
+    .wui-scroll-area-content {
+      padding-block: var(--wui-scroll-padding);
+    }
+  }
 
-	.wui-scroll-area-scrollbar {
-		background: transparent;
-		display: flex;
-		padding: var(--wui-space-1);
-		transition: all var(--wui-duration-3) var(--wui-bezier-1);
-		touch-action: none;
-		user-select: none;
+  .wui-scroll-area-scrollbar {
+    background: transparent;
+    display: flex;
+    padding: var(--wui-space-1);
+    transition: all var(--wui-duration-3) var(--wui-bezier-1);
+    touch-action: none;
+    user-select: none;
 
-		&[data-orientation="vertical"] {
-			width: 10px;
+    &[data-orientation="vertical"] {
+      width: 10px;
 
-			&:hover {
-				width: 12px;
-			}
-		}
+      &:hover {
+        width: 12px;
+      }
+    }
 
-		.wui-scroll-area-thumb {
-			background: var(--wui-color-grey-6);
-			border-radius: var(--wui-border-radius-round);
-			flex: 1;
-			position: relative;
+    .wui-scroll-area-thumb {
+      background: var(--wui-color-grey-6);
+      border-radius: var(--wui-border-radius-round);
+      flex: 1;
+      position: relative;
 
-			&:before {
-				content: "";
-				height: 100%;
-				left: 50%;
-				min-height: 44px;
-				min-width: 44px;
-				position: absolute;
-				transform: translate(-50%, -50%);
-				top: 50%;
-				width: 100%;
-			}
+      &:before {
+        content: "";
+        height: 100%;
+        left: 50%;
+        min-height: 44px;
+        min-width: 44px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        width: 100%;
+      }
 
-			&:hover {
-				background: var(--wui-color-grey-7);
-			}
-		}
-	}
+      &:hover {
+        background: var(--wui-color-grey-7);
+      }
+    }
+  }
 }

@@ -9,22 +9,22 @@
  * @returns an array of excerpts
  */
 function getExcerpt(text: string, searchTerm: string, limit = 1) {
-	const regex = new RegExp(searchTerm, "gi");
-	const indexes = [];
-	let matches = 0;
-	let match: RegExpExecArray | null;
+  const regex = new RegExp(searchTerm, "gi");
+  const indexes = [];
+  let matches = 0;
+  let match: RegExpExecArray | null;
 
-	// biome-ignore lint/suspicious/noAssignInExpressions: TODO: remove when monorepos are supported
-	while ((match = regex.exec(text)) !== null && matches < limit) {
-		indexes.push(match.index);
-		matches++;
-	}
+  // biome-ignore lint/suspicious/noAssignInExpressions: TODO: remove when monorepos are supported
+  while ((match = regex.exec(text)) !== null && matches < limit) {
+    indexes.push(match.index);
+    matches++;
+  }
 
-	return indexes.map((index) => {
-		const start = index - 40;
-		const end = index + 60;
-		return text.substring(start, end).trim();
-	});
+  return indexes.map((index) => {
+    const start = index - 40;
+    const end = index + 60;
+    return text.substring(start, end).trim();
+  });
 }
 
 /**
@@ -36,11 +36,11 @@ function getExcerpt(text: string, searchTerm: string, limit = 1) {
  * @returns undefined or an excerpt with the search term surrounded by `mark` tags
  */
 export function getMarkedTitle(text: string, searchTerm: string) {
-	const excerpt = getExcerpt(text, searchTerm)[0];
+  const excerpt = getExcerpt(text, searchTerm)[0];
 
-	if (excerpt) {
-		return replaceTextWithMarker(excerpt, searchTerm);
-	}
+  if (excerpt) {
+    return replaceTextWithMarker(excerpt, searchTerm);
+  }
 }
 
 /**
@@ -53,11 +53,11 @@ export function getMarkedTitle(text: string, searchTerm: string) {
  * @returns undefined or an excerpt with the search term surrounded by `mark` tags
  */
 export function getMarkedDescription(text: string, searchTerm: string) {
-	const excerpt = getExcerpt(text, searchTerm)[0];
+  const excerpt = getExcerpt(text, searchTerm)[0];
 
-	if (excerpt) {
-		return `...${replaceTextWithMarker(excerpt, searchTerm)}...`;
-	}
+  if (excerpt) {
+    return `...${replaceTextWithMarker(excerpt, searchTerm)}...`;
+  }
 }
 
 /**
@@ -69,6 +69,6 @@ export function getMarkedDescription(text: string, searchTerm: string) {
  * @returns undefined or an excerpt with the search term surrounded by `mark` tags
  */
 function replaceTextWithMarker(text: string, searchTerm: string) {
-	const regex = new RegExp(searchTerm, "gi");
-	return text.replaceAll(regex, (match) => `<mark>${match}</mark>`);
+  const regex = new RegExp(searchTerm, "gi");
+  return text.replaceAll(regex, (match) => `<mark>${match}</mark>`);
 }

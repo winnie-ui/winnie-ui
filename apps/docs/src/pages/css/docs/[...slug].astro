@@ -10,11 +10,11 @@ import Table from "~/components/markdown/table.astro";
 export const prerender = true;
 
 export async function getStaticPaths() {
-	const docs = await getCollection("css");
-	return docs.map((doc) => ({
-		params: { slug: doc.slug },
-		props: doc,
-	}));
+  const docs = await getCollection("css");
+  return docs.map((doc) => ({
+    params: { slug: doc.slug },
+    props: doc,
+  }));
 }
 
 type Props = CollectionEntry<"css">;

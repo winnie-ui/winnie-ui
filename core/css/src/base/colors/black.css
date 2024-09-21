@@ -1,18 +1,18 @@
 @layer base {
-	:root {
-		--wui-color-black: #000;
+  :root {
+    --wui-color-black: #000;
 
-		--wui-color-black-a1: rgba(0, 0, 0, 0.05);
-		--wui-color-black-a2: rgba(0, 0, 0, 0.1);
-		--wui-color-black-a3: rgba(0, 0, 0, 0.15);
-		--wui-color-black-a4: rgba(0, 0, 0, 0.2);
-		--wui-color-black-a5: rgba(0, 0, 0, 0.3);
-		--wui-color-black-a6: rgba(0, 0, 0, 0.4);
-		--wui-color-black-a7: rgba(0, 0, 0, 0.5);
-		--wui-color-black-a8: rgba(0, 0, 0, 0.6);
-		--wui-color-black-a9: rgba(0, 0, 0, 0.7);
-		--wui-color-black-a10: rgba(0, 0, 0, 0.8);
-		--wui-color-black-a11: rgba(0, 0, 0, 0.9);
-		--wui-color-black-a12: rgba(0, 0, 0, 0.95);
-	}
+    --wui-color-black-a1: rgba(0, 0, 0, 0.05);
+    --wui-color-black-a2: rgba(0, 0, 0, 0.1);
+    --wui-color-black-a3: rgba(0, 0, 0, 0.15);
+    --wui-color-black-a4: rgba(0, 0, 0, 0.2);
+    --wui-color-black-a5: rgba(0, 0, 0, 0.3);
+    --wui-color-black-a6: rgba(0, 0, 0, 0.4);
+    --wui-color-black-a7: rgba(0, 0, 0, 0.5);
+    --wui-color-black-a8: rgba(0, 0, 0, 0.6);
+    --wui-color-black-a9: rgba(0, 0, 0, 0.7);
+    --wui-color-black-a10: rgba(0, 0, 0, 0.8);
+    --wui-color-black-a11: rgba(0, 0, 0, 0.9);
+    --wui-color-black-a12: rgba(0, 0, 0, 0.95);
+  }
 }
