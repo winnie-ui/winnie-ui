@@ -9,8 +9,9 @@ import ListboxIcons from "./_components/listbox/listbox-icons.astro";
 import ListboxIndicator from "./_components/listbox/listbox-indicator.astro";
 import ListboxMode from "./_components/listbox/listbox-mode.astro";
 import ListboxRadius from "./_components/listbox/listbox-radius.astro";
-import ListboxSize from "./_components/listbox/listbox-size.astro";
 import ListboxSection from "./_components/listbox/listbox-section.astro";
+import ListboxShortcut from "./_components/listbox/listbox-shortcut.astro";
+import ListboxSize from "./_components/listbox/listbox-size.astro";
 
 import "./_components/listbox/listbox-demo.css";
 
@@ -20,26 +21,14 @@ import "./_components/listbox/listbox-demo.css";
     ```html
     <ul data-component="listbox">
       <li data-component="listbox-item">
-        <i data-component="icon" class="user"></i>
-        <span data-component="label">Account</span>
+        <span data-component="label">Edit</span>
       </li>
       <li data-component="listbox-item">
-        <i data-component="icon" class="cog"></i>
-        <span data-component="label">Settings</span>
-      </li>
-      <li data-component="listbox-item">
-        <i data-component="icon" class="info"></i>
-        <span data-component="label">Help Center</span>
+        <span data-component="label">Duplicate</span>
       </li>
       <div data-component="separator"></div>
       <li data-component="listbox-item">
-        <i data-component="icon" class="moon"></i>
-        <span data-component="label">Dark mode</span>
-      </li>
-      <div data-component="separator"></div>
-      <li data-component="listbox-item">
-        <i data-component="icon" class="logout"></i>
-        <span data-component="label">Sign out</span>
+        <span data-component="label">Archive</span>
       </li>
     </ul>
     ```
@@ -253,6 +242,43 @@ Use the `data-mode` attribute to account for dynamically rendered indicators.
       </li>
       <li data-component="listbox-item">
         <span data-component="label">Elderberry</span>
+      </li>
+    </ul>
+    ```
+  </Fragment>
+</Demo>
+
+### Shortcuts
+
+Use the `data-component="shortcut"` as a child of the list item to show a shortcut.
+
+<Demo>
+  <ListboxShortcut />
+  <Fragment slot="footer">
+    ```html ins=data-mode="selection" ins=data-component="indicator"
+    <ul data-component="listbox">
+      <li data-component="listbox-item">
+        <span data-component="label">Edit</span>
+        <kbd data-component="shortcut">
+          <kbd>⌘</kbd>
+          <kbd>E</kbd>
+        </kbd>
+      </li>
+      <li data-component="listbox-item">
+        <span data-component="label">Duplicate</span>
+        <kbd data-component="shortcut">
+          <kbd>⌘</kbd>
+          <kbd>D</kbd>
+        </kbd>
+      </li>
+      <div data-component="separator"></div>
+      <li data-component="listbox-item">
+        <span data-component="label">Archive</span>
+        <kbd data-component="shortcut">
+          <kbd>⇧</kbd>
+          <kbd>⌘</kbd>
+          <kbd>⌫</kbd>
+        </kbd>
       </li>
     </ul>
     ```
