@@ -9,8 +9,10 @@ const hasTabs =
   <header class="demo-header">
     <slot name="header" />
   </header>
-  <main class="background-polka demo-content">
-    <slot />
+  <main class="background-polka demo-content wui-scrollbar">
+    <div class="demo-content-padded">
+      <slot />
+    </div>
   </main>
   {
     hasTabs && Object.values(Astro.slots).length > 2 && (
@@ -62,9 +64,14 @@ const hasTabs =
         var(--demo-content-background) 1px
       );
       background-size: 10px 10px;
-      padding: var(--wui-space-6);
       border-radius: var(--border-radius);
       position: relative;
+      padding-inline: var(--wui-space-6);
+
+      .demo-content-padded {
+        padding-block: var(--wui-space-6);
+        overflow-x: auto;
+      }
     }
 
     .demo-footer {

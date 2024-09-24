@@ -15,10 +15,6 @@
     "enabled": true,
     "rules": {
       "recommended": true,
-      "correctness": {
-        "noUnusedImports": "error",
-        "noUnusedVariables": "error"
-      },
       "style": {
         "noNonNullAssertion": "off"
       },

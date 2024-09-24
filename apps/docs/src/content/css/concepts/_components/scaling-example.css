@@ -16,6 +16,7 @@
       color: var(--wui-color-grey-11);
       font-size: var(--wui-font-size-2);
       padding: var(--wui-space-2);
+      padding-inline: var(--wui-space-3);
 
       &[data-hovered] {
         background: var(--wui-color-grey-3);
@@ -40,7 +41,7 @@
     width: 100%;
 
     .movie {
-      --border-radius: var(--wui-border-radius-3);
+      --border-radius: min(var(--wui-border-radius-3), 20px);
 
       align-items: flex-start;
       background: var(--wui-color-grey-2);
