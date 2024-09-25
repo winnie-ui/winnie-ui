@@ -1,6 +1,6 @@
 {
   "name": "@winnie-ui/tailwind",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "tailwind theme for winnie-ui css",
   "author": "Adam Aho",
   "type": "module",
