@@ -8,19 +8,7 @@
 
   .demo-listbox {
     [data-component="listbox-item"] {
-      color: var(--wui-color-grey-11);
-
-      &:hover,
-      &:active {
-        color: var(--listbox-item-color-hover);
-        /* [data-component="label"] {
-          color: var(--wui-color-grey-12);
-        }
-
-        [data-component="icon"] {
-          color: var(--wui-color-grey-12);
-        } */
-      }
+      color: var(--wui-color-grey-12);
 
       &:hover {
         background: var(--listbox-item-background-hover);
@@ -28,6 +16,23 @@
 
       &:active {
         background: var(--listbox-item-background-active);
+      }
+
+      [data-component="shortcut"] {
+        color: var(--wui-color-grey-10);
+
+        & > kbd {
+          font-family: var(--wui-font-family-sans);
+        }
+      }
+
+      &:hover,
+      &:active {
+        color: var(--listbox-item-color-hover);
+
+        [data-component="shortcut"] {
+          color: var(--listbox-item-color-hover);
+        }
       }
     }
 

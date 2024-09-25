@@ -3,7 +3,7 @@
     --ec-brdRad: min(var(--wui-border-radius-3), 15px);
     --ec-brdWd: var(--wui-border-width-1);
     --ec-codeFontFml: var(--wui-font-family-mono);
-    --ec-codeFontSize: var(--wui-font-size-2);
+    --ec-codeFontSize: var(--wui-font-size-1);
     --ec-codeLineHt: var(--wui-line-height-2);
     --ec-codePadBlk: var(--wui-space-5);
     --ec-codePadInl: var(--wui-space-5);

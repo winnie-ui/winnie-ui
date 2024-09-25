@@ -178,6 +178,21 @@
         grid-column-start: 3;
       }
 
+      [data-component="shortcut"] {
+        grid-column-start: 4;
+        justify-self: end;
+        margin-left: calc(
+          var(--wui-listbox-item-space, var(--wui-listbox-item-md-space)) *
+          2
+        );
+        text-align: center;
+        text-transform: capitalize;
+
+        & > kbd {
+          min-width: 2ch;
+        }
+      }
+
       /* indicator followed by icon followed by label */
       &:has([data-component="icon"] + [data-component="label"]) {
         [data-component="icon"] {
