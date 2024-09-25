@@ -1,5 +1,11 @@
 # @winnie-ui/css
 
+## 0.0.16
+
+### Patch Changes
+
+- [#43](https://github.com/winnie-ui/winnie-ui/pull/43) [`d428aa2`](https://github.com/winnie-ui/winnie-ui/commit/d428aa209508b51ddf8808454cd93698b495c91d) Thanks [@adamaho](https://github.com/adamaho)! - feat: adds support for keyboard shortcuts in listbox component
+
 ## 0.0.15
 
 ### Patch Changes
