@@ -1,18 +1,21 @@
 {
-	"$schema": "https://turbo.build/schema.json",
-	"tasks": {
-		"build": {
-			"inputs": ["src/**", "locales/**"],
-			"outputs": ["dist/**"],
-			"dependsOn": ["topo"]
-		},
-		"format:check": {},
-		"format:write": {},
-		"lint:check": {},
-		"lint:write": {},
-		"topo": {
-			"dependsOn": ["^topo"]
-		},
-		"tsc": {}
-	}
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "build": {
+      "inputs": ["src/**", "locales/**"],
+      "outputs": ["dist/**"],
+      "dependsOn": ["topo"]
+    },
+    "deploy:production": {
+      "dependsOn": ["topo"]
+    },
+    "format:check": {},
+    "format:write": {},
+    "lint:check": {},
+    "lint:write": {},
+    "topo": {
+      "dependsOn": ["^topo"]
+    },
+    "tsc": {}
+  }
 }
