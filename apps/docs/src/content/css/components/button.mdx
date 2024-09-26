@@ -1,6 +1,6 @@
 ---
-title: Button 
-description: Trigger an event, action or operation. 
+title: Button
+description: Trigger an event, action or operation.
 ---
 
 import Demo from "~/components/demo/demo.astro";
@@ -10,6 +10,7 @@ import ButtonIcon from "./_components/button/button-icon.astro";
 import ButtonSize from "./_components/button/button-size.astro";
 import ButtonRadius from "./_components/button/button-radius.astro";
 import ButtonLoading from "./_components/button/button-loading.astro";
+import ButtonWidth from "./_components/button/button-width.astro";
 
 <Demo>
   <ButtonHero />
@@ -40,7 +41,8 @@ Attach the appropriate `data-component` attributes in the structure below.
   <i data-component="icon"></i>
   <span data-component="text"></span>
   <span data-component="loading"></span>
-<button>
+  <button></button>
+</button>
 ```
 
 ## Examples
@@ -66,7 +68,7 @@ Use the `data-size` attribute to change the size.
   </Fragment>
 </Demo>
 
-### Radius 
+### Radius
 
 Use the `data-radius` attribute to change the size.
 
@@ -136,12 +138,28 @@ If a child of the button is rendered with the `data-component="loading"` attribu
   </Fragment>
 </Demo>
 
+### Full Width
+
+Use the `data-width` attribute to modify the overall width of the button.
+
+<Demo>
+  <ButtonWidth />
+  <Fragment slot="footer">
+    ```tsx ins=data-width="full"
+    <button data-component="button" data-width="full">
+      <span data-component="text">Log in</span>
+      <i class="arrow-right" data-component="icon></i>
+    </button>
+    ```
+  </Fragment>
+</Demo>
+
 ## Reference
 
 Below is a list of the available button `data-` attributes available for Button.
 
-| Attribute           | Value                                       |
-| ------------------- | --------------------------------------------|
-| `data-radius`       | `"none" \| "sm" \| "md" \| "lg" \| "round"` |
-| `data-size`         | `"sm" \| "md" \| "lg"`                      |
-
+| Attribute     | Value                                       |
+| ------------- | ------------------------------------------- |
+| `data-radius` | `"none" \| "sm" \| "md" \| "lg" \| "round"` |
+| `data-size`   | `"sm" \| "md" \| "lg"`                      |
+| `data-width`  | `"full"`                                    |
