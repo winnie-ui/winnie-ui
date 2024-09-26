@@ -8,7 +8,6 @@
     "changeset": "changeset",
     "changeset:publish": "changeset publish",
     "clean": "turbo run clean && rimraf node_modules",
-    "deploy:production": "turbo run deploy:production",
     "format:check": "turbo run format:check --cache-dir=.turbo",
     "format:write": "turbo run format:write --cache-dir=.turbo",
     "lint:check": "turbo run lint:check --cache-dir=.turbo",

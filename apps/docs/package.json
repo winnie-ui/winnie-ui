@@ -9,7 +9,7 @@
     "clean": "rimraf node_modules dist .astro",
     "dev": "astro dev",
     "dev:sst": "sst dev astro dev",
-    "deploy:production": "sst deploy --stage=production --print-logs",
+    "deploy:production": "sst deploy --stage=production",
     "deploy:staging": "sst deploy --stage=staging",
     "lint:check": "biome lint ./src --no-errors-on-unmatched",
     "lint:write": "biome lint ./src --write --unsafe --no-errors-on-unmatched",
