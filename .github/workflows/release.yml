@@ -1,8 +1,12 @@
 name: deploy
-on:
-  push:
-    branches:
-      - main
+on: workflow_dispatch
+
+concurrency:
+  group: merge-${{ github.ref }}
+
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
   deploy:
