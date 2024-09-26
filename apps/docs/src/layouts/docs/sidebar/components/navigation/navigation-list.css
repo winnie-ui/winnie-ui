@@ -9,6 +9,7 @@
   .navigation-list-item {
     align-items: center;
     border-radius: var(--wui-border-radius-3);
+    cursor: default;
     color: var(--wui-color-grey-11);
     display: flex;
     font-size: var(--wui-font-size-2);

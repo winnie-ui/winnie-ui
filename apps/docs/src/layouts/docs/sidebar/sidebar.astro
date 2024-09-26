@@ -160,10 +160,15 @@ for (const section of navigation) {
 
 <nav class="wui-docs-sidebar" transition:animate="none">
   <div class="wui-docs-sidebar-header">
-    <div class="wui-logo">
-      <a class="wui-logo-company" href="/css">Winnie</a>
-      <span class="wui-logo-separator"></span>
-      <span class="wui-logo-app">CSS</span>
+    <div class="wui-logo-container">
+      <div class="wui-logo">
+        <a class="wui-logo-company" href="/css">Winnie</a>
+        <span class="wui-logo-separator"></span>
+        <span class="wui-logo-app">CSS</span>
+      </div>
+      <a class="wui-logo-self-promo" href="https://adamaho.com" target="_blank">
+        by Adam Aho
+      </a>
     </div>
     <div class="wui-docs-sidebar-actions">
       <Actions client:load transition:persist />
@@ -227,32 +232,44 @@ for (const section of navigation) {
 
     .wui-docs-sidebar-header {
       display: flex;
-      padding: var(--wui-space-5) var(--wui-sidebar-inline-padding);
+      padding: var(--wui-space-5) var(--wui-sidebar-inline-padding)
+        var(--wui-space-8) var(--wui-sidebar-inline-padding);
 
-      .wui-logo {
-        align-items: center;
+      .wui-logo-container {
         display: flex;
+        flex-direction: column;
         flex: 1;
-        gap: var(--wui-space-4);
+        gap: var(--wui-space-2);
 
-        .wui-logo-company {
-          color: var(--wui-color-grey-12);
-          letter-spacing: var(--wui-letter-spacing-9);
-          font-size: var(--wui-font-size-3);
-          font-weight: var(--wui-font-weight-medium);
-          margin-bottom: 2px;
+        .wui-logo {
+          align-items: center;
+          display: flex;
+          gap: var(--wui-space-4);
+
+          .wui-logo-company {
+            color: var(--wui-color-grey-12);
+            letter-spacing: var(--wui-letter-spacing-9);
+            font-size: var(--wui-font-size-3);
+            font-weight: var(--wui-font-weight-medium);
+            margin-bottom: 2px;
+          }
+
+          .wui-logo-separator {
+            background: var(--wui-color-grey-8);
+            height: var(--wui-space-5);
+            transform: rotate(20deg);
+            width: 1px;
+          }
+
+          .wui-logo-app {
+            color: var(--wui-color-grey-11);
+            font-size: var(--wui-font-size-3);
+          }
         }
 
-        .wui-logo-separator {
-          background: var(--wui-color-grey-8);
-          height: var(--wui-space-5);
-          transform: rotate(20deg);
-          width: 1px;
-        }
-
-        .wui-logo-app {
+        .wui-logo-self-promo {
           color: var(--wui-color-grey-11);
-          font-size: var(--wui-font-size-3);
+          font-size: var(--wui-font-size-1);
         }
       }
 

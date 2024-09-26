@@ -22,10 +22,10 @@ export type ThemeSelectors =
   | "data-theme";
 
 export const defaultTheme = {
-  color: "blue",
+  color: "orange",
   radius: "lg",
-  scale: "95%",
-  mode: "dark",
+  scale: "90%",
+  mode: "light",
 } satisfies Theme;
 
 /**

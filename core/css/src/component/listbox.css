@@ -47,14 +47,14 @@
       --wui-listbox-grid-columns: minmax(
           calc(
             var(
-              --wui-listbox-item-font-size,
-              var(--wui-listbox-item-md-font-size)
-            ) +
-            var(--wui-listbox-item-space, var(--wui-listbox-item-md-space)) +
-            var(
-              --wui-listbox-item-padding-inline,
-              var(--wui-listbox-item-md-padding-inline)
-            )
+                --wui-listbox-item-font-size,
+                var(--wui-listbox-item-md-font-size)
+              ) +
+              var(--wui-listbox-item-space, var(--wui-listbox-item-md-space)) +
+              var(
+                --wui-listbox-item-padding-inline,
+                var(--wui-listbox-item-md-padding-inline)
+              )
           ),
           auto
         )
@@ -62,7 +62,9 @@
     }
 
     &[data-size="sm"] {
-      --wui-listbox-item-border-radius: var(--wui-listbox-item-sm-border-radius);
+      --wui-listbox-item-border-radius: var(
+        --wui-listbox-item-sm-border-radius
+      );
       --wui-listbox-item-font-size: var(--wui-listbox-item-sm-font-size);
       --wui-listbox-header-font-size: var(--wui-listbox-header-sm-font-size);
       --wui-listbox-item-height: var(--wui-listbox-item-sm-height);
@@ -74,7 +76,9 @@
     }
 
     &[data-size="md"] {
-      --wui-listbox-item-border-radius: var(--wui-listbox-item-md-border-radius);
+      --wui-listbox-item-border-radius: var(
+        --wui-listbox-item-md-border-radius
+      );
       --wui-listbox-item-font-size: var(--wui-listbox-item-md-font-size);
       --wui-listbox-header-font-size: var(--wui-listbox-header-md-font-size);
       --wui-listbox-item-height: var(--wui-listbox-item-md-height);
@@ -86,7 +90,9 @@
     }
 
     &[data-size="lg"] {
-      --wui-listbox-item-border-radius: var(--wui-listbox-item-lg-border-radius);
+      --wui-listbox-item-border-radius: var(
+        --wui-listbox-item-lg-border-radius
+      );
       --wui-listbox-item-font-size: var(--wui-listbox-item-lg-font-size);
       --wui-listbox-header-font-size: var(--wui-listbox-header-lg-font-size);
       --wui-listbox-item-height: var(--wui-listbox-item-lg-height);
@@ -182,11 +188,15 @@
         grid-column-start: 4;
         justify-self: end;
         margin-left: calc(
-          var(--wui-listbox-item-space, var(--wui-listbox-item-md-space)) *
-          2
+          var(--wui-listbox-item-space, var(--wui-listbox-item-md-space)) * 2
         );
+        min-width: 2ch;
         text-align: center;
         text-transform: capitalize;
+
+        &:has(> kbd) {
+          display: flex;
+        }
 
         & > kbd {
           min-width: 2ch;

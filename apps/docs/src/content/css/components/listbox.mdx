@@ -258,17 +258,21 @@ Use the `data-component="shortcut"` as a child of the list item to show a shortc
     ```html ins=data-mode="selection" ins=data-component="indicator"
     <ul data-component="listbox">
       <li data-component="listbox-item">
+        <span data-component="label">New</span>
+        <kbd data-component="shortcut">
+          N
+        </kbd>
+      </li>
+      <li data-component="listbox-item">
         <span data-component="label">Edit</span>
         <kbd data-component="shortcut">
-          <kbd>⌘</kbd>
-          <kbd>E</kbd>
+          E
         </kbd>
       </li>
       <li data-component="listbox-item">
         <span data-component="label">Duplicate</span>
         <kbd data-component="shortcut">
-          <kbd>⌘</kbd>
-          <kbd>D</kbd>
+          D
         </kbd>
       </li>
       <div data-component="separator"></div>

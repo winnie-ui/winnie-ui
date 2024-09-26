@@ -20,6 +20,7 @@
 
       [data-component="shortcut"] {
         color: var(--wui-color-grey-10);
+        font-family: var(--wui-font-family-sans);
 
         & > kbd {
           font-family: var(--wui-font-family-sans);
