@@ -33,9 +33,10 @@
     cursor: var(--wui-cursor-pressable, default);
     display: grid;
     grid-template-columns: auto 1fr auto;
+    justify-content: center;
     isolation: isolate;
     font-size: var(--wui-button-font-size, var(--wui-button-md-font-size));
-    gap: calc(var(--wui-button-space, var(--wui-button-md-space)) / 2);
+    gap: var(--wui-button-space, var(--wui-button-md-space));
     height: var(--wui-button-height, var(--wui-button-md-height));
     min-width: max-content;
     padding-inline: var(--wui-button-space, var(--wui-button-md-space));
@@ -80,7 +81,7 @@
     /* icon followed by an text */
     &:has([data-component="icon"] + [data-component="text"])
       [data-component="text"] {
-      grid-column: 2 / 4;
+      grid-column: 2 / -1;
     }
 
     /* text followed by an icon */
@@ -133,6 +134,11 @@
       --wui-button-font-size: var(--wui-button-lg-font-size);
       --wui-button-icon-size: 1em;
       --wui-button-space: var(--wui-button-lg-space);
+    }
+
+    &[data-width="full"] {
+      grid-template-columns: repeat(3, auto);
+      width: 100%;
     }
   }
 }
