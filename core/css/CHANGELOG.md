@@ -1,5 +1,11 @@
 # @winnie-ui/css
 
+## 0.0.17
+
+### Patch Changes
+
+- [#45](https://github.com/winnie-ui/winnie-ui/pull/45) [`2457c67`](https://github.com/winnie-ui/winnie-ui/commit/2457c6706e679fb2dcf69f2d5143e6719780521b) Thanks [@adamaho](https://github.com/adamaho)! - feat: add support for `data-width="full"` on button
+
 ## 0.0.16
 
 ### Patch Changes
