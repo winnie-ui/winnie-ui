@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     tags:
-      - "**"
+      - "@winnie-ui/css@*"
 
 concurrency:
   group: merge-${{ github.ref }}
