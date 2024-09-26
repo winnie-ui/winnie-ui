@@ -8,6 +8,7 @@
     },
     "deploy:production": {
       "env": ["CLOUDFLARE_API_TOKEN", "CLOUDFLARE_DEFAULT_ACCOUNT_ID"],
+      "outputLogs": "full",
       "dependsOn": ["topo"]
     },
     "format:check": {},
