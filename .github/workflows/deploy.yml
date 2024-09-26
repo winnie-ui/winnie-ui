@@ -15,7 +15,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v2
         with:
           role-to-assume: arn:aws:iam::085520092983:role/Github
-          role-duration-seconds: 14390
+          role-duration-seconds: 1200
           aws-region: us-east-1
 
       - name: cache turbo build
