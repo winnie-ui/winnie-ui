@@ -27,12 +27,28 @@
         }
       }
 
+      &:has([data-component="label"] + [data-component="description"]) {
+        [data-component="label"] {
+          font-weight: var(--wui-font-weight-medium);
+        }
+
+        [data-component="description"] {
+          color: var(--wui-color-grey-11);
+        }
+      }
+
       &:hover,
       &:active {
         color: var(--listbox-item-color-hover);
 
         [data-component="shortcut"] {
           color: var(--listbox-item-color-hover);
+        }
+
+        &:has([data-component="label"] + [data-component="description"]) {
+          [data-component="description"] {
+            color: var(--listbox-item-color-hover);
+          }
         }
       }
     }
