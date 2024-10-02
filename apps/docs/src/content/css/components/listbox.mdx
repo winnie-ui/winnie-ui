@@ -2,6 +2,8 @@
 title: Listbox
 description: A list of options that allows a user to optionally select one or more of them.
 ---
+import { User, Check } from "lucide-react";
+
 import Demo from "~/components/demo/demo.astro";
 
 import ListboxHero from "./_components/listbox/listbox-hero.astro";
@@ -12,6 +14,7 @@ import ListboxRadius from "./_components/listbox/listbox-radius.astro";
 import ListboxSection from "./_components/listbox/listbox-section.astro";
 import ListboxShortcut from "./_components/listbox/listbox-shortcut.astro";
 import ListboxSize from "./_components/listbox/listbox-size.astro";
+import ListboxDescription from "./_components/listbox/listbox-description.astro";
 
 import "./_components/listbox/listbox-demo.css";
 
@@ -248,6 +251,190 @@ Use the `data-mode` attribute to account for dynamically rendered indicators.
   </Fragment>
 </Demo>
 
+### Descriptions
+
+Use the `data-component="description"` in different variations to achieve the layout that works for your use case.
+
+#### Column
+
+You can create a column layout with the help of `data-component="group"` and placing the `label` and `description` as children.
+
+<Demo>
+  <div class="demo-listbox-container">
+    <ul
+      data-component="listbox"
+      class="demo-listbox not-content"
+      data-mode="selection"
+    >
+      <li data-component="listbox-item">
+        <Check data-component="indicator" />
+        <div data-component="group">
+          <span data-component="label">Read</span>
+          <span data-component="description">Read only</span>
+        </div>
+        <kbd data-component="shortcut">R</kbd>
+      </li>
+      <li data-component="listbox-item">
+        <div data-component="group">
+          <span data-component="label">Write</span>
+          <span data-component="description">Read and write only</span>
+        </div>
+        <kbd data-component="shortcut">W</kbd>
+      </li>
+      <li data-component="listbox-item">
+        <div data-component="group">
+          <span data-component="label">Admin</span>
+          <span data-component="description">Full Access</span>
+        </div>
+        <kbd data-component="shortcut">A</kbd>
+      </li>
+    </ul>
+  </div>
+  <Fragment slot="footer">
+    ```html ins=data-component="group" 
+    <ul
+      data-component="listbox"
+      data-mode="selection"
+    >
+      <li data-component="listbox-item">
+        <i data-component="indicator" class="check"></i>
+        <div data-component="group">
+          <span data-component="label">Read</span>
+          <span data-component="description">Read only</span>
+        </div>
+        <kbd data-component="shortcut">R</kbd>
+      </li>
+      <li data-component="listbox-item">
+        <div data-component="group">
+          <span data-component="label">Write</span>
+          <span data-component="description">Read and write only</span>
+        </div>
+        <kbd data-component="shortcut">W</kbd>
+      </li>
+      <li data-component="listbox-item">
+        <div data-component="group">
+          <span data-component="label">Admin</span>
+          <span data-component="description">Full Access</span>
+        </div>
+        <kbd data-component="shortcut">A</kbd>
+      </li>
+    </ul>
+    ```
+  </Fragment>
+</Demo>
+
+#### Row
+
+Simlar to the [column](#column) layout, you can create a row based layout with staggared alignment using the `group` component.
+
+<Demo>
+  <div class="demo-listbox-container">
+    <ul data-component="listbox" class="demo-listbox not-content">
+      <li data-component="listbox-item">
+        <Check data-component="indicator" />
+        <div data-component="group" data-orientation="row">
+          <span data-component="label">Adam Aho</span>
+          <span data-component="description">@theadamaho</span>
+        </div>
+      </li>
+      <li data-component="listbox-item">
+        <div data-component="group" data-orientation="row">
+          <span data-component="label">Dax</span>
+          <span data-component="description">@thdxr</span>
+        </div>
+      </li>
+      <li data-component="listbox-item">
+        <div data-component="group" data-orientation="row">
+          <span data-component="label">Adam Wathan</span>
+          <span data-component="description">@adamwathan</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <Fragment slot="footer">
+    ```html ins=data-orientation="row"
+    <ul
+      data-component="listbox"
+      data-mode="selection"
+    >
+      <li data-component="listbox-item">
+        <i data-component="indicator" class="check"></i>
+        <div data-component="group" data-orientation="row">
+          <span data-component="label">Read</span>
+          <span data-component="description">Read only</span>
+        </div>
+        <kbd data-component="shortcut">R</kbd>
+      </li>
+      <li data-component="listbox-item">
+        <div data-component="group" data-orientation="row">
+          <span data-component="label">Write</span>
+          <span data-component="description">Read and write only</span>
+        </div>
+        <kbd data-component="shortcut">W</kbd>
+      </li>
+      <li data-component="listbox-item">
+        <div data-component="group" data-orientation="row">
+          <span data-component="label">Admin</span>
+          <span data-component="description">Full Access</span>
+        </div>
+        <kbd data-component="shortcut">A</kbd>
+      </li>
+    </ul>
+    ```
+  </Fragment>
+</Demo>
+
+#### Inline 
+
+Finally, if you prefer to align all descriptions, you can skip the `group` component and provide `description` as a child of `listbox-item`.
+
+<Demo>
+  <div class="demo-listbox-container">
+    <ul data-component="listbox" class="demo-listbox not-content">
+      <li data-component="listbox-item">
+        <Check data-component="indicator" />
+        <span data-component="label">Read</span>
+        <span data-component="description">Read only</span>
+        <kbd data-component="shortcut">R</kbd>
+      </li>
+      <li data-component="listbox-item">
+        <span data-component="label">Write</span>
+        <span data-component="description">Read and write only</span>
+        <kbd data-component="shortcut">W</kbd>
+      </li>
+      <li data-component="listbox-item">
+        <span data-component="label">Admin</span>
+        <span data-component="description">Read and write only</span>
+        <kbd data-component="shortcut">A</kbd>
+      </li>
+    </ul>
+  </div>
+  <Fragment slot="footer">
+    ```html ins=data-component="description" 
+    <ul data-component="listbox">
+      <li data-component="listbox-item">
+        <i data-component="indicator"></i>
+        <span data-component="label">Read</span>
+        <span data-component="description">Read only</span>
+        <kbd data-component="shortcut">R</kbd>
+      </li>
+      <li data-component="listbox-item">
+        <span data-component="label">Write</span>
+        <span data-component="description">Read and write only</span>
+        <kbd data-component="shortcut">W</kbd>
+      </li>
+      <li data-component="listbox-item">
+        <span data-component="label">Admin</span>
+        <span data-component="description">Read and write only</span>
+        <kbd data-component="shortcut">A</kbd>
+      </li>
+    </ul>
+    ```
+  </Fragment>
+</Demo>
+
+
+
 ### Shortcuts
 
 Use the `data-component="shortcut"` as a child of the list item to show a shortcut.
@@ -295,5 +482,6 @@ Below is a list of the available button `data-` attributes available for Listbox
 
 | Attribute     | Value                                       |
 | ------------- | ------------------------------------------- |
+| `data-mode`   | `"selection"`                               |
 | `data-radius` | `"none" \| "sm" \| "md" \| "lg" \| "round"` |
 | `data-size`   | `"sm" \| "md" \| "lg"`                      |

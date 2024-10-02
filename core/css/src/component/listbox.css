@@ -1,6 +1,6 @@
 @layer component {
   [data-component="listbox"] {
-    --wui-listbox-grid-columns: auto auto 1fr auto;
+    --wui-listbox-grid-columns: auto auto 1fr auto auto;
     --wui-listbox-column-gap: var(
       --wui-listbox-item-space,
       var(--wui-listbox-item-md-space)
@@ -30,70 +30,63 @@
     --wui-listbox-item-md-icon-size: 1em;
     --wui-listbox-item-lg-icon-size: 1em;
 
-    /* padding inline */
-    --wui-listbox-item-sm-padding-inline: var(--wui-space-4);
-    --wui-listbox-item-md-padding-inline: var(--wui-space-4);
-    --wui-listbox-item-lg-padding-inline: var(--wui-space-5);
-
     /* space */
-    --wui-listbox-item-sm-space: var(--wui-space-3);
-    --wui-listbox-item-md-space: var(--wui-space-3);
-    --wui-listbox-item-lg-space: var(--wui-space-4);
+    --wui-listbox-item-sm-space: var(--wui-space-4);
+    --wui-listbox-item-md-space: var(--wui-space-4);
+    --wui-listbox-item-lg-space: var(--wui-space-5);
 
     display: grid;
     grid-template-columns: var(--wui-listbox-grid-columns);
+    min-width: max-content;
 
     &[data-mode="selection"] {
       --wui-listbox-grid-columns: minmax(
           calc(
             var(
-              --wui-listbox-item-font-size,
-              var(--wui-listbox-item-md-font-size)
-            ) +
-            var(--wui-listbox-item-space, var(--wui-listbox-item-md-space)) +
-            var(
-              --wui-listbox-item-padding-inline,
-              var(--wui-listbox-item-md-padding-inline)
-            )
+                --wui-listbox-item-font-size,
+                var(--wui-listbox-item-md-font-size)
+              ) +
+              var(--wui-listbox-item-space, var(--wui-listbox-item-md-space)) +
+              var(--wui-listbox-item-space, var(--wui-listbox-item-md-space))
           ),
           auto
         )
-        auto 1fr auto;
+        auto 1fr auto auto;
     }
 
     &[data-size="sm"] {
-      --wui-listbox-item-border-radius: var(--wui-listbox-item-sm-border-radius);
+      --wui-listbox-item-border-radius: var(
+        --wui-listbox-item-sm-border-radius
+      );
       --wui-listbox-item-font-size: var(--wui-listbox-item-sm-font-size);
       --wui-listbox-header-font-size: var(--wui-listbox-header-sm-font-size);
       --wui-listbox-item-height: var(--wui-listbox-item-sm-height);
       --wui-listbox-item-icon-size: var(--wui-listbox-item-sm-icon-size);
-      --wui-listbox-item-padding-inline: var(
-        --wui-listbox-item-sm-padding-inline
-      );
+      --wui-listbox-item-space: var(--wui-listbox-item-sm-space);
       --wui-listbox-item-space: var(--wui-listbox-item-sm-space);
     }
 
     &[data-size="md"] {
-      --wui-listbox-item-border-radius: var(--wui-listbox-item-md-border-radius);
+      --wui-listbox-item-border-radius: var(
+        --wui-listbox-item-md-border-radius
+      );
       --wui-listbox-item-font-size: var(--wui-listbox-item-md-font-size);
       --wui-listbox-header-font-size: var(--wui-listbox-header-md-font-size);
       --wui-listbox-item-height: var(--wui-listbox-item-md-height);
       --wui-listbox-item-icon-size: var(--wui-listbox-item-md-icon-size);
-      --wui-listbox-item-padding-inline: var(
-        --wui-listbox-item-md-padding-inline
-      );
+      --wui-listbox-item-space: var(--wui-listbox-item-md-space);
       --wui-listbox-item-space: var(--wui-listbox-item-md-space);
     }
 
     &[data-size="lg"] {
-      --wui-listbox-item-border-radius: var(--wui-listbox-item-lg-border-radius);
+      --wui-listbox-item-border-radius: var(
+        --wui-listbox-item-lg-border-radius
+      );
       --wui-listbox-item-font-size: var(--wui-listbox-item-lg-font-size);
       --wui-listbox-header-font-size: var(--wui-listbox-header-lg-font-size);
       --wui-listbox-item-height: var(--wui-listbox-item-lg-height);
       --wui-listbox-item-icon-size: var(--wui-listbox-item-lg-icon-size);
-      --wui-listbox-item-padding-inline: var(
-        --wui-listbox-item-lg-padding-inline
-      );
+      --wui-listbox-item-space: var(--wui-listbox-item-lg-space);
       --wui-listbox-item-space: var(--wui-listbox-item-lg-space);
     }
 
@@ -141,8 +134,8 @@
       grid-template-columns: subgrid;
       grid-column: 1 / -1;
       padding-inline: var(
-        --wui-listbox-item-padding-inline,
-        var(--wui-listbox-item-md-padding-inline)
+        --wui-listbox-item-space,
+        var(--wui-listbox-item-md-space)
       );
       user-select: none;
 
@@ -170,20 +163,44 @@
         );
       }
 
+      [data-component="group"] {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        gap: var(--wui-space-1);
+        grid-column-start: 3;
+        overflow: hidden;
+
+        &[data-orientation="row"] {
+          flex-direction: row;
+          gap: calc(var(--wui-listbox-item-space, var(--wui-listbox-item-md-space)) / 2);
+        }
+      }
+
       [data-component="label"] {
         font-size: var(
           --wui-listbox-item-font-size,
           var(--wui-listbox-item-md-font-size)
         );
         grid-column-start: 3;
+        white-space: nowrap;
+      }
+
+      [data-component="description"] {
+        font-size: var(
+          --wui-listbox-item-font-size,
+          var(--wui-listbox-item-md-font-size)
+        );
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
 
       [data-component="shortcut"] {
-        grid-column-start: 4;
+        grid-column-start: 5;
         justify-self: end;
         margin-left: calc(
-          var(--wui-listbox-item-space, var(--wui-listbox-item-md-space)) *
-          2
+          var(--wui-listbox-item-space, var(--wui-listbox-item-md-space)) * 2
         );
         min-width: 2ch;
         text-align: center;
@@ -198,8 +215,35 @@
         }
       }
 
-      /* indicator followed by icon followed by label */
-      &:has([data-component="icon"] + [data-component="label"]) {
+      &:not(:has([data-component="group"])):has(
+          [data-component="label"] + [data-component="description"]
+        ) {
+        [data-component="description"] {
+          margin-left:
+            var(--wui-listbox-item-space, var(--wui-listbox-item-md-space)
+          );
+        }
+      }
+
+      &:has([data-component="group"]) {
+        height: auto;
+        padding: var(
+          --wui-listbox-item-space,
+          var(--wui-listbox-item-md-space)
+        );
+
+        [data-component="indicator"],
+        [data-component="icon"] {
+          align-self: start;
+          margin-top: calc(1em * 0.2);
+        }
+      }
+
+      /* icon followed by label or group */
+      &:has(
+          [data-component="icon"] + [data-component="label"],
+          [data-component="icon"] + [data-component="group"]
+        ) {
         [data-component="icon"] {
           margin-right: var(
             --wui-listbox-item-space,
@@ -215,7 +259,8 @@
         /* indicator followed by icon or indicator followed by label */
         &:has(
             [data-component="indicator"] + [data-component="icon"],
-            [data-component="indicator"] + [data-component="label"]
+            [data-component="indicator"] + [data-component="label"],
+            [data-component="indicator"] + [data-component="group"]
           ) {
           [data-component="indicator"] {
             margin-right: var(
