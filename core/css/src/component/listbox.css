@@ -224,7 +224,7 @@
         }
       }
 
-      &:has([data-component="group"]) {
+      &:has([data-component="group"]:not([data-orientation="row"])) {
         height: auto;
         padding: var(--wui-listbox-item-space, var(--wui-listbox-item-md-space));
 

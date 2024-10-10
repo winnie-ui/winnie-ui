@@ -108,6 +108,7 @@
     "dist:component-group": "lightningcss src/component/group.css -o dist/component/group.min.css --minify --bundle --targets 'last 2 versions'",
     "dist:component-label": "lightningcss src/component/label.css -o dist/component/label.min.css --minify --bundle --targets 'last 2 versions'",
     "dist:component-input": "lightningcss src/component/input.css -o dist/component/input.min.css --minify --bundle --targets 'last 2 versions'",
+    "dist:component-listbox": "lightningcss src/component/listbox.css -o dist/component/listbox.min.css --minify --bundle --targets 'last 2 versions'",
     "dist:layer": "lightningcss src/layer.css -o dist/layer.min.css --minify --bundle --targets 'last 2 versions'",
     "dist:reset": "lightningcss src/reset.css -o dist/reset.min.css --minify --bundle --targets 'last 2 versions'",
     "clean": "rimraf node_modules",

@@ -15,7 +15,7 @@
 
   [data-radius] {
     --wui-border-radius-1: calc(
-      3px *
+      2px *
       var(--wui-scale) *
       var(--wui-radius-factor)
     );
