@@ -1,5 +1,12 @@
 # docs
 
+## 0.0.19
+
+### Patch Changes
+
+- Updated dependencies [[`729d692`](https://github.com/winnie-ui/winnie-ui/commit/729d692a243d1c25fd7e10e0fff34a2a89b03623)]:
+  - @winnie-ui/css@0.0.20
+
 ## 0.0.18
 
 ### Patch Changes
