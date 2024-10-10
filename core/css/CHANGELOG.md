@@ -1,5 +1,11 @@
 # @winnie-ui/css
 
+## 0.0.20
+
+### Patch Changes
+
+- [#51](https://github.com/winnie-ui/winnie-ui/pull/51) [`729d692`](https://github.com/winnie-ui/winnie-ui/commit/729d692a243d1c25fd7e10e0fff34a2a89b03623) Thanks [@adamaho](https://github.com/adamaho)! - feat(css): release listbox
+
 ## 0.0.19
 
 ### Patch Changes
