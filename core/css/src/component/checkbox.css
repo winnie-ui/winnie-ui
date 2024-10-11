@@ -1,0 +1,63 @@
+@layer component {
+  [data-component="checkbox"] {
+    /* border radius */
+    --wui-checkbox-sm-border-radius: min(var(--wui-border-radius-2), 5px);
+    --wui-checkbox-md-border-radius: min(var(--wui-border-radius-2), 6px);
+    --wui-checkbox-lg-border-radius: min(var(--wui-border-radius-2), 9px);
+
+    /* font size */
+    --wui-checkbox-sm-font-size: var(--wui-font-size-1);
+    --wui-checkbox-md-font-size: var(--wui-font-size-2);
+    --wui-checkbox-lg-font-size: var(--wui-font-size-3);
+
+    /* size */
+    --wui-checkbox-sm-size: calc(14px * var(--wui-scale));
+    --wui-checkbox-md-size: calc(16px * var(--wui-scale));
+    --wui-checkbox-lg-size: calc(20px * var(--wui-scale));
+
+    /* icon size */
+    --wui-checkbox-sm-icon-size: calc(11px * var(--wui-scale));
+    --wui-checkbox-md-icon-size: calc(13px * var(--wui-scale));
+    --wui-checkbox-lg-icon-size: var(--wui-font-size-3);
+
+    align-items: center;
+    border-radius: var(
+      --wui-checkbox-border-radius,
+      var(--wui-checkbox-md-border-radius)
+    );
+    display: inline-flex;
+    font-size: var(--wui-checkbox-font-size, var(--wui-checkbox-md-font-size));
+    height: var(--wui-checkbox-size, var(--wui-checkbox-md-size));
+    justify-content: center;
+    width: var(--wui-checkbox-size, var(--wui-checkbox-md-size));
+
+    [data-component="indicator"] {
+      height: var(--wui-checkbox-icon-size, var(--wui-checkbox-md-icon-size));
+      width: var(--wui-checkbox-icon-size, var(--wui-checkbox-md-icon-size));
+    }
+
+    &[data-size="sm"] {
+      --wui-checkbox-border-radius: var(--wui-checkbox-sm-border-radius);
+      --wui-checkbox-font-size: var(--wui-checkbox-sm-font-size);
+      --wui-checkbox-size: var(--wui-checkbox-sm-size);
+      --wui-checkbox-icon-size: var(--wui-checkbox-sm-icon-size);
+      --wui-checkbox-space: var(--wui-checkbox-sm-space);
+    }
+
+    &[data-size="md"] {
+      --wui-checkbox-border-radius: var(--wui-checkbox-md-border-radius);
+      --wui-checkbox-font-size: var(--wui-checkbox-md-font-size);
+      --wui-checkbox-size: var(--wui-checkbox-md-size);
+      --wui-checkbox-icon-size: var(--wui-checkbox-md-icon-size);
+      --wui-checkbox-space: var(--wui-checkbox-md-space);
+    }
+
+    &[data-size="lg"] {
+      --wui-checkbox-border-radius: var(--wui-checkbox-lg-border-radius);
+      --wui-checkbox-font-size: var(--wui-checkbox-lg-font-size);
+      --wui-checkbox-size: var(--wui-checkbox-lg-size);
+      --wui-checkbox-icon-size: var(--wui-checkbox-lg-icon-size);
+      --wui-checkbox-space: var(--wui-checkbox-lg-space);
+    }
+  }
+}
