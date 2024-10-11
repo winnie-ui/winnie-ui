@@ -1,5 +1,11 @@
 # @winnie-ui/css
 
+## 0.0.21
+
+### Patch Changes
+
+- [#53](https://github.com/winnie-ui/winnie-ui/pull/53) [`d7d59f4`](https://github.com/winnie-ui/winnie-ui/commit/d7d59f43e378ebbb02f6b00d084405c561748f89) Thanks [@adamaho](https://github.com/adamaho)! - feat: adds checkbox component
+
 ## 0.0.20
 
 ### Patch Changes
