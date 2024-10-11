@@ -1,4 +1,6 @@
 ---
+import { Check } from "lucide-react";
+import { Checkbox } from "react-aria-components";
 import BaseHead from "~/layouts/base/base-head.astro";
 import BaseLayout from "~/layouts/base/layout.astro";
 ---
@@ -6,13 +8,7 @@ import BaseLayout from "~/layouts/base/layout.astro";
 <BaseLayout>
   <BaseHead slot="head" title="playground" description="playground" />
   <div class="center">
-    <p data-loading="true">Hello world</p>
-    <div class="foo" data-loading="true">Hello world</div>
-
-    <div data-loading="true">
-      <p>Hello world</p>
-      <div class="foo">Hello world</div>
-    </div>
+    <Checkbox client:only="react" defaultSelected={false} />
   </div>
 </BaseLayout>
 

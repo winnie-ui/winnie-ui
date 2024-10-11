@@ -1,0 +1,136 @@
+---
+title: Checkbox
+description: Captures binary user input.
+---
+
+import Demo from "~/components/demo/demo.astro";
+
+import { Checkbox, CheckboxWithLabel, CheckboxWithLabelAndDescription } from "./_components/checkbox/checkbox";
+import { Check } from "lucide-react";
+
+<Demo>
+  <Checkbox client:load />
+  <Fragment slot="footer">
+    ```tsx
+    <button data-component="checkbox">
+      <i data-component="indicator" class="check"></i>
+    </button>
+    ```
+  </Fragment>
+</Demo>
+
+## Import
+
+Import just the checkbox styles.
+
+```css
+@import "@winnie-ui/component/checkbox";
+```
+
+## Anatomy
+
+Attach the appropriate `data-component` attributes in the structure below.
+
+```html
+<button data-component="checkbox">
+  <i data-component="indicator"></i>
+</button>
+```
+
+## Examples
+
+### Size
+
+Use the `data-size` attribute to change the size.
+
+<Demo>
+  <div class="row">
+    <Checkbox client:load data-size="sm" />
+    <Checkbox client:load data-size="md" />
+    <Checkbox client:load data-size="lg" />
+  </div>
+  <Fragment slot="footer">
+    ```tsx ins=data-size="sm" ins=data-size="md" ins=data-size="lg"
+    <button data-component="checkbox" data-size="sm">
+      <i data-component="indicator" class="check"></i>
+    </button>
+    <button data-component="checkbox" data-size="md">
+      <i data-component="indicator" class="check"></i>
+    </button>
+    <button data-component="checkbox" data-size="lg">
+      <i data-component="indicator" class="check"></i>
+    </button>
+    ```
+  </Fragment>
+</Demo>
+
+### Radius
+
+Use the `data-radius` attribute to change the radius.
+
+<Demo>
+  <div class="row">
+    <Checkbox client:load data-radius="none" />
+    <Checkbox client:load data-radius="sm" />
+    <Checkbox client:load data-radius="lg" />
+  </div>
+  <Fragment slot="footer">
+    ```tsx ins=data-radius="none" ins=data-radius="sm" ins=data-radius="lg"
+    <button data-component="checkbox" data-radius="none">
+      <i data-component="indicator" class="check"></i>
+    </button>
+    <button data-component="checkbox" data-radius="sm">
+      <i data-component="indicator" class="check"></i>
+    </button>
+    <button data-component="checkbox" data-radius="lg">
+      <i data-component="indicator" class="check"></i>
+    </button>
+    ```
+  </Fragment>
+</Demo>
+
+### With Label
+
+Use the `field` and `label` components to add a label beside the checkbox.
+
+<Demo>
+  <CheckboxWithLabel client:load />
+  <Fragment slot="footer">
+    ```tsx
+    <div data-component="field">
+      <button data-component="checkbox" data-radius="none">
+        <i data-component="indicator" class="check"></i>
+      </button>
+      <label data-component="label">Accept terms and conditions.</label>
+    </div>
+    ```
+  </Fragment>
+</Demo>
+
+### With Description
+
+Use the `field`, `label` and `description` components beside the checkbox.
+
+<Demo>
+  <CheckboxWithLabelAndDescription client:load />
+  <Fragment slot="footer">
+    ```tsx
+    <div data-component="field">
+      <button data-component="checkbox">
+        <i data-component="indicator" class="check"></i>
+      </button>
+      <label data-component="label">Display full names</label>
+      <span data-component="description">Show full names of users instead of shorter usernames.</span>
+    </div>
+    ```
+  </Fragment>
+</Demo>
+
+## Reference
+
+Below is a list of the available `data-` attributes available for Checkbox.
+
+| Attribute     | Value                                       |
+| ------------- | ------------------------------------------- |
+| `data-radius` | `"none" \| "sm" \| "md" \| "lg"`            |
+| `data-size`   | `"sm" \| "md" \| "lg"`                      |

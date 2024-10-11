@@ -1,0 +1,37 @@
+.row {
+  align-items: flex-start;
+  display: flex;
+  gap: var(--wui-space-4);
+}
+
+.label {
+  font-family: var(--wui-font-family-sans);
+  font-weight: var(--wui-font-weight-medium);
+}
+
+.description {
+  color: var(--wui-color-grey-11);
+}
+
+[data-component="checkbox"] {
+  background: var(--checkbox-background);
+  border: var(--wui-border-width-1) solid var(--wui-color-grey-6);
+  color: var(--wui-color-accent-contrast);
+
+  &[data-state="checked"] {
+    background: var(--wui-color-accent-9);
+    border-color: var(--wui-color-accent-9);
+  }
+}
+
+:where([data-theme="light"]) {
+  [data-component="checkbox"] {
+    --checkbox-background: var(--wui-color-grey-1);
+  }
+}
+
+:where([data-theme="dark"]) {
+  [data-component="checkbox"] {
+    --checkbox-background: var(--wui-color-grey-2);
+  }
+}
