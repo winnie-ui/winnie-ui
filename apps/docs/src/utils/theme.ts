@@ -48,11 +48,13 @@ export function getTheme(): Theme {
  */
 export function setTheme(theme: Theme) {
   const html = document.querySelector("html")!;
+  const faviconLink = document.querySelector("link[rel=icon]")!;
   html.setAttribute("data-accent-color", theme.color);
   html.setAttribute("data-radius", theme.radius);
   html.setAttribute("data-scale", theme.scale);
   html.setAttribute("data-theme", theme.mode);
   html.setAttribute("data-code-theme", `github-${theme.mode}`);
+  faviconLink.setAttribute("href", `/favicon-${theme.color}.svg`);
   localStorage.setItem(THEME_LOCALSTORAGE_KEY, JSON.stringify(theme));
 }
 

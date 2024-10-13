@@ -39,6 +39,8 @@ Intentionally setting this script inline with a IIFE to prevent a flash of unsty
     html.setAttribute("data-scale", theme.scale);
     html.setAttribute("data-theme", theme.mode);
     html.setAttribute("data-code-theme", `github-${theme.mode}`);
+    const faviconLink = document.querySelector("link[rel=icon]");
+    faviconLink.setAttribute("href", `/favicon-${theme.color}.svg`);
   })();
 </script>
 
