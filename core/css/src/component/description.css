@@ -1,6 +1,0 @@
-@layer component {
-  [data-component="description"] {
-    display: block;
-    font-size: var(--wui-font-size-2);
-  }
-}

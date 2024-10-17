@@ -3,7 +3,7 @@ import Input from "../input/input.astro";
 ---
 
 <div data-component="field" class="field">
-  <label data-component="label" class="label">Shipping details</label>
+  <label data-slot="label" class="label">Shipping details</label>
   <slot name="description" />
   <Input />
   <slot name="error" />

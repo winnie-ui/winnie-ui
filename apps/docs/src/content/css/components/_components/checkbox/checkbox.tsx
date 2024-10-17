@@ -10,7 +10,7 @@ export function Checkbox(props: any) {
   return (
     <RadixCheckbox {...props} defaultChecked data-component="checkbox">
       <RadixCheckboxIndicator asChild>
-        <Check data-component="indicator" strokeWidth={3} />
+        <Check data-slot="indicator" strokeWidth={3} />
       </RadixCheckboxIndicator>
     </RadixCheckbox>
   );
@@ -26,10 +26,10 @@ export function CheckboxWithLabel(props: any) {
         id="wl"
       >
         <RadixCheckboxIndicator asChild>
-          <Check data-component="indicator" strokeWidth={3} />
+          <Check data-slot="indicator" strokeWidth={3} />
         </RadixCheckboxIndicator>
       </RadixCheckbox>
-      <label data-component="label" htmlFor="wl">
+      <label data-slot="label" htmlFor="wl">
         Accept terms and conditions.
       </label>
     </div>
@@ -46,13 +46,13 @@ export function CheckboxWithLabelAndDescription(props: any) {
         id="wld"
       >
         <RadixCheckboxIndicator asChild>
-          <Check data-component="indicator" strokeWidth={3} />
+          <Check data-slot="indicator" strokeWidth={3} />
         </RadixCheckboxIndicator>
       </RadixCheckbox>
-      <label data-component="label" htmlFor="wld" className="label">
+      <label data-slot="label" htmlFor="wld" className="label">
         Display full names
       </label>
-      <span data-component="description" className="description">
+      <span data-slot="description" className="description">
         Show full names of users instead of shorter usernames.
       </span>
     </div>
