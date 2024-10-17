@@ -18,7 +18,7 @@
         background: var(--listbox-item-background-active);
       }
 
-      [data-component="shortcut"] {
+      [data-slot="shortcut"] {
         color: var(--wui-color-grey-10);
         font-family: var(--wui-font-family-sans);
 
@@ -27,12 +27,12 @@
         }
       }
 
-      &:has([data-component="label"] + [data-component="description"]) {
-        [data-component="label"] {
+      &:has([data-slot="label"] + [data-slot="description"]) {
+        [data-slot="label"] {
           font-weight: var(--wui-font-weight-medium);
         }
 
-        [data-component="description"] {
+        [data-slot="description"] {
           color: var(--wui-color-grey-11);
         }
       }
@@ -41,20 +41,20 @@
       &:active {
         color: var(--listbox-item-color-hover);
 
-        [data-component="shortcut"] {
+        [data-slot="shortcut"] {
           color: var(--listbox-item-color-hover);
         }
 
-        &:has([data-component="label"] + [data-component="description"]) {
-          [data-component="description"] {
+        &:has([data-slot="label"] + [data-slot="description"]) {
+          [data-slot="description"] {
             color: var(--listbox-item-color-hover);
           }
         }
       }
     }
 
-    [data-component="header"] {
-      [data-component="label"] {
+    [data-slot="header"] {
+      [data-slot="label"] {
         color: var(--wui-color-grey-11);
         font-weight: var(--wui-font-weight-medium);
       }

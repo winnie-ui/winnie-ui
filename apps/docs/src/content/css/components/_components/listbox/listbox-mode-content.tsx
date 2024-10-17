@@ -29,8 +29,8 @@ export function ListboxModeContent() {
               setItems(newItems);
             }}
           >
-            {items.has(label) && <Check data-component="indicator" />}
-            <span data-component="label">{label}</span>
+            {items.has(label) && <Check data-slot="indicator" />}
+            <span data-slot="label">{label}</span>
           </li>
         );
       })}

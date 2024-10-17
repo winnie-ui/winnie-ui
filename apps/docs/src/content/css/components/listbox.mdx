@@ -2,23 +2,42 @@
 title: Listbox
 description: A list of options that allows a user to optionally select one or more of them.
 ---
-import { User, Check } from "lucide-react";
+
+import {
+  Cog,
+  Dot,
+  Info,
+  LogOut,
+  Moon,
+  User,
+  UserRound,
+  Check,
+} from "lucide-react";
 
 import Demo from "~/components/demo/demo.astro";
 
-import ListboxHero from "./_components/listbox/listbox-hero.astro";
-import ListboxIcons from "./_components/listbox/listbox-icons.astro";
-import ListboxIndicator from "./_components/listbox/listbox-indicator.astro";
 import ListboxMode from "./_components/listbox/listbox-mode.astro";
+import { ListboxWithCheckbox } from "./_components/listbox/listbox-with-checkbox";
 import ListboxRadius from "./_components/listbox/listbox-radius.astro";
-import ListboxSection from "./_components/listbox/listbox-section.astro";
-import ListboxShortcut from "./_components/listbox/listbox-shortcut.astro";
 import ListboxSize from "./_components/listbox/listbox-size.astro";
 
 import "./_components/listbox/listbox-demo.css";
 
 <Demo>
-  <ListboxHero />
+  <div class="demo-listbox-container">
+    <ul data-component="listbox" class="demo-listbox not-content">
+      <li data-component="listbox-item">
+        <span data-component="label">Edit</span>
+      </li>
+      <li data-component="listbox-item">
+        <span data-component="label">Duplicate</span>
+      </li>
+      <div data-component="separator"></div>
+      <li data-component="listbox-item">
+        <span data-component="label">Archive</span>
+      </li>
+    </ul>
+  </div>
   <Fragment slot="footer">
     ```html
     <ul data-component="listbox">
@@ -47,23 +66,29 @@ Import just the listbox styles.
 
 ## Anatomy
 
-Attach the appropriate `data-component` attributes in the structure below.
+Attach the appropriate `data-component` and `data-slot` attributes in the structure below.
 
 ```html
 <ul data-component="listbox">
   <li data-component="listbox-item">
-    <span data-component="label"></span>
+    <span data-slot="label"></span>
   </li>
   <div data-component="separator"></div>
   <section data-component="section">
-    <header data-component="header"></header>
+    <header data-slot="header">
+      <span data-slot="label"></span>
+    </header>
     <li data-component="listbox-item">
-      <i data-component="indicator" class="check"></i>
-      <span data-component="label"></span>
+      <i data-slot="indicator"></i>
+      <span data-slot="label"></span>
     </li>
     <li data-component="listbox-item">
-      <i data-component="icon" class="settings"></i>
-      <span data-component="label"></span>
+      <i data-slot="icon"></i>
+      <span data-slot="label"></span>
+    </li>
+    <li data-component="listbox-item">
+      <span data-slot="label"></span>
+      <kbd data-slot="shortcut"></kbd>
     </li>
   </section>
 </ul>
@@ -80,13 +105,13 @@ Use the `data-size` attribute to change the size.
   <Fragment slot="footer">
     ```html ins=data-size="sm" ins=data-size="md" ins=data-size="lg"
     <ul data-component="listbox" data-size="sm">
-    ...
+      ...
     </ul>
     <ul data-component="listbox" data-size="md">
-    ...
+      ...
     </ul>
     <ul data-component="listbox" data-size="lg">
-    ...
+      ...
     </ul>
     ```
   </Fragment>
@@ -101,13 +126,13 @@ Use the `data-radius` attribute to change the size.
   <Fragment slot="footer">
     ```html ins=data-radius="none" ins=data-radius="md" ins=data-radius="round"
     <ul data-component="listbox" data-radius="none">
-    ...
+      ...
     </ul>
     <ul data-component="listbox" data-radius="md">
-    ...
+      ...
     </ul>
     <ul data-component="listbox" data-radius="round">
-    ...
+      ...
     </ul>
     ```
   </Fragment>
@@ -115,35 +140,61 @@ Use the `data-radius` attribute to change the size.
 
 ### Icons
 
-Add an icon to an item using the `data-component="icon"` attribute as a child of a list item.
+Add an icon to an item using the `icon` slot attribute as a child of a list item.
 
 <Demo>
-  <ListboxIcons />
-  <Fragment slot="footer">
-    ```html ins=data-component="icon"
+  <div class="demo-listbox-container">
     <ul data-component="listbox" class="demo-listbox not-content">
       <li data-component="listbox-item">
-        <i data-component="icon" class="user"></i>
-        <span data-component="label">Account</span>
+        <UserRound data-slot="icon" />
+        <span data-slot="label">Account</span>
       </li>
       <li data-component="listbox-item">
-        <i data-component="icon" class="cog"></i>
-        <span data-component="label">Settings</span>
-      </li>
-      <div data-component="separator"></div>
-      <li data-component="listbox-item">
-        <i data-component="icon" class="info"></i>
-        <span data-component="label">Help Center</span>
+        <Cog data-slot="icon" />
+        <span data-slot="label">Settings</span>
       </li>
       <div data-component="separator"></div>
       <li data-component="listbox-item">
-        <i data-component="icon" class="moon"></i>
+        <Info data-slot="icon" />
+        <span data-slot="label">Help Center</span>
+      </li>
+      <div data-component="separator"></div>
+      <li data-component="listbox-item">
+        <Moon data-slot="icon" />
         <span data-component="label">Dark mode</span>
       </li>
       <div data-component="separator"></div>
       <li data-component="listbox-item">
-        <i data-component="icon" class="logout"></i>
-        <span data-component="label">Sign out</span>
+        <LogOut data-slot="icon" />
+        <span data-slot="label">Sign out</span>
+      </li>
+    </ul>
+  </div>
+  <Fragment slot="footer">
+    ```html ins=data-slot="icon"
+    <ul data-component="listbox" class="demo-listbox not-content">
+      <li data-component="listbox-item">
+        <i data-slot="icon" class="user"></i>
+        <span data-slot="label">Account</span>
+      </li>
+      <li data-component="listbox-item">
+        <i data-slot="icon" class="cog"></i>
+        <span data-slot="label">Settings</span>
+      </li>
+      <div data-component="separator"></div>
+      <li data-component="listbox-item">
+        <i data-slot="icon" class="info"></i>
+        <span data-slot="label">Help Center</span>
+      </li>
+      <div data-component="separator"></div>
+      <li data-component="listbox-item">
+        <i data-slot="icon" class="moon"></i>
+        <span data-slot="label">Dark mode</span>
+      </li>
+      <div data-component="separator"></div>
+      <li data-component="listbox-item">
+        <i data-slot="icon" class="logout"></i>
+        <span data-slot="label">Sign out</span>
       </li>
     </ul>
     ```
@@ -155,9 +206,56 @@ Add an icon to an item using the `data-component="icon"` attribute as a child of
 Use the `section`, `header`, and `separator` attributes to group items.
 
 <Demo>
-  <ListboxSection />
+  <div class="demo-listbox-container">
+    <ul data-component="listbox" class="demo-listbox not-content">
+      <section data-component="section">
+        <header data-slot="header">
+          <span data-slot="label">User Settings</span>
+        </header>
+        <li data-component="listbox-item">
+          <UserRound data-slot="icon" />
+          <span data-slot="label">Account</span>
+        </li>
+        <li data-component="listbox-item">
+          <Cog data-slot="icon" />
+          <span data-slot="label">Settings</span>
+        </li>
+      </section>
+      <div data-component="separator"></div>
+      <section data-component="section">
+        <header data-slot="header">
+          <span data-slot="label">Support</span>
+        </header>
+        <li data-component="listbox-item">
+          <Info data-slot="icon" />
+          <span data-slot="label">Help Center</span>
+        </li>
+      </section>
+      <div data-component="separator"></div>
+      <section data-component="section">
+        <header data-slot="header">
+          <span data-slot="label">Preferences</span>
+        </header>
+        <li data-component="listbox-item">
+          <Moon data-slot="icon" />
+          <span data-slot="label">Dark mode</span>
+        </li>
+      </section>
+      <div data-component="separator"></div>
+      <section data-component="section">
+        <header data-slot="header">
+          <span data-slot="label">Account Actions</span>
+        </header>
+        <li data-component="listbox-item">
+          <LogOut data-slot="icon" />
+          <span data-slot="label">Sign out</span>
+        </li>
+      </section>
+    </ul>
+  </div>
   <Fragment slot="footer">
-    ```html ins=data-component="section" ins=data-component="header" ins=data-component="separator"
+    ```html ins=data-component="section" ins=data-component="header"
+    ins=data-component="separator"
     <ul data-component="listbox" class="demo-listbox not-content">
       <section data-component="section">
         <header data-component="header">
@@ -193,12 +291,49 @@ Use the `section`, `header`, and `separator` attributes to group items.
 
 ### Indicators
 
-Add an icon to indicate that an item has been selected using the `data-component="indicator"` attribute as a child of a list item. Note, if you want to reduce layout shift when using indicators that dynamically render on selection, see [Mode](#mode).
+Add an icon to indicate that an item has been selected using the `indicator` slot as a child of a list item. Note, if you want to reduce layout shift when using indicators that dynamically render on selection, see [Mode](#mode).
 
 <Demo>
-  <ListboxIndicator />
+  <div class="demo-listbox-container">
+    <ul
+      data-component="listbox"
+      class="demo-listbox not-content demo-indicator"
+    >
+      <section data-component="section">
+        <header data-slot="header">
+          <span data-slot="label">Colors</span>
+        </header>
+        <li data-component="listbox-item">
+          <Dot data-slot="indicator" />
+          <span data-slot="label">Red</span>
+        </li>
+        <li data-component="listbox-item">
+          <span data-slot="label">Green</span>
+        </li>
+        <li data-component="listbox-item">
+          <span data-slot="label">Blue</span>
+        </li>
+      </section>
+      <div data-component="separator"></div>
+      <section data-component="section">
+        <header data-slot="header">
+          <span data-slot="label">Animals</span>
+        </header>
+        <li data-component="listbox-item">
+          <span data-slot="label">Cat</span>
+        </li>
+        <li data-component="listbox-item">
+          <span data-slot="label">Dog</span>
+        </li>
+        <li data-component="listbox-item">
+          <Dot data-slot="indicator" />
+          <span data-slot="label">Elephant</span>
+        </li>
+      </section>
+    </ul>
+  </div>
   <Fragment slot="footer">
-    ```html
+    ```html ins=data-component="indicator"
     <ul data-component="listbox">
       <section data-component="section">
         ...
@@ -250,72 +385,102 @@ Use the `data-mode` attribute to account for dynamically rendered indicators.
   </Fragment>
 </Demo>
 
+### With Checkboxes
+
+Use the `indicator` slot inside a listbox item to support selecting items with a checkbox.
+
+<Demo>
+  <ListboxWithCheckbox client:load />
+  <Fragment slot="footer">
+    ```html ins=data-slot="indicator"
+    <ul data-component="listbox" data-mode="selection">
+      <li data-component="listbox-item">
+        <input type="checkbox" data-slot="indicator" />
+        <span data-component="label">Apple</span>
+      </li>
+      <li data-component="listbox-item">
+        <input type="checkbox" data-slot="indicator" />
+        <span data-component="label">Banana</span>
+      </li>
+      <li data-component="listbox-item">
+        <input type="checkbox" data-slot="indicator" />
+        <span data-component="label">Cherry</span>
+      </li>
+      <li data-component="listbox-item">
+        <input type="checkbox" data-slot="indicator" />
+        <span data-component="label">Date</span>
+      </li>
+      <li data-component="listbox-item">
+        <input type="checkbox" data-slot="indicator" />
+        <span data-component="label">Elderberry</span>
+      </li>
+    </ul>
+    ```
+  </Fragment>
+</Demo>
+
 ### Descriptions
 
-Use the `data-component="description"` in different variations to achieve the layout that works for your use case.
+Use the `description` slot in different variations to achieve the layout that works for your use case.
 
 #### Column
 
-You can create a column layout with the help of `data-component="group"` and placing the `label` and `description` as children.
+You can create a column layout with the help of `group` component and placing the `label` and `description` slots as children.
 
 <Demo>
   <div class="demo-listbox-container">
     <ul
       data-component="listbox"
       class="demo-listbox not-content"
-      data-mode="selection"
     >
       <li data-component="listbox-item">
-        <Check data-component="indicator" />
+        <Check data-slot="indicator" />
         <div data-component="group">
-          <span data-component="label">Read</span>
-          <span data-component="description">Read only</span>
+          <span data-slot="label">Read</span>
+          <span data-slot="description">Read only</span>
         </div>
-        <kbd data-component="shortcut">R</kbd>
+        <kbd data-slot="shortcut">R</kbd>
       </li>
       <li data-component="listbox-item">
         <div data-component="group">
-          <span data-component="label">Write</span>
-          <span data-component="description">Read and write only</span>
+          <span data-slot="label">Write</span>
+          <span data-slot="description">Read and write only</span>
         </div>
-        <kbd data-component="shortcut">W</kbd>
+        <kbd data-slot="shortcut">W</kbd>
       </li>
       <li data-component="listbox-item">
         <div data-component="group">
-          <span data-component="label">Admin</span>
-          <span data-component="description">Full Access</span>
+          <span data-slot="label">Admin</span>
+          <span data-slot="description">Full Access</span>
         </div>
-        <kbd data-component="shortcut">A</kbd>
+        <kbd data-slot="shortcut">A</kbd>
       </li>
     </ul>
   </div>
   <Fragment slot="footer">
-    ```html ins=data-component="group" 
-    <ul
-      data-component="listbox"
-      data-mode="selection"
-    >
+    ```html ins=data-component="group"
+    <ul data-component="listbox">
       <li data-component="listbox-item">
-        <i data-component="indicator" class="check"></i>
+        <i data-slot="indicator" class="check"></i>
         <div data-component="group">
-          <span data-component="label">Read</span>
-          <span data-component="description">Read only</span>
+          <span data-slot="label">Read</span>
+          <span data-slot="description">Read only</span>
         </div>
-        <kbd data-component="shortcut">R</kbd>
+        <kbd data-slot="shortcut">R</kbd>
       </li>
       <li data-component="listbox-item">
         <div data-component="group">
-          <span data-component="label">Write</span>
-          <span data-component="description">Read and write only</span>
+          <span data-slot="label">Write</span>
+          <span data-slot="description">Read and write only</span>
         </div>
-        <kbd data-component="shortcut">W</kbd>
+        <kbd data-slot="shortcut">W</kbd>
       </li>
       <li data-component="listbox-item">
         <div data-component="group">
-          <span data-component="label">Admin</span>
-          <span data-component="description">Full Access</span>
+          <span data-slot="label">Admin</span>
+          <span data-slot="description">Full Access</span>
         </div>
-        <kbd data-component="shortcut">A</kbd>
+        <kbd data-slot="shortcut">A</kbd>
       </li>
     </ul>
     ```
@@ -330,141 +495,154 @@ Simlar to the [column](#column) layout, you can create a row based layout with s
   <div class="demo-listbox-container">
     <ul data-component="listbox" class="demo-listbox not-content">
       <li data-component="listbox-item">
-        <Check data-component="indicator" />
+        <Check data-slot="indicator" />
         <div data-component="group" data-orientation="row">
-          <span data-component="label">Adam Aho</span>
-          <span data-component="description">@theadamaho</span>
+          <span data-slot="label">Adam Aho</span>
+          <span data-slot="description">@theadamaho</span>
         </div>
       </li>
       <li data-component="listbox-item">
         <div data-component="group" data-orientation="row">
-          <span data-component="label">Dax</span>
-          <span data-component="description">@thdxr</span>
+          <span data-slot="label">Dax</span>
+          <span data-slot="description">@thdxr</span>
         </div>
       </li>
       <li data-component="listbox-item">
         <div data-component="group" data-orientation="row">
-          <span data-component="label">Adam Wathan</span>
-          <span data-component="description">@adamwathan</span>
+          <span data-slot="label">Adam Wathan</span>
+          <span data-slot="description">@adamwathan</span>
         </div>
       </li>
     </ul>
   </div>
   <Fragment slot="footer">
     ```html ins=data-orientation="row"
-    <ul
-      data-component="listbox"
-      data-mode="selection"
-    >
+    <ul data-component="listbox" data-mode="selection">
       <li data-component="listbox-item">
-        <i data-component="indicator" class="check"></i>
+        <i data-slot="indicator" class="check"></i>
         <div data-component="group" data-orientation="row">
-          <span data-component="label">Read</span>
-          <span data-component="description">Read only</span>
+          <span data-slot="label">Read</span>
+          <span data-slot="description">Read only</span>
         </div>
-        <kbd data-component="shortcut">R</kbd>
+        <kbd data-slot="shortcut">R</kbd>
       </li>
       <li data-component="listbox-item">
         <div data-component="group" data-orientation="row">
-          <span data-component="label">Write</span>
-          <span data-component="description">Read and write only</span>
+          <span data-slot="label">Write</span>
+          <span data-slot="description">Read and write only</span>
         </div>
-        <kbd data-component="shortcut">W</kbd>
+        <kbd data-slot="shortcut">W</kbd>
       </li>
       <li data-component="listbox-item">
         <div data-component="group" data-orientation="row">
-          <span data-component="label">Admin</span>
-          <span data-component="description">Full Access</span>
+          <span data-slot="label">Admin</span>
+          <span data-slot="description">Full Access</span>
         </div>
-        <kbd data-component="shortcut">A</kbd>
+        <kbd data-slot="shortcut">A</kbd>
       </li>
     </ul>
     ```
   </Fragment>
 </Demo>
 
-#### Inline 
+#### Inline
 
-Finally, if you prefer to align all descriptions, you can skip the `group` component and provide `description` as a child of `listbox-item`.
+Finally, if you prefer to align all descriptions, you can skip the `group` component and provide the `description` slot as a child of `listbox-item`.
 
 <Demo>
   <div class="demo-listbox-container">
     <ul data-component="listbox" class="demo-listbox not-content">
       <li data-component="listbox-item">
-        <Check data-component="indicator" />
-        <span data-component="label">Read</span>
-        <span data-component="description">Read only</span>
-        <kbd data-component="shortcut">R</kbd>
+        <Check data-slot="indicator" />
+        <span data-slot="label">Read</span>
+        <span data-slot="description">Read only</span>
+        <kbd data-slot="shortcut">R</kbd>
       </li>
       <li data-component="listbox-item">
-        <span data-component="label">Write</span>
-        <span data-component="description">Read and write only</span>
-        <kbd data-component="shortcut">W</kbd>
+        <span data-slot="label">Write</span>
+        <span data-slot="description">Read and write only</span>
+        <kbd data-slot="shortcut">W</kbd>
       </li>
       <li data-component="listbox-item">
-        <span data-component="label">Admin</span>
-        <span data-component="description">Read and write only</span>
-        <kbd data-component="shortcut">A</kbd>
+        <span data-slot="label">Admin</span>
+        <span data-slot="description">Read and write only</span>
+        <kbd data-slot="shortcut">A</kbd>
       </li>
     </ul>
   </div>
   <Fragment slot="footer">
-    ```html ins=data-component="description" 
+    ```html ins=data-slot="description"
     <ul data-component="listbox">
       <li data-component="listbox-item">
-        <i data-component="indicator"></i>
-        <span data-component="label">Read</span>
-        <span data-component="description">Read only</span>
-        <kbd data-component="shortcut">R</kbd>
+        <i data-slot="indicator"></i>
+        <span data-slot="label">Read</span>
+        <span data-slot="description">Read only</span>
+        <kbd data-slot="shortcut">R</kbd>
       </li>
-      <li data-component="listbox-item">
-        <span data-component="label">Write</span>
-        <span data-component="description">Read and write only</span>
-        <kbd data-component="shortcut">W</kbd>
+      <li data-slot="listbox-item">
+        <span data-slot="label">Write</span>
+        <span data-slot="description">Read and write only</span>
+        <kbd data-slot="shortcut">W</kbd>
       </li>
-      <li data-component="listbox-item">
-        <span data-component="label">Admin</span>
-        <span data-component="description">Read and write only</span>
-        <kbd data-component="shortcut">A</kbd>
+      <li data-slot="listbox-item">
+        <span data-slot="label">Admin</span>
+        <span data-slot="description">Read and write only</span>
+        <kbd data-slot="shortcut">A</kbd>
       </li>
     </ul>
     ```
   </Fragment>
 </Demo>
 
-
-
 ### Shortcuts
 
-Use the `data-component="shortcut"` as a child of the list item to show a shortcut.
+Use the `shortcut` slot as a child of the list item to show a keyboard shortcut.
 
 <Demo>
-  <ListboxShortcut />
-  <Fragment slot="footer">
-    ```html ins=data-mode="selection" ins=data-component="indicator"
-    <ul data-component="listbox">
+  <div class="demo-listbox-container">
+    <ul data-component="listbox" class="demo-listbox not-content">
       <li data-component="listbox-item">
-        <span data-component="label">New</span>
-        <kbd data-component="shortcut">
-          N
-        </kbd>
+        <span data-slot="label">New</span>
+        <kbd data-slot="shortcut">N</kbd>
       </li>
       <li data-component="listbox-item">
-        <span data-component="label">Edit</span>
-        <kbd data-component="shortcut">
-          E
-        </kbd>
+        <span data-slot="label">Edit</span>
+        <kbd data-slot="shortcut">E</kbd>
       </li>
       <li data-component="listbox-item">
-        <span data-component="label">Duplicate</span>
-        <kbd data-component="shortcut">
-          D
-        </kbd>
+        <span data-slot="label">Duplicate</span>
+        <kbd data-slot="shortcut">D</kbd>
       </li>
       <div data-component="separator"></div>
       <li data-component="listbox-item">
-        <span data-component="label">Archive</span>
-        <kbd data-component="shortcut">
+        <span data-slot="label">Archive</span>
+        <kbd data-slot="shortcut">
+          <kbd>⇧</kbd>
+          <kbd>⌘</kbd>
+          <kbd>⌫</kbd>
+        </kbd>
+      </li>
+    </ul>
+  </div>
+  <Fragment slot="footer">
+    ```html ins=data-slot="shortcut"
+    <ul data-component="listbox">
+      <li data-component="listbox-item">
+        <span data-slot="label">New</span>
+        <kbd data-slot="shortcut">N</kbd>
+      </li>
+      <li data-component="listbox-item">
+        <span data-slot="label">Edit</span>
+        <kbd data-slot="shortcut">E</kbd>
+      </li>
+      <li data-component="listbox-item">
+        <span data-slot="label">Duplicate</span>
+        <kbd data-slot="shortcut">D</kbd>
+      </li>
+      <div data-component="separator"></div>
+      <li data-component="listbox-item">
+        <span data-slot="label">Archive</span>
+        <kbd data-slot="shortcut">
           <kbd>⇧</kbd>
           <kbd>⌘</kbd>
           <kbd>⌫</kbd>
@@ -477,7 +655,7 @@ Use the `data-component="shortcut"` as a child of the list item to show a shortc
 
 ## Reference
 
-Below is a list of the available button `data-` attributes available for Listbox.
+Below is a list of the available button `data-` attributes that are available.
 
 | Attribute     | Value                                       |
 | ------------- | ------------------------------------------- |
