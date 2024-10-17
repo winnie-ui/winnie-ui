@@ -12,10 +12,10 @@ import FieldError from "./_components/field/field-error.astro";
   <Fragment slot="footer">
     ```tsx
     <div data-component="field">
-      <label data-component="label">Shipping details</label>
-      <span data-component="description">Where should we put your package?</span>
+      <label data-slot="label">Shipping details</label>
+      <span data-slot="description">Where should we put your package?</span>
       <input data-component="input" />
-      <span data-component="error">Required field shipping details missing</span>
+      <span data-slot="error">Required field shipping details missing</span>
     </div>
     ```
   </Fragment>
@@ -23,24 +23,21 @@ import FieldError from "./_components/field/field-error.astro";
 
 ## Import
 
-Import all of the field styles.
+Import only the field styles.
 
 ```css
-@import "@winnie-ui/component/description";
-@import "@winnie-ui/component/error";
 @import "@winnie-ui/component/field";
-@import "@winnie-ui/component/label";
 ```
 
 ## Anatomy
 
-Attach the appropriate `data-component` attributes in the structure below.
+Attach the appropriate component and slot attributes in the structure below.
 
 ```html
 <div data-component="field">
-  <label data-component="label" />
-  <span data-component="description" />
+  <label data-slot="label" />
+  <span data-slot="description" />
   <!-- control component -->
-  <span data-component="error" />
+  <span data-slot="error" />
 </div>
 ```

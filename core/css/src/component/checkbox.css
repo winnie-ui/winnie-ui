@@ -31,7 +31,7 @@
     justify-content: center;
     width: var(--wui-checkbox-size, var(--wui-checkbox-md-size));
 
-    [data-component="indicator"] {
+    [data-slot="indicator"] {
       height: var(--wui-checkbox-icon-size, var(--wui-checkbox-md-icon-size));
       width: var(--wui-checkbox-icon-size, var(--wui-checkbox-md-icon-size));
     }

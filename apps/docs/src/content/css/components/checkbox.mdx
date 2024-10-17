@@ -13,7 +13,7 @@ import { Check } from "lucide-react";
   <Fragment slot="footer">
     ```tsx
     <button data-component="checkbox">
-      <i data-component="indicator" class="check"></i>
+      <i data-slot="indicator" class="check"></i>
     </button>
     ```
   </Fragment>
@@ -33,7 +33,7 @@ Attach the appropriate `data-component` attributes in the structure below.
 
 ```html
 <button data-component="checkbox">
-  <i data-component="indicator"></i>
+  <i data-slot="indicator"></i>
 </button>
 ```
 
@@ -52,13 +52,13 @@ Use the `data-size` attribute to change the size.
   <Fragment slot="footer">
     ```tsx ins=data-size="sm" ins=data-size="md" ins=data-size="lg"
     <button data-component="checkbox" data-size="sm">
-      <i data-component="indicator" class="check"></i>
+      <i data-slot="indicator" class="check"></i>
     </button>
     <button data-component="checkbox" data-size="md">
-      <i data-component="indicator" class="check"></i>
+      <i data-slot="indicator" class="check"></i>
     </button>
     <button data-component="checkbox" data-size="lg">
-      <i data-component="indicator" class="check"></i>
+      <i data-slot="indicator" class="check"></i>
     </button>
     ```
   </Fragment>
@@ -77,13 +77,13 @@ Use the `data-radius` attribute to change the radius.
   <Fragment slot="footer">
     ```tsx ins=data-radius="none" ins=data-radius="sm" ins=data-radius="lg"
     <button data-component="checkbox" data-radius="none">
-      <i data-component="indicator" class="check"></i>
+      <i data-slot="indicator" class="check"></i>
     </button>
     <button data-component="checkbox" data-radius="sm">
-      <i data-component="indicator" class="check"></i>
+      <i data-slot="indicator" class="check"></i>
     </button>
     <button data-component="checkbox" data-radius="lg">
-      <i data-component="indicator" class="check"></i>
+      <i data-slot="indicator" class="check"></i>
     </button>
     ```
   </Fragment>
@@ -91,17 +91,17 @@ Use the `data-radius` attribute to change the radius.
 
 ### With Label
 
-Use the `field` and `label` components to add a label beside the checkbox.
+Use the `field` component and `label` slot to add a label beside the checkbox.
 
 <Demo>
   <CheckboxWithLabel client:load />
   <Fragment slot="footer">
-    ```tsx
+    ```tsx ins=data-slot="label"
     <div data-component="field">
-      <button data-component="checkbox" data-radius="none">
-        <i data-component="indicator" class="check"></i>
+      <button data-component="checkbox">
+        <i data-slot="indicator" class="check"></i>
       </button>
-      <label data-component="label">Accept terms and conditions.</label>
+      <label data-slot="label">Accept terms and conditions.</label>
     </div>
     ```
   </Fragment>
@@ -109,18 +109,18 @@ Use the `field` and `label` components to add a label beside the checkbox.
 
 ### With Description
 
-Use the `field`, `label` and `description` components beside the checkbox.
+Use the `field` component and `label` and `description` slots beside the checkbox.
 
 <Demo>
   <CheckboxWithLabelAndDescription client:load />
   <Fragment slot="footer">
-    ```tsx
+    ```tsx ins=data-slot="label" ins=data-slot="description"
     <div data-component="field">
       <button data-component="checkbox">
-        <i data-component="indicator" class="check"></i>
+        <i data-slot="indicator" class="check"></i>
       </button>
-      <label data-component="label">Display full names</label>
-      <span data-component="description">Show full names of users instead of shorter usernames.</span>
+      <label data-slot="label">Display full names</label>
+      <span data-slot="description">Show full names of users instead of shorter usernames.</span>
     </div>
     ```
   </Fragment>
