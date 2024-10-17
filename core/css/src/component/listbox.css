@@ -258,7 +258,7 @@
             [data-slot="indicator"] + [data-slot="label"],
             [data-slot="indicator"] + [data-component="group"]
           ) {
-          [data-slot="indicator"] {
+          & > [data-slot="indicator"] {
             margin-right: var(
               --wui-listbox-item-space,
               var(--wui-listbox-item-md-space)
