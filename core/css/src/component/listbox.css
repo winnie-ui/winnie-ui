@@ -89,7 +89,7 @@
       grid-template-columns: subgrid;
       grid-column: 1 / -1;
 
-      [data-component="header"] {
+      [data-slot="header"] {
         align-items: center;
         grid-column-start: 3;
         display: grid;
@@ -98,7 +98,7 @@
           var(--wui-listbox-item-md-height)
         );
 
-        [data-component="label"] {
+        [data-slot="label"] {
           font-size: var(
             --wui-listbox-header-font-size,
             var(--wui-listbox-header-md-font-size)
@@ -133,7 +133,7 @@
       );
       user-select: none;
 
-      [data-component="indicator"] {
+      [data-slot="indicator"] {
         height: var(
           --wui-listbox-item-icon-size,
           var(--wui-listbox-item-md-icon-size)
@@ -145,7 +145,7 @@
         );
       }
 
-      [data-component="icon"] {
+      [data-slot="icon"] {
         height: var(
           --wui-listbox-item-icon-size,
           var(--wui-listbox-item-md-icon-size)
@@ -174,7 +174,7 @@
         }
       }
 
-      [data-component="label"] {
+      [data-slot="label"] {
         font-size: var(
           --wui-listbox-item-font-size,
           var(--wui-listbox-item-md-font-size)
@@ -183,7 +183,7 @@
         white-space: nowrap;
       }
 
-      [data-component="description"] {
+      [data-slot="description"] {
         font-size: var(
           --wui-listbox-item-font-size,
           var(--wui-listbox-item-md-font-size)
@@ -193,7 +193,7 @@
         text-overflow: ellipsis;
       }
 
-      [data-component="shortcut"] {
+      [data-slot="shortcut"] {
         grid-column-start: 5;
         justify-self: end;
         margin-left: calc(
@@ -214,9 +214,9 @@
       }
 
       &:not(:has([data-component="group"])):has(
-          [data-component="label"] + [data-component="description"]
+          [data-slot="label"] + [data-slot="description"]
         ) {
-        [data-component="description"] {
+        [data-slot="description"] {
           margin-left: var(
             --wui-listbox-item-space,
             var(--wui-listbox-item-md-space)
@@ -228,8 +228,8 @@
         height: auto;
         padding: var(--wui-listbox-item-space, var(--wui-listbox-item-md-space));
 
-        [data-component="indicator"],
-        [data-component="icon"] {
+        [data-slot="indicator"],
+        [data-slot="icon"] {
           align-self: start;
           margin-top: calc(1em * 0.2);
         }
@@ -237,10 +237,10 @@
 
       /* icon followed by label or group */
       &:has(
-          [data-component="icon"] + [data-component="label"],
-          [data-component="icon"] + [data-component="group"]
+          [data-slot="icon"] + [data-slot="label"],
+          [data-slot="icon"] + [data-component="group"]
         ) {
-        [data-component="icon"] {
+        [data-slot="icon"] {
           margin-right: var(
             --wui-listbox-item-space,
             var(--wui-listbox-item-md-space)
@@ -254,11 +254,11 @@
       [data-component="listbox-item"] {
         /* indicator followed by icon or indicator followed by label */
         &:has(
-            [data-component="indicator"] + [data-component="icon"],
-            [data-component="indicator"] + [data-component="label"],
-            [data-component="indicator"] + [data-component="group"]
+            [data-slot="indicator"] + [data-slot="icon"],
+            [data-slot="indicator"] + [data-slot="label"],
+            [data-slot="indicator"] + [data-component="group"]
           ) {
-          [data-component="indicator"] {
+          [data-slot="indicator"] {
             margin-right: var(
               --wui-listbox-item-space,
               var(--wui-listbox-item-md-space)
