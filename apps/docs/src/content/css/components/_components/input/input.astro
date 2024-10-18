@@ -1,6 +1,6 @@
 <div data-component="group" class="group">
   <slot name="start" />
-  <input {...Astro.props} data-component="input" class="input" />
+  <input {...Astro.props} data-component="input" data-slot="control" class="input" />
   <slot name="end" />
 </div>
 

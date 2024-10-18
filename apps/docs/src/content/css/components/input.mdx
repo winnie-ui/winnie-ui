@@ -16,8 +16,8 @@ import InputSize from "./_components/input/input-size.astro";
   <Fragment slot="footer">
     ```tsx
     <div data-component="group">
-      <i class="search" data-component="icon"></i>
-      <input data-component="input" />
+      <i class="search" data-slot="icon"></i>
+      <input data-component="input" data-slot="control" />
     </div>
     ```
   </Fragment>
@@ -86,10 +86,10 @@ Wrap the input in an element with the `data-component="group"` attribute define 
 <Demo>
   <InputIcon />
   <Fragment slot="footer">
-    ```tsx
+    ```tsx ins=data-slot="icon"
     <div data-component="group">
-      <input data-component="input" data-radius="none" />
-      <i class="chevron-up-down" data-component="icon"></i>
+      <input data-component="input" data-slot="control" />
+      <i class="chevron-up-down" data-slot="icon"></i>
     </div>
     ```
   </Fragment>

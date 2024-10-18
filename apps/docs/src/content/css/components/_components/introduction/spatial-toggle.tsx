@@ -51,39 +51,37 @@ export function SpatialToggle() {
         <div className="sp-hero-field" data-component="field">
           <label
             className="sp-hero-label"
-            data-component="label"
+            data-slot="label"
             htmlFor="firstName"
           >
             Dish name
           </label>
           <input
             data-component="input"
+            data-slot="control"
             id="firstName"
             className="sp-hero-input"
             data-mode={mode}
           />
         </div>
         <div className="sp-hero-field" data-component="field">
-          <label
-            className="sp-hero-label"
-            data-component="label"
-            htmlFor="price"
-          >
+          <label className="sp-hero-label" data-slot="label" htmlFor="price">
             Price
           </label>
           <span
             className="sp-hero-description"
-            data-component="description"
+            data-slot="description"
             data-mode={mode}
           >
             All prices are in CAD
           </span>
           <div className="sp-hero-group" data-component="group">
-            <DollarSign data-component="icon" />
+            <DollarSign data-slot="icon" />
             <input
               data-component="input"
               id="price"
               className="sp-hero-input"
+              data-slot="control"
               data-mode={mode}
             />
           </div>
@@ -95,7 +93,7 @@ export function SpatialToggle() {
             data-component="button"
             type="button"
           >
-            <span data-component="text">Cancel</span>
+            <span data-slot="label">Cancel</span>
           </button>
           <button
             className="sp-hero-action-button"
@@ -103,7 +101,7 @@ export function SpatialToggle() {
             data-component="button"
             type="button"
           >
-            <span data-component="text">Create dish</span>
+            <span data-slot="label">Create dish</span>
           </button>
         </div>
       </div>

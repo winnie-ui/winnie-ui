@@ -22,56 +22,56 @@
     position: relative;
     width: 100%;
 
-    [data-component="icon"] {
+    [data-slot="icon"] {
       position: absolute;
       height: var(--wui-group-icon-size, var(--wui-group-md-icon-size));
       width: var(--wui-group-icon-size, var(--wui-group-md-icon-size));
     }
 
-    [data-component="input"] {
+    [data-slot="control"] {
       grid-column: 1 / -1;
     }
 
-    &:has(:is([data-component="input"])[data-size="sm"]) {
+    &:has(:is([data-slot="control"])[data-size="sm"]) {
       --wui-group-font-size: var(--wui-group-sm-font-size);
       --wui-group-icon-size: var(--wui-group-sm-icon-size);
       --wui-group-space: var(--wui-group-sm-space);
     }
 
-    &:has(:is([data-component="input"])[data-size="md"]) {
+    &:has(:is([data-slot="control"])[data-size="md"]) {
       --wui-group-font-size: var(--wui-group-md-font-size);
       --wui-group-icon-size: var(--wui-group-md-icon-size);
       --wui-group-space: var(--wui-group-md-space);
     }
 
-    &:has(:is([data-component="input"])[data-size="lg"]) {
+    &:has(:is([data-slot="control"])[data-size="lg"]) {
       --wui-group-font-size: var(--wui-group-lg-font-size);
       --wui-group-icon-size: var(--wui-group-lg-icon-size);
       --wui-group-space: var(--wui-group-lg-space);
     }
 
-    &:has([data-component="icon"]:first-child) {
-      [data-component="input"] {
+    &:has([data-slot="icon"]:first-child) {
+      [data-slot="control"] {
         padding-left: calc(
           (var(--wui-group-space, var(--wui-group-md-space)) * 2) +
           var(--wui-group-icon-size, var(--wui-group-md-icon-size))
         );
       }
 
-      [data-component="icon"]:first-child {
+      [data-slot="icon"]:first-child {
         left: var(--wui-group-space, var(--wui-group-md-space));
       }
     }
 
-    &:has([data-component="icon"]:last-child) {
-      [data-component="input"] {
+    &:has([data-slot="icon"]:last-child) {
+      [data-slot="control"] {
         padding-right: calc(
           (var(--wui-group-space, var(--wui-group-md-space)) * 2) +
           var(--wui-group-icon-size, var(--wui-group-md-icon-size))
         );
       }
 
-      [data-component="icon"]:last-child {
+      [data-slot="icon"]:last-child {
         right: var(--wui-group-space, var(--wui-group-md-space));
       }
     }
