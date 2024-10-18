@@ -21,8 +21,8 @@
     "start": "astro dev"
   },
   "dependencies": {
-    "@astrojs/check": "0.9.3",
-    "@astrojs/mdx": "3.1.7",
+    "@astrojs/check": "0.9.4",
+    "@astrojs/mdx": "3.1.8",
     "@astrojs/react": "3.6.2",
     "@fontsource/geist-mono": "5.1.0",
     "@fontsource/inter": "5.1.0",
@@ -31,24 +31,24 @@
     "@radix-ui/react-dialog": "1.1.2",
     "@radix-ui/react-scroll-area": "1.2.0",
     "@types/react": "18.3.11",
-    "@types/react-dom": "18.3.0",
+    "@types/react-dom": "18.3.1",
     "@winnie-ui/css": "workspace:*",
-    "astro": "4.15.10",
-    "astro-expressive-code": "0.37.0",
+    "astro": "4.16.6",
+    "astro-expressive-code": "0.37.1",
     "clsx": "2.1.1",
     "cmdk": "1.0.0",
     "flexsearch": "0.7.43",
-    "lucide-react": "0.447.0",
+    "lucide-react": "0.453.0",
     "react": "^18.3.1",
-    "react-aria-components": "1.4.0",
+    "react-aria-components": "1.4.1",
     "react-dom": "18.3.1",
-    "recharts": "2.12.7"
+    "recharts": "2.13.0"
   },
   "devDependencies": {
     "@types/flexsearch": "0.7.6",
     "astro-sst": "2.43.5",
     "rimraf": "6.0.1",
-    "sst": "3.1.53",
-    "typescript": "5.6.2"
+    "sst": "3.2.38",
+    "typescript": "5.6.3"
   }
 }
