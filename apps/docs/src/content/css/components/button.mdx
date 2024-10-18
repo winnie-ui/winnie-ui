@@ -17,8 +17,8 @@ import ButtonWidth from "./_components/button/button-width.astro";
   <Fragment slot="footer">
     ```tsx
     <button data-component="button">
-      <i class="organization" data-component="icon"></i>
-      <span data-component="text">Create Organization</span>
+      <i class="organization" data-slot="icon"></i>
+      <span data-slot="label">Create Organization</span>
     <button>
     ```
   </Fragment>
@@ -34,13 +34,13 @@ Import just the button styles.
 
 ## Anatomy
 
-Attach the appropriate `data-component` attributes in the structure below.
+Attach the appropriate `data` attributes in the structure below.
 
 ```html
 <button data-component="button">
-  <i data-component="icon"></i>
-  <span data-component="text"></span>
-  <span data-component="loading"></span>
+  <i data-slot="icon"></i>
+  <span data-slot="label"></span>
+  <span data-slot="loading"></span>
   <button></button>
 </button>
 ```
@@ -56,13 +56,13 @@ Use the `data-size` attribute to change the size.
   <Fragment slot="footer">
     ```tsx ins=data-size="sm" ins=data-size="md" ins=data-size="lg"
     <button data-component="button" data-size="sm">
-      <span data-component="text">New Issue</span>
+      <span data-slot="label">New Issue</span>
     </button>
     <button data-component="button" data-size="md">
-      <span data-component="text">New Issue</span>
+      <span data-slot="slot">New Issue</span>
     </button>
     <button data-component="button" data-size="lg">
-      <span data-component="text">New Issue</span>
+      <span data-slot="slot">New Issue</span>
     </button>
     ```
   </Fragment>
@@ -77,13 +77,13 @@ Use the `data-radius` attribute to change the radius.
   <Fragment slot="footer">
     ```tsx ins=data-radius="none" ins=data-radius="md" ins=data-radius="round"
     <button data-component="button" data-radius="none">
-      <span data-component="text">New Issue</span>
+      <span data-slot="slot">New Issue</span>
     </button>
     <button data-component="button" data-radius="md">
-      <span data-component="text">New Issue</span>
+      <span data-slot="slot">New Issue</span>
     </button>
     <button data-component="button" data-radius="round">
-      <span data-component="text">New Issue</span>
+      <span data-slot="slot">New Issue</span>
     </button>
     ```
   </Fragment>
@@ -91,7 +91,7 @@ Use the `data-radius` attribute to change the radius.
 
 ### With Icon
 
-Add an icon with the `data-component="icon"` attribute as a child of the button.
+Add an icon with the `icon` slot attribute as a child of the button.
 
 <Demo>
   <ButtonHero />
@@ -107,7 +107,7 @@ Add an icon with the `data-component="icon"` attribute as a child of the button.
 
 ### Icon Only
 
-Create an icon button by only passing an icon with the `data-component="icon"` attribute as a child of the button.
+Create an icon button by only passing an icon with the `icon` slot attribute as a child of the button.
 
 <Demo>
   <ButtonIcon />
@@ -122,17 +122,17 @@ Create an icon button by only passing an icon with the `data-component="icon"` a
 
 ### Loading
 
-If a child of the button is rendered with the `data-component="loading"` attribute, any text and icons rendered in the button will be hidden and the `loading` component will be rendered.
+If a child of the button is rendered with the `loading` attribute, any text and icons rendered in the button will be hidden and the `loading` slot will be rendered.
 
 <Demo>
   <ButtonLoading />
   <Fragment slot="footer">
-    ```tsx ins=data-component="loading"
+    ```tsx ins=data-slot="loading"
     <button data-component="button">
-      <span data-component="loading">
+      <span data-slot="loading">
         <i class="loader"></i>
       </span>
-      <span data-component="text">New Issue</span>
+      <span data-slot="label">New Issue</span>
     </button>
     ```
   </Fragment>
@@ -147,8 +147,8 @@ Use the `data-width` attribute to modify the overall width of the button.
   <Fragment slot="footer">
     ```tsx ins=data-width="full"
     <button data-component="button" data-width="full">
-      <span data-component="text">Log in</span>
-      <i class="arrow-right" data-component="icon></i>
+      <span data-slot="slot">Log in</span>
+      <i class="arrow-right" data-slot="icon"></i>
     </button>
     ```
   </Fragment>

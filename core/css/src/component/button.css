@@ -43,23 +43,23 @@
     position: relative;
     white-space: nowrap;
 
-    [data-component="text"] {
+    [data-slot="label"] {
       font-size: var(--wui-button-font-size, var(--wui-button-md-font-size));
       grid-column: 1 / 4;
     }
 
-    [data-component="icon"] {
+    [data-slot="icon"] {
       height: var(--wui-button-icon-size, var(--wui-button-md-icon-size));
       width: var(--wui-button-icon-size, var(--wui-button-md-icon-size));
     }
 
-    [data-component="loading"] {
+    [data-slot="loading"] {
       position: absolute;
       z-index: 1;
     }
 
     /* has loading */
-    &:has([data-component="loading"]) {
+    &:has([data-slot="loading"]) {
       &::after {
         border-radius: var(
           --wui-button-border-radius,
@@ -72,39 +72,33 @@
         width: 100%;
       }
 
-      [data-component="text"],
-      [data-component="icon"] {
+      [data-slot="label"],
+      [data-slot="icon"] {
         opacity: 0;
       }
     }
 
     /* icon followed by an text */
-    &:has([data-component="icon"] + [data-component="text"])
-      [data-component="text"] {
+    &:has([data-slot="icon"] + [data-slot="label"]) [data-slot="label"] {
       grid-column: 2 / -1;
     }
 
     /* text followed by an icon */
-    &:has([data-component="text"] + [data-component="icon"])
-      [data-component="text"] {
+    &:has([data-slot="label"] + [data-slot="icon"]) [data-slot="label"] {
       grid-column: 1 / 3;
     }
 
     /* icon followed by text followed by an icon */
-    &:has(
-        > [data-component="icon"]
-          + [data-component="text"]
-          + [data-component="icon"]
-      )
-      [data-component="text"] {
+    &:has(> [data-slot="icon"] + [data-slot="slot"] + [data-slot="icon"])
+      [data-slot="label"] {
       grid-column: 2 / 3;
     }
 
     /* only a single icon in the button */
     &:has(
-        [data-component="icon"]:only-child,
-        [data-component="icon"] + [data-component="loading"]
-      ):not([data-component="text"]) {
+        [data-slot="icon"]:only-child,
+        [data-slot="icon"] + [data-slot="loading"]
+      ):not([data-slot="label"]) {
       grid-template-columns: 1fr;
       height: var(--wui-button-height, var(--wui-button-md-height));
       justify-items: center;

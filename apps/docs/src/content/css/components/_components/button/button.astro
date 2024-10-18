@@ -3,7 +3,7 @@
   <slot name="loading" />
   {
     Astro.slots.has("default") && (
-      <span data-component="text">
+      <span data-slot="label">
         <slot />
       </span>
     )

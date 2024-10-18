@@ -1,6 +1,0 @@
-@layer component {
-  [data-slot="error"] {
-    display: block;
-    font-size: var(--wui-font-size-2);
-  }
-}
