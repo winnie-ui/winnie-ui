@@ -40,12 +40,24 @@
 }
 
 .sp-hero-container {
-  align-items: flex-end;
+  align-items: flex-start;
+  background: var(--background);
+  border: var(--wui-border-width-1) solid var(--wui-color-grey-5);
+  border-radius: min(var(--wui-border-radius-4), 16px);
+  box-shadow: var(--wui-shadow-3);
   display: flex;
   flex-direction: column;
   gap: var(--wui-space-7);
   max-width: 400px;
+  padding: var(--wui-space-6);
+  padding-block: var(--wui-space-6);
   width: 100%;
+
+  .sp-hero-title {
+    color: var(--wui-color-grey-12);
+    font-size: var(--wui-font-size-4);
+    font-weight: var(--wui-font-weight-medium);
+  }
 
   .sp-hero-label {
     color: var(--wui-color-grey-12);
@@ -86,6 +98,7 @@
     display: flex;
     gap: var(--wui-space-4);
     justify-content: flex-end;
+    width: 100%;
   }
 
   .sp-hero-cancel-button {
@@ -142,12 +155,20 @@
 }
 
 :where([data-theme="light"]) {
+  .sp-hero-container {
+    --background: var(--wui-color-white);
+  }
+
   .sp-hero-input {
     --input-background: var(--wui-color-grey-1);
   }
 }
 
 :where([data-theme="dark"]) {
+  .sp-hero-container {
+    --background: var(--wui-color-grey-1);
+  }
+
   .sp-hero-input {
     --input-background: var(--wui-color-grey-2);
   }

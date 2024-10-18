@@ -48,13 +48,14 @@ export function SpatialToggle() {
         })}
       </RadioGroup>
       <div className="sp-hero-container">
+        <span className="sp-hero-title">Create Dish</span>
         <div className="sp-hero-field" data-component="field">
           <label
             className="sp-hero-label"
             data-slot="label"
             htmlFor="firstName"
           >
-            Dish name
+            Name
           </label>
           <input
             data-component="input"
