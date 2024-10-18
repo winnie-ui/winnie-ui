@@ -1,4 +1,5 @@
 ---
+import { ScrollArea } from "../scroll-area/scroll-area";
 import { DemoTabs } from "./demo-tabs";
 
 const hasTabs =
@@ -10,7 +11,9 @@ const hasTabs =
     <slot name="header" />
   </header>
   <main class="background-polka demo-content">
-    <slot />
+    <ScrollArea client:load orientation="horizontal">
+      <slot />
+    </ScrollArea>
   </main>
   {
     hasTabs && Object.values(Astro.slots).length > 2 && (
@@ -64,7 +67,6 @@ const hasTabs =
       background-size: 10px 10px;
       border-radius: var(--border-radius);
       position: relative;
-      padding: var(--wui-space-6);
     }
 
     .demo-footer {
