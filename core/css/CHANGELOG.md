@@ -1,5 +1,11 @@
 # @winnie-ui/css
 
+## 0.0.22
+
+### Patch Changes
+
+- [`261da4d`](https://github.com/winnie-ui/winnie-ui/commit/261da4d5ab85ed8f1a280285faee4b1b6c006eb7) Thanks [@adamaho](https://github.com/adamaho)! - feat: support composition of components via `data-slot`
+
 ## 0.0.21
 
 ### Patch Changes
