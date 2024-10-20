@@ -8,7 +8,7 @@
     "build": "rimraf dist .astro && astro check && astro build",
     "clean": "rimraf node_modules dist .astro",
     "dev": "astro dev",
-    "dev:sst": "sst dev astro dev",
+    "dev:sst": "sst dev",
     "deploy:production": "sst deploy --stage=production",
     "deploy:staging": "sst deploy --stage=staging",
     "lint:check": "biome lint ./src --no-errors-on-unmatched",
@@ -30,6 +30,7 @@
     "@radix-ui/react-collapsible": "1.1.1",
     "@radix-ui/react-dialog": "1.1.2",
     "@radix-ui/react-scroll-area": "1.2.0",
+    "@tanstack/react-router": "1.74.2",
     "@types/react": "18.3.11",
     "@types/react-dom": "18.3.1",
     "@winnie-ui/css": "workspace:*",
@@ -45,6 +46,8 @@
     "recharts": "2.13.0"
   },
   "devDependencies": {
+    "@tanstack/router-devtools": "1.74.2",
+    "@tanstack/router-plugin": "1.74.2",
     "@types/flexsearch": "0.7.6",
     "astro-sst": "2.43.5",
     "rimraf": "6.0.1",
