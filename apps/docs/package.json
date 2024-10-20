@@ -8,7 +8,7 @@
     "build": "rimraf dist .astro && astro check && astro build",
     "clean": "rimraf node_modules dist .astro",
     "dev": "astro dev",
-    "dev:sst": "sst dev astro dev",
+    "dev:sst": "sst dev",
     "deploy:production": "sst deploy --stage=production",
     "deploy:staging": "sst deploy --stage=staging",
     "lint:check": "biome lint ./src --no-errors-on-unmatched",
