@@ -1,42 +1,43 @@
 ---
-import { Check } from "lucide-react";
-import { Checkbox } from "react-aria-components";
 import BaseHead from "~/layouts/base/base-head.astro";
 import BaseLayout from "~/layouts/base/layout.astro";
+
+import { SidebarButtons } from "./_sidebar-buttons.tsx";
 ---
 
 <BaseLayout>
   <BaseHead slot="head" title="playground" description="playground" />
-  <div class="center">
-    <Checkbox client:only="react" defaultSelected={false} />
+  <div data-component="layout">
+    <nav data-slot="sidebar">sidebar</nav>
+    <div data-slot="content">
+      <div class="content-container">
+        <SidebarButtons client:load />
+      </div>
+    </div>
   </div>
 </BaseLayout>
 
 <style>
-  .center {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: var(--wui-space-4);
-    padding: var(--wui-space-5);
-    height: 100dvh;
-    overflow: auto;
-  }
+  [data-component="layout"] {
+    [data-slot="mask"] {
+      background: var(--wui-color-black-a4);
+    }
 
-  .foo {
-    background: blue;
-    height: 100px;
-    width: 100%;
-  }
+    [data-slot="sidebar"] {
+      background: var(--wui-color-grey-4);
+      transition-property: left, top, height;
+      transition-duration: 0.3s;
+      transition-timing-function: var(--wui-bezier-1);
+    }
 
-  [data-loading="true"] {
-    color: transparent;
-    background: linear-gradient(
-      to bottom right,
-      var(--wui-color-grey-9),
-      var(--wui-color-grey-10)
-    );
-    box-decoration-break: clone;
+    [data-slot="content"] {
+      transition-property: padding;
+      transition-duration: 0.3s;
+      transition-timing-function: var(--wui-bezier-1);
+
+      .content-container {
+        height: 1500px;
+      }
+    }
   }
 </style>
