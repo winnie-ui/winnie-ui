@@ -1,6 +1,6 @@
 export function SidebarButtons() {
   return (
-    <>
+    <div style={{ display: "flex", alignItems: "center" }}>
       <button
         type="button"
         data-component="button"
@@ -31,6 +31,6 @@ export function SidebarButtons() {
       >
         Close
       </button>
-    </>
+    </div>
   );
 }
