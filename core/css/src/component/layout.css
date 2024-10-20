@@ -46,8 +46,9 @@
 
         &[data-state="open"] {
           height: calc(
-            100% - var(--wui-layout-sidebar-margin-inline) -
-              var(--wui-layout-content-header-height)
+            100% -
+            var(--wui-layout-sidebar-margin-inline) -
+            var(--wui-layout-content-header-height)
           );
           left: var(--wui-layout-sidebar-margin-inline);
           top: var(--wui-layout-content-header-height);
