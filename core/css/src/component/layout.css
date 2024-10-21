@@ -52,8 +52,9 @@
 
         &[data-state="open"] {
           height: calc(
-            100% - var(--wui-layout-sidebar-margin-inline) -
-              var(--wui-layout-content-header-height)
+            100% -
+            var(--wui-layout-sidebar-margin-inline) -
+            var(--wui-layout-content-header-height)
           );
           left: var(--wui-layout-sidebar-margin-inline);
           top: var(--wui-layout-content-header-height);
@@ -77,7 +78,8 @@
       &:has([data-slot="sidebar"][data-state="docked"]) {
         [data-slot="content"] {
           padding-left: calc(
-            var(--wui-layout-sidebar-width) + var(--wui-layout-content-space)
+            var(--wui-layout-sidebar-width) +
+            var(--wui-layout-content-space)
           );
 
           &:has([data-component="page"]) {
@@ -92,7 +94,8 @@
         ) {
         [data-slot="content"] {
           padding-left: calc(
-            var(--wui-layout-sidebar-width) + var(--wui-layout-content-space)
+            var(--wui-layout-sidebar-width) +
+            var(--wui-layout-content-space)
           );
           &:has([data-component="page"]) {
             padding-block: var(--wui-layout-content-space);
