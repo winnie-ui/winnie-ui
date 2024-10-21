@@ -1,0 +1,6 @@
+@layer component {
+  [data-component="page"] {
+    border-radius: min(var(--wui-border-radius-3), 18px);
+    flex: 1;
+  }
+}

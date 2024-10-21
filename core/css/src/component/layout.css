@@ -3,8 +3,11 @@
     --wui-layout-sidebar-width: calc(296px * var(--wui-scale));
     --wui-layout-sidebar-margin-inline: var(--wui-space-4);
     --wui-layout-content-header-height: calc(60px * var(--wui-scale));
+    --wui-layout-content-space: var(--wui-space-5);
 
-    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
 
     [data-slot="mask"] {
       inset: 0;
@@ -33,7 +36,10 @@
     }
 
     [data-slot="content"] {
-      padding-left: 0;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 0;
       width: 100%;
     }
 
@@ -46,9 +52,8 @@
 
         &[data-state="open"] {
           height: calc(
-            100% -
-            var(--wui-layout-sidebar-margin-inline) -
-            var(--wui-layout-content-header-height)
+            100% - var(--wui-layout-sidebar-margin-inline) -
+              var(--wui-layout-content-header-height)
           );
           left: var(--wui-layout-sidebar-margin-inline);
           top: var(--wui-layout-content-header-height);
@@ -71,7 +76,14 @@
 
       &:has([data-slot="sidebar"][data-state="docked"]) {
         [data-slot="content"] {
-          padding-left: var(--wui-layout-sidebar-width);
+          padding-left: calc(
+            var(--wui-layout-sidebar-width) + var(--wui-layout-content-space)
+          );
+
+          &:has([data-component="page"]) {
+            padding-block: var(--wui-layout-content-space);
+            padding-right: var(--wui-layout-content-space);
+          }
         }
       }
 
@@ -79,7 +91,13 @@
           [data-slot="sidebar"]:not([data-state="open"], [data-state="closed"])
         ) {
         [data-slot="content"] {
-          padding-left: var(--wui-layout-sidebar-width);
+          padding-left: calc(
+            var(--wui-layout-sidebar-width) + var(--wui-layout-content-space)
+          );
+          &:has([data-component="page"]) {
+            padding-block: var(--wui-layout-content-space);
+            padding-right: var(--wui-layout-content-space);
+          }
         }
       }
     }
