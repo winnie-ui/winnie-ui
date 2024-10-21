@@ -1,20 +1,34 @@
 import { Link, Outlet, createRootRoute } from "@tanstack/react-router";
-import { TanStackRouterDevtools } from "@tanstack/router-devtools";
+import { Suspense, lazy } from "react";
+
+import "./__root.css";
+
+const TanStackRouterDevtools =
+  process.env.NODE_ENV === "production"
+    ? () => null // Render nothing in production
+    : lazy(() =>
+        import("@tanstack/router-devtools").then((res) => ({
+          default: res.TanStackRouterDevtools,
+        })),
+      );
 
 export const Route = createRootRoute({
   component: () => (
     <>
-      <div className="p-2 flex gap-2">
-        <Link to="/showcase" className="[&.active]:font-bold">
-          Home
-        </Link>{" "}
-        <Link to="/showcase/about" className="[&.active]:font-bold">
-          About
-        </Link>
+      <div className="showcase-app-layout" data-component="layout">
+        <nav className="showcase-app-layout__sidebar" data-slot="sidebar">
+          <Link to="/showcase">Home</Link>
+          <Link to="/showcase/about">About</Link>
+        </nav>
+        <main className="showcase-app-layout__content" data-slot="content">
+          <div className="showcase-app-layout__page" data-component="page">
+            <Outlet />
+          </div>
+        </main>
       </div>
-      <hr />
-      <Outlet />
-      <TanStackRouterDevtools />
+      <Suspense>
+        <TanStackRouterDevtools />
+      </Suspense>
     </>
   ),
 });
