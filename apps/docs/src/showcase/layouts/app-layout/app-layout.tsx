@@ -94,6 +94,12 @@ function AppLayout({ children }: PropsWithChildren) {
     }
 
     function handleMouseLeave() {
+      const breakpoint = window.matchMedia("(min-width: 768px)");
+
+      if (!breakpoint.matches) {
+        return;
+      }
+
       if (sidebarRef?.current?.getAttribute("data-state") !== "open") {
         return;
       }
