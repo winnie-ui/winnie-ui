@@ -1,7 +1,7 @@
-import { Link, Outlet, createRootRoute } from "@tanstack/react-router";
+import { Outlet, createRootRoute } from "@tanstack/react-router";
 import { Suspense, lazy } from "react";
 
-import "./__root.css";
+import { AppLayout } from "../layouts/app-layout/app-layout";
 
 const TanStackRouterDevtools =
   process.env.NODE_ENV === "production"
@@ -15,17 +15,9 @@ const TanStackRouterDevtools =
 export const Route = createRootRoute({
   component: () => (
     <>
-      <div className="showcase-app-layout" data-component="layout">
-        <nav className="showcase-app-layout__sidebar" data-slot="sidebar">
-          <Link to="/showcase">Home</Link>
-          <Link to="/showcase/about">About</Link>
-        </nav>
-        <main className="showcase-app-layout__content" data-slot="content">
-          <div className="showcase-app-layout__page" data-component="page">
-            <Outlet />
-          </div>
-        </main>
-      </div>
+      <AppLayout>
+        <Outlet />
+      </AppLayout>
       <Suspense>
         <TanStackRouterDevtools />
       </Suspense>
