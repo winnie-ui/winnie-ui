@@ -1,34 +1,8 @@
 ---
-import type { Route } from "@tanstack/react-router";
 import BaseHead from "~/layouts/base/base-head.astro";
 import BaseLayout from "~/layouts/base/layout.astro";
 
 import { Showcase as ShowcaseApp } from "~/showcase/main";
-import { routeTree } from "~/showcase/routeTree.gen";
-
-export const prefetch = false;
-
-// export async function getStaticPaths() {
-//   const mapChildren = (route: Route): any => {
-//     if (!route?.options) {
-//       return [];
-//     }
-//     return [
-//       route.options,
-//       ...Object.values(route?.children || []).flatMap((child) =>
-//         mapChildren(child),
-//       ),
-//     ];
-//   };
-//
-//   return mapChildren(routeTree as unknown as Route).map(
-//     (route: { path?: string }) => ({
-//       params: {
-//         path: route.path?.split("/")?.splice(2)?.join("/"),
-//       },
-//     }),
-//   );
-// }
 ---
 
 <BaseLayout>
