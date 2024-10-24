@@ -59,6 +59,9 @@ importers:
       '@radix-ui/react-scroll-area':
         specifier: 1.2.0
         version: 1.2.0(@types/react-dom@18.3.1)(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-aria/utils':
+        specifier: 3.25.3
+        version: 3.25.3(react@18.3.1)
       '@tanstack/react-router':
         specifier: 1.74.2
         version: 1.74.2(@tanstack/router-generator@1.74.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)

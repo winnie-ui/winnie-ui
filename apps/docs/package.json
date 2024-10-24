@@ -30,6 +30,7 @@
     "@radix-ui/react-collapsible": "1.1.1",
     "@radix-ui/react-dialog": "1.1.2",
     "@radix-ui/react-scroll-area": "1.2.0",
+    "@react-aria/utils": "3.25.3",
     "@tanstack/react-router": "1.74.2",
     "@types/react": "18.3.11",
     "@types/react-dom": "18.3.1",
