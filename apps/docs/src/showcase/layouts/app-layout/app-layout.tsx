@@ -8,11 +8,12 @@ import {
 import { Page } from "~/showcase/components/ds/page";
 
 import "./app-layout.css";
+import type { PropsWithChildren } from "react";
 
 /* -------------------------------------------------------------------------------------------------
  * AppLayout
  * -----------------------------------------------------------------------------------------------*/
-function AppLayout() {
+function AppLayout(props: PropsWithChildren) {
   return (
     <Layout className="showcase-app-layout">
       <LayoutMask className="showcase-app-layout__mask" />
@@ -20,7 +21,7 @@ function AppLayout() {
         sidebar
       </LayoutSidebar>
       <LayoutContent className="showcase-app-layout__content">
-        <Page className="showcase-app-layout__page"></Page>
+        <Page className="showcase-app-layout__page">{props.children}</Page>
       </LayoutContent>
     </Layout>
   );

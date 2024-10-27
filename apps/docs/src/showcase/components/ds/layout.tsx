@@ -21,6 +21,11 @@ import { mergeProps, mergeRefs } from "@react-aria/utils";
 import { useHover, usePress } from "react-aria";
 
 /* -------------------------------------------------------------------------------------------------
+ * Constants
+ * -----------------------------------------------------------------------------------------------*/
+const DOCKED_BREAKPOINT = "(min-width: 768px)";
+
+/* -------------------------------------------------------------------------------------------------
  * Utilities
  * -----------------------------------------------------------------------------------------------*/
 /**
@@ -272,7 +277,7 @@ const LayoutContent = forwardRef<
    */
   const { hoverProps } = useHover({
     onHoverStart: () => {
-      const breakpoint = window.matchMedia("(min-width: 768px)");
+      const breakpoint = window.matchMedia(DOCKED_BREAKPOINT);
 
       if (!breakpoint.matches) {
         return;
@@ -288,18 +293,23 @@ const LayoutContent = forwardRef<
     <main {...props} data-slot="content" ref={ref}>
       <Button
         onPress={() => {
+          const breakpoint = window.matchMedia(DOCKED_BREAKPOINT);
           switch (context.sidebarState) {
             case "docked": {
-              context.setSidebarState("closed");
-              break;
+              if (breakpoint.matches) {
+                return context.setSidebarState("closed");
+              }
+              return context.setSidebarState("open");
             }
             case "closed": {
-              context.setSidebarState("docked");
-              break;
+              if (breakpoint.matches) {
+                return context.setSidebarState("docked");
+              }
+
+              return context.setSidebarState("open");
             }
             case "open": {
-              context.setSidebarState("docked");
-              break;
+              return context.setSidebarState("docked");
             }
           }
         }}
@@ -316,27 +326,6 @@ const LayoutContent = forwardRef<
           }}
           ref={context.triggerRef as LegacyRef<HTMLDivElement>}
         />
-      </Button>
-      <Button
-        style={{ marginTop: "50px" }}
-        onPress={() => {
-          switch (context.sidebarState) {
-            case "docked": {
-              context.setSidebarState("open");
-              break;
-            }
-            case "closed": {
-              context.setSidebarState("open");
-              break;
-            }
-            case "open": {
-              context.setSidebarState("docked");
-              break;
-            }
-          }
-        }}
-      >
-        mobile {context.sidebarState}
       </Button>
       {children}
     </main>
@@ -386,7 +375,7 @@ const Layout = forwardRef<LayoutRef, PropsWithChildren<LayoutProps>>(
           return;
         }
 
-        const breakpoint = window.matchMedia("(min-width: 768px)");
+        const breakpoint = window.matchMedia(DOCKED_BREAKPOINT);
         if (!breakpoint.matches) {
           return;
         }
@@ -427,7 +416,7 @@ const Layout = forwardRef<LayoutRef, PropsWithChildren<LayoutProps>>(
      * the debounce time has elapsed
      */
     const handleMouseLeave = useCallback(() => {
-      const breakpoint = window.matchMedia("(min-width: 768px)");
+      const breakpoint = window.matchMedia(DOCKED_BREAKPOINT);
 
       if (!breakpoint.matches) {
         return;
