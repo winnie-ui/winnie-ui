@@ -380,8 +380,16 @@ const Layout = forwardRef<LayoutRef, PropsWithChildren<LayoutProps>>(
           return;
         }
 
+        if (e.clientX <= 16 && sidebarState === "closed") {
+          return setSidebarState("open");
+        }
+
         // if the state is anything but open do nothing
         if (sidebarState !== "open") {
+          return;
+        }
+
+        if (e.clientX <= 16) {
           return;
         }
 
