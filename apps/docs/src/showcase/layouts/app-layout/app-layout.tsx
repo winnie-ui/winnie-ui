@@ -3,11 +3,13 @@ import {
   LayoutContent,
   LayoutMask,
   LayoutSidebar,
+  LayoutSidebarStateButton,
 } from "~/showcase/components/ds/layout";
 
 import { Page } from "~/showcase/components/ds/page";
 
 import "./app-layout.css";
+import { PanelLeft } from "lucide-react";
 import type { PropsWithChildren } from "react";
 
 /* -------------------------------------------------------------------------------------------------
@@ -21,7 +23,12 @@ function AppLayout(props: PropsWithChildren) {
         sidebar
       </LayoutSidebar>
       <LayoutContent className="showcase-app-layout__content">
-        <Page className="showcase-app-layout__page">{props.children}</Page>
+        <Page className="showcase-app-layout__page">
+          <LayoutSidebarStateButton>
+            <PanelLeft data-slot="icon" />
+          </LayoutSidebarStateButton>
+          {props.children}
+        </Page>
       </LayoutContent>
     </Layout>
   );

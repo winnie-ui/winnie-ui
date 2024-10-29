@@ -31,7 +31,7 @@ const DOCKED_BREAKPOINT = "(min-width: 768px)";
 /**
  * Computes the area of a triangle given a set of 3 coordinates
  *
- * @param points all of the x, y coordinates of the triangle
+ * @param area all of the x, y coordinates of the triangle
  */
 function getAreaOfTriangle({
   p1,
@@ -134,6 +134,11 @@ function isCursorSafe(
   return areaABC === areaPAB + areaPBC + areaPCA;
 }
 
+/**
+ * Gets the three points of a triangle
+ *
+ * @param points all of the x, y coordinates of the triangle
+ */
 function getTrianglePoints(
   parentElement: HTMLElement,
   targetElement: HTMLElement,
@@ -190,151 +195,6 @@ const useLayoutContext = () => {
 };
 
 /* -------------------------------------------------------------------------------------------------
- * LayoutSidebar
- * -----------------------------------------------------------------------------------------------*/
-type LayoutSidebarRef = ElementRef<"nav">;
-type LayoutSidebarComponentProps = ComponentPropsWithoutRef<"nav">;
-type LayoutSidebarProps = LayoutSidebarComponentProps;
-
-const LayoutSidebar = forwardRef<LayoutSidebarRef, LayoutSidebarProps>(
-  ({ children, ...props }, ref) => {
-    /**
-     * subscribe to app layout context
-     */
-    const context = useLayoutContext();
-
-    /**
-     * merge the refs
-     */
-    const mergedRefs = mergeRefs(ref, context.sidebarRef);
-
-    return (
-      <nav
-        {...props}
-        data-slot="sidebar"
-        data-state={context.sidebarState}
-        ref={mergedRefs}
-      >
-        {children}
-      </nav>
-    );
-  },
-);
-
-LayoutSidebar.displayName = "LayoutSidebar";
-
-/* -------------------------------------------------------------------------------------------------
- * LayoutMask
- * -----------------------------------------------------------------------------------------------*/
-type LayoutMaskRef = ElementRef<"div">;
-type LayoutMaskComponentProps = ComponentPropsWithoutRef<"div">;
-type LayoutMaskProps = LayoutMaskComponentProps;
-
-const LayoutMask = forwardRef<LayoutMaskRef, LayoutMaskProps>((props, ref) => {
-  /**
-   * subscribe to app layout context
-   */
-  const context = useLayoutContext();
-
-  /**
-   * handles hover start by opening the sidebar
-   */
-  const { pressProps } = usePress({
-    onPress: () => {
-      context.setSidebarState("closed");
-    },
-  });
-
-  const mergedProps = mergeProps(pressProps, props);
-
-  if (context.sidebarState !== "open") {
-    return null;
-  }
-
-  return <div {...mergedProps} data-slot="mask" ref={ref} />;
-});
-
-LayoutMask.displayName = "LayoutMask";
-
-/* -------------------------------------------------------------------------------------------------
- * LayoutContent
- * -----------------------------------------------------------------------------------------------*/
-type LayoutContentRef = ElementRef<"main">;
-type LayoutContentComponentProps = ComponentPropsWithoutRef<"main">;
-type LayoutContentProps = LayoutContentComponentProps;
-
-const LayoutContent = forwardRef<
-  LayoutContentRef,
-  PropsWithChildren<LayoutContentProps>
->(({ children, ...props }, ref) => {
-  /**
-   * subscribe to app layout context
-   */
-  const context = useLayoutContext();
-
-  /**
-   * handles hover start by opening the sidebar
-   */
-  const { hoverProps } = useHover({
-    onHoverStart: () => {
-      const breakpoint = window.matchMedia(DOCKED_BREAKPOINT);
-
-      if (!breakpoint.matches) {
-        return;
-      }
-
-      if (context.sidebarState === "closed") {
-        context.setSidebarState("open");
-      }
-    },
-  });
-
-  return (
-    <main {...props} data-slot="content" ref={ref}>
-      <Button
-        onPress={() => {
-          const breakpoint = window.matchMedia(DOCKED_BREAKPOINT);
-          switch (context.sidebarState) {
-            case "docked": {
-              if (breakpoint.matches) {
-                return context.setSidebarState("closed");
-              }
-              return context.setSidebarState("open");
-            }
-            case "closed": {
-              if (breakpoint.matches) {
-                return context.setSidebarState("docked");
-              }
-
-              return context.setSidebarState("open");
-            }
-            case "open": {
-              return context.setSidebarState("docked");
-            }
-          }
-        }}
-      >
-        {context.sidebarState}
-        <div
-          {...hoverProps}
-          style={{
-            zIndex: 96,
-            height: "calc(60px * var(--wui-scale))",
-            width: "60px",
-            position: "absolute",
-            inset: "0",
-          }}
-          ref={context.triggerRef as LegacyRef<HTMLDivElement>}
-        />
-      </Button>
-      {children}
-    </main>
-  );
-});
-
-LayoutContent.displayName = "LayoutContent";
-
-/* -------------------------------------------------------------------------------------------------
  * Layout
  * -----------------------------------------------------------------------------------------------*/
 type LayoutRef = ElementRef<"div">;
@@ -357,7 +217,7 @@ const Layout = forwardRef<LayoutRef, PropsWithChildren<LayoutProps>>(
     /**
      * tracks the ref of the sidebar trigger
      */
-    const triggerRef = useRef<HTMLDivElement>(null);
+    const triggerRef = useRef<HTMLSpanElement>(null);
 
     /**
      * tracks the active timer to debounce the mouse leave event
@@ -458,7 +318,12 @@ const Layout = forwardRef<LayoutRef, PropsWithChildren<LayoutProps>>(
 
     return (
       <LayoutContext.Provider
-        value={{ sidebarState, setSidebarState, triggerRef, sidebarRef }}
+        value={{
+          sidebarState,
+          setSidebarState,
+          triggerRef,
+          sidebarRef,
+        }}
       >
         <div {...props} data-component="layout" ref={ref}>
           {children}
@@ -468,5 +333,192 @@ const Layout = forwardRef<LayoutRef, PropsWithChildren<LayoutProps>>(
   },
 );
 
-export { Layout, LayoutMask, LayoutSidebar, LayoutContent };
-export type { LayoutProps, LayoutMaskProps, LayoutSidebarProps };
+/* -------------------------------------------------------------------------------------------------
+ * LayoutSidebarStateButton
+ * -----------------------------------------------------------------------------------------------*/
+type LayoutSidebarStateButtonRef = ElementRef<typeof Button>;
+type LayoutSidebarStateButtonComponentProps = ComponentPropsWithoutRef<
+  typeof Button
+>;
+type LayoutSidebarStateButtonProps = LayoutSidebarStateButtonComponentProps;
+
+const LayoutSidebarStateButton = forwardRef<
+  LayoutSidebarStateButtonRef,
+  PropsWithChildren<LayoutSidebarStateButtonProps>
+>(({ children, ...props }, ref) => {
+  /**
+   * subscribe to app layout context
+   */
+  const context = useLayoutContext();
+
+  /**
+   * handles hover start by opening the sidebar
+   */
+  const { hoverProps } = useHover({
+    onHoverStart: () => {
+      const breakpoint = window.matchMedia(DOCKED_BREAKPOINT);
+
+      if (!breakpoint.matches) {
+        return;
+      }
+
+      if (context.sidebarState === "closed") {
+        context.setSidebarState("open");
+      }
+    },
+  });
+
+  /**
+   * handles button press by docking the sidebar or closing if open
+   */
+  function onPress() {
+    const breakpoint = window.matchMedia(DOCKED_BREAKPOINT);
+    switch (context.sidebarState) {
+      case "docked": {
+        if (breakpoint.matches) {
+          return context.setSidebarState("closed");
+        }
+        return context.setSidebarState("open");
+      }
+      case "closed": {
+        if (breakpoint.matches) {
+          return context.setSidebarState("docked");
+        }
+
+        return context.setSidebarState("open");
+      }
+      case "open": {
+        return context.setSidebarState("docked");
+      }
+    }
+  }
+
+  return (
+    <Button
+      {...props}
+      onPress={onPress}
+      data-component="button"
+      style={{ isolation: "revert" }}
+    >
+      {children}
+      <span
+        {...hoverProps}
+        style={{
+          zIndex: 96,
+          height: "calc(60px * var(--wui-scale))",
+          width: "60px",
+          position: "absolute",
+          inset: "0",
+        }}
+        ref={context.triggerRef}
+      />
+    </Button>
+  );
+});
+
+LayoutSidebarStateButton.displayName = "LayoutSidebarStateButton";
+
+/* -------------------------------------------------------------------------------------------------
+ * LayoutSidebar
+ * -----------------------------------------------------------------------------------------------*/
+type LayoutSidebarRef = ElementRef<"nav">;
+type LayoutSidebarComponentProps = ComponentPropsWithoutRef<"nav">;
+type LayoutSidebarProps = LayoutSidebarComponentProps;
+
+const LayoutSidebar = forwardRef<LayoutSidebarRef, LayoutSidebarProps>(
+  ({ children, ...props }, ref) => {
+    /**
+     * subscribe to app layout context
+     */
+    const context = useLayoutContext();
+
+    /**
+     * merge the refs
+     */
+    const mergedRefs = mergeRefs(ref, context.sidebarRef);
+
+    return (
+      <nav
+        {...props}
+        data-slot="sidebar"
+        data-state={context.sidebarState}
+        ref={mergedRefs}
+      >
+        {children}
+      </nav>
+    );
+  },
+);
+
+LayoutSidebar.displayName = "LayoutSidebar";
+
+/* -------------------------------------------------------------------------------------------------
+ * LayoutMask
+ * -----------------------------------------------------------------------------------------------*/
+type LayoutMaskRef = ElementRef<"div">;
+type LayoutMaskComponentProps = ComponentPropsWithoutRef<"div">;
+type LayoutMaskProps = LayoutMaskComponentProps;
+
+const LayoutMask = forwardRef<LayoutMaskRef, LayoutMaskProps>((props, ref) => {
+  /**
+   * subscribe to app layout context
+   */
+  const context = useLayoutContext();
+
+  /**
+   * handles hover start by opening the sidebar
+   */
+  const { pressProps } = usePress({
+    onPress: () => {
+      context.setSidebarState("closed");
+    },
+  });
+
+  /**
+   * Merge the props from press and passed in props
+   */
+  const mergedProps = mergeProps(pressProps, props);
+
+  if (context.sidebarState !== "open") {
+    return null;
+  }
+
+  return <div {...mergedProps} data-slot="mask" ref={ref} />;
+});
+
+LayoutMask.displayName = "LayoutMask";
+
+/* -------------------------------------------------------------------------------------------------
+ * LayoutContent
+ * -----------------------------------------------------------------------------------------------*/
+type LayoutContentRef = ElementRef<"main">;
+type LayoutContentComponentProps = ComponentPropsWithoutRef<"main">;
+type LayoutContentProps = LayoutContentComponentProps;
+
+const LayoutContent = forwardRef<
+  LayoutContentRef,
+  PropsWithChildren<LayoutContentProps>
+>(({ children, ...props }, ref) => {
+  return (
+    <main {...props} data-slot="content" ref={ref}>
+      {children}
+    </main>
+  );
+});
+
+LayoutContent.displayName = "LayoutContent";
+
+export {
+  Layout,
+  LayoutMask,
+  LayoutSidebar,
+  LayoutContent,
+  LayoutSidebarStateButton,
+};
+export type {
+  LayoutProps,
+  LayoutMaskProps,
+  LayoutSidebarProps,
+  LayoutContentProps,
+  LayoutSidebarStateButtonProps,
+};
