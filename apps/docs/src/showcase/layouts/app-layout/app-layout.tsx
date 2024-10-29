@@ -3,6 +3,7 @@ import {
   LayoutContent,
   LayoutMask,
   LayoutSidebar,
+  LayoutSidebarStateButton,
 } from "~/showcase/components/ds/layout";
 
 import { Page } from "~/showcase/components/ds/page";
@@ -21,6 +22,7 @@ function AppLayout(props: PropsWithChildren) {
         sidebar
       </LayoutSidebar>
       <LayoutContent className="showcase-app-layout__content">
+        <LayoutSidebarStateButton>Hello world</LayoutSidebarStateButton>
         <Page className="showcase-app-layout__page">{props.children}</Page>
       </LayoutContent>
     </Layout>
