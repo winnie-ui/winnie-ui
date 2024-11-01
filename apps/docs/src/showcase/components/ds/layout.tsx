@@ -4,7 +4,6 @@ import {
   type ComponentPropsWithoutRef,
   type Dispatch,
   type ElementRef,
-  type LegacyRef,
   type MutableRefObject,
   type PropsWithChildren,
   type SetStateAction,
@@ -334,17 +333,17 @@ const Layout = forwardRef<LayoutRef, PropsWithChildren<LayoutProps>>(
 );
 
 /* -------------------------------------------------------------------------------------------------
- * LayoutSidebarStateButton
+ * LayoutSidebarOpenButton
  * -----------------------------------------------------------------------------------------------*/
-type LayoutSidebarStateButtonRef = ElementRef<typeof Button>;
-type LayoutSidebarStateButtonComponentProps = ComponentPropsWithoutRef<
+type LayoutSidebarOpenButtonRef = ElementRef<typeof Button>;
+type LayoutSidebarOpenButtonComponentProps = ComponentPropsWithoutRef<
   typeof Button
 >;
-type LayoutSidebarStateButtonProps = LayoutSidebarStateButtonComponentProps;
+type LayoutSidebarOpenButtonProps = LayoutSidebarOpenButtonComponentProps;
 
-const LayoutSidebarStateButton = forwardRef<
-  LayoutSidebarStateButtonRef,
-  PropsWithChildren<LayoutSidebarStateButtonProps>
+const LayoutSidebarOpenButton = forwardRef<
+  LayoutSidebarOpenButtonRef,
+  PropsWithChildren<LayoutSidebarOpenButtonProps>
 >(({ children, ...props }, ref) => {
   /**
    * subscribe to app layout context
@@ -375,10 +374,7 @@ const LayoutSidebarStateButton = forwardRef<
     const breakpoint = window.matchMedia(DOCKED_BREAKPOINT);
     switch (context.sidebarState) {
       case "docked": {
-        if (breakpoint.matches) {
-          return context.setSidebarState("closed");
-        }
-        return context.setSidebarState("open");
+        break;
       }
       case "closed": {
         if (breakpoint.matches) {
@@ -416,7 +412,54 @@ const LayoutSidebarStateButton = forwardRef<
   );
 });
 
-LayoutSidebarStateButton.displayName = "LayoutSidebarStateButton";
+LayoutSidebarOpenButton.displayName = "LayoutSidebarOpenButton";
+
+/* -------------------------------------------------------------------------------------------------
+ * LayoutSidebarCloseButton
+ * -----------------------------------------------------------------------------------------------*/
+type LayoutSidebarCloseButtonRef = ElementRef<typeof Button>;
+type LayoutSidebarCloseButtonComponentProps = ComponentPropsWithoutRef<
+  typeof Button
+>;
+type LayoutSidebarCloseButtonProps = LayoutSidebarCloseButtonComponentProps;
+
+const LayoutSidebarCloseButton = forwardRef<
+  LayoutSidebarCloseButtonRef,
+  PropsWithChildren<LayoutSidebarCloseButtonProps>
+>(({ children, ...props }, ref) => {
+  /**
+   * subscribe to app layout context
+   */
+  const context = useLayoutContext();
+
+  /**
+   * handles button press by docking the sidebar or closing if open
+   */
+  function onPress() {
+    const breakpoint = window.matchMedia(DOCKED_BREAKPOINT);
+    if (!breakpoint.matches) return;
+
+    switch (context.sidebarState) {
+      case "docked": {
+        return context.setSidebarState("closed");
+      }
+      case "closed": {
+        break;
+      }
+      case "open": {
+        break;
+      }
+    }
+  }
+
+  return (
+    <Button {...props} onPress={onPress}>
+      {children}
+    </Button>
+  );
+});
+
+LayoutSidebarCloseButton.displayName = "LayoutSidebarCloseButton";
 
 /* -------------------------------------------------------------------------------------------------
  * LayoutSidebar
@@ -513,12 +556,14 @@ export {
   LayoutMask,
   LayoutSidebar,
   LayoutContent,
-  LayoutSidebarStateButton,
+  LayoutSidebarOpenButton,
+  LayoutSidebarCloseButton,
 };
 export type {
   LayoutProps,
   LayoutMaskProps,
   LayoutSidebarProps,
   LayoutContentProps,
-  LayoutSidebarStateButtonProps,
+  LayoutSidebarOpenButtonProps,
+  LayoutSidebarCloseButtonProps,
 };
