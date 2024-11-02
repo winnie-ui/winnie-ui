@@ -399,6 +399,7 @@ const LayoutSidebarOpenButton = forwardRef<
       onPress={onPress}
       data-component="button"
       style={{ isolation: "revert" }}
+      ref={ref}
     >
       {children}
       <span
@@ -461,7 +462,7 @@ const LayoutSidebarCloseButton = forwardRef<
   }
 
   return (
-    <Button {...props} onPress={onPress} data-component="button">
+    <Button {...props} ref={ref} onPress={onPress} data-component="button">
       {children}
     </Button>
   );

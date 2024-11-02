@@ -6,6 +6,7 @@
       "outputs": ["dist/**"],
       "dependsOn": ["topo"]
     },
+    "clean": {},
     "format:check": {},
     "format:write": {},
     "lint:check": {},
