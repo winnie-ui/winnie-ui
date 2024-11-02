@@ -3,7 +3,8 @@ import {
   LayoutContent,
   LayoutMask,
   LayoutSidebar,
-  LayoutSidebarStateButton,
+  LayoutSidebarCloseButton,
+  LayoutSidebarOpenButton,
 } from "~/showcase/components/ds/layout";
 
 import { Page } from "~/showcase/components/ds/page";
@@ -20,13 +21,18 @@ function AppLayout(props: PropsWithChildren) {
     <Layout className="showcase-app-layout">
       <LayoutMask className="showcase-app-layout__mask" />
       <LayoutSidebar className="showcase-app-layout__sidebar">
+        <header style={{ display: "flex", justifyContent: "flex-end" }}>
+          <LayoutSidebarCloseButton className="showcase-app-layout__sidebar-close">
+            <PanelLeft data-slot="icon" />
+          </LayoutSidebarCloseButton>
+        </header>
         sidebar
       </LayoutSidebar>
       <LayoutContent className="showcase-app-layout__content">
         <Page className="showcase-app-layout__page">
-          <LayoutSidebarStateButton>
+          <LayoutSidebarOpenButton className="showcase-app-layout__sidebar-open">
             <PanelLeft data-slot="icon" />
-          </LayoutSidebarStateButton>
+          </LayoutSidebarOpenButton>
           {props.children}
         </Page>
       </LayoutContent>

@@ -4,9 +4,12 @@
   .showcase-app-layout__mask {
     background: var(--showcase-app-layout__mask-background);
     opacity: 1;
-    transition: display, opacity;
-    transition-duration: var(--wui-duration-4);
-    transition-timing-function: ease-in-out;
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: display, opacity;
+      transition-duration: var(--wui-duration-3);
+      transition-timing-function: ease-in-out;
+    }
 
     @starting-style {
       opacity: 0;
@@ -51,6 +54,34 @@
           var(--showcase-app-layout__page-border-color);
         box-shadow: var(--wui-shadow-2);
       }
+    }
+  }
+
+  .showcase-app-layout__sidebar-open {
+    opacity: 1;
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: display, opacity;
+      transition-duration: var(--wui-duration-2);
+      transition-timing-function: ease-in-out;
+    }
+
+    @starting-style {
+      opacity: 0;
+    }
+  }
+
+  .showcase-app-layout__sidebar-close {
+    opacity: 1;
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: display, opacity;
+      transition-duration: var(--wui-duration-2);
+      transition-timing-function: ease-in-out;
+    }
+
+    @starting-style {
+      opacity: 0;
     }
   }
 }
