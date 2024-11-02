@@ -389,30 +389,31 @@ const LayoutSidebarOpenButton = forwardRef<
     }
   }
 
-  if (context.sidebarState === "docked") {
-    return null;
-  }
-
   return (
     <Button
       {...props}
       onPress={onPress}
       data-component="button"
-      style={{ isolation: "revert" }}
+      style={{
+        isolation: "revert",
+        display: context.sidebarState === "docked" ? "none" : "block",
+      }}
       ref={ref}
     >
       {children}
-      <span
-        {...hoverProps}
-        style={{
-          zIndex: 96,
-          height: "calc(60px * var(--wui-scale))",
-          width: "60px",
-          position: "absolute",
-          inset: "0",
-        }}
-        ref={context.triggerRef}
-      />
+      {context.sidebarState !== "docked" && (
+        <span
+          {...hoverProps}
+          style={{
+            zIndex: 96,
+            height: "calc(60px * var(--wui-scale))",
+            width: "60px",
+            position: "absolute",
+            inset: "0",
+          }}
+          ref={context.triggerRef}
+        />
+      )}
     </Button>
   );
 });
@@ -457,12 +458,14 @@ const LayoutSidebarCloseButton = forwardRef<
     }
   }
 
-  if (context.sidebarState !== "docked") {
-    return null;
-  }
-
   return (
-    <Button {...props} ref={ref} onPress={onPress} data-component="button">
+    <Button
+      {...props}
+      ref={ref}
+      onPress={onPress}
+      data-component="button"
+      style={{ display: context.sidebarState !== "docked" ? "none" : "block" }}
+    >
       {children}
     </Button>
   );

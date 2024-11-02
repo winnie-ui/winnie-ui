@@ -61,7 +61,7 @@
     opacity: 1;
 
     @media (prefers-reduced-motion: no-preference) {
-      transition: opacity;
+      transition: display, opacity;
       transition-duration: var(--wui-duration-2);
       transition-timing-function: ease-in-out;
     }
@@ -75,7 +75,7 @@
     opacity: 1;
 
     @media (prefers-reduced-motion: no-preference) {
-      transition: opacity;
+      transition: display, opacity;
       transition-duration: var(--wui-duration-2);
       transition-timing-function: ease-in-out;
     }
