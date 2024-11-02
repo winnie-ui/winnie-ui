@@ -389,6 +389,10 @@ const LayoutSidebarOpenButton = forwardRef<
     }
   }
 
+  if (context.sidebarState === "docked") {
+    return null;
+  }
+
   return (
     <Button
       {...props}
@@ -452,8 +456,12 @@ const LayoutSidebarCloseButton = forwardRef<
     }
   }
 
+  if (context.sidebarState !== "docked") {
+    return null;
+  }
+
   return (
-    <Button {...props} onPress={onPress}>
+    <Button {...props} onPress={onPress} data-component="button">
       {children}
     </Button>
   );

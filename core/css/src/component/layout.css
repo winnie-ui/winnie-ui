@@ -17,6 +17,8 @@
     [data-slot="sidebar"] {
       height: 100%;
       left: calc(-1 * var(--wui-layout-sidebar-width));
+      padding: var(--wui-layout-content-space);
+      padding-right: 0;
       position: fixed;
       top: 0;
       width: var(--wui-layout-sidebar-width);
@@ -25,6 +27,7 @@
       &[data-state="open"] {
         height: 100%;
         left: 0;
+        padding-right: var(--wui-layout-content-space);
         top: 0;
       }
 
