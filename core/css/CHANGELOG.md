@@ -1,5 +1,11 @@
 # @winnie-ui/css
 
+## 0.0.23
+
+### Patch Changes
+
+- [#67](https://github.com/winnie-ui/winnie-ui/pull/67) [`2919e12`](https://github.com/winnie-ui/winnie-ui/commit/2919e12e0807bab3c69242a4dc80c85ff6c4ba9a) Thanks [@adamaho](https://github.com/adamaho)! - feat: implement first iteration of layout component
+
 ## 0.0.22
 
 ### Patch Changes
