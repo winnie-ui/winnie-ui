@@ -1,5 +1,5 @@
 {
-  "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc,astro}": [
+  "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc,astro,css}": [
     "biome check --write --unsafe --no-errors-on-unmatched"
-  ],
+  ]
 }

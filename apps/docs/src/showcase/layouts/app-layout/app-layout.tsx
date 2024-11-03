@@ -21,16 +21,19 @@ function AppLayout(props: PropsWithChildren) {
     <Layout className="showcase-app-layout">
       <LayoutMask className="showcase-app-layout__mask" />
       <LayoutSidebar className="showcase-app-layout__sidebar">
-        <header style={{ display: "flex", justifyContent: "flex-end" }}>
-          <LayoutSidebarCloseButton className="showcase-app-layout__sidebar-close">
-            <PanelLeft data-slot="icon" />
-          </LayoutSidebarCloseButton>
+        <header className="sidebar__header">
+          <span>Goho Pizza Co.</span>
         </header>
-        sidebar
+        <LayoutSidebarCloseButton className="showcase-app-layout__sidebar-close-button">
+          <span className="showcase-app-layout__sidebar-close-button-thumb" />
+        </LayoutSidebarCloseButton>
       </LayoutSidebar>
       <LayoutContent className="showcase-app-layout__content">
         <Page className="showcase-app-layout__page">
-          <LayoutSidebarOpenButton className="showcase-app-layout__sidebar-open">
+          <LayoutSidebarOpenButton
+            className="showcase-app-layout__sidebar-open-button"
+            data-component="button"
+          >
             <PanelLeft data-slot="icon" />
           </LayoutSidebarOpenButton>
           {props.children}
