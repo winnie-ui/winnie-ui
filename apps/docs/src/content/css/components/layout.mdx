@@ -1,0 +1,158 @@
+---
+title: Layout
+description: An opinionated application layout with sidebar.
+---
+
+import Demo from "~/components/demo/demo.astro";
+
+import { SquareArrowOutUpRight } from "lucide-react";
+
+import "./_components/layout/layout-demo.css";
+
+<Demo>
+  <div className="layout-demo-container">
+    <div data-component="layout" className="layout-demo">
+      <div data-slot="mask" className="layout-demo-mask" />
+      <nav
+        data-slot="sidebar"
+        className="layout-demo-sidebar"
+        data-state="docked"
+      ></nav>
+      <main data-slot="content" className="layout-demo-content"></main>
+    </div>
+    <a href="/showcase" target="blank" data-component="button" className="layout-demo-showcase-link">
+      <span data-slot="label">Showcase</span>
+      <SquareArrowOutUpRight data-slot="icon" />
+    </a>
+  </div>
+  <Fragment slot="footer">
+    ```html
+    <div data-component="layout">
+      <nav data-slot="sidebar"></nav>
+      <main data-slot="content"></main>
+    </div>
+    ```
+  </Fragment>
+</Demo>
+
+## Import
+
+Import just the layout styles.
+
+```css
+@import "@winnie-ui/component/layout";
+```
+
+## Anatomy
+
+Attach the appropriate `data-component` and `data-slot` attributes in the structure below.
+
+```html
+<div data-component="layout">
+  <div data-slot="mask"></div>
+  <nav data-slot="sidebar"></nav>
+  <main data-slot="content"></main>
+</div>
+```
+
+## Examples
+
+These examples are built using css only. But, this component can be taken a lot further with the help of some javascript. For a more comprehenive example of how you can enchance this component head on over to the [Showcase](/showcase) application.
+
+### State
+
+The `sidebar` slot supports a `data-state` attribute that allows you to adjust the behaviour of the sidebar in the layout.
+
+Layout uses a breakpoint of 768px to determine when to hide and close the sidebar. Due to a limitation in css, we do not provide an easy way to overrite this since we cannot use variables in media queries. So, this means that when the sidebar is `docked` it will close when the screen width becomes less than 768px.
+
+You can provide users that ability to conditionally open the sidebar by setting `data-state` to `open`.
+
+#### Docked
+
+Set `data-state` to `docked` in order to persist the sidebar in the layout.
+
+<Demo>
+  <div className="layout-demo-container">
+    <div data-component="layout" className="layout-demo">
+      <div data-slot="mask" className="layout-demo-mask" />
+      <nav
+        data-slot="sidebar"
+        className="layout-demo-sidebar"
+        data-state="docked"
+      ></nav>
+      <main data-slot="content" className="layout-demo-content"></main>
+    </div>
+  </div>
+  <Fragment slot="footer">
+    ```html ins=data-state="docked"
+    <div data-component="layout">
+      <nav data-slot="sidebar" data-state="docked"></nav>
+      <main data-slot="content"></main>
+    </div>
+    ```
+  </Fragment>
+</Demo>
+
+#### Open
+
+Set `data-state` to `open` to allow the user to interact with the sidebar while it overlays the layout `content` slot. Room is purposefully provided at the top of the sidebar to provide you the ability to include a button to allow the user to dock the sidebar again. However, you'll notice that when the breakpoint is hit, the sidebar goes full height, similar to the traditional mobile sidebar menus.
+
+<Demo>
+  <div className="layout-demo-container">
+    <div data-component="layout" className="layout-demo">
+      <div data-slot="mask" className="layout-demo-mask" />
+      <nav
+        data-slot="sidebar"
+        className="layout-demo-sidebar"
+        data-state="open"
+      ></nav>
+      <main data-slot="content" className="layout-demo-content"></main>
+    </div>
+  </div>
+  <Fragment slot="footer">
+    ```html ins=data-state="open"
+    <div data-component="layout">
+      <div data-slot="mask"></div>
+      <nav data-slot="sidebar" data-state="open"></nav>
+      <main data-slot="content"></main>
+    </div>
+    ```
+  </Fragment>
+</Demo>
+
+#### Closed
+
+Set `data-state` to `closed` to remove either undock the sidebar or remove it from the overlay.
+
+<Demo>
+  <div className="layout-demo-container">
+    <div data-component="layout" className="layout-demo">
+      <div data-slot="mask" className="layout-demo-mask" />
+      <nav
+        data-slot="sidebar"
+        className="layout-demo-sidebar"
+        data-state="closed"
+      ></nav>
+      <main data-slot="content" className="layout-demo-content"></main>
+    </div>
+  </div>
+  <Fragment slot="footer">
+    ```html ins=data-state="closed"
+    <div data-component="layout">
+      <div data-slot="mask"></div>
+      <nav data-slot="sidebar" data-state="closed"></nav>
+      <main data-slot="content"></main>
+    </div>
+    ```
+  </Fragment>
+</Demo>
+
+## Reference
+
+### Sidebar
+
+Below is a list of the available button `data-` attributes that are available.
+
+| Attribute     | Value                                       |
+| ------------- | ------------------------------------------- |
+| `data-state` | `"docked" \| "open" \| "closed"`             |
