@@ -374,6 +374,9 @@ const LayoutSidebarOpenButton = forwardRef<
     const breakpoint = window.matchMedia(DOCKED_BREAKPOINT);
     switch (context.sidebarState) {
       case "docked": {
+        if (!breakpoint.matches) {
+          return context.setSidebarState("open");
+        }
         break;
       }
       case "closed": {
@@ -393,27 +396,23 @@ const LayoutSidebarOpenButton = forwardRef<
     <Button
       {...props}
       onPress={onPress}
-      data-component="button"
       style={{
         isolation: "revert",
-        display: context.sidebarState === "docked" ? "none" : "block",
       }}
       ref={ref}
     >
       {children}
-      {context.sidebarState !== "docked" && (
-        <span
-          {...hoverProps}
-          style={{
-            zIndex: 96,
-            height: "calc(60px * var(--wui-scale))",
-            width: "60px",
-            position: "absolute",
-            inset: "0",
-          }}
-          ref={context.triggerRef}
-        />
-      )}
+      <span
+        {...hoverProps}
+        style={{
+          zIndex: 96,
+          height: "calc(60px * var(--wui-scale))",
+          width: "60px",
+          position: "absolute",
+          inset: "0",
+        }}
+        ref={context.triggerRef}
+      />
     </Button>
   );
 });
@@ -459,13 +458,7 @@ const LayoutSidebarCloseButton = forwardRef<
   }
 
   return (
-    <Button
-      {...props}
-      ref={ref}
-      onPress={onPress}
-      data-component="button"
-      style={{ display: context.sidebarState !== "docked" ? "none" : "block" }}
-    >
+    <Button {...props} ref={ref} onPress={onPress}>
       {children}
     </Button>
   );
