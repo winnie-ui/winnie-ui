@@ -81,9 +81,10 @@
     padding-right: var(--wui-space-1);
     position: absolute;
     right: calc(
-      -1 * var(--wui-layout-content-space) + var(
-          --showcase-sidebar-close-width
-        ) / 2
+      -1 *
+      var(--wui-layout-content-space) +
+      var(--showcase-sidebar-close-width) /
+      2
     );
     top: 50%;
     transform: translateY(-50%);
