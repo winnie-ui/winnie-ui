@@ -3,15 +3,16 @@ import {
   LayoutContent,
   LayoutMask,
   LayoutSidebar,
-  LayoutSidebarCloseButton,
   LayoutSidebarOpenButton,
+  LayoutSidebarResizeHandle,
 } from "~/showcase/components/ds/layout";
 
 import { Page } from "~/showcase/components/ds/page";
 
-import "./app-layout.css";
 import { PanelLeft } from "lucide-react";
 import type { PropsWithChildren } from "react";
+
+import "./app-layout.css";
 
 /* -------------------------------------------------------------------------------------------------
  * AppLayout
@@ -24,9 +25,9 @@ function AppLayout(props: PropsWithChildren) {
         <header className="sidebar__header">
           <span>Goho Pizza Co.</span>
         </header>
-        <LayoutSidebarCloseButton className="showcase-app-layout__sidebar-close-button">
-          <span className="showcase-app-layout__sidebar-close-button-thumb" />
-        </LayoutSidebarCloseButton>
+        <LayoutSidebarResizeHandle className="showcase-app-layout__sidebar-resize-handle">
+          <span className="showcase-app-layout__sidebar-sidebar-resize-handle-thumb" />
+        </LayoutSidebarResizeHandle>
       </LayoutSidebar>
       <LayoutContent className="showcase-app-layout__content">
         <Page className="showcase-app-layout__page">

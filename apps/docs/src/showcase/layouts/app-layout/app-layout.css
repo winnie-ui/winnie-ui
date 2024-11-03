@@ -74,8 +74,8 @@
     }
   }
 
-  .showcase-app-layout__sidebar-close-button {
-    --showcase-sidebar-close-width: calc(3px * var(--wui-scale));
+  .showcase-app-layout__sidebar-resize-handle {
+    --showcase-sidebar-resize-handle-width: calc(3px * var(--wui-scale));
 
     cursor: col-resize;
     height: calc(
@@ -92,19 +92,19 @@
     right: calc(
       -1 *
       var(--wui-layout-content-space) +
-      var(--showcase-sidebar-close-width) /
+      var(--showcase-sidebar-resize-handle-width) /
       2
     );
     top: 50%;
     transform: translateY(-50%);
 
     span {
-      background: var(--showcase-app-layout__sidebar-close-button-background);
+      background: var(--showcase-app-layout__sidebar-resize-handle-background);
       border-radius: var(--wui-border-radius-2);
       display: block;
       height: 100%;
       opacity: 0;
-      width: var(--showcase-sidebar-close-width);
+      width: var(--showcase-sidebar-resize-handle-width);
 
       @media (prefers-reduced-motion: no-preference) {
         transition: opacity;
@@ -138,7 +138,7 @@
           [data-state="closed"]
         )
     ) {
-    .showcase-app-layout__sidebar-close-button {
+    .showcase-app-layout__sidebar-resize-handle {
       display: none;
     }
   }
@@ -164,8 +164,8 @@
       --showcase-app-layout__sidebar-open-background: var(--wui-color-white);
       --showcase-app-layout__sidebar-open-border-color: var(--wui-color-grey-6);
 
-      .showcase-app-layout__sidebar-close-button {
-        --showcase-app-layout__sidebar-close-button-background: var(
+      .showcase-app-layout__sidebar-resize-handle {
+        --showcase-app-layout__sidebar-resize-handle-background: var(
           --wui-color-grey-9
         );
       }
@@ -190,8 +190,8 @@
       --showcase-app-layout__sidebar-open-background: var(--wui-color-grey-1);
       --showcase-app-layout__sidebar-open-border-color: var(--wui-color-grey-3);
 
-      .showcase-app-layout__sidebar-close-button {
-        --showcase-app-layout__sidebar-close-button-background: var(
+      .showcase-app-layout__sidebar-resize-handle {
+        --showcase-app-layout__sidebar-resize-handle-background: var(
           --wui-color-grey-9
         );
       }

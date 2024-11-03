@@ -472,16 +472,16 @@ const LayoutSidebarOpenButton = forwardRef<
 LayoutSidebarOpenButton.displayName = "LayoutSidebarOpenButton";
 
 /* -------------------------------------------------------------------------------------------------
- * LayoutSidebarCloseButton
+ * LayoutSidebarResizeHandle
  * -----------------------------------------------------------------------------------------------*/
-type LayoutSidebarCloseButtonRef = ElementRef<"button">;
-type LayoutSidebarCloseButtonComponentProps =
+type LayoutSidebarResizeHandleRef = ElementRef<"button">;
+type LayoutSidebarResizeHandleComponentProps =
   ComponentPropsWithoutRef<"button">;
-type LayoutSidebarCloseButtonProps = LayoutSidebarCloseButtonComponentProps;
+type LayoutSidebarResizeHandleProps = LayoutSidebarResizeHandleComponentProps;
 
-const LayoutSidebarCloseButton = forwardRef<
-  LayoutSidebarCloseButtonRef,
-  PropsWithChildren<LayoutSidebarCloseButtonProps>
+const LayoutSidebarResizeHandle = forwardRef<
+  LayoutSidebarResizeHandleRef,
+  PropsWithChildren<LayoutSidebarResizeHandleProps>
 >(({ children, ...props }, ref) => {
   /**
    * subscribe to app layout context
@@ -555,7 +555,7 @@ const LayoutSidebarCloseButton = forwardRef<
   );
 });
 
-LayoutSidebarCloseButton.displayName = "LayoutSidebarCloseButton";
+LayoutSidebarResizeHandle.displayName = "LayoutSidebarResizeHandle";
 
 /* -------------------------------------------------------------------------------------------------
  * LayoutSidebar
@@ -664,7 +664,7 @@ export {
   LayoutSidebar,
   LayoutContent,
   LayoutSidebarOpenButton,
-  LayoutSidebarCloseButton,
+  LayoutSidebarResizeHandle,
 };
 export type {
   LayoutProps,
@@ -672,5 +672,5 @@ export type {
   LayoutSidebarProps,
   LayoutContentProps,
   LayoutSidebarOpenButtonProps,
-  LayoutSidebarCloseButtonProps,
+  LayoutSidebarResizeHandleComponentProps,
 };
