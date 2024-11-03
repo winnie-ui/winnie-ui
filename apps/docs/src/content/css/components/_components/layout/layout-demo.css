@@ -3,7 +3,7 @@
   position: relative;
 
   .layout-demo {
-    --wui-layout-sidebar-width: 120px;
+    --wui-layout-sidebar-width: 80px;
     --wui-layout-demo-border-radius: min(var(--wui-border-radius-3), 18px);
 
     aspect-ratio: 16 / 9;
@@ -15,6 +15,10 @@
     max-height: 300px;
     min-height: 0;
     width: 100%;
+
+    @media (min-width: 768px) {
+      --wui-layout-sidebar-width: 120px;
+    }
 
     .layout-demo-mask {
       background: var(--wui-color-black-a2);
