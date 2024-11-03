@@ -17,12 +17,15 @@ import {
 } from "react";
 
 import { mergeProps, mergeRefs } from "@react-aria/utils";
-import { useHover, usePress } from "react-aria";
+import { useFocusRing, useHover, useMove, usePress } from "react-aria";
 
 /* -------------------------------------------------------------------------------------------------
  * Constants
  * -----------------------------------------------------------------------------------------------*/
 const DOCKED_BREAKPOINT = "(min-width: 768px)";
+const MIN_SIDEBAR_WIDTH = 220;
+const DEFAULT_SIDEBAR_WIDTH = 296;
+const MAX_SIDEBAR_WIDTH = 320;
 
 /* -------------------------------------------------------------------------------------------------
  * Utilities
@@ -168,13 +171,27 @@ function getTrianglePoints(
   };
 }
 
+/**
+ * Returns a number between a min and max value
+ *
+ * @param x current x position
+ * @returns number between the min and max value
+ */
+function clamp(x: number) {
+  return Math.min(MAX_SIDEBAR_WIDTH, Math.max(MIN_SIDEBAR_WIDTH, x));
+}
+
 /* -------------------------------------------------------------------------------------------------
  * LayoutContext
  * -----------------------------------------------------------------------------------------------*/
 type SidebarState = "docked" | "open" | "closed";
 type LayoutContextProps = {
+  sidebarDragging: boolean;
+  setSidebarDragging: Dispatch<SetStateAction<boolean>>;
+  sidebarWidth: number;
   sidebarState: SidebarState;
   setSidebarState: Dispatch<SetStateAction<SidebarState>>;
+  setSidebarWidth: Dispatch<SetStateAction<number>>;
   triggerRef: MutableRefObject<HTMLElement | null>;
   sidebarRef: MutableRefObject<HTMLElement | null>;
 };
@@ -207,6 +224,19 @@ const Layout = forwardRef<LayoutRef, PropsWithChildren<LayoutProps>>(
      */
     const [sidebarState, setSidebarState] =
       useState<LayoutContextProps["sidebarState"]>("docked");
+
+    /**
+     * tracks the width of the sidebar
+     */
+    const [sidebarWidth, setSidebarWidth] = useState<
+      LayoutContextProps["sidebarWidth"]
+    >(DEFAULT_SIDEBAR_WIDTH);
+
+    /**
+     * tracks the drag state of the sidebar
+     */
+    const [sidebarDragging, setSidebarDragging] =
+      useState<LayoutContextProps["sidebarDragging"]>(false);
 
     /**
      * tracks the ref of the sidebar
@@ -315,16 +345,38 @@ const Layout = forwardRef<LayoutRef, PropsWithChildren<LayoutProps>>(
       };
     }, [handleMouseMove, handleMouseLeave]);
 
+    /**
+     * Handles setting the body cursor while dragging occurs
+     */
+    useEffect(() => {
+      if (!sidebarDragging) {
+        document.body.style.removeProperty("cursor");
+        return;
+      }
+
+      document.body.style.cursor = "col-resize";
+    }, [sidebarDragging]);
     return (
       <LayoutContext.Provider
         value={{
+          sidebarDragging,
+          setSidebarDragging,
+          sidebarWidth,
           sidebarState,
+          setSidebarWidth,
           setSidebarState,
           triggerRef,
           sidebarRef,
         }}
       >
-        <div {...props} data-component="layout" ref={ref}>
+        <div
+          {...props}
+          data-component="layout"
+          data-sidebar-dragging={sidebarDragging}
+          ref={ref}
+          // @ts-ignore
+          style={{ "--wui-layout-sidebar-width": `${sidebarWidth}px` }}
+        >
           {children}
         </div>
       </LayoutContext.Provider>
@@ -422,10 +474,9 @@ LayoutSidebarOpenButton.displayName = "LayoutSidebarOpenButton";
 /* -------------------------------------------------------------------------------------------------
  * LayoutSidebarCloseButton
  * -----------------------------------------------------------------------------------------------*/
-type LayoutSidebarCloseButtonRef = ElementRef<typeof Button>;
-type LayoutSidebarCloseButtonComponentProps = ComponentPropsWithoutRef<
-  typeof Button
->;
+type LayoutSidebarCloseButtonRef = ElementRef<"button">;
+type LayoutSidebarCloseButtonComponentProps =
+  ComponentPropsWithoutRef<"button">;
 type LayoutSidebarCloseButtonProps = LayoutSidebarCloseButtonComponentProps;
 
 const LayoutSidebarCloseButton = forwardRef<
@@ -440,27 +491,67 @@ const LayoutSidebarCloseButton = forwardRef<
   /**
    * handles button press by docking the sidebar or closing if open
    */
-  function onPress() {
-    const breakpoint = window.matchMedia(DOCKED_BREAKPOINT);
-    if (!breakpoint.matches) return;
+  const { pressProps } = usePress({
+    onPress() {
+      if (context.sidebarDragging) {
+        return;
+      }
 
-    switch (context.sidebarState) {
-      case "docked": {
-        return context.setSidebarState("closed");
+      const breakpoint = window.matchMedia(DOCKED_BREAKPOINT);
+      if (!breakpoint.matches) return;
+
+      switch (context.sidebarState) {
+        case "docked": {
+          return context.setSidebarState("closed");
+        }
+        case "closed": {
+          break;
+        }
+        case "open": {
+          break;
+        }
       }
-      case "closed": {
-        break;
-      }
-      case "open": {
-        break;
-      }
-    }
-  }
+    },
+  });
+
+  /**
+   * handles drag events on the thing
+   */
+  const { moveProps } = useMove({
+    onMoveStart: () => {
+      context.setSidebarDragging(true);
+    },
+    onMove: (e) => {
+      context.setSidebarWidth((width) => {
+        const newWidth = clamp(width + e.deltaX);
+        return newWidth;
+      });
+    },
+    onMoveEnd: (e) => {
+      context.setSidebarDragging(false);
+    },
+  });
+
+  /**
+   * handles focus events on the drag handle
+   */
+  const { isFocusVisible, focusProps } = useFocusRing();
+
+  /**
+   * handles hover events on the drag handle
+   */
+  const { isHovered, hoverProps } = useHover({});
 
   return (
-    <Button {...props} ref={ref} onPress={onPress}>
+    <button
+      {...mergeProps(props, moveProps, pressProps, focusProps, hoverProps)}
+      ref={ref}
+      data-hovered={isHovered ? true : undefined}
+      data-sidebar-dragging={context.sidebarDragging ? true : undefined}
+      data-focus-visible={isFocusVisible ? true : undefined}
+    >
       {children}
-    </Button>
+    </button>
   );
 });
 
@@ -490,6 +581,7 @@ const LayoutSidebar = forwardRef<LayoutSidebarRef, LayoutSidebarProps>(
         {...props}
         data-slot="sidebar"
         data-state={context.sidebarState}
+        data-sidebar-dragging={context.sidebarDragging}
         ref={mergedRefs}
       >
         {children}
@@ -547,8 +639,18 @@ const LayoutContent = forwardRef<
   LayoutContentRef,
   PropsWithChildren<LayoutContentProps>
 >(({ children, ...props }, ref) => {
+  /**
+   * subscribe to app layout context
+   */
+  const context = useLayoutContext();
+
   return (
-    <main {...props} data-slot="content" ref={ref}>
+    <main
+      {...props}
+      data-slot="content"
+      ref={ref}
+      data-sidebar-dragging={context.sidebarDragging}
+    >
       {children}
     </main>
   );
