@@ -5,9 +5,5 @@ export const Route = createLazyFileRoute("/showcase/")({
 });
 
 function Index() {
-  return (
-    <div className="p-2">
-      <h3>Welcome Home!</h3>
-    </div>
-  );
+  return <div className="p-2">Home</div>;
 }

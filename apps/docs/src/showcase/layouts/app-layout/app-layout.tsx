@@ -7,7 +7,7 @@ import {
   LayoutSidebarResizeHandle,
 } from "~/showcase/components/ds/layout";
 
-import { Page } from "~/showcase/components/ds/page";
+import { Page, PageContent, PageHeader } from "~/showcase/components/ds/page";
 
 import { PanelLeft } from "lucide-react";
 import type { PropsWithChildren } from "react";
@@ -31,13 +31,16 @@ function AppLayout(props: PropsWithChildren) {
       </LayoutSidebar>
       <LayoutContent className="showcase-app-layout__content">
         <Page className="showcase-app-layout__page">
-          <LayoutSidebarOpenButton
-            className="showcase-app-layout__sidebar-open-button"
-            data-component="button"
-          >
-            <PanelLeft data-slot="icon" />
-          </LayoutSidebarOpenButton>
-          {props.children}
+          <PageHeader>
+            <LayoutSidebarOpenButton
+              className="showcase-app-layout__sidebar-open-button"
+              data-component="button"
+            >
+              <PanelLeft data-slot="icon" />
+            </LayoutSidebarOpenButton>
+            <div>Hello World</div>
+          </PageHeader>
+          <PageContent>{props.children}</PageContent>
         </Page>
       </LayoutContent>
     </Layout>

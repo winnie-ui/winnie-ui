@@ -1,7 +1,7 @@
 @layer component {
   [data-component="layout"] {
     --wui-layout-sidebar-width: calc(296px * var(--wui-scale));
-    --wui-layout-content-header-height: calc(60px * var(--wui-scale));
+    --wui-layout-content-header-height: calc(48px * var(--wui-scale));
     --wui-layout-content-space: var(--wui-space-5);
 
     display: flex;
@@ -37,7 +37,7 @@
       }
     }
 
-    [data-slot="content"] {
+    & > [data-slot="content"] {
       display: flex;
       flex-direction: column;
       flex: 1;
@@ -54,12 +54,18 @@
 
         &[data-state="open"] {
           left: var(--wui-layout-content-space);
-          top: var(--wui-layout-content-header-height);
+          top: calc(
+            var(--wui-layout-content-header-height) +
+            var(--wui-layout-content-space)
+          );
         }
 
         &[data-state="closed"] {
           left: calc(-1 * var(--wui-layout-sidebar-width));
-          top: var(--wui-layout-content-header-height);
+          top: calc(
+            var(--wui-layout-content-header-height) +
+            var(--wui-layout-content-space)
+          );
         }
 
         &:is([data-state="open"], [data-state="closed"]) {
@@ -83,7 +89,7 @@
       }
 
       &:has([data-slot="sidebar"][data-state="docked"]) {
-        [data-slot="content"] {
+        & > [data-slot="content"] {
           padding-left: calc(
             var(--wui-layout-sidebar-width) +
             var(--wui-layout-content-space)
@@ -94,7 +100,7 @@
       &:has(
           [data-slot="sidebar"]:not([data-state="open"], [data-state="closed"])
         ) {
-        [data-slot="content"] {
+        & > [data-slot="content"] {
           padding-left: calc(
             var(--wui-layout-sidebar-width) +
             var(--wui-layout-content-space)

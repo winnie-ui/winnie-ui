@@ -1,10 +1,22 @@
 @layer component {
   [data-component="page"] {
-    border-radius: 0;
+    --wui-page-inline-space: calc(var(--wui-space-9) + var(--wui-space-4));
+
+    display: flex;
+    border-radius: min(var(--wui-border-radius-3), 18px);
+    flex-direction: column;
     flex: 1;
 
-    @media (min-width: 768px) {
-      border-radius: min(var(--wui-border-radius-3), 18px);
+    [data-slot="header"] {
+      align-items: center;
+      display: grid;
+      height: var(--wui-page-header-height, calc(52px * var(--wui-scale)));
+      padding-inline: var(--wui-page-inline-space);
+      width: 100%;
+    }
+
+    [data-slot="content"] {
+      flex: 1;
     }
   }
 }

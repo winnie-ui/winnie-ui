@@ -445,23 +445,17 @@ const LayoutSidebarOpenButton = forwardRef<
   }
 
   return (
-    <Button
-      {...props}
-      onPress={onPress}
-      style={{
-        isolation: "revert",
-      }}
-      ref={ref}
-    >
+    <Button {...props} onPress={onPress} ref={ref}>
       {children}
       <span
         {...hoverProps}
         style={{
           zIndex: 96,
-          height: "calc(60px * var(--wui-scale))",
-          width: "60px",
+          height:
+            "calc(var(--wui-page-header-height) + var(--wui-layout-content-space))",
+          top: "calc(-1 * var(--wui-layout-content-space) - var(--wui-space-4))",
           position: "absolute",
-          inset: "0",
+          width: "calc(70px * var(--wui-scale))",
         }}
         ref={context.triggerRef}
       />
