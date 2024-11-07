@@ -5,37 +5,34 @@ import {
   LayoutSidebar,
   LayoutSidebarOpenButton,
   LayoutSidebarResizeHandle,
-} from "~/showcase/components/ds/layout";
+} from "~/showcase/components/ds/layout/layout";
 
-import { Page, PageContent, PageHeader } from "~/showcase/components/ds/page";
+import {
+  Page,
+  PageContent,
+  PageHeader,
+} from "~/showcase/components/ds/page/page";
 
 import { PanelLeft } from "lucide-react";
 import type { PropsWithChildren } from "react";
-
-import "./app-layout.css";
 
 /* -------------------------------------------------------------------------------------------------
  * AppLayout
  * -----------------------------------------------------------------------------------------------*/
 function AppLayout(props: PropsWithChildren) {
   return (
-    <Layout className="showcase-app-layout">
-      <LayoutMask className="showcase-app-layout__mask" />
-      <LayoutSidebar className="showcase-app-layout__sidebar">
+    <Layout>
+      <LayoutMask />
+      <LayoutSidebar>
         <header className="sidebar__header">
           <span>Goho Pizza Co.</span>
         </header>
-        <LayoutSidebarResizeHandle className="showcase-app-layout__sidebar-resize-handle">
-          <span className="showcase-app-layout__sidebar-sidebar-resize-handle-thumb" />
-        </LayoutSidebarResizeHandle>
+        <LayoutSidebarResizeHandle />
       </LayoutSidebar>
-      <LayoutContent className="showcase-app-layout__content">
-        <Page className="showcase-app-layout__page">
+      <LayoutContent>
+        <Page>
           <PageHeader>
-            <LayoutSidebarOpenButton
-              className="showcase-app-layout__sidebar-open-button"
-              data-component="button"
-            >
+            <LayoutSidebarOpenButton>
               <PanelLeft data-slot="icon" />
             </LayoutSidebarOpenButton>
             <div>Hello World</div>

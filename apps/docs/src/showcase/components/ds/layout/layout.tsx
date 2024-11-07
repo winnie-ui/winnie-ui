@@ -19,6 +19,9 @@ import {
 import { mergeProps, mergeRefs } from "@react-aria/utils";
 import { useFocusRing, useHover, useMove, usePress } from "react-aria";
 
+import "./layout.css";
+import clsx from "clsx";
+
 /* -------------------------------------------------------------------------------------------------
  * Constants
  * -----------------------------------------------------------------------------------------------*/
@@ -218,7 +221,7 @@ type LayoutComponentProps = ComponentPropsWithoutRef<"div">;
 type LayoutProps = LayoutComponentProps;
 
 const Layout = forwardRef<LayoutRef, PropsWithChildren<LayoutProps>>(
-  ({ children, ...props }, ref) => {
+  ({ children, className, ...props }, ref) => {
     /**
      * tracks the state of the layout
      */
@@ -371,6 +374,7 @@ const Layout = forwardRef<LayoutRef, PropsWithChildren<LayoutProps>>(
       >
         <div
           {...props}
+          className={clsx(className, "wui-layout")}
           data-component="layout"
           data-sidebar-dragging={sidebarDragging}
           ref={ref}
@@ -396,7 +400,7 @@ type LayoutSidebarOpenButtonProps = LayoutSidebarOpenButtonComponentProps;
 const LayoutSidebarOpenButton = forwardRef<
   LayoutSidebarOpenButtonRef,
   PropsWithChildren<LayoutSidebarOpenButtonProps>
->(({ children, ...props }, ref) => {
+>(({ children, className, ...props }, ref) => {
   /**
    * subscribe to app layout context
    */
@@ -445,7 +449,13 @@ const LayoutSidebarOpenButton = forwardRef<
   }
 
   return (
-    <Button {...props} onPress={onPress} ref={ref}>
+    <Button
+      {...props}
+      className={clsx(className, "wui-layout-sidebar-open-button")}
+      data-component="button"
+      onPress={onPress}
+      ref={ref}
+    >
       {children}
       <span
         {...hoverProps}
@@ -476,7 +486,7 @@ type LayoutSidebarResizeHandleProps = LayoutSidebarResizeHandleComponentProps;
 const LayoutSidebarResizeHandle = forwardRef<
   LayoutSidebarResizeHandleRef,
   PropsWithChildren<LayoutSidebarResizeHandleProps>
->(({ children, ...props }, ref) => {
+>(({ children, className, ...props }, ref) => {
   /**
    * subscribe to app layout context
    */
@@ -521,7 +531,7 @@ const LayoutSidebarResizeHandle = forwardRef<
         return newWidth;
       });
     },
-    onMoveEnd: (e) => {
+    onMoveEnd: () => {
       context.setSidebarDragging(false);
     },
   });
@@ -539,12 +549,13 @@ const LayoutSidebarResizeHandle = forwardRef<
   return (
     <button
       {...mergeProps(props, moveProps, pressProps, focusProps, hoverProps)}
+      className={clsx(className, "wui-layout-sidebar-resize-handle")}
       ref={ref}
       data-hovered={isHovered ? true : undefined}
       data-sidebar-dragging={context.sidebarDragging ? true : undefined}
       data-focus-visible={isFocusVisible ? true : undefined}
     >
-      {children}
+      <span className="wui-layout-sidebar-resize-handle-thumb" />
     </button>
   );
 });
@@ -559,7 +570,7 @@ type LayoutSidebarComponentProps = ComponentPropsWithoutRef<"nav">;
 type LayoutSidebarProps = LayoutSidebarComponentProps;
 
 const LayoutSidebar = forwardRef<LayoutSidebarRef, LayoutSidebarProps>(
-  ({ children, ...props }, ref) => {
+  ({ children, className, ...props }, ref) => {
     /**
      * subscribe to app layout context
      */
@@ -574,6 +585,7 @@ const LayoutSidebar = forwardRef<LayoutSidebarRef, LayoutSidebarProps>(
       <nav
         {...props}
         data-slot="sidebar"
+        className={clsx(className, "wui-layout-sidebar")}
         data-state={context.sidebarState}
         data-sidebar-dragging={context.sidebarDragging}
         ref={mergedRefs}
@@ -593,32 +605,41 @@ type LayoutMaskRef = ElementRef<"div">;
 type LayoutMaskComponentProps = ComponentPropsWithoutRef<"div">;
 type LayoutMaskProps = LayoutMaskComponentProps;
 
-const LayoutMask = forwardRef<LayoutMaskRef, LayoutMaskProps>((props, ref) => {
-  /**
-   * subscribe to app layout context
-   */
-  const context = useLayoutContext();
+const LayoutMask = forwardRef<LayoutMaskRef, LayoutMaskProps>(
+  ({ className, ...props }, ref) => {
+    /**
+     * subscribe to app layout context
+     */
+    const context = useLayoutContext();
 
-  /**
-   * handles hover start by opening the sidebar
-   */
-  const { pressProps } = usePress({
-    onPress: () => {
-      context.setSidebarState("closed");
-    },
-  });
+    /**
+     * handles hover start by opening the sidebar
+     */
+    const { pressProps } = usePress({
+      onPress: () => {
+        context.setSidebarState("closed");
+      },
+    });
 
-  /**
-   * Merge the props from press and passed in props
-   */
-  const mergedProps = mergeProps(pressProps, props);
+    /**
+     * Merge the props from press and passed in props
+     */
+    const mergedProps = mergeProps(pressProps, props);
 
-  if (context.sidebarState !== "open") {
-    return null;
-  }
+    if (context.sidebarState !== "open") {
+      return null;
+    }
 
-  return <div {...mergedProps} data-slot="mask" ref={ref} />;
-});
+    return (
+      <div
+        {...mergedProps}
+        className={clsx(className, "wui-layout-mask")}
+        data-slot="mask"
+        ref={ref}
+      />
+    );
+  },
+);
 
 LayoutMask.displayName = "LayoutMask";
 
@@ -632,7 +653,7 @@ type LayoutContentProps = LayoutContentComponentProps;
 const LayoutContent = forwardRef<
   LayoutContentRef,
   PropsWithChildren<LayoutContentProps>
->(({ children, ...props }, ref) => {
+>(({ children, className, ...props }, ref) => {
   /**
    * subscribe to app layout context
    */
@@ -641,6 +662,7 @@ const LayoutContent = forwardRef<
   return (
     <main
       {...props}
+      className={clsx(className, "wui-layout-content")}
       data-slot="content"
       ref={ref}
       data-sidebar-dragging={context.sidebarDragging}
