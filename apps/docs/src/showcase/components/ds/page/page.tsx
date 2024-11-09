@@ -10,6 +10,30 @@ import clsx from "clsx";
 import "./page.css";
 
 /* -------------------------------------------------------------------------------------------------
+ * Page
+ * -----------------------------------------------------------------------------------------------*/
+type PageRef = ElementRef<"div">;
+type PageComponentProps = ComponentPropsWithoutRef<"div">;
+type PageProps = PageComponentProps;
+
+const Page = forwardRef<PageRef, PropsWithChildren<PageProps>>(
+  ({ children, className, ...props }, ref) => {
+    return (
+      <div
+        {...props}
+        className={clsx(className, "wui-page")}
+        data-component="page"
+        ref={ref}
+      >
+        {children}
+      </div>
+    );
+  },
+);
+
+Page.displayName = "Page";
+
+/* -------------------------------------------------------------------------------------------------
  * PageHeader
  * -----------------------------------------------------------------------------------------------*/
 type PageHeaderRef = ElementRef<"header">;
@@ -58,30 +82,6 @@ const PageContent = forwardRef<
 });
 
 PageContent.displayName = "PageContent";
-
-/* -------------------------------------------------------------------------------------------------
- * Page
- * -----------------------------------------------------------------------------------------------*/
-type PageRef = ElementRef<"div">;
-type PageComponentProps = ComponentPropsWithoutRef<"div">;
-type PageProps = PageComponentProps;
-
-const Page = forwardRef<PageRef, PropsWithChildren<PageProps>>(
-  ({ children, className, ...props }, ref) => {
-    return (
-      <div
-        {...props}
-        className={clsx(className, "wui-page")}
-        data-component="page"
-        ref={ref}
-      >
-        {children}
-      </div>
-    );
-  },
-);
-
-Page.displayName = "Page";
 
 export { Page, PageHeader, PageContent };
 export type { PageProps, PageHeaderProps, PageContentProps };
