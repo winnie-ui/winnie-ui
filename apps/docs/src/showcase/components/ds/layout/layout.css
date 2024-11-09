@@ -55,7 +55,7 @@
     }
 
     .wui-layout-sidebar-open-button {
-      background: red;
+      background: transparent;
       grid-template-columns: 1fr;
       height: var(--wui-button-height, var(--wui-button-md-height));
       isolation: revert;
@@ -65,6 +65,10 @@
       left: var(--wui-space-4);
       opacity: 1;
       width: var(--wui-button-height, var(--wui-button-md-height));
+
+      &:is([data-hovered], [data-pressed]) {
+        background: transparent;
+      }
 
       @media (prefers-reduced-motion: no-preference) {
         transition: display, opacity;

@@ -39,6 +39,7 @@
     gap: var(--wui-button-space, var(--wui-button-md-space));
     height: var(--wui-button-height, var(--wui-button-md-height));
     min-width: max-content;
+    flex-shrink: 0;
     padding-inline: var(--wui-button-space, var(--wui-button-md-space));
     position: relative;
     white-space: nowrap;
@@ -94,10 +95,11 @@
       grid-column: 2 / 3;
     }
 
-    /* only a single icon in the button */
+    /* only a single icon in the button or icon followed by loading slot */
     &:has(
         [data-slot="icon"]:only-child,
-        [data-slot="icon"] + [data-slot="loading"]
+        [data-slot="icon"] + [data-slot="loading"],
+        [data-slot="loading"] + [data-slot="icon"]
       ):not([data-slot="label"]) {
       grid-template-columns: 1fr;
       height: var(--wui-button-height, var(--wui-button-md-height));

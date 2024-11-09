@@ -1,5 +1,3 @@
-import { Button } from "react-aria-components";
-
 import {
   type ComponentPropsWithoutRef,
   type Dispatch,
@@ -19,8 +17,11 @@ import {
 import { mergeProps, mergeRefs } from "@react-aria/utils";
 import { useFocusRing, useHover, useMove, usePress } from "react-aria";
 
+import { Button, ButtonIcon } from "../button/button";
+
 import "./layout.css";
 import clsx from "clsx";
+import { PanelLeft } from "lucide-react";
 
 /* -------------------------------------------------------------------------------------------------
  * Constants
@@ -189,18 +190,54 @@ function clamp(x: number) {
  * -----------------------------------------------------------------------------------------------*/
 type SidebarState = "docked" | "open" | "closed";
 type LayoutContextProps = {
+  /**
+   * If true, the user is dragging the sidebar
+   */
   sidebarDragging: boolean;
+
+  /**
+   * Sets the sidebarDragging state
+   */
   setSidebarDragging: Dispatch<SetStateAction<boolean>>;
+
+  /**
+   * Width of sidebar in pixels
+   */
   sidebarWidth: number;
-  sidebarState: SidebarState;
-  setSidebarState: Dispatch<SetStateAction<SidebarState>>;
+
+  /**
+   * Sets the sidebar width
+   */
   setSidebarWidth: Dispatch<SetStateAction<number>>;
+
+  /**
+   * State of the sidebar
+   */
+  sidebarState: SidebarState;
+
+  /**
+   * Sets the state of the sidebar
+   */
+  setSidebarState: Dispatch<SetStateAction<SidebarState>>;
+
+  /**
+   * Ref to the sidebar open button
+   */
   triggerRef: MutableRefObject<HTMLElement | null>;
+
+  /**
+   * Ref to the sidebar
+   */
   sidebarRef: MutableRefObject<HTMLElement | null>;
 };
 
 const LayoutContext = createContext<LayoutContextProps | null>(null);
 
+/**
+ * A hook that returns the current state of the layout context
+ *
+ * @returns An instance of the layout context
+ */
 const useLayoutContext = () => {
   const context = useContext(LayoutContext);
 
@@ -399,8 +436,8 @@ type LayoutSidebarOpenButtonProps = LayoutSidebarOpenButtonComponentProps;
 
 const LayoutSidebarOpenButton = forwardRef<
   LayoutSidebarOpenButtonRef,
-  PropsWithChildren<LayoutSidebarOpenButtonProps>
->(({ children, className, ...props }, ref) => {
+  LayoutSidebarOpenButtonProps
+>(({ className, ...props }, ref) => {
   /**
    * subscribe to app layout context
    */
@@ -452,11 +489,14 @@ const LayoutSidebarOpenButton = forwardRef<
     <Button
       {...props}
       className={clsx(className, "wui-layout-sidebar-open-button")}
-      data-component="button"
+      color="grey"
+      variant="ghost"
       onPress={onPress}
       ref={ref}
     >
-      {children}
+      <ButtonIcon>
+        <PanelLeft />
+      </ButtonIcon>
       <span
         {...hoverProps}
         style={{
