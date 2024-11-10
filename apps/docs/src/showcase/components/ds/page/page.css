@@ -1,8 +1,10 @@
 @layer ds {
   .wui-page {
     background: var(--wui-page-background);
+    border-radius: 0;
 
     @media (min-width: 768px) {
+      border-radius: min(var(--wui-border-radius-3), 18px);
       border: var(--wui-border-width-1) solid var(--wui-page-border-color);
       box-shadow: var(--wui-shadow-2);
     }

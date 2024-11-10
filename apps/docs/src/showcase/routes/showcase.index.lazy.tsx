@@ -1,8 +1,7 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
-import { Button, ButtonIcon } from "../components/ds/button/button";
 
-import { PanelLeft } from "lucide-react";
-import { ButtonContext } from "react-aria-components";
+import { Heading } from "../components/ds/typography/heading";
+import { Text } from "../components/ds/typography/text";
 
 export const Route = createLazyFileRoute("/showcase/")({
   component: Index,
@@ -13,167 +12,20 @@ function Index() {
     <div className="p-2">
       <div
         style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "20px",
           padding: "20px",
         }}
       >
-        <Button>
-          <ButtonIcon>
-            <PanelLeft />
-          </ButtonIcon>
-        </Button>
-        <Button variant="soft">
-          <ButtonIcon>
-            <PanelLeft />
-          </ButtonIcon>
-        </Button>
-        <Button variant="ghost">
-          <ButtonIcon>
-            <PanelLeft />
-          </ButtonIcon>
-        </Button>
-        <Button color="red">
-          <ButtonIcon>
-            <PanelLeft />
-          </ButtonIcon>
-        </Button>
-        <Button color="red" variant="soft">
-          <ButtonIcon>
-            <PanelLeft />
-          </ButtonIcon>
-        </Button>
-        <Button color="red" variant="ghost">
-          <ButtonIcon>
-            <PanelLeft />
-          </ButtonIcon>
-        </Button>
-        <Button color="grey">
-          <ButtonIcon>
-            <PanelLeft />
-          </ButtonIcon>
-        </Button>
-        <Button color="grey" variant="soft">
-          <ButtonIcon>
-            <PanelLeft />
-          </ButtonIcon>
-        </Button>
-        <Button color="grey" variant="ghost">
-          <ButtonIcon>
-            <PanelLeft />
-          </ButtonIcon>
-        </Button>
-      </div>
-      <ButtonContext.Provider value={{ isDisabled: true }}>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "20px",
-            padding: "20px",
-          }}
-        >
-          <Button>
-            <ButtonIcon>
-              <PanelLeft />
-            </ButtonIcon>
-          </Button>
-          <Button variant="soft">
-            <ButtonIcon>
-              <PanelLeft />
-            </ButtonIcon>
-          </Button>
-          <Button variant="ghost">
-            <ButtonIcon>
-              <PanelLeft />
-            </ButtonIcon>
-          </Button>
-          <Button color="red">
-            <ButtonIcon>
-              <PanelLeft />
-            </ButtonIcon>
-          </Button>
-          <Button color="red" variant="soft">
-            <ButtonIcon>
-              <PanelLeft />
-            </ButtonIcon>
-          </Button>
-          <Button color="red" variant="ghost">
-            <ButtonIcon>
-              <PanelLeft />
-            </ButtonIcon>
-          </Button>
-          <Button color="grey">
-            <ButtonIcon>
-              <PanelLeft />
-            </ButtonIcon>
-          </Button>
-          <Button color="grey" variant="soft">
-            <ButtonIcon>
-              <PanelLeft />
-            </ButtonIcon>
-          </Button>
-          <Button color="grey" variant="ghost">
-            <ButtonIcon>
-              <PanelLeft />
-            </ButtonIcon>
-          </Button>
-        </div>
-      </ButtonContext.Provider>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "20px",
-          padding: "20px",
-        }}
-      >
-        <Button isPending>
-          <ButtonIcon>
-            <PanelLeft />
-          </ButtonIcon>
-        </Button>
-        <Button isPending variant="soft">
-          <ButtonIcon>
-            <PanelLeft />
-          </ButtonIcon>
-        </Button>
-        <Button isPending variant="ghost">
-          <ButtonIcon>
-            <PanelLeft />
-          </ButtonIcon>
-        </Button>
-        <Button isPending color="red">
-          <ButtonIcon>
-            <PanelLeft />
-          </ButtonIcon>
-        </Button>
-        <Button isPending color="red" variant="soft">
-          <ButtonIcon>
-            <PanelLeft />
-          </ButtonIcon>
-        </Button>
-        <Button isPending color="red" variant="ghost">
-          <ButtonIcon>
-            <PanelLeft />
-          </ButtonIcon>
-        </Button>
-        <Button isPending color="grey">
-          <ButtonIcon>
-            <PanelLeft />
-          </ButtonIcon>
-        </Button>
-        <Button isPending color="grey" variant="soft">
-          <ButtonIcon>
-            <PanelLeft />
-          </ButtonIcon>
-        </Button>
-        <Button isPending color="grey" variant="ghost">
-          <ButtonIcon>
-            <PanelLeft />
-          </ButtonIcon>
-        </Button>
+        <Heading>Hello World</Heading>
+        <Text contrast="normal">
+          The evening sky blazed in shades of crimson and gold as the sun dipped
+          below the horizon, casting long shadows across the quiet town. A soft
+          breeze whispered through the trees, carrying the faint scent of
+          blooming jasmine and freshly cut grass. In the distance, the sound of
+          children’s laughter echoed, mingling with the rhythmic chirping of
+          crickets. On the porch of an old wooden house, a cat stretched lazily,
+          its amber eyes half-closed in contentment. Life moved slowly here,
+          each moment unfolding like the pages of an old, cherished book.
+        </Text>
       </div>
     </div>
   );

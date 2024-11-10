@@ -1,0 +1,92 @@
+@layer ds {
+  .wui-typography {
+    &[data-align="left"] {
+      text-align: left;
+    }
+
+    &[data-align="center"] {
+      text-align: center;
+    }
+
+    &[data-align="right"] {
+      text-align: right;
+    }
+
+    &[data-contrast="low"] {
+      color: var(--wui-color-accent-10);
+    }
+
+    &[data-contrast="normal"] {
+      color: var(--wui-color-accent-11);
+    }
+
+    &[data-contrast="high"] {
+      color: var(--wui-color-accent-12);
+    }
+
+    &[data-size="1"] {
+      font-size: var(--wui-font-size-1);
+      line-height: var(--wui-line-height-1);
+    }
+
+    &[data-size="2"] {
+      font-size: var(--wui-font-size-2);
+      line-height: var(--wui-line-height-2);
+    }
+
+    &[data-size="3"] {
+      font-size: var(--wui-font-size-3);
+      line-height: var(--wui-line-height-3);
+    }
+
+    &[data-size="4"] {
+      font-size: var(--wui-font-size-4);
+      line-height: var(--wui-line-height-4);
+    }
+
+    &[data-size="5"] {
+      font-size: var(--wui-font-size-5);
+      line-height: var(--wui-line-height-5);
+    }
+
+    &[data-size="6"] {
+      font-size: var(--wui-font-size-6);
+      line-height: var(--wui-line-height-6);
+    }
+
+    &[data-size="7"] {
+      font-size: var(--wui-font-size-7);
+      line-height: var(--wui-line-height-7);
+    }
+
+    &[data-size="8"] {
+      font-size: var(--wui-font-size-8);
+      line-height: var(--wui-line-height-8);
+    }
+
+    &[data-size="9"] {
+      font-size: var(--wui-font-size-9);
+      line-height: var(--wui-line-height-9);
+    }
+
+    &[data-weight="normal"] {
+      font-weight: var(--wui-font-weight-normal);
+    }
+
+    &[data-weight="medium"] {
+      font-weight: var(--wui-font-weight-medium);
+    }
+
+    &[data-weight="semibold"] {
+      font-weight: var(--wui-font-weight-semibold);
+    }
+
+    &[data-weight="bold"] {
+      font-weight: var(--wui-font-weight-bold);
+    }
+
+    &[data-weight="extra-bold"] {
+      font-weight: var(--wui-font-weight-extra-bold);
+    }
+  }
+}

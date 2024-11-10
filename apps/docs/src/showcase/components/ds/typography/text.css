@@ -1,0 +1,5 @@
+@layer ds {
+  .wui-text {
+    font-family: var(--wui-font-family-sans);
+  }
+}

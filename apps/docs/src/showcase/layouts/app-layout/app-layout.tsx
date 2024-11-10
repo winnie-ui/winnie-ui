@@ -25,7 +25,7 @@ function AppLayout(props: PropsWithChildren) {
       <LayoutMask />
       <LayoutSidebar>
         <header className="sidebar__header">
-          <span>Goho Pizza Co.</span>
+          <span>Curtis Knight</span>
         </header>
         <LayoutSidebarResizeHandle />
       </LayoutSidebar>

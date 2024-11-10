@@ -15,9 +15,14 @@
     "enabled": true,
     "rules": {
       "recommended": true,
+      "correctness": {
+        "noUnusedImports": "error",
+        "noUnusedVariables": "error"
+      },
       "style": {
         "noNonNullAssertion": "off"
       },
+
       "suspicious": {
         "noConsoleLog": "error",
         "noExplicitAny": "off"
