@@ -1,6 +1,6 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
 
-import { PageContent, PageTitle } from "../components/ds/page/page";
+import { PageContent, PageTitle } from "../ds/page/page";
 
 export const Route = createLazyFileRoute("/showcase/")({
   component: Index,
@@ -11,6 +11,7 @@ function Index() {
     <>
       <PageContent>
         <PageTitle>Tournaments</PageTitle>
+        <button className="bg-accent-9 p-4">Hello world</button>
       </PageContent>
     </>
   );

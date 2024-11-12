@@ -5,9 +5,9 @@ import {
   LayoutSidebar,
   LayoutSidebarOpenButton,
   LayoutSidebarResizeHandle,
-} from "../../components/ds/layout/layout";
+} from "../../ds/layout/layout";
 
-import { Page, PageHeader } from "../../components/ds/page/page";
+import { Page, PageHeader } from "../../ds/page/page";
 
 import { PanelLeft } from "lucide-react";
 import type { PropsWithChildren } from "react";

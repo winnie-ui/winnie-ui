@@ -6,8 +6,12 @@ import { createRoot } from "react-dom/client";
 import { queryClient } from "./api/query-client";
 import { routeTree } from "./routeTree.gen";
 
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
+import "@fontsource/inter/800.css";
 import "./main.css";
-import "./components/ds/index.css";
 
 // Create a new router instance
 const router = createRouter({
