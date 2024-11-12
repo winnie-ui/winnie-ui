@@ -1,6 +1,7 @@
 @import "@winnie-ui/css/layer";
 @import "@winnie-ui/css/reset";
 @import "@winnie-ui/css/base";
+@import "@winnie-ui/css/component";
 @import "tailwindcss" layer(tailwind);
 
 @layer utilities {
