@@ -1,8 +1,9 @@
 /// <reference path="./.sst/platform/config.d.ts" />
+
 export default $config({
   app(input) {
     return {
-      name: "winnie-docs",
+      name: "showcase",
       removal: input?.stage === "production" ? "retain" : "remove",
       home: "aws",
       providers: { cloudflare: true },
@@ -13,13 +14,17 @@ export default $config({
 
     const domain = isProduction
       ? {
-          name: "winnie-ui.com",
+          name: "showcase.winnie-ui.com",
           dns: sst.cloudflare.dns(),
         }
       : undefined;
 
-    new sst.aws.Astro("WinnieDocs", {
+    new sst.aws.StaticSite("WinnieShowcase", {
       domain,
+      build: {
+        command: "pnpm build",
+        output: "dist",
+      },
     });
   },
 });

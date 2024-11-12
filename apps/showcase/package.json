@@ -1,0 +1,28 @@
+{
+  "name": "showcase",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -b && vite build",
+    "dev": "vite",
+    "dev:sst": "sst dev",
+    "deploy:production": "sst deploy --stage=production",
+    "deploy:staging": "sst deploy --stage=staging",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sst": "3.3.21"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "8.10.145",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "globals": "^15.11.0",
+    "typescript": "~5.6.2",
+    "vite": "^5.4.10"
+  }
+}
