@@ -62,6 +62,9 @@ importers:
       '@react-aria/utils':
         specifier: 3.25.3
         version: 3.25.3(react@18.3.1)
+      '@tanstack/react-query':
+        specifier: 5.59.20
+        version: 5.59.20(react@18.3.1)
       '@tanstack/react-router':
         specifier: 1.78.2
         version: 1.78.2(@tanstack/router-generator@1.78.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -89,6 +92,9 @@ importers:
       flexsearch:
         specifier: 0.7.43
         version: 0.7.43
+      hono:
+        specifier: 4.6.9
+        version: 4.6.9
       lucide-react:
         specifier: 0.454.0
         version: 0.454.0(react@18.3.1)
@@ -125,7 +131,7 @@ importers:
         version: 6.0.1
       sst:
         specifier: 3.2.73
-        version: 3.2.73
+        version: 3.2.73(hono@4.6.9)
       typescript:
         specifier: 5.6.3
         version: 5.6.3
@@ -2010,6 +2016,14 @@ packages:
     resolution: {integrity: sha512-2CqERleeqO3hkhJmyJm37tiL3LYgeOpmo8szqdjgtnnG0z7ZpvzkZz6HkfOr9Ca/ha7mhAiouSvLYuLkM37AMg==}
     engines: {node: '>=12'}
 
+  '@tanstack/query-core@5.59.20':
+    resolution: {integrity: sha512-e8vw0lf7KwfGe1if4uPFhvZRWULqHjFcz3K8AebtieXvnMOz5FSzlZe3mTLlPuUBcydCnBRqYs2YJ5ys68wwLg==}
+
+  '@tanstack/react-query@5.59.20':
+    resolution: {integrity: sha512-Zly0egsK0tFdfSbh5/mapSa+Zfc3Et0Zkar7Wo5sQkFzWyB3p3uZWOHR2wrlAEEV2L953eLuDBtbgFvMYiLvUw==}
+    peerDependencies:
+      react: ^18 || ^19
+
   '@tanstack/react-router@1.78.2':
     resolution: {integrity: sha512-gEVaVUZuQy97TeKA2lFpYIREOb6G8AXe/dWCGlXS/TW57b3Re5qDRzeOfR7pKi4XpDCJIWl/UC9of925a9O7dA==}
     engines: {node: '>=12'}
@@ -2852,6 +2866,10 @@ packages:
 
   hastscript@9.0.0:
     resolution: {integrity: sha512-jzaLBGavEDKHrc5EfFImKN7nZKKBdSLIdGvCwDZ9TfzbF2ffXiov8CKE445L2Z1Ek2t/m4SKQ2j6Ipv7NyUolw==}
+
+  hono@4.6.9:
+    resolution: {integrity: sha512-p/pN5yZLuZaHzyAOT2nw2/Ud6HhJHYmDNGH6Ck1OWBhPMVeM1r74jbCRwNi0gyFRjjbsGgoHbOyj7mT1PDNbTw==}
+    engines: {node: '>=16.9.0'}
 
   html-escaper@3.0.3:
     resolution: {integrity: sha512-RuMffC89BOWQoY0WKGpIhn5gX3iI54O6nRA0yC124NYVtzjmFWBIiFd8M0x+ZdX0P9R4lADg1mgP8C7PxGOWuQ==}
@@ -6827,6 +6845,13 @@ snapshots:
 
   '@tanstack/history@1.61.1': {}
 
+  '@tanstack/query-core@5.59.20': {}
+
+  '@tanstack/react-query@5.59.20(react@18.3.1)':
+    dependencies:
+      '@tanstack/query-core': 5.59.20
+      react: 18.3.1
+
   '@tanstack/react-router@1.78.2(@tanstack/router-generator@1.78.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@tanstack/history': 1.61.1
@@ -7922,6 +7947,8 @@ snapshots:
       hast-util-parse-selector: 4.0.0
       property-information: 6.5.0
       space-separated-tokens: 2.0.2
+
+  hono@4.6.9: {}
 
   html-escaper@3.0.3: {}
 
@@ -9435,12 +9462,13 @@ snapshots:
   sst-linux-x86@3.2.73:
     optional: true
 
-  sst@3.2.73:
+  sst@3.2.73(hono@4.6.9):
     dependencies:
       aws4fetch: 1.0.20
       jose: 5.2.3
       openid-client: 5.6.4
     optionalDependencies:
+      hono: 4.6.9
       sst-darwin-arm64: 3.2.73
       sst-darwin-x64: 3.2.73
       sst-linux-arm64: 3.2.73

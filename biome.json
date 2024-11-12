@@ -22,16 +22,10 @@
       "style": {
         "noNonNullAssertion": "off"
       },
-
       "suspicious": {
         "noConsoleLog": "error",
         "noExplicitAny": "off"
       }
     }
-  },
-  "overrides": [
-    {
-      "include": ["*.astro"]
-    }
-  ]
+  }
 }

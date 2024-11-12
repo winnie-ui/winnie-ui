@@ -9,8 +9,20 @@
       box-shadow: var(--wui-shadow-2);
     }
 
-    .wui-page-header {
+    .wui-page__header {
       position: relative;
+    }
+
+    .wui-page__content {
+      .wui-page__title {
+        color: var(--wui-color-grey-12);
+        font-family: var(--wui-font-family-sans);
+        font-size: var(--wui-font-size-7);
+        font-weight: var(--wui-font-weight-semibold);
+        letter-spacing: var(--wui-letter-spacing-9);
+        margin-bottom: var(--wui-space-9);
+        margin-top: var(--wui-space-7);
+      }
     }
   }
 

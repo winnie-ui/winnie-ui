@@ -5,13 +5,9 @@ import {
   LayoutSidebar,
   LayoutSidebarOpenButton,
   LayoutSidebarResizeHandle,
-} from "~/showcase/components/ds/layout/layout";
+} from "../../components/ds/layout/layout";
 
-import {
-  Page,
-  PageContent,
-  PageHeader,
-} from "~/showcase/components/ds/page/page";
+import { Page, PageHeader } from "../../components/ds/page/page";
 
 import { PanelLeft } from "lucide-react";
 import type { PropsWithChildren } from "react";
@@ -25,7 +21,7 @@ function AppLayout(props: PropsWithChildren) {
       <LayoutMask />
       <LayoutSidebar>
         <header className="sidebar__header">
-          <span>Curtis Knight</span>
+          <span>Adam Aho</span>
         </header>
         <LayoutSidebarResizeHandle />
       </LayoutSidebar>
@@ -35,9 +31,9 @@ function AppLayout(props: PropsWithChildren) {
             <LayoutSidebarOpenButton>
               <PanelLeft data-slot="icon" />
             </LayoutSidebarOpenButton>
-            <div>Hello World</div>
+            Breadcrumbs
           </PageHeader>
-          <PageContent>{props.children}</PageContent>
+          {props.children}
         </Page>
       </LayoutContent>
     </Layout>

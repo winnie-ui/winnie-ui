@@ -5,6 +5,11 @@ import {
   forwardRef,
 } from "react";
 
+import {
+  Heading as AriaHeading,
+  type HeadingProps as AriaHeadingProps,
+} from "react-aria-components";
+
 import clsx from "clsx";
 
 import "./page.css";
@@ -47,7 +52,7 @@ const PageHeader = forwardRef<
   return (
     <header
       {...props}
-      className={clsx(className, "wui-page-header")}
+      className={clsx(className, "wui-page__header")}
       data-slot="header"
       ref={ref}
     >
@@ -72,7 +77,7 @@ const PageContent = forwardRef<
   return (
     <div
       {...props}
-      className={clsx(className, "wui-page-content")}
+      className={clsx(className, "wui-page__content")}
       data-slot="content"
       ref={ref}
     >
@@ -83,5 +88,26 @@ const PageContent = forwardRef<
 
 PageContent.displayName = "PageContent";
 
-export { Page, PageHeader, PageContent };
-export type { PageProps, PageHeaderProps, PageContentProps };
+/* -------------------------------------------------------------------------------------------------
+ * PageTitle
+ * -----------------------------------------------------------------------------------------------*/
+type PageTitleElement = ElementRef<typeof AriaHeading>;
+type PageTitleProps = Omit<AriaHeadingProps, "level">;
+
+const PageTitle = forwardRef<
+  PageTitleElement,
+  PropsWithChildren<PageTitleProps>
+>(({ className, children, ...props }, ref) => {
+  return (
+    <AriaHeading
+      {...props}
+      className={clsx("wui-page__title", className)}
+      ref={ref}
+    >
+      {children}
+    </AriaHeading>
+  );
+});
+
+export { Page, PageHeader, PageContent, PageTitle };
+export type { PageProps, PageHeaderProps, PageContentProps, PageTitleProps };
