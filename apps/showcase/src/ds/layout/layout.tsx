@@ -19,7 +19,6 @@ import { useFocusRing, useHover, useMove, usePress } from "react-aria";
 
 import { Button, ButtonIcon } from "../button/button";
 
-import "./layout.css";
 import clsx from "clsx";
 import { PanelLeft } from "lucide-react";
 

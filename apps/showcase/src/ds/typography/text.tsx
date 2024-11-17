@@ -6,8 +6,6 @@ import {
 } from "react-aria-components";
 import { type TypographyProps, getTypographyProps } from "./typography";
 
-import "./text.css";
-
 type TextElement = ElementRef<typeof AriaText>;
 type TextProps = AriaTextProps & TypographyProps;
 

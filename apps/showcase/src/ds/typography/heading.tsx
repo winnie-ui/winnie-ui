@@ -6,8 +6,6 @@ import {
 } from "react-aria-components";
 import { type TypographyProps, getTypographyProps } from "./typography";
 
-import "./heading.css";
-
 type HeadingElement = ElementRef<typeof AriaHeading>;
 type HeadingProps = AriaHeadingProps & TypographyProps;
 
