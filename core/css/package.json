@@ -115,9 +115,9 @@
     "stylelint": "stylelint \"src/**/*.css\""
   },
   "devDependencies": {
-    "concurrently": "9.0.1",
-    "lightningcss": "1.27.0",
-    "lightningcss-cli": "1.27.0",
+    "concurrently": "9.1.0",
+    "lightningcss": "1.28.2",
+    "lightningcss-cli": "1.28.2",
     "rimraf": "6.0.1"
   }
 }
