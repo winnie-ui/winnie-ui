@@ -28,7 +28,7 @@
     --wui-letter-spacing-9: -0.025em;
   }
 
-  .winnie-ui {
+  :is(html, .winnie-ui) {
     --wui-font-size-1: calc(12px * var(--wui-scale));
     --wui-font-size-2: calc(14px * var(--wui-scale));
     --wui-font-size-3: calc(16px * var(--wui-scale));

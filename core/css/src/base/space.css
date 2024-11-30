@@ -6,7 +6,7 @@
  * https://github.com/radix-ui/themes/blob/main/packages/radix-ui-themes/src/styles/tokens/space.css
  */
 @layer base {
-  .winnie-ui {
+  :is(html, .winnie-ui) {
     --wui-space-1: calc(2px * var(--wui-scale));
     --wui-space-2: calc(4px * var(--wui-scale));
     --wui-space-3: calc(8px * var(--wui-scale));

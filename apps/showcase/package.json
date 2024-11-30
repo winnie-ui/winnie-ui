@@ -26,7 +26,6 @@
     "sst": "3.3.35"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "4.0.0-alpha.31",
     "@tanstack/router-devtools": "1.85.0",
     "@tanstack/router-plugin": "1.84.4",
     "@types/aws-lambda": "8.10.146",
@@ -34,7 +33,6 @@
     "@types/react-dom": "18.3.1",
     "@vitejs/plugin-react-swc": "3.7.2",
     "globals": "15.11.0",
-    "tailwindcss": "4.0.0-alpha.31",
     "typescript": "5.7.2",
     "vite": "6.0.1"
   }

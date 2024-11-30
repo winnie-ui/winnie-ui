@@ -5,558 +5,556 @@
 @import "tailwindcss/utilities" layer(utilities);
 
 @layer utilities {
-  .winnie-ui {
-    @theme {
-      --blur: 8px;
+  @theme {
+    --blur: 8px;
 
-      /* Breakpoints */
-      --breakpoint-sm: 40rem;
-      --breakpoint-md: 48rem;
-      --breakpoint-lg: 64rem;
-      --breakpoint-xl: 80rem;
-      --breakpoint-2xl: 96rem;
+    /* Breakpoints */
+    --breakpoint-sm: 40rem;
+    --breakpoint-md: 48rem;
+    --breakpoint-lg: 64rem;
+    --breakpoint-xl: 80rem;
+    --breakpoint-2xl: 96rem;
 
-      /* transparent */
-      --color-transparent: transparent;
+    /* transparent */
+    --color-transparent: transparent;
 
-      /* accent color */
-      --color-accent-1: var(--wui-color-accent-1);
-      --color-accent-2: var(--wui-color-accent-2);
-      --color-accent-3: var(--wui-color-accent-3);
-      --color-accent-4: var(--wui-color-accent-4);
-      --color-accent-5: var(--wui-color-accent-5);
-      --color-accent-6: var(--wui-color-accent-6);
-      --color-accent-7: var(--wui-color-accent-7);
-      --color-accent-8: var(--wui-color-accent-8);
-      --color-accent-9: var(--wui-color-accent-9);
-      --color-accent-10: var(--wui-color-accent-10);
-      --color-accent-11: var(--wui-color-accent-11);
-      --color-accent-12: var(--wui-color-accent-12);
+    /* accent color */
+    --color-accent-1: var(--wui-color-accent-1);
+    --color-accent-2: var(--wui-color-accent-2);
+    --color-accent-3: var(--wui-color-accent-3);
+    --color-accent-4: var(--wui-color-accent-4);
+    --color-accent-5: var(--wui-color-accent-5);
+    --color-accent-6: var(--wui-color-accent-6);
+    --color-accent-7: var(--wui-color-accent-7);
+    --color-accent-8: var(--wui-color-accent-8);
+    --color-accent-9: var(--wui-color-accent-9);
+    --color-accent-10: var(--wui-color-accent-10);
+    --color-accent-11: var(--wui-color-accent-11);
+    --color-accent-12: var(--wui-color-accent-12);
 
-      --color-accent-contrast: var(--wui-color-accent-contrast);
+    --color-accent-contrast: var(--wui-color-accent-contrast);
 
-      --color-accent-a1: var(--wui-color-accent-a1);
-      --color-accent-a2: var(--wui-color-accent-a2);
-      --color-accent-a3: var(--wui-color-accent-a3);
-      --color-accent-a4: var(--wui-color-accent-a4);
-      --color-accent-a5: var(--wui-color-accent-a5);
-      --color-accent-a6: var(--wui-color-accent-a6);
-      --color-accent-a7: var(--wui-color-accent-a7);
-      --color-accent-a8: var(--wui-color-accent-a8);
-      --color-accent-a9: var(--wui-color-accent-a9);
-      --color-accent-a10: var(--wui-color-accent-a10);
-      --color-accent-a11: var(--wui-color-accent-a11);
-      --color-accent-a12: var(--wui-color-accent-a12);
+    --color-accent-a1: var(--wui-color-accent-a1);
+    --color-accent-a2: var(--wui-color-accent-a2);
+    --color-accent-a3: var(--wui-color-accent-a3);
+    --color-accent-a4: var(--wui-color-accent-a4);
+    --color-accent-a5: var(--wui-color-accent-a5);
+    --color-accent-a6: var(--wui-color-accent-a6);
+    --color-accent-a7: var(--wui-color-accent-a7);
+    --color-accent-a8: var(--wui-color-accent-a8);
+    --color-accent-a9: var(--wui-color-accent-a9);
+    --color-accent-a10: var(--wui-color-accent-a10);
+    --color-accent-a11: var(--wui-color-accent-a11);
+    --color-accent-a12: var(--wui-color-accent-a12);
 
-      /* brand color */
-      --color-brand-1: var(--wui-color-brand-1);
-      --color-brand-2: var(--wui-color-brand-2);
-      --color-brand-3: var(--wui-color-brand-3);
-      --color-brand-4: var(--wui-color-brand-4);
-      --color-brand-5: var(--wui-color-brand-5);
-      --color-brand-6: var(--wui-color-brand-6);
-      --color-brand-7: var(--wui-color-brand-7);
-      --color-brand-8: var(--wui-color-brand-8);
-      --color-brand-9: var(--wui-color-brand-9);
-      --color-brand-10: var(--wui-color-brand-10);
-      --color-brand-11: var(--wui-color-brand-11);
-      --color-brand-12: var(--wui-color-brand-12);
+    /* brand color */
+    --color-brand-1: var(--wui-color-brand-1);
+    --color-brand-2: var(--wui-color-brand-2);
+    --color-brand-3: var(--wui-color-brand-3);
+    --color-brand-4: var(--wui-color-brand-4);
+    --color-brand-5: var(--wui-color-brand-5);
+    --color-brand-6: var(--wui-color-brand-6);
+    --color-brand-7: var(--wui-color-brand-7);
+    --color-brand-8: var(--wui-color-brand-8);
+    --color-brand-9: var(--wui-color-brand-9);
+    --color-brand-10: var(--wui-color-brand-10);
+    --color-brand-11: var(--wui-color-brand-11);
+    --color-brand-12: var(--wui-color-brand-12);
 
-      --color-brand-contrast: var(--wui-color-brand-contrast);
+    --color-brand-contrast: var(--wui-color-brand-contrast);
 
-      --color-brand-a1: var(--wui-color-brand-a1);
-      --color-brand-a2: var(--wui-color-brand-a2);
-      --color-brand-a3: var(--wui-color-brand-a3);
-      --color-brand-a4: var(--wui-color-brand-a4);
-      --color-brand-a5: var(--wui-color-brand-a5);
-      --color-brand-a6: var(--wui-color-brand-a6);
-      --color-brand-a7: var(--wui-color-brand-a7);
-      --color-brand-a8: var(--wui-color-brand-a8);
-      --color-brand-a9: var(--wui-color-brand-a9);
-      --color-brand-a10: var(--wui-color-brand-a10);
-      --color-brand-a11: var(--wui-color-brand-a11);
-      --color-brand-a12: var(--wui-color-brand-a12);
+    --color-brand-a1: var(--wui-color-brand-a1);
+    --color-brand-a2: var(--wui-color-brand-a2);
+    --color-brand-a3: var(--wui-color-brand-a3);
+    --color-brand-a4: var(--wui-color-brand-a4);
+    --color-brand-a5: var(--wui-color-brand-a5);
+    --color-brand-a6: var(--wui-color-brand-a6);
+    --color-brand-a7: var(--wui-color-brand-a7);
+    --color-brand-a8: var(--wui-color-brand-a8);
+    --color-brand-a9: var(--wui-color-brand-a9);
+    --color-brand-a10: var(--wui-color-brand-a10);
+    --color-brand-a11: var(--wui-color-brand-a11);
+    --color-brand-a12: var(--wui-color-brand-a12);
 
-      /* white */
-      --color-white: var(--wui-color-white);
-      --color-white-a1: var(--wui-color-white-a1);
-      --color-white-a2: var(--wui-color-white-a2);
-      --color-white-a3: var(--wui-color-white-a3);
-      --color-white-a4: var(--wui-color-white-a4);
-      --color-white-a5: var(--wui-color-white-a5);
-      --color-white-a6: var(--wui-color-white-a6);
-      --color-white-a7: var(--wui-color-white-a7);
-      --color-white-a8: var(--wui-color-white-a8);
-      --color-white-a9: var(--wui-color-white-a9);
-      --color-white-a10: var(--wui-color-white-a10);
-      --color-white-a11: var(--wui-color-white-a11);
-      --color-white-a12: var(--wui-color-white-a12);
+    /* white */
+    --color-white: var(--wui-color-white);
+    --color-white-a1: var(--wui-color-white-a1);
+    --color-white-a2: var(--wui-color-white-a2);
+    --color-white-a3: var(--wui-color-white-a3);
+    --color-white-a4: var(--wui-color-white-a4);
+    --color-white-a5: var(--wui-color-white-a5);
+    --color-white-a6: var(--wui-color-white-a6);
+    --color-white-a7: var(--wui-color-white-a7);
+    --color-white-a8: var(--wui-color-white-a8);
+    --color-white-a9: var(--wui-color-white-a9);
+    --color-white-a10: var(--wui-color-white-a10);
+    --color-white-a11: var(--wui-color-white-a11);
+    --color-white-a12: var(--wui-color-white-a12);
 
-      /* black */
-      --color-black: var(--wui-color-black);
-      --color-black-a1: var(--wui-color-black-a1);
-      --color-black-a2: var(--wui-color-black-a2);
-      --color-black-a3: var(--wui-color-black-a3);
-      --color-black-a4: var(--wui-color-black-a4);
-      --color-black-a5: var(--wui-color-black-a5);
-      --color-black-a6: var(--wui-color-black-a6);
-      --color-black-a7: var(--wui-color-black-a7);
-      --color-black-a8: var(--wui-color-black-a8);
-      --color-black-a9: var(--wui-color-black-a9);
-      --color-black-a10: var(--wui-color-black-a10);
-      --color-black-a11: var(--wui-color-black-a11);
-      --color-black-a12: var(--wui-color-black-a12);
+    /* black */
+    --color-black: var(--wui-color-black);
+    --color-black-a1: var(--wui-color-black-a1);
+    --color-black-a2: var(--wui-color-black-a2);
+    --color-black-a3: var(--wui-color-black-a3);
+    --color-black-a4: var(--wui-color-black-a4);
+    --color-black-a5: var(--wui-color-black-a5);
+    --color-black-a6: var(--wui-color-black-a6);
+    --color-black-a7: var(--wui-color-black-a7);
+    --color-black-a8: var(--wui-color-black-a8);
+    --color-black-a9: var(--wui-color-black-a9);
+    --color-black-a10: var(--wui-color-black-a10);
+    --color-black-a11: var(--wui-color-black-a11);
+    --color-black-a12: var(--wui-color-black-a12);
 
-      /* grey */
-      --color-grey-1: var(--wui-color-grey-1);
-      --color-grey-2: var(--wui-color-grey-2);
-      --color-grey-3: var(--wui-color-grey-3);
-      --color-grey-4: var(--wui-color-grey-4);
-      --color-grey-5: var(--wui-color-grey-5);
-      --color-grey-6: var(--wui-color-grey-6);
-      --color-grey-7: var(--wui-color-grey-7);
-      --color-grey-8: var(--wui-color-grey-8);
-      --color-grey-9: var(--wui-color-grey-9);
-      --color-grey-10: var(--wui-color-grey-10);
-      --color-grey-11: var(--wui-color-grey-11);
-      --color-grey-12: var(--wui-color-grey-12);
+    /* grey */
+    --color-grey-1: var(--wui-color-grey-1);
+    --color-grey-2: var(--wui-color-grey-2);
+    --color-grey-3: var(--wui-color-grey-3);
+    --color-grey-4: var(--wui-color-grey-4);
+    --color-grey-5: var(--wui-color-grey-5);
+    --color-grey-6: var(--wui-color-grey-6);
+    --color-grey-7: var(--wui-color-grey-7);
+    --color-grey-8: var(--wui-color-grey-8);
+    --color-grey-9: var(--wui-color-grey-9);
+    --color-grey-10: var(--wui-color-grey-10);
+    --color-grey-11: var(--wui-color-grey-11);
+    --color-grey-12: var(--wui-color-grey-12);
 
-      --color-grey-contrast: var(--wui-color-grey-contrast);
+    --color-grey-contrast: var(--wui-color-grey-contrast);
 
-      --color-grey-a1: var(--wui-color-grey-a1);
-      --color-grey-a2: var(--wui-color-grey-a2);
-      --color-grey-a3: var(--wui-color-grey-a3);
-      --color-grey-a4: var(--wui-color-grey-a4);
-      --color-grey-a5: var(--wui-color-grey-a5);
-      --color-grey-a6: var(--wui-color-grey-a6);
-      --color-grey-a7: var(--wui-color-grey-a7);
-      --color-grey-a8: var(--wui-color-grey-a8);
-      --color-grey-a9: var(--wui-color-grey-a9);
-      --color-grey-a10: var(--wui-color-grey-a10);
-      --color-grey-a11: var(--wui-color-grey-a11);
-      --color-grey-a12: var(--wui-color-grey-a12);
+    --color-grey-a1: var(--wui-color-grey-a1);
+    --color-grey-a2: var(--wui-color-grey-a2);
+    --color-grey-a3: var(--wui-color-grey-a3);
+    --color-grey-a4: var(--wui-color-grey-a4);
+    --color-grey-a5: var(--wui-color-grey-a5);
+    --color-grey-a6: var(--wui-color-grey-a6);
+    --color-grey-a7: var(--wui-color-grey-a7);
+    --color-grey-a8: var(--wui-color-grey-a8);
+    --color-grey-a9: var(--wui-color-grey-a9);
+    --color-grey-a10: var(--wui-color-grey-a10);
+    --color-grey-a11: var(--wui-color-grey-a11);
+    --color-grey-a12: var(--wui-color-grey-a12);
 
-      /* red */
-      --color-red-1: var(--wui-color-red-1);
-      --color-red-2: var(--wui-color-red-2);
-      --color-red-3: var(--wui-color-red-3);
-      --color-red-4: var(--wui-color-red-4);
-      --color-red-5: var(--wui-color-red-5);
-      --color-red-6: var(--wui-color-red-6);
-      --color-red-7: var(--wui-color-red-7);
-      --color-red-8: var(--wui-color-red-8);
-      --color-red-9: var(--wui-color-red-9);
-      --color-red-10: var(--wui-color-red-10);
-      --color-red-11: var(--wui-color-red-11);
-      --color-red-12: var(--wui-color-red-12);
+    /* red */
+    --color-red-1: var(--wui-color-red-1);
+    --color-red-2: var(--wui-color-red-2);
+    --color-red-3: var(--wui-color-red-3);
+    --color-red-4: var(--wui-color-red-4);
+    --color-red-5: var(--wui-color-red-5);
+    --color-red-6: var(--wui-color-red-6);
+    --color-red-7: var(--wui-color-red-7);
+    --color-red-8: var(--wui-color-red-8);
+    --color-red-9: var(--wui-color-red-9);
+    --color-red-10: var(--wui-color-red-10);
+    --color-red-11: var(--wui-color-red-11);
+    --color-red-12: var(--wui-color-red-12);
 
-      --color-red-contrast: var(--wui-color-red-contrast);
+    --color-red-contrast: var(--wui-color-red-contrast);
 
-      --color-red-a1: var(--wui-color-red-a1);
-      --color-red-a2: var(--wui-color-red-a2);
-      --color-red-a3: var(--wui-color-red-a3);
-      --color-red-a4: var(--wui-color-red-a4);
-      --color-red-a5: var(--wui-color-red-a5);
-      --color-red-a6: var(--wui-color-red-a6);
-      --color-red-a7: var(--wui-color-red-a7);
-      --color-red-a8: var(--wui-color-red-a8);
-      --color-red-a9: var(--wui-color-red-a9);
-      --color-red-a10: var(--wui-color-red-a10);
-      --color-red-a11: var(--wui-color-red-a11);
-      --color-red-a12: var(--wui-color-red-a12);
+    --color-red-a1: var(--wui-color-red-a1);
+    --color-red-a2: var(--wui-color-red-a2);
+    --color-red-a3: var(--wui-color-red-a3);
+    --color-red-a4: var(--wui-color-red-a4);
+    --color-red-a5: var(--wui-color-red-a5);
+    --color-red-a6: var(--wui-color-red-a6);
+    --color-red-a7: var(--wui-color-red-a7);
+    --color-red-a8: var(--wui-color-red-a8);
+    --color-red-a9: var(--wui-color-red-a9);
+    --color-red-a10: var(--wui-color-red-a10);
+    --color-red-a11: var(--wui-color-red-a11);
+    --color-red-a12: var(--wui-color-red-a12);
 
-      /* orange */
-      --color-orange-1: var(--wui-color-orange-1);
-      --color-orange-2: var(--wui-color-orange-2);
-      --color-orange-3: var(--wui-color-orange-3);
-      --color-orange-4: var(--wui-color-orange-4);
-      --color-orange-5: var(--wui-color-orange-5);
-      --color-orange-6: var(--wui-color-orange-6);
-      --color-orange-7: var(--wui-color-orange-7);
-      --color-orange-8: var(--wui-color-orange-8);
-      --color-orange-9: var(--wui-color-orange-9);
-      --color-orange-10: var(--wui-color-orange-10);
-      --color-orange-11: var(--wui-color-orange-11);
-      --color-orange-12: var(--wui-color-orange-12);
+    /* orange */
+    --color-orange-1: var(--wui-color-orange-1);
+    --color-orange-2: var(--wui-color-orange-2);
+    --color-orange-3: var(--wui-color-orange-3);
+    --color-orange-4: var(--wui-color-orange-4);
+    --color-orange-5: var(--wui-color-orange-5);
+    --color-orange-6: var(--wui-color-orange-6);
+    --color-orange-7: var(--wui-color-orange-7);
+    --color-orange-8: var(--wui-color-orange-8);
+    --color-orange-9: var(--wui-color-orange-9);
+    --color-orange-10: var(--wui-color-orange-10);
+    --color-orange-11: var(--wui-color-orange-11);
+    --color-orange-12: var(--wui-color-orange-12);
 
-      --color-orange-contrast: var(--wui-color-orange-contrast);
+    --color-orange-contrast: var(--wui-color-orange-contrast);
 
-      --color-orange-a1: var(--wui-color-orange-a1);
-      --color-orange-a2: var(--wui-color-orange-a2);
-      --color-orange-a3: var(--wui-color-orange-a3);
-      --color-orange-a4: var(--wui-color-orange-a4);
-      --color-orange-a5: var(--wui-color-orange-a5);
-      --color-orange-a6: var(--wui-color-orange-a6);
-      --color-orange-a7: var(--wui-color-orange-a7);
-      --color-orange-a8: var(--wui-color-orange-a8);
-      --color-orange-a9: var(--wui-color-orange-a9);
-      --color-orange-a10: var(--wui-color-orange-a10);
-      --color-orange-a11: var(--wui-color-orange-a11);
-      --color-orange-a12: var(--wui-color-orange-a12);
+    --color-orange-a1: var(--wui-color-orange-a1);
+    --color-orange-a2: var(--wui-color-orange-a2);
+    --color-orange-a3: var(--wui-color-orange-a3);
+    --color-orange-a4: var(--wui-color-orange-a4);
+    --color-orange-a5: var(--wui-color-orange-a5);
+    --color-orange-a6: var(--wui-color-orange-a6);
+    --color-orange-a7: var(--wui-color-orange-a7);
+    --color-orange-a8: var(--wui-color-orange-a8);
+    --color-orange-a9: var(--wui-color-orange-a9);
+    --color-orange-a10: var(--wui-color-orange-a10);
+    --color-orange-a11: var(--wui-color-orange-a11);
+    --color-orange-a12: var(--wui-color-orange-a12);
 
-      /* yellow */
-      --color-yellow-1: var(--wui-color-yellow-1);
-      --color-yellow-2: var(--wui-color-yellow-2);
-      --color-yellow-3: var(--wui-color-yellow-3);
-      --color-yellow-4: var(--wui-color-yellow-4);
-      --color-yellow-5: var(--wui-color-yellow-5);
-      --color-yellow-6: var(--wui-color-yellow-6);
-      --color-yellow-7: var(--wui-color-yellow-7);
-      --color-yellow-8: var(--wui-color-yellow-8);
-      --color-yellow-9: var(--wui-color-yellow-9);
-      --color-yellow-10: var(--wui-color-yellow-10);
-      --color-yellow-11: var(--wui-color-yellow-11);
-      --color-yellow-12: var(--wui-color-yellow-12);
+    /* yellow */
+    --color-yellow-1: var(--wui-color-yellow-1);
+    --color-yellow-2: var(--wui-color-yellow-2);
+    --color-yellow-3: var(--wui-color-yellow-3);
+    --color-yellow-4: var(--wui-color-yellow-4);
+    --color-yellow-5: var(--wui-color-yellow-5);
+    --color-yellow-6: var(--wui-color-yellow-6);
+    --color-yellow-7: var(--wui-color-yellow-7);
+    --color-yellow-8: var(--wui-color-yellow-8);
+    --color-yellow-9: var(--wui-color-yellow-9);
+    --color-yellow-10: var(--wui-color-yellow-10);
+    --color-yellow-11: var(--wui-color-yellow-11);
+    --color-yellow-12: var(--wui-color-yellow-12);
 
-      --color-yellow-contrast: var(--wui-color-yellow-contrast);
+    --color-yellow-contrast: var(--wui-color-yellow-contrast);
 
-      --color-yellow-a1: var(--wui-color-yellow-a1);
-      --color-yellow-a2: var(--wui-color-yellow-a2);
-      --color-yellow-a3: var(--wui-color-yellow-a3);
-      --color-yellow-a4: var(--wui-color-yellow-a4);
-      --color-yellow-a5: var(--wui-color-yellow-a5);
-      --color-yellow-a6: var(--wui-color-yellow-a6);
-      --color-yellow-a7: var(--wui-color-yellow-a7);
-      --color-yellow-a8: var(--wui-color-yellow-a8);
-      --color-yellow-a9: var(--wui-color-yellow-a9);
-      --color-yellow-a10: var(--wui-color-yellow-a10);
-      --color-yellow-a11: var(--wui-color-yellow-a11);
-      --color-yellow-a12: var(--wui-color-yellow-a12);
+    --color-yellow-a1: var(--wui-color-yellow-a1);
+    --color-yellow-a2: var(--wui-color-yellow-a2);
+    --color-yellow-a3: var(--wui-color-yellow-a3);
+    --color-yellow-a4: var(--wui-color-yellow-a4);
+    --color-yellow-a5: var(--wui-color-yellow-a5);
+    --color-yellow-a6: var(--wui-color-yellow-a6);
+    --color-yellow-a7: var(--wui-color-yellow-a7);
+    --color-yellow-a8: var(--wui-color-yellow-a8);
+    --color-yellow-a9: var(--wui-color-yellow-a9);
+    --color-yellow-a10: var(--wui-color-yellow-a10);
+    --color-yellow-a11: var(--wui-color-yellow-a11);
+    --color-yellow-a12: var(--wui-color-yellow-a12);
 
-      /* green */
-      --color-green-1: var(--wui-color-green-1);
-      --color-green-2: var(--wui-color-green-2);
-      --color-green-3: var(--wui-color-green-3);
-      --color-green-4: var(--wui-color-green-4);
-      --color-green-5: var(--wui-color-green-5);
-      --color-green-6: var(--wui-color-green-6);
-      --color-green-7: var(--wui-color-green-7);
-      --color-green-8: var(--wui-color-green-8);
-      --color-green-9: var(--wui-color-green-9);
-      --color-green-10: var(--wui-color-green-10);
-      --color-green-11: var(--wui-color-green-11);
-      --color-green-12: var(--wui-color-green-12);
+    /* green */
+    --color-green-1: var(--wui-color-green-1);
+    --color-green-2: var(--wui-color-green-2);
+    --color-green-3: var(--wui-color-green-3);
+    --color-green-4: var(--wui-color-green-4);
+    --color-green-5: var(--wui-color-green-5);
+    --color-green-6: var(--wui-color-green-6);
+    --color-green-7: var(--wui-color-green-7);
+    --color-green-8: var(--wui-color-green-8);
+    --color-green-9: var(--wui-color-green-9);
+    --color-green-10: var(--wui-color-green-10);
+    --color-green-11: var(--wui-color-green-11);
+    --color-green-12: var(--wui-color-green-12);
 
-      --color-green-contrast: var(--wui-color-green-contrast);
+    --color-green-contrast: var(--wui-color-green-contrast);
 
-      --color-green-a1: var(--wui-color-green-a1);
-      --color-green-a2: var(--wui-color-green-a2);
-      --color-green-a3: var(--wui-color-green-a3);
-      --color-green-a4: var(--wui-color-green-a4);
-      --color-green-a5: var(--wui-color-green-a5);
-      --color-green-a6: var(--wui-color-green-a6);
-      --color-green-a7: var(--wui-color-green-a7);
-      --color-green-a8: var(--wui-color-green-a8);
-      --color-green-a9: var(--wui-color-green-a9);
-      --color-green-a10: var(--wui-color-green-a10);
-      --color-green-a11: var(--wui-color-green-a11);
-      --color-green-a12: var(--wui-color-green-a12);
+    --color-green-a1: var(--wui-color-green-a1);
+    --color-green-a2: var(--wui-color-green-a2);
+    --color-green-a3: var(--wui-color-green-a3);
+    --color-green-a4: var(--wui-color-green-a4);
+    --color-green-a5: var(--wui-color-green-a5);
+    --color-green-a6: var(--wui-color-green-a6);
+    --color-green-a7: var(--wui-color-green-a7);
+    --color-green-a8: var(--wui-color-green-a8);
+    --color-green-a9: var(--wui-color-green-a9);
+    --color-green-a10: var(--wui-color-green-a10);
+    --color-green-a11: var(--wui-color-green-a11);
+    --color-green-a12: var(--wui-color-green-a12);
 
-      /* blue */
-      --color-blue-1: var(--wui-color-blue-1);
-      --color-blue-2: var(--wui-color-blue-2);
-      --color-blue-3: var(--wui-color-blue-3);
-      --color-blue-4: var(--wui-color-blue-4);
-      --color-blue-5: var(--wui-color-blue-5);
-      --color-blue-6: var(--wui-color-blue-6);
-      --color-blue-7: var(--wui-color-blue-7);
-      --color-blue-8: var(--wui-color-blue-8);
-      --color-blue-9: var(--wui-color-blue-9);
-      --color-blue-10: var(--wui-color-blue-10);
-      --color-blue-11: var(--wui-color-blue-11);
-      --color-blue-12: var(--wui-color-blue-12);
+    /* blue */
+    --color-blue-1: var(--wui-color-blue-1);
+    --color-blue-2: var(--wui-color-blue-2);
+    --color-blue-3: var(--wui-color-blue-3);
+    --color-blue-4: var(--wui-color-blue-4);
+    --color-blue-5: var(--wui-color-blue-5);
+    --color-blue-6: var(--wui-color-blue-6);
+    --color-blue-7: var(--wui-color-blue-7);
+    --color-blue-8: var(--wui-color-blue-8);
+    --color-blue-9: var(--wui-color-blue-9);
+    --color-blue-10: var(--wui-color-blue-10);
+    --color-blue-11: var(--wui-color-blue-11);
+    --color-blue-12: var(--wui-color-blue-12);
 
-      --color-blue-contrast: var(--wui-color-blue-contrast);
+    --color-blue-contrast: var(--wui-color-blue-contrast);
 
-      --color-blue-a1: var(--wui-color-blue-a1);
-      --color-blue-a2: var(--wui-color-blue-a2);
-      --color-blue-a3: var(--wui-color-blue-a3);
-      --color-blue-a4: var(--wui-color-blue-a4);
-      --color-blue-a5: var(--wui-color-blue-a5);
-      --color-blue-a6: var(--wui-color-blue-a6);
-      --color-blue-a7: var(--wui-color-blue-a7);
-      --color-blue-a8: var(--wui-color-blue-a8);
-      --color-blue-a9: var(--wui-color-blue-a9);
-      --color-blue-a10: var(--wui-color-blue-a10);
-      --color-blue-a11: var(--wui-color-blue-a11);
-      --color-blue-a12: var(--wui-color-blue-a12);
+    --color-blue-a1: var(--wui-color-blue-a1);
+    --color-blue-a2: var(--wui-color-blue-a2);
+    --color-blue-a3: var(--wui-color-blue-a3);
+    --color-blue-a4: var(--wui-color-blue-a4);
+    --color-blue-a5: var(--wui-color-blue-a5);
+    --color-blue-a6: var(--wui-color-blue-a6);
+    --color-blue-a7: var(--wui-color-blue-a7);
+    --color-blue-a8: var(--wui-color-blue-a8);
+    --color-blue-a9: var(--wui-color-blue-a9);
+    --color-blue-a10: var(--wui-color-blue-a10);
+    --color-blue-a11: var(--wui-color-blue-a11);
+    --color-blue-a12: var(--wui-color-blue-a12);
 
-      /* purple */
-      --color-purple-1: var(--wui-color-purple-1);
-      --color-purple-2: var(--wui-color-purple-2);
-      --color-purple-3: var(--wui-color-purple-3);
-      --color-purple-4: var(--wui-color-purple-4);
-      --color-purple-5: var(--wui-color-purple-5);
-      --color-purple-6: var(--wui-color-purple-6);
-      --color-purple-7: var(--wui-color-purple-7);
-      --color-purple-8: var(--wui-color-purple-8);
-      --color-purple-9: var(--wui-color-purple-9);
-      --color-purple-10: var(--wui-color-purple-10);
-      --color-purple-11: var(--wui-color-purple-11);
-      --color-purple-12: var(--wui-color-purple-12);
+    /* purple */
+    --color-purple-1: var(--wui-color-purple-1);
+    --color-purple-2: var(--wui-color-purple-2);
+    --color-purple-3: var(--wui-color-purple-3);
+    --color-purple-4: var(--wui-color-purple-4);
+    --color-purple-5: var(--wui-color-purple-5);
+    --color-purple-6: var(--wui-color-purple-6);
+    --color-purple-7: var(--wui-color-purple-7);
+    --color-purple-8: var(--wui-color-purple-8);
+    --color-purple-9: var(--wui-color-purple-9);
+    --color-purple-10: var(--wui-color-purple-10);
+    --color-purple-11: var(--wui-color-purple-11);
+    --color-purple-12: var(--wui-color-purple-12);
 
-      --color-purple-contrast: var(--wui-color-purple-contrast);
+    --color-purple-contrast: var(--wui-color-purple-contrast);
 
-      --color-purple-a1: var(--wui-color-purple-a1);
-      --color-purple-a2: var(--wui-color-purple-a2);
-      --color-purple-a3: var(--wui-color-purple-a3);
-      --color-purple-a4: var(--wui-color-purple-a4);
-      --color-purple-a5: var(--wui-color-purple-a5);
-      --color-purple-a6: var(--wui-color-purple-a6);
-      --color-purple-a7: var(--wui-color-purple-a7);
-      --color-purple-a8: var(--wui-color-purple-a8);
-      --color-purple-a9: var(--wui-color-purple-a9);
-      --color-purple-a10: var(--wui-color-purple-a10);
-      --color-purple-a11: var(--wui-color-purple-a11);
-      --color-purple-a12: var(--wui-color-purple-a12);
+    --color-purple-a1: var(--wui-color-purple-a1);
+    --color-purple-a2: var(--wui-color-purple-a2);
+    --color-purple-a3: var(--wui-color-purple-a3);
+    --color-purple-a4: var(--wui-color-purple-a4);
+    --color-purple-a5: var(--wui-color-purple-a5);
+    --color-purple-a6: var(--wui-color-purple-a6);
+    --color-purple-a7: var(--wui-color-purple-a7);
+    --color-purple-a8: var(--wui-color-purple-a8);
+    --color-purple-a9: var(--wui-color-purple-a9);
+    --color-purple-a10: var(--wui-color-purple-a10);
+    --color-purple-a11: var(--wui-color-purple-a11);
+    --color-purple-a12: var(--wui-color-purple-a12);
 
-      /* pink */
-      --color-pink-1: var(--wui-color-pink-1);
-      --color-pink-2: var(--wui-color-pink-2);
-      --color-pink-3: var(--wui-color-pink-3);
-      --color-pink-4: var(--wui-color-pink-4);
-      --color-pink-5: var(--wui-color-pink-5);
-      --color-pink-6: var(--wui-color-pink-6);
-      --color-pink-7: var(--wui-color-pink-7);
-      --color-pink-8: var(--wui-color-pink-8);
-      --color-pink-9: var(--wui-color-pink-9);
-      --color-pink-10: var(--wui-color-pink-10);
-      --color-pink-11: var(--wui-color-pink-11);
-      --color-pink-12: var(--wui-color-pink-12);
+    /* pink */
+    --color-pink-1: var(--wui-color-pink-1);
+    --color-pink-2: var(--wui-color-pink-2);
+    --color-pink-3: var(--wui-color-pink-3);
+    --color-pink-4: var(--wui-color-pink-4);
+    --color-pink-5: var(--wui-color-pink-5);
+    --color-pink-6: var(--wui-color-pink-6);
+    --color-pink-7: var(--wui-color-pink-7);
+    --color-pink-8: var(--wui-color-pink-8);
+    --color-pink-9: var(--wui-color-pink-9);
+    --color-pink-10: var(--wui-color-pink-10);
+    --color-pink-11: var(--wui-color-pink-11);
+    --color-pink-12: var(--wui-color-pink-12);
 
-      --color-pink-contrast: var(--wui-color-pink-contrast);
+    --color-pink-contrast: var(--wui-color-pink-contrast);
 
-      --color-pink-a1: var(--wui-color-pink-a1);
-      --color-pink-a2: var(--wui-color-pink-a2);
-      --color-pink-a3: var(--wui-color-pink-a3);
-      --color-pink-a4: var(--wui-color-pink-a4);
-      --color-pink-a5: var(--wui-color-pink-a5);
-      --color-pink-a6: var(--wui-color-pink-a6);
-      --color-pink-a7: var(--wui-color-pink-a7);
-      --color-pink-a8: var(--wui-color-pink-a8);
-      --color-pink-a9: var(--wui-color-pink-a9);
-      --color-pink-a10: var(--wui-color-pink-a10);
-      --color-pink-a11: var(--wui-color-pink-a11);
-      --color-pink-a12: var(--wui-color-pink-a12);
+    --color-pink-a1: var(--wui-color-pink-a1);
+    --color-pink-a2: var(--wui-color-pink-a2);
+    --color-pink-a3: var(--wui-color-pink-a3);
+    --color-pink-a4: var(--wui-color-pink-a4);
+    --color-pink-a5: var(--wui-color-pink-a5);
+    --color-pink-a6: var(--wui-color-pink-a6);
+    --color-pink-a7: var(--wui-color-pink-a7);
+    --color-pink-a8: var(--wui-color-pink-a8);
+    --color-pink-a9: var(--wui-color-pink-a9);
+    --color-pink-a10: var(--wui-color-pink-a10);
+    --color-pink-a11: var(--wui-color-pink-a11);
+    --color-pink-a12: var(--wui-color-pink-a12);
 
-      /* font-family */
-      --font-family-mono: var(--wui-font-family-mono);
-      --font-family-sans: var(--wui-font-family-sans);
-      --font-family-serif: var(--wui-font-family-serif);
+    /* font-family */
+    --font-family-mono: var(--wui-font-family-mono);
+    --font-family-sans: var(--wui-font-family-sans);
+    --font-family-serif: var(--wui-font-family-serif);
 
-      --default-font-family: var(--wui-font-family-sans);
-      --default-mono-font-family: var(--wui-font-family-mono);
+    --default-font-family: var(--wui-font-family-sans);
+    --default-mono-font-family: var(--wui-font-family-mono);
 
-      /* font-size */
-      --font-size-1: var(--wui-font-size-1);
-      --font-size-2: var(--wui-font-size-2);
-      --font-size-3: var(--wui-font-size-3);
-      --font-size-4: var(--wui-font-size-4);
-      --font-size-5: var(--wui-font-size-5);
-      --font-size-6: var(--wui-font-size-6);
-      --font-size-7: var(--wui-font-size-7);
-      --font-size-8: var(--wui-font-size-8);
-      --font-size-9: var(--wui-font-size-9);
+    /* font-size */
+    --font-size-1: var(--wui-font-size-1);
+    --font-size-2: var(--wui-font-size-2);
+    --font-size-3: var(--wui-font-size-3);
+    --font-size-4: var(--wui-font-size-4);
+    --font-size-5: var(--wui-font-size-5);
+    --font-size-6: var(--wui-font-size-6);
+    --font-size-7: var(--wui-font-size-7);
+    --font-size-8: var(--wui-font-size-8);
+    --font-size-9: var(--wui-font-size-9);
 
-      /* font-weight */
-      --font-weight-normal: var(--wui-font-weight-normal);
-      --font-weight-medium: var(--wui-font-weight-medium);
-      --font-weight-semibold: var(--wui-font-weight-semibold);
-      --font-weight-bold: var(--wui-font-weight-bold);
-      --font-weight-extra-bold: var(--wui-font-weight-extra-bold);
+    /* font-weight */
+    --font-weight-normal: var(--wui-font-weight-normal);
+    --font-weight-medium: var(--wui-font-weight-medium);
+    --font-weight-semibold: var(--wui-font-weight-semibold);
+    --font-weight-bold: var(--wui-font-weight-bold);
+    --font-weight-extra-bold: var(--wui-font-weight-extra-bold);
 
-      /* inner shadow */
-      --inset-shadow-1: var(--wui-shadow-inner-1);
-      --inset-shadow-2: var(--wui-shadow-inner-2);
-      --inset-shadow-3: var(--wui-shadow-inner-3);
-      --inset-shadow-4: var(--wui-shadow-inner-4);
-      --inset-shadow-5: var(--wui-shadow-inner-5);
+    /* inner shadow */
+    --inset-shadow-1: var(--wui-shadow-inner-1);
+    --inset-shadow-2: var(--wui-shadow-inner-2);
+    --inset-shadow-3: var(--wui-shadow-inner-3);
+    --inset-shadow-4: var(--wui-shadow-inner-4);
+    --inset-shadow-5: var(--wui-shadow-inner-5);
 
-      /* letter-spacing */
-      --letter-spacing-1: var(--wui-letter-spacing-1);
-      --letter-spacing-2: var(--wui-letter-spacing-2);
-      --letter-spacing-3: var(--wui-letter-spacing-3);
-      --letter-spacing-4: var(--wui-letter-spacing-4);
-      --letter-spacing-5: var(--wui-letter-spacing-5);
-      --letter-spacing-6: var(--wui-letter-spacing-6);
-      --letter-spacing-7: var(--wui-letter-spacing-7);
-      --letter-spacing-8: var(--wui-letter-spacing-8);
-      --letter-spacing-9: var(--wui-letter-spacing-9);
+    /* letter-spacing */
+    --letter-spacing-1: var(--wui-letter-spacing-1);
+    --letter-spacing-2: var(--wui-letter-spacing-2);
+    --letter-spacing-3: var(--wui-letter-spacing-3);
+    --letter-spacing-4: var(--wui-letter-spacing-4);
+    --letter-spacing-5: var(--wui-letter-spacing-5);
+    --letter-spacing-6: var(--wui-letter-spacing-6);
+    --letter-spacing-7: var(--wui-letter-spacing-7);
+    --letter-spacing-8: var(--wui-letter-spacing-8);
+    --letter-spacing-9: var(--wui-letter-spacing-9);
 
-      /* line-height */
-      --line-height-1: var(--wui-line-height-1);
-      --line-height-2: var(--wui-line-height-2);
-      --line-height-1: var(--wui-line-height-1);
-      --line-height-2: var(--wui-line-height-2);
-      --line-height-1: var(--wui-line-height-1);
-      --line-height-2: var(--wui-line-height-2);
-      --line-height-1: var(--wui-line-height-1);
-      --line-height-2: var(--wui-line-height-2);
+    /* line-height */
+    --line-height-1: var(--wui-line-height-1);
+    --line-height-2: var(--wui-line-height-2);
+    --line-height-1: var(--wui-line-height-1);
+    --line-height-2: var(--wui-line-height-2);
+    --line-height-1: var(--wui-line-height-1);
+    --line-height-2: var(--wui-line-height-2);
+    --line-height-1: var(--wui-line-height-1);
+    --line-height-2: var(--wui-line-height-2);
 
-      /* radius */
-      --radius-1: var(--wui-border-radius-1);
-      --radius-2: var(--wui-border-radius-2);
-      --radius-3: var(--wui-border-radius-3);
-      --radius-4: var(--wui-border-radius-4);
-      --radius-5: var(--wui-border-radius-5);
-      --radius-6: var(--wui-border-radius-6);
-      --radius-7: var(--wui-border-radius-7);
-      --radius-round: var(--wui-border-radius-round);
+    /* radius */
+    --radius-1: var(--wui-border-radius-1);
+    --radius-2: var(--wui-border-radius-2);
+    --radius-3: var(--wui-border-radius-3);
+    --radius-4: var(--wui-border-radius-4);
+    --radius-5: var(--wui-border-radius-5);
+    --radius-6: var(--wui-border-radius-6);
+    --radius-7: var(--wui-border-radius-7);
+    --radius-round: var(--wui-border-radius-round);
 
-      /* shadow */
-      --shadow-1: var(--wui-shadow-1);
-      --shadow-2: var(--wui-shadow-2);
-      --shadow-3: var(--wui-shadow-3);
-      --shadow-4: var(--wui-shadow-4);
-      --shadow-5: var(--wui-shadow-5);
-      --shadow-6: var(--wui-shadow-6);
+    /* shadow */
+    --shadow-1: var(--wui-shadow-1);
+    --shadow-2: var(--wui-shadow-2);
+    --shadow-3: var(--wui-shadow-3);
+    --shadow-4: var(--wui-shadow-4);
+    --shadow-5: var(--wui-shadow-5);
+    --shadow-6: var(--wui-shadow-6);
 
-      /* space */
-      --spacing-0: 0px;
-      --spacing-1: var(--wui-space-1);
-      --spacing-2: var(--wui-space-2);
-      --spacing-3: var(--wui-space-3);
-      --spacing-4: var(--wui-space-4);
-      --spacing-5: var(--wui-space-5);
-      --spacing-6: var(--wui-space-6);
-      --spacing-7: var(--wui-space-7);
-      --spacing-8: var(--wui-space-8);
-      --spacing-9: var(--wui-space-9);
-      --spacing-10: var(--wui-space-10);
+    /* space */
+    --spacing-0: 0px;
+    --spacing-1: var(--wui-space-1);
+    --spacing-2: var(--wui-space-2);
+    --spacing-3: var(--wui-space-3);
+    --spacing-4: var(--wui-space-4);
+    --spacing-5: var(--wui-space-5);
+    --spacing-6: var(--wui-space-6);
+    --spacing-7: var(--wui-space-7);
+    --spacing-8: var(--wui-space-8);
+    --spacing-9: var(--wui-space-9);
+    --spacing-10: var(--wui-space-10);
 
-      /* transition-duration */
-      --tansition-duration-05: var(--wui-duration-05);
-      --tansition-duration-1: var(--wui-duration-1);
-      --tansition-duration-2: var(--wui-duration-2);
-      --tansition-duration-3: var(--wui-duration-3);
-      --tansition-duration-4: var(--wui-duration-4);
+    /* transition-duration */
+    --tansition-duration-05: var(--wui-duration-05);
+    --tansition-duration-1: var(--wui-duration-1);
+    --tansition-duration-2: var(--wui-duration-2);
+    --tansition-duration-3: var(--wui-duration-3);
+    --tansition-duration-4: var(--wui-duration-4);
 
-      /* transition-timing-function */
-      --transition-timing-function-bezier: var(--wui-bezier-1);
+    /* transition-timing-function */
+    --transition-timing-function-bezier: var(--wui-bezier-1);
 
-      /* keyframes */
-      @keyframes wui-collapsible-down {
-        from {
-          height: 0;
-          transform: translateY(-4px);
-        }
-
-        to {
-          height: var(--wui-collapsible-content-height);
-          transform: translateY(0);
-        }
+    /* keyframes */
+    @keyframes wui-collapsible-down {
+      from {
+        height: 0;
+        transform: translateY(-4px);
       }
 
-      @keyframes wui-collapsible-up {
-        from {
-          height: var(--wui-collapsible-content-height);
-          transform: translateY(0);
-        }
+      to {
+        height: var(--wui-collapsible-content-height);
+        transform: translateY(0);
+      }
+    }
 
-        to {
-          height: 0;
-          transform: translateY(-4px);
-        }
+    @keyframes wui-collapsible-up {
+      from {
+        height: var(--wui-collapsible-content-height);
+        transform: translateY(0);
       }
 
-      @keyframes wui-fade-in {
-        from {
-          opacity: 0;
-        }
+      to {
+        height: 0;
+        transform: translateY(-4px);
+      }
+    }
 
-        to {
-          opacity: 1;
-        }
+    @keyframes wui-fade-in {
+      from {
+        opacity: 0;
       }
 
-      @keyframes wui-fade-out {
-        from {
-          opacity: 1;
-        }
+      to {
+        opacity: 1;
+      }
+    }
 
-        to {
-          opacity: 0;
-        }
+    @keyframes wui-fade-out {
+      from {
+        opacity: 1;
       }
 
-      @keyframes wui-slide-up-enter {
-        from {
-          transform: translateY(6px) scale(0.97);
-        }
+      to {
+        opacity: 0;
+      }
+    }
 
-        to {
-          transform: translateY(0) scale(1);
-        }
+    @keyframes wui-slide-up-enter {
+      from {
+        transform: translateY(6px) scale(0.97);
       }
 
-      @keyframes wui-slide-up-exit {
-        from {
-          transform: translateY(0) scale(1);
-        }
+      to {
+        transform: translateY(0) scale(1);
+      }
+    }
 
-        to {
-          transform: translateY(-6px) scale(0.97);
-        }
+    @keyframes wui-slide-up-exit {
+      from {
+        transform: translateY(0) scale(1);
       }
 
-      @keyframes wui-slide-down-enter {
-        from {
-          transform: translateY(-6px) scale(0.97);
-        }
+      to {
+        transform: translateY(-6px) scale(0.97);
+      }
+    }
 
-        to {
-          transform: translateY(0) scale(1);
-        }
+    @keyframes wui-slide-down-enter {
+      from {
+        transform: translateY(-6px) scale(0.97);
       }
 
-      @keyframes wui-slide-down-exit {
-        from {
-          transform: translateY(0) scale(1);
-        }
+      to {
+        transform: translateY(0) scale(1);
+      }
+    }
 
-        to {
-          transform: translateY(6px) scale(0.97);
-        }
+    @keyframes wui-slide-down-exit {
+      from {
+        transform: translateY(0) scale(1);
       }
 
-      @keyframes wui-slide-left-enter {
-        from {
-          transform: translateX(6px) scale(0.97);
-        }
+      to {
+        transform: translateY(6px) scale(0.97);
+      }
+    }
 
-        to {
-          transform: translateX(0) scale(1);
-        }
+    @keyframes wui-slide-left-enter {
+      from {
+        transform: translateX(6px) scale(0.97);
       }
 
-      @keyframes wui-slide-left-exit {
-        from {
-          transform: translateX(0) scale(1);
-        }
+      to {
+        transform: translateX(0) scale(1);
+      }
+    }
 
-        to {
-          transform: translateX(-6px) scale(0.97);
-        }
+    @keyframes wui-slide-left-exit {
+      from {
+        transform: translateX(0) scale(1);
       }
 
-      @keyframes wui-slide-right-enter {
-        from {
-          transform: translateX(-6px) scale(0.97);
-        }
+      to {
+        transform: translateX(-6px) scale(0.97);
+      }
+    }
 
-        to {
-          transform: translateX(0) scale(1);
-        }
+    @keyframes wui-slide-right-enter {
+      from {
+        transform: translateX(-6px) scale(0.97);
       }
 
-      @keyframes wui-slide-right-exit {
-        from {
-          transform: translateX(0) scale(1);
-        }
+      to {
+        transform: translateX(0) scale(1);
+      }
+    }
 
-        to {
-          transform: translateX(6px) scale(0.97);
-        }
+    @keyframes wui-slide-right-exit {
+      from {
+        transform: translateX(0) scale(1);
+      }
+
+      to {
+        transform: translateX(6px) scale(0.97);
       }
     }
   }
