@@ -1,5 +1,5 @@
 const KEY_CONSTANTS = {
-  SCOREBOARDS: "scoreboard",
+  SCOREBOARDS: "scoreboards",
 };
 
 /**
