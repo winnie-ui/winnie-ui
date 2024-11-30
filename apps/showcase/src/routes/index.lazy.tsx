@@ -1,5 +1,9 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
 
+<<<<<<< HEAD
+=======
+import { useSuspenseQuery } from "@tanstack/react-query";
+>>>>>>> 90d796a (getting react query persistent client working)
 import { api } from "~/api";
 import { PageContent, PageTitle } from "../ds/page/page";
 
