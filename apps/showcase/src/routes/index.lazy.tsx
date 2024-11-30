@@ -1,6 +1,5 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
 
-import { useSuspenseQuery } from "@tanstack/react-query";
 import { api } from "~/api";
 import { PageContent, PageTitle } from "../ds/page/page";
 
