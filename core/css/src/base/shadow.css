@@ -6,7 +6,7 @@
  * https://github.com/argyleink/open-props/blob/main/src/props.shadows.css
  */
 @layer base {
-  .winnie-ui {
+  :is(html, .winnie-ui) {
     --wui-shadow-1: 0 1px 2px -1px
       hsl(var(--wui-shadow-color) / calc(var(--wui-shadow-strength) + 9%));
     --wui-shadow-2: 0 3px 5px -2px

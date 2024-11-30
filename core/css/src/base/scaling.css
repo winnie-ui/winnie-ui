@@ -6,7 +6,7 @@
  * https://github.com/radix-ui/themes/blob/main/packages/radix-ui-themes/src/styles/tokens/scaling.css
  */
 @layer base {
-  .winnie-ui {
+  :is(html, .winnie-ui) {
     &:where([data-scale="90%"]) {
       --wui-scale: 0.9;
     }
