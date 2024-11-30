@@ -1,7 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
 
-import { queryClient } from "./query-client";
-
 /**
  * Creates a new scoreboard
  *
@@ -9,8 +7,12 @@ import { queryClient } from "./query-client";
  */
 function createScoreboard() {
   return useMutation({
-    mutationFn: () => {},
+    mutationFn: async () => {
+      return null;
+    },
   });
 }
 
-export const mutations = {};
+export const mutations = {
+  createScoreboard,
+};
