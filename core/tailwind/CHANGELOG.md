@@ -1,5 +1,14 @@
 # @winnie-ui/tailwind
 
+## 0.0.24
+
+### Patch Changes
+
+- [#73](https://github.com/winnie-ui/winnie-ui/pull/73) [`fad45ca`](https://github.com/winnie-ui/winnie-ui/commit/fad45cad2d5784c359fbd21261f84f034d9ab621) Thanks [@adamaho](https://github.com/adamaho)! - fix: support v4 beta
+
+- Updated dependencies []:
+  - @winnie-ui/css@0.0.24
+
 ## 0.0.23
 
 ### Patch Changes
