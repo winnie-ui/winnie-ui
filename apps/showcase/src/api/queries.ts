@@ -1,9 +1,9 @@
 import { queryOptions } from "@tanstack/react-query";
 import { keys } from "./keys";
 
-import type { Scoreboard } from "./types";
+import type { Scoreboard, Scoreboards } from "./types";
 
-import { queryClient } from "./query-client";
+import { queryClient } from "../singletons/query-client";
 
 /**
  * Gets all scoreboards created by the current user
@@ -11,12 +11,7 @@ import { queryClient } from "./query-client";
  * @returns
  */
 function getScoreboardsOptions() {
-  return queryOptions({
-    queryKey: keys.scoreboards.index(),
-    queryFn: () => {
-      return queryClient.getQueryData<Scoreboard[]>(keys.scoreboards.index());
-    },
-  });
+  return queryClient.getQueryData<Scoreboards>(keys.scoreboards.index());
 }
 
 /**

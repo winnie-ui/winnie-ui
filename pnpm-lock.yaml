@@ -135,9 +135,18 @@ importers:
       '@react-aria/utils':
         specifier: 3.26.0
         version: 3.26.0(react@18.3.1)
+      '@tanstack/query-sync-storage-persister':
+        specifier: 5.62.0
+        version: 5.62.0
       '@tanstack/react-query':
         specifier: 5.62.0
         version: 5.62.0(react@18.3.1)
+      '@tanstack/react-query-devtools':
+        specifier: 5.62.0
+        version: 5.62.0(@tanstack/react-query@5.62.0(react@18.3.1))(react@18.3.1)
+      '@tanstack/react-query-persist-client':
+        specifier: 5.62.0
+        version: 5.62.0(@tanstack/react-query@5.62.0(react@18.3.1))(react@18.3.1)
       '@tanstack/react-router':
         specifier: 1.85.0
         version: 1.85.0(@tanstack/router-generator@1.84.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -199,6 +208,9 @@ importers:
       vite:
         specifier: 6.0.1
         version: 6.0.1(jiti@2.4.0)(lightningcss@1.28.2)(tsx@4.19.2)(yaml@2.6.0)
+      vite-tsconfig-paths:
+        specifier: 5.1.3
+        version: 5.1.3(typescript@5.7.2)(vite@6.0.1(jiti@2.4.0)(lightningcss@1.28.2)(tsx@4.19.2)(yaml@2.6.0))
 
   core/css:
     devDependencies:
@@ -2219,6 +2231,27 @@ packages:
   '@tanstack/query-core@5.62.0':
     resolution: {integrity: sha512-sx38bGrqF9bop92AXOvzDr0L9fWDas5zXdPglxa9cuqeVSWS7lY6OnVyl/oodfXjgOGRk79IfCpgVmxrbHuFHg==}
 
+  '@tanstack/query-devtools@5.61.4':
+    resolution: {integrity: sha512-21Tw+u8E3IJJj4A/Bct4H0uBaDTEu7zBrR79FeSyY+mS2gx5/m316oDtJiKkILc819VSTYt+sFzODoJNcpPqZQ==}
+
+  '@tanstack/query-persist-client-core@5.62.0':
+    resolution: {integrity: sha512-yEDvJjVHqo+IizSjNkdu5fSL4ANOd16o8Tk2NOeaD7kGS1fXjf47j3XOXLIypZ7nmPTjZf9vyZi1WP3VB4saGg==}
+
+  '@tanstack/query-sync-storage-persister@5.62.0':
+    resolution: {integrity: sha512-VDTdldUrthWE4th6FjwziYgADaYkOzN2UbOw8gBZejVnGJrSnBZ/ZC+0SBv7Gy09TU5wKaDlT69RNk15dlmJ1g==}
+
+  '@tanstack/react-query-devtools@5.62.0':
+    resolution: {integrity: sha512-9NWUgpfRPiUpsPdYopddbQLjWXbMBNaxM7K5VXPZIPfcfJJ4mG6VqrEJysL/79zgl7hC9kJlP+zXA0r5niomdg==}
+    peerDependencies:
+      '@tanstack/react-query': ^5.62.0
+      react: ^18 || ^19
+
+  '@tanstack/react-query-persist-client@5.62.0':
+    resolution: {integrity: sha512-yv7Oe0vNkGDTVFkq9bbdGQO9EoHwXYKIYuj845v1bOmK/Npvcov3yaS0AirOlNklsapDtr0v+x1ev2aJBIbm7A==}
+    peerDependencies:
+      '@tanstack/react-query': ^5.62.0
+      react: ^18 || ^19
+
   '@tanstack/react-query@5.62.0':
     resolution: {integrity: sha512-tj2ltjAn2a3fs+Dqonlvs6GyLQ/LKVJE2DVSYW+8pJ3P6/VCVGrfqv5UEchmlP7tLOvvtZcOuSyI2ooVlR5Yqw==}
     peerDependencies:
@@ -3038,6 +3071,9 @@ packages:
   globby@11.1.0:
     resolution: {integrity: sha512-jhIXaOzy1sb8IyocaruWSn1TjmnBVs8Ayhcy83rmxNJ8q2uWKCAj3CnJY+KpGSXCueAPc0i05kVvVKtP1t9S3g==}
     engines: {node: '>=10'}
+
+  globrex@0.1.2:
+    resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
 
   goober@2.1.16:
     resolution: {integrity: sha512-erjk19y1U33+XAMe1VTvIONHYoSqE4iS7BYUZfHaqeohLmnC0FdxEh7rQU+6MZ4OajItzjZFSRtVANrQwNq6/g==}
@@ -4574,6 +4610,14 @@ packages:
 
   victory-vendor@36.9.2:
     resolution: {integrity: sha512-PnpQQMuxlwYdocC8fIJqVXvkeViHYzotI+NJrCuav0ZYFoq912ZHBk3mCeuj+5/VpodOjPe1z0Fk2ihgzlXqjQ==}
+
+  vite-tsconfig-paths@5.1.3:
+    resolution: {integrity: sha512-0bz+PDlLpGfP2CigeSKL9NFTF1KtXkeHGZSSaGQSuPZH77GhoiQaA8IjYgOaynSuwlDTolSUEU0ErVvju3NURg==}
+    peerDependencies:
+      vite: '*'
+    peerDependenciesMeta:
+      vite:
+        optional: true
 
   vite@5.4.11:
     resolution: {integrity: sha512-c7jFQRklXua0mTzneGW9QVyxFjUgwcihC4bXEtujIo2ouWCe1Ajt/amn2PCxYnhYfd5k09JX3SB7OYWFKYqj8Q==}
@@ -7223,6 +7267,29 @@ snapshots:
 
   '@tanstack/query-core@5.62.0': {}
 
+  '@tanstack/query-devtools@5.61.4': {}
+
+  '@tanstack/query-persist-client-core@5.62.0':
+    dependencies:
+      '@tanstack/query-core': 5.62.0
+
+  '@tanstack/query-sync-storage-persister@5.62.0':
+    dependencies:
+      '@tanstack/query-core': 5.62.0
+      '@tanstack/query-persist-client-core': 5.62.0
+
+  '@tanstack/react-query-devtools@5.62.0(@tanstack/react-query@5.62.0(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@tanstack/query-devtools': 5.61.4
+      '@tanstack/react-query': 5.62.0(react@18.3.1)
+      react: 18.3.1
+
+  '@tanstack/react-query-persist-client@5.62.0(@tanstack/react-query@5.62.0(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@tanstack/query-persist-client-core': 5.62.0
+      '@tanstack/react-query': 5.62.0(react@18.3.1)
+      react: 18.3.1
+
   '@tanstack/react-query@5.62.0(react@18.3.1)':
     dependencies:
       '@tanstack/query-core': 5.62.0
@@ -8229,6 +8296,8 @@ snapshots:
       ignore: 5.3.2
       merge2: 1.4.1
       slash: 3.0.0
+
+  globrex@0.1.2: {}
 
   goober@2.1.16(csstype@3.1.3):
     dependencies:
@@ -10232,6 +10301,17 @@ snapshots:
       d3-shape: 3.2.0
       d3-time: 3.1.0
       d3-timer: 3.0.1
+
+  vite-tsconfig-paths@5.1.3(typescript@5.7.2)(vite@6.0.1(jiti@2.4.0)(lightningcss@1.28.2)(tsx@4.19.2)(yaml@2.6.0)):
+    dependencies:
+      debug: 4.3.7
+      globrex: 0.1.2
+      tsconfck: 3.1.4(typescript@5.7.2)
+    optionalDependencies:
+      vite: 6.0.1(jiti@2.4.0)(lightningcss@1.28.2)(tsx@4.19.2)(yaml@2.6.0)
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
 
   vite@5.4.11(lightningcss@1.28.2):
     dependencies:

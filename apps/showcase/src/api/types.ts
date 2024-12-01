@@ -5,4 +5,10 @@ type Scoreboard = {
   name: string;
 };
 
-export type { Scoreboard };
+type InsertScoreboard = {
+  name: string;
+};
+
+type Scoreboards = Record<Uuid, Scoreboard>;
+
+export type { InsertScoreboard, Scoreboard, Scoreboards };
