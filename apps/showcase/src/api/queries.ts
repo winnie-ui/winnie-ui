@@ -1,14 +1,13 @@
-import { queryOptions } from "@tanstack/react-query";
 import { keys } from "./keys";
 
-import type { Scoreboard, Scoreboards } from "./types";
+import type { Scoreboards, Uuid } from "./types";
 
 import { queryClient } from "../singletons/query-client";
 
 /**
  * Gets all scoreboards created by the current user
  *
- * @returns
+ * @returns record of scorebards
  */
 function getScoreboardsOptions() {
   return queryClient.getQueryData<Scoreboards>(keys.scoreboards.index());
@@ -17,17 +16,12 @@ function getScoreboardsOptions() {
 /**
  * Gets a single scoreboard by scoreboardId created by the current user
  *
- * @returns a single scoreboard
+ * @returns single scoreboard that matches the provided scoreboard id or undefined
  */
-function getScoreboardOptions(params: { scoreboardId: string }) {
-  return queryOptions({
-    queryKey: keys.scoreboards.id.index(params),
-    queryFn: () => {
-      return queryClient.getQueryData<Scoreboard>(
-        keys.scoreboards.id.index(params),
-      );
-    },
-  });
+function getScoreboardOptions(params: { scoreboardId: Uuid }) {
+  return queryClient.getQueryData<Scoreboards>(keys.scoreboards.index())?.[
+    params.scoreboardId
+  ];
 }
 
 export const queries = {

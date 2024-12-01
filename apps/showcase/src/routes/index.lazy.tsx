@@ -1,9 +1,5 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
 
-<<<<<<< HEAD
-=======
-import { useSuspenseQuery } from "@tanstack/react-query";
->>>>>>> 90d796a (getting react query persistent client working)
 import { api } from "~/api";
 import { PageContent, PageTitle } from "../ds/page/page";
 
@@ -22,8 +18,6 @@ function Index() {
    */
   const scoreboards = api.queries.getScoreboardsOptions();
 
-  console.log(scoreboards);
-
   return (
     <>
       <PageContent>
@@ -34,7 +28,7 @@ function Index() {
           })}
         </ul>
         <button
-          className="bg-accent-9 p-4"
+          className="bg-accent-9 p-4 text-accent-contrast rounded-3"
           onClick={() => createScoreBoard.mutate({ name: "Foo Bar" })}
         >
           Hello world

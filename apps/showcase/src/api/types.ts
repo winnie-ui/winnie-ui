@@ -11,4 +11,4 @@ type InsertScoreboard = {
 
 type Scoreboards = Record<Uuid, Scoreboard>;
 
-export type { InsertScoreboard, Scoreboard, Scoreboards };
+export type { InsertScoreboard, Scoreboard, Scoreboards, Uuid };
