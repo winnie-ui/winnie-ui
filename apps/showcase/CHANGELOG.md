@@ -1,5 +1,12 @@
 # showcase
 
+## 0.0.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @winnie-ui/tailwind@0.0.25
+
 ## 0.0.2
 
 ### Patch Changes
