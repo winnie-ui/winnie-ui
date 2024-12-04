@@ -1,0 +1,31 @@
+.tooltip-demo {
+  background: var(--tooltip-background);
+  border: var(--wui-border-width-1) solid var(--tooltip-border-color);
+  box-shadow: var(--wui-shadow-2);
+  color: var(--tooltip-color);
+
+  [data-slot="shortcut"] {
+    color: var(--wui-color-grey-10);
+    font-family: var(--wui-font-family-sans);
+
+    & > kbd {
+      font-family: var(--wui-font-family-sans);
+    }
+  }
+}
+
+:where([data-theme="light"]) {
+  .tooltip-demo {
+    --tooltip-background: var(--wui-color-white);
+    --tooltip-border-color: var(--wui-color-grey-5);
+    --tooltip-color: var(--wui-color-grey-11);
+  }
+}
+
+:where([data-theme="dark"]) {
+  .tooltip-demo {
+    --tooltip-background: var(--wui-color-grey-3);
+    --tooltip-border-color: var(--wui-color-grey-6);
+    --tooltip-color: var(--wui-color-grey-11);
+  }
+}

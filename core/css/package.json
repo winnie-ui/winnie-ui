@@ -34,6 +34,7 @@
     "./component/layout": "./src/component/layout.css",
     "./component/listbox": "./src/component/listbox.css",
     "./component/page": "./src/component/page.css",
+    "./component/tooltip": "./src/component/tooltip.css",
     "./layer": "./src/layer.css",
     "./reset": "./src/reset.css"
   },
@@ -68,6 +69,7 @@
       "./component/layout": "./dist/component/layout.min.css",
       "./component/listbox": "./dist/component/listbox.min.css",
       "./component/page": "./dist/component/page.min.css",
+      "./component/tooltip": "./dist/component/tooltip.min.css",
       "./layer": "./dist/layer.min.css",
       "./reset": "./dist/reset.min.css"
     }
@@ -109,6 +111,7 @@
     "dist:component-layout": "lightningcss src/component/layout.css -o dist/component/layout.min.css --minify --bundle --targets 'last 2 versions'",
     "dist:component-listbox": "lightningcss src/component/listbox.css -o dist/component/listbox.min.css --minify --bundle --targets 'last 2 versions'",
     "dist:component-page": "lightningcss src/component/page.css -o dist/component/page.min.css --minify --bundle --targets 'last 2 versions'",
+    "dist:component-tooltip": "lightningcss src/component/tooltip.css -o dist/component/tooltip.min.css --minify --bundle --targets 'last 2 versions'",
     "dist:layer": "lightningcss src/layer.css -o dist/layer.min.css --minify --bundle --targets 'last 2 versions'",
     "dist:reset": "lightningcss src/reset.css -o dist/reset.min.css --minify --bundle --targets 'last 2 versions'",
     "clean": "rimraf node_modules",
