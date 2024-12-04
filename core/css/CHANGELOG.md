@@ -1,5 +1,11 @@
 # @winnie-ui/css
 
+## 0.0.25
+
+### Patch Changes
+
+- [#76](https://github.com/winnie-ui/winnie-ui/pull/76) [`e3777a6`](https://github.com/winnie-ui/winnie-ui/commit/e3777a67c7fdf08ea8d8a4cfcbce1307d481c292) Thanks [@adamaho](https://github.com/adamaho)! - feat: adds new Tooltip component
+
 ## 0.0.24
 
 ## 0.0.23
