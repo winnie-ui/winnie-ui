@@ -1,0 +1,27 @@
+{
+  "name": "@winnie-ui/react",
+  "version": "0.0.1",
+  "description": "React component implementation using Winnie CSS",
+  "author": "Adam Aho",
+  "type": "module",
+  "files": ["dist", "package.json"],
+  "scripts": {
+    "clean": "rimraf node_modules"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "dependencies": {
+    "clsx": "2.1.1",
+    "@react-aria/utils": "3.26.0",
+    "@winnie-ui/css": "workspace:*",
+    "react-aria": "3.36.0",
+    "react-aria-components": "1.5.0"
+  },
+  "devDependencies": {
+    "@winnie-ui/ts-config": "workspace:*",
+    "rimraf": "6.0.1",
+    "typescript": "5.7.2"
+  }
+}

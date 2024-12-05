@@ -10,8 +10,6 @@
     "clean": "turbo run clean && rimraf node_modules",
     "format:check": "turbo run format:check --cache-dir=.turbo",
     "format:write": "turbo run format:write --cache-dir=.turbo",
-    "lint:check": "turbo run lint:check --cache-dir=.turbo",
-    "lint:write": "turbo run lint:write --cache-dir=.turbo",
     "tsc": "turbo run tsc",
     "prepare": "husky"
   },

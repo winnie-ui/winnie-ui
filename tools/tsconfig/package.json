@@ -1,20 +1,18 @@
 {
-	"name": "@winnie-ui/ts-config",
-	"version": "0.0.1",
-	"description": "Shared tsconfigs for winnie-ui",
-	"author": "Adam Aho",
-	"private": true,
-	"exports": {
-		".": "./base.json",
-		"./next": "./next.json",
-		"./react": "./react.json",
-		"./solid": "./solid.json"
-	},
-	"files": ["base.json", "next.json", "react.json", "solid.json"],
-	"scripts": {
-		"clean": "rimraf node_modules"
-	},
-	"devDependencies": {
-		"rimraf": "6.0.1"
-	}
+  "name": "@winnie-ui/ts-config",
+  "version": "0.0.1",
+  "description": "Shared tsconfigs for winnie-ui",
+  "author": "Adam Aho",
+  "private": true,
+  "exports": {
+    ".": "./base.json",
+    "./react": "./react.json"
+  },
+  "files": ["base.json", "next.json", "react.json", "solid.json"],
+  "scripts": {
+    "clean": "rimraf node_modules"
+  },
+  "devDependencies": {
+    "rimraf": "6.0.1"
+  }
 }

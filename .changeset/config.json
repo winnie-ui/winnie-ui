@@ -1,16 +1,16 @@
 {
-	"$schema": "https://unpkg.com/@changesets/config@3.0.2/schema.json",
-	"changelog": [
-		"@changesets/changelog-github",
-		{
-			"repo": "winnie-ui/winnie-ui"
-		}
-	],
-	"commit": false,
-	"fixed": [["@winnie-ui/css", "@winnie-ui/tailwind"]],
-	"linked": [],
-	"access": "public",
-	"baseBranch": "main",
-	"updateInternalDependencies": "patch",
-	"ignore": []
+  "$schema": "https://unpkg.com/@changesets/config@3.0.2/schema.json",
+  "changelog": [
+    "@changesets/changelog-github",
+    {
+      "repo": "winnie-ui/winnie-ui"
+    }
+  ],
+  "commit": false,
+  "fixed": [["@winnie-ui/css", "@winnie-ui/tailwind", "@winnie-ui/react"]],
+  "linked": [],
+  "access": "public",
+  "baseBranch": "main",
+  "updateInternalDependencies": "patch",
+  "ignore": []
 }
