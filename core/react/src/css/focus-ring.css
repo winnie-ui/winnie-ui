@@ -1,0 +1,12 @@
+@layer ds {
+  .wui-focus-ring {
+    &[data-focus-visible] {
+      outline: var(--wui-border-width-2) solid var(--wui-color-accent-a8);
+      outline-offset: var(--wui-space-1);
+
+      &.wui-focus-ring__tight {
+        outline-offset: 0;
+      }
+    }
+  }
+}

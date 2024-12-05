@@ -171,9 +171,6 @@ importers:
       react-dom:
         specifier: 18.3.1
         version: 18.3.1(react@18.3.1)
-      sst:
-        specifier: 3.3.35
-        version: 3.3.35(hono@4.6.9)
     devDependencies:
       '@tailwindcss/vite':
         specifier: 4.0.0-beta.4
@@ -199,6 +196,9 @@ importers:
       globals:
         specifier: 15.11.0
         version: 15.11.0
+      sst:
+        specifier: 3.3.35
+        version: 3.3.35(hono@4.6.9)
       tailwindcss:
         specifier: 4.0.0-beta.4
         version: 4.0.0-beta.4
@@ -226,6 +226,40 @@ importers:
       rimraf:
         specifier: 6.0.1
         version: 6.0.1
+
+  core/react:
+    dependencies:
+      '@react-aria/utils':
+        specifier: 3.26.0
+        version: 3.26.0(react@18.3.1)
+      '@winnie-ui/css':
+        specifier: workspace:*
+        version: link:../css
+      clsx:
+        specifier: 2.1.1
+        version: 2.1.1
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+      react-aria:
+        specifier: 3.36.0
+        version: 3.36.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react-aria-components:
+        specifier: 1.5.0
+        version: 1.5.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react-dom:
+        specifier: ^18.3.1
+        version: 18.3.1(react@18.3.1)
+    devDependencies:
+      '@winnie-ui/ts-config':
+        specifier: workspace:*
+        version: link:../../tools/tsconfig
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   core/tailwind:
     dependencies:
@@ -8237,7 +8271,7 @@ snapshots:
 
   foreground-child@3.3.0:
     dependencies:
-      cross-spawn: 7.0.3
+      cross-spawn: 7.0.6
       signal-exit: 4.1.0
 
   fs-extra@7.0.1:

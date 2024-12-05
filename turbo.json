@@ -9,8 +9,6 @@
     "clean": {},
     "format:check": {},
     "format:write": {},
-    "lint:check": {},
-    "lint:write": {},
     "topo": {
       "dependsOn": ["^topo"]
     },

@@ -9,6 +9,8 @@
     "dev:sst": "sst dev",
     "deploy:production": "sst deploy --stage=production",
     "deploy:staging": "sst deploy --stage=staging",
+    "format:check": "biome format ./src --no-errors-on-unmatched",
+    "format:write": "biome format ./src --write --no-errors-on-unmatched",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -25,8 +27,7 @@
     "react": "18.3.1",
     "react-aria": "3.36.0",
     "react-aria-components": "1.5.0",
-    "react-dom": "18.3.1",
-    "sst": "3.3.35"
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
     "@tailwindcss/vite": "4.0.0-beta.4",
@@ -37,6 +38,7 @@
     "@types/react-dom": "18.3.1",
     "@vitejs/plugin-react-swc": "3.7.2",
     "globals": "15.11.0",
+    "sst": "3.3.35",
     "tailwindcss": "4.0.0-beta.4",
     "typescript": "5.7.2",
     "vite": "6.0.1",
