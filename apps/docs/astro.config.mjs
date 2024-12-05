@@ -11,6 +11,7 @@ export default defineConfig({
   adapter: aws(),
   redirects: {
     "/": "/css",
+    "/css": "/css/docs",
     "/css/docs": "/css/docs/start/quick-start",
   },
   integrations: [expressiveCode(), mdx(), react()],
