@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import { Loader } from "lucide-react";
 import {
   Children,
   type ComponentPropsWithoutRef,
@@ -25,6 +24,11 @@ type ButtonProps = AriaButtonProps & {
   color?: "red" | "accent" | "grey";
 
   /**
+   * Component that is displayed when the `isPending` is true.
+   */
+  loadingComponent?: React.ReactNode;
+
+  /**
    * Changes the look of the button
    */
   variant?: "solid" | "soft" | "ghost";
@@ -46,9 +50,9 @@ const Button = forwardRef<ButtonElement, PropsWithChildren<ButtonProps>>(
         data-variant={variant}
         ref={ref}
       >
-        {props.isPending && (
+        {props.isPending && props.loadingComponent && (
           <span className="wui-button__loading" data-slot="loading">
-            <Loader className="wui-button__loading-icon" />
+            {props.loadingComponent}
           </span>
         )}
         {children}
@@ -102,7 +106,7 @@ const ButtonIcon = ({
   const icon = Children.only(children);
 
   return cloneElement(icon as ReactElement, {
-    className: clsx("wui-button__label", className),
+    className: clsx("wui-button__icon", className),
     "data-slot": "icon",
   });
 };

@@ -15,8 +15,8 @@ export const GET: APIRoute = async () => {
       title: c.data.title,
       description: c.data.description,
       body: c.body,
-      slug: c.slug,
-      href: `/css/docs/${c.slug}`,
+      slug: c.id,
+      href: `/css/docs/${c.id}`,
     };
   });
 
