@@ -9,6 +9,8 @@
     "dev:sst": "sst dev",
     "deploy:production": "sst deploy --stage=production",
     "deploy:staging": "sst deploy --stage=staging",
+    "format:check": "biome format ./src --no-errors-on-unmatched",
+    "format:write": "biome format ./src --write --no-errors-on-unmatched",
     "preview": "vite preview"
   },
   "dependencies": {
