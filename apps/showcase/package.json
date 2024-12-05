@@ -24,18 +24,18 @@
     "@winnie-ui/tailwind": "workspace:*",
     "clsx": "2.1.1",
     "lucide-react": "0.468.0",
-    "react": "19.0.0",
+    "react": "18.3.1",
     "react-aria": "3.36.0",
     "react-aria-components": "1.5.0",
-    "react-dom": "19.0.0"
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
     "@tailwindcss/vite": "4.0.0-beta.4",
     "@tanstack/router-devtools": "1.85.5",
     "@tanstack/router-plugin": "1.85.9",
     "@types/aws-lambda": "8.10.146",
-    "@types/react": "19.0.0",
-    "@types/react-dom": "19.0.0",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
     "@vitejs/plugin-react-swc": "3.7.2",
     "globals": "15.13.0",
     "sst": "3.3.47",
