@@ -45,9 +45,9 @@ const Button = forwardRef<ButtonElement, PropsWithChildren<ButtonProps>>(
         data-variant={variant}
         ref={ref}
       >
-        {props.isPending && props.loadingComponent && (
+        {props.isPending && (
           <span className="wui-button__loading" data-slot="loading">
-            {props.loadingComponent}
+            asdf
           </span>
         )}
         {children}

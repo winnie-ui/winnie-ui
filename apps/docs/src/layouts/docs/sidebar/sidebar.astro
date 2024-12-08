@@ -171,7 +171,7 @@ for (const section of navigation) {
       </a>
     </div>
     <div class="wui-docs-sidebar-actions">
-      <Actions client:load transition:persist />
+      <Actions client:only="react" transition:persist />
     </div>
   </div>
   <input type="checkbox" id="docs-menu-toggle" class="wui-docs-mobile-toggle" />
@@ -188,10 +188,10 @@ for (const section of navigation) {
     <Menu />
   </label>
   <div class="wui-docs-sidebar-search">
-    <Search client:load transition:persist />
+    <Search client:only="react" transition:persist />
   </div>
   <Navigation
-    client:load
+    client:only="react"
     transition:persist
     items={navigation}
     slug={Astro.props.slug}
