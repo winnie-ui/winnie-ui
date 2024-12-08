@@ -102,6 +102,7 @@ const ButtonIcon = ({
   const icon = Children.only(children);
 
   return cloneElement(icon as ReactElement, {
+    // @ts-ignore
     className: clsx("wui-button__label", className),
     "data-slot": "icon",
   });

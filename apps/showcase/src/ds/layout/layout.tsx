@@ -290,6 +290,7 @@ const Layout = forwardRef<LayoutRef, PropsWithChildren<LayoutProps>>(
     /**
      * tracks the active timer to debounce the mouse leave event
      */
+    // @ts-ignore
     const timerRef = useRef<any>();
 
     /**
