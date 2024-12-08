@@ -24,11 +24,6 @@ type ButtonProps = AriaButtonProps & {
   color?: "red" | "accent" | "grey";
 
   /**
-   * Component that is displayed when the `isPending` is true.
-   */
-  loadingComponent?: React.ReactNode;
-
-  /**
    * Changes the look of the button
    */
   variant?: "solid" | "soft" | "ghost";
