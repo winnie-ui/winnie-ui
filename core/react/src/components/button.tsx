@@ -2,9 +2,9 @@ import clsx from "clsx";
 import {
   Children,
   type ComponentPropsWithoutRef,
-  type ElementRef,
+  ComponentRef,
   type PropsWithChildren,
-  type ReactElement,
+  ReactElement,
   cloneElement,
   forwardRef,
 } from "react";
@@ -16,17 +16,12 @@ import {
 /* -------------------------------------------------------------------------------------------------
  * Button
  * -----------------------------------------------------------------------------------------------*/
-type ButtonElement = ElementRef<typeof AriaButton>;
+type ButtonElement = ComponentRef<typeof AriaButton>;
 type ButtonProps = AriaButtonProps & {
   /**
    * Changes the color of the button
    */
   color?: "red" | "accent" | "grey";
-
-  /**
-   * Component that is displayed when the `isPending` is true.
-   */
-  loadingComponent?: React.ReactNode;
 
   /**
    * Changes the look of the button
@@ -50,9 +45,9 @@ const Button = forwardRef<ButtonElement, PropsWithChildren<ButtonProps>>(
         data-variant={variant}
         ref={ref}
       >
-        {props.isPending && props.loadingComponent && (
+        {props.isPending && (
           <span className="wui-button__loading" data-slot="loading">
-            {props.loadingComponent}
+            asdf
           </span>
         )}
         {children}
@@ -64,7 +59,7 @@ const Button = forwardRef<ButtonElement, PropsWithChildren<ButtonProps>>(
 /* -------------------------------------------------------------------------------------------------
  * ButtonLabel
  * -----------------------------------------------------------------------------------------------*/
-type ButtonLabelElement = ElementRef<"span">;
+type ButtonLabelElement = ComponentRef<"span">;
 type ButtonLabelProps = ComponentPropsWithoutRef<"span">;
 
 const ButtonLabel = forwardRef<
@@ -105,10 +100,13 @@ const ButtonIcon = ({
    */
   const icon = Children.only(children);
 
-  return cloneElement(icon as ReactElement, {
-    className: clsx("wui-button__icon", className),
-    "data-slot": "icon",
-  });
+  return cloneElement(
+    icon as ReactElement<ButtonIconProps & { "data-slot": string }>,
+    {
+      className: clsx("wui-button__icon", className),
+      "data-slot": "icon",
+    },
+  );
 };
 
 export { Button, ButtonLabel, ButtonIcon };
