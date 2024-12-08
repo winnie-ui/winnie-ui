@@ -56,14 +56,14 @@
       color: var(--wui-color-grey-9);
     }
 
-    .wui-button__loading {
+    .wui-button__pending {
       align-items: center;
       display: flex;
       justify-content: center;
       height: 100%;
       width: 100%;
 
-      .wui-button__loading-icon {
+      .wui-button__pending-icon {
         animation: spin 2.5s linear;
         animation-iteration-count: infinite;
         height: var(--wui-button-icon-size, var(--wui-button-md-icon-size));

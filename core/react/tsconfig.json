@@ -1,5 +1,3 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "react",
-  "extends": "@winnie-ui/ts-config/react"
+  "extends": "@winnie-ui/ts-config/react.json"
 }

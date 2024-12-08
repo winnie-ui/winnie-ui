@@ -4,11 +4,7 @@
   "description": "Shared tsconfigs for winnie-ui",
   "author": "Adam Aho",
   "private": true,
-  "exports": {
-    ".": "./base.json",
-    "./react": "./react.json"
-  },
-  "files": ["base.json", "next.json", "react.json", "solid.json"],
+  "files": ["base.json", "react.json"],
   "scripts": {
     "clean": "rimraf node_modules"
   },

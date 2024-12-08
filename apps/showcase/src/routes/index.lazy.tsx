@@ -3,6 +3,8 @@ import { createLazyFileRoute } from "@tanstack/react-router";
 import { api } from "~/api";
 import { PageContent, PageTitle } from "../ds/page/page";
 
+import { Button, ButtonLabel, ButtonPending } from "@winnie-ui/react/button";
+
 export const Route = createLazyFileRoute("/")({
   component: Index,
 });
@@ -33,6 +35,12 @@ function Index() {
         >
           Hello world
         </button>
+        <Button>
+          <ButtonLabel>
+            adfasdfasdfqweqweqweqweqweqwerqwerqwerqwerqwerqwerqwer
+          </ButtonLabel>
+          <ButtonPending>pending</ButtonPending>
+        </Button>
       </PageContent>
     </>
   );

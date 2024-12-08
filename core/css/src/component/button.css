@@ -54,13 +54,13 @@
       width: var(--wui-button-icon-size, var(--wui-button-md-icon-size));
     }
 
-    [data-slot="loading"] {
+    [data-slot="pending"] {
       position: absolute;
       z-index: 1;
     }
 
-    /* has loading */
-    &:has([data-slot="loading"]) {
+    /* has pending */
+    &:has([data-slot="pending"]) {
       &::after {
         border-radius: var(
           --wui-button-border-radius,
@@ -95,11 +95,11 @@
       grid-column: 2 / 3;
     }
 
-    /* only a single icon in the button or icon followed by loading slot */
+    /* only a single icon in the button or icon followed by pending slot */
     &:has(
         [data-slot="icon"]:only-child,
-        [data-slot="icon"] + [data-slot="loading"],
-        [data-slot="loading"] + [data-slot="icon"]
+        [data-slot="icon"] + [data-slot="pending"],
+        [data-slot="pending"] + [data-slot="icon"]
       ):not([data-slot="label"]) {
       grid-template-columns: 1fr;
       height: var(--wui-button-height, var(--wui-button-md-height));

@@ -5,6 +5,14 @@
   "author": "Adam Aho",
   "type": "module",
   "files": ["dist", "package.json"],
+  "exports": {
+    "./button": {
+      "import": {
+        "default": "./src/components/button.tsx",
+        "types": "./src/components/button.tsx"
+      }
+    }
+  },
   "scripts": {
     "clean": "rimraf node_modules",
     "format:check": "biome format ./src --no-errors-on-unmatched",

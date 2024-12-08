@@ -21,6 +21,7 @@
     "@tanstack/react-query-devtools": "5.62.3",
     "@tanstack/react-query-persist-client": "5.62.3",
     "@tanstack/react-router": "1.87.0",
+    "@winnie-ui/react": "workspace:*",
     "@winnie-ui/tailwind": "workspace:*",
     "clsx": "2.1.1",
     "lucide-react": "0.468.0",
