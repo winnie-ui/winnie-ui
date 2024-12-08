@@ -47,8 +47,8 @@ const Button = forwardRef<ButtonElement, PropsWithChildren<ButtonProps>>(
         ref={ref}
       >
         {props.isPending && (
-          <span className="wui-button__loading" data-slot="loading">
-            <Loader className="wui-button__loading-icon" />
+          <span className="wui-button__pending" data-slot="pending">
+            <Loader className="wui-button__pending-icon" />
           </span>
         )}
         {children}

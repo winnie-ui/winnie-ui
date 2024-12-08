@@ -40,7 +40,7 @@ Attach the appropriate `data` attributes in the structure below.
 <button data-component="button">
   <i data-slot="icon"></i>
   <span data-slot="label"></span>
-  <span data-slot="loading"></span>
+  <span data-slot="pending"></span>
 </button>
 ```
 
@@ -119,16 +119,16 @@ Create an icon button by only passing an icon with the `icon` slot attribute as 
   </Fragment>
 </Demo>
 
-### Loading
+### Pending
 
-If a child of the button is rendered with the `loading` attribute, any text and icons rendered in the button will be hidden and the `loading` slot will be rendered.
+If a child of the button is rendered with the `pending` attribute, any text and icons rendered in the button will be hidden and the `pending` slot will be rendered.
 
 <Demo>
   <ButtonLoading />
   <Fragment slot="footer">
-    ```tsx ins=data-slot="loading"
+    ```tsx ins=data-slot="pending"
     <button data-component="button">
-      <span data-slot="loading">
+      <span data-slot="pending">
         <i class="loader"></i>
       </span>
       <span data-slot="label">New Issue</span>

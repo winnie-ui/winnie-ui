@@ -2,39 +2,114 @@ import clsx from "clsx";
 import {
   Children,
   type ComponentPropsWithoutRef,
-  ComponentRef,
+  type ComponentRef,
+  ForwardedRef,
   type PropsWithChildren,
-  ReactElement,
+  type ReactElement,
   cloneElement,
-  forwardRef,
 } from "react";
+
 import {
   Button as AriaButton,
   type ButtonProps as AriaButtonProps,
+  Text as AriaText,
+  ButtonContext,
+  useContextProps,
+  useSlottedContext,
 } from "react-aria-components";
 
 /* -------------------------------------------------------------------------------------------------
  * Button
  * -----------------------------------------------------------------------------------------------*/
-type ButtonElement = ComponentRef<typeof AriaButton>;
 type ButtonProps = AriaButtonProps & {
   /**
    * Changes the color of the button
+   *
+   * @default "accent"
    */
-  color?: "red" | "accent" | "grey";
+  color?:
+    | "accent"
+    | "brand"
+    | "red"
+    | "orange"
+    | "yellow"
+    | "green"
+    | "blue"
+    | "purple"
+    | "pink"
+    | "grey";
+
+  /**
+   * Changes the size of the button
+   *
+   * @default undefined
+   */
+  radius?: "none" | "sm" | "md" | "lg" | "round";
+
+  /**
+   * Ref to button element
+   */
+  ref?: ForwardedRef<ComponentRef<typeof AriaButton>>;
+
+  /**
+   * Changes the size of the button
+   *
+   * @default "md"
+   */
+  size?: "sm" | "md" | "lg";
 
   /**
    * Changes the look of the button
+   *
+   * @default "solid"
    */
   variant?: "solid" | "soft" | "ghost";
+
+  /**
+   * Changes the width of the button
+   *
+   * @default "auto"
+   */
+  width?: "auto" | "full";
 };
 
-const Button = forwardRef<ButtonElement, PropsWithChildren<ButtonProps>>(
-  (
-    { className, children, color = "accent", variant = "solid", ...props },
-    ref,
-  ) => {
-    return (
+/**
+ * # Button
+ * Trigger an event, action or operation.
+ *
+ * ## Anatomy
+ * Arrange the components in the structure below.
+ *
+ * ```tsx
+ * <Button>
+ *  <ButtonLabel />
+ *  <ButtonIcon />
+ *  <ButtonPending />
+ * </Button>
+ * ```
+ *
+ * See {@link https://winnie-ui.com/react/docs/components/button Documentation} for examples.
+ */
+function Button({
+  className,
+  children,
+  color = "accent",
+  radius = undefined,
+  size = "md",
+  variant = "solid",
+  width = "auto",
+  ref,
+  ...props
+}: PropsWithChildren<ButtonProps>) {
+  /**
+   * merge context with provided props
+   */
+  [props, ref] = useContextProps(props, ref!, ButtonContext);
+
+  return (
+    <ButtonContext.Provider
+      value={{ isPending: props.isPending, isDisabled: props.isPending }}
+    >
       <AriaButton
         {...props}
         className={clsx("wui-button wui-focus-ring", className, {
@@ -42,41 +117,81 @@ const Button = forwardRef<ButtonElement, PropsWithChildren<ButtonProps>>(
         })}
         data-accent-color={color === "accent" ? undefined : color}
         data-component="button"
+        data-radius={radius}
+        data-size={size}
         data-variant={variant}
+        data-width={width}
         ref={ref}
       >
-        {props.isPending && (
-          <span className="wui-button__loading" data-slot="loading">
-            asdf
-          </span>
-        )}
         {children}
       </AriaButton>
-    );
-  },
-);
+    </ButtonContext.Provider>
+  );
+}
 
 /* -------------------------------------------------------------------------------------------------
  * ButtonLabel
  * -----------------------------------------------------------------------------------------------*/
-type ButtonLabelElement = ComponentRef<"span">;
-type ButtonLabelProps = ComponentPropsWithoutRef<"span">;
+type ButtonLabelProps = ComponentPropsWithoutRef<typeof AriaText> & {
+  /**
+   * Ref to span element
+   */
+  ref?: ForwardedRef<ComponentRef<typeof AriaText>>;
+};
 
-const ButtonLabel = forwardRef<
-  ButtonLabelElement,
-  PropsWithChildren<ButtonLabelProps>
->(({ className, children, ...props }, ref) => {
+function ButtonLabel({
+  className,
+  children,
+  ref,
+  ...props
+}: PropsWithChildren<ButtonLabelProps>) {
   return (
-    <span
+    <AriaText
       {...props}
       className={clsx("wui-button__label", className)}
       data-slot="label"
       ref={ref}
     >
       {children}
+    </AriaText>
+  );
+}
+
+/* -------------------------------------------------------------------------------------------------
+ * ButtonPending
+ * -----------------------------------------------------------------------------------------------*/
+type ButtonPendingProps = ComponentPropsWithoutRef<"span"> & {
+  /**
+   * Ref to span element
+   */
+  ref?: ForwardedRef<ComponentRef<"span">>;
+};
+
+function ButtonPending({
+  className,
+  children,
+  ref,
+  ...props
+}: PropsWithChildren<ButtonLabelProps>) {
+  /**
+   * Subscribe to button context
+   */
+  const buttonState = useSlottedContext(ButtonContext);
+
+  if (buttonState && !buttonState.isPending) {
+    return null;
+  }
+
+  return (
+    <span
+      className={clsx("wui-button__pending", className)}
+      data-slot="pending"
+      {...props}
+    >
+      {children}
     </span>
   );
-});
+}
 
 /* -------------------------------------------------------------------------------------------------
  * ButtonIcon
@@ -109,5 +224,10 @@ const ButtonIcon = ({
   );
 };
 
-export { Button, ButtonLabel, ButtonIcon };
-export type { ButtonProps, ButtonLabelProps, ButtonIconProps };
+export { Button, ButtonLabel, ButtonIcon, ButtonPending, ButtonContext };
+export type {
+  ButtonProps,
+  ButtonLabelProps,
+  ButtonIconProps,
+  ButtonPendingProps,
+};

@@ -150,6 +150,9 @@ importers:
       '@tanstack/react-router':
         specifier: 1.87.0
         version: 1.87.0(@tanstack/router-generator@1.86.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@winnie-ui/react':
+        specifier: workspace:*
+        version: link:../../core/react
       '@winnie-ui/tailwind':
         specifier: workspace:*
         version: link:../../core/tailwind

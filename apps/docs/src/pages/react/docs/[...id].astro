@@ -1,0 +1,38 @@
+---
+import { type CollectionEntry, getCollection, render } from "astro:content";
+import DocsLayout from "~/layouts/docs/layout.astro";
+
+import Heading2 from "~/components/markdown/heading-2.astro";
+import Heading3 from "~/components/markdown/heading-3.astro";
+import Heading4 from "~/components/markdown/heading-4.astro";
+import Table from "~/components/markdown/table.astro";
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const docs = await getCollection("react");
+  return docs.map((doc) => ({
+    params: { id: doc.id },
+    props: { doc },
+  }));
+}
+
+type Props = {
+  doc: CollectionEntry<"css">;
+};
+
+const { doc } = Astro.props;
+
+const { Content, headings } = await render(doc);
+---
+
+<DocsLayout {...doc.data} slug={doc.id} headings={headings}>
+  <Content
+    components={{
+      h2: Heading2,
+      h3: Heading3,
+      h4: Heading4,
+      table: Table,
+    }}
+  />
+</DocsLayout>
