@@ -12,6 +12,7 @@ import {
 import {
   Button as AriaButton,
   type ButtonProps as AriaButtonProps,
+  Text as AriaText,
   ButtonContext,
   useContextProps,
   useSlottedContext,
@@ -23,8 +24,27 @@ import {
 type ButtonProps = AriaButtonProps & {
   /**
    * Changes the color of the button
+   *
+   * @default "accent"
    */
-  color?: "red" | "accent" | "grey";
+  color?:
+    | "accent"
+    | "brand"
+    | "red"
+    | "orange"
+    | "yellow"
+    | "green"
+    | "blue"
+    | "purple"
+    | "pink"
+    | "grey";
+
+  /**
+   * Changes the size of the button
+   *
+   * @default undefined
+   */
+  radius?: "none" | "sm" | "md" | "lg" | "round";
 
   /**
    * Ref to button element
@@ -32,16 +52,52 @@ type ButtonProps = AriaButtonProps & {
   ref?: ForwardedRef<ComponentRef<typeof AriaButton>>;
 
   /**
+   * Changes the size of the button
+   *
+   * @default "md"
+   */
+  size?: "sm" | "md" | "lg";
+
+  /**
    * Changes the look of the button
+   *
+   * @default "solid"
    */
   variant?: "solid" | "soft" | "ghost";
+
+  /**
+   * Changes the width of the button
+   *
+   * @default "auto"
+   */
+  width?: "auto" | "full";
 };
 
+/**
+ * # Button
+ * Trigger an event, action or operation.
+ *
+ * ## Anatomy
+ * Arrange the components in the structure below.
+ *
+ * ```tsx
+ * <Button>
+ *  <ButtonLabel />
+ *  <ButtonIcon />
+ *  <ButtonPending />
+ * </Button>
+ * ```
+ *
+ * See {@link https://winnie-ui.com/react/docs/components/button Documentation} for examples.
+ */
 function Button({
   className,
   children,
   color = "accent",
+  radius = undefined,
+  size = "md",
   variant = "solid",
+  width = "auto",
   ref,
   ...props
 }: PropsWithChildren<ButtonProps>) {
@@ -61,7 +117,10 @@ function Button({
         })}
         data-accent-color={color === "accent" ? undefined : color}
         data-component="button"
+        data-radius={radius}
+        data-size={size}
         data-variant={variant}
+        data-width={width}
         ref={ref}
       >
         {children}
@@ -73,11 +132,11 @@ function Button({
 /* -------------------------------------------------------------------------------------------------
  * ButtonLabel
  * -----------------------------------------------------------------------------------------------*/
-type ButtonLabelProps = ComponentPropsWithoutRef<"span"> & {
+type ButtonLabelProps = ComponentPropsWithoutRef<typeof AriaText> & {
   /**
    * Ref to span element
    */
-  ref?: ForwardedRef<ComponentRef<"span">>;
+  ref?: ForwardedRef<ComponentRef<typeof AriaText>>;
 };
 
 function ButtonLabel({
@@ -87,14 +146,14 @@ function ButtonLabel({
   ...props
 }: PropsWithChildren<ButtonLabelProps>) {
   return (
-    <span
+    <AriaText
       {...props}
       className={clsx("wui-button__label", className)}
       data-slot="label"
       ref={ref}
     >
       {children}
-    </span>
+    </AriaText>
   );
 }
 
