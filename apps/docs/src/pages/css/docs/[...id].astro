@@ -7,6 +7,8 @@ import Heading3 from "~/components/markdown/heading-3.astro";
 import Heading4 from "~/components/markdown/heading-4.astro";
 import Table from "~/components/markdown/table.astro";
 
+import type { Props as SidebarProps } from "~/layouts/docs/sidebar/sidebar.astro";
+
 export const prerender = true;
 
 export async function getStaticPaths() {
@@ -26,7 +28,141 @@ const { doc } = Astro.props;
 const { Content, headings } = await render(doc);
 ---
 
-<DocsLayout {...doc.data} slug={doc.id} headings={headings}>
+<DocsLayout
+	{...doc.data}
+	slug={doc.id}
+	headings={headings}
+	collection="css"
+	navigation={[{
+  label: "Getting Started",
+  items: [
+    {
+      label: "Quick Start",
+      link: "/css/docs/start/quick-start",
+    },
+    {
+      label: "Integrating with Tailwind",
+      link: "/css/docs/start/integrating-with-tailwind",
+    },
+  ],
+},
+{
+  label: "Concepts",
+  items: [
+    {
+      label: "Accent Color",
+      link: "/css/docs/concepts/accent-color",
+    },
+    {
+      label: "Layers",
+      link: "/css/docs/concepts/layers",
+    },
+    {
+      label: "Radius",
+      link: "/css/docs/concepts/radius",
+    },
+    {
+      label: "Scaling",
+      link: "/css/docs/concepts/scaling",
+    },
+  ],
+},
+{
+  label: "Base",
+  items: [
+    {
+      label: "Animation Duration",
+      link: "/css/docs/variables/animation-duration",
+    },
+    {
+      label: "Animation Timing Function",
+      link: "/css/docs/variables/animation-timing-function",
+    },
+    {
+      label: "Border Radius",
+      link: "/css/docs/variables/border-radius",
+    },
+    {
+      label: "Border Width",
+      link: "/css/docs/variables/border-width",
+    },
+    {
+      label: "Color",
+      link: "/css/docs/variables/color",
+    },
+    {
+      label: "Font Family",
+      link: "/css/docs/variables/font-family",
+    },
+    {
+      label: "Font Size",
+      link: "/css/docs/variables/font-size",
+    },
+    {
+      label: "Font Weight",
+      link: "/css/docs/variables/font-weight",
+    },
+    {
+      label: "Keyframes",
+      link: "/css/docs/variables/keyframes",
+    },
+    {
+      label: "Letter Spacing",
+      link: "/css/docs/variables/letter-spacing",
+    },
+    {
+      label: "Line Height",
+      link: "/css/docs/variables/line-height",
+    },
+    {
+      label: "Shadow",
+      link: "/css/docs/variables/shadow",
+    },
+    {
+      label: "Space",
+      link: "/css/docs/variables/space",
+    },
+  ],
+},
+{
+  label: "Components",
+  badge: "wip",
+  items: [
+    {
+      label: "Introduction",
+      link: "/css/docs/components/introduction",
+    },
+    {
+      label: "Button",
+      link: "/css/docs/components/button",
+    },
+    {
+      label: "Checkbox",
+      link: "/css/docs/components/checkbox",
+    },
+    {
+      label: "Field",
+      link: "/css/docs/components/field",
+    },
+    {
+      label: "Input",
+      link: "/css/docs/components/input",
+    },
+    {
+      label: "Layout",
+      link: "/css/docs/components/layout",
+    },
+    {
+      label: "Listbox",
+      link: "/css/docs/components/listbox",
+    },
+    {
+      label: "Tooltip",
+      link: "/css/docs/components/tooltip",
+    },
+  ],
+},
+]}>
   <Content
     components={{
       h2: Heading2,

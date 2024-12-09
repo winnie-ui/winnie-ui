@@ -15,8 +15,13 @@ import type { CollectionResponse, ContentResponse } from "~/types/collections";
 import { getMarkedDescription, getMarkedTitle } from "./utils";
 
 import "./search-command-menu.css";
+import type { CollectionKey } from "astro:content";
 
-export function SearchCommandMenu() {
+type SearchCommandMenuProps = {
+  collection: CollectionKey;
+};
+
+export function SearchCommandMenu({ collection }: SearchCommandMenuProps) {
   /**
    * creates a new flexsearch index
    */
@@ -154,7 +159,7 @@ export function SearchCommandMenu() {
      * and creates indexes for searching
      */
     async function getContent() {
-      const response = await fetch("/css/docs/content.json");
+      const response = await fetch(`/${collection}/docs/content.json`);
       const responseJson = (await response.json()) as CollectionResponse;
 
       const store = new Map();
@@ -238,12 +243,10 @@ export function SearchCommandMenu() {
                           >
                             <span
                               className="search-command-menu-item-title"
-                              // biome-ignore lint/security/noDangerouslySetInnerHtml: TODO: remove when monorepos are supported
                               dangerouslySetInnerHTML={{ __html: item.title }}
                             />
                             <span
                               className="search-command-menu-item-description"
-                              // biome-ignore lint/security/noDangerouslySetInnerHtml: TODO: remove when monorepos are supported
                               dangerouslySetInnerHTML={{
                                 __html: item.description,
                               }}
