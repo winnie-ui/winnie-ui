@@ -26,7 +26,26 @@ const { doc } = Astro.props;
 const { Content, headings } = await render(doc);
 ---
 
-<DocsLayout {...doc.data} slug={doc.id} headings={headings}>
+<DocsLayout {...doc.data} slug={doc.id} headings={headings} collection="react" navigation={[{
+  label: "Getting Started",
+  items: [
+    // {
+    //   label: "Quick Start",
+    //   link: "/react/docs/start/quick-start",
+    // },
+  ],
+},
+{
+  label: "Components",
+  badge: "wip",
+  items: [
+    {
+      label: "Button",
+      link: "/react/docs/components/button",
+    },
+  ],
+},
+]}>
   <Content
     components={{
       h2: Heading2,

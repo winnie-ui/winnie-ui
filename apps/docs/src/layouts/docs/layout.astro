@@ -1,22 +1,27 @@
 ---
 import type { CollectionEntry } from "astro:content";
 
+import type { CollectionKey } from "astro:content";
 import type { MarkdownHeading } from "astro";
 import BaseHead from "~/layouts/base/base-head.astro";
 import BaseLayout from "../base/layout.astro";
 import Content from "./content.astro";
 import Sidebar from "./sidebar/sidebar.astro";
+import type { Props as SidebarProps } from "./sidebar/sidebar.astro";
 
 type Props = CollectionEntry<"css">["data"] & {
+  collection: CollectionKey;
   headings: MarkdownHeading[];
+  navigation: SidebarProps["navigation"];
 };
 
-const { title, description, slug, headings } = Astro.props;
+const { collection, title, description, slug, headings, navigation } =
+  Astro.props;
 ---
 
 <BaseLayout>
   <BaseHead slot="head" title={title} description={description} />
-  <Sidebar slug={slug} />
+  <Sidebar collection={collection} slug={slug} navigation={navigation} />
   <div class="wui-docs-layout-content-container">
     <Content title={title} description={description} headings={headings}>
       <slot />
