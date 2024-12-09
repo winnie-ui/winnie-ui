@@ -11,21 +11,9 @@
     "indentWidth": 2,
     "indentStyle": "space"
   },
-  "linter": {
-    "enabled": false,
-    "rules": {
-      "recommended": true,
-      "correctness": {
-        "noUnusedImports": "error",
-        "noUnusedVariables": "error"
-      },
-      "style": {
-        "noNonNullAssertion": "off"
-      },
-      "suspicious": {
-        "noConsoleLog": "error",
-        "noExplicitAny": "off"
-      }
+  "overrides": [
+    {
+      "include": ["*.astro"]
     }
-  }
+  ]
 }
