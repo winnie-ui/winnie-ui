@@ -1,4 +1,5 @@
 @import "@winnie-ui/css";
+@import "@winnie-ui/themes";
 @import "./code.css";
 
 @layer markdown;

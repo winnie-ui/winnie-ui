@@ -65,6 +65,12 @@ importers:
       '@winnie-ui/css':
         specifier: workspace:*
         version: link:../../core/css
+      '@winnie-ui/react':
+        specifier: workspace:*
+        version: link:../../core/react
+      '@winnie-ui/themes':
+        specifier: workspace:*
+        version: link:../../core/themes
       astro:
         specifier: 5.0.3
         version: 5.0.3(jiti@2.4.0)(lightningcss@1.28.2)(rollup@4.28.0)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.0)
@@ -278,6 +284,16 @@ importers:
       tailwindcss:
         specifier: 4.0.0-alpha.15
         version: 4.0.0-alpha.15
+    devDependencies:
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+
+  core/themes:
+    dependencies:
+      '@winnie-ui/css':
+        specifier: workspace:*
+        version: link:../css
     devDependencies:
       rimraf:
         specifier: 6.0.1
@@ -2714,10 +2730,6 @@ packages:
   cookie@0.7.2:
     resolution: {integrity: sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==}
     engines: {node: '>= 0.6'}
-
-  cross-spawn@7.0.3:
-    resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
-    engines: {node: '>= 8'}
 
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
@@ -7769,12 +7781,6 @@ snapshots:
 
   cookie@0.7.2: {}
 
-  cross-spawn@7.0.3:
-    dependencies:
-      path-key: 3.1.1
-      shebang-command: 2.0.0
-      which: 2.0.2
-
   cross-spawn@7.0.6:
     dependencies:
       path-key: 3.1.1
@@ -8062,7 +8068,7 @@ snapshots:
 
   execa@8.0.1:
     dependencies:
-      cross-spawn: 7.0.3
+      cross-spawn: 7.0.6
       get-stream: 8.0.1
       human-signals: 5.0.0
       is-stream: 3.0.0

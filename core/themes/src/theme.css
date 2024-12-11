@@ -1,0 +1,88 @@
+@layer theme {
+  /* -------------------------------------------------------------------------------------------------
+   * Button
+   * -----------------------------------------------------------------------------------------------*/
+  [data-component="button"] {
+    background: var(--wui-button-background);
+    border: var(--wui-button-border);
+    box-shadow: var(--wui-button-box-shadow);
+    color: var(--wui-button-color);
+    font-weight: var(--wui-button-font-weight);
+
+    &[data-variant="solid"] {
+      --wui-button-background: var(--wui-button-solid-background);
+      --wui-button-box-shadow: var(--wui-button-solid-box-shadow);
+      --wui-button-border: var(--wui-button-solid-border);
+      --wui-button-color: var(--wui-button-solid-color);
+
+      &[data-hovered] {
+        --wui-button-background: var(
+          --wui-button-solid-background-hovered,
+          var(--wui-button-solid-background)
+        );
+        --wui-button-box-shadow: var(
+          --wui-button-solid-box-shadow-hovered,
+          var(--wui-button-solid-box-shadow)
+        );
+        --wui-button-border: var(
+          --wui-button-solid-border-hovered,
+          var(--wui-button-solid-border)
+        );
+        --wui-button-color: var(
+          --wui-button-solid-color-hovered,
+          var(--wui-button-solid-color)
+        );
+      }
+
+      &[data-pressed] {
+        --wui-button-background: var(
+          --wui-button-solid-background-pressed,
+          var(--wui-button-solid-background)
+        );
+        --wui-button-box-shadow: var(
+          --wui-button-solid-box-shadow-pressed,
+          var(--wui-button-solid-box-shadow)
+        );
+        --wui-button-border: var(
+          --wui-button-solid-border-pressed,
+          var(--wui-button-solid-border)
+        );
+        --wui-button-color: var(
+          --wui-button-solid-color-pressed,
+          var(--wui-button-solid-color)
+        );
+        padding-top: var(--wui-space-1);
+      }
+    }
+
+    &[data-variant="subtle"] {
+      --wui-button-background: var(--wui-button-subtle-background);
+      --wui-button-border-color: var(--wui-button-subtle-border-color);
+
+      &[data-hovered] {
+        --wui-button-background: var(--wui-button-subtle-background-hovered);
+        --wui-button-border-color: var(--wui-button-subtle-border-color-hovered);
+      }
+
+      &[data-pressed] {
+        --wui-button-background: var(--wui-button-subtle-background-pressed);
+        --wui-button-border-color: var(--wui-button-subtle-border-color-pressed);
+      }
+    }
+
+    &[data-variant="ghost"] {
+      --wui-button-background: var(--wui-button-ghost-background);
+      --wui-button-border-color: var(--wui-button-ghost-border-color);
+
+      &[data-hovered] {
+        --wui-button-background: var(--wui-button-ghost-background-hovered);
+        --wui-button-border-color: var(--wui-button-ghost-border-color-hovered);
+      }
+
+      &[data-pressed] {
+        --wui-button-background: var(--wui-button-ghost-background-pressed);
+        --wui-button-border-color: var(--wui-button-ghost-border-color-pressed);
+      }
+    }
+  }
+}

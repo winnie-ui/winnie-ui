@@ -1,4 +1,4 @@
-@layer ds {
+@layer theme {
   .wui-text {
     font-family: var(--wui-font-family-sans);
   }

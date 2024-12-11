@@ -1,4 +1,4 @@
-@layer ds {
+@layer theme {
   .wui-layout {
     /* set the page header height to allow open button to calculate its spacing */
     --wui-page-header-height: calc(52px * var(--wui-scale));

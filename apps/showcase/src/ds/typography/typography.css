@@ -1,4 +1,4 @@
-@layer ds {
+@layer theme {
   .wui-typography {
     &[data-align="left"] {
       text-align: left;

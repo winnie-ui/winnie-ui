@@ -1,4 +1,4 @@
-@layer ds {
+@layer theme {
   .wui-focus-ring {
     &[data-focus-visible] {
       outline: var(--wui-border-width-2) solid var(--wui-color-accent-a8);

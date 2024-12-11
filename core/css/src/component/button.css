@@ -1,7 +1,7 @@
 @layer component {
   [data-component="button"] {
     /* border radius */
-    --wui-button-sm-border-radius: var(--wui-border-radius-1);
+    --wui-button-sm-border-radius: var(--wui-border-radius-2);
     --wui-button-md-border-radius: var(--wui-border-radius-2);
     --wui-button-lg-border-radius: var(--wui-border-radius-3);
 

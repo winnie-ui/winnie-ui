@@ -3,4 +3,60 @@ title: Button
 description: Trigger an event, action or operation.
 ---
 
-This is some content
+import { NewDishButton, EditDishButton } from "./button";
+
+import Demo from "~/components/demo/demo.astro";
+
+<Demo>
+  <NewDishButton client:only="react" />
+  <Fragment slot="footer">
+    ```tsx
+  	<Button>
+   		<ButtonIcon>
+     		<Utensils />
+     	</ButtonIcon>
+      <ButtonLabel>New Dish</ButtonLabel>
+   	</Button>
+    ```
+  </Fragment>
+</Demo>
+
+## Import
+
+Import just the button styles.
+
+```tsx
+import { Button, ButtonIcon, ButtonLabel, ButtonPending } from "@winnie-ui/react/button"
+```
+
+## Anatomy
+
+Arrange the components in the structure below.
+
+```tsx
+<Button>
+	<ButtonIcon />
+	<ButtonLabel />
+	<ButtonPending />
+</Button>
+```
+
+## Examples
+
+### Size
+
+Use the `size` prop to change the size of the button.
+
+<Demo>
+  <EditDishButton client:only="react" />
+  <Fragment slot="footer">
+    ```tsx
+  	<Button>
+   		<ButtonIcon>
+     		<Utensils />
+     	</ButtonIcon>
+      <ButtonLabel>New Dish</ButtonLabel>
+   	</Button>
+    ```
+  </Fragment>
+</Demo>
