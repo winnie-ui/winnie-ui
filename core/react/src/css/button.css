@@ -1,4 +1,4 @@
-@layer ds {
+@layer theme {
   .wui-button {
     font-weight: var(--wui-font-weight-medium);
 

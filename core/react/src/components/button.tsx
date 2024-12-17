@@ -28,7 +28,6 @@ type ButtonProps = AriaButtonProps & {
    * @default "accent"
    */
   color?:
-    | "accent"
     | "brand"
     | "red"
     | "orange"
@@ -63,7 +62,7 @@ type ButtonProps = AriaButtonProps & {
    *
    * @default "solid"
    */
-  variant?: "solid" | "soft" | "ghost";
+  variant?: "solid" | "outlined" | "soft" | "plain";
 
   /**
    * Changes the width of the button
@@ -93,14 +92,14 @@ type ButtonProps = AriaButtonProps & {
 function Button({
   className,
   children,
-  color = "accent",
+  color = undefined,
   radius = undefined,
   size = "md",
   variant = "solid",
   width = "auto",
   ref,
   ...props
-}: PropsWithChildren<ButtonProps>) {
+}: ButtonProps) {
   /**
    * merge context with provided props
    */
@@ -113,9 +112,9 @@ function Button({
       <AriaButton
         {...props}
         className={clsx("wui-button wui-focus-ring", className, {
-          "wui-focus-ring__tight": variant === "ghost",
+          "wui-focus-ring__tight": variant === "plain",
         })}
-        data-accent-color={color === "accent" ? undefined : color}
+        data-accent-color={color}
         data-component="button"
         data-radius={radius}
         data-size={size}

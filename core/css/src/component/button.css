@@ -1,7 +1,7 @@
 @layer component {
   [data-component="button"] {
     /* border radius */
-    --wui-button-sm-border-radius: var(--wui-border-radius-1);
+    --wui-button-sm-border-radius: var(--wui-border-radius-2);
     --wui-button-md-border-radius: var(--wui-border-radius-2);
     --wui-button-lg-border-radius: var(--wui-border-radius-3);
 
@@ -57,6 +57,17 @@
     [data-slot="pending"] {
       position: absolute;
       z-index: 1;
+
+      & > svg {
+        height: calc(
+          var(--wui-button-icon-size, var(--wui-button-md-icon-size)) *
+          1.2
+        );
+        width: calc(
+          var(--wui-button-icon-size, var(--wui-button-md-icon-size)) *
+          1.2
+        );
+      }
     }
 
     /* has pending */

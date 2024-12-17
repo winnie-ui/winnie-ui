@@ -1,4 +1,4 @@
-@layer ds {
+@layer theme {
   .wui-page {
     background: var(--wui-page-background);
     border-radius: 0;

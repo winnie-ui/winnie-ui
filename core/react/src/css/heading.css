@@ -1,4 +1,4 @@
-@layer ds {
+@layer theme {
   .wui-heading {
     font-family: var(--wui-font-family-sans);
     letter-spacing: var(--wui-letter-spacing-9);

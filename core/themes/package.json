@@ -1,0 +1,24 @@
+{
+  "name": "@winnie-ui/themes",
+  "version": "0.0.1",
+  "description": "Winnie UI Themes",
+  "author": "Adam Aho",
+  "type": "module",
+  "private": true,
+  "main": "./src/index.css",
+  "exports": {
+    ".": "./src/index.css"
+  },
+  "files": ["src", "package.json"],
+  "scripts": {
+    "clean": "rimraf node_modules",
+    "format:check": "biome format ./src --no-errors-on-unmatched",
+    "format:write": "biome format ./src --write --no-errors-on-unmatched"
+  },
+  "peerDependencies": {
+    "@winnie-ui/css": "workspace:*"
+  },
+  "devDependencies": {
+    "rimraf": "6.0.1"
+  }
+}
