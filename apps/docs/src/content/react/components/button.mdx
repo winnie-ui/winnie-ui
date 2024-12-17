@@ -3,20 +3,32 @@ title: Button
 description: Trigger an event, action or operation.
 ---
 
-import { NewDishButton, EditDishButton } from "./button";
+import {
+  NewDishButton,
+  ButtonSizeDemo,
+  ButtonVariantDemo,
+  ButtonRadiusDemo,
+  ButtonColorDemo,
+  ButtonIconOnlyDemo,
+  ButtonDisabledDemo,
+  ButtonPendingDemo,
+  ButtonWidthDemo,
+} from "./button";
 
 import Demo from "~/components/demo/demo.astro";
+
+import "@winnie-ui/themes";
 
 <Demo>
   <NewDishButton client:only="react" />
   <Fragment slot="footer">
     ```tsx
-  	<Button>
-   		<ButtonIcon>
-     		<Utensils />
-     	</ButtonIcon>
+    <Button>
+      <ButtonIcon>
+        <Utensils />
+      </ButtonIcon>
       <ButtonLabel>New Dish</ButtonLabel>
-   	</Button>
+    </Button>
     ```
   </Fragment>
 </Demo>
@@ -26,7 +38,12 @@ import Demo from "~/components/demo/demo.astro";
 Import just the button styles.
 
 ```tsx
-import { Button, ButtonIcon, ButtonLabel, ButtonPending } from "@winnie-ui/react/button"
+import {
+  Button,
+  ButtonIcon,
+  ButtonLabel,
+  ButtonPending,
+} from "@winnie-ui/react/button";
 ```
 
 ## Anatomy
@@ -35,9 +52,9 @@ Arrange the components in the structure below.
 
 ```tsx
 <Button>
-	<ButtonIcon />
-	<ButtonLabel />
-	<ButtonPending />
+  <ButtonIcon />
+  <ButtonLabel />
+  <ButtonPending />
 </Button>
 ```
 
@@ -48,15 +65,163 @@ Arrange the components in the structure below.
 Use the `size` prop to change the size of the button.
 
 <Demo>
-  <EditDishButton client:only="react" />
+  <ButtonSizeDemo client:only="react" />
   <Fragment slot="footer">
-    ```tsx
-  	<Button>
-   		<ButtonIcon>
-     		<Utensils />
-     	</ButtonIcon>
-      <ButtonLabel>New Dish</ButtonLabel>
-   	</Button>
+    ```tsx ins=size="sm" ins=size="md" ins=size="lg"
+    <div className="flex items-center gap-4">
+      <Button size="sm">...</Button>
+      <Button size="md">...</Button>
+      <Button size="lg">...</Button>
+    </div>
     ```
   </Fragment>
 </Demo>
+
+### Variant
+
+Use the `variant` prop to change the visual style of the button.
+
+<Demo>
+  <ButtonVariantDemo client:only="react" />
+  <Fragment slot="footer">
+    ```tsx ins=variant="solid" ins=variant="soft" ins=variant="outlined" ins=variant="plain"
+    <div className="flex items-center gap-4">
+      <Button variant="solid">...</Button>
+      <Button variant="soft">...</Button>
+      <Button variant="outlined">...</Button>
+      <Button variant="plain">...</Button>
+    </div>
+    ```
+  </Fragment>
+</Demo>
+
+### Radius
+
+Use the `radius` prop to modify the radius of the button.
+
+<Demo>
+  <ButtonRadiusDemo client:only="react" />
+  <Fragment slot="footer">
+    ```tsx ins=radius="none" ins=radius="lg" ins=radius="round"
+      <div className="flex items-center gap-4">
+        <Button radius="none">...</Button>
+        <Button radius="lg">...</Button>
+        <Button radius="round">...</Button>
+      </div>
+    ```
+  </Fragment>
+</Demo>
+
+### Color 
+
+Use the `color` prop to modify the color of the button. By default the button will inherit the accent color from the closest parent that specifies the `data-accent-color` attribute.
+
+<Demo>
+  <ButtonColorDemo client:only="react" />
+  <Fragment slot="footer">
+    ```tsx ins=color="accent" ins=color="red" ins=color="orange" ins=color="yellow" ins=color="green" ins=color="blue" ins=color="purple" ins=color="pink" ins=color="grey"
+    <Button>...</Button>
+    <Button color="red">...</Button>
+    <Button color="orange">...</Button>
+    <Button color="yellow">...</Button>
+    <Button color="green">...</Button>
+    <Button color="blue">...</Button>
+    <Button color="purple">...</Button>
+    <Button color="pink">...</Button>
+    <Button color="grey">...</Button>
+    ```
+  </Fragment>
+</Demo>
+
+### With Icon
+
+Add an icon with the `ButtonIcon` slot component as a child of the button.
+
+<Demo>
+  <NewDishButton client:only="react" />
+  <Fragment slot="footer">
+    ```tsx {2-4}
+    <Button>
+      <ButtonIcon>
+        <Utensils />
+      </ButtonIcon>
+      ...
+    </Button>
+    ```
+  </Fragment>
+</Demo>
+
+### Icon Only
+
+Create an icon button by only passing an icon with the `ButtonIcon` slot component as a child of the button.
+
+<Demo>
+  <ButtonIconOnlyDemo client:only="react" />
+  <Fragment slot="footer">
+    ```tsx {2-4}
+    <Button>
+      <ButtonIcon>
+        <Utensils />
+      </ButtonIcon>
+    </Button>
+    ```
+  </Fragment>
+</Demo>
+
+### Disabled
+
+Use the `isDisabled` prop to prevent user interaction.
+
+<Demo>
+  <ButtonDisabledDemo client:only="react" />
+  <Fragment slot="footer">
+    ```tsx ins=isDisabled
+    <Button isDisabled>...</Button>
+    ```
+  </Fragment>
+</Demo>
+
+### Pending
+
+If a child of the button is rendered with the `ButtonPending` slot component, any text and icons rendered in the button will be hidden and the children passed to the `ButtonPending` slot component when the `isPending` prop is `true`.
+
+<Demo>
+  <ButtonPendingDemo client:only="react" />
+  <Fragment slot="footer">
+    ```tsx {3-5} ins=isPending
+    <Button isPending>
+      ...
+      <ButtonPending>
+        <Loader />
+      </ButtonPending>
+    </Button>
+    ```
+  </Fragment>
+</Demo>
+
+### Full Width
+
+Use the `width` prop to modify the overall width of the button.
+
+<Demo>
+  <ButtonWidthDemo client:only="react"/>
+  <Fragment slot="footer">
+    ```tsx ins=width="full"
+    <Button width="full">
+      Save Dish
+    </Button>
+    ```
+  </Fragment>
+</Demo>
+
+## Reference
+
+Refer to React Aria Components [documentation](https://react-spectrum.adobe.com/react-aria/Button.html#props) for more details about the available behavioral props and events available on Button.
+
+| Prop | Type | Default |
+| ------------- | ------------------------------------------- | --- |
+| `color` | `"brand" \| "red" \| "orange" \| "yellow" \| "green" \| "blue" \| "purple" \| "pink" \| "grey"` | `undefined` |
+| `radius` | `"none" \| "sm" \| "md" \| "lg" \| "round"` | `undefined` |
+| `size`   | `"sm" \| "md" \| "lg"`                      | `"md"` |
+| `width`  | `"auto" \| "full"`                            | `"auto"`|
+

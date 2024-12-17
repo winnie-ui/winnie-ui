@@ -6,10 +6,14 @@
   "organizeImports": {
     "enabled": true
   },
+  "linter": {
+    "enabled": false
+  },
   "formatter": {
     "enabled": true,
     "indentWidth": 2,
-    "indentStyle": "space"
+    "indentStyle": "space",
+    "lineWidth": 100
   },
   "overrides": [
     {

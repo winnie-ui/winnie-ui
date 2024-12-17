@@ -3,21 +3,63 @@
     /* -------------------------------------------------------------------------------------------------
     * Button
     * -----------------------------------------------------------------------------------------------*/
-    --wui-button-font-weight: var(--wui-font-weight-medium);
+    [data-component="button"] {
+      --wui-button-font-weight: var(--wui-font-weight-medium);
 
-    /* Solid */
-    --wui-button-solid-background: var(--wui-color-accent-9);
-    --wui-button-solid-border-color: transparent;
-    --wui-button-solid-box-shadow: 0 -1px 0 1px var(--wui-color-black-a4) inset,
-      0 0 0 1px var(--wui-color-black-a4) inset, 0 1px 0 1px
-      var(--wui-color-white-a4) inset;
-    --wui-button-solid-color: var(--wui-color-accent-contrast);
-    --wui-button-solid-font-weight: var(--wui-font-weight-medium);
-    --wui-button-solid-background-hovered: var(--wui-color-accent-10);
-    --wui-button-solid-background-pressed: oklch(
-      from var(--wui-color-accent-10) calc(l * 0.9) c h
-    );
-    --wui-button-solid-box-shadow-pressed: none;
+      /* Solid */
+      --wui-button-solid-background: var(--wui-color-accent-9);
+      --wui-button-solid-border: none;
+      --wui-button-solid-border-color: transparent;
+      --wui-button-solid-box-shadow: 0 -1px 0 1px var(--wui-color-black-a4) inset, 0 0 0 1px
+        var(--wui-color-black-a4) inset, 0 1px 0 1px var(--wui-color-white-a4) inset;
+      --wui-button-solid-color: var(--wui-color-accent-contrast);
+      --wui-button-solid-font-weight: var(--wui-font-weight-medium);
+      --wui-button-solid-background-hovered: var(--wui-color-accent-10);
+      --wui-button-solid-background-pressed: oklch(
+        from var(--wui-color-accent-10) calc(l * 0.9) c h
+      );
+      --wui-button-solid-box-shadow-disabled: 0 -1px 0 1px var(--wui-color-grey-a3) inset, 0 0 0 1px
+        var(--wui-color-grey-a3) inset, 0 1px 0 1px var(--wui-color-white-a4) inset;
+      --wui-button-solid-background-disabled: var(--wui-color-grey-3);
+      --wui-button-solid-color-disabled: var(--wui-color-grey-9);
+      --wui-button-solid-box-shadow-pressed: none;
+
+      /* Soft */
+      --wui-button-soft-background: var(--wui-color-accent-a3);
+      --wui-button-soft-border: none;
+      --wui-button-soft-border-color: transparent;
+      --wui-button-soft-box-shadow: none;
+      --wui-button-soft-color: var(--wui-color-accent-11);
+      --wui-button-soft-background-hovered: var(--wui-color-accent-a4);
+      --wui-button-soft-background-pressed: var(--wui-color-accent-a5);
+      --wui-button-soft-background-disabled: var(--wui-color-grey-a2);
+      --wui-button-soft-color-disabled: var(--wui-color-grey-a9);
+      --wui-button-soft-box-shadow-pressed: none;
+
+      /* Outlined */
+      --wui-button-outlined-background: var(--wui-color-accent-1);
+      --wui-button-outlined-border: none;
+      --wui-button-outlined-border-color: transparent;
+      --wui-button-outlined-box-shadow: 0 -1px 0 1px var(--wui-color-accent-a4) inset, 0 0 0 1px
+        var(--wui-color-accent-a4) inset;
+      --wui-button-outlined-color: var(--wui-color-accent-11);
+      --wui-button-outlined-color-disabled: var(--wui-color-grey-9);
+      --wui-button-outlined-background-hovered: var(--wui-color-accent-3);
+      --wui-button-outlined-background-pressed: var(--wui-color-accent-3);
+      --wui-button-outlined-background-disabled: var(--wui-color-grey-2);
+      --wui-button-outlined-box-shadow-pressed: 0px 0px 1px 1px var(--wui-color-accent-a4) inset;
+      --wui-button-outlined-box-shadow-disabled: 0 0 1px 1px var(--wui-color-grey-5);
+
+      /* Plain */
+      --wui-button-plain-background: transparent;
+      --wui-button-plain-border: none;
+      --wui-button-plain-border-color: transparent;
+      --wui-button-plain-box-shadow: none;
+      --wui-button-plain-color: var(--wui-color-accent-11);
+      --wui-button-plain-background-hovered: var(--wui-color-accent-a3);
+      --wui-button-plain-background-pressed: var(--wui-color-accent-a4);
+      --wui-button-plain-color-disabled: var(--wui-color-grey-a9);
+    }
   }
 
   /* :where([data-color-scheme="winnie"][data-theme="light"]) {
