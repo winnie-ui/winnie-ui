@@ -193,7 +193,9 @@ export function ButtonPendingDemo() {
   return (
     <Button isPending>
       <ButtonLabel>Delete Dish</ButtonLabel>
-      <ButtonPending style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+      <ButtonPending
+        style={{ display: "flex", justifyContent: "center", width: "100%" }}
+      >
         <Loader />
       </ButtonPending>
     </Button>

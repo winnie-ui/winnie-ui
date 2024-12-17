@@ -27,7 +27,16 @@ type ButtonProps = AriaButtonProps & {
    *
    * @default "accent"
    */
-  color?: "brand" | "red" | "orange" | "yellow" | "green" | "blue" | "purple" | "pink" | "grey";
+  color?:
+    | "brand"
+    | "red"
+    | "orange"
+    | "yellow"
+    | "green"
+    | "blue"
+    | "purple"
+    | "pink"
+    | "grey";
 
   /**
    * Changes the size of the button
@@ -97,7 +106,9 @@ function Button({
   [props, ref] = useContextProps(props, ref!, ButtonContext);
 
   return (
-    <ButtonContext.Provider value={{ isPending: props.isPending, isDisabled: props.isPending }}>
+    <ButtonContext.Provider
+      value={{ isPending: props.isPending, isDisabled: props.isPending }}
+    >
       <AriaButton
         {...props}
         className={clsx("wui-button wui-focus-ring", className, {
@@ -127,7 +138,12 @@ type ButtonLabelProps = ComponentPropsWithoutRef<typeof AriaText> & {
   ref?: ForwardedRef<ComponentRef<typeof AriaText>>;
 };
 
-function ButtonLabel({ className, children, ref, ...props }: PropsWithChildren<ButtonLabelProps>) {
+function ButtonLabel({
+  className,
+  children,
+  ref,
+  ...props
+}: PropsWithChildren<ButtonLabelProps>) {
   return (
     <AriaText
       {...props}
@@ -166,7 +182,11 @@ function ButtonPending({
   }
 
   return (
-    <span className={clsx("wui-button__pending", className)} data-slot="pending" {...props}>
+    <span
+      className={clsx("wui-button__pending", className)}
+      data-slot="pending"
+      {...props}
+    >
       {children}
     </span>
   );
@@ -179,7 +199,10 @@ type ButtonIconProps = {
   className?: string;
 };
 
-const ButtonIcon = ({ className, children }: PropsWithChildren<ButtonIconProps>) => {
+const ButtonIcon = ({
+  className,
+  children,
+}: PropsWithChildren<ButtonIconProps>) => {
   /**
    * Check that there is a single child passed
    */
@@ -191,11 +214,19 @@ const ButtonIcon = ({ className, children }: PropsWithChildren<ButtonIconProps>)
    */
   const icon = Children.only(children);
 
-  return cloneElement(icon as ReactElement<ButtonIconProps & { "data-slot": string }>, {
-    className: clsx("wui-button__icon", className),
-    "data-slot": "icon",
-  });
+  return cloneElement(
+    icon as ReactElement<ButtonIconProps & { "data-slot": string }>,
+    {
+      className: clsx("wui-button__icon", className),
+      "data-slot": "icon",
+    },
+  );
 };
 
 export { Button, ButtonLabel, ButtonIcon, ButtonPending, ButtonContext };
-export type { ButtonProps, ButtonLabelProps, ButtonIconProps, ButtonPendingProps };
+export type {
+  ButtonProps,
+  ButtonLabelProps,
+  ButtonIconProps,
+  ButtonPendingProps,
+};
