@@ -21,7 +21,7 @@ import {
 /* -------------------------------------------------------------------------------------------------
  * Button
  * -----------------------------------------------------------------------------------------------*/
-type ButtonProps = AriaButtonProps & {
+type WinnieButtonProps = {
   /**
    * Changes the color of the button
    *
@@ -71,6 +71,8 @@ type ButtonProps = AriaButtonProps & {
    */
   width?: "auto" | "full";
 };
+
+type ButtonProps = AriaButtonProps & WinnieButtonProps;
 
 /**
  * # Button
@@ -229,4 +231,5 @@ export type {
   ButtonLabelProps,
   ButtonIconProps,
   ButtonPendingProps,
+  WinnieButtonProps,
 };

@@ -1,0 +1,5 @@
+@layer component {
+  [data-component="text"] {
+    font-family: var(--wui-font-family-sans);
+  }
+}

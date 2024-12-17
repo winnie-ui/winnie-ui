@@ -7,7 +7,14 @@
     }
   ],
   "commit": false,
-  "fixed": [["@winnie-ui/css", "@winnie-ui/tailwind", "@winnie-ui/react"]],
+  "fixed": [
+    [
+      "@winnie-ui/css",
+      "@winnie-ui/tailwind",
+      "@winnie-ui/themes",
+      "@winnie-ui/react"
+    ]
+  ],
   "linked": [],
   "access": "public",
   "baseBranch": "main",
