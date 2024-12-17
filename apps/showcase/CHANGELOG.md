@@ -1,5 +1,13 @@
 # showcase
 
+## 0.0.4
+
+### Patch Changes
+
+- Updated dependencies [[`72873e9`](https://github.com/winnie-ui/winnie-ui/commit/72873e918670a050c2f6b69e224cf75a01cc55d6)]:
+  - @winnie-ui/react@0.0.26
+  - @winnie-ui/tailwind@0.0.26
+
 ## 0.0.3
 
 ### Patch Changes
