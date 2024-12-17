@@ -125,7 +125,7 @@ export function ButtonColorDemo() {
         gap: "var(--wui-space-4)",
       }}
     >
-      <Button variant="soft" color="accent">
+      <Button variant="soft">
         <ButtonLabel>Edit Dish</ButtonLabel>
       </Button>
       <Button variant="soft" color="red">
