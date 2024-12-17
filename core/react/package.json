@@ -24,7 +24,6 @@
   },
   "dependencies": {
     "@react-aria/utils": "3.26.0",
-    "@winnie-ui/css": "workspace:*",
     "clsx": "2.1.1",
     "react-aria": "3.36.0",
     "react-aria-components": "1.5.0"

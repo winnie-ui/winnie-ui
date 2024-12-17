@@ -2,8 +2,11 @@
 @import "./checkbox.css";
 @import "./field.css";
 @import "./group.css";
+@import "./heading.css";
 @import "./input.css";
 @import "./layout.css";
 @import "./listbox.css";
 @import "./page.css";
+@import "./text.css";
 @import "./tooltip.css";
+@import "./typography.css";

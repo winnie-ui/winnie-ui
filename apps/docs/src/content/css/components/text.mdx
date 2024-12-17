@@ -1,0 +1,60 @@
+---
+title: Text 
+description: Foundational text component.
+---
+
+import Demo from "~/components/demo/demo.astro";
+
+<Demo>
+  <span>Demo here</span>
+  <Fragment slot="footer">
+    ```tsx
+    <button data-component="button">
+      <i class="organization" data-slot="icon"></i>
+      <span data-slot="label">Create Organization</span>
+    <button>
+    ```
+  </Fragment>
+</Demo>
+
+## Import
+
+Import just the button styles.
+
+```css
+@import "@winnie-ui/component/typography";
+@import "@winnie-ui/component/text";
+```
+
+## Anatomy
+
+Attach the appropriate `data` attributes in the structure below.
+
+```html
+<p data-component="text"></p>
+```
+
+## Examples
+
+### Size
+
+Use the `data-size` attribute to change the size.
+
+<Demo>
+  <span>Demo here</span>
+  <Fragment slot="footer">
+    ```tsx ins=data-size="1" ins=data-size="2" ins=data-size="3" ins=data-size="4" ins=data-size="5" ins=data-size="6" ins=data-size="7" ins=data-size="8" ins=data-size="9"
+    <span data-size="1">The quick brown fox jumps over the lazy dog.</span>
+    <span data-size="2">The quick brown fox jumps over the lazy dog.</span>
+    <span data-size="3">The quick brown fox jumps over the lazy dog.</span>
+    <span data-size="4">The quick brown fox jumps over the lazy dog.</span>
+    <span data-size="5">The quick brown fox jumps over the lazy dog.</span>
+    <span data-size="6">The quick brown fox jumps over the lazy dog.</span>
+    <span data-size="7">The quick brown fox jumps over the lazy dog.</span>
+    <span data-size="8">The quick brown fox jumps over the lazy dog.</span>
+    <span data-size="9">The quick brown fox jumps over the lazy dog.</span>
+    ```
+  </Fragment>
+</Demo>
+
+
