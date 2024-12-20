@@ -389,7 +389,7 @@ Use the `data-mode` attribute to account for dynamically rendered indicators.
 Use the `indicator` slot inside a listbox item to support selecting items with a checkbox.
 
 <Demo>
-  <ListboxWithCheckbox client:load />
+  <ListboxWithCheckbox client:only="react" />
   <Fragment slot="footer">
     ```html ins=data-slot="indicator"
     <ul data-component="listbox" data-mode="selection">

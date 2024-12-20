@@ -1,4 +1,4 @@
-import { defineCollection } from "astro:content";
+import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 
 const css = defineCollection({
@@ -12,6 +12,11 @@ const react = defineCollection({
   loader: glob({
     pattern: ["**/*.mdx"],
     base: "./src/content/react",
+  }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    documentation: z.string().optional(),
   }),
 });
 

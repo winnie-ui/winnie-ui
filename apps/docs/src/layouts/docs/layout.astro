@@ -15,15 +15,22 @@ type Props = CollectionEntry<"css">["data"] & {
   navigation: SidebarProps["navigation"];
 };
 
-const { collection, title, description, slug, headings, navigation } =
-  Astro.props;
+const {
+  collection,
+  title,
+  description,
+  documentation,
+  slug,
+  headings,
+  navigation,
+} = Astro.props;
 ---
 
 <BaseLayout>
   <BaseHead slot="head" title={title} description={description} />
   <Sidebar collection={collection} slug={slug} navigation={navigation} />
   <div class="wui-docs-layout-content-container">
-    <Content title={title} description={description} headings={headings}>
+    <Content title={title} description={description} documentation={documentation} headings={headings}>
       <slot />
     </Content>
   </div>
