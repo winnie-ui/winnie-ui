@@ -51,7 +51,7 @@ export function TextWeightDemo() {
       <Text weight="medium">
         Thin crust pizza topped with melting mozzarella.
       </Text>
-      <Text weight="semi-bold">
+      <Text weight="semibold">
         Thin crust pizza topped with melting mozzarella.
       </Text>
       <Text weight="bold">

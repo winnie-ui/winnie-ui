@@ -41,7 +41,7 @@ type TypographyProps = {
    *
    * @default "normal"
    */
-  weight?: "normal" | "medium" | "semi-bold" | "bold" | "extra-bold";
+  weight?: "normal" | "medium" | "semibold" | "bold" | "extra-bold";
 };
 
 /**

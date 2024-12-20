@@ -12,6 +12,12 @@
         "types": "./src/components/button.tsx"
       }
     },
+    "./heading": {
+      "import": {
+        "default": "./src/components/heading.tsx",
+        "types": "./src/components/heading.tsx"
+      }
+    },
     "./text": {
       "import": {
         "default": "./src/components/text.tsx",

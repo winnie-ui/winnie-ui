@@ -30,7 +30,12 @@ const {
   <BaseHead slot="head" title={title} description={description} />
   <Sidebar collection={collection} slug={slug} navigation={navigation} />
   <div class="wui-docs-layout-content-container">
-    <Content title={title} description={description} documentation={documentation} headings={headings}>
+    <Content
+      title={title}
+      description={description}
+      documentation={documentation}
+      headings={headings}
+    >
       <slot />
     </Content>
   </div>

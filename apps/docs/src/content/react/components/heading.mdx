@@ -1,0 +1,115 @@
+---
+title: Heading 
+description: Foundational heading component.
+documentation: https://react-spectrum.adobe.com/react-aria/index.html
+---
+
+import { HeadingDemo, HeadingSizeDemo, HeadingWeightDemo, HeadingColorDemo, HeadingContrastDemo, HeadingAlignDemo } from "./heading.tsx";
+
+import Demo from "~/components/demo/demo.astro";
+
+<Demo>
+  <HeadingDemo />
+  <Fragment slot="footer">
+    ```tsx
+    <Heading>Margherita Pizza</Heading>
+    ```
+  </Fragment>
+</Demo>
+
+## Import
+
+Import the heading component.
+
+```tsx
+import { Heading } from "@winnie-ui/react/heading"
+```
+
+## Anatomy
+
+Arrange the components in the structure below.
+
+```tsx
+<Heading />
+```
+
+## Examples
+
+### Size
+
+Use the `size` prop to change the size of the heading.
+
+<Demo>
+  <HeadingSizeDemo />
+  <Fragment slot="footer">
+    ```tsx ins=size="<size>"
+    <Heading size="<size>">Margherita Pizza</Heading>
+    ```
+  </Fragment>
+</Demo>
+
+### Weight 
+
+Use the `weight` prop to change the weight of the heading.
+
+<Demo>
+  <HeadingWeightDemo />
+  <Fragment slot="footer">
+    ```tsx ins=weight="<weight>"
+    <Heading weight="<weight>">Margherita Pizza</Heading>
+    ```
+  </Fragment>
+</Demo>
+
+### Color 
+
+Use the `color` prop to change the color of the heading.
+
+<Demo>
+  <HeadingColorDemo />
+  <Fragment slot="footer">
+    ```tsx ins=color="<color>"
+    <Heading color="<color>">Margherita Pizza</Heading>
+    ```
+  </Fragment>
+</Demo>
+
+### Contrast 
+
+Use the `contrast` prop to change the contrast the heading.
+
+<Demo>
+  <HeadingContrastDemo />
+  <Fragment slot="footer">
+    ```tsx ins=contrast="<contrast>"
+    <Heading contrast="<contrast>">Margherita Pizza</Heading>
+    ```
+  </Fragment>
+</Demo>
+
+### Align 
+
+Use the `align` prop to change how the heading is aligned.
+
+<Demo>
+  <HeadingAlignDemo />
+  <Fragment slot="footer">
+    ```tsx ins=align="<align>"
+    <Heading align="<align>">Margherita Pizza</Heading>
+    ```
+  </Fragment>
+</Demo>
+
+## Reference
+
+React Aria does not provide documentation for this component.
+
+| Prop | Type | Default |
+| ------------- | ------------------------------------------- | --- |
+| `align` | `"left" \| "center" \| "right"` | `left` |
+| `color` | `"brand" \| "red" \| "orange" \| "yellow" \| "green" \| "blue" \| "purple" \| "pink" \| "grey"` | `undefined` |
+| `contrast`   | `"low" \| "normal" \| "high"`                      | `"high"` |
+| `level`   | `"1" \| "2" \| "3" \| "4" \| "5" \| "6"`                      | `"1"` |
+| `size`   | `"1" \| "2" \| "3" \| "3" \| "4" \| "5" \| "6" \| "7" \| "8" \| "9"`                      | `"3"` |
+| `weight`   | `"normal" \| "medium" \| "semibold" \| "bold" \| "extra-bold"`                      | `"normal"` |
+

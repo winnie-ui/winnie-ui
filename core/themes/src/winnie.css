@@ -74,6 +74,16 @@
       --wui-typography-normal-color: var(--wui-color-accent-11);
       --wui-typography-high-color: var(--wui-color-accent-12);
     }
+
+    [data-component="text"] {
+      --wui-heading-font-family: var(--wui-font-family-sans);
+    }
+
+    [data-component="heading"] {
+      --wui-heading-font-family: var(--wui-font-family-sans);
+      --wui-heading-font-weight: var(--wui-font-weight-semibold);
+      --wui-heading-letter-spacing: var(--wui-letter-spacing-9);
+    }
   }
 
   /* :where([data-color-scheme="winnie"][data-theme="light"]) {

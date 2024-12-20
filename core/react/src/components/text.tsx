@@ -29,7 +29,7 @@ type TextProps = AriaTextProps &
  * Arrange the components in the structure below.
  *
  * ```tsx
- * <Text></Text>
+ * <Text />
  * ```
  *
  * See {@link https://winnie-ui.com/react/docs/components/text Documentation} for examples.

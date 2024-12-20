@@ -271,7 +271,8 @@
   /* -------------------------------------------------------------------------------------------------
    * Typography 
    * -----------------------------------------------------------------------------------------------*/
-  [data-component="text"] {
+  [data-component="text"],
+  [data-component="heading"] {
     &[data-contrast="low"] {
       color: var(--wui-typography-low-color);
     }
@@ -283,5 +284,15 @@
     &[data-contrast="high"] {
       color: var(--wui-typography-high-color);
     }
+  }
+
+  [data-component="text"] {
+    font-family: var(--wui-text-font-family);
+    letter-spacing: var(--wui-text-letter-spacing);
+  }
+
+  [data-component="heading"] {
+    font-family: var(--wui-heading-font-family);
+    letter-spacing: var(--wui-heading-letter-spacing);
   }
 }
