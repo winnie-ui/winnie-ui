@@ -267,4 +267,21 @@
       }
     }
   }
+
+  /* -------------------------------------------------------------------------------------------------
+   * Typography 
+   * -----------------------------------------------------------------------------------------------*/
+  [data-component="text"] {
+    &[data-contrast="low"] {
+      color: var(--wui-typography-low-color);
+    }
+
+    &[data-contrast="normal"] {
+      color: var(--wui-typography-normal-color);
+    }
+
+    &[data-contrast="high"] {
+      color: var(--wui-typography-high-color);
+    }
+  }
 }

@@ -113,9 +113,7 @@ function Button({
     >
       <AriaButton
         {...props}
-        className={clsx("wui-button wui-focus-ring", className, {
-          "wui-focus-ring__tight": variant === "plain",
-        })}
+        className={clsx("wui-button", className)}
         data-accent-color={color}
         data-component="button"
         data-radius={radius}
