@@ -1,0 +1,113 @@
+---
+title: Text 
+description: Foundational text component.
+---
+
+import { TextDemo, TextSizeDemo, TextWeightDemo, TextColorDemo, TextContrastDemo, TextAlignDemo } from "./text.tsx";
+
+import Demo from "~/components/demo/demo.astro";
+
+<Demo>
+  <TextDemo />
+  <Fragment slot="footer">
+    ```tsx
+    <Text>Thin crust pizza topped with melting mozzarella.</Text>
+    ```
+  </Fragment>
+</Demo>
+
+## Import
+
+Import the text component.
+
+```tsx
+import { Text } from "@winnie-ui/react/text";
+```
+
+## Anatomy
+
+Arrange the components in the structure below.
+
+```tsx
+<Text />
+```
+
+## Examples
+
+### Size
+
+Use the `size` prop to change the size of the text.
+
+<Demo>
+  <TextSizeDemo />
+  <Fragment slot="footer">
+    ```tsx ins=size="<size>"
+    <Text size="<size>">Thin crust pizza topped with melting mozzarella.</Text>
+    ```
+  </Fragment>
+</Demo>
+
+### Weight 
+
+Use the `weight` prop to change the weight of the text.
+
+<Demo>
+  <TextWeightDemo />
+  <Fragment slot="footer">
+    ```tsx ins=weight="<weight>"
+    <Text weight="<weight>">Thin crust pizza topped with melting mozzarella.</Text>
+    ```
+  </Fragment>
+</Demo>
+
+### Color 
+
+Use the `color` prop to change the color of the text.
+
+<Demo>
+  <TextColorDemo />
+  <Fragment slot="footer">
+    ```tsx ins=color="<color>"
+    <Text color="<color>">Thin crust pizza topped with melting mozzarella.</Text>
+    ```
+  </Fragment>
+</Demo>
+
+### Contrast 
+
+Use the `contrast` prop to change the contrast the text.
+
+<Demo>
+  <TextContrastDemo />
+  <Fragment slot="footer">
+    ```tsx ins=contrast="<contrast>"
+    <Text contrast="<contrast>">Thin crust pizza topped with melting mozzarella.</Text>
+    ```
+  </Fragment>
+</Demo>
+
+### Align 
+
+Use the `align` prop to change how the text is aligned.
+
+<Demo>
+  <TextAlignDemo />
+  <Fragment slot="footer">
+    ```tsx ins=align="<align>"
+    <Text align="<align>">Some text</Text>
+    ```
+  </Fragment>
+</Demo>
+
+## Reference
+
+### Props
+
+| Prop | Type | Default |
+| ------------- | ------------------------------------------- | --- |
+| `align` | `"left" \| "center" \| "right"` | `left` |
+| `color` | `"brand" \| "red" \| "orange" \| "yellow" \| "green" \| "blue" \| "purple" \| "pink" \| "grey"` | `undefined` |
+| `contrast`   | `"low" \| "normal" \| "high"`                      | `"high"` |
+| `size`   | `"1" \| "2" \| "3" \| "3" \| "4" \| "5" \| "6" \| "7" \| "8" \| "9"`                      | `"3"` |
+| `weight`   | `"normal" \| "medium" \| "semibold" \| "bold" \| "extra-bold"`                      | `"normal"` |
+

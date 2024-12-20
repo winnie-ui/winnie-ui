@@ -11,7 +11,16 @@ type TypographyProps = {
    *
    * @default "grey"
    */
-  color?: "accent" | "grey";
+  color?:
+    | "brand"
+    | "red"
+    | "orange"
+    | "yellow"
+    | "green"
+    | "blue"
+    | "purple"
+    | "pink"
+    | "grey";
 
   /**
    * Contrast of the type
@@ -32,7 +41,7 @@ type TypographyProps = {
    *
    * @default "normal"
    */
-  weight?: "normal" | "medium" | "semibold" | "bold" | "extra-bold";
+  weight?: "normal" | "medium" | "semi-bold" | "bold" | "extra-bold";
 };
 
 /**
@@ -49,7 +58,7 @@ function getTypographyProps({
   weight = "normal",
 }: TypographyProps) {
   return {
-    "data-accent-color": color === "accent" ? undefined : color,
+    "data-accent-color": color,
     "data-align": align,
     "data-contrast": contrast,
     "data-size": size,

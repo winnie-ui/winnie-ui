@@ -64,6 +64,16 @@
       --wui-button-plain-background-pressed: var(--wui-color-accent-a4);
       --wui-button-plain-color-disabled: var(--wui-color-grey-a9);
     }
+
+    /* -------------------------------------------------------------------------------------------------
+     * Typography 
+     * -----------------------------------------------------------------------------------------------*/
+    [data-component="text"],
+    [data-component="heading"] {
+      --wui-typography-low-color: var(--wui-color-accent-10);
+      --wui-typography-normal-color: var(--wui-color-accent-11);
+      --wui-typography-high-color: var(--wui-color-accent-12);
+    }
   }
 
   /* :where([data-color-scheme="winnie"][data-theme="light"]) {

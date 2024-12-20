@@ -11,6 +11,12 @@
         "default": "./src/components/button.tsx",
         "types": "./src/components/button.tsx"
       }
+    },
+    "./text": {
+      "import": {
+        "default": "./src/components/text.tsx",
+        "types": "./src/components/text.tsx"
+      }
     }
   },
   "scripts": {

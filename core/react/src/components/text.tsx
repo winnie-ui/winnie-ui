@@ -1,31 +1,62 @@
 import clsx from "clsx";
-import { type ElementRef, type PropsWithChildren, forwardRef } from "react";
+import { ComponentRef, ForwardedRef } from "react";
 import {
   Text as AriaText,
   type TextProps as AriaTextProps,
 } from "react-aria-components";
-import { type TypographyProps, getTypographyProps } from "./typography";
 
-type TextElement = ElementRef<typeof AriaText>;
-type TextProps = AriaTextProps & TypographyProps;
+import {
+  type TypographyProps,
+  getTypographyProps,
+} from "../utils/get-typography-props";
 
-const Text = forwardRef<TextElement, PropsWithChildren<TextProps>>(
-  (
-    { align, className, children, color, contrast, size, weight, ...props },
-    ref,
-  ) => {
-    return (
-      <AriaText
-        {...props}
-        {...getTypographyProps({ align, color, contrast, size, weight })}
-        className={clsx("wui-typography wui-text", className)}
-        ref={ref}
-      >
-        {children}
-      </AriaText>
-    );
-  },
-);
+/* -------------------------------------------------------------------------------------------------
+ * Text
+ * -----------------------------------------------------------------------------------------------*/
+type TextProps = AriaTextProps &
+  TypographyProps & {
+    /**
+     * Ref to button element
+     */
+    ref?: ForwardedRef<ComponentRef<typeof AriaText>>;
+  };
+
+/**
+ * # Text
+ * Foundational text component
+ *
+ * ## Anatomy
+ * Arrange the components in the structure below.
+ *
+ * ```tsx
+ * <Text></Text>
+ * ```
+ *
+ * See {@link https://winnie-ui.com/react/docs/components/text Documentation} for examples.
+ */
+function Text({
+  align,
+  color,
+  className,
+  children,
+  contrast,
+  size,
+  weight,
+  ref,
+  ...props
+}: TextProps) {
+  return (
+    <AriaText
+      {...props}
+      data-component="text"
+      {...getTypographyProps({ align, color, contrast, size, weight })}
+      className={clsx("wui-text", className)}
+      ref={ref}
+    >
+      {children}
+    </AriaText>
+  );
+}
 
 export { Text };
 export type { TextProps };
