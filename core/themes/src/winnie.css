@@ -66,10 +66,19 @@
     }
 
     /* -------------------------------------------------------------------------------------------------
+     * Link 
+     * -----------------------------------------------------------------------------------------------*/
+    [data-component="link"] {
+      --wui-link-text-decoration-hovered: underline solid
+        var(--wui-color-accent-a7);
+    }
+
+    /* -------------------------------------------------------------------------------------------------
      * Typography 
      * -----------------------------------------------------------------------------------------------*/
     [data-component="text"],
-    [data-component="heading"] {
+    [data-component="heading"],
+    [data-component="link"] {
       --wui-typography-low-color: var(--wui-color-accent-10);
       --wui-typography-normal-color: var(--wui-color-accent-11);
       --wui-typography-high-color: var(--wui-color-accent-12);
@@ -81,7 +90,6 @@
 
     [data-component="heading"] {
       --wui-heading-font-family: var(--wui-font-family-sans);
-      --wui-heading-font-weight: var(--wui-font-weight-semibold);
       --wui-heading-letter-spacing: var(--wui-letter-spacing-9);
     }
   }

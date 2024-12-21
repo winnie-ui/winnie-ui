@@ -1,6 +1,8 @@
 ---
 import type { MarkdownHeading } from "astro";
 
+import { SquareArrowOutUpRight } from "lucide-react";
+
 import TableOfContents from "./toc/toc.astro";
 
 type Props = {
@@ -23,6 +25,7 @@ const { title, description, documentation, headings } = Astro.props;
           <a class="wui-docs-article-documentation" data-component="button" data-accent-color="grey" data-size="sm" data-variant="soft" href={documentation} target="_blank">
             <svg viewBox="0 0 30 26" aria-label="Adobe" fill="currentColor" data-slot="icon"><polygon points="19,0 30,0 30,26"></polygon><polygon points="11.1,0 0,0 0,26"></polygon><polygon points="15,9.6 22.1,26 17.5,26 15.4,20.8 10.2,20.8"></polygon></svg>
             <span data-slot="label">React Aria</span>
+            <SquareArrowOutUpRight data-slot="icon" />
           </a>
         )}
       </div>

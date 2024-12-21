@@ -18,6 +18,12 @@
         "types": "./src/components/heading.tsx"
       }
     },
+    "./link": {
+      "import": {
+        "default": "./src/components/link.tsx",
+        "types": "./src/components/link.tsx"
+      }
+    },
     "./text": {
       "import": {
         "default": "./src/components/text.tsx",
