@@ -1,0 +1,113 @@
+---
+title: Link 
+description: Navigates a user between pages.
+documentation: https://react-spectrum.adobe.com/react-aria/Link.html 
+---
+
+import { LinkDemo, LinkSizeDemo, LinkWeightDemo, LinkColorDemo, LinkContrastDemo } from "./link.tsx";
+
+import Demo from "~/components/demo/demo.astro";
+
+<Demo>
+  <LinkDemo client:load />
+  <Fragment slot="footer">
+    ```tsx
+    <Link href="#">View Dish</Link>
+    ```
+  </Fragment>
+</Demo>
+
+## Import
+
+Import the link component.
+
+```tsx
+import { Link } from "@winnie-ui/react/link";
+```
+
+## Anatomy
+
+Arrange the components in the structure below.
+
+```tsx
+<Link />
+```
+
+## Examples
+
+### Size
+
+Use the `size` prop to change the size of the link.
+
+<Demo>
+  <LinkSizeDemo client:load />
+  <Fragment slot="footer">
+    ```tsx ins=size="<size>"
+    <Link size="<size>">View Dish</Link>
+    ```
+  </Fragment>
+</Demo>
+
+### Weight 
+
+Use the `weight` prop to change the weight of the link.
+
+<Demo>
+  <LinkWeightDemo client:load />
+  <Fragment slot="footer">
+    ```tsx ins=weight="<weight>"
+    <Link weight="<weight>">View Dish</Link>
+    ```
+  </Fragment>
+</Demo>
+
+### Color 
+
+Use the `color` prop to change the color of the link.
+
+<Demo>
+  <LinkColorDemo client:load />
+  <Fragment slot="footer">
+    ```tsx ins=color="<color>"
+    <Link color="<color>">View Dish</Link>
+    ```
+  </Fragment>
+</Demo>
+
+### Contrast 
+
+Use the `contrast` prop to change the contrast the link.
+
+<Demo>
+  <LinkContrastDemo client:load />
+  <Fragment slot="footer">
+    ```tsx ins=contrast="<contrast>"
+    <Link contrast="<contrast>">View Dish</Link>
+    ```
+  </Fragment>
+</Demo>
+
+### As Button
+
+To use a Link as a Button, use the [LinkButton](/react/docs/components/link-button) component.
+
+## Reference
+
+Refer to React Aria Components [documentation](https://react-spectrum.adobe.com/react-aria/Link.html#props) for more details about the other props and events available on Link.
+
+| Prop | Type | Default |
+| ------------- | ------------------------------------------- | --- |
+| `align` | `"left" \| "center" \| "right"` | `left` |
+| `color` | `"brand" \| "red" \| "orange" \| "yellow" \| "green" \| "blue" \| "purple" \| "pink" \| "grey"` | `undefined` |
+| `contrast`   | `"low" \| "normal" \| "high"`                      | `"high"` |
+| `size`   | `"1" \| "2" \| "3" \| "3" \| "4" \| "5" \| "6" \| "7" \| "8" \| "9"`                      | `"3"` |
+| `weight`   | `"normal" \| "medium" \| "semibold" \| "bold" \| "extra-bold"`                      | `"normal"` |
+
+| Selector | Description |
+| ---------| ------------|
+| `data-hovered`  | When the link is hovered with mouse |
+| `data-pressed`  | When the link is pressed |
+| `data-focused`  | When the link is focused with either a keyboard or mouse |
+| `data-focus-visible`  | When the link is focused with keyboard |
+| `data-disabled`  | When the link is disabled |
+| `data-current`  | When the link is the current item in a list |

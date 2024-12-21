@@ -16,7 +16,7 @@ import {
 type HeadingProps = AriaHeadingProps &
   TypographyProps & {
     /**
-     * Ref to button element
+     * Ref to heading element
      */
     ref?: ForwardedRef<ComponentRef<typeof AriaHeading>>;
   };

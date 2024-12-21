@@ -16,7 +16,7 @@ import {
 type TextProps = AriaTextProps &
   TypographyProps & {
     /**
-     * Ref to button element
+     * Ref to text element
      */
     ref?: ForwardedRef<ComponentRef<typeof AriaText>>;
   };

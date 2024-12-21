@@ -101,7 +101,7 @@
     }
 
     /* icon followed by text followed by an icon */
-    &:has(> [data-slot="icon"] + [data-slot="slot"] + [data-slot="icon"])
+    &:has(> [data-slot="icon"] + [data-slot="label"] + [data-slot="icon"])
       [data-slot="label"] {
       grid-column: 2 / 3;
     }

@@ -1,6 +1,7 @@
 @layer component {
   [data-component="text"],
-  [data-component="heading"] {
+  [data-component="heading"],
+  [data-component="link"] {
     &[data-align="left"] {
       text-align: left;
     }
