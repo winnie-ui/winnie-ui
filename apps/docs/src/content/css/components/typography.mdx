@@ -3,24 +3,23 @@ title: Typography
 description: Foundational text primitives.
 ---
 
+import "@winnie-ui/themes";
+
+import { TypographyDemo } from "~/demos/typography";
+
 import {
-  TextDemo,
   TextSizeDemo,
   TextWeightDemo,
-  TextColorDemo,
-  TextContrastDemo,
   TextAlignDemo,
 } from "~/demos/text.tsx";
 
 import Demo from "~/components/demo/demo.astro";
 
 <Demo>
-  <TextDemo />
+  <TypographyDemo />
   <Fragment slot="footer">
     ```html
-    <h1 data-component="heading">Margherita Pizza</h1>
     <span data-component="text">Thin crust pizza topped with melting mozzarella.</span>
-    <a data-component="link">View Pizza</a>
     ```
   </Fragment>
 </Demo>

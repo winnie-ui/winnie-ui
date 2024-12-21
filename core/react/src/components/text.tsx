@@ -36,7 +36,7 @@ type TextProps = AriaTextProps &
  */
 function Text({
   align,
-  color,
+  color = "grey",
   className,
   children,
   contrast,
