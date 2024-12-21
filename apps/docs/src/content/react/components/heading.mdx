@@ -1,10 +1,17 @@
 ---
-title: Heading 
+title: Heading
 description: Foundational heading component.
 documentation: https://react-spectrum.adobe.com/react-aria/index.html
 ---
 
-import { HeadingDemo, HeadingSizeDemo, HeadingWeightDemo, HeadingColorDemo, HeadingContrastDemo, HeadingAlignDemo } from "./heading.tsx";
+import {
+  HeadingDemo,
+  HeadingSizeDemo,
+  HeadingWeightDemo,
+  HeadingColorDemo,
+  HeadingContrastDemo,
+  HeadingAlignDemo,
+} from "~/demos/heading.tsx";
 
 import Demo from "~/components/demo/demo.astro";
 
@@ -22,7 +29,7 @@ import Demo from "~/components/demo/demo.astro";
 Import the heading component.
 
 ```tsx
-import { Heading } from "@winnie-ui/react/heading"
+import { Heading } from "@winnie-ui/react/heading";
 ```
 
 ## Anatomy
@@ -48,7 +55,7 @@ Use the `size` prop to change the size of the heading.
   </Fragment>
 </Demo>
 
-### Weight 
+### Weight
 
 Use the `weight` prop to change the weight of the heading.
 
@@ -61,7 +68,7 @@ Use the `weight` prop to change the weight of the heading.
   </Fragment>
 </Demo>
 
-### Color 
+### Color
 
 Use the `color` prop to change the color of the heading.
 
@@ -74,7 +81,7 @@ Use the `color` prop to change the color of the heading.
   </Fragment>
 </Demo>
 
-### Contrast 
+### Contrast
 
 Use the `contrast` prop to change the contrast the heading.
 
@@ -87,7 +94,7 @@ Use the `contrast` prop to change the contrast the heading.
   </Fragment>
 </Demo>
 
-### Align 
+### Align
 
 Use the `align` prop to change how the heading is aligned.
 
@@ -104,12 +111,11 @@ Use the `align` prop to change how the heading is aligned.
 
 React Aria does not provide documentation for this component.
 
-| Prop | Type | Default |
-| ------------- | ------------------------------------------- | --- |
-| `align` | `"left" \| "center" \| "right"` | `left` |
-| `color` | `"brand" \| "red" \| "orange" \| "yellow" \| "green" \| "blue" \| "purple" \| "pink" \| "grey"` | `undefined` |
-| `contrast`   | `"low" \| "normal" \| "high"`                      | `"high"` |
-| `level`   | `"1" \| "2" \| "3" \| "4" \| "5" \| "6"`                      | `"1"` |
-| `size`   | `"1" \| "2" \| "3" \| "3" \| "4" \| "5" \| "6" \| "7" \| "8" \| "9"`                      | `"3"` |
-| `weight`   | `"normal" \| "medium" \| "semibold" \| "bold" \| "extra-bold"`                      | `"normal"` |
-
+| Prop       | Type                                                                                            | Default     |
+| ---------- | ----------------------------------------------------------------------------------------------- | ----------- |
+| `align`    | `"left" \| "center" \| "right"`                                                                 | `left`      |
+| `color`    | `"brand" \| "red" \| "orange" \| "yellow" \| "green" \| "blue" \| "purple" \| "pink" \| "grey"` | `undefined` |
+| `contrast` | `"low" \| "normal" \| "high"`                                                                   | `"high"`    |
+| `level`    | `"1" \| "2" \| "3" \| "4" \| "5" \| "6"`                                                        | `"1"`       |
+| `size`     | `"1" \| "2" \| "3" \| "3" \| "4" \| "5" \| "6" \| "7" \| "8" \| "9"`                            | `"3"`       |
+| `weight`   | `"normal" \| "medium" \| "semibold" \| "bold" \| "extra-bold"`                                  | `"normal"`  |
