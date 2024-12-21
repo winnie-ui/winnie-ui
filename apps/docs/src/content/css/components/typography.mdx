@@ -1,0 +1,95 @@
+---
+title: Typography 
+description: Foundational text primitives.
+---
+
+import {
+  TextDemo,
+  TextSizeDemo,
+  TextWeightDemo,
+  TextColorDemo,
+  TextContrastDemo,
+  TextAlignDemo,
+} from "~/demos/text.tsx";
+
+import Demo from "~/components/demo/demo.astro";
+
+<Demo>
+  <TextDemo />
+  <Fragment slot="footer">
+    ```html
+    <h1 data-component="heading">Margherita Pizza</h1>
+    <span data-component="text">Thin crust pizza topped with melting mozzarella.</span>
+    <a data-component="link">View Pizza</a>
+    ```
+  </Fragment>
+</Demo>
+
+## Import
+
+Import just the text styles.
+
+```css
+@import "@winnie-ui/component/typography";
+```
+
+## Anatomy
+
+Attach the appropriate `data-component` attribute in the structure below.
+
+```html
+<h1 data-component="heading" />
+<span data-component="text" />
+<a data-component="link" />
+```
+
+## Examples
+
+### Size
+
+Use the `data-size` attribute to change the size of the text.
+
+<Demo>
+  <TextSizeDemo />
+  <Fragment slot="footer">
+    ```html ins=data-size="<size>"
+    <span data-size="<size>">Thin crust pizza topped with melting mozzarella.</span>
+    ```
+  </Fragment>
+</Demo>
+
+### Weight
+
+Use the `data-weight` attribute to change the weight of the text.
+
+<Demo>
+  <TextWeightDemo />
+  <Fragment slot="footer">
+    ```html ins=data-weight="<weight>"
+    <span data-weight="<weight>">Thin crust pizza topped with melting mozzarella.</span>
+    ```
+  </Fragment>
+</Demo>
+
+### Align
+
+Use the `data-align` attribute to change how the text is aligned.
+
+<Demo>
+  <TextAlignDemo />
+  <Fragment slot="footer">
+    ```html ins=data-align="<align>"
+    <span data-align="<align>">Some text</span>
+    ```
+  </Fragment>
+</Demo>
+
+## Reference
+
+React Aria does not provide documentation for this component.
+
+| Attribute | Type                                                                                            | 
+| ---------- | ----------------------------------------------------------------------------------------------- |
+| `data-align`    | `"left" \| "center" \| "right"`                                                                 |
+| `data-size`     | `"1" \| "2" \| "3" \| "3" \| "4" \| "5" \| "6" \| "7" \| "8" \| "9"`                            |
+| `data-weight`   | `"normal" \| "medium" \| "semibold" \| "bold" \| "extra-bold"`                                  |

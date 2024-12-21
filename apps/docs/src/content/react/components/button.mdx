@@ -1,7 +1,7 @@
 ---
 title: Button
 description: Trigger an event, action or operation.
-documentation: https://react-spectrum.adobe.com/react-aria/Button.html 
+documentation: https://react-spectrum.adobe.com/react-aria/Button.html
 ---
 
 import {
@@ -14,7 +14,7 @@ import {
   ButtonDisabledDemo,
   ButtonPendingDemo,
   ButtonWidthDemo,
-} from "./button";
+} from "~/demos/button";
 
 import Demo from "~/components/demo/demo.astro";
 
@@ -98,7 +98,7 @@ Use the `radius` prop to modify the radius of the button.
   </Fragment>
 </Demo>
 
-### Color 
+### Color
 
 Use the `color` prop to modify the color of the button. By default the button will inherit the accent color from the closest parent that specifies the `data-accent-color` attribute.
 
@@ -118,7 +118,7 @@ Add an icon with the `ButtonIcon` slot component as a child of the button.
 <Demo>
   <NewDishButton client:load />
   <Fragment slot="footer">
-    ```tsx {2-4}
+    ```tsx {2 - 4}
     <Button>
       <ButtonIcon>
         <Utensils />
@@ -136,7 +136,7 @@ Create an icon button by only passing an icon with the `ButtonIcon` slot compone
 <Demo>
   <ButtonIconOnlyDemo client:load />
   <Fragment slot="footer">
-    ```tsx {2-4}
+    ```tsx {2 - 4}
     <Button>
       <ButtonIcon>
         <Utensils />
@@ -166,7 +166,7 @@ If a child of the button is rendered with the `ButtonPending` slot component, an
 <Demo>
   <ButtonPendingDemo client:load />
   <Fragment slot="footer">
-    ```tsx {3-5} ins=isPending
+    ```tsx {3 - 5} ins=isPending
     <Button isPending>
       ...
       <ButtonPending>
@@ -182,12 +182,10 @@ If a child of the button is rendered with the `ButtonPending` slot component, an
 Use the `width` prop to modify the overall width of the button.
 
 <Demo>
-  <ButtonWidthDemo client:load/>
+  <ButtonWidthDemo client:load />
   <Fragment slot="footer">
     ```tsx ins=width="full"
-    <Button width="full">
-      Save Dish
-    </Button>
+    <Button width="full">Save Dish</Button>
     ```
   </Fragment>
 </Demo>
@@ -196,20 +194,19 @@ Use the `width` prop to modify the overall width of the button.
 
 Refer to React Aria Components [documentation](https://react-spectrum.adobe.com/react-aria/Button.html#props) for more details about the other props and events available on Button.
 
-| Prop | Type | Default |
-| ------------- | ------------------------------------------- | --- |
-| `color` | `"brand" \| "red" \| "orange" \| "yellow" \| "green" \| "blue" \| "purple" \| "pink" \| "grey"` | `undefined` |
-| `radius` | `"none" \| "sm" \| "md" \| "lg" \| "round"` | `undefined` |
-| `size`   | `"sm" \| "md" \| "lg"`                      | `"md"` |
-| `variant`   | `"solid" \| "soft" \| "outlined" \| "plain"`                      | `"solid"` |
-| `width`  | `"auto" \| "full"`                            | `"auto"`|
+| Prop      | Type                                                                                            | Default     |
+| --------- | ----------------------------------------------------------------------------------------------- | ----------- |
+| `color`   | `"brand" \| "red" \| "orange" \| "yellow" \| "green" \| "blue" \| "purple" \| "pink" \| "grey"` | `undefined` |
+| `radius`  | `"none" \| "sm" \| "md" \| "lg" \| "round"`                                                     | `undefined` |
+| `size`    | `"sm" \| "md" \| "lg"`                                                                          | `"md"`      |
+| `variant` | `"solid" \| "soft" \| "outlined" \| "plain"`                                                    | `"solid"`   |
+| `width`   | `"auto" \| "full"`                                                                              | `"auto"`    |
 
-
-| Selector | Description |
-| ---------| ------------|
-| `data-hovered`  | When the button is hovered with mouse |
-| `data-pressed`  | When the button is pressed |
-| `data-focused`  | When the button is focused with either a keyboard or mouse |
-| `data-focus-visible`  | When the button is focused with keyboard |
-| `data-disabled`  | When the button is disabled |
-| `data-pending`  | When the button is in a pending state |
+| Selector             | Description                                                |
+| -------------------- | ---------------------------------------------------------- |
+| `data-hovered`       | When the button is hovered with mouse                      |
+| `data-pressed`       | When the button is pressed                                 |
+| `data-focused`       | When the button is focused with either a keyboard or mouse |
+| `data-focus-visible` | When the button is focused with keyboard                   |
+| `data-disabled`      | When the button is disabled                                |
+| `data-pending`       | When the button is in a pending state                      |

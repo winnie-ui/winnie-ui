@@ -1,10 +1,17 @@
 ---
-title: Text 
+title: Text
 description: Foundational text component.
 documentation: https://react-spectrum.adobe.com/react-aria/index.html
 ---
 
-import { TextDemo, TextSizeDemo, TextWeightDemo, TextColorDemo, TextContrastDemo, TextAlignDemo } from "./text.tsx";
+import {
+  TextDemo,
+  TextSizeDemo,
+  TextWeightDemo,
+  TextColorDemo,
+  TextContrastDemo,
+  TextAlignDemo,
+} from "~/demos/text.tsx";
 
 import Demo from "~/components/demo/demo.astro";
 
@@ -48,7 +55,7 @@ Use the `size` prop to change the size of the text.
   </Fragment>
 </Demo>
 
-### Weight 
+### Weight
 
 Use the `weight` prop to change the weight of the text.
 
@@ -61,7 +68,7 @@ Use the `weight` prop to change the weight of the text.
   </Fragment>
 </Demo>
 
-### Color 
+### Color
 
 Use the `color` prop to change the color of the text.
 
@@ -74,7 +81,7 @@ Use the `color` prop to change the color of the text.
   </Fragment>
 </Demo>
 
-### Contrast 
+### Contrast
 
 Use the `contrast` prop to change the contrast the text.
 
@@ -87,7 +94,7 @@ Use the `contrast` prop to change the contrast the text.
   </Fragment>
 </Demo>
 
-### Align 
+### Align
 
 Use the `align` prop to change how the text is aligned.
 
@@ -104,11 +111,10 @@ Use the `align` prop to change how the text is aligned.
 
 React Aria does not provide documentation for this component.
 
-| Prop | Type | Default |
-| ------------- | ------------------------------------------- | --- |
-| `align` | `"left" \| "center" \| "right"` | `left` |
-| `color` | `"brand" \| "red" \| "orange" \| "yellow" \| "green" \| "blue" \| "purple" \| "pink" \| "grey"` | `undefined` |
-| `contrast`   | `"low" \| "normal" \| "high"`                      | `"high"` |
-| `size`   | `"1" \| "2" \| "3" \| "3" \| "4" \| "5" \| "6" \| "7" \| "8" \| "9"`                      | `"3"` |
-| `weight`   | `"normal" \| "medium" \| "semibold" \| "bold" \| "extra-bold"`                      | `"normal"` |
-
+| Prop       | Type                                                                                            | Default     |
+| ---------- | ----------------------------------------------------------------------------------------------- | ----------- |
+| `align`    | `"left" \| "center" \| "right"`                                                                 | `left`      |
+| `color`    | `"brand" \| "red" \| "orange" \| "yellow" \| "green" \| "blue" \| "purple" \| "pink" \| "grey"` | `undefined` |
+| `contrast` | `"low" \| "normal" \| "high"`                                                                   | `"high"`    |
+| `size`     | `"1" \| "2" \| "3" \| "3" \| "4" \| "5" \| "6" \| "7" \| "8" \| "9"`                            | `"3"`       |
+| `weight`   | `"normal" \| "medium" \| "semibold" \| "bold" \| "extra-bold"`                                  | `"normal"`  |

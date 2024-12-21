@@ -1,10 +1,16 @@
 ---
-title: Link 
+title: Link
 description: Navigates a user between pages.
-documentation: https://react-spectrum.adobe.com/react-aria/Link.html 
+documentation: https://react-spectrum.adobe.com/react-aria/Link.html
 ---
 
-import { LinkDemo, LinkSizeDemo, LinkWeightDemo, LinkColorDemo, LinkContrastDemo } from "./link.tsx";
+import {
+  LinkDemo,
+  LinkSizeDemo,
+  LinkWeightDemo,
+  LinkColorDemo,
+  LinkContrastDemo,
+} from "~/demos/link.tsx";
 
 import Demo from "~/components/demo/demo.astro";
 
@@ -48,7 +54,7 @@ Use the `size` prop to change the size of the link.
   </Fragment>
 </Demo>
 
-### Weight 
+### Weight
 
 Use the `weight` prop to change the weight of the link.
 
@@ -61,7 +67,7 @@ Use the `weight` prop to change the weight of the link.
   </Fragment>
 </Demo>
 
-### Color 
+### Color
 
 Use the `color` prop to change the color of the link.
 
@@ -74,7 +80,7 @@ Use the `color` prop to change the color of the link.
   </Fragment>
 </Demo>
 
-### Contrast 
+### Contrast
 
 Use the `contrast` prop to change the contrast the link.
 
@@ -95,19 +101,19 @@ To use a Link as a Button, use the [LinkButton](/react/docs/components/link-butt
 
 Refer to React Aria Components [documentation](https://react-spectrum.adobe.com/react-aria/Link.html#props) for more details about the other props and events available on Link.
 
-| Prop | Type | Default |
-| ------------- | ------------------------------------------- | --- |
-| `align` | `"left" \| "center" \| "right"` | `left` |
-| `color` | `"brand" \| "red" \| "orange" \| "yellow" \| "green" \| "blue" \| "purple" \| "pink" \| "grey"` | `undefined` |
-| `contrast`   | `"low" \| "normal" \| "high"`                      | `"high"` |
-| `size`   | `"1" \| "2" \| "3" \| "3" \| "4" \| "5" \| "6" \| "7" \| "8" \| "9"`                      | `"3"` |
-| `weight`   | `"normal" \| "medium" \| "semibold" \| "bold" \| "extra-bold"`                      | `"normal"` |
+| Prop       | Type                                                                                            | Default     |
+| ---------- | ----------------------------------------------------------------------------------------------- | ----------- |
+| `align`    | `"left" \| "center" \| "right"`                                                                 | `left`      |
+| `color`    | `"brand" \| "red" \| "orange" \| "yellow" \| "green" \| "blue" \| "purple" \| "pink" \| "grey"` | `undefined` |
+| `contrast` | `"low" \| "normal" \| "high"`                                                                   | `"high"`    |
+| `size`     | `"1" \| "2" \| "3" \| "3" \| "4" \| "5" \| "6" \| "7" \| "8" \| "9"`                            | `"3"`       |
+| `weight`   | `"normal" \| "medium" \| "semibold" \| "bold" \| "extra-bold"`                                  | `"normal"`  |
 
-| Selector | Description |
-| ---------| ------------|
-| `data-hovered`  | When the link is hovered with mouse |
-| `data-pressed`  | When the link is pressed |
-| `data-focused`  | When the link is focused with either a keyboard or mouse |
-| `data-focus-visible`  | When the link is focused with keyboard |
-| `data-disabled`  | When the link is disabled |
-| `data-current`  | When the link is the current item in a list |
+| Selector             | Description                                              |
+| -------------------- | -------------------------------------------------------- |
+| `data-hovered`       | When the link is hovered with mouse                      |
+| `data-pressed`       | When the link is pressed                                 |
+| `data-focused`       | When the link is focused with either a keyboard or mouse |
+| `data-focus-visible` | When the link is focused with keyboard                   |
+| `data-disabled`      | When the link is disabled                                |
+| `data-current`       | When the link is the current item in a list              |
