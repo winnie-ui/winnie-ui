@@ -6,7 +6,6 @@ import { ZeroProvider } from "@rocicorp/zero/react";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { createRoot } from "react-dom/client";
 import { routeTree } from "./routeTree.gen";
-import { queryClient } from "./singletons/query-client";
 
 import "@fontsource/inter/400.css";
 import "@fontsource/inter/500.css";
@@ -19,9 +18,6 @@ import { zero } from "./singletons/zero";
 // Create a new router instance
 const router = createRouter({
   routeTree,
-  context: {
-    queryClient,
-  },
   Wrap: ({ children }) => {
     return (
       <ZeroProvider zero={zero}>
