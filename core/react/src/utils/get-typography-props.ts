@@ -52,7 +52,7 @@ type TypographyProps = {
  */
 function getTypographyProps({
   align = "left",
-  color = "grey",
+  color,
   contrast = "high",
   size = "3",
   weight = "normal",

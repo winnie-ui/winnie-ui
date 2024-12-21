@@ -36,7 +36,7 @@ type HeadingProps = AriaHeadingProps &
  */
 function Heading({
   align,
-  color,
+  color = "grey",
   className,
   children,
   contrast,
