@@ -25,7 +25,7 @@ type LinkProps = LinkTextProps;
  * -----------------------------------------------------------------------------------------------*/
 /**
  * # Link
- * Foundational heading component
+ * Navigates a user between pages.
  *
  * ## Anatomy
  * Arrange the components in the structure below.

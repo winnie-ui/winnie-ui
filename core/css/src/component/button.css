@@ -148,4 +148,9 @@
       width: 100%;
     }
   }
+
+  a[data-component="button"] {
+    cursor: var(--wui-cursor-linkable, pointer);
+    width: max-content;
+  }
 }

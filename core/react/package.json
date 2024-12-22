@@ -24,6 +24,12 @@
         "types": "./src/components/link.tsx"
       }
     },
+    "./link-button": {
+      "import": {
+        "default": "./src/components/link-button.tsx",
+        "types": "./src/components/link-button.tsx"
+      }
+    },
     "./text": {
       "import": {
         "default": "./src/components/text.tsx",
@@ -47,7 +53,7 @@
     "react-aria-components": "1.5.0"
   },
   "devDependencies": {
-    "@types/react": "19.0.1",
+    "@types/react": "19.0.2",
     "@types/react-dom": "19.0.2",
     "@winnie-ui/ts-config": "workspace:*",
     "react": "19.0.0",
