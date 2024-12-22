@@ -54,7 +54,7 @@ function getTypographyProps({
   align = "left",
   color,
   contrast = "high",
-  size = "3",
+  size = "2",
   weight = "normal",
 }: TypographyProps) {
   return {

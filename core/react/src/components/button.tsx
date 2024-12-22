@@ -25,7 +25,7 @@ type WinnieButtonProps = {
   /**
    * Changes the color of the button
    *
-   * @default "accent"
+   * @default undefined
    */
   color?:
     | "brand"

@@ -4,7 +4,11 @@ import { Link } from "@winnie-ui/react/link";
  * LinkDemo
  * -----------------------------------------------------------------------------------------------*/
 export function LinkDemo() {
-  return <Link href="#">View Dish</Link>;
+  return (
+    <Link href="#" color="grey">
+      View Dish
+    </Link>
+  );
 }
 
 /* -------------------------------------------------------------------------------------------------
@@ -20,14 +24,30 @@ export function LinkSizeDemo() {
         gap: "var(--wui-space-4)",
       }}
     >
-      <Link size="1">View Dish</Link>
-      <Link size="2">View Dish</Link>
-      <Link size="3">View Dish</Link>
-      <Link size="4">View Dish</Link>
-      <Link size="5">View Dish</Link>
-      <Link size="6">View Dish</Link>
-      <Link size="7">View Dish</Link>
-      <Link size="8">View Dish</Link>
+      <Link size="1" color="grey">
+        View Dish
+      </Link>
+      <Link size="2" color="grey">
+        View Dish
+      </Link>
+      <Link size="3" color="grey">
+        View Dish
+      </Link>
+      <Link size="4" color="grey">
+        View Dish
+      </Link>
+      <Link size="5" color="grey">
+        View Dish
+      </Link>
+      <Link size="6" color="grey">
+        View Dish
+      </Link>
+      <Link size="7" color="grey">
+        View Dish
+      </Link>
+      <Link size="8" color="grey">
+        View Dish
+      </Link>
     </div>
   );
 }
@@ -45,11 +65,21 @@ export function LinkWeightDemo() {
         gap: "var(--wui-space-4)",
       }}
     >
-      <Link weight="normal">View Dish</Link>
-      <Link weight="medium">View Dish</Link>
-      <Link weight="semibold">View Dish</Link>
-      <Link weight="bold">View Dish</Link>
-      <Link weight="extra-bold">View Dish</Link>
+      <Link weight="normal" color="grey">
+        View Dish
+      </Link>
+      <Link weight="medium" color="grey">
+        View Dish
+      </Link>
+      <Link weight="semibold" color="grey">
+        View Dish
+      </Link>
+      <Link weight="bold" color="grey">
+        View Dish
+      </Link>
+      <Link weight="extra-bold" color="grey">
+        View Dish
+      </Link>
     </div>
   );
 }
@@ -108,9 +138,13 @@ export function LinkContrastDemo() {
         gap: "var(--wui-space-3)",
       }}
     >
-      <Link>View Dish</Link>
-      <Link contrast="normal">View Dish</Link>
-      <Link contrast="low">View Dish</Link>
+      <Link color="grey">View Dish</Link>
+      <Link contrast="normal" color="grey">
+        View Dish
+      </Link>
+      <Link contrast="low" color="grey">
+        View Dish
+      </Link>
     </div>
   );
 }
