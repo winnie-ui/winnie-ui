@@ -1,13 +1,11 @@
 import { RouterProvider, createRouter } from "@tanstack/react-router";
 import { StrictMode } from "react";
-
-import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
-import { localStoragePersister } from "./singletons/local-storage-persister";
-
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { createRoot } from "react-dom/client";
+
+import { ZeroProvider } from "@rocicorp/zero/react";
+
 import { routeTree } from "./routeTree.gen";
-import { queryClient } from "./singletons/query-client";
+import { zero } from "./singletons/zero";
 
 import "@fontsource/inter/400.css";
 import "@fontsource/inter/500.css";
@@ -19,22 +17,8 @@ import "./main.css";
 // Create a new router instance
 const router = createRouter({
   routeTree,
-  context: {
-    queryClient,
-  },
   Wrap: ({ children }) => {
-    return (
-      <PersistQueryClientProvider
-        client={queryClient}
-        persistOptions={{
-          persister: localStoragePersister,
-          maxAge: Infinity,
-        }}
-      >
-        {children}
-        <ReactQueryDevtools initialIsOpen={false} />
-      </PersistQueryClientProvider>
-    );
+    return <ZeroProvider zero={zero}>{children}</ZeroProvider>;
   },
 });
 
