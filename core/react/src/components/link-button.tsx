@@ -13,6 +13,7 @@ import {
   Link as AriaLink,
   LinkProps as AriaLinkProps,
   Text as AriaText,
+  LinkContext as LinkButtonContext,
 } from "react-aria-components";
 import { WinnieButtonProps } from "./button";
 
@@ -130,5 +131,5 @@ const LinkButtonIcon = ({
   );
 };
 
-export { LinkButton, LinkButtonLabel, LinkButtonIcon };
+export { LinkButton, LinkButtonLabel, LinkButtonIcon, LinkButtonContext };
 export type { LinkButtonProps, LinkButtonLabelProps, LinkButtonIconProps };

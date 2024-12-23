@@ -149,8 +149,9 @@
     }
   }
 
-  a[data-component="button"] {
+  :is(a, span)[data-component="button"] {
     cursor: var(--wui-cursor-linkable, pointer);
+    outline: none;
     width: max-content;
   }
 }
