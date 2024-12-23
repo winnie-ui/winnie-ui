@@ -1,0 +1,192 @@
+---
+title: LinkButton
+description: Navigates a user between pages.
+documentation: https://react-spectrum.adobe.com/react-aria/Link.html
+---
+
+import {
+  NewDishLinkButton,
+  LinkButtonSizeDemo,
+  LinkButtonVariantDemo,
+  LinkButtonRadiusDemo,
+  LinkButtonColorDemo,
+  LinkButtonIconOnlyDemo,
+  LinkButtonDisabledDemo,
+  LinkButtonWidthDemo,
+} from "~/demos/link-button";
+
+import Demo from "~/components/demo/demo.astro";
+
+<Demo>
+  <NewDishLinkButton client:load />
+  <Fragment slot="footer">
+    ```tsx
+    <LinkButton>
+      <LinkButtonIcon>
+        <Utensils />
+      </LinkButtonIcon>
+      <LinkButtonLabel>New Dish</LinkButtonLabel>
+    </LinkButton>
+    ```
+  </Fragment>
+</Demo>
+
+## Import
+
+Import all of the parts of the link button.
+
+```tsx
+import {
+  LinkButton,
+  LinkButtonIcon,
+  LinkButtonLabel,
+} from "@winnie-ui/react/link-button";
+```
+
+## Anatomy
+
+Arrange the components in the structure below.
+
+```tsx
+<LinkButton>
+  <LinkButtonIcon />
+  <LinkButtonLabel />
+  <LinkButtonPending />
+</LinkButton>
+```
+
+## Examples
+
+### Size
+
+Use the `size` prop to change the size of the button.
+
+<Demo>
+  <LinkButtonSizeDemo client:load />
+  <Fragment slot="footer">
+    ```tsx ins=size="<size>"
+    <LinkButton size="<size>">...</LinkButton>
+    ```
+  </Fragment>
+</Demo>
+
+### Variant
+
+Use the `variant` prop to change the visual style of the button.
+
+<Demo>
+  <LinkButtonVariantDemo client:load />
+  <Fragment slot="footer">
+    ```tsx ins=variant="<variant>"
+    <LinkButton variant="<variant>">...</LinkButton>
+    ```
+  </Fragment>
+</Demo>
+
+### Radius
+
+Use the `radius` prop to modify the radius of the button.
+
+<Demo>
+  <LinkButtonRadiusDemo client:load />
+  <Fragment slot="footer">
+    ```tsx ins=radius="<radius>"
+    <LinkButton radius="<radius>">...</LinkButton>
+    ```
+  </Fragment>
+</Demo>
+
+### Color
+
+Use the `color` prop to modify the color of the button. By default the button will inherit the accent color from the closest parent that specifies the `data-accent-color` attribute.
+
+<Demo>
+  <LinkButtonColorDemo client:load />
+  <Fragment slot="footer">
+    ```tsx ins=color="<variant>"
+    <LinkButton color="<variant>">...</LinkButton>
+    ```
+  </Fragment>
+</Demo>
+
+### With Icon
+
+Add an icon with the `LinkButtonIcon` slot component as a child of the button.
+
+<Demo>
+  <NewDishLinkButton client:load />
+  <Fragment slot="footer">
+    ```tsx {2 - 4}
+    <LinkButton>
+      <LinkButtonIcon>
+        <Utensils />
+      </LinkButtonIcon>
+      ...
+    </LinkButton>
+    ```
+  </Fragment>
+</Demo>
+
+### Icon Only
+
+Create an icon button by only passing an icon with the `LinkButtonIcon` slot component as a child of the button.
+
+<Demo>
+  <LinkButtonIconOnlyDemo client:load />
+  <Fragment slot="footer">
+    ```tsx {2 - 4}
+    <LinkButton>
+      <LinkButtonIcon>
+        <Utensils />
+      </LinkButtonIcon>
+    </LinkButton>
+    ```
+  </Fragment>
+</Demo>
+
+### Disabled
+
+Use the `isDisabled` prop to prevent user interaction.
+
+<Demo>
+  <LinkButtonDisabledDemo client:load />
+  <Fragment slot="footer">
+    ```tsx ins=isDisabled
+    <LinkButton isDisabled>...</LinkButton>
+    ```
+  </Fragment>
+</Demo>
+
+### Full Width
+
+Use the `width` prop to modify the overall width of the button.
+
+<Demo>
+  <LinkButtonWidthDemo client:load />
+  <Fragment slot="footer">
+    ```tsx ins=width="full"
+    <LinkButton width="full">Save Dish</LinkButton>
+    ```
+  </Fragment>
+</Demo>
+
+## Reference
+
+Refer to React Aria Components [documentation](https://react-spectrum.adobe.com/react-aria/link.html#props) for more details about the other props and events available on LinkButton.
+
+| Prop      | Type                                                                                            | Default     |
+| --------- | ----------------------------------------------------------------------------------------------- | ----------- |
+| `color`   | `"brand" \| "red" \| "orange" \| "yellow" \| "green" \| "blue" \| "purple" \| "pink" \| "grey"` | `undefined` |
+| `radius`  | `"none" \| "sm" \| "md" \| "lg" \| "round"`                                                     | `undefined` |
+| `size`    | `"sm" \| "md" \| "lg"`                                                                          | `"md"`      |
+| `variant` | `"solid" \| "soft" \| "outlined" \| "plain"`                                                    | `"solid"`   |
+| `width`   | `"auto" \| "full"`                                                                              | `"auto"`    |
+
+| Selector             | Description                                                |
+| -------------------- | ---------------------------------------------------------- |
+| `data-hovered`       | When the link button is hovered with mouse                      |
+| `data-pressed`       | When the link button is pressed                                 |
+| `data-focused`       | When the link button is focused with either a keyboard or mouse |
+| `data-focus-visible` | When the link button is focused with keyboard                   |
+| `data-disabled`      | When the link button is disabled                                |
+| `data-current`       | When the link button is the current item in a list 
