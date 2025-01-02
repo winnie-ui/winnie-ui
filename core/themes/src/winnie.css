@@ -66,6 +66,10 @@
     }
 
     /* -------------------------------------------------------------------------------------------------
+     * Layout
+     * -----------------------------------------------------------------------------------------------*/
+
+    /* -------------------------------------------------------------------------------------------------
      * Link 
      * -----------------------------------------------------------------------------------------------*/
     [data-component="link"] {
@@ -94,9 +98,41 @@
     }
   }
 
-  /* :where([data-color-scheme="winnie"][data-theme="light"]) {
+  :where([data-color-scheme="winnie"][data-theme="light"]) {
+    [data-component="layout"] {
+      --wui-layout-background: var(--wui-color-grey-3);
+
+      [data-slot="mask"] {
+        --wui-layout-mask-background: var(--wui-color-black-a2);
+      }
+
+      [data-slot="sidebar"] {
+        --wui-layout-sidebar-open-background: var(--wui-color-white);
+        --wui-layout-sidebar-open-border-color: var(--wui-color-grey-6);
+
+        [data-component="resize-handle"] {
+          --wui-layout-sidebar-resize-handle-background: var(--wui-color-grey-9);
+        }
+      }
+    }
   }
 
   :where([data-color-scheme="winnie"][data-theme="dark"]) {
-  } */
+    [data-component="layout"] {
+      --wui-layout-background: var(--wui-color-black);
+
+      [data-slot="mask"] {
+        --wui-layout-mask-background: var(--wui-color-black-a8);
+      }
+
+      [data-slot="sidebar"] {
+        --wui-layout-sidebar-open-background: var(--wui-color-grey-1);
+        --wui-layout-sidebar-open-border-color: var(--wui-color-grey-3);
+
+        [data-component="resize-handle"] {
+          --wui-layout-sidebar-resize-handle-background: var(--wui-color-grey-9);
+        }
+      }
+    }
+  }
 }

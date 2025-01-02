@@ -269,6 +269,149 @@
   }
 
   /* -------------------------------------------------------------------------------------------------
+   * Layout 
+   * -----------------------------------------------------------------------------------------------*/
+  [data-component="layout"] {
+    background: var(--wui-layout-background);
+
+    [data-slot="mask"] {
+      background: var(--wui-layout__mask-background);
+      opacity: var(--wui-layout__mask-opacity-end);
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition: display, opacity;
+        transition-duration: var(--wui-duration-3);
+        transition-timing-function: ease-in-out;
+      }
+
+      @starting-style {
+        opacity: var(--wui-layout__mask-opacity-start);
+      }
+    }
+
+    [data-slot="sidebar"] {
+      &:is([data-state="open"], [data-state="closed"]) {
+        background: var(--wui-layout__sidebar-background-open-xs);
+        border-right: var(--wui-layout__sidebar-border-right-open-xs);
+        box-shadow: var(--wui-layout__sidebar-box-shadow-open-xs);
+
+        @media (min-width: 768px) {
+          border: var(--wui-layout__sidebar-border-open-lg);
+        }
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition-property: background, left, top, height;
+        transition-duration: var(--wui-duration-4);
+        transition-timing-function: var(--wui-bezier-1);
+        will-change: left, top, height;
+      }
+
+      [data-component="resize-handle"] {
+        --wui-layout__resize-handle-width: calc(3px * var(--wui-scale));
+
+        cursor: col-resize;
+        height: calc(
+          100% -
+          var(--wui-layout-content-space) *
+          2 -
+          var(--wui-space-4) *
+          2
+        );
+        margin-inline: calc(-1 * var(--wui-space-3));
+        outline: none;
+        padding-inline: var(--wui-space-3);
+        position: absolute;
+        right: calc(
+          -1 *
+          var(--wui-layout-content-space) +
+          var(--wui-layout__resize-handle-width) /
+          2
+        );
+        top: 50%;
+        transform: translateY(-50%);
+
+        [data-slot="thumb"] {
+          background: var(--wui-layout__resize-handle-background);
+          border-radius: var(--wui-layout__resize-handle-border-radius);
+          display: block;
+          height: 100%;
+          opacity: 0;
+          width: var(--wui-layout__resize-handle-width);
+
+          @media (prefers-reduced-motion: no-preference) {
+            transition-property: opacity;
+            transition-delay: var(--wui-duration-2);
+            transition-duration: var(--wui-duration-2);
+            transition-timing-function: var(--wui-bezier-1);
+          }
+        }
+
+        &:is([data-hovered], [data-sidebar-dragging]) {
+          [data-slot="thumb"] {
+            opacity: var(--wui-layout__resize-handle-opacity-dragging);
+          }
+        }
+
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
+    }
+
+    [data-slot="content"] {
+      background: var(--wui-layout__content-background);
+
+      @media (prefers-reduced-motion: no-preference) {
+        &:not([data-sidebar-dragging="true"]) {
+          transition-property: padding-left;
+          transition-duration: var(--wui-duration-4);
+          transition-timing-function: var(--wui-bezier-1);
+          will-change: padding-left;
+        }
+      }
+    }
+
+    [data-slot="toggle"] {
+      grid-template-columns: 1fr;
+      height: var(--wui-button-height, var(--wui-button-md-height));
+      isolation: revert;
+      justify-items: center;
+      padding: 0;
+      position: absolute;
+      left: var(--wui-space-4);
+      opacity: 1;
+      width: var(--wui-button-height, var(--wui-button-md-height));
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition: display, opacity;
+        transition-duration: var(--wui-duration-2);
+        transition-timing-function: ease-in-out;
+      }
+
+      @starting-style {
+        opacity: 0;
+      }
+    }
+
+    &:has(
+        [data-slot="sidebar"]:is([data-state="open"], [data-state="closed"])
+      ) {
+      [data-component="resize-handle"] {
+        display: none;
+      }
+    }
+
+    &:has([data-slot="sidebar"]:is([data-state="docked"])) {
+      [data-slot="toggle"] {
+        @media (min-width: 768px) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  /* -------------------------------------------------------------------------------------------------
    * Link 
    * -----------------------------------------------------------------------------------------------*/
   [data-component="link"] {

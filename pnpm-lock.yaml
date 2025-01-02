@@ -153,6 +153,9 @@ importers:
       '@winnie-ui/tailwind':
         specifier: workspace:*
         version: link:../../core/tailwind
+      '@winnie-ui/themes':
+        specifier: workspace:*
+        version: link:../../core/themes
       clsx:
         specifier: 2.1.1
         version: 2.1.1

@@ -1,12 +1,12 @@
 import {
   type ComponentPropsWithoutRef,
+  type ComponentRef,
   type Dispatch,
-  type ElementRef,
-  type MutableRefObject,
-  type PropsWithChildren,
+  type ForwardedRef,
+  ReactNode,
+  type RefObject,
   type SetStateAction,
   createContext,
-  forwardRef,
   useCallback,
   useContext,
   useEffect,
@@ -17,10 +17,9 @@ import {
 import { mergeProps, mergeRefs } from "@react-aria/utils";
 import { useFocusRing, useHover, useMove, usePress } from "react-aria";
 
-import { Button, ButtonIcon } from "../button/button";
+import { Button, ButtonIcon } from "./button";
 
 import clsx from "clsx";
-import { PanelLeft } from "lucide-react";
 
 /* -------------------------------------------------------------------------------------------------
  * Constants
@@ -222,12 +221,12 @@ type LayoutContextProps = {
   /**
    * Ref to the sidebar open button
    */
-  triggerRef: MutableRefObject<HTMLElement | null>;
+  triggerRef: RefObject<HTMLElement | null>;
 
   /**
    * Ref to the sidebar
    */
-  sidebarRef: MutableRefObject<HTMLElement | null>;
+  sidebarRef: RefObject<HTMLElement | null>;
 };
 
 const LayoutContext = createContext<LayoutContextProps | null>(null);
@@ -252,192 +251,201 @@ const useLayoutContext = () => {
 /* -------------------------------------------------------------------------------------------------
  * Layout
  * -----------------------------------------------------------------------------------------------*/
-type LayoutRef = ElementRef<"div">;
-type LayoutComponentProps = ComponentPropsWithoutRef<"div">;
-type LayoutProps = LayoutComponentProps;
+type LayoutProps = ComponentPropsWithoutRef<"div"> & {
+  /**
+   * Ref to button element
+   */
+  ref?: ForwardedRef<ComponentRef<"div">>;
+};
 
-const Layout = forwardRef<LayoutRef, PropsWithChildren<LayoutProps>>(
-  ({ children, className, ...props }, ref) => {
-    /**
-     * tracks the state of the layout
-     */
-    const [sidebarState, setSidebarState] =
-      useState<LayoutContextProps["sidebarState"]>("docked");
+function Layout({ children, className, ref, ...props }: LayoutProps) {
+  /**
+   * tracks the state of the layout
+   */
+  const [sidebarState, setSidebarState] =
+    useState<LayoutContextProps["sidebarState"]>("docked");
 
-    /**
-     * tracks the width of the sidebar
-     */
-    const [sidebarWidth, setSidebarWidth] = useState<
-      LayoutContextProps["sidebarWidth"]
-    >(DEFAULT_SIDEBAR_WIDTH);
+  /**
+   * tracks the width of the sidebar
+   */
+  const [sidebarWidth, setSidebarWidth] = useState<
+    LayoutContextProps["sidebarWidth"]
+  >(DEFAULT_SIDEBAR_WIDTH);
 
-    /**
-     * tracks the drag state of the sidebar
-     */
-    const [sidebarDragging, setSidebarDragging] =
-      useState<LayoutContextProps["sidebarDragging"]>(false);
+  /**
+   * tracks the drag state of the sidebar
+   */
+  const [sidebarDragging, setSidebarDragging] =
+    useState<LayoutContextProps["sidebarDragging"]>(false);
 
-    /**
-     * tracks the ref of the sidebar
-     */
-    const sidebarRef = useRef<HTMLElement>(null);
+  /**
+   * tracks the ref of the sidebar
+   */
+  const sidebarRef = useRef<HTMLElement>(null);
 
-    /**
-     * tracks the ref of the sidebar trigger
-     */
-    const triggerRef = useRef<HTMLSpanElement>(null);
+  /**
+   * tracks the ref of the sidebar trigger
+   */
+  const triggerRef = useRef<HTMLSpanElement>(null);
 
-    /**
-     * tracks the active timer to debounce the mouse leave event
-     */
-    const timerRef = useRef<any>();
+  /**
+   * tracks the active timer to debounce the mouse leave event
+   */
+  const timerRef = useRef<any>(null);
 
-    /**
-     * handles the mouse move event by triggering the open state
-     * of the sidebar and calculating the safe area. Also checks
-     * the min breakpoint
-     */
-    const handleMouseMove = useCallback(
-      (e: MouseEvent) => {
-        if (!triggerRef.current || !sidebarRef.current) {
-          return;
-        }
+  /**
+   * handles the mouse move event by triggering the open state
+   * of the sidebar and calculating the safe area. Also checks
+   * the min breakpoint
+   */
+  const handleMouseMove = useCallback(
+    (e: MouseEvent) => {
+      if (!triggerRef.current || !sidebarRef.current) {
+        return;
+      }
 
-        const breakpoint = window.matchMedia(DOCKED_BREAKPOINT);
-        if (!breakpoint.matches) {
-          return;
-        }
-
-        if (e.clientX <= 16 && sidebarState === "closed") {
-          return setSidebarState("open");
-        }
-
-        // if the state is anything but open do nothing
-        if (sidebarState !== "open") {
-          return;
-        }
-
-        if (e.clientX <= 16) {
-          return;
-        }
-
-        // if the current mouse position is within the safe triangle
-        if (
-          isCursorSafe(
-            e.clientX,
-            e.clientY,
-            getTrianglePoints(triggerRef.current, sidebarRef.current),
-          )
-        ) {
-          return;
-        }
-
-        // if the current target is within the button of the sidebar
-        if (
-          triggerRef.current?.contains(e.target as Node) ||
-          sidebarRef.current?.contains(e.target as Node)
-        ) {
-          clearTimeout(timerRef.current);
-          return;
-        }
-
-        setSidebarState("closed");
-      },
-      [sidebarState],
-    );
-
-    /**
-     * handles the mouse leave event by only firing when the
-     * users screen is greater than the min breakpoint and after
-     * the debounce time has elapsed
-     */
-    const handleMouseLeave = useCallback(() => {
       const breakpoint = window.matchMedia(DOCKED_BREAKPOINT);
-
       if (!breakpoint.matches) {
         return;
       }
 
+      if (e.clientX <= 16 && sidebarState === "closed") {
+        return setSidebarState("open");
+      }
+
+      // if the state is anything but open do nothing
       if (sidebarState !== "open") {
         return;
       }
 
-      if (timerRef.current) {
-        clearTimeout(timerRef.current);
-      }
-
-      timerRef.current = setTimeout(() => {
-        setSidebarState("closed");
-      }, 700);
-    }, [sidebarState]);
-
-    /**
-     * handles subscribing to document level events
-     */
-    useEffect(() => {
-      document.addEventListener("mousemove", handleMouseMove);
-      document.addEventListener("mouseleave", handleMouseLeave);
-
-      return () => {
-        document.removeEventListener("mousemove", handleMouseMove);
-        document.removeEventListener("mouseleave", handleMouseLeave);
-      };
-    }, [handleMouseMove, handleMouseLeave]);
-
-    /**
-     * Handles setting the body cursor while dragging occurs
-     */
-    useEffect(() => {
-      if (!sidebarDragging) {
-        document.body.style.removeProperty("cursor");
+      if (e.clientX <= 16) {
         return;
       }
 
-      document.body.style.cursor = "col-resize";
-    }, [sidebarDragging]);
-    return (
-      <LayoutContext.Provider
-        value={{
-          sidebarDragging,
-          setSidebarDragging,
-          sidebarWidth,
-          sidebarState,
-          setSidebarWidth,
-          setSidebarState,
-          triggerRef,
-          sidebarRef,
-        }}
+      // if the current mouse position is within the safe triangle
+      if (
+        isCursorSafe(
+          e.clientX,
+          e.clientY,
+          getTrianglePoints(triggerRef.current, sidebarRef.current),
+        )
+      ) {
+        return;
+      }
+
+      // if the current target is within the button of the sidebar
+      if (
+        triggerRef.current?.contains(e.target as Node) ||
+        sidebarRef.current?.contains(e.target as Node)
+      ) {
+        clearTimeout(timerRef.current);
+        return;
+      }
+
+      setSidebarState("closed");
+    },
+    [sidebarState],
+  );
+
+  /**
+   * handles the mouse leave event by only firing when the
+   * users screen is greater than the min breakpoint and after
+   * the debounce time has elapsed
+   */
+  const handleMouseLeave = useCallback(() => {
+    const breakpoint = window.matchMedia(DOCKED_BREAKPOINT);
+
+    if (!breakpoint.matches) {
+      return;
+    }
+
+    if (sidebarState !== "open") {
+      return;
+    }
+
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+
+    timerRef.current = setTimeout(() => {
+      setSidebarState("closed");
+    }, 700);
+  }, [sidebarState]);
+
+  /**
+   * handles subscribing to document level events
+   */
+  useEffect(() => {
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, [handleMouseMove, handleMouseLeave]);
+
+  /**
+   * Handles setting the body cursor while dragging occurs
+   */
+  useEffect(() => {
+    if (!sidebarDragging) {
+      document.body.style.removeProperty("cursor");
+      return;
+    }
+
+    document.body.style.cursor = "col-resize";
+  }, [sidebarDragging]);
+  return (
+    <LayoutContext.Provider
+      value={{
+        sidebarDragging,
+        setSidebarDragging,
+        sidebarWidth,
+        sidebarState,
+        setSidebarWidth,
+        setSidebarState,
+        triggerRef,
+        sidebarRef,
+      }}
+    >
+      <div
+        {...props}
+        className={clsx(className, "wui-layout")}
+        data-component="layout"
+        data-sidebar-dragging={sidebarDragging}
+        ref={ref}
+        // @ts-ignore
+        style={{ "--wui-layout-sidebar-width": `${sidebarWidth}px` }}
       >
-        <div
-          {...props}
-          className={clsx(className, "wui-layout")}
-          data-component="layout"
-          data-sidebar-dragging={sidebarDragging}
-          ref={ref}
-          // @ts-ignore
-          style={{ "--wui-layout-sidebar-width": `${sidebarWidth}px` }}
-        >
-          {children}
-        </div>
-      </LayoutContext.Provider>
-    );
-  },
-);
+        {children}
+      </div>
+    </LayoutContext.Provider>
+  );
+}
 
 /* -------------------------------------------------------------------------------------------------
  * LayoutSidebarOpenButton
  * -----------------------------------------------------------------------------------------------*/
-type LayoutSidebarOpenButtonRef = ElementRef<typeof Button>;
-type LayoutSidebarOpenButtonComponentProps = ComponentPropsWithoutRef<
-  typeof Button
->;
-type LayoutSidebarOpenButtonProps = LayoutSidebarOpenButtonComponentProps;
-
-const LayoutSidebarOpenButton = forwardRef<
-  LayoutSidebarOpenButtonRef,
-  LayoutSidebarOpenButtonProps
->(({ className, ...props }, ref) => {
+type LayoutSidebarOpenButtonProps = ComponentPropsWithoutRef<typeof Button> & {
   /**
+   * icon for the button
+   */
+  icon?: ReactNode;
+
+  /**
+   * Ref to button element
+   */
+  ref?: ForwardedRef<ComponentRef<typeof Button>>;
+};
+
+function LayoutSidebarOpenButton({
+  className,
+  icon,
+  ref,
+  ...props
+}: LayoutSidebarOpenButtonProps) {
+  /*
    * subscribe to app layout context
    */
   const context = useLayoutContext();
@@ -487,15 +495,14 @@ const LayoutSidebarOpenButton = forwardRef<
   return (
     <Button
       {...props}
-      className={clsx(className, "wui-layout-sidebar-open-button")}
+      className={clsx(className, "wui-layout__sidebar-toggle")}
+      data-slot="toggle"
       color="grey"
-      variant="ghost"
+      variant="plain"
       onPress={onPress}
       ref={ref}
     >
-      <ButtonIcon>
-        <PanelLeft />
-      </ButtonIcon>
+      <ButtonIcon>{icon}</ButtonIcon>
       <span
         {...hoverProps}
         style={{
@@ -510,22 +517,24 @@ const LayoutSidebarOpenButton = forwardRef<
       />
     </Button>
   );
-});
-
-LayoutSidebarOpenButton.displayName = "LayoutSidebarOpenButton";
+}
 
 /* -------------------------------------------------------------------------------------------------
  * LayoutSidebarResizeHandle
  * -----------------------------------------------------------------------------------------------*/
-type LayoutSidebarResizeHandleRef = ElementRef<"button">;
-type LayoutSidebarResizeHandleComponentProps =
-  ComponentPropsWithoutRef<"button">;
-type LayoutSidebarResizeHandleProps = LayoutSidebarResizeHandleComponentProps;
+type LayoutSidebarResizeHandleProps = ComponentPropsWithoutRef<"button"> & {
+  /**
+   * Ref to resize element
+   */
+  ref?: ForwardedRef<ComponentRef<"button">>;
+};
 
-const LayoutSidebarResizeHandle = forwardRef<
-  LayoutSidebarResizeHandleRef,
-  PropsWithChildren<LayoutSidebarResizeHandleProps>
->(({ children, className, ...props }, ref) => {
+function LayoutSidebarResizeHandle({
+  children,
+  className,
+  ref,
+  ...props
+}: LayoutSidebarResizeHandleProps) {
   /**
    * subscribe to app layout context
    */
@@ -588,111 +597,121 @@ const LayoutSidebarResizeHandle = forwardRef<
   return (
     <button
       {...mergeProps(props, moveProps, pressProps, focusProps, hoverProps)}
-      className={clsx(className, "wui-layout-sidebar-resize-handle")}
+      className={clsx(className, "wui-layout__sidebar-resize-handle")}
       ref={ref}
+      data-component="resize-handle"
       data-hovered={isHovered ? true : undefined}
       data-sidebar-dragging={context.sidebarDragging ? true : undefined}
       data-focus-visible={isFocusVisible ? true : undefined}
     >
-      <span className="wui-layout-sidebar-resize-handle-thumb" />
+      <span
+        className="wui-layout-sidebar-resize-handle-thumb"
+        data-slot="thumb"
+      />
     </button>
   );
-});
-
-LayoutSidebarResizeHandle.displayName = "LayoutSidebarResizeHandle";
+}
 
 /* -------------------------------------------------------------------------------------------------
  * LayoutSidebar
  * -----------------------------------------------------------------------------------------------*/
-type LayoutSidebarRef = ElementRef<"nav">;
-type LayoutSidebarComponentProps = ComponentPropsWithoutRef<"nav">;
-type LayoutSidebarProps = LayoutSidebarComponentProps;
+type LayoutSidebarProps = ComponentPropsWithoutRef<"nav"> & {
+  /**
+   * Ref to sidebar element
+   */
+  ref?: ForwardedRef<ComponentRef<"nav">>;
+};
 
-const LayoutSidebar = forwardRef<LayoutSidebarRef, LayoutSidebarProps>(
-  ({ children, className, ...props }, ref) => {
-    /**
-     * subscribe to app layout context
-     */
-    const context = useLayoutContext();
+function LayoutSidebar({
+  children,
+  className,
+  ref,
+  ...props
+}: LayoutSidebarProps) {
+  /**
+   * subscribe to app layout context
+   */
+  const context = useLayoutContext();
 
-    /**
-     * merge the refs
-     */
-    const mergedRefs = mergeRefs(ref, context.sidebarRef);
+  /**
+   * merge the refs
+   */
+  const mergedRefs = mergeRefs(ref, context.sidebarRef);
 
-    return (
-      <nav
-        {...props}
-        data-slot="sidebar"
-        className={clsx(className, "wui-layout-sidebar")}
-        data-state={context.sidebarState}
-        data-sidebar-dragging={context.sidebarDragging}
-        ref={mergedRefs}
-      >
-        {children}
-      </nav>
-    );
-  },
-);
-
-LayoutSidebar.displayName = "LayoutSidebar";
+  return (
+    <nav
+      {...props}
+      data-slot="sidebar"
+      className={clsx(className, "wui-layout__sidebar")}
+      data-state={context.sidebarState}
+      data-sidebar-dragging={context.sidebarDragging}
+      ref={mergedRefs}
+    >
+      {children}
+    </nav>
+  );
+}
 
 /* -------------------------------------------------------------------------------------------------
  * LayoutMask
  * -----------------------------------------------------------------------------------------------*/
-type LayoutMaskRef = ElementRef<"div">;
-type LayoutMaskComponentProps = ComponentPropsWithoutRef<"div">;
-type LayoutMaskProps = LayoutMaskComponentProps;
+type LayoutMaskProps = ComponentPropsWithoutRef<"div"> & {
+  /**
+   * Ref to mask element
+   */
+  ref?: ForwardedRef<ComponentRef<"div">>;
+};
 
-const LayoutMask = forwardRef<LayoutMaskRef, LayoutMaskProps>(
-  ({ className, ...props }, ref) => {
-    /**
-     * subscribe to app layout context
-     */
-    const context = useLayoutContext();
+function LayoutMask({ className, ref, ...props }: LayoutMaskProps) {
+  /**
+   * subscribe to app layout context
+   */
+  const context = useLayoutContext();
 
-    /**
-     * handles hover start by opening the sidebar
-     */
-    const { pressProps } = usePress({
-      onPress: () => {
-        context.setSidebarState("closed");
-      },
-    });
+  /**
+   * handles hover start by opening the sidebar
+   */
+  const { pressProps } = usePress({
+    onPress: () => {
+      context.setSidebarState("closed");
+    },
+  });
 
-    /**
-     * Merge the props from press and passed in props
-     */
-    const mergedProps = mergeProps(pressProps, props);
+  /**
+   * Merge the props from press and passed in props
+   */
+  const mergedProps = mergeProps(pressProps, props);
 
-    if (context.sidebarState !== "open") {
-      return null;
-    }
+  if (context.sidebarState !== "open") {
+    return null;
+  }
 
-    return (
-      <div
-        {...mergedProps}
-        className={clsx(className, "wui-layout-mask")}
-        data-slot="mask"
-        ref={ref}
-      />
-    );
-  },
-);
-
-LayoutMask.displayName = "LayoutMask";
+  return (
+    <div
+      {...mergedProps}
+      className={clsx(className, "wui-layout__mask")}
+      data-slot="mask"
+      ref={ref}
+    />
+  );
+}
 
 /* -------------------------------------------------------------------------------------------------
  * LayoutContent
  * -----------------------------------------------------------------------------------------------*/
-type LayoutContentRef = ElementRef<"main">;
-type LayoutContentComponentProps = ComponentPropsWithoutRef<"main">;
-type LayoutContentProps = LayoutContentComponentProps;
+type LayoutContentProps = ComponentPropsWithoutRef<"main"> & {
+  /**
+   * Ref to mask element
+   */
+  ref?: ForwardedRef<ComponentRef<"main">>;
+};
 
-const LayoutContent = forwardRef<
-  LayoutContentRef,
-  PropsWithChildren<LayoutContentProps>
->(({ children, className, ...props }, ref) => {
+function LayoutContent({
+  children,
+  className,
+  ref,
+  ...props
+}: LayoutContentProps) {
   /**
    * subscribe to app layout context
    */
@@ -701,7 +720,7 @@ const LayoutContent = forwardRef<
   return (
     <main
       {...props}
-      className={clsx(className, "wui-layout-content")}
+      className={clsx(className, "wui-layout__content")}
       data-slot="content"
       ref={ref}
       data-sidebar-dragging={context.sidebarDragging}
@@ -709,9 +728,7 @@ const LayoutContent = forwardRef<
       {children}
     </main>
   );
-});
-
-LayoutContent.displayName = "LayoutContent";
+}
 
 export {
   Layout,
@@ -727,5 +744,5 @@ export type {
   LayoutSidebarProps,
   LayoutContentProps,
   LayoutSidebarOpenButtonProps,
-  LayoutSidebarResizeHandleComponentProps,
+  LayoutSidebarResizeHandleProps,
 };
