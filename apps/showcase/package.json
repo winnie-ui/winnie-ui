@@ -20,6 +20,7 @@
     "@tanstack/react-router": "1.92.1",
     "@winnie-ui/react": "workspace:*",
     "@winnie-ui/tailwind": "workspace:*",
+    "@winnie-ui/themes": "workspace:*",
     "clsx": "2.1.1",
     "lucide-react": "0.469.0",
     "react": "19.0.0",
