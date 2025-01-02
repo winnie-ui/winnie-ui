@@ -425,9 +425,9 @@ function Layout({ children, className, ref, ...props }: LayoutProps) {
 }
 
 /* -------------------------------------------------------------------------------------------------
- * LayoutSidebarOpenButton
+ * LayoutSidebarToggle
  * -----------------------------------------------------------------------------------------------*/
-type LayoutSidebarOpenButtonProps = ComponentPropsWithoutRef<typeof Button> & {
+type LayoutSidebarToggleProps = ComponentPropsWithoutRef<typeof Button> & {
   /**
    * icon for the button
    */
@@ -439,12 +439,12 @@ type LayoutSidebarOpenButtonProps = ComponentPropsWithoutRef<typeof Button> & {
   ref?: ForwardedRef<ComponentRef<typeof Button>>;
 };
 
-function LayoutSidebarOpenButton({
+function LayoutSidebarToggle({
   className,
   icon,
   ref,
   ...props
-}: LayoutSidebarOpenButtonProps) {
+}: LayoutSidebarToggleProps) {
   /*
    * subscribe to app layout context
    */
@@ -735,7 +735,7 @@ export {
   LayoutMask,
   LayoutSidebar,
   LayoutContent,
-  LayoutSidebarOpenButton,
+  LayoutSidebarToggle,
   LayoutSidebarResizeHandle,
 };
 export type {
@@ -743,6 +743,6 @@ export type {
   LayoutMaskProps,
   LayoutSidebarProps,
   LayoutContentProps,
-  LayoutSidebarOpenButtonProps,
+  LayoutSidebarToggleProps,
   LayoutSidebarResizeHandleProps,
 };

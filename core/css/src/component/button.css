@@ -46,6 +46,7 @@
 
     [data-slot="label"] {
       font-size: var(--wui-button-font-size, var(--wui-button-md-font-size));
+      line-height: 1;
       grid-column: 1 / 4;
     }
 

@@ -1,0 +1,63 @@
+---
+title: Menu 
+description: Displays a list of actions for a user to take.
+documentation: https://react-spectrum.adobe.com/react-aria/Menu.html
+---
+
+import { DishActionButton } from "~/demos/menu";
+
+import Demo from "~/components/demo/demo.astro";
+
+<Demo>
+  <DishActionButton client:load />
+  <Fragment slot="footer">
+    ```tsx
+    <MenuProvider>
+      <Button variant="outlined">
+        <ButtonLabel>Actions</ButtonLabel>
+        <ButtonIcon>
+          <ChevronDown />
+        </ButtonIcon>
+      </Button>
+      <MenuPopover>
+        <Menu>
+          <MenuItem>Assign To...</MenuItem>
+          <MenuItem>Edit</MenuItem>
+          <MenuItem>Duplicate</MenuItem>
+          <MenuItem>Delete</MenuItem>
+        </Menu>
+      </MenuPopover>
+    </MenuProvider>
+    ```
+  </Fragment>
+</Demo>
+
+## Import
+
+Import all of the parts of the menu. 
+
+```tsx
+import {
+  MenuProvider,
+  MenuPopover,
+  Menu,
+  MenuItem
+} from "@winnie-ui/react/menu";
+```
+
+## Anatomy
+
+Arrange the components in the structure below.
+
+```tsx
+<MenuProvider>
+  <Button />
+  <MenuPopover>
+    <Menu>
+      <MenuItem />
+    </Menu>
+  </MenuPopover>
+</MenuProvider>
+```
+
+## Examples

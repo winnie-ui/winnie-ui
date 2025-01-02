@@ -36,6 +36,12 @@
         "types": "./src/components/link-button.tsx"
       }
     },
+    "./menu": {
+      "import": {
+        "default": "./src/components/menu.tsx",
+        "types": "./src/components/menu.tsx"
+      }
+    },
     "./text": {
       "import": {
         "default": "./src/components/text.tsx",

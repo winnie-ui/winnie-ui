@@ -3,11 +3,9 @@ import {
   LayoutContent,
   LayoutMask,
   LayoutSidebar,
-  LayoutSidebarOpenButton,
   LayoutSidebarResizeHandle,
+  LayoutSidebarToggle,
 } from "@winnie-ui/react/layout";
-
-// import { Page, PageHeader } from "../../ds/page/page";
 
 import { PanelLeft } from "lucide-react";
 import type { PropsWithChildren } from "react";
@@ -26,7 +24,7 @@ function AppLayout(props: PropsWithChildren) {
         <LayoutSidebarResizeHandle />
       </LayoutSidebar>
       <LayoutContent>
-        <LayoutSidebarOpenButton icon={<PanelLeft />} />
+        <LayoutSidebarToggle icon={<PanelLeft />} />
         Breadcrumbs
         {props.children}
       </LayoutContent>
