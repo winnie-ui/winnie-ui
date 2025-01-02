@@ -9,6 +9,8 @@ import {
   type MenuTriggerProps as AriaMenuTriggerProps,
   Popover as AriaPopover,
   type PopoverProps as AriaPopoverProps,
+  Text as AriaText,
+  type TextProps as AriaTextProps,
 } from "react-aria-components";
 
 /* -------------------------------------------------------------------------------------------------
@@ -44,8 +46,6 @@ function MenuProvider({ children, ...props }: MenuProviderProps) {
 /* -------------------------------------------------------------------------------------------------
  * MenuButton
  * -----------------------------------------------------------------------------------------------*/
-// Not sure if we need this quite yet...
-
 // type MenuButtonProps = AriaButtonProps & {
 //   /**
 //    * Ref to button element
@@ -127,17 +127,96 @@ type MenuItemProps = AriaMenuItemProps & {
 };
 
 function MenuItem({ children, className, ref, ...props }: MenuItemProps) {
+  /**
+   * Compute the text value based on the typeof provided children
+   */
+  const textValue =
+    props.textValue || (typeof children === "string" ? children : undefined);
+
   return (
     <AriaMenuItem
       {...props}
       data-component="listbox-item"
       className={clsx(className, "wui-menu__item")}
       ref={ref}
+      textValue={textValue}
     >
       {children}
     </AriaMenuItem>
   );
 }
 
-export { MenuProvider, MenuPopover, Menu, MenuItem };
-export type { MenuProviderProps, MenuPopoverProps, MenuProps, MenuItemProps };
+/* -------------------------------------------------------------------------------------------------
+ * MenuItemLabel
+ * -----------------------------------------------------------------------------------------------*/
+type MenuItemLabelProps = AriaTextProps & {
+  /**
+   * Ref to menu item element
+   */
+  ref?: ForwardedRef<ComponentRef<typeof AriaText>>;
+};
+
+function MenuItemLabel({
+  children,
+  className,
+  ref,
+  ...props
+}: MenuItemLabelProps) {
+  return (
+    <AriaText
+      {...props}
+      slot="label"
+      data-slot="label"
+      className={clsx(className, "wui-menu__item-label")}
+      ref={ref}
+    >
+      {children}
+    </AriaText>
+  );
+}
+
+/* -------------------------------------------------------------------------------------------------
+ * MenuItemDescription
+ * -----------------------------------------------------------------------------------------------*/
+type MenuItemDescriptionProps = AriaTextProps & {
+  /**
+   * Ref to menu item element
+   */
+  ref?: ForwardedRef<ComponentRef<typeof AriaText>>;
+};
+
+function MenuItemDescription({
+  children,
+  className,
+  ref,
+  ...props
+}: MenuItemDescriptionProps) {
+  return (
+    <AriaText
+      {...props}
+      slot="description"
+      data-slot="description"
+      className={clsx(className, "wui-menu__item-description")}
+      ref={ref}
+    >
+      {children}
+    </AriaText>
+  );
+}
+
+export {
+  MenuProvider,
+  MenuPopover,
+  Menu,
+  MenuItem,
+  MenuItemLabel,
+  MenuItemDescription,
+};
+export type {
+  MenuProviderProps,
+  MenuPopoverProps,
+  MenuProps,
+  MenuItemProps,
+  MenuItemLabelProps,
+  MenuItemDescriptionProps,
+};

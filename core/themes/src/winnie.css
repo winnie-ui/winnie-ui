@@ -66,15 +66,31 @@
     }
 
     /* -------------------------------------------------------------------------------------------------
-     * Layout
-     * -----------------------------------------------------------------------------------------------*/
-
-    /* -------------------------------------------------------------------------------------------------
      * Link 
      * -----------------------------------------------------------------------------------------------*/
     [data-component="link"] {
       --wui-link-text-decoration-hovered: underline solid
         var(--wui-color-accent-a7);
+    }
+
+    [data-component="listbox"] {
+      [data-component="listbox-item"] {
+        --wui-listbox__item-border: none;
+        --wui-listbox__item-border-color: transparent;
+        --wui-listbox__item-color: var(--wui-color-grey-12);
+        --wui-listbox__item-font-weight: var(--wui-font-weight-normal);
+        --wui-listbox__item-background-hovered: var(--wui-color-accent-9);
+        --wui-listbox__item-background-pressed: var(--wui-color-accent-10);
+        --wui-listbox__item-color-hovered: var(--wui-color-accent-contrast);
+        --wui-listbox__item-color-pressed: var(--wui-color-accent-contrast);
+      }
+    }
+
+    /* -------------------------------------------------------------------------------------------------
+     * Popover 
+     * -----------------------------------------------------------------------------------------------*/
+    [data-component="popover"] {
+      --wui-popover-border-radius: min(var(--wui-border-radius-2), 12px);
     }
 
     /* -------------------------------------------------------------------------------------------------
@@ -115,6 +131,13 @@
         }
       }
     }
+
+    [data-component="popover"] {
+      --wui-popover-background: var(--wui-color-white);
+      --wui-popover-border: var(--wui-border-width-1) solid
+        var(--wui-color-grey-5);
+      --wui-popover-box-shadow: var(--wui-shadow-4);
+    }
   }
 
   :where([data-color-scheme="winnie"][data-theme="dark"]) {
@@ -133,6 +156,13 @@
           --wui-layout-sidebar-resize-handle-background: var(--wui-color-grey-9);
         }
       }
+    }
+
+    [data-component="popover"] {
+      --wui-popover-background: var(--wui-color-grey-2);
+      --wui-popover-border: var(--wui-border-width-1) solid
+        var(--wui-color-grey-5);
+      --wui-popover-box-shadow: var(--wui-shadow-4);
     }
   }
 }

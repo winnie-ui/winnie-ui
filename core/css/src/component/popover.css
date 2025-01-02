@@ -1,0 +1,7 @@
+@layer component {
+  [data-component="popover"] {
+    &:has(> [data-component="listbox"]) {
+      padding: var(--wui-space-2);
+    }
+  }
+}

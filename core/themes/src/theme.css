@@ -451,6 +451,53 @@
   }
 
   /* -------------------------------------------------------------------------------------------------
+   * Listbox
+   * -----------------------------------------------------------------------------------------------*/
+  [data-component="listbox"] {
+    outline: none;
+
+    [data-component="listbox-item"] {
+      background: var(--wui-listbox__item-background);
+      box-shadow: var(--wui-listbox__item-box-shadow);
+      border: var(--wui-listbox__item-border);
+      color: var(--wui-listbox__item-color);
+      outline: none;
+
+      &:is([data-hovered], [data-focus-visible]) {
+        --wui-listbox__item-background: var(
+          --wui-listbox__item-background-hovered
+        );
+        --wui-listbox__item-box-shadow: var(
+          --wui-listbox__item-box-shadow-hovered
+        );
+        --wui-listbox__item-border: var(--wui-listbox__item-border-hovered);
+        --wui-listbox__item-color: var(--wui-listbox__item-color-hovered);
+      }
+
+      &[data-pressed] {
+        --wui-listbox__item-background: var(
+          --wui-listbox__item-background-pressed
+        );
+        --wui-listbox__item-box-shadow: var(
+          --wui-listbox__item-box-shadow-pressed
+        );
+        --wui-listbox__item-border: var(--wui-listbox__item-border-pressed);
+        --wui-listbox__item-color: var(--wui-listbox__item-color-pressed);
+      }
+    }
+  }
+
+  /* -------------------------------------------------------------------------------------------------
+   * Popover 
+   * -----------------------------------------------------------------------------------------------*/
+  [data-component="popover"] {
+    background: var(--wui-popover-background);
+    border: var(--wui-popover-border);
+    border-radius: var(--wui-popover-border-radius);
+    box-shadow: var(--wui-popover-box-shadow);
+  }
+
+  /* -------------------------------------------------------------------------------------------------
    * Typography 
    * -----------------------------------------------------------------------------------------------*/
   [data-component="text"],
