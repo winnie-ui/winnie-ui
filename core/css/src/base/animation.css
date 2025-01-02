@@ -149,7 +149,7 @@
     /* animates a popper relative to an anchor position. This is typically used in
      * cases where the popper is mounted and unmounted from the dom
      */
-    .wui-popper-animate {
+    :is(.wui-popper-animate, [data-component="popover"]) {
       animation-timing-function: var(--wui-bezier-1);
 
       &:where(
