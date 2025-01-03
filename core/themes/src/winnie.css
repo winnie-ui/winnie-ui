@@ -74,6 +74,16 @@
     }
 
     [data-component="listbox"] {
+      [data-component="section"] {
+        [data-component="header"] {
+          [data-slot="label"] {
+            --wui-listbox__section-header-label-color: var(--wui-color-grey-11);
+            --wui-listbox__section-header-label-font-weight: var(
+              --wui-font-weight-medium
+            );
+          }
+        }
+      }
       [data-component="listbox-item"] {
         --wui-listbox__item-border: none;
         --wui-listbox__item-border-color: transparent;
@@ -138,6 +148,10 @@
         var(--wui-color-grey-5);
       --wui-popover-box-shadow: var(--wui-shadow-4);
     }
+
+    [data-component="separator"] {
+      --wui-separator-background: var(--wui-color-grey-5);
+    }
   }
 
   :where([data-color-scheme="winnie"][data-theme="dark"]) {
@@ -163,6 +177,10 @@
       --wui-popover-border: var(--wui-border-width-1) solid
         var(--wui-color-grey-5);
       --wui-popover-box-shadow: var(--wui-shadow-4);
+    }
+
+    [data-component="separator"] {
+      --wui-separator-background: var(--wui-color-grey-5);
     }
   }
 }

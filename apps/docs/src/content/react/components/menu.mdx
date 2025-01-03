@@ -4,7 +4,7 @@ description: Displays a list of actions for a user to take.
 documentation: https://react-spectrum.adobe.com/react-aria/Menu.html
 ---
 
-import { DishActionButton } from "~/demos/menu";
+import { DishActionButton, MenuColorDemo, MenuIconDemo, MenuSectionDemo, MenuIndicatorDemo } from "~/demos/menu";
 
 import Demo from "~/components/demo/demo.astro";
 
@@ -21,10 +21,18 @@ import Demo from "~/components/demo/demo.astro";
       </Button>
       <MenuPopover>
         <Menu>
-          <MenuItem>Assign To...</MenuItem>
-          <MenuItem>Edit</MenuItem>
-          <MenuItem>Duplicate</MenuItem>
-          <MenuItem>Delete</MenuItem>
+          <MenuItem>
+            <MenuItemLabel>Assign To</MenuItemLabel>
+          </MenuItem>
+          <MenuItem>
+            <MenuItemLabel>Edit</MenuItemLabel>
+          </MenuItem>
+          <MenuItem>
+            <MenuItemLabel>Duplicate</MenuItemLabel>
+          </MenuItem>
+          <MenuItem>
+            <MenuItemLabel>Delete</MenuItemLabel>
+          </MenuItem>
         </Menu>
       </MenuPopover>
     </MenuProvider>
@@ -41,7 +49,12 @@ import {
   MenuProvider,
   MenuPopover,
   Menu,
-  MenuItem
+  MenuSeparator,
+  MenuItem,
+  MenuItemGroup,
+  MenuItemLabel,
+  MenuItemDescription,
+  MenuItemIcon
 } from "@winnie-ui/react/menu";
 ```
 
@@ -54,10 +67,132 @@ Arrange the components in the structure below.
   <Button />
   <MenuPopover>
     <Menu>
-      <MenuItem />
+      <MenuItem>
+        <MenuItemLabel />
+        <MenuItemDescription />
+      </MenuItem>
+      <MenuSeparator />
+      <MenuItem>
+        <MenuItemGroup>
+          <MenuItemLabel />
+          <MenuItemDescription />
+        </MenuItemGroup>
+      </MenuItem>
+      <MenuSeparator />
     </Menu>
   </MenuPopover>
 </MenuProvider>
 ```
 
 ## Examples
+
+### Color
+
+Use the `color` prop on a `MenuItem` to change its color.
+
+<Demo>
+  <MenuColorDemo client:load />
+  <Fragment slot="footer">
+    ```tsx ins=color="red"
+    <MenuProvider>
+      ...
+      <MenuItem color="red">
+        <MenuItemLabel>Delete</MenuItemLabel>
+      </MenuItem>
+    </MenuProvider>
+    ```
+  </Fragment>
+</Demo>
+
+### Icons
+
+Add an icon with the `MenuItemIcon` slot component as a child of the `MenuItem`.
+
+<Demo>
+  <MenuIconDemo client:load />
+  <Fragment slot="footer">
+    ```tsx mark={4-6}
+    <MenuProvider>
+      ...
+      <MenuItem>
+        <MenuItemIcon>
+          <User />
+        </MenuItemIcon>
+        <MenuItemLabel>Account</MenuItemLabel>
+      </MenuItem>
+    </MenuProvider>
+    ```
+  </Fragment>
+</Demo>
+
+### Sections
+
+Add a section using the `MenuSection`, `MenuHeader` and `MenuSeparator` components in the `Menu`.
+
+<Demo>
+  <MenuSectionDemo client:load />
+  <Fragment slot="footer">
+    ```tsx mark={3-6,19}
+    <MenuProvider>
+      ...
+      <MenuSection>
+        <MenuSectionHeader>
+          <MenuSectionLabel>User Settings</MenuSectionLabel>
+        </MenuSectionHeader>
+        <MenuItem>
+          <MenuItemIcon>
+            <User />
+          </MenuItemIcon>
+          <MenuItemLabel>Account</MenuItemLabel>
+        </MenuItem>
+        <MenuItem>
+          <MenuItemIcon>
+            <Cog />
+          </MenuItemIcon>
+          <MenuItemLabel>Settings</MenuItemLabel>
+        </MenuItem>
+      </MenuSection>
+    </MenuProvider>
+    ```
+  </Fragment>
+</Demo>
+
+### Indicators
+
+When using the `selectionMode` in the `Menu` or `MenuSection`, the selected `MenuItem` will render with the appropriate indicator.
+
+<Demo>
+  <MenuIndicatorDemo client:load />
+  <Fragment slot="footer">
+    ```tsx
+    <MenuProvider>
+      <MenuSection
+        selectionMode="single"
+        selectedKeys={crust}
+        onSelectionChange={setCrust}
+      >
+        <MenuSectionHeader>
+          <MenuSectionLabel>Crust</MenuSectionLabel>
+        </MenuSectionHeader>
+        <MenuItem id="thin">
+          <MenuItemLabel>Thin</MenuItemLabel>
+        </MenuItem>
+        <MenuItem id="hand-tossed">
+          <MenuItemLabel>Hand-tossed</MenuItemLabel>
+        </MenuItem>
+        <MenuItem id="deep dish">
+          <MenuItemLabel>Deep Dish</MenuItemLabel>
+        </MenuItem>
+        <MenuItem id="original">
+          <MenuItemLabel>Original</MenuItemLabel>
+        </MenuItem>
+      </MenuSection>
+      ...
+    </MenuProvider>
+    ```
+  </Fragment>
+</Demo>
+
+### Descriptions
+
+### Shortcuts

@@ -18,6 +18,12 @@
         "types": "./src/components/heading.tsx"
       }
     },
+    "./icons/outlined/*": {
+      "import": {
+        "default": "./src/components/icons/outlined/*",
+        "types": "./src/components/icons/outlined/*"
+      }
+    },
     "./layout": {
       "import": {
         "default": "./src/components/layout.tsx",

@@ -171,7 +171,7 @@ Add an icon to an item using the `icon` slot attribute as a child of a list item
   </div>
   <Fragment slot="footer">
     ```html ins=data-slot="icon"
-    <ul data-component="listbox" class="demo-listbox not-content">
+    <ul data-component="listbox">
       <li data-component="listbox-item">
         <i data-slot="icon" class="user"></i>
         <span data-slot="label">Account</span>
@@ -208,7 +208,7 @@ Use the `section`, `header`, and `separator` attributes to group items.
   <div class="demo-listbox-container">
     <ul data-component="listbox" class="demo-listbox not-content">
       <section data-component="section">
-        <header data-slot="header">
+        <header data-component="header">
           <span data-slot="label">User Settings</span>
         </header>
         <li data-component="listbox-item">
@@ -222,7 +222,7 @@ Use the `section`, `header`, and `separator` attributes to group items.
       </section>
       <div data-component="separator"></div>
       <section data-component="section">
-        <header data-slot="header">
+        <header data-component="header">
           <span data-slot="label">Support</span>
         </header>
         <li data-component="listbox-item">
@@ -232,7 +232,7 @@ Use the `section`, `header`, and `separator` attributes to group items.
       </section>
       <div data-component="separator"></div>
       <section data-component="section">
-        <header data-slot="header">
+        <header data-component="header">
           <span data-slot="label">Preferences</span>
         </header>
         <li data-component="listbox-item">
@@ -242,7 +242,7 @@ Use the `section`, `header`, and `separator` attributes to group items.
       </section>
       <div data-component="separator"></div>
       <section data-component="section">
-        <header data-slot="header">
+        <header data-component="header">
           <span data-slot="label">Account Actions</span>
         </header>
         <li data-component="listbox-item">
@@ -253,33 +253,32 @@ Use the `section`, `header`, and `separator` attributes to group items.
     </ul>
   </div>
   <Fragment slot="footer">
-    ```html ins=data-component="section" ins=data-component="header"
-    ins=data-component="separator"
-    <ul data-component="listbox" class="demo-listbox not-content">
+    ```html ins=data-component="section" ins=data-component="header" ins=data-component="separator"
+    <ul data-component="listbox">
       <section data-component="section">
         <header data-component="header">
-          <span data-component="label">User Settings</span>
+          <span data-slot="label">User Settings</span>
         </header>
         ...
       </section>
       <div data-component="separator"></div>
       <section data-component="section">
         <header data-component="header">
-          <span data-component="label">Support</span>
+          <span data-slot="label">Support</span>
         </header>
         ...
       </section>
       <div data-component="separator"></div>
       <section data-component="section">
         <header data-component="header">
-          <span data-component="label">Preferences</span>
+          <span data-slot="label">Preferences</span>
         </header>
         ...
       </section>
       <div data-component="separator"></div>
       <section data-component="section">
         <header data-component="header">
-          <span data-component="label">Account Actions</span>
+          <span data-slot="label">Account Actions</span>
         </header>
         ...
       </section>
@@ -299,7 +298,7 @@ Add an icon to indicate that an item has been selected using the `indicator` slo
       class="demo-listbox not-content demo-indicator"
     >
       <section data-component="section">
-        <header data-slot="header">
+        <header data-component="header">
           <span data-slot="label">Colors</span>
         </header>
         <li data-component="listbox-item">
@@ -315,7 +314,7 @@ Add an icon to indicate that an item has been selected using the `indicator` slo
       </section>
       <div data-component="separator"></div>
       <section data-component="section">
-        <header data-slot="header">
+        <header data-component="header">
           <span data-slot="label">Animals</span>
         </header>
         <li data-component="listbox-item">

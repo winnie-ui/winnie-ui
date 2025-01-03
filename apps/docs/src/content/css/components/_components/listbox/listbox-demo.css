@@ -53,7 +53,7 @@
       }
     }
 
-    [data-slot="header"] {
+    [data-component="header"] {
       [data-slot="label"] {
         color: var(--wui-color-grey-11);
         font-weight: var(--wui-font-weight-medium);

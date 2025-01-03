@@ -39,7 +39,11 @@
     grid-template-columns: var(--wui-listbox-grid-columns);
     min-width: max-content;
 
-    &[data-mode="selection"] {
+    &:is(
+        [data-mode="selection"],
+        [data-selection-mode],
+        &:has([data-selection-mode])
+      ) {
       --wui-listbox-grid-columns: minmax(
           calc(
             var(
@@ -89,7 +93,7 @@
       grid-template-columns: subgrid;
       grid-column: 1 / -1;
 
-      [data-slot="header"] {
+      [data-component="header"] {
         align-items: center;
         grid-column-start: 3;
         display: grid;
@@ -109,6 +113,7 @@
 
     [data-component="separator"] {
       margin-block: var(--wui-space-2);
+      height: max(1px, calc(1px * var(--wui-scale)));
       grid-column: 1 / -1;
     }
 
@@ -250,7 +255,11 @@
     }
 
     /* not in selection mode */
-    &:not([data-mode="selection"]) {
+    &:not(
+        [data-mode="selection"],
+        [data-selection-mode],
+        &:has([data-selection-mode])
+      ) {
       [data-component="listbox-item"] {
         /* indicator followed by icon or indicator followed by label */
         &:has(

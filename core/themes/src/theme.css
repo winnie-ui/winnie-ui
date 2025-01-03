@@ -456,6 +456,15 @@
   [data-component="listbox"] {
     outline: none;
 
+    [data-component="section"] {
+      [data-component="header"] {
+        [data-slot="label"] {
+          color: var(--wui-listbox__section-header-label-color);
+          font-weight: var(--wui-listbox__section-header-label-font-weight);
+        }
+      }
+    }
+
     [data-component="listbox-item"] {
       background: var(--wui-listbox__item-background);
       box-shadow: var(--wui-listbox__item-box-shadow);
@@ -498,11 +507,19 @@
   }
 
   /* -------------------------------------------------------------------------------------------------
+   * Separator 
+   * -----------------------------------------------------------------------------------------------*/
+  [data-component="separator"] {
+    background: var(--wui-separator-background);
+  }
+
+  /* -------------------------------------------------------------------------------------------------
    * Typography 
    * -----------------------------------------------------------------------------------------------*/
   [data-component="text"],
   [data-component="heading"],
-  [data-component="link"] {
+  [data-component="link"],
+  [data-component="icon"] {
     &[data-contrast="low"] {
       color: var(--wui-typography-low-color);
     }

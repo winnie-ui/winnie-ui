@@ -1,0 +1,57 @@
+@layer component {
+  [data-component="icon"] {
+    &[data-size="1"] {
+      font-size: var(--wui-font-size-1);
+      height: var(--wui-font-size-1);
+      width: var(--wui-font-size-1);
+    }
+
+    &[data-size="2"] {
+      font-size: var(--wui-font-size-2);
+      height: var(--wui-font-size-2);
+      width: var(--wui-font-size-2);
+    }
+
+    &[data-size="3"] {
+      font-size: var(--wui-font-size-3);
+      height: var(--wui-font-size-3);
+      width: var(--wui-font-size-3);
+    }
+
+    &[data-size="4"] {
+      font-size: var(--wui-font-size-4);
+      height: var(--wui-font-size-4);
+      width: var(--wui-font-size-4);
+    }
+
+    &[data-size="5"] {
+      font-size: var(--wui-font-size-5);
+      height: var(--wui-font-size-5);
+      width: var(--wui-font-size-5);
+    }
+
+    &[data-size="6"] {
+      font-size: var(--wui-font-size-6);
+      height: var(--wui-font-size-6);
+      width: var(--wui-font-size-6);
+    }
+
+    &[data-size="7"] {
+      font-size: var(--wui-font-size-7);
+      height: var(--wui-font-size-7);
+      width: var(--wui-font-size-7);
+    }
+
+    &[data-size="8"] {
+      font-size: var(--wui-font-size-8);
+      height: var(--wui-font-size-8);
+      width: var(--wui-font-size-8);
+    }
+
+    &[data-size="9"] {
+      font-size: var(--wui-font-size-9);
+      height: var(--wui-font-size-9);
+      width: var(--wui-font-size-9);
+    }
+  }
+}
