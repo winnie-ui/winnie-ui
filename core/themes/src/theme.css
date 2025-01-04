@@ -359,7 +359,7 @@
           @media (prefers-reduced-motion: no-preference) {
             transition-property: opacity;
             transition-delay: var(--wui-duration-2);
-            transition-duration: var(--wui-duration-2);
+            transition-duration: var(--wui-duration-4);
             transition-timing-function: var(--wui-bezier-1);
           }
         }

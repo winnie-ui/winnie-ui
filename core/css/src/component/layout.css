@@ -71,8 +71,9 @@
         &:is([data-state="open"], [data-state="closed"]) {
           height: calc(
             100% -
-            var(--wui-layout-content-space) -
-            var(--wui-layout-content-header-height)
+            var(--wui-layout-content-space) *
+            2 -
+            var(--wui-layout-content-header-height, 60px)
           );
           border-radius: min(var(--wui-border-radius-3), 16px);
         }

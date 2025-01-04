@@ -66,6 +66,14 @@
     }
 
     /* -------------------------------------------------------------------------------------------------
+     * Layout 
+     * -----------------------------------------------------------------------------------------------*/
+    [data-component="layout"] {
+      --wui-layout__resize-handle-opacity-dragging: 1;
+      --wui-layout__resize-handle-border-radius: var(--wui-border-radius-round);
+    }
+
+    /* -------------------------------------------------------------------------------------------------
      * Icon 
      * -----------------------------------------------------------------------------------------------*/
     [data-component="icon"] {
@@ -93,6 +101,7 @@
           }
         }
       }
+
       [data-component="listbox-item"] {
         --wui-listbox__item-border: none;
         --wui-listbox__item-border-color: transparent;
@@ -116,7 +125,7 @@
         );
 
         --wui-listbox__item-shortcut-color: var(--wui-color-grey-10);
-        --wui-listbo__item-shortcut-font-family: var(--wui-font-family-sans);
+        --wui-listbox__item-shortcut-font-family: var(--wui-font-family-sans);
       }
     }
 
@@ -154,15 +163,18 @@
       --wui-layout-background: var(--wui-color-grey-3);
 
       [data-slot="mask"] {
-        --wui-layout-mask-background: var(--wui-color-black-a2);
+        --wui-layout__mask-background: var(--wui-color-black-a2);
       }
 
       [data-slot="sidebar"] {
-        --wui-layout-sidebar-open-background: var(--wui-color-white);
-        --wui-layout-sidebar-open-border-color: var(--wui-color-grey-6);
+        --wui-layout__sidebar-background-open-xs: var(--wui-color-white);
+        --wui-layout__sidebar-open-background: var(--wui-color-white);
+        --wui-layout__sidebar-open-border-color: var(--wui-color-grey-6);
+        --wui-layout__sidebar-border-right-open-xs: var(--wui-border-width-1)
+          solid var(--wui-color-grey-6);
 
         [data-component="resize-handle"] {
-          --wui-layout-sidebar-resize-handle-background: var(--wui-color-grey-9);
+          --wui-layout__resize-handle-background: var(--wui-color-grey-9);
         }
       }
     }

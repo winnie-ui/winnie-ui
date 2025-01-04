@@ -508,7 +508,7 @@ function LayoutSidebarToggle({
         style={{
           zIndex: 96,
           height:
-            "calc(var(--wui-page-header-height) + var(--wui-layout-content-space))",
+            "calc(var(--wui-layout__page-header-height, 48px) + var(--wui-layout-content-space))",
           top: "calc(-1 * var(--wui-layout-content-space) - var(--wui-space-4))",
           position: "absolute",
           width: "calc(70px * var(--wui-scale))",
