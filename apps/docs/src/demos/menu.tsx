@@ -41,6 +41,7 @@ export function DishActionButton() {
           <MenuItem>
             <MenuItemLabel>Duplicate</MenuItemLabel>
           </MenuItem>
+          <MenuSeparator />
           <MenuItem>
             <MenuItemLabel>Delete</MenuItemLabel>
           </MenuItem>
@@ -73,6 +74,7 @@ export function MenuColorDemo() {
           <MenuItem>
             <MenuItemLabel>Duplicate</MenuItemLabel>
           </MenuItem>
+          <MenuSeparator />
           <MenuItem color="red">
             <MenuItemLabel>Delete</MenuItemLabel>
           </MenuItem>

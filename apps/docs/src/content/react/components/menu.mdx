@@ -172,7 +172,7 @@ Add a section using the `MenuSection`, `MenuHeader` and `MenuSeparator` componen
 When using the `selectionMode` in the `Menu` or `MenuSection`, the selected `MenuItem` will render with the appropriate indicator.
 
 <Demo>
-  <MenuIndicatorDemo client:load />
+  <MenuIndicatorDemo client:only="react" />
   <Fragment slot="footer">
     ```tsx
     <MenuProvider>
@@ -211,7 +211,7 @@ When using the `selectionMode` in the `Menu` or `MenuSection`, the selected `Men
 You can create a column layout using the `MenuItemGroup` component and placing the `MenuItemLabel` and `MenuItemDescription` components as children.
 
 <Demo>
-  <MenuDescriptionColumnDemo client:load />
+  <MenuDescriptionColumnDemo client:only="react" />
   <Fragment slot="footer">
     ```tsx mark={8-11}
     <MenuProvider>
@@ -239,7 +239,7 @@ You can create a column layout using the `MenuItemGroup` component and placing t
 Similar to the column layout, You can create a row layout using the `MenuItemGroup` component and placing the `MenuItemLabel` and `MenuItemDescription` components as children.
 
 <Demo>
-  <MenuDescriptionRowDemo client:load />
+  <MenuDescriptionRowDemo client:only="react" />
   <Fragment slot="footer">
     ```tsx ins=orientation="row" 
     <MenuProvider>
@@ -267,7 +267,7 @@ Similar to the column layout, You can create a row layout using the `MenuItemGro
 Finally, if you prefer to inline all descriptions, youp can skip the `MenuItemGroup` component and provide the `MenuItemLabel` and `MenuItemDescription` components as children.
 
 <Demo>
-  <MenuDescriptionInlineDemo client:load />
+  <MenuDescriptionInlineDemo client:only="react" />
     <Fragment slot="footer">
     ```tsx mark={9-10}
     <MenuProvider>
@@ -295,17 +295,12 @@ Use the `MenuItemShortcut` component as a child to `MenuItem` to show a keyboard
 <Demo>
   <MenuShortcutDemo client:load />
     <Fragment slot="footer">
-    ```tsx mark={11-14}
+    ```tsx mark={6-9}
     <MenuProvider>
       ...
-      <Menu
-        selectionMode="single"
-        selectedKeys={permissions}
-        onSelectionChange={setPermissions}
-      >
-        <MenuItem id="read">
-          <MenuItemLabel>Read</MenuItemLabel>
-          <MenuItemDescription>Read only</MenuItemDescription>
+      <Menu>
+        <MenuItem>
+          <MenuItemLabel>Delete</MenuItemLabel>
           <MenuItemShortcut>
             <kbd>⌘</kbd>
             <kbd>D</kbd>
