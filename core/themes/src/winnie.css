@@ -66,6 +66,15 @@
     }
 
     /* -------------------------------------------------------------------------------------------------
+     * Icon 
+     * -----------------------------------------------------------------------------------------------*/
+    [data-component="icon"] {
+      --wui-icon-low-color: var(--wui-color-accent-10);
+      --wui-icon-normal-color: var(--wui-color-accent-11);
+      --wui-icon-high-color: var(--wui-color-accent-12);
+    }
+
+    /* -------------------------------------------------------------------------------------------------
      * Link 
      * -----------------------------------------------------------------------------------------------*/
     [data-component="link"] {
@@ -93,6 +102,21 @@
         --wui-listbox__item-background-pressed: var(--wui-color-accent-10);
         --wui-listbox__item-color-hovered: var(--wui-color-accent-contrast);
         --wui-listbox__item-color-pressed: var(--wui-color-accent-contrast);
+        --wui-listbox__item-group-label-color: var(--wui-color-grey-12);
+        --wui-listbox__item-group-label-font-weight: var(
+          --wui-font-weight-medium
+        );
+        --wui-listbox__item-group-label-color: var(--wui-color-grey-12);
+        --wui-listbox__item-group-label-font-weight: var(
+          --wui-font-weight-medium
+        );
+        --wui-listbox__item-group-description-color: var(--wui-color-grey-11);
+        --wui-listbox__item-group-description-font-weight: var(
+          --wui-font-weight-normal
+        );
+
+        --wui-listbox__item-shortcut-color: var(--wui-color-grey-10);
+        --wui-listbo__item-shortcut-font-family: var(--wui-font-family-sans);
       }
     }
 
@@ -108,7 +132,8 @@
      * -----------------------------------------------------------------------------------------------*/
     [data-component="text"],
     [data-component="heading"],
-    [data-component="link"] {
+    [data-component="link"],
+    [data-component="icon"] {
       --wui-typography-low-color: var(--wui-color-accent-10);
       --wui-typography-normal-color: var(--wui-color-accent-11);
       --wui-typography-high-color: var(--wui-color-accent-12);

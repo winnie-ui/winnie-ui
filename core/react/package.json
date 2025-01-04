@@ -18,10 +18,10 @@
         "types": "./src/components/heading.tsx"
       }
     },
-    "./icons/outlined/*": {
+    "./icons/*": {
       "import": {
-        "default": "./src/components/icons/outlined/*",
-        "types": "./src/components/icons/outlined/*"
+        "default": "./src/components/icons/*",
+        "types": "./src/components/icons/*"
       }
     },
     "./layout": {

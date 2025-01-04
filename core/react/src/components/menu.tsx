@@ -11,6 +11,7 @@ import {
 
 import {
   Header as AriaHeader,
+  Keyboard as AriaKeyboard,
   Menu as AriaMenu,
   MenuItem as AriaMenuItem,
   type MenuItemProps as AriaMenuItemProps,
@@ -203,6 +204,13 @@ function MenuItem<T extends object>({
  * -----------------------------------------------------------------------------------------------*/
 type MenuItemGroupProps = AriaTextProps & {
   /**
+   * Changes the arrangement of label and descroption slots
+   *
+   * @default "column"
+   */
+  orientation?: "row" | "column";
+
+  /**
    * Ref to menu item group element
    */
   ref?: ForwardedRef<ComponentRef<"div">>;
@@ -211,6 +219,7 @@ type MenuItemGroupProps = AriaTextProps & {
 function MenuItemGroup({
   children,
   className,
+  orientation = "column",
   ref,
   ...props
 }: MenuItemGroupProps) {
@@ -218,6 +227,7 @@ function MenuItemGroup({
     <div
       {...props}
       data-component="group"
+      data-orientation={orientation}
       className={clsx(className, "wui-menu__item-group")}
       ref={ref}
     >
@@ -281,6 +291,34 @@ function MenuItemDescription({
     >
       {children}
     </AriaText>
+  );
+}
+
+/* -------------------------------------------------------------------------------------------------
+ * MenuItemShortcut
+ * -----------------------------------------------------------------------------------------------*/
+type MenuItemShortcutProps = ComponentPropsWithoutRef<typeof AriaKeyboard> & {
+  /**
+   * Ref to menu item element
+   */
+  ref?: ForwardedRef<ComponentRef<typeof AriaKeyboard>>;
+};
+
+function MenuItemShortcut({
+  children,
+  className,
+  ref,
+  ...props
+}: MenuItemShortcutProps) {
+  return (
+    <AriaKeyboard
+      {...props}
+      data-slot="shortcut"
+      className={clsx(className, "wui-menu__item-shortcut")}
+      ref={ref}
+    >
+      {children}
+    </AriaKeyboard>
   );
 }
 
@@ -433,6 +471,7 @@ export {
   MenuItemGroup,
   MenuItemLabel,
   MenuItemDescription,
+  MenuItemShortcut,
   MenuItemIcon,
 };
 export type {
@@ -448,5 +487,6 @@ export type {
   MenuItemLabelProps,
   MenuItemDescriptionProps,
   MenuItemIconProps,
+  MenuItemShortcutProps,
   Selection,
 };

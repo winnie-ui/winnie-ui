@@ -2,8 +2,11 @@ import { Button, ButtonIcon, ButtonLabel } from "@winnie-ui/react/button";
 import {
   Menu,
   MenuItem,
+  MenuItemDescription,
+  MenuItemGroup,
   MenuItemIcon,
   MenuItemLabel,
+  MenuItemShortcut,
   MenuPopover,
   MenuProvider,
   MenuSection,
@@ -85,7 +88,7 @@ export function MenuColorDemo() {
 export function MenuIconDemo() {
   return (
     <MenuProvider>
-      <Button color="grey" variant="outlined">
+      <Button variant="outlined">
         <ButtonLabel>Preferences</ButtonLabel>
         <ButtonIcon>
           <ChevronDown />
@@ -138,7 +141,7 @@ export function MenuIconDemo() {
 export function MenuSectionDemo() {
   return (
     <MenuProvider>
-      <Button color="grey" variant="outlined">
+      <Button variant="outlined">
         <ButtonLabel>Preferences</ButtonLabel>
         <ButtonIcon>
           <ChevronDown />
@@ -299,6 +302,181 @@ export function MenuIndicatorDemo() {
               <MenuItemLabel>Brie</MenuItemLabel>
             </MenuItem>
           </MenuSection>
+        </Menu>
+      </MenuPopover>
+    </MenuProvider>
+  );
+}
+
+/* -------------------------------------------------------------------------------------------------
+ * MenuDescriptionColumnDemo
+ * -----------------------------------------------------------------------------------------------*/
+export function MenuDescriptionColumnDemo() {
+  /**
+   * Tracks the selected permission
+   */
+  const [permissions, setPermissions] = useState<Selection>(new Set(["read"]));
+
+  return (
+    <MenuProvider>
+      <Button variant="outlined">
+        <ButtonLabel>Permissions</ButtonLabel>
+        <ButtonIcon>
+          <ChevronDown />
+        </ButtonIcon>
+      </Button>
+      <MenuPopover>
+        <Menu
+          selectionMode="single"
+          selectedKeys={permissions}
+          onSelectionChange={setPermissions}
+        >
+          <MenuItem id="read">
+            <MenuItemGroup>
+              <MenuItemLabel>Read</MenuItemLabel>
+              <MenuItemDescription>Read only</MenuItemDescription>
+            </MenuItemGroup>
+          </MenuItem>
+          <MenuItem id="write">
+            <MenuItemGroup>
+              <MenuItemLabel>Write</MenuItemLabel>
+              <MenuItemDescription>Read and write only</MenuItemDescription>
+            </MenuItemGroup>
+          </MenuItem>
+          <MenuItem id="admin">
+            <MenuItemGroup>
+              <MenuItemLabel>Admin</MenuItemLabel>
+              <MenuItemDescription>Full Access</MenuItemDescription>
+            </MenuItemGroup>
+          </MenuItem>
+        </Menu>
+      </MenuPopover>
+    </MenuProvider>
+  );
+}
+
+/* -------------------------------------------------------------------------------------------------
+ * MenuDescriptionRowDemo
+ * -----------------------------------------------------------------------------------------------*/
+export function MenuDescriptionRowDemo() {
+  /**
+   * Tracks the selected permission
+   */
+  const [people, setPeople] = useState<Selection>(new Set(["adamaho"]));
+
+  return (
+    <MenuProvider>
+      <Button variant="outlined">
+        <ButtonLabel>Select People</ButtonLabel>
+        <ButtonIcon>
+          <ChevronDown />
+        </ButtonIcon>
+      </Button>
+      <MenuPopover>
+        <Menu
+          selectionMode="multiple"
+          selectedKeys={people}
+          onSelectionChange={setPeople}
+        >
+          <MenuItem id="adamaho">
+            <MenuItemGroup orientation="row">
+              <MenuItemLabel>adamaho</MenuItemLabel>
+              <MenuItemDescription>@adamaho</MenuItemDescription>
+            </MenuItemGroup>
+          </MenuItem>
+          <MenuItem id="daxraad">
+            <MenuItemGroup orientation="row">
+              <MenuItemLabel>Dax Raad</MenuItemLabel>
+              <MenuItemDescription>@thdxr</MenuItemDescription>
+            </MenuItemGroup>
+          </MenuItem>
+          <MenuItem id="adamwathan">
+            <MenuItemGroup orientation="row">
+              <MenuItemLabel>Adam Wathan</MenuItemLabel>
+              <MenuItemDescription>@adamwathan</MenuItemDescription>
+            </MenuItemGroup>
+          </MenuItem>
+        </Menu>
+      </MenuPopover>
+    </MenuProvider>
+  );
+}
+
+/* -------------------------------------------------------------------------------------------------
+ * MenuDescriptionInlineDemo
+ * -----------------------------------------------------------------------------------------------*/
+export function MenuDescriptionInlineDemo() {
+  /**
+   * Tracks the selected permission
+   */
+  const [permissions, setPermissions] = useState<Selection>(new Set(["read"]));
+
+  return (
+    <MenuProvider>
+      <Button variant="outlined">
+        <ButtonLabel>Permissions</ButtonLabel>
+        <ButtonIcon>
+          <ChevronDown />
+        </ButtonIcon>
+      </Button>
+      <MenuPopover>
+        <Menu
+          selectionMode="single"
+          selectedKeys={permissions}
+          onSelectionChange={setPermissions}
+        >
+          <MenuItem id="read">
+            <MenuItemLabel>Read</MenuItemLabel>
+            <MenuItemDescription>Read only</MenuItemDescription>
+          </MenuItem>
+          <MenuItem id="write">
+            <MenuItemLabel>Write</MenuItemLabel>
+            <MenuItemDescription>Read and write only</MenuItemDescription>
+          </MenuItem>
+          <MenuItem id="admin">
+            <MenuItemLabel>Admin</MenuItemLabel>
+            <MenuItemDescription>Full Access</MenuItemDescription>
+          </MenuItem>
+        </Menu>
+      </MenuPopover>
+    </MenuProvider>
+  );
+}
+
+/* -------------------------------------------------------------------------------------------------
+ * MenuShortcutDemo
+ * -----------------------------------------------------------------------------------------------*/
+export function MenuShortcutDemo() {
+  return (
+    <MenuProvider>
+      <Button variant="outlined">
+        <ButtonLabel>Dish Actions</ButtonLabel>
+        <ButtonIcon>
+          <ChevronDown />
+        </ButtonIcon>
+      </Button>
+      <MenuPopover>
+        <Menu>
+          <MenuItem>
+            <MenuItemLabel>Assign To</MenuItemLabel>
+            <MenuItemShortcut>A</MenuItemShortcut>
+          </MenuItem>
+          <MenuItem>
+            <MenuItemLabel>Edit</MenuItemLabel>
+            <MenuItemShortcut>E</MenuItemShortcut>
+          </MenuItem>
+          <MenuItem>
+            <MenuItemLabel>Duplicate</MenuItemLabel>
+            <MenuItemShortcut>D</MenuItemShortcut>
+          </MenuItem>
+          <MenuSeparator />
+          <MenuItem color="red">
+            <MenuItemLabel>Delete</MenuItemLabel>
+            <MenuItemShortcut>
+              <kbd>⌘</kbd>
+              <kbd>D</kbd>
+            </MenuItemShortcut>
+          </MenuItem>
         </Menu>
       </MenuPopover>
     </MenuProvider>

@@ -4,7 +4,17 @@ description: Displays a list of actions for a user to take.
 documentation: https://react-spectrum.adobe.com/react-aria/Menu.html
 ---
 
-import { DishActionButton, MenuColorDemo, MenuIconDemo, MenuSectionDemo, MenuIndicatorDemo } from "~/demos/menu";
+import {
+  DishActionButton,
+  MenuColorDemo,
+  MenuIconDemo,
+  MenuSectionDemo,
+  MenuIndicatorDemo,
+  MenuDescriptionColumnDemo,
+  MenuDescriptionRowDemo,
+  MenuDescriptionInlineDemo,
+  MenuShortcutDemo
+} from "~/demos/menu";
 
 import Demo from "~/components/demo/demo.astro";
 
@@ -166,6 +176,7 @@ When using the `selectionMode` in the `Menu` or `MenuSection`, the selected `Men
   <Fragment slot="footer">
     ```tsx
     <MenuProvider>
+      ...
       <MenuSection
         selectionMode="single"
         selectedKeys={crust}
@@ -195,4 +206,147 @@ When using the `selectionMode` in the `Menu` or `MenuSection`, the selected `Men
 
 ### Descriptions
 
+#### Column
+
+You can create a column layout using the `MenuItemGroup` component and placing the `MenuItemLabel` and `MenuItemDescription` components as children.
+
+<Demo>
+  <MenuDescriptionColumnDemo client:load />
+  <Fragment slot="footer">
+    ```tsx mark={8-11}
+    <MenuProvider>
+      ...
+      <Menu
+        selectionMode="single"
+        selectedKeys={permissions}
+        onSelectionChange={setPermissions}
+      >
+        <MenuItem id="read">
+          <MenuItemGroup>
+            <MenuItemLabel>Read</MenuItemLabel>
+            <MenuItemDescription>Read only</MenuItemDescription>
+          </MenuItemGroup>
+        </MenuItem>
+        ...
+      </Menu>
+    </MenuProvider>
+    ```
+  </Fragment>
+</Demo>
+
+#### Row 
+
+Similar to the column layout, You can create a row layout using the `MenuItemGroup` component and placing the `MenuItemLabel` and `MenuItemDescription` components as children.
+
+<Demo>
+  <MenuDescriptionRowDemo client:load />
+  <Fragment slot="footer">
+    ```tsx ins=orientation="row" 
+    <MenuProvider>
+      ...
+      <Menu
+        selectionMode="multiple"
+        selectedKeys={people}
+        onSelectionChange={setPeople}
+      >
+        <MenuItem id="adamaho">
+          <MenuItemGroup orientation="row">
+            <MenuItemLabel>Adam Aho</MenuItemLabel>
+            <MenuItemDescription>@adamaho</MenuItemDescription>
+          </MenuItemGroup>
+        </MenuItem>
+        ...
+      </Menu>
+    </MenuProvider>
+    ```
+  </Fragment>
+</Demo>
+
+#### Inline
+
+Finally, if you prefer to inline all descriptions, youp can skip the `MenuItemGroup` component and provide the `MenuItemLabel` and `MenuItemDescription` components as children.
+
+<Demo>
+  <MenuDescriptionInlineDemo client:load />
+    <Fragment slot="footer">
+    ```tsx mark={9-10}
+    <MenuProvider>
+      ...
+      <Menu
+        selectionMode="single"
+        selectedKeys={permissions}
+        onSelectionChange={setPermissions}
+      >
+        <MenuItem id="read">
+          <MenuItemLabel>Read</MenuItemLabel>
+          <MenuItemDescription>Read only</MenuItemDescription>
+        </MenuItem>
+        ...
+      </Menu>
+    </MenuProvider>
+    ```
+  </Fragment>
+</Demo>
+
 ### Shortcuts
+
+Use the `MenuItemShortcut` component as a child to `MenuItem` to show a keyboard shortcut.
+
+<Demo>
+  <MenuShortcutDemo client:load />
+    <Fragment slot="footer">
+    ```tsx mark={11-14}
+    <MenuProvider>
+      ...
+      <Menu
+        selectionMode="single"
+        selectedKeys={permissions}
+        onSelectionChange={setPermissions}
+      >
+        <MenuItem id="read">
+          <MenuItemLabel>Read</MenuItemLabel>
+          <MenuItemDescription>Read only</MenuItemDescription>
+          <MenuItemShortcut>
+            <kbd>⌘</kbd>
+            <kbd>D</kbd>
+          </MenuItemShortcut>
+        </MenuItem>
+        ...
+      </Menu>
+    </MenuProvider>
+    ```
+  </Fragment>
+</Demo>
+
+## Reference
+
+Refer to React Aria Components [documentation](https://react-spectrum.adobe.com/react-aria/Menu.html#props) for more details about the other props and events available on Menu.
+
+### MenuItemGroup
+
+An individual item group that a user can interact with in the menu. Typically used to change the layout of the `MenuItemLabel` and `MenuItemDescription`.
+
+| Prop            | Type                | Default     |
+| --------------- | ------------------- | ----------- |
+| `orientation`   | `"column" \| "row"` | `undefined` |
+
+
+### MenuItem
+
+An individual item that a user can interact with in the menu.
+
+| Prop      | Type                                                                                            | Default     |
+| --------- | ----------------------------------------------------------------------------------------------- | ----------- |
+| `color`   | `"brand" \| "red" \| "orange" \| "yellow" \| "green" \| "blue" \| "purple" \| "pink" \| "grey"` | `undefined` |
+
+| Selector                    | Description                                                   |
+| --------------------------- | ------------------------------------------------------------- |
+| `data-has-submenu`          | When the menu item has a submenu                              |
+| `data-open`                 | When the menu item has an open submenu                        |
+| `data-hovered`              | When the menu item is hovered with mouse                      |
+| `data-pressed`              | When the menu item is pressed                                 |
+| `data-focused`              | When the menu item is focused with either a keyboard or mouse |
+| `data-focus-visible`        | When the menu item is focused with keyboard                   |
+| `data-disabled`             | When the menu item is disabled                                |
+| `data-pending`              | When the menu item is in a pending state                      |
+| `data-selection-mode`       | When the type of selection allowed on the collection          |

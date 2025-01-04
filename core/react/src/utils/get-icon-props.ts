@@ -7,7 +7,7 @@ type IconProps = {
   /**
    * Color of the type
    *
-   * @default "grey"
+   * @default undefined
    */
   color?:
     | "brand"
@@ -41,7 +41,11 @@ type IconProps = {
  * @param props IconProps
  * @returns object of props
  */
-function getIconProps({ color, contrast = "high", size = "2" }: IconProps) {
+function getIconProps({
+  color = undefined,
+  contrast = "high",
+  size = "2",
+}: IconProps) {
   return {
     "data-accent-color": color,
     "data-contrast": contrast,

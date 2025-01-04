@@ -22,7 +22,7 @@ type DotProps = IconProps & {
  */
 function Dot({
   className,
-  color = "grey",
+  color = undefined,
   contrast = "high",
   size = "3",
   ...props
